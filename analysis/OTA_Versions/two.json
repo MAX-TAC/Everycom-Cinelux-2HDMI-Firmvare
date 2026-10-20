@@ -1,0 +1,3400 @@
+{
+  "variant": "two",
+  "system_build_properties": [
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.product.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.product.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.product.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.product.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.product.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.vndk.version",
+      "value": "33"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.build.characteristics",
+      "value": "tv"
+    },
+    {
+      "file": "product_a/etc/build.prop",
+      "key": "ro.product.ab_ota_partitions",
+      "value": "3rd_a,armfw,boot,bootdata,dtbo,factory_a,linux_rootfs_a,mboot,optee,product,system,system_ext,tvconfig,tvservice,vbmeta,vbmeta_system,vendor"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.system.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.system.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.system.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.system.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.system.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.product.cpu.abilist",
+      "value": "armeabi-v7a,armeabi"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.product.cpu.abilist32",
+      "value": "armeabi-v7a,armeabi"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.product.cpu.abilist64",
+      "value": ""
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.system.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.display.id",
+      "value": "mt5873_cd-userdebug 13 TP1A.220624.021.A1 eng.suhaix.20260930.074037 test-keys"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.preview_sdk",
+      "value": "0"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.preview_sdk_fingerprint",
+      "value": "REL"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.codename",
+      "value": "REL"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.all_codenames",
+      "value": "REL"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.known_codenames",
+      "value": "Base,Base11,Cupcake,Donut,Eclair,Eclair01,EclairMr1,Froyo,Gingerbread,GingerbreadMr1,Honeycomb,HoneycombMr1,HoneycombMr2,IceCreamSandwich,IceCreamSandwichMr1,JellyBean,JellyBeanMr1,JellyBeanMr2,Kitkat,KitkatWatch,Lollipo"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.release_or_preview_display",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.security_patch",
+      "value": "2026-04-05"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.base_os",
+      "value": ""
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.version.min_supported_target_sdk",
+      "value": "23"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.user",
+      "value": "suhaixiong"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.host",
+      "value": "5a7517920bed"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.flavor",
+      "value": "mt5873_cd-userdebug"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.system_root_image",
+      "value": "false"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.cpu.abi",
+      "value": "armeabi-v7a"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.cpu.abi2",
+      "value": "armeabi"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.product.locale",
+      "value": "en-US"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.product",
+      "value": "mt5873"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.description",
+      "value": "mt5873_cd-userdebug 13 TP1A.220624.021.A1 eng.suhaix.20260930.074037 test-keys"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "persist.debug.dalvik.vm.core_platform_api_policy",
+      "value": "just-warn"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "ro.build.mtk.pkg_version",
+      "value": "t-apollo-mp-2101-cnt-mt5873-71-001-130"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "pm.dexopt.boot-after-ota",
+      "value": "verify"
+    },
+    {
+      "file": "system_a/system/build.prop",
+      "key": "pm.dexopt.ab-ota",
+      "value": "speed-profile"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.product.system_dlkm.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.product.system_dlkm.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.product.system_dlkm.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.product.system_dlkm.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.product.system_dlkm.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "system_a/system/system_dlkm/etc/build.prop",
+      "key": "ro.system_dlkm.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.product.system_ext.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.product.system_ext.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.product.system_ext.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.product.system_ext.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.product.system_ext.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.system_ext.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "system_ext_a/etc/build.prop",
+      "key": "ro.product.locale",
+      "value": "en-US"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.vendor.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.vendor.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.vendor.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.vendor.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.vendor.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.product.cpu.abilist",
+      "value": "armeabi-v7a,armeabi"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.product.cpu.abilist32",
+      "value": "armeabi-v7a,armeabi"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.product.cpu.abilist64",
+      "value": ""
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.no_afbc_usage_flags",
+      "value": "0x20000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.no_afbc_usage_mask",
+      "value": "0x60000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.force_back_buffer_usage_flags",
+      "value": "0x40000000000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.force_back_buffer_usage_mask",
+      "value": "0x40000000000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.shared_access_usage_flags",
+      "value": "0x10000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.shared_access_usage_mask",
+      "value": "0x50000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.afrc_rgba_usage_flags",
+      "value": "0x50000000,0x60000000,0x40000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.afrc_rgba_usage_mask",
+      "value": "0x70000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.afrc_luma_usage_flags",
+      "value": "0x50000000,0x60000000,0x40000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.afrc_luma_usage_mask",
+      "value": "0x70000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.afrc_chroma_usage_flags",
+      "value": "0x100000000000000,0x80000000000000,0x180000000000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.gralloc.afrc_chroma_usage_mask",
+      "value": "0x180000000000000"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a8_32bit_fixed.hal_format",
+      "value": "0x1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a8_32bit_fixed.recordable",
+      "value": "true"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a8_32bit_fixed.framebuffer_target",
+      "value": "true"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_32bit_fixed.hal_format",
+      "value": "0x2"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_32bit_fixed.recordable",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_32bit_fixed.framebuffer_target",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_24bit_fixed.hal_format",
+      "value": "0x2"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_24bit_fixed.recordable",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_24bit_fixed.framebuffer_target",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r5_g6_b5_a0_16bit_fixed.hal_format",
+      "value": "0x4"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r5_g6_b5_a0_16bit_fixed.recordable",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r5_g6_b5_a0_16bit_fixed.framebuffer_target",
+      "value": "true"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r10_g10_b10_a2_32bit_fixed.hal_format",
+      "value": "0x2b"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r10_g10_b10_a2_32bit_fixed.recordable",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r10_g10_b10_a2_32bit_fixed.framebuffer_target",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r16_g16_b16_a16_64bit_float.hal_format",
+      "value": "0x16"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r16_g16_b16_a16_64bit_float.recordable",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r16_g16_b16_a16_64bit_float.framebuffer_target",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_24bit_yuv_special.hal_format",
+      "value": "0x23"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.arm.egl.configs.r8_g8_b8_a0_24bit_yuv_special.framebuffer_target",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vndk.version",
+      "value": "33"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.first_api_level",
+      "value": "33"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.debugfs_restrictions.enabled",
+      "value": "true"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.build.security_patch",
+      "value": "2026-04-05"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.board",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.board.platform",
+      "value": "mt5873"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.build.ab_update",
+      "value": "true"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.disable_mem_report",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.opengles.version",
+      "value": "196610"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.wifi.sap.interface",
+      "value": "ap0"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.vndk.version",
+      "value": "33.1.0"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.audiosync",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.av_record_lib",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.cec.hal",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.twoworlds",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.epg.existed",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.divx.existed",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.setup.audtrack.existed",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.config.ts.date.time",
+      "value": "false"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.poweron.unmute",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.record.setting.existed",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.timesync.existed",
+      "value": "0"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.sys_driver_only",
+      "value": "0"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.marketregion",
+      "value": "cn"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.system.subtitle.existed",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mstar.str.enable",
+      "value": "user_mode"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "vendor.mstar.build.mstartv",
+      "value": "mi3"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.oem.lock",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.mtk.oem.key",
+      "value": "ATV00106521"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.crypto.dm_default_key.options_format.version",
+      "value": "2"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "vendor.mtk.build.mtktv",
+      "value": "mi3"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.vendor.camera.support",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.customer",
+      "value": "ruijiang"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.surface_flinger.update_device_product_info_on_hotplug_reconnect",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.productid",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.identification",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.model",
+      "value": "Projetor"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.yunota.version",
+      "value": "RUIOS.8054.1.0.1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.buildtime",
+      "value": "20260930074038"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.support.otayun",
+      "value": "1"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.yunota.baseurl",
+      "value": "https://www.szrjyun.com/ota/android/"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.yunota.url",
+      "value": "mt9660/8054/8054_ota.json"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.yunota.bin",
+      "value": "upgrade_image.pkg"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.rjpj.yunota.zip",
+      "value": "RJMT9660_firmware_8054.zip"
+    },
+    {
+      "file": "vendor_a/build.prop",
+      "key": "ro.product.ota",
+      "value": "V618RJENHD"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.product.odm_dlkm.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.product.odm_dlkm.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.product.odm_dlkm.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.product.odm_dlkm.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.product.odm_dlkm.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/odm_dlkm/etc/build.prop",
+      "key": "ro.odm_dlkm.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.product.vendor_dlkm.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.product.vendor_dlkm.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.product.vendor_dlkm.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.product.vendor_dlkm.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.product.vendor_dlkm.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/vendor_dlkm/etc/build.prop",
+      "key": "ro.vendor_dlkm.build.version.sdk",
+      "value": "33"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.product.odm.brand",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.product.odm.device",
+      "value": "mt5873"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.product.odm.manufacturer",
+      "value": "MediaTek"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.product.odm.model",
+      "value": "DEMO"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.product.odm.name",
+      "value": "mt5873_cd"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.product.cpu.abilist",
+      "value": "armeabi-v7a,armeabi"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.product.cpu.abilist32",
+      "value": "armeabi-v7a,armeabi"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.product.cpu.abilist64",
+      "value": ""
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.date",
+      "value": "Wed Sep 30 07:41:37 UTC 2026"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.date.utc",
+      "value": "1790754097"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.fingerprint",
+      "value": "MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.id",
+      "value": "TP1A.220624.021.A1"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.tags",
+      "value": "test-keys"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.type",
+      "value": "userdebug"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.version.incremental",
+      "value": "eng.suhaix.20260930.074037"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.version.release",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.version.release_or_codename",
+      "value": "13"
+    },
+    {
+      "file": "vendor_a/odm/etc/build.prop",
+      "key": "ro.odm.build.version.sdk",
+      "value": "33"
+    }
+  ],
+  "oem_software_apk_versions": [
+    {
+      "file": "system_a/system/app/KuSettings/KuSettings.apk",
+      "package": "package: name='com.my.settings' versionCode='1' versionName='1.0' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'"
+    },
+    {
+      "file": "system_a/system/app/KuSetupWizard/KuSetupWizard.apk",
+      "package": "package: name='com.android.provision' versionCode='1' versionName='1.0' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'"
+    },
+    {
+      "file": "system_a/system/app/zxlauncher/zxlauncher.apk",
+      "package": "package: name='com.zeasn.launcher' versionCode='1009300' versionName='1.0.93' platformBuildVersionName='10' platformBuildVersionCode='29' compileSdkVersion='29' compileSdkVersionCodename='10'"
+    },
+    {
+      "file": "system_a/system/app/trdservice/trdservice.apk",
+      "package": "package: name='com.trd.service' versionCode='33' versionName='13' platformBuildVersionName='13' platformBuildVersionCode='33' compileSdkVersion='33' compileSdkVersionCodename='13'"
+    },
+    {
+      "file": "system_a/system/app/TrdFactoryTest/TrdFactoryTest.apk",
+      "package": "package: name='com.trd.factory' versionCode='1' versionName='1.0' platformBuildVersionName='9' platformBuildVersionCode='28' compileSdkVersion='28' compileSdkVersionCodename='9'"
+    },
+    {
+      "file": "system_a/system/priv-app/RuiYunOta/RuiYunOta.apk",
+      "package": "package: name='com.rjpj.yunota' versionCode='1' versionName='1.0' platformBuildVersionName='13' platformBuildVersionCode='33' compileSdkVersion='33' compileSdkVersionCodename='13'"
+    },
+    {
+      "file": "system_ext_a/app/Factory/Factory.apk",
+      "package": "package: name='mediatek.factorymenu.ui' versionCode='1' versionName='1.0' platformBuildVersionName='13' platformBuildVersionCode='33' compileSdkVersion='33' compileSdkVersionCodename='13'"
+    },
+    {
+      "file": "system_ext_a/priv-app/TvSettingsPlus/TvSettingsPlus.apk",
+      "package": "package: name='com.android.tv.settings' versionCode='1' versionName='1.0' platformBuildVersionName='13' platformBuildVersionCode='33' compileSdkVersion='33' compileSdkVersionCodename='13'"
+    }
+  ],
+  "version_candidates": [
+    {
+      "file": "product_a/etc/bluetooth/auto_pair_config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "product_a/etc/selinux/product_mac_permissions.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><!-- AUTOGENERATED FILE DO NOT MODIFY --><policy></policy>"
+    },
+    {
+      "file": "product_a/etc/sysconfig/atv-component-overrides.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "product_a/etc/vintf/compatibility_matrix.xml#L5",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/init.trd.rc#L59",
+      "category": "android_config",
+      "line": "on property:vendor.trd.driver.ready=1"
+    },
+    {
+      "file": "system_a/init.trd.rc#L64",
+      "category": "android_config",
+      "line": "on property:vendor.wifi_name=aic8800d80"
+    },
+    {
+      "file": "system_a/init.trd.rc#L68",
+      "category": "android_config",
+      "line": "on property:persist.vendor.bt_module=aic_btusb"
+    },
+    {
+      "file": "system_a/system/etc/init/dmesgd.rc#L3",
+      "category": "android_config",
+      "line": "on property:ro.product.cpu.abilist64=* && property:bootreceiver.enable=1"
+    },
+    {
+      "file": "system_a/system/etc/init/dmesgd.rc#L7",
+      "category": "android_config",
+      "line": "on property:ro.product.cpu.abilist64=* && property:bootreceiver.enable=1 && property:dmesgd.start=1"
+    },
+    {
+      "file": "system_a/system/etc/init/rckeydetect.rc#L12",
+      "category": "android_config",
+      "line": "on property:vendor.mtk.bootvideo.finished=1"
+    },
+    {
+      "file": "system_a/system/etc/init/netd.rc#L29",
+      "category": "android_config",
+      "line": "on property:persist.vendor.net.doxlat=true"
+    },
+    {
+      "file": "system_a/system/etc/init/netd.rc#L32",
+      "category": "android_config",
+      "line": "on property:persist.vendor.net.doxlat=false"
+    },
+    {
+      "file": "system_a/system/etc/init/init-debug.rc#L10",
+      "category": "android_config",
+      "line": "on early-init && property:ro.product.debugfs_restrictions.enabled=true"
+    },
+    {
+      "file": "system_a/system/etc/init/init-debug.rc#L14",
+      "category": "android_config",
+      "line": "on property:sys.boot_completed=1 && property:ro.product.debugfs_restrictions.enabled=true && \\"
+    },
+    {
+      "file": "system_a/system/etc/sysconfig/preinstalled-packages-platform.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "system_a/system/etc/sysconfig/framework-sysconfig.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "system_a/system/etc/sysconfig/hiddenapi-package-whitelist.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L8",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L513",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1403",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1423",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1455",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1471",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1483",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1495",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1511",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1523",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1535",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.165\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L1547",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2445",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2465",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2481",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2497",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2525",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2541",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2557",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2577",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2589",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2601",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2613",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2625",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.105\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L2637",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3523",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3547",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3575",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3591",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3607",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3627",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3639",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3651",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3663",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.4.xml#L3675",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.42\" level=\"4\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L7",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L782",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L1852",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L1876",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L1936",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L1972",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L1984",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L1996",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L2008",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L2020",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L2032",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L2048",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.107\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L2060",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3130",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3154",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3218",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3258",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3270",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3282",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3294",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3306",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3318",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.7.xml#L3334",
+      "category": "android_config",
+      "line": "<kernel version=\"5.15.41\" level=\"7\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L8",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L481",
+      "category": "android_config",
+      "line": "<kernel version=\"4.4.107\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L1219",
+      "category": "android_config",
+      "line": "<kernel version=\"4.4.107\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L1231",
+      "category": "android_config",
+      "line": "<kernel version=\"4.4.107\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L1255",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.84\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L1997",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.84\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2013",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.84\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2025",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.84\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2037",
+      "category": "android_config",
+      "line": "<kernel version=\"4.9.84\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2061",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.42\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2811",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.42\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2827",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.42\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2839",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.42\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.3.xml#L2851",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.42\" level=\"3\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest.xml#L5",
+      "category": "android_config",
+      "line": "<manifest version=\"5.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L8",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L557",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1555",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1579",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1619",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1643",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1655",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1667",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1679",
+      "category": "android_config",
+      "line": "<kernel version=\"4.14.180\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L1691",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2693",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2717",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2757",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2781",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2793",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2805",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2817",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.110\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L2829",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3819",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3843",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3891",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3915",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3927",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3939",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3951",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.5.xml#L3963",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.61\" level=\"5\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.device.xml#L5",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L8",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"framework\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L642",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1676",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1700",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1740",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1764",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1776",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1788",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1800",
+      "category": "android_config",
+      "line": "<kernel version=\"4.19.191\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L1812",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2830",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2854",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2914",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2946",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2962",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2974",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2986",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L2998",
+      "category": "android_config",
+      "line": "<kernel version=\"5.4.86\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L3010",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4028",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4052",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4112",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4148",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4160",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4172",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4184",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/compatibility_matrix.6.xml#L4196",
+      "category": "android_config",
+      "line": "<kernel version=\"5.10.43\" level=\"6\">"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/icu4j-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/services-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/documents-ui-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/calendar-provider-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/framework-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/contacts-provider-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/compatconfig/TeleService-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.usb.rc#L22",
+      "category": "android_config",
+      "line": "on property:vendor.sys.usb.adb.disabled=*"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L91",
+      "category": "android_config",
+      "line": "on early-init && property:ro.product.cpu.abilist32=*"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L93",
+      "category": "android_config",
+      "line": "on early-init && property:ro.product.cpu.abilist64=*"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L95",
+      "category": "android_config",
+      "line": "on property:apexd.status=ready && property:ro.product.cpu.abilist32=*"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L97",
+      "category": "android_config",
+      "line": "on property:apexd.status=ready && property:ro.product.cpu.abilist64=*"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L641",
+      "category": "android_config",
+      "line": "on late-fs && property:ro.kernel.version=4.9"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L643",
+      "category": "android_config",
+      "line": "on late-fs && property:ro.kernel.version=4.14"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L645",
+      "category": "android_config",
+      "line": "on late-fs && property:ro.kernel.version=4.19"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L647",
+      "category": "android_config",
+      "line": "on late-fs && property:ro.kernel.version=5.4"
+    },
+    {
+      "file": "system_a/system/etc/init/hw/init.rc#L653",
+      "category": "android_config",
+      "line": "on property:ro.product.cpu.abilist64=* && property:bootreceiver.enable=1"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest/manifest_media_c2_software.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest/android.hidl.allocator@1.0-service.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest/android.system.keystore2-service.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest/android.frameworks.stats@1.0-service.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest/manifest_android.frameworks.cameraservice.service@2.2.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/etc/vintf/manifest/android.system.suspend@1.0-service.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"framework\">"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-el.lic.txt#L8",
+      "category": "android_config",
+      "line": "% version: 5.0"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-pt.lic.txt#L88",
+      "category": "android_config",
+      "line": "% Version: 1.3 Release date: 12/08/2015"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-pt.lic.txt#L92",
+      "category": "android_config",
+      "line": "% Version: 1.2 Release date: 07/21/1996"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-pt.lic.txt#L95",
+      "category": "android_config",
+      "line": "% Version: 1.1 Release date: 04/12/1994"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-pt.lic.txt#L98",
+      "category": "android_config",
+      "line": "% Version: 1.0 Release date: 02/13/1987"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-it.lic.txt#L8",
+      "category": "android_config",
+      "line": "% version: 4.9 2014/04/22"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-it.lic.txt#L17",
+      "category": "android_config",
+      "line": "%         version: 1.3"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-fr.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: V2.12 2002/12/11"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-sk.lic.txt#L3",
+      "category": "android_config",
+      "line": "% Version: 2021-07-21"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-lv.lic.txt#L11",
+      "category": "android_config",
+      "line": "% version: 0.3, 2005-09-14"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-lv.lic.txt#L20",
+      "category": "android_config",
+      "line": "%         version: 2.1"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-lv.lic.txt#L24",
+      "category": "android_config",
+      "line": "%         version: 2"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-eu.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: June 2008"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-bg.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 1.7, July 2008"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-cs.lic.txt#L3",
+      "category": "android_config",
+      "line": "% Version: 2021-07-21"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-ga.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 1.0 (2004-01-23:15:46:12 CST)"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-gl.lic.txt#L12",
+      "category": "android_config",
+      "line": "% version: 2.4 2010/04/23"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-cy.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 1996"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-af.lic.txt#L8",
+      "category": "android_config",
+      "line": "% version: 1.0 (September 2013)"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-da.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 2011-01-11"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-la.lic.txt#L9",
+      "category": "android_config",
+      "line": "% version: 3.201 2016-08-28"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-la.lic.txt#L38",
+      "category": "android_config",
+      "line": "%         version: 1.0"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-la.lic.txt#L43",
+      "category": "android_config",
+      "line": "%         version: 3.1"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-la.lic.txt#L51",
+      "category": "android_config",
+      "line": "%         version: 3.2"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-la.lic.txt#L56",
+      "category": "android_config",
+      "line": "%         version: 3.201"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-hy.lic.txt#L12",
+      "category": "android_config",
+      "line": "% Version: May 2010"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-sl.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 2007-01-29"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-be.lic.txt#L10",
+      "category": "android_config",
+      "line": "% version: 1.01 (October 2016)"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-cu.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 1.1"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-uk.lic.txt#L8",
+      "category": "android_config",
+      "line": "% version: 2001/05/10"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-tk.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: 0.1 16 March 2010"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-hu.lic.txt#L10",
+      "category": "android_config",
+      "line": "% Version: MPL 1.1/GPL 2.0/LGPL 2.1"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-nl.lic.txt#L54",
+      "category": "android_config",
+      "line": "4. Date and version: see the file datetimeversion.txt"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-mul-ethi.lic.txt#L8",
+      "category": "android_config",
+      "line": "% version: 0.2 2016-05-22"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-ka.lic.txt#L9",
+      "category": "android_config",
+      "line": "% version: 0.3 (April 2013)"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-sq.lic.txt#L5",
+      "category": "android_config",
+      "line": "% version: 2020-09-21"
+    },
+    {
+      "file": "system_a/system/usr/hyphen-data/hyph-mn-cyrl.lic.txt#L3",
+      "category": "android_config",
+      "line": "% version: v1.2 2008/03/23"
+    },
+    {
+      "file": "system_a/system/apex/com.android.tethering.inprocess/etc/compatconfig/connectivity-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/apex/com.android.wifi/etc/compatconfig/wifi-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/apex/com.android.tzdata/etc/tz/telephonylookup.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!--"
+    },
+    {
+      "file": "system_a/system/apex/com.android.tzdata/etc/tz/tzlookup.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!--"
+    },
+    {
+      "file": "system_a/system/apex/com.android.mediaprovider/etc/compatconfig/media-provider-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/apex/com.android.art/etc/compatconfig/libcore-platform-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_a/system/apex/com.android.media.swcodec/etc/media_codecs.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L10",
+      "category": "android_config",
+      "line": "#vendorId = 0x000F"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L13",
+      "category": "android_config",
+      "line": "vendorId = 0x0046"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L18",
+      "category": "android_config",
+      "line": "#vendorIdSource = 0x0001"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L24",
+      "category": "android_config",
+      "line": "productId = 0x1200"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L25",
+      "category": "android_config",
+      "line": "version = 0x1436"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L42",
+      "category": "android_config",
+      "line": "#vendorId = 0x000F"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L47",
+      "category": "android_config",
+      "line": "#vendorIdSource = 0x0001"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L53",
+      "category": "android_config",
+      "line": "#productId = 0x0000"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L54",
+      "category": "android_config",
+      "line": "#version = 0x0000"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L71",
+      "category": "android_config",
+      "line": "#vendorId = 0x000F"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L76",
+      "category": "android_config",
+      "line": "#vendorIdSource = 0x0001"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L82",
+      "category": "android_config",
+      "line": "#productId = 0x0000"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/bluetooth/bt_did.conf#L83",
+      "category": "android_config",
+      "line": "#version = 0x0000"
+    },
+    {
+      "file": "system_a/system/apex/com.android.btservices/etc/compatconfig/bluetooth-compat-config.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='utf-8'?>"
+    },
+    {
+      "file": "system_ext_a/etc/selinux/system_ext_mac_permissions.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><!-- AUTOGENERATED FILE DO NOT MODIFY --><policy></policy>"
+    },
+    {
+      "file": "system_ext_a/etc/init/blur_sysprop_notifier.rc#L8",
+      "category": "android_config",
+      "line": "on property:vendor.media.gpu.readable=*"
+    },
+    {
+      "file": "system_ext_a/etc/vintf/manifest.xml#L5",
+      "category": "android_config",
+      "line": "<manifest version=\"5.0\" type=\"framework\">"
+    },
+    {
+      "file": "vendor_a/etc/audio_effects.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_effects.xml#L2",
+      "category": "android_config",
+      "line": "<audio_effects_conf version=\"2.0\" xmlns=\"http://schemas.android.com/audio/audio_effects_conf/v2_0\">"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_configuration.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_configuration.xml#L17",
+      "category": "android_config",
+      "line": "<configuration version=\"1.0\" xmlns:xi=\"http://www.w3.org/2001/XInclude\">"
+    },
+    {
+      "file": "vendor_a/etc/hidden-applications-configs.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/surround_sound_configuration_5_0.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
+    },
+    {
+      "file": "vendor_a/etc/version.txt#L1",
+      "category": "android_config",
+      "line": "export VERSION := t-apollo-mp-2101-cnt-mt5873-71-001-130"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L19",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.h263.encoder\" type=\"video/3gpp\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L22",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.avc.encoder\" type=\"video/avc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L28",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.avc.encoder\" type=\"video/avc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L34",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.hevc.encoder\" type=\"video/hevc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L37",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.mpeg4.encoder\" type=\"video/mp4v-es\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L40",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.vp8.encoder\" type=\"video/x-vnd.on2.vp8\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L48",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.h263.decoder\" type=\"video/3gpp\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L52",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.h263.decoder\" type=\"video/3gpp\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L56",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.avc.decoder\" type=\"video/avc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L62",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.avc.decoder\" type=\"video/avc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L68",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.hevc.decoder\" type=\"video/hevc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L75",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.hevc.decoder\" type=\"video/hevc\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L83",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.mpeg4.decoder\" type=\"video/mp4v-es\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L88",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.mpeg4.decoder\" type=\"video/mp4v-es\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L92",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.vp8.decoder\" type=\"video/x-vnd.on2.vp8\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L98",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.vp8.decoder\" type=\"video/x-vnd.on2.vp8\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L104",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.android.vp9.decoder\" type=\"video/x-vnd.on2.vp9\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_performance.xml#L110",
+      "category": "android_config",
+      "line": "<MediaCodec name=\"c2.mtk.vp9.decoder\" type=\"video/x-vnd.on2.vp9\" update=\"true\">"
+    },
+    {
+      "file": "vendor_a/etc/r_submix_audio_policy_configuration.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_google_video_le.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_default_stream_volumes.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_stream_volumes.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_volumes.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/bluetooth_audio_policy_configuration.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_configuration.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_configuration.xml#L17",
+      "category": "android_config",
+      "line": "<audioPolicyConfiguration version=\"7.1\" xmlns:xi=\"http://www.w3.org/2001/XInclude\">"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_configuration.xml#L18",
+      "category": "android_config",
+      "line": "<!-- version section contains a \"version\" tag in the form \"major.minor\" e.g version=\"1.0\" -->"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_product_strategies.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
+    },
+    {
+      "file": "vendor_a/etc/media_profiles_V1_0.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/feature_default.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+    },
+    {
+      "file": "vendor_a/etc/default_volume_tables.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_criterion_types.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" ?>"
+    },
+    {
+      "file": "vendor_a/etc/usb_audio_policy_configuration.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+    },
+    {
+      "file": "vendor_a/etc/tv-settings-configs.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/audio_policy_engine_criteria.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version='1.0' encoding='UTF-8'?>"
+    },
+    {
+      "file": "vendor_a/etc/media_codecs_google_audio.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
+    },
+    {
+      "file": "vendor_a/firmware/bt_mt7961_1_2.cfg#L41",
+      "category": "android_config",
+      "line": "VENDOR_CMD000: 0x98, 0xFD, 0x02, 0x46, 0x01,"
+    },
+    {
+      "file": "vendor_a/firmware/bt_mt7961_1_2.cfg#L44",
+      "category": "android_config",
+      "line": "VENDOR_CMD001: 0x96, 0xFD, 0x18, 0x03, 0x03, 0x06, 0x0E, 0x03, 0x03, 0x07, 0x0E, 0x03, 0x03, 0x08, 0x0E, 0x03, 0x03, 0x0B, 0x11, 0x03, 0x03, 0x0D, 0x0C, 0x03, 0x03, 0x13, 0x10,"
+    },
+    {
+      "file": "vendor_a/firmware/bt_mt7961_1a_2.cfg#L40",
+      "category": "android_config",
+      "line": "VENDOR_CMD000: 0x98, 0xFD, 0x02, 0x46, 0x01,"
+    },
+    {
+      "file": "vendor_a/firmware/bt_mt7961_1a_2.cfg#L43",
+      "category": "android_config",
+      "line": "VENDOR_CMD001: 0x96, 0xFD, 0x18, 0x03, 0x03, 0x06, 0x0E, 0x03, 0x03, 0x07, 0x0E, 0x03, 0x03, 0x08, 0x0E, 0x03, 0x03, 0x0B, 0x11, 0x03, 0x03, 0x0D, 0x0C, 0x03, 0x03, 0x13, 0x10,"
+    },
+    {
+      "file": "vendor_a/etc/parameter-framework/ParameterFrameworkConfigurationPolicy.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/gralloc/dpu_aeu.xml#L1",
+      "category": "android_config",
+      "line": "<capabilities version=\"0.1\" ip=\"dpu_aeu\">"
+    },
+    {
+      "file": "vendor_a/etc/gralloc/vpu.xml#L1",
+      "category": "android_config",
+      "line": "<capabilities version=\"0.1\" ip=\"vpu\">"
+    },
+    {
+      "file": "vendor_a/etc/gralloc/gdec.xml#L1",
+      "category": "android_config",
+      "line": "<capabilities version=\"0.1\" ip=\"gdec\">"
+    },
+    {
+      "file": "vendor_a/etc/gralloc/cam.xml#L1",
+      "category": "android_config",
+      "line": "<capabilities version=\"0.1\" ip=\"cam\">"
+    },
+    {
+      "file": "vendor_a/etc/gralloc/gpu.xml#L1",
+      "category": "android_config",
+      "line": "<capabilities version=\"0.1\" ip=\"gpu\">"
+    },
+    {
+      "file": "vendor_a/etc/gralloc/dpu.xml#L1",
+      "category": "android_config",
+      "line": "<capabilities version=\"0.1\" ip=\"dpu\">"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L7",
+      "category": "android_config",
+      "line": "#exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L18",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L24",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L35",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L39",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L75",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L98",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L121",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L128",
+      "category": "android_config",
+      "line": "#exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L134",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules  \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L143",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L147",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules   \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L158",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L162",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L167",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L177",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L181",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L199",
+      "category": "android_config",
+      "line": "on early-boot && property:vendor.mtk.5g=enable"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L230",
+      "category": "android_config",
+      "line": "exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L235",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L250",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L256",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L262",
+      "category": "android_config",
+      "line": "exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules\t\\"
+    },
+    {
+      "file": "vendor_a/etc/init/init.insmod.rc#L269",
+      "category": "android_config",
+      "line": "on property:vendor.mtk.wifi.driver=mt7663"
+    },
+    {
+      "file": "vendor_a/etc/init/boringssl_self_test.rc#L2",
+      "category": "android_config",
+      "line": "on early-init && property:ro.product.cpu.abilist32=*"
+    },
+    {
+      "file": "vendor_a/etc/init/boringssl_self_test.rc#L4",
+      "category": "android_config",
+      "line": "on early-init && property:ro.product.cpu.abilist64=*"
+    },
+    {
+      "file": "vendor_a/etc/init/init.fusion.rc#L219",
+      "category": "android_config",
+      "line": "on property:sys.boot_completed=1 && property:vendor.mtk.wifi.driver=mt6639"
+    },
+    {
+      "file": "vendor_a/etc/init/init.fusion.rc#L234",
+      "category": "android_config",
+      "line": "on property:ro.vendor.mtk.oem.lock=1"
+    },
+    {
+      "file": "vendor_a/etc/init/init.fusion.rc#L242",
+      "category": "android_config",
+      "line": "on property:vendor.speech.working=1"
+    },
+    {
+      "file": "vendor_a/etc/init/init.fusion.rc#L245",
+      "category": "android_config",
+      "line": "on property:vendor.speech.working=0"
+    },
+    {
+      "file": "vendor_a/etc/init/init.fusion.rc#L264",
+      "category": "android_config",
+      "line": "on property:vendor.mtk.stay.awake=enable"
+    },
+    {
+      "file": "vendor_a/etc/init/init.fusion.rc#L268",
+      "category": "android_config",
+      "line": "on property:vendor.mtk.stay.awake=disable"
+    },
+    {
+      "file": "vendor_a/etc/wifi/p2p_supplicant.conf#L11",
+      "category": "android_config",
+      "line": "update_config=1"
+    },
+    {
+      "file": "vendor_a/etc/wifi/wpa_supplicant.conf#L7",
+      "category": "android_config",
+      "line": "update_config=1"
+    },
+    {
+      "file": "vendor_a/etc/firmware/fw_ble_scan_ad_filter.bin#L5979",
+      "category": "android_config",
+      "line": "sdk build: %s"
+    },
+    {
+      "file": "vendor_a/etc/firmware/fw_ble_scan_ad_filter.bin#L5980",
+      "category": "android_config",
+      "line": "usr build: %s"
+    },
+    {
+      "file": "vendor_a/etc/firmware/fw_ble_scan_ad_filter.bin#L7303",
+      "category": "android_config",
+      "line": "   frame_cntl=0x%x,product_id=0x%x,frame_counter=0x%x,pair_id=0x%x,sn=0x%x,"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest.xml#L5",
+      "category": "android_config",
+      "line": "<manifest version=\"5.0\" type=\"device\" target-level=\"7\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/compatibility_matrix.xml#L5",
+      "category": "android_config",
+      "line": "<compatibility-matrix version=\"5.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/vendor.trd.hardware.tof@1.0.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/qos-mediatek.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.thermal@2.0-service.mediatek.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.drm-service.chinadrm.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.drm-service.chinadrm.xml#L16",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.clearkey.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.clearkey.xml#L16",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/vendor.mediatek.camera.provider.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/power-mediatek.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.wifi.supplicant.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.wifi.hostapd.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/memtrack-mediatek.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.cas@1.2-service.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/bluetooth_audio.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/vendor.trd.hardware.hwtrd@1.0.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.health-service.mediatek.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.security.keymint-service.tee.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml#L1",
+      "category": "android_config",
+      "line": "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml#L16",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/lights-mtk-default.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/etc/vintf/manifest/android.hardware.boot@1.2.xml#L1",
+      "category": "android_config",
+      "line": "<manifest version=\"1.0\" type=\"device\">"
+    },
+    {
+      "file": "vendor_a/bin/autolog/autolog.sh#L66",
+      "category": "android_config",
+      "line": "echo \"Autolog Framework. Version: $AUTOLOG_VERSION\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/symptom/sym_debug/bugreport.sh#L35",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/symptom/sym_debug/debug.sh#L471",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/audio/audio_merak_cn.sh#L9",
+      "category": "android_config",
+      "line": "BOARD_NAME=$(getprop ro.board.platform)"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/svp/svp.sh#L81",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/optee/optee.sh#L189",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/hdmirx/hdmirx.sh#L70",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/i2c.sh#L19",
+      "category": "android_config",
+      "line": "BOARD_INI=/vendor/tvconfig/config/board.ini"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/i2c.sh#L97",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/bdma.sh#L80",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/ir.sh#L100",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/peripheral.sh#L120",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/emac.sh#L77",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/hwsem.sh#L78",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/pwm.sh#L19",
+      "category": "android_config",
+      "line": "BOARD_INI=/vendor/tvconfig/config/board.ini"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/peripheral/pwm.sh#L92",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/graphic/graphic.sh#L107",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/common/common.sh#L100",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/video/video_aosp.sh#L167",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/bsp/video/video.sh#L167",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/bluetooth/bluetooth_android.sh#L167",
+      "category": "android_config",
+      "line": "strings /vendor/lib/modules/btmtk_usb_unify.ko | grep ^version= >> $dump_fw_ver_info"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/bluetooth/bluetooth_android.sh#L168",
+      "category": "android_config",
+      "line": "strings /vendor/lib/modules/btmtk_usb.ko | grep ^version= >> $dump_fw_ver_info"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/bluetooth/bluetooth_android.sh#L204",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/cast/cast.sh#L190",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/camera/camera.sh#L103",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/example/example.sh#L90",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/network/ethernet_android.sh#L243",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/network/network_linux.sh#L51",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/dfb/dfb.sh#L187",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/cec/cec.sh#L185",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/light/lightsHAL.sh#L126",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mbf/mbf_an.sh#L69",
+      "category": "android_config",
+      "line": "echo \"vendor_all_loglevel=7\" > $MBF_BOOT_LOG;"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mbf/mbf_an.sh#L71",
+      "category": "android_config",
+      "line": "echo \"vendor_all_loglevel=7\" >> $MBF_BOOT_LOG;"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mbf/mbf_an.sh#L73",
+      "category": "android_config",
+      "line": "echo \"vendor_log_path=${MBF_VENDOR_LOG_FILE}\" >> $MBF_BOOT_LOG;"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mbf/mbf_an.sh#L83",
+      "category": "android_config",
+      "line": "echo \"vendor_all_loglevel=7\" >> $MBF_BOOT_LOG;"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mbf/mbf_an.sh#L242",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${MBF_LOGGER_VERSION}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/chinadrm.sh#L87",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/hdcp2x.sh#L85",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/gatekeeper.sh#L86",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/intertaca.sh#L103",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/playready.sh#L100",
+      "category": "android_config",
+      "line": "chcon -R u:object_r:vendor_media_data_file:s0 $PLAYREADY_LOG_INI_PATH/playready.ini"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/playready.sh#L136",
+      "category": "android_config",
+      "line": "chcon -R u:object_r:vendor_media_data_file:s0 $PLAYREADY_LOG_INI_PATH/playready.ini"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/playready.sh#L212",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/cussetting.sh#L89",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/widevine.sh#L157",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/widevine_an.sh#L169",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/security/keymaster.sh#L87",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/fapi/fapi.sh#L90",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/androidsystem/otalog.sh#L89",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/androidsystem/androidlog.sh#L112",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/wfd.sh#L252",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${WFD_LOGGER_VERSION}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/wfd_temp.sh#L417",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${WFD_LOGGER_VERSION}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/youtube_an.sh#L155",
+      "category": "android_config",
+      "line": "version=\"v2.01.18\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/youtube_an.sh#L180",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${version}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/primevideo.sh#L244",
+      "category": "android_config",
+      "line": "version=\"v2.07.15\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/primevideo.sh#L275",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${version}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/cobalt.sh#L331",
+      "category": "android_config",
+      "line": "version=\"v2.07.15\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/cobalt.sh#L360",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${version}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/primevideo_an.sh#L113",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/csp/dial.sh#L74",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/stress_aosp/stress_test.sh#L239",
+      "category": "android_config",
+      "line": "echo \"@@@@@@@ memory dump begin Version:2022_6_27@@@@@@@\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/localmm/localmm_android.sh#L110",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/hbbtv/wp_media_log.sh#L164",
+      "category": "android_config",
+      "line": "#     chown vendor_wpf_browser:vendor_wpf_browser ${log_path} -R"
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/hbbtv/wp_media_log.sh#L234",
+      "category": "android_config",
+      "line": "echo \"Browser SDK Version: $(<${ROOT_3RD_PATH}/wpf_browser/browser/sdk_version.txt)\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/hbbtv/hbbtv_MLR53.sh#L354",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${HBBTV_LOGGER_VERSION}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/hbbtv/cmpb.sh#L366",
+      "category": "android_config",
+      "line": "echo -e \"${COLOR_YELLOW}Version: ${HBBTV_LOGGER_VERSION}${COLOR_REST}\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mm/mi_mm_linux.sh#L105",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mm/mm_linux.sh#L682",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mm/mm_aosp_an.sh#L458",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mm/mm_mix_mode_an.sh#L681",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/mm/mm_aow_an.sh#L300",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/webui/webui_linux.sh#L155",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/graphic/graphic.sh#L189",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/GAM/GAM.sh#L40",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    },
+    {
+      "file": "vendor_a/bin/autolog/modules/platform/power/power.sh#L93",
+      "category": "android_config",
+      "line": "version=\"v1.0\""
+    }
+  ],
+  "inspected_config_file_count": 736,
+  "flashed_image_formats": [
+    {
+      "image": "3rd_a_a.img",
+      "size": 31457280,
+      "file_type": "Squashfs filesystem, little endian, version 4.0, lzo compressed, 697267 bytes, 19 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:50 2026"
+    },
+    {
+      "image": "boot_a.img",
+      "size": 78643200,
+      "file_type": "Android bootimg, kernel, ramdisk (0x1000000), page size: 2048, cmdline (androidboot.boot_devices=1c660000.mtk-mmc-fcie bootvideo.enable=1 buildvariant=userdebug)"
+    },
+    {
+      "image": "bootdata_a.img",
+      "size": 41943040,
+      "file_type": "Linux rev 1.0 ext4 filesystem data, UUID=87818157-033f-4c84-be2b-21f218b6b4d4, volume name \"mnt/vendor/bootd/mnt/vendor/bootdata\" (extents) (large files) (huge files)"
+    },
+    {
+      "image": "emmc_boot.img",
+      "size": 451840,
+      "file_type": "data"
+    },
+    {
+      "image": "linux_rootfs_a_a.img",
+      "size": 57671680,
+      "file_type": "Squashfs filesystem, little endian, version 4.0, lzo compressed, 48992685 bytes, 1124 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:49 2026"
+    },
+    {
+      "image": "mboot_a.img",
+      "size": 2658304,
+      "file_type": "data"
+    },
+    {
+      "image": "project_id.img",
+      "size": 5242880,
+      "file_type": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "image": "tvconfig_a.img",
+      "size": 157286400,
+      "file_type": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "image": "tvservice_a.img",
+      "size": 175112192,
+      "file_type": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    }
+  ],
+  "method": "read-only scan; OTA version may instead live in factory partitions or /data"
+}
