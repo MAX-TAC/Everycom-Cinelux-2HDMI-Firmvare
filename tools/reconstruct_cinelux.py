@@ -132,8 +132,10 @@ with SRC.open("rb") as inp,superpath.open("wb+") as superout:
             if exp and item["decoded_bytes"]>exp:
                 item["warning"]="Decompressed file larger than expected buffer"
             if obj["sparse"] and "super" in obj["target"]:
-                item["sparse_result"]=unsparse(decoded,superout,super_cursor)
-                super_cursor+=item["sparse_result"]["expanded_bytes"]
+                item["sparse_result"]=unsparse(decoded,superout,0)
+                # Every sparse fragment addresses the same full logical super device.
+                # RAW/FILL overlay previous content; DONT_CARE leaves other fragments untouched.
+                super_cursor=max(super_cursor,item["sparse_result"]["expanded_bytes"])
             elif obj["target"]:
                 target=obj["target"][0]
                 # Keep one copy for A/B duplicated payloads, skip private data.
