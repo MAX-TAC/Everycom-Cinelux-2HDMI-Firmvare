@@ -1,0 +1,941 @@
+{
+ "shared_paths": 3941,
+ "identical_files": 2155,
+ "changed_files": 1786,
+ "only_8052": [
+  "system/system/app/KuSetupWizard/KuSetupWizard.apk",
+  "system/system/app/KuSetupWizard/oat/arm/KuSetupWizard.odex",
+  "system/system/app/KuSetupWizard/oat/arm/KuSetupWizard.vdex",
+  "system/system/lib/libfactoryi2c_jni.so",
+  "system/system/lib/librjpj_private_function.so",
+  "system/system/lib/libsettingsi2c_jni.so",
+  "vendor/lib/modules/ruimotor.ko",
+  "vendor/lib/modules/stmvl53l1.ko"
+ ],
+ "only_8053": [
+  "system/system/priv-app/Telecom/Telecom.apk",
+  "system/system/priv-app/Telecom/oat/arm/Telecom.odex",
+  "system/system/priv-app/Telecom/oat/arm/Telecom.vdex",
+  "system_ext/app/A2dpSinkPlayerTCN/A2dpSinkPlayerTCN.apk",
+  "system_ext/etc/permissions/com.android.provision.xml",
+  "system_ext/priv-app/Provision/Provision.apk",
+  "system_ext/priv-app/Provision/oat/arm/Provision.odex",
+  "system_ext/priv-app/Provision/oat/arm/Provision.vdex"
+ ],
+ "apps": [
+  {
+   "path": "product/app/Camera2/Camera2.apk",
+   "one_version": "2.0.002",
+   "two_version": "2.0.002",
+   "same_sha": true
+  },
+  {
+   "path": "product/app/LatinIME/LatinIME.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "product/app/ModuleMetadata/ModuleMetadata.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "product/app/VendorDisclaimer/VendorDisclaimer.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "product/app/WallpaperPicker/WallpaperPicker.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "product/app/webview/webview.apk",
+   "one_version": "101.0.4951.61",
+   "two_version": "101.0.4951.61",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.adservices/app/SdkSandbox@TP1A.220624.021.A1/SdkSandbox.apk",
+   "one_version": "T-initial",
+   "two_version": "T-initial",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.adservices/priv-app/AdServicesApk@TP1A.220624.021.A1/AdServicesApk.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.btservices/app/Bluetooth@TP1A.220624.021.A1/Bluetooth.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.extservices/priv-app/ExtServices@TP1A.220624.021.A1/ExtServices.apk",
+   "one_version": "2019-09",
+   "two_version": "2019-09",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/apex/com.android.mediaprovider/priv-app/MediaProvider@TP1A.220624.021.A1/MediaProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/apex/com.android.ondevicepersonalization/app/OnDevicePersonalization@TP1A.220624.021.A1/OnDevicePersonalization.apk",
+   "one_version": "T-initial",
+   "two_version": "T-initial",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.permission/priv-app/PermissionController@TP1A.220624.021.A1/PermissionController.apk",
+   "one_version": "33 system image",
+   "two_version": "33 system image",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.permission/priv-app/SafetyCenterResources@TP1A.220624.021.A1/SafetyCenterResources.apk",
+   "one_version": "33 system image",
+   "two_version": "33 system image",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.tethering.inprocess/priv-app/InProcessTethering@TP1A.220624.021.A1/InProcessTethering.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/apex/com.android.tethering.inprocess/priv-app/ServiceConnectivityResources@TP1A.220624.021.A1/ServiceConnectivityResources.apk",
+   "one_version": "S-initial",
+   "two_version": "S-initial",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.uwb/priv-app/ServiceUwbResources@TP1A.220624.021.A1/ServiceUwbResources.apk",
+   "one_version": "T-initial",
+   "two_version": "T-initial",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.wifi/app/OsuLogin@TP1A.220624.021.A1/OsuLogin.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.wifi/app/WifiDialog@TP1A.220624.021.A1/WifiDialog.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/apex/com.android.wifi/priv-app/ServiceWifiResources@TP1A.220624.021.A1/ServiceWifiResources.apk",
+   "one_version": "R-initial",
+   "two_version": "R-initial",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/BasicDreams/BasicDreams.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/CertInstaller/CertInstaller.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/CompanionDeviceManager/CompanionDeviceManager.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/CtsShimPrebuilt/CtsShimPrebuilt.apk",
+   "one_version": "13-8572644",
+   "two_version": "13-8572644",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/ExtShared/ExtShared.apk",
+   "one_version": "1",
+   "two_version": "1",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/FTAirplayWireless/FTAirplayWireless.apk",
+   "one_version": "V3.3.4.2_22279_20261012",
+   "two_version": "V3.3.2.7_17731_20251127",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/HTMLViewer/HTMLViewer.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/KeyChain/KeyChain.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/KuSettings/KuSettings.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/KuSetupWizard/KuSetupWizard.apk",
+   "one_version": "1.0",
+   "two_version": null,
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/KuSourceRJ/KuSourceRJ.apk",
+   "one_version": "5.3",
+   "two_version": "3.6",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/PacProcessor/PacProcessor.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/PlatformCaptivePortalLogin/PlatformCaptivePortalLogin.apk",
+   "one_version": "339990000",
+   "two_version": "339990000",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/PrintSpooler/PrintSpooler.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/RJBluetoothSpeaker/RJBluetoothSpeaker.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/RuiAutoFocus/RuiAutoFocus.apk",
+   "one_version": "4.2",
+   "two_version": "4.2",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/SecureElement/SecureElement.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/TrdDreamPic/TrdDreamPic.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/TrdFactoryTest/TrdFactoryTest.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/WallpaperBackup/WallpaperBackup.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/app/trdservice/trdservice.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/zxlauncher/zxlauncher.apk",
+   "one_version": "2.0.43",
+   "two_version": "2.0.37",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/app/zxstore/zxstore.apk",
+   "one_version": "4.1.52",
+   "two_version": "4.1.52",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/framework/framework-res.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/priv-app/BackupRestoreConfirmation/BackupRestoreConfirmation.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/CalendarProvider/CalendarProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/ContactsProvider/ContactsProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/CtsShimPrivPrebuilt/CtsShimPrivPrebuilt.apk",
+   "one_version": "13-8572644",
+   "two_version": "13-8572644",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/DownloadProvider/DownloadProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/DynamicSystemInstallationService/DynamicSystemInstallationService.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/ExternalStorageProvider/ExternalStorageProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/FusedLocation/FusedLocation.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/InProcessNetworkStack/InProcessNetworkStack.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/priv-app/InputDevices/InputDevices.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/KeystoneCorrection/KeystoneCorrection.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/priv-app/LocalTransport/LocalTransport.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/MediaProviderLegacy/MediaProviderLegacy.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/PackageInstaller/PackageInstaller.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/ProxyHandler/ProxyHandler.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/RuiYunOta/RuiYunOta.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/priv-app/SettingsProvider/SettingsProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/priv-app/SharedStorageBackup/SharedStorageBackup.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/Shell/Shell.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/SoundPicker/SoundPicker.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/StatementService/StatementService.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/Telecom/Telecom.apk",
+   "one_version": null,
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system/system/priv-app/TvProvider/TvProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/UserDictionaryProvider/UserDictionaryProvider.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system/system/priv-app/VpnDialogs/VpnDialogs.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system_ext/app/A2dpSinkPlayerTCN/A2dpSinkPlayerTCN.apk",
+   "one_version": null,
+   "two_version": "1.0",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/app/AutoPair/AutoPair.apk",
+   "one_version": "jedi.trunk.autopair.v21.16.03",
+   "two_version": "jedi.trunk.autopair.v21.16.03",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/app/Factory/Factory.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/app/TvFrameworkPackageStubs/TvFrameworkPackageStubs.apk",
+   "one_version": "1.0.1",
+   "two_version": "1.0.1",
+   "same_sha": true
+  },
+  {
+   "path": "system_ext/app/WFDSinkTest/WFDSinkTest.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/priv-app/LiveTV/LiveTV.apk",
+   "one_version": "2.30.5 build 18321512",
+   "two_version": "2.30.5 build 18321512",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/priv-app/MtkNetworkMonitorService/MtkNetworkMonitorService.apk",
+   "one_version": "2.1",
+   "two_version": "2.1",
+   "same_sha": true
+  },
+  {
+   "path": "system_ext/priv-app/MtkTvInput/MtkTvInput.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system_ext/priv-app/MultiMediaPlayer/MultiMediaPlayer.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/priv-app/Provision/Provision.apk",
+   "one_version": null,
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/priv-app/RemoteProvisioner/RemoteProvisioner.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system_ext/priv-app/RetailDisplay/RetailDisplay.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": true
+  },
+  {
+   "path": "system_ext/priv-app/SystemUI/SystemUI.apk",
+   "one_version": "13",
+   "two_version": "13",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/priv-app/TvServices/TvServices.apk",
+   "one_version": "1.3",
+   "two_version": "1.3",
+   "same_sha": false
+  },
+  {
+   "path": "system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": false
+  },
+  {
+   "path": "vendor/overlay/TetheringInprocessRROOverlay.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "vendor/overlay/TetheringRROOverlay.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "vendor/overlay/WifiRROOverlay.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": true
+  },
+  {
+   "path": "vendor/priv-app/trdmiddle/trdmiddle.apk",
+   "one_version": "1.0",
+   "two_version": "1.0",
+   "same_sha": false
+  }
+ ],
+ "partition_comparison": [
+  {
+   "name": "3rd_a",
+   "one_bytes": 31457280,
+   "two_bytes": 31457280,
+   "same_sha": false
+  },
+  {
+   "name": "armfw",
+   "one_bytes": 77824,
+   "two_bytes": 77824,
+   "same_sha": true
+  },
+  {
+   "name": "boot",
+   "one_bytes": 78643200,
+   "two_bytes": 78643200,
+   "same_sha": false
+  },
+  {
+   "name": "bootdata",
+   "one_bytes": 41943040,
+   "two_bytes": 41943040,
+   "same_sha": false
+  },
+  {
+   "name": "dtbo",
+   "one_bytes": 8388608,
+   "two_bytes": 8388608,
+   "same_sha": false
+  },
+  {
+   "name": "factory_a",
+   "one_bytes": 8388608,
+   "two_bytes": 8388608,
+   "same_sha": false
+  },
+  {
+   "name": "linux_rootfs_a",
+   "one_bytes": 57671680,
+   "two_bytes": 57671680,
+   "same_sha": false
+  },
+  {
+   "name": "mboot",
+   "one_bytes": 2658304,
+   "two_bytes": 2654208,
+   "same_sha": false
+  },
+  {
+   "name": "optee",
+   "one_bytes": 2809856,
+   "two_bytes": 2809856,
+   "same_sha": false
+  },
+  {
+   "name": "product",
+   "one_bytes": 77152256,
+   "two_bytes": 77152256,
+   "same_sha": false
+  },
+  {
+   "name": "system",
+   "one_bytes": 696111104,
+   "two_bytes": 681955328,
+   "same_sha": false
+  },
+  {
+   "name": "system_ext",
+   "one_bytes": 87273472,
+   "two_bytes": 87937024,
+   "same_sha": false
+  },
+  {
+   "name": "tvconfig",
+   "one_bytes": 157286400,
+   "two_bytes": 157286400,
+   "same_sha": false
+  },
+  {
+   "name": "tvservice",
+   "one_bytes": 175112192,
+   "two_bytes": 175112192,
+   "same_sha": false
+  },
+  {
+   "name": "vbmeta",
+   "one_bytes": 12288,
+   "two_bytes": 12288,
+   "same_sha": false
+  },
+  {
+   "name": "vbmeta_system",
+   "one_bytes": 4096,
+   "two_bytes": 4096,
+   "same_sha": false
+  },
+  {
+   "name": "vendor",
+   "one_bytes": 255258624,
+   "two_bytes": 254906368,
+   "same_sha": false
+  }
+ ],
+ "changed_hardware_paths": [
+  "product/lib/libmtkmtalservice_hwbinder_vendor.so",
+  "product/lib/vendor.mediatek.tv.mtkmtalservice@1.0.so",
+  "system/init.trd.rc",
+  "system/system/apex/com.android.vndk.current/lib/android.hardware.audio.common-V1-ndk.so",
+  "system/system/apex/com.android.vndk.current/lib/android.hardware.audio.common@2.0.so",
+  "system/system/apex/com.android.vndk.current/lib/android.hardware.bluetooth.audio-V2-ndk.so",
+  "system/system/apex/com.android.vndk.current/lib/android.hardware.soundtrigger3-V1-ndk.so",
+  "system/system/apex/com.android.vndk.current/lib/android.hardware.soundtrigger@2.0-core.so",
+  "system/system/apex/com.android.vndk.current/lib/android.hardware.soundtrigger@2.0.so",
+  "system/system/apex/com.android.vndk.current/lib/android.media.audio.common.types-V1-ndk.so",
+  "system/system/apex/com.android.vndk.current/lib/android.media.soundtrigger.types-V1-ndk.so",
+  "system/system/apex/com.android.vndk.current/lib/libaudioroute.so",
+  "system/system/apex/com.android.vndk.current/lib/libaudioutils.so",
+  "system/system/app/RuiAutoFocus/RuiAutoFocus.apk",
+  "system/system/app/RuiAutoFocus/oat/arm/RuiAutoFocus.odex",
+  "system/system/app/RuiAutoFocus/oat/arm/RuiAutoFocus.vdex",
+  "system/system/app/TrdDreamPic/oat/arm/TrdDreamPic.odex",
+  "system/system/app/TrdFactoryTest/oat/arm/TrdFactoryTest.odex",
+  "system/system/app/trdservice/oat/arm/trdservice.odex",
+  "system/system/app/trdservice/oat/arm/trdservice.vdex",
+  "system/system/app/trdservice/trdservice.apk",
+  "system/system/bin/audioserver",
+  "system/system/bin/mtk_screenrecord",
+  "system/system/bin/mtk_screenrecord_mr",
+  "system/system/framework/oat/arm/com.android.media.remotedisplay.odex",
+  "system/system/lib/aaudio-aidl-cpp.so",
+  "system/system/lib/android.hardware.audio.common-V1-ndk.so",
+  "system/system/lib/android.hardware.audio.common-util.so",
+  "system/system/lib/android.hardware.audio.common@2.0.so",
+  "system/system/lib/android.hardware.audio.common@4.0-util.so",
+  "system/system/lib/android.hardware.audio.common@4.0.so",
+  "system/system/lib/android.hardware.audio.common@5.0-util.so",
+  "system/system/lib/android.hardware.audio.common@5.0.so",
+  "system/system/lib/android.hardware.audio.common@6.0-util.so",
+  "system/system/lib/android.hardware.audio.common@6.0.so",
+  "system/system/lib/android.hardware.audio.effect@4.0-util.so",
+  "system/system/lib/android.hardware.audio.effect@4.0.so",
+  "system/system/lib/android.hardware.audio.effect@5.0-util.so",
+  "system/system/lib/android.hardware.audio.effect@5.0.so",
+  "system/system/lib/android.hardware.audio.effect@6.0-util.so",
+  "system/system/lib/android.hardware.audio.effect@6.0.so",
+  "system/system/lib/android.hardware.audio@4.0-util.so",
+  "system/system/lib/android.hardware.audio@4.0.so",
+  "system/system/lib/android.hardware.audio@5.0-util.so",
+  "system/system/lib/android.hardware.audio@5.0.so",
+  "system/system/lib/android.hardware.audio@6.0-util.so",
+  "system/system/lib/android.hardware.audio@6.0.so",
+  "system/system/lib/android.hardware.bluetooth.audio-V2-ndk.so",
+  "system/system/lib/android.hardware.bluetooth.audio@2.0.so",
+  "system/system/lib/android.hardware.bluetooth.audio@2.1.so",
+  "system/system/lib/android.media.audio.common.types-V1-cpp.so",
+  "system/system/lib/android.media.audio.common.types-V1-ndk.so",
+  "system/system/lib/audioclient-types-aidl-cpp.so",
+  "system/system/lib/audioflinger-aidl-cpp.so",
+  "system/system/lib/audiopolicy-aidl-cpp.so",
+  "system/system/lib/audiopolicy-types-aidl-cpp.so",
+  "system/system/lib/libaaudio.so",
+  "system/system/lib/libaaudio_internal.so",
+  "system/system/lib/libaaudioservice.so",
+  "system/system/lib/libaudioclient.so",
+  "system/system/lib/libaudioclient_aidl_conversion.so",
+  "system/system/lib/libaudioeffect_jni.so",
+  "system/system/lib/libaudioflinger.so",
+  "system/system/lib/libaudiofoundation.so",
+  "system/system/lib/libaudiohal.so",
+  "system/system/lib/libaudiohal@4.0.so",
+  "system/system/lib/libaudiohal@5.0.so",
+  "system/system/lib/libaudiohal@6.0.so",
+  "system/system/lib/libaudiohal@7.0.so",
+  "system/system/lib/libaudiohal@7.1.so",
+  "system/system/lib/libaudiohal_deathhandler.so",
+  "system/system/lib/libaudiomanager.so",
+  "system/system/lib/libaudiopolicy.so",
+  "system/system/lib/libaudiopolicyengineconfigurable.so",
+  "system/system/lib/libaudiopolicyenginedefault.so",
+  "system/system/lib/libaudiopolicymanagercustom.so",
+  "system/system/lib/libaudiopolicymanagerdefault.so",
+  "system/system/lib/libaudiopolicyservice.so",
+  "system/system/lib/libaudioprocessing.so",
+  "system/system/lib/libaudiospdif.so",
+  "system/system/lib/libaudioutils.so",
+  "system/system/lib/libi2c_jni.so",
+  "system/system/lib/libmtkscreenrecord.so",
+  "system/system/lib/libmtkvoc.so",
+  "system/system/lib/libremote-processor.so",
+  "system/system/lib/libsoundpool.so",
+  "system/system/lib/libtrdclient.so",
+  "system/system/lib/libvintf.so",
+  "system/system/lib/mstar.hardware.imgdisp@1.0.so",
+  "system/system/lib/mstar.hardware.imghwdec@1.0.so",
+  "system/system/lib/mstar.hardware.intertunnel@1.0.so",
+  "system/system/lib/vendor.mediatek.tv.mtktvvoc@1.0.so",
+  "system/system/lib/vendor.trd.hardware.hwtrd@1.0.so",
+  "system/system/lib/vendor.trd.hardware.tof@1.0.so",
+  "system/system/priv-app/KeystoneCorrection/KeystoneCorrection.apk",
+  "system/system/priv-app/SoundPicker/oat/arm/SoundPicker.odex",
+  "system_ext/framework/oat/arm/com.mstar.android.odex",
+  "system_ext/lib/libmtkcmpb.so",
+  "system_ext/lib/libmtkrm_hwbinder.so",
+  "system_ext/lib/vendor.mediatek.api.mtktvapi@1.0.so",
+  "system_ext/lib/vendor.mediatek.custom.mtktvapicustom@1.0.so",
+  "system_ext/lib/vendor.mediatek.tv.mtkcalman@1.0.so",
+  "system_ext/lib/vendor.mediatek.tv.mtkdmservice@1.0.so",
+  "system_ext/lib/vendor.mediatek.tv.mtkmtalservice@1.0.so",
+  "system_ext/lib/vendor.mediatek.tv.mtkrm@1.0.so",
+  "system_ext/lib/vendor.mediatek.tv.mtktvfactory@1.0.so",
+  "system_ext/priv-app/MtkNetworkMonitorService/oat/arm/MtkNetworkMonitorService.odex",
+  "system_ext/priv-app/MtkTvInput/oat/arm/MtkTvInput.odex",
+  "system_ext/priv-app/RemoteProvisioner/oat/arm/RemoteProvisioner.odex",
+  "vendor/bin/MtkRmInitServer",
+  "vendor/bin/MtkRmServer",
+  "vendor/bin/hw/mstar.hardware.imgdisp@1.0-service",
+  "vendor/bin/hw/mstar.hardware.imghwdec@1.0-service",
+  "vendor/bin/hw/mstar.hardware.mmdisp@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.api.mtktvapi@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.hardware.audio.service",
+  "vendor/bin/hw/vendor.mediatek.tv.mtkcalman@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.tv.mtkdmservice@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.tv.mtkmtalservice@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.tv.mtkrm@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.tv.mtktvfactory@1.0-service",
+  "vendor/bin/hw/vendor.mediatek.tv.mtktvvoc@1.0-service",
+  "vendor/bin/postinst_mtk",
+  "vendor/bin/trd_module_loader.sh",
+  "vendor/lib/android.hardware.audio.common-util.so",
+  "vendor/lib/android.hardware.audio.common@5.0.so",
+  "vendor/lib/android.hardware.audio.common@7.0-enums.so",
+  "vendor/lib/android.hardware.audio.common@7.0-util.so",
+  "vendor/lib/android.hardware.audio.common@7.0.so",
+  "vendor/lib/android.hardware.audio.common@7.1-enums.so",
+  "vendor/lib/android.hardware.audio.common@7.1-util.so",
+  "vendor/lib/android.hardware.audio.effect@7.0-util.so",
+  "vendor/lib/android.hardware.audio.effect@7.0.so",
+  "vendor/lib/android.hardware.audio@7.0.so",
+  "vendor/lib/android.hardware.audio@7.1-util.so",
+  "vendor/lib/android.hardware.audio@7.1.so",
+  "vendor/lib/android.hardware.bluetooth.audio-impl.so",
+  "vendor/lib/android.hardware.bluetooth.audio@2.0.so",
+  "vendor/lib/android.hardware.bluetooth.audio@2.1.so",
+  "vendor/lib/android.media.audio.common.types-V1-cpp.so",
+  "vendor/lib/audioclient-types-aidl-cpp.so",
+  "vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so",
+  "vendor/lib/hw/android.hardware.audio@7.1-impl.so",
+  "vendor/lib/hw/android.hardware.bluetooth.audio@2.1-impl.so",
+  "vendor/lib/hw/audio.bluetooth.default.so",
+  "vendor/lib/hw/audio.primary.default.so",
+  "vendor/lib/hw/audio.primary.mt5873.so",
+  "vendor/lib/hw/audio.r_submix.default.so",
+  "vendor/lib/hw/audio.usb.default.so",
+  "vendor/lib/libMtkAiVisionVbClUtil.so",
+  "vendor/lib/libMtkRmClient.so",
+  "vendor/lib/libaudioclient_aidl_conversion.so",
+  "vendor/lib/libaudiofoundation.so",
+  "vendor/lib/libaudioparser.so",
+  "vendor/lib/libbluetooth_audio_session.so",
+  "vendor/lib/libbluetooth_audio_session_aidl.so",
+  "vendor/lib/libcodec2.MTK.so",
+  "vendor/lib/libcodec2_mtk_audio.so",
+  "vendor/lib/libcodec2_mtk_c2store.so",
+  "vendor/lib/libcodec2_mtk_vdec.so",
+  "vendor/lib/libcodec2_mtk_venc.so",
+  "vendor/lib/libcodec2_mtkadwrapper.so",
+  "vendor/lib/libmtk_tinyalsa_aec_plugin.so",
+  "vendor/lib/libmtk_tinyalsa_format_converter_plugin.so",
+  "vendor/lib/libmtk_tinyalsa_link_plugin.so",
+  "vendor/lib/libmtk_tinyalsa_mic_plugin.so",
+  "vendor/lib/libmtk_virtual_playback_plugin.so",
+  "vendor/lib/libmtkalphablending.so",
+  "vendor/lib/libmtkcutils.so",
+  "vendor/lib/libmtkrm_hwbinder_vendor.so",
+  "vendor/lib/libtrdclient.so",
+  "vendor/lib/libtrdservice.so",
+  "vendor/lib/modules/btmtk_usb.ko",
+  "vendor/lib/modules/btmtk_usb_unify.ko",
+  "vendor/lib/modules/extcon-mtk-headset.ko",
+  "vendor/lib/modules/fusion_mtk.ko",
+  "vendor/lib/modules/i2c-dev.ko",
+  "vendor/lib/modules/i2c-gpio.ko",
+  "vendor/lib/modules/i2c-mt5896.ko",
+  "vendor/lib/modules/leds-mtk-irtx.ko",
+  "vendor/lib/modules/mtk-ab-boot.ko",
+  "vendor/lib/modules/mtk-aloop.ko",
+  "vendor/lib/modules/mtk-audio-mcu-communication.ko",
+  "vendor/lib/modules/mtk-audio-mcu.ko",
+  "vendor/lib/modules/mtk-bdma.ko",
+  "vendor/lib/modules/mtk-boottime.ko",
+  "vendor/lib/modules/mtk-bw.ko",
+  "vendor/lib/modules/mtk-db-tool.ko",
+  "vendor/lib/modules/mtk-dramc-ca.ko",
+  "vendor/lib/modules/mtk-dramc.ko",
+  "vendor/lib/modules/mtk-es-buf-mgr.ko",
+  "vendor/lib/modules/mtk-ir-tx.ko",
+  "vendor/lib/modules/mtk-ir.ko",
+  "vendor/lib/modules/mtk-kmiup.ko",
+  "vendor/lib/modules/mtk-memory.ko",
+  "vendor/lib/modules/mtk-mic-capture.ko",
+  "vendor/lib/modules/mtk-mic-communication.ko",
+  "vendor/lib/modules/mtk-miup.ko",
+  "vendor/lib/modules/mtk-miup_debug.ko",
+  "vendor/lib/modules/mtk-module_thermal.ko",
+  "vendor/lib/modules/mtk-pm.ko",
+  "vendor/lib/modules/mtk-pmu-cec.ko",
+  "vendor/lib/modules/mtk-pmu-ir.ko",
+  "vendor/lib/modules/mtk-pmu-keypad.ko",
+  "vendor/lib/modules/mtk-smi-tv.ko",
+  "vendor/lib/modules/mtk-stctrl.ko",
+  "vendor/lib/modules/mtk-tv-atrace.ko",
+  "vendor/lib/modules/mtk-v4l2-jpd.ko",
+  "vendor/lib/modules/mtk-vcodec-common.ko",
+  "vendor/lib/modules/mtk-vcodec-dec.ko",
+  "vendor/lib/modules/mtk-vcodec-enc.ko",
+  "vendor/lib/modules/mtk-vcu-vdec.ko",
+  "vendor/lib/modules/mtk-vcu.ko",
+  "vendor/lib/modules/mtk_als.ko",
+  "vendor/lib/modules/mtk_dmx.ko",
+  "vendor/lib/modules/mtk_gmac_mt5896.ko",
+  "vendor/lib/modules/mtk_iommu.ko",
+  "vendor/lib/modules/mtk_irs.ko",
+  "vendor/lib/modules/mtk_light.ko",
+  "vendor/lib/modules/mtk_mic_mute_drv.ko",
+  "vendor/lib/modules/mtk_pmu_rproc.ko",
+  "vendor/lib/modules/mtk_realtime_example.ko",
+  "vendor/lib/modules/mtk_realtime_producer.ko",
+  "vendor/lib/modules/mtk_tee.ko",
+  "vendor/lib/modules/mtk_test_cdev.ko",
+  "vendor/lib/modules/mtk_v4l2loopback.ko",
+  "vendor/lib/modules/mtk_zdec_drv.ko",
+  "vendor/lib/modules/mtk_zram.ko",
+  "vendor/lib/modules/mtk_zram_genpool.ko",
+  "vendor/lib/modules/mtk_zsmalloc.ko",
+  "vendor/lib/modules/mtktv-cpufreq-ca.ko",
+  "vendor/lib/modules/mtktv-cpufreq-dbg.ko",
+  "vendor/lib/modules/mtktv-cpufreq.ko",
+  "vendor/lib/modules/mtktv-regulator-mt5876-core-power.ko",
+  "vendor/lib/modules/mtktv-regulator-mt5876.ko",
+  "vendor/lib/modules/mtktv-regulator-mt5896.ko",
+  "vendor/lib/modules/mtktv-thermal.ko",
+  "vendor/lib/modules/mzc-mtk.ko",
+  "vendor/lib/modules/phy-mtk-tphy-tv.ko",
+  "vendor/lib/modules/pwmseg-mtktv.ko",
+  "vendor/lib/modules/spi-mtkdtv-ci.ko",
+  "vendor/lib/modules/xhci-mtk-hcd-tv.ko",
+  "vendor/lib/mstar.hardware.imgdisp@1.0-impl.so",
+  "vendor/lib/mstar.hardware.imgdisp@1.0.so",
+  "vendor/lib/mstar.hardware.imghwdec@1.0-impl.so",
+  "vendor/lib/mstar.hardware.imghwdec@1.0.so",
+  "vendor/lib/mstar.hardware.intertunnel@1.0-impl.so",
+  "vendor/lib/mstar.hardware.intertunnel@1.0.so",
+  "vendor/lib/mstar.hardware.mmdisp@1.0-impl.so",
+  "vendor/lib/mstar.hardware.mmdisp@1.0.so",
+  "vendor/lib/soundfx/libaudiopreprocessing.so",
+  "vendor/lib/soundfx/libbundlewrapper.so",
+  "vendor/lib/soundfx/libdownmix.so",
+  "vendor/lib/soundfx/libdynproc.so",
+  "vendor/lib/soundfx/libeffectproxy.so",
+  "vendor/lib/soundfx/libhapticgenerator.so",
+  "vendor/lib/soundfx/libldnhncr.so",
+  "vendor/lib/soundfx/libreverbwrapper.so",
+  "vendor/lib/soundfx/libvisualizer.so",
+  "vendor/lib/vendor.mediatek.api.mtktvapi@1.0-cwrapper.so",
+  "vendor/lib/vendor.mediatek.api.mtktvapi@1.0.so",
+  "vendor/lib/vendor.mediatek.custom.mtktvapicustom@1.0-cwrapper.so",
+  "vendor/lib/vendor.mediatek.custom.mtktvapicustom@1.0-impl.so",
+  "vendor/lib/vendor.mediatek.custom.mtktvapicustom@1.0.so",
+  "vendor/lib/vendor.mediatek.tv.Mm.Mm.mtktvfapicustom@1.0.so",
+  "vendor/lib/vendor.mediatek.tv.mtkcalman@1.0-impl.so",
+  "vendor/lib/vendor.mediatek.tv.mtkcalman@1.0.so",
+  "vendor/lib/vendor.mediatek.tv.mtkdmservice@1.0.so",
+  "vendor/lib/vendor.mediatek.tv.mtkmtalservice@1.0.so",
+  "vendor/lib/vendor.mediatek.tv.mtkrm@1.0_vendor.so",
+  "vendor/lib/vendor.mediatek.tv.mtktvfactory@1.0-imp.so",
+  "vendor/lib/vendor.mediatek.tv.mtktvfactory@1.0.so",
+  "vendor/lib/vendor.mediatek.tv.mtktvfapicustom@1.0-impl.so",
+  "vendor/lib/vendor.mediatek.tv.mtktvvoc@1.0-cwrapper.so",
+  "vendor/lib/vendor.mediatek.tv.mtktvvoc@1.0.so",
+  "vendor/lib/vendor.trd.hardware.hwtrd@1.0.so",
+  "vendor/lib/vendor.trd.hardware.tof@1.0.so",
+  "vendor/priv-app/trdmiddle/oat/arm/trdmiddle.odex",
+  "vendor/priv-app/trdmiddle/oat/arm/trdmiddle.vdex",
+  "vendor/priv-app/trdmiddle/trdmiddle.apk"
+ ]
+}

@@ -1,0 +1,9 @@
+{
+  "code": "8053",
+  "payload_format": "CrAU v2",
+  "manifest_length": 45920,
+  "signature_blob_length": 267,
+  "metadata_hash_sha256": "d7fcb948496adfc0c13b6110f2d26c46f3ad04a29f26ea36e95364028cdf985f",
+  "metadata_signature_checks": [],
+  "matches_embedded_ota_test_cert": false
+}
