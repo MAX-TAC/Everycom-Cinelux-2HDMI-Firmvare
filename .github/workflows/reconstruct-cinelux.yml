@@ -1,0 +1,151 @@
+name: Reconstruct CineLux Android super and partitions
+
+on:
+  push:
+    paths:
+      - "tools/reconstruct_cinelux.py"
+      - ".github/workflows/reconstruct-cinelux.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only firmware tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs
+          go version
+          df -h /tmp
+      - name: Download and decrypt the known PKG
+        run: |
+          mkdir -p /tmp/cinelux-input /tmp/cinelux-parts
+          curl -fL --retry 5 --retry-delay 5 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/source.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/source.rar" | sha256sum -c
+          unar -q -o /tmp/cinelux-input /tmp/source.rar
+          echo "4abef5d594803d09c20316a7cd52ab623dd7fb1a228472eb0e243d6d750ebb4c  /tmp/cinelux-input/upgrade_image.pkg" | sha256sum -c
+          dd if=/tmp/cinelux-input/upgrade_image.pkg bs=4096 skip=1 count=317632 status=none |
+            openssl enc -d -aes-256-cbc -nopad \
+              -K d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f \
+              -iv 00000000000000000000000000000000 \
+              -out /tmp/cinelux-plain-body.bin
+          stat -c "%n %s bytes" /tmp/cinelux-plain-body.bin
+          df -h /tmp
+      - name: Decompress partitions and reassemble Android super
+        run: |
+          python3 -u tools/reconstruct_cinelux.py /tmp/cinelux-plain-body.bin /tmp/cinelux-parts > /tmp/reconstruct.log 2>&1
+          tail -n 90 /tmp/reconstruct.log
+          file /tmp/cinelux-parts/super.img
+          ls -lh /tmp/cinelux-parts/super.img
+          df -h /tmp
+      - name: Build and run logical partition extractor
+        run: |
+          git clone --quiet https://github.com/soe1hom-arch/lpunpack-go.git /tmp/lpunpack-go
+          cd /tmp/lpunpack-go
+          go build -o /tmp/lpunpack .
+          mkdir -p /tmp/cinelux-logical
+          set +e
+          /tmp/lpunpack -v /tmp/cinelux-parts/super.img /tmp/cinelux-logical > /tmp/lpunpack.log 2>&1
+          rc=$?
+          set -e
+          echo "lpunpack returned $rc"
+          head -n 100 /tmp/lpunpack.log
+          find /tmp/cinelux-logical -maxdepth 1 -type f -printf '%f %s bytes\n' | head -n 60
+          echo "Please see lpunpack log for any extraction errors."
+          df -h /tmp
+      - name: Record system properties and components
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess,json,re
+          dest=Path("analysis/Original_Firmware/reconstructed")
+          dest.mkdir(exist_ok=True,parents=True)
+          lp=Path('/tmp/cinelux-logical')
+          out={'logical_partitions':[],'build_props':{},'package_dirs':{},'hal_manifests':{}}
+          def run(args):
+              try:
+                  p=subprocess.run(args,capture_output=True,text=True,errors='replace',timeout=80)
+                  return p.stdout,p.stderr,p.returncode
+              except Exception as e:return '',str(e),-1
+          for img in sorted(lp.glob('*.img')) if lp.exists() else []:
+              typ,err,rc=run(['file','-b',str(img)])
+              part={'name':img.name,'size':img.stat().st_size,'type':typ.strip()[:220]}
+              out['logical_partitions'].append(part)
+              props=[]
+              for path in ('/system/build.prop','/build.prop','/vendor/build.prop','/product/build.prop'):
+                  content,error,rc=run(['debugfs','-R','cat '+path,str(img)])
+                  if rc==0 and 'File not found' not in error and len(content)>100 and len(content)<100000:
+                      props.append((path,content))
+              public={}
+              for p,content in props:
+                  for line in content.splitlines():
+                      if '=' not in line or line.startswith('#'):continue
+                      key,val=line.split('=',1)
+                      if key in ('ro.build.version.release','ro.build.version.sdk','ro.build.version.security_patch','ro.product.model',
+                        'ro.product.device','ro.product.board','ro.hardware','ro.board.platform','ro.build.type',
+                        'ro.build.fingerprint','ro.product.manufacturer','ro.vendor.build.fingerprint'):
+                          public[key]=val[:200]
+              if public:out['build_props'][img.name]=public
+              dirs=[]
+              for path in ('/system/app','/system/priv-app','/app','/priv-app','/product/app','/product/priv-app'):
+                  s,e,rc=run(['debugfs','-R','ls -p '+path,str(img)])
+                  if rc==0 and len(s)>60 and 'File not found' not in e:
+                      names=[a[5] for a in (r.split('/') for r in s.splitlines()) if len(a)>5 and a[5] not in ('','.','..')]
+                      if names:dirs.append({'path':path,'names':names[:180]})
+              if dirs:out['package_dirs'][img.name]=dirs
+              for path in ('/etc/vintf/manifest.xml','/vendor/etc/vintf/manifest.xml'):
+                  s,e,rc=run(['debugfs','-R','cat '+path,str(img)])
+                  if rc==0 and len(s)>100 and 'File not found' not in e:
+                      out['hal_manifests'][img.name]={
+                          'path':path,'hal_names':sorted(set(re.findall(r'<name>([^<]+)</name>',s)))[:120]}
+          for filename in ('/tmp/reconstruct.log','/tmp/lpunpack.log'):
+              p=Path(filename)
+              if p.exists():
+                  (dest/p.name).write_text(p.read_text(errors='replace')[-18000:],encoding='utf8')
+          (dest/'android_inventory.json').write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding='utf8')
+          lines=['# CineLux firmware / Android partitions','',
+            'Reconstructed and analyzed in read-only form, not flashed.','',
+            '## Logical partitions','',
+            '| Partition | Bytes | Format |','|---|---:|---|']
+          for a in out['logical_partitions']:
+              lines.append('| '+a['name']+' | '+str(a['size'])+' | '+a['type'].replace('|','/')[:100]+' |')
+          lines+=['','## Build properties','']
+          for name,props in out['build_props'].items():
+              lines+=['### '+name,'','~~~',*(k+'='+v for k,v in props.items()),'~~~']
+          lines+=['','## System app directories']
+          for name,dirs in out['package_dirs'].items():
+              lines+=['### '+name]
+              for d in dirs:
+                  lines.append(d['path']+': '+', '.join(d['names'][:100]))
+          lines+=['','## Declared HALs']
+          for name,entry in out['hal_manifests'].items():
+              lines+=['### '+name,', '.join(entry['hal_names'])]
+          (dest/'ANDROID_AUDIT.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print((dest/'ANDROID_AUDIT.md').read_text()[:19000])
+          PY
+      - name: Commit textual reports only
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/reconstructed/
+          if ! git diff --cached --quiet; then
+            git commit -m "Reconstruct CineLux Android super and audit system/vendor partitions"
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cinelux-android-audit
+          path: analysis/Original_Firmware/reconstructed/
+          retention-days: 30
+          if-no-files-found: warn
