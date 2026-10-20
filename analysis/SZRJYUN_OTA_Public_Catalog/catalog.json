@@ -1,0 +1,122 @@
+{
+  "complete": true,
+  "checked": 10000,
+  "expected": 10000,
+  "shards": [
+    {
+      "start": 1,
+      "end": 2000,
+      "checked": 2000,
+      "complete": true,
+      "http_counts": {
+        "404": 2000
+      },
+      "found_ids": [],
+      "stop_reason": null
+    },
+    {
+      "start": 2001,
+      "end": 4000,
+      "checked": 2000,
+      "complete": true,
+      "http_counts": {
+        "404": 2000
+      },
+      "found_ids": [],
+      "stop_reason": null
+    },
+    {
+      "start": 4001,
+      "end": 6000,
+      "checked": 2000,
+      "complete": true,
+      "http_counts": {
+        "404": 2000
+      },
+      "found_ids": [],
+      "stop_reason": null
+    },
+    {
+      "start": 6001,
+      "end": 8000,
+      "checked": 2000,
+      "complete": true,
+      "http_counts": {
+        "404": 2000
+      },
+      "found_ids": [],
+      "stop_reason": null
+    },
+    {
+      "start": 8001,
+      "end": 10000,
+      "checked": 2000,
+      "complete": true,
+      "http_counts": {
+        "404": 1998,
+        "200": 2
+      },
+      "found_ids": [
+        8052,
+        8053
+      ],
+      "stop_reason": null
+    }
+  ],
+  "found": [
+    {
+      "id": 8052,
+      "url": "https://www.szrjyun.com/ota/android/mt9660/8052/8052_ota.json",
+      "http_status": 200,
+      "metadata": {
+        "ver": "RUIOS.8052.1.0.4",
+        "url": "https://www.szrjyun.com/ota/android/mt9660/8052/RJMT9660_firmware_8052.zip",
+        "size": "851685795",
+        "md5": "497d1bf803300b6c98c49328b6105c33",
+        "desc1": "1. Optimization image display quality;",
+        "desc2": "2. Optimization some APPs",
+        "desc3": "3. Fix some bugs;",
+        "forcepush": "disable",
+        "forceselect": "disable",
+        "pushstyle": "demo",
+        "pushinfo1": "1. Optimization image display quality;",
+        "pushinfo2": "2. Optimization some APPs",
+        "pushinfo3": "3. Fix some bugs;",
+        "ab_update": "direct",
+        "ab_offset": "2728",
+        "ab_size": "851679571",
+        "ab_prop1": "FILE_HASH=4GMfEIO9bDQQZCXu6nYyfNmBr/ZwsVsuHozlWDa7CeE=",
+        "ab_prop2": "FILE_SIZE=851679571",
+        "ab_prop3": "METADATA_HASH=qBPDdgEacleO906Iwsf855lQzsThavxt5B/7rX2WIf0=",
+        "ab_prop4": "METADATA_SIZE=46287"
+      }
+    },
+    {
+      "id": 8053,
+      "url": "https://www.szrjyun.com/ota/android/mt9660/8053/8053_ota.json",
+      "http_status": 200,
+      "metadata": {
+        "ver": "RUIOS.8053.1.0.0",
+        "url": "https://www.szrjyun.com/ota/android/mt9660/8053/RJMT9660_firmware_8053.zip",
+        "size": "841648271",
+        "md5": "9be6e18503c9ce9805fa9c3d4fd91a83",
+        "desc1": "1. Optimization image display quality;",
+        "desc2": "2. Optimization some APPs",
+        "desc3": "3. Fix some bugs;",
+        "forcepush": "disable",
+        "forceselect": "disable",
+        "pushstyle": "demo",
+        "pushinfo1": "1. Optimization image display quality;",
+        "pushinfo2": "2. Optimization some APPs",
+        "pushinfo3": "3. Fix some bugs;",
+        "ab_update": "direct",
+        "ab_offset": "2719",
+        "ab_size": "841642056",
+        "ab_prop1": "FILE_HASH=L9iiH5WmIgIbt8+a1IafosdeXdeZrq7vwG4ps1TBjNc=",
+        "ab_prop2": "FILE_SIZE=841642056",
+        "ab_prop3": "METADATA_HASH=1/y5SElq38DBO2EQ8tJsRvOtBKKfJuo26VNkAozfmF8=",
+        "ab_prop4": "METADATA_SIZE=45944"
+      }
+    }
+  ]
+}
