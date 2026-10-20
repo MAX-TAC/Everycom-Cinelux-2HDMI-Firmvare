@@ -1,0 +1,76 @@
+name: Probe decrypted CineLux partition compression
+
+on:
+  push:
+    paths:
+      - ".github/workflows/probe-cinelux-payload.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install utilities
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar openssl lz4 file
+      - name: Download and verify
+        run: |
+          mkdir -p /tmp/cinelux
+          curl -fL --retry 5 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/source.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/source.rar" | sha256sum --check
+          unar -q -o /tmp/cinelux /tmp/source.rar
+      - name: Decrypt initial 16 MiB of payload and inspect compression
+        run: |
+          mkdir -p analysis/Original_Firmware/decrypted
+          dd if=/tmp/cinelux/upgrade_image.pkg bs=4096 skip=1 count=4096 status=none |
+            openssl enc -d -aes-256-cbc -nopad \
+              -K d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f \
+              -iv 00000000000000000000000000000000 \
+              -out /tmp/plain-head.bin
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,subprocess
+          b=Path('/tmp/plain-head.bin').read_bytes()
+          script=Path('analysis/Original_Firmware/decrypted/upgrade_script.txt').read_text()
+          rows=[]
+          for line in script.splitlines():
+              if not line.startswith('filepartload '):continue
+              f=line.split()
+              if len(f)<5:continue
+              length=int(f[3],16);start=int(f[4],16)
+              # first several compressed parts are within the decrypted 16MB
+              if (start-4096+length)>=len(b):continue
+              part=b[start-4096:start-4096+length]
+              tmp=Path('/tmp/part-'+str(len(rows))+'.bin');tmp.write_bytes(part)
+              p=subprocess.run(['file','-b',str(tmp)],capture_output=True,text=True)
+              obj={'line':line,'size':len(part),'offset':start,
+                    'type':p.stdout.strip(),'head':part[:48].hex(' ')}
+              d=subprocess.run(['lz4','-d','-f',str(tmp),str(tmp)+'.out'],capture_output=True,text=True)
+              obj['lz4_status']=d.returncode
+              obj['lz4_stdout']=d.stdout[-400:]
+              obj['lz4_stderr']=d.stderr[-700:]
+              if d.returncode==0:
+                  o=Path(str(tmp)+'.out')
+                  obj['lz4_size']=o.stat().st_size
+                  obj['lz4_head']=o.open('rb').read(64).hex(' ')
+                  o.unlink()
+              rows.append(obj)
+              tmp.unlink()
+              if len(rows)>=6:break
+          out=Path('analysis/Original_Firmware/decrypted/compression_probe.json')
+          out.write_text(json.dumps(rows,indent=2),encoding='utf8')
+          print(out.read_text())
+          PY
+      - name: Commit probe output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/decrypted/compression_probe.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Inspect decoded CineLux LZ4 partition payloads"
+            git pull --rebase origin main
+            git push origin main
+          fi
