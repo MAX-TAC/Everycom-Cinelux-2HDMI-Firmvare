@@ -1,0 +1,75 @@
+name: Audit CineLux projector APK APIs
+
+on:
+  push:
+    paths:
+      - "tools/audit_projector_apks.py"
+      - ".github/workflows/audit-cinelux-apks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare static firmware inspection utilities
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar openssl lz4 file e2fsprogs erofs-utils aapt unzip
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip" \
+            -o /tmp/jadx.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          /tmp/jadx-bin/bin/jadx --version
+      - name: Download and verify two-HDMI official firmware
+        run: |
+          mkdir -p /tmp/apk-input /tmp/apk-extract /tmp/apk-parts /tmp/apk-logical /tmp/apk-erofs
+          curl -fL --retry 5 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/source.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/source.rar" | sha256sum --check
+          unar -q -o /tmp/apk-input /tmp/source.rar
+      - name: Decrypt and reconstruct image files
+        run: |
+          dd if=/tmp/apk-input/upgrade_image.pkg bs=4096 skip=1 count=317632 status=none |
+            openssl enc -d -aes-256-cbc -nopad \
+              -K d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f \
+              -iv 00000000000000000000000000000000 -out /tmp/decoded.bin
+          python3 tools/reconstruct_cinelux.py /tmp/decoded.bin /tmp/apk-parts \
+             analysis/Original_Firmware/decrypted/upgrade_script.txt /tmp/apk-extract > /tmp/reconstruct-app.log 2>&1
+          git clone -q https://github.com/soe1hom-arch/lpunpack-go.git /tmp/lpunpack-go
+          cd /tmp/lpunpack-go
+          go build -o /tmp/lpunpack .
+          /tmp/lpunpack /tmp/apk-parts/super.img /tmp/apk-logical > /tmp/lpunpack-app.log 2>&1
+          cd -
+          for name in system_a vendor_a system_ext_a; do
+            mkdir -p "/tmp/apk-erofs/$name"
+            fsck.erofs --extract="/tmp/apk-erofs/$name" "/tmp/apk-logical/$name.img" \
+              > "/tmp/$name-erofs.log" 2>&1
+          done
+      - name: Static decompilation and high-level API/permissions audit
+        run: |
+          python3 -u tools/audit_projector_apks.py /tmp/apk-erofs \
+            analysis/App_Research > /tmp/app-inspection.log 2>&1
+          cat /tmp/app-inspection.log
+          head -n 160 analysis/App_Research/README.md
+      - name: Commit reports, not proprietary sources
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/App_Research/
+          if ! git diff --cached --quiet; then
+            git commit -m "Add static API inspection of CineLux projector settings and control applications"
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cinelux-static-apk-audit
+          path: analysis/App_Research/
+          if-no-files-found: warn
+          retention-days: 30
