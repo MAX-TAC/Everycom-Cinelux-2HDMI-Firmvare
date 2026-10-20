@@ -1,0 +1,69 @@
+name: Read decrypted CineLux upgrade script
+
+on:
+  push:
+    paths:
+      - ".github/workflows/read-upgrade-script.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source and unpack RAR
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar openssl
+          mkdir -p /tmp/cinelux
+          curl -fL --retry 5 --retry-delay 5 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/source.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/source.rar" | sha256sum -c
+          unar -q -o /tmp/cinelux /tmp/source.rar
+      - name: Decrypt only 64 KiB of update command script
+        run: |
+          mkdir -p analysis/Original_Firmware/decrypted
+          dd if=/tmp/cinelux/upgrade_image.pkg of=/tmp/encrypted-script.bin bs=4096 skip=1 count=16 status=none
+          openssl enc -d -aes-256-cbc -nopad \
+            -K d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f \
+            -iv 00000000000000000000000000000000 \
+            -in /tmp/encrypted-script.bin -out /tmp/plain-script.bin
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          p=Path('/tmp/plain-script.bin').read_bytes()
+          # Initial 16 bytes are random padding / IV. Text starts with newline and comments.
+          stop=min((v for v in [p.find(b'\0',16),p.find(bytes([255]),16)] if v>=0),default=len(p))
+          raw=p[16:stop]
+          script=raw.decode('utf-8',errors='replace')
+          # Only firmware command syntax; redact possible sensitive variables.
+          safe=[]
+          for line in script.splitlines():
+              if re.search(r'(?i)(password|secret|token|private.?key|serial|macaddr|widevine|drm|hdcp.*key)',line):
+                  safe.append('# [Sensitive line omitted]')
+              else:
+                  safe.append(line[:320])
+          out=Path('analysis/Original_Firmware/decrypted')
+          (out/'upgrade_script.txt').write_text('\n'.join(safe)+'\n',encoding='utf8')
+          commands=[]
+          for num,line in enumerate(safe,1):
+              if line.strip().startswith(('filepartload','sparse_write','mmc ','nand ','lz4','setenv','gpt ','mscompress','ubi ','bootm')):
+                  commands.append({'line':num,'content':line})
+          (out/'upgrade_commands.json').write_text(json.dumps(commands,indent=2,ensure_ascii=False),encoding='utf8')
+          print('first 16 random bytes:',p[:16].hex(' '))
+          print('readable_script_bytes:',len(raw),'lines:',len(safe))
+          print('script first 500 lines:')
+          print('\n'.join(safe[:500]))
+          PY
+      - name: Commit readable script and command index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/decrypted/upgrade_script.txt analysis/Original_Firmware/decrypted/upgrade_commands.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Extract decrypted CineLux MStar upgrade commands"
+            git pull --rebase origin main
+            git push origin main
+          fi
