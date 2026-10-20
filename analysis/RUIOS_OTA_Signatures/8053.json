@@ -1,0 +1,39 @@
+{
+  "head": "437241550000000000000002000000000000b3600000010b",
+  "sigblob_length": 267,
+  "sigblob_first_64_hex": "0a880212800206ea805c0fbe38eb951d11abdfa6d054773ab7f30064bfe8fcf7001a170f483609dbed4a3ec6f21804482358fa13e8bb040e69967c0a0b05bdb3",
+  "fields": [
+    {
+      "field": 1,
+      "wire": 2,
+      "len": 264,
+      "preview": "12800206ea805c0fbe38eb951d11abdfa6d054773ab7f30064bfe8fcf700"
+    },
+    {
+      "nested": 1,
+      "field": 2,
+      "wire": 2,
+      "len": 256,
+      "preview": "06ea805c0fbe38eb951d11abdfa6d054773ab7f3"
+    },
+    {
+      "nested": 1,
+      "field": 3,
+      "wire": 5,
+      "len": 4,
+      "preview": "00010000"
+    }
+  ],
+  "tests": [
+    {
+      "sig_len": 256,
+      "recovered_len": 51,
+      "public_key_check_success": true,
+      "raw_sha256_match": false,
+      "digestinfo_sha256_match": true,
+      "sha256_digestinfo_suffix_match": true,
+      "recovered_preview": "3031300d060960864801650304020105000420d7fcb948496adfc0c13b6110f2",
+      "error": ""
+    }
+  ]
+}
