@@ -1,0 +1,117 @@
+name: Compare 8052 and 8054 stock board/GPIO/DTBO configuration
+
+on:
+  push:
+    branches: [compare-stock-8052-8054-board-20261020]
+    paths:
+      - ".github/workflows/compare-stock-8052-8054-board.yml"
+      - "tools/extract_cinelux_stock_board_configs.py"
+      - "tools/compare_cinelux_stock_board_profiles.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 48
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: "8052"
+            tag: Original_Firmware_for_1_HDMI_ports
+            file: 4K.HDMI-.-20260813.1.rar
+            sha: bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f
+            script: analysis/One_HDMI/upgrade_script.txt
+          - variant: "8054"
+            tag: Original_Firmware
+            file: 4KTOF.HDMI-.-DPLS.-09.30.rar
+            sha: 170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3
+            script: analysis/Original_Firmware/decrypted/upgrade_script.txt
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only archive and ext4 inspection tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar lz4 openssl e2fsprogs
+          mkdir -p /tmp/oem/archive /tmp/oem/raw /tmp/oem/report
+      - name: Download original factory image and verify SHA256
+        run: |
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/${{ matrix.tag }}/${{ matrix.file }}" \
+            -o /tmp/oem/source.rar
+          echo "${{ matrix.sha }}  /tmp/oem/source.rar" | sha256sum -c -
+          unar -q -o /tmp/oem/archive /tmp/oem/source.rar
+          test -s /tmp/oem/archive/upgrade_image.pkg
+      - name: Decrypt verified REE payload without installing firmware
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess,re
+          pkg=Path("/tmp/oem/archive/upgrade_image.pkg")
+          h=pkg.open("rb").read(4096)
+          first=re.search(rb"REE_OFFSET_START\s*=\s*0x([A-Fa-f0-9]+)",h)
+          length=re.search(rb"REE_OFFSET_LEN\s*=\s*0x([A-Fa-f0-9]+)",h)
+          assert first and length
+          offset=int(first.group(1),16)
+          size=int(length.group(1),16)
+          assert offset==4096 and size>10*1024*1024 and size%16==0 and size+offset<=pkg.stat().st_size
+          assert h[0x500:0x508]==b"MTK....."
+          cmd=["openssl","enc","-d","-aes-256-cbc","-nopad",
+               "-K","d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f",
+               "-iv","00000000000000000000000000000000"]
+          with pkg.open("rb") as src,open("/tmp/oem/plain.bin","wb") as dest:
+              src.seek(offset)
+              process=subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=dest)
+              remaining=size
+              while remaining:
+                  data=src.read(min(8*1024*1024,remaining))
+                  if not data:raise EOFError("encrypted REE incomplete")
+                  process.stdin.write(data)
+                  remaining-=len(data)
+              process.stdin.close()
+              assert process.wait()==0,"OpenSSL decrypt error"
+          print("Decrypted verified REE bytes:",size,flush=True)
+          PY
+      - name: Read board GPIO, audio, panel and DTBO tables
+        run: |
+          python3 -u tools/extract_cinelux_stock_board_configs.py \
+            --variant ${{ matrix.variant }} \
+            --plain /tmp/oem/plain.bin \
+            --script ${{ matrix.script }} \
+            --work /tmp/oem/raw \
+            --out /tmp/oem/report
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stock-board-${{ matrix.variant }}
+          path: /tmp/oem/report/
+          if-no-files-found: warn
+          retention-days: 30
+
+  compare:
+    needs: extract
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock-board-*
+          merge-multiple: true
+          path: /tmp/stock-board-input
+      - name: Generate GPIO/DTBO and Android hardware report
+        run: python3 -u tools/compare_cinelux_stock_board_profiles.py
+      - name: Commit research report (no firmware binaries)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Stock_8052_vs_8054_Board/
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare stock 8052 vs 8054 GPIO, DTBO, PMU, HDMI and panel settings"
+            git pull --rebase origin compare-stock-8052-8054-board-20261020
+            git push origin HEAD:compare-stock-8052-8054-board-20261020
+          fi
