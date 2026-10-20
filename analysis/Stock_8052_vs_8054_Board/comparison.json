@@ -3488,5 +3488,19 @@
     "Different file SHA may indicate build metadata changes, not altered function.",
     "Cross-flashing and swapping hardware-specific partitions are not established as safe."
   ],
-  "oem_properties_provenance": "Stored source SHA-verified factory vendor build.prop diff in analysis/Deep_Native_Comparison/README.md"
+  "oem_properties_provenance": "Stored source SHA-verified factory vendor build.prop diff in analysis/Deep_Native_Comparison/README.md",
+  "latest_8052_ota_crosscheck": {
+    "ota_build": "eng.suhaix.20261012.025220",
+    "compared_to_factory_8054": "eng.suhaix.20260930.074037",
+    "board_ini_oct8052_sha256": "803b19c1781a0f88137184fa2ea879a4a88fd6cd8aa0eb1a4532b89a9f6c1229",
+    "board_ini_stock8054_sha256": "803b19c1781a0f88137184fa2ea879a4a88fd6cd8aa0eb1a4532b89a9f6c1229",
+    "board_ini_exact_equal": true,
+    "tvconfig_mapping_oct8052_sha256": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+    "tvconfig_mapping_stock8054_sha256": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+    "tvconfig_mapping_exact_equal": true,
+    "bootdata_mapping_oct8052_sha256": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+    "bootdata_mapping_stock8054_sha256": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+    "bootdata_mapping_exact_equal": true,
+    "limitation": "Equality of default hardware configuration files does not establish physical PCB/pin-level compatibility; OTA 8052 still has OEM machine ID 8052."
+  }
 }
