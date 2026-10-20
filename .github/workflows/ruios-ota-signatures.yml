@@ -1,0 +1,74 @@
+name: Verify stock RUIOS OTA signature certificate
+on:
+  push:
+    paths:
+      - "tools/probe_ruios_signatures.py"
+      - ".github/workflows/ruios-ota-signatures.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    strategy:
+      matrix:
+        code: ["8052","8053"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified RUIOS OTA release
+        env:
+          CODE: ${{ matrix.code }}
+        run: |
+          if [ "$CODE" = "8052" ]; then
+            SHA="bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35"
+          else
+            SHA="9ca8276448e79587b82e55cec0cf3da55154b750774f608378f64619c84f556b"
+          fi
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_$CODE.zip" -o /tmp/source.zip
+          echo "$SHA  /tmp/source.zip" | sha256sum -c -
+          python3 tools/probe_ruios_signatures.py /tmp/source.zip "analysis/RUIOS_OTA_Signatures/$CODE.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ruios-signature-${{ matrix.code }}
+          path: analysis/RUIOS_OTA_Signatures/
+          retention-days: 30
+  compare:
+    needs: inspect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ruios-signature-*
+          merge-multiple: true
+          path: analysis/RUIOS_OTA_Signatures/
+      - name: Interpret OTA certificate signature evidence
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path('analysis/RUIOS_OTA_Signatures')
+          lines=['# OTA payload metadata signatures (RUIOS 8052 / 8053)',
+          '','Static tests against the included AOSP test certificate. This does NOT prove device will accept a custom OTA.',
+          '','| OTA | Signature protobuf fields | Candidate RSA signatures | RSA signatures valid for stock OTA metadata using embedded key |',
+          '|---|---:|---:|---:|']
+          for code in ('8052','8053'):
+              x=json.loads((root/(code+'.json')).read_text())
+              success=[y for y in x['tests'] if y.get('raw_sha256_match') or y.get('digestinfo_sha256_match')]
+              lines.append('| '+code+' | '+str(len(x['fields']))+' | '+str(len(x['tests']))+' | '+str(len(success))+' |')
+              lines+=['',f'## {code}', '~~~json',json.dumps(x,indent=2),'~~~']
+          (root/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines[:9]))
+          PY
+      - name: Commit limited signature reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/RUIOS_OTA_Signatures
+          if ! git diff --cached --quiet; then
+            git commit -m "Identify RUIOS metadata signing key characteristics"
+            git pull --rebase origin main
+            git push origin main
+          fi
