@@ -1,0 +1,217 @@
+name: Extract and compare RUIOS 8052 and 8053 Android partitions
+on:
+  push:
+    paths:
+      - ".github/workflows/ruios-payload-deep.yml"
+      - "tools/audit_ruios_payload.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  payload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 42
+    strategy:
+      matrix:
+        code: ["8052","8053"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static-only tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils aapt file openssl xz-utils unzip
+          curl -fL --retry 3 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/pd.tar.gz
+          mkdir -p /tmp/payload-dumper
+          tar -xzf /tmp/pd.tar.gz -C /tmp/payload-dumper
+          find /tmp/payload-dumper -maxdepth 2 -type f -printf '%p\n'
+          mkdir -p /tmp/payload-in /tmp/images /tmp/erofs
+      - name: Download and SHA256 verify OTA
+        env:
+          CODE: ${{ matrix.code }}
+        run: |
+          if [ "$CODE" = "8052" ]; then
+            SHA="bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35"
+          else
+            SHA="9ca8276448e79587b82e55cec0cf3da55154b750774f608378f64619c84f556b"
+          fi
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_$CODE.zip" -o /tmp/payload-in/source.zip
+          echo "$SHA  /tmp/payload-in/source.zip" | sha256sum -c -
+      - name: Verify OTA payload signature against included test certificate
+        env:
+          CODE: ${{ matrix.code }}
+        run: |
+          mkdir -p "analysis/RUIOS_OTA_Payload/$CODE"
+          python3 - <<'PY'
+          from pathlib import Path
+          import os,zipfile,hashlib,subprocess,json
+          code=os.environ['CODE'];root=Path('analysis/RUIOS_OTA_Payload')/code
+          with zipfile.ZipFile('/tmp/payload-in/source.zip') as z:
+              cert=z.read('META-INF/com/android/otacert')
+              with z.open('payload.bin') as p:
+                  head=p.read(24)
+                  assert head[:4]==b'CrAU'
+                  manifest_len=int.from_bytes(head[12:20],'big')
+                  signature_len=int.from_bytes(head[20:24],'big')
+                  manifest=p.read(manifest_len)
+                  blob=p.read(signature_len)
+                  assert len(blob)==signature_len
+              payload_meta=head+manifest
+          # Protobuf, parse nested Signature without importing proprietary generated proto files
+          def varint(buf,pos):
+              num=0;shift=0
+              while pos<len(buf):
+                  c=buf[pos];pos+=1;num|=(c&127)<<shift
+                  if not c&128:return num,pos
+                  shift+=7
+              raise ValueError('Truncated varint')
+          def fields(buf):
+              p=0;out=[]
+              while p<len(buf):
+                  tag,p=varint(buf,p);wire=tag&7;idx=tag>>3
+                  if wire==0:value,p=varint(buf,p)
+                  elif wire==2:
+                      n,p=varint(buf,p);value=buf[p:p+n];p+=n
+                  else:raise ValueError('Unsupported protobuf wire '+str(wire))
+                  out.append((idx,value))
+              return out
+          signatures=[]
+          try:
+              for i,signature_record in fields(blob):
+                  if i!=1 or not isinstance(signature_record,bytes):continue
+                  item=dict(fields(signature_record))
+                  signatures.append({'version':item.get(1),'bytes':item.get(2,b'')})
+          except Exception as e:
+              print('Signature protobuf parse error',str(e),flush=True)
+          certfile=Path('/tmp/cert.pem');certfile.write_bytes(cert)
+          pubfile=Path('/tmp/pub.pem')
+          subprocess.run(['openssl','x509','-pubkey','-noout','-in',str(certfile),'-out',str(pubfile)],check=True)
+          digest=hashlib.sha256(payload_meta).digest()
+          checks=[]
+          for index,item in enumerate(signatures):
+              sig=item['bytes'];sigpath=Path('/tmp/signature.bin');sigpath.write_bytes(sig)
+              recovered=Path('/tmp/recovered.bin')
+              cmd=['openssl','pkeyutl','-verifyrecover','-pubin','-inkey',str(pubfile),
+                   '-in',str(sigpath),'-pkeyopt','rsa_padding_mode:pkcs1','-out',str(recovered)]
+              p=subprocess.run(cmd,capture_output=True,text=True)
+              data=recovered.read_bytes() if p.returncode==0 else b''
+              prefix=bytes.fromhex('3031300d060960864801650304020105000420')
+              checks.append({'version':item['version'],'signature_length':len(sig),'recovered_length':len(data),
+                             'verify_raw_sha256':data==digest,
+                             'verify_sha256_digestinfo':data==prefix+digest,
+                             'public_key_rsa_length':len(sig),
+                             'error':p.stderr[-250:] if p.returncode else ''})
+          result={'code':code,'payload_format':'CrAU v2','manifest_length':manifest_len,
+                  'signature_blob_length':signature_len,'metadata_hash_sha256':digest.hex(),
+                  'metadata_signature_checks':checks,
+                  'matches_embedded_ota_test_cert':any(x['verify_raw_sha256'] or x['verify_sha256_digestinfo'] for x in checks)}
+          (root/'signature_check.json').write_text(json.dumps(result,indent=2))
+          print(json.dumps(result,indent=2),flush=True)
+          PY
+      - name: Reconstruct OTA partition images
+        run: |
+          BIN="/tmp/payload-dumper/payload-dumper-go"
+          if [ ! -x "$BIN" ]; then
+            BIN="$(find /tmp/payload-dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          fi
+          chmod +x "$BIN"
+          "$BIN" -l /tmp/payload-in/source.zip | tee /tmp/partitions.txt
+          "$BIN" -c 3 -o /tmp/images /tmp/payload-in/source.zip > /tmp/payload-extract.log 2>&1 || { tail -n 100 /tmp/payload-extract.log; exit 1; }
+          find /tmp/images -maxdepth 1 -type f -printf '%f %s bytes\n'
+          df -h /tmp
+      - name: Unpack Android EROFS and collect all file hashes
+        env:
+          CODE: ${{ matrix.code }}
+        run: |
+          for p in /tmp/images/*.img; do
+            [ -f "$p" ] || continue
+            if file -b "$p" | grep -q 'EROFS'; then
+              name="$(basename "$p" .img)"
+              mkdir -p "/tmp/erofs/$name"
+              fsck.erofs --extract="/tmp/erofs/$name" "$p" > "/tmp/$name-erofs.log" 2>&1 || { tail -n 40 "/tmp/$name-erofs.log"; exit 1; }
+            fi
+          done
+          python3 -u tools/audit_ruios_payload.py /tmp/images /tmp/erofs "$CODE" \
+             "analysis/RUIOS_OTA_Payload/$CODE"
+          head -n 100 "analysis/RUIOS_OTA_Payload/$CODE/README.md"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ruios-deep-${{ matrix.code }}
+          path: analysis/RUIOS_OTA_Payload/
+          retention-days: 30
+
+  compare:
+    needs: payload
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ruios-deep-*
+          merge-multiple: true
+          path: /tmp/ota-results
+      - name: Detailed 8052 vs 8053 and manufacturer app crosscheck
+        run: |
+          mkdir -p analysis/RUIOS_OTA_Comparison
+          python3 - <<'PY'
+          import json,collections
+          from pathlib import Path
+          one=json.loads(Path('/tmp/ota-results/8052/inventory.json').read_text())
+          two=json.loads(Path('/tmp/ota-results/8053/inventory.json').read_text())
+          names=sorted(set(one['files'])|set(two['files']))
+          both=set(one['files'])&set(two['files'])
+          same=sorted(n for n in both if one['files'][n]['sha256']==two['files'][n]['sha256'])
+          changed=sorted(n for n in both if one['files'][n]['sha256']!=two['files'][n]['sha256'])
+          appkeys=sorted(set(one['apps'])|set(two['apps']))
+          appdiff=[]
+          for k in appkeys:
+              a=one['apps'].get(k);b=two['apps'].get(k)
+              appdiff.append({'path':k,'one_version':a['aapt'].get('versionName') if a else None,
+                              'two_version':b['aapt'].get('versionName') if b else None,
+                              'same_sha':bool(a and b and a['sha256']==b['sha256'])})
+          partdiff=[]
+          for k in sorted(set(one['partitions'])|set(two['partitions'])):
+              a=one['partitions'].get(k);b=two['partitions'].get(k)
+              partdiff.append({'name':k,'one_bytes':a['bytes'] if a else None,
+                               'two_bytes':b['bytes'] if b else None,
+                               'same_sha':bool(a and b and a['sha256']==b['sha256'])})
+          result={'shared_paths':len(both),'identical_files':len(same),
+                  'changed_files':len(changed),'only_8052':sorted(set(one['files'])-set(two['files'])),
+                  'only_8053':sorted(set(two['files'])-set(one['files'])),
+                  'apps':appdiff,'partition_comparison':partdiff,
+                  'changed_hardware_paths':sorted(n for n in changed if any(x in n.lower() for x in ['hdmi','sound','audio','projector','tof','focus','keystone','trd','mstar','mtk','vintf','init.rc','remote','i2c']))[:300]}
+          out=Path('analysis/RUIOS_OTA_Comparison')
+          (out/'comparison.json').write_text(json.dumps(result,ensure_ascii=False,indent=1))
+          lines=['# RUIOS 8052 vs 8053 reconstructed Android OTA',
+                 '','8052 = 2026-10-12 eng.suhaix.20261012.025220, 8053 = 2026-06-12 eng.luzhih.20260612.083454.',
+                 '',f'Common Android file paths: {len(both)}',
+                 f'Identical files: {len(same)}',
+                 f'Different same-path files: {len(changed)}',
+                 f'Only 8052: {len(result["only_8052"])}; only 8053: {len(result["only_8053"])}',
+                 '','## OTA partitions',
+                 '| Partition | 8052 bytes | 8053 bytes | Exact match |','|---|---:|---:|---|']
+          for p in partdiff:lines.append(f'| {p["name"]} | {p["one_bytes"]} | {p["two_bytes"]} | {p["same_sha"]} |')
+          lines+=['','## OEM APK versions and exact hashes',
+                  '| APK | 8052 version | 8053 version | Exact match |','|---|---|---|---|']
+          for p in appdiff:
+              if any(x in p['path'].lower() for x in ['rui','source','keystone','trd','tv','setting','zx','focus','ota','factory','launcher']):
+                  lines.append(f'| {p["path"]} | {p["one_version"]} | {p["two_version"]} | {p["same_sha"]} |')
+          lines+=['','## Changed hardware-related paths']
+          lines+=['- '+p for p in result['changed_hardware_paths'][:160]]
+          (out/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines[:100]),flush=True)
+          PY
+      - name: Commit only generated nonbinary reports
+        run: |
+          cp -r /tmp/ota-results/8052 analysis/RUIOS_OTA_Comparison/ 2>/dev/null || true
+          cp -r /tmp/ota-results/8053 analysis/RUIOS_OTA_Comparison/ 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/RUIOS_OTA_Comparison/
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare unencrypted RUIOS OTA 8052/8053 payloads, apps, build props and public signature"
+            git pull --rebase origin main
+            git push origin main
+          fi
