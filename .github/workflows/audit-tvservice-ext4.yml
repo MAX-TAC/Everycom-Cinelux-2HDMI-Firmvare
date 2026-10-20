@@ -1,0 +1,185 @@
+name: Inspect CineLux vendor TV service partitions
+
+on:
+  push:
+    paths:
+      - ".github/workflows/audit-tvservice-ext4.yml"
+      - "tools/audit_tv_ext4.py"
+      - "tools/audit_linux_rootfs.py"
+      - "tools/audit_native_config.py"
+      - "tools/compare_native_config.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [one, two]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only firmware utilities
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs erofs-utils squashfs-tools
+          df -h /tmp
+      - name: Download the official archive and verify SHA256
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          mkdir -p /tmp/source /tmp/source/extracted /tmp/parts /tmp/erofs /tmp/logical /tmp/audit
+          if [ "$VARIANT" = "one" ]; then
+            URL="https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware_for_1_HDMI_ports/4K.HDMI-.-20260813.1.rar"
+            SHA="bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f"
+          else
+            URL="https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar"
+            SHA="170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3"
+          fi
+          curl -fL --retry 5 --retry-delay 4 "$URL" -o /tmp/source/source.rar
+          echo "$SHA  /tmp/source/source.rar" | sha256sum -c -
+          unar -q -o /tmp/source/extracted /tmp/source/source.rar
+          ls -lh /tmp/source/extracted
+      - name: Verify secure REE header and decrypt
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,subprocess
+          p=Path('/tmp/source/extracted/upgrade_image.pkg')
+          h=p.open('rb').read(4096)
+          a=re.search(rb'REE_OFFSET_START\s*=\s*0x([0-9A-Fa-f]+)',h)
+          b=re.search(rb'REE_OFFSET_LEN\s*=\s*0x([0-9A-Fa-f]+)',h)
+          assert a and b,'Not known secure MTK layout'
+          start=int(a.group(1),16);length=int(b.group(1),16)
+          assert start==4096 and length%16==0 and length<p.stat().st_size and h[0x500:0x508]==b'MTK.....'
+          print('Decrypting REE payload:',length,'bytes starting at',start,flush=True)
+          with p.open('rb') as source,open('/tmp/source/decrypted.bin','wb') as output:
+              source.seek(start)
+              process=subprocess.Popen(['openssl','enc','-d','-aes-256-cbc','-nopad',
+                 '-K','d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f',
+                 '-iv','00000000000000000000000000000000'],stdin=subprocess.PIPE,stdout=output,stderr=subprocess.PIPE)
+              remains=length
+              while remains:
+                  data=source.read(min(remains,8*1024*1024))
+                  if not data:raise EOFError('Incomplete encrypted data')
+                  process.stdin.write(data)
+                  remains-=len(data)
+              process.stdin.close()
+              rc=process.wait()
+              assert rc==0,'AES decryption failed'
+          plain=Path('/tmp/source/decrypted.bin')
+          assert plain.stat().st_size==length,'Decrypted body size differs'
+          header=plain.open('rb').read(32768)
+          assert b'gpt create mmc 0' in header and b'filepartload' in header,'Key did not decode MStar script'
+          print('Verified decrypted MStar script')
+          PY
+      - name: Reconstruct vendor Linux partition images without flashing
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          if [ "$VARIANT" = "one" ]; then
+            SCRIPT="analysis/One_HDMI/upgrade_script.txt"
+          else
+            SCRIPT="analysis/Original_Firmware/decrypted/upgrade_script.txt"
+          fi
+          python3 -u tools/reconstruct_cinelux.py \
+            /tmp/source/decrypted.bin /tmp/parts "$SCRIPT" /tmp/audit/rootfs-segments \
+            > /tmp/audit/reconstruction.log 2>&1
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          o=json.loads(Path('/tmp/audit/rootfs-segments/segments.json').read_text())
+          assert not o['errors'],o['errors']
+          print('Reconstructed',len(o['segments']),'segments.')
+          PY
+          file /tmp/parts/linux_rootfs_a_a.img /tmp/parts/3rd_a_a.img
+      - name: Inspect vendor TV configuration and service ext4 partitions
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          python3 -u tools/audit_tv_ext4.py /tmp/parts "$VARIANT" /tmp/audit/tvext4.json
+          ls -lh /tmp/audit/tvext4.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cine-tvpart-${{ matrix.variant }}
+          path: /tmp/audit/tvext4.json
+          retention-days: 30
+
+  compare:
+    needs: audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cine-tvpart-*
+          path: /tmp/tvparts
+      - name: Summarize TV subsystem differences
+        run: |
+          mkdir -p analysis/TV_Service_Comparison
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,difflib,re
+          a=json.loads(Path('/tmp/tvparts/cine-tvpart-one/tvext4.json').read_text())
+          b=json.loads(Path('/tmp/tvparts/cine-tvpart-two/tvext4.json').read_text())
+          out={'partitions':{},'notes':'Only packed factory images; no private running device calibration dumped.'}
+          lines=['# Everycom MTK TVservice/tvconfig partition comparison',
+            '',
+            'These ext4 volumes contain supporting hardware config and services outside ordinary Android APK folders.',
+            '','All content compares SHA256. No private firmware bytes or identifiable material are published.',
+            '']
+          for name in sorted(set(a['partitions'])|set(b['partitions'])):
+              x=a['partitions'].get(name,{}).get('files',{})
+              y=b['partitions'].get(name,{}).get('files',{})
+              common=set(x)&set(y)
+              same=[v for v in common if x[v]['sha256']==y[v]['sha256']]
+              changed=[v for v in common if x[v]['sha256']!=y[v]['sha256']]
+              onlya=sorted(set(x)-set(y))
+              onlyb=sorted(set(y)-set(x))
+              out['partitions'][name]={'one_count':len(x),'two_count':len(y),
+                'identical':len(same),'changed':len(changed),'one_only':onlya,
+                'two_only':onlyb,'changed_paths':sorted(changed)}
+              lines+=['## '+name, '',
+                '- Files: '+str(len(x))+' (1 HDMI), '+str(len(y))+' (2 HDMI)',
+                '- Identical: '+str(len(same)),
+                '- Changed: '+str(len(changed)), 
+                '- Paths only in one/two: '+str(len(onlya))+'/'+str(len(onlyb)),
+                '','### Changed files','']
+              lines+=['- '+v for v in sorted(changed)[:160]]
+              lines+=['','### Added/removed','']
+              lines+=['- only one: '+v for v in onlya[:30]]
+              lines+=['- only two: '+v for v in onlyb[:30]]
+              snippets1=a['samples'].get(name,{})
+              snippets2=b['samples'].get(name,{})
+              interesting=[]
+              for key in sorted(set(snippets1)|set(snippets2)):
+                if snippets1.get(key)!=snippets2.get(key) and (key in changed or key in onlya or key in onlyb):
+                  interesting.append({'path':key,'one':snippets1.get(key,[])[:10],'two':snippets2.get(key,[])[:10]})
+              out['partitions'][name]['selected_settings']=interesting[:60]
+              lines+=['','### Selected configuration changes','']
+              for entry in interesting[:30]:
+                lines+=['#### '+entry['path'],
+                   '- One HDMI: '+str(entry['one'][:5]),
+                   '- Two HDMI: '+str(entry['two'][:5]),'']
+          lines+=['','Errors / warnings: '+str(a['errors']+b['errors'])]
+          p=Path('analysis/TV_Service_Comparison')
+          (p/'diff.json').write_text(json.dumps(out,ensure_ascii=False,indent=1))
+          (p/'README.md').write_text('\n'.join(lines)+'\n')
+          print('TV ext4 summary',[(k,v['one_count'],v['two_count'],v['changed']) for k,v in out['partitions'].items()])
+          PY
+      - name: Commit TV service reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/TV_Service_Comparison
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare embedded MediaTek TV service and configuration ext4 partitions"
+            git pull --rebase origin main
+            git push origin main
+          fi
