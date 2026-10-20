@@ -1,0 +1,79 @@
+name: Research OEM Android API via official RUIOS OTA (read-only)
+
+on:
+  push:
+    branches: [research-oem-settings-api-20261020]
+    paths:
+      - ".github/workflows/research-oem-settings-api.yml"
+      - "tools/research_cinelux_oem_api.py"
+      - "tools/summarize_cinelux_oem_api.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static package analyzers
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils aapt unzip binutils
+          curl -fL --retry 4 --retry-delay 3 \
+            https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip \
+            -o /tmp/jadx.zip
+          mkdir -p /tmp/jadx-bin /tmp/pd /tmp/images /tmp/erofs /tmp/oem-api
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          curl -fL --retry 4 --retry-delay 3 \
+            https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz \
+            -o /tmp/pd.tar.gz
+          tar -xzf /tmp/pd.tar.gz -C /tmp/pd
+          /tmp/jadx-bin/bin/jadx --version
+      - name: Download SHA256-verified latest RUIOS 8052 OTA
+        run: |
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" \
+            -o /tmp/ota8052.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota8052.zip" | sha256sum -c -
+      - name: Extract only Android partitions (no flashing)
+        run: |
+          BIN="$(find /tmp/pd -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext,vendor -o /tmp/images /tmp/ota8052.zip > /tmp/extract.log 2>&1 \
+            || { tail -n 80 /tmp/extract.log; exit 1; }
+          for part in system system_ext vendor; do
+            mkdir -p "/tmp/erofs/$part"
+            fsck.erofs --extract="/tmp/erofs/$part" "/tmp/images/$part.img" > "/tmp/erofs-$part.log" 2>&1 \
+              || { tail -n 60 "/tmp/erofs-$part.log"; exit 1; }
+          done
+          mv /tmp/erofs/system /tmp/erofs/system_a
+          mv /tmp/erofs/system_ext /tmp/erofs/system_ext_a
+          mv /tmp/erofs/vendor /tmp/erofs/vendor_a
+      - name: Inspect OEM methods, JNI and Bluetooth audio policy
+        run: |
+          python3 -u tools/research_cinelux_oem_api.py \
+            --root /tmp/erofs --variant 8052-ota --out /tmp/oem-api \
+            > /tmp/oem-inspection.log 2>&1 || { tail -n 80 /tmp/oem-inspection.log; exit 1; }
+          tail -n 40 /tmp/oem-inspection.log
+          python3 -u tools/summarize_cinelux_oem_api.py
+      - name: Publish technical metadata (not OEM Java source)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/OEM_API_8052_Latest/
+          if ! git diff --cached --quiet; then
+            git commit -m "Research verified RUIOS OTA OEM API signatures and JNI symbols"
+            git pull --rebase origin research-oem-settings-api-20261020
+            git push origin HEAD:research-oem-settings-api-20261020
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: RUIOS-8052-OEM-API
+          path: analysis/OEM_API_8052_Latest/
+          if-no-files-found: warn
+          retention-days: 30
