@@ -562,9 +562,9 @@
   ],
   "super": {
     "path": "/tmp/cinelux-parts/super.img",
-    "size": 26700939264,
+    "size": 2225078272,
     "format": "data",
-    "logical_bytes_written": 26700939264,
+    "logical_bytes_written": 2225078272,
     "expected_gpt_super_size": 2225078272
   },
   "partitions": {

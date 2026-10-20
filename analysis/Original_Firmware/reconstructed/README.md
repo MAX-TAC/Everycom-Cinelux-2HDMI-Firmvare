@@ -2,7 +2,7 @@
 Only static file extraction; original update archive was not executed or flashed.
 
 ## Super partition
-Size: 26700939264 bytes
+Size: 2225078272 bytes
 Format: data
 Expected GPT space: 2225078272
 

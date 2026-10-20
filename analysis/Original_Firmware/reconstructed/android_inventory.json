@@ -3,7 +3,7 @@
     {
       "name": "product_a.img",
       "size": 77152256,
-      "type": "data"
+      "type": "EROFS filesystem, compat: SB_CHKSUM MTIME, blocksize=12, exslots=0, uuid=FBF3C5B1-D809-EE55-8100-1C3382BCD053, incompat: LZ4_0PADDING"
     },
     {
       "name": "system_a.img",
@@ -13,12 +13,12 @@
     {
       "name": "system_ext_a.img",
       "size": 87273472,
-      "type": "data"
+      "type": "EROFS filesystem, compat: SB_CHKSUM MTIME, blocksize=12, exslots=0, uuid=A496D428-394B-3C58-BFDC-0762EBA5B7F4, incompat: LZ4_0PADDING"
     },
     {
       "name": "vendor_a.img",
       "size": 262610944,
-      "type": "data"
+      "type": "EROFS filesystem, compat: SB_CHKSUM MTIME, blocksize=12, exslots=0, uuid=DBB3D2FF-C28D-5757-B7E5-65055D0F4135, incompat: LZ4_0PADDING"
     }
   ],
   "build_props": {},
