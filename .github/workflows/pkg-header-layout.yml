@@ -1,0 +1,105 @@
+name: Inspect PKG cryptographic header layout
+on:
+  push:
+    paths:
+      - ".github/workflows/pkg-header-layout.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  header:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and verify input
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq unar
+          mkdir -p /tmp/cinelux
+          curl -fL --retry 4 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/image.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/image.rar" | sha256sum -c
+          unar -q -o /tmp/cinelux /tmp/image.rar
+      - name: Inspect signature/header boundaries without running package code
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,math,collections,hashlib,re
+          f=Path('/tmp/cinelux/upgrade_image.pkg')
+          n=f.stat().st_size
+          with f.open('rb') as h:
+              p=h.read(256*1024)
+              h.seek(n-4096);end=h.read()
+          def entropy(b):
+              if not b:return 0
+              c=collections.Counter(b);m=len(b)
+              return round(-sum((v/m)*math.log2(v/m) for v in c.values()),6)
+          def span(b,t):
+              runs=[]
+              i=0
+              while i<len(b):
+                  if b[i]!=t:i+=1;continue
+                  j=i+1
+                  while j<len(b) and b[j]==t:j+=1
+                  if j-i>=24:runs.append({'start':i,'end':j,'length':j-i})
+                  i=j
+              return runs
+          def text(b):
+              out=[]
+              for m in re.finditer(rb'[\x20-\x7e]{7,}',b):
+                  st=m.group().decode('ascii','replace')
+                  if len(out)<100 and not re.search(r'password|token|key|ssid|serial|mac|credential',st,re.I):
+                      out.append({'offset':m.start(),'text':st[:120]})
+              return out
+          near=p[:65536]
+          blocks=[p[i:i+16] for i in range(0,len(p)-15,16)]
+          counter=collections.Counter(blocks)
+          dups={b.hex():x for b,x in counter.items() if x>1}
+          bands=[]
+          for start in list(range(0,65536,4096))+[65536,131072,196608]:
+              b=p[start:start+4096]
+              bands.append({'offset':start,'entropy':entropy(b),'zero_fraction':round(b.count(0)/len(b),6),
+                  'ascii_fraction':round(sum(32<=c<127 for c in b)/len(b),6)})
+          result={'length':n,'length_mod16':n%16,
+                  'head256_sha256':hashlib.sha256(p[:256]).hexdigest(),
+                  'head256_entropy':entropy(p[:256]),
+                  'version_marker_index':p.find(b'V_0.0.0'),
+                  'first64KiB_zero_runs_ge24':span(near,0)[:45],
+                  'first64KiB_ff_runs_ge24':span(near,255)[:20],
+                  'first64KiB_ascii_runs':text(p[:65536]),
+                  'first64KiB_4KiB_bands':bands,
+                  'first256KiB_duplicate_16B_blocks':len(dups),
+                  'last4096_entropy':entropy(end),
+                  'head512_hexdump':[
+                   {'offset':off,'hex':p[off:off+16].hex(' '),
+                    'text':''.join(chr(v) if 32<=v<127 else '.' for v in p[off:off+16])}
+                   for off in range(0,512,16)],
+                   'range_256_to_1024_hex':p[256:1024].hex(' ')}
+          out=Path('analysis/Original_Firmware/header')
+          out.mkdir(parents=True,exist_ok=True)
+          (out/'structure.json').write_text(json.dumps(result,indent=2),encoding='utf8')
+          lines=['# Byte-level structure of CineLux PKG','',
+           'Static inspection. No PKG execution, no assertion about specific cipher.',
+           'Version marker V_0.0.0 at '+str(result['version_marker_index']),
+           'Package size %d; size modulo 16 = %d'%(n,n%16),
+           'First 256-byte entropy: '+str(result['head256_entropy']),
+           'Duplicate 16-byte blocks in first 256 KiB: '+str(len(dups)),
+           'Last 4 KiB entropy: '+str(result['last4096_entropy']),
+           'Zero runs: '+json.dumps(result['first64KiB_zero_runs_ge24'][:20]),
+           '', '## First 512 bytes','']
+          for a in result['head512_hexdump']:
+              lines.append('%04x  %s  %s'%(a['offset'],a['hex'],a['text']))
+          lines+=['','## Printable strings (first 64 KiB)',json.dumps(result['first64KiB_ascii_runs'][:30],indent=2),
+             '','## 4 KiB entropy bands',json.dumps(bands,indent=2)]
+          (out/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines)[:22000])
+          PY
+      - name: Commit compact report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/header/
+          if ! git diff --cached --quiet; then
+            git commit -m "Document CineLux PKG header layout and potential signature"
+            git pull --rebase origin main
+            git push origin main
+          fi
