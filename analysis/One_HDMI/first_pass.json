@@ -1,0 +1,25 @@
+{
+  "source_archive": {
+    "name": "4K.HDMI-.-20260813.1.rar",
+    "size": 1122636304,
+    "sha256": "bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f"
+  },
+  "files": [
+    {
+      "filename": "upgrade_image.pkg",
+      "size": 1122636112,
+      "sha256": "44e30f6c3eb02a16c023a8e369e874eefbdd2f7d2747aa8c9668d02aa058b9d5",
+      "header_hex_first32": "4a 25 62 6c 4d 4a 33 d2 e7 77 35 76 97 d2 16 8b 42 5f a3 8a 8a bb 7b 7e e9 45 b5 f2 4c a7 16 38",
+      "version": "V_0.0.0",
+      "REE_OFFSET_START": 4096,
+      "REE_OFFSET_LEN": 1122631680,
+      "new_mstar_markers": {
+        "chunk_id_head_at_0x500": "MTK.....",
+        "chunk_id_end_at_0x578": ".....mtk"
+      },
+      "REE_BODY_FITS_FILE": true,
+      "known_key_decrypts_upgrade_script": true,
+      "upgrade_script_lines": 212
+    }
+  ]
+}

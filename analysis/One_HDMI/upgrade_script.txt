@@ -1,0 +1,212 @@
+# The random bytes above is for AES-CBC random IV.
+gpt clean mmc 0
+gpt create mmc 0 name=tvcertificate,size=0x800000
+gpt create mmc 0 name=linux_rootfs_a_a,size=0x3700000
+gpt create mmc 0 name=linux_rootfs_a_b,size=0x3700000
+gpt create mmc 0 name=3rd_a_a,size=0x1E00000
+gpt create mmc 0 name=3rd_a_b,size=0x1E00000
+gpt create mmc 0 name=3rd_rw,size=0x1E00000
+gpt create mmc 0 name=cha,size=0x100000
+gpt create mmc 0 name=chb,size=0x100000
+gpt create mmc 0 name=tvservice_a,size=0xA700000
+gpt create mmc 0 name=tvservice_b,size=0xA700000
+gpt create mmc 0 name=factory_a_a,size=0x800000
+gpt create mmc 0 name=factory_a_b,size=0x800000
+gpt create mmc 0 name=eeprom_a,size=0x200000
+gpt create mmc 0 name=persist,size=0x1400000
+gpt create mmc 0 name=bootdata_a,size=0x2800000
+gpt create mmc 0 name=bootdata_b,size=0x2800000
+gpt create mmc 0 name=tvconfig_a,size=0x9600000
+gpt create mmc 0 name=tvconfig_b,size=0x9600000
+gpt create mmc 0 name=project_id,size=0x500000
+gpt create mmc 0 name=misc,size=0x00100000
+mw.b 0x2F300000 0 0x100000;partition write mmc 0 misc 0x2F300000 0x100000
+gpt create mmc 0 name=boot_a,size=0x4B00000
+gpt create mmc 0 name=boot_b,size=0x4B00000
+gpt create mmc 0 name=metadata,size=0x1000000
+gpt create mmc 0 name=dtbo_a,size=0x800000
+gpt create mmc 0 name=dtbo_b,size=0x800000
+gpt create mmc 0 name=super,size=0x84A00000
+gpt create mmc 0 name=cache,size=0x500000
+gpt create mmc 0 name=vbmeta_a,size=0x100000
+gpt create mmc 0 name=vbmeta_b,size=0x100000
+gpt create mmc 0 name=vbmeta_system_a,size=0x100000
+gpt create mmc 0 name=vbmeta_system_b,size=0x100000
+gpt create mmc 0 name=optee_a,size=0x1800000
+gpt create mmc 0 name=optee_b,size=0x1800000
+gpt create mmc 0 name=armfw_a,size=0x100000
+gpt create mmc 0 name=armfw_b,size=0x100000
+gpt create mmc 0 name=private,size=0x1400000
+gpt create mmc 0 name=trddev,size=0x200000
+gpt create_adaptive mmc 0 userdata 0x1000
+filepartload 0x38900000 $(UpgradeImage) 0x9a1f25 0x21000
+unlz4 0x38900000 0x2f300000 0x9600000
+partition erase mmc 0 tvconfig_a
+partition erase mmc 0 tvconfig_b
+partition write mmc 0 tvconfig_a 0x2F300000 $(filesize)
+partition write mmc 0 tvconfig_b 0x2F300000 $(filesize)
+filepartload 0x2f800000 $(UpgradeImage) 0x53bb 0x9d1000
+unlz4 0x2f800000 0x2f300000 0x500000
+partition erase mmc 0 project_id
+partition write mmc 0 project_id 0x2F300000 $(filesize)
+filepartload 0x2f370000 $(UpgradeImage) 0x65447 0x9e1000
+unlz4 0x2f370000 0x2f300000 0x6e500
+partition write.boot mmc 0 1 0x2F300000 $(filesize)
+partition write.boot mmc 0 2 0x2F300000 $(filesize)
+mmc partconf 0 0 1 0
+filepartload 0x2f590000 $(UpgradeImage) 0x138f1a 0xa51000
+unlz4 0x2f590000 0x2f300000 0x288e00
+partition write mmc 0 mboot_a 0x2F300000 $(filesize)
+partition write mmc 0 mboot_b 0x2F300000 $(filesize)
+filepartload 0x2f310000 $(UpgradeImage) 0x1dbd 0xb91000
+unlz4 0x2f310000 0x2f300000 0x3000
+partition erase mmc 0 vbmeta_a
+partition erase mmc 0 vbmeta_b
+partition write mmc 0 vbmeta_a 0x2F300000 $(filesize)
+partition write mmc 0 vbmeta_b 0x2F300000 $(filesize)
+filepartload 0x2f310000 $(UpgradeImage) 0x910 0xba1000
+unlz4 0x2f310000 0x2f300000 0x1000
+partition erase mmc 0 vbmeta_system_a
+partition erase mmc 0 vbmeta_system_b
+partition write mmc 0 vbmeta_system_a 0x2F300000 $(filesize)
+partition write mmc 0 vbmeta_system_b 0x2F300000 $(filesize)
+filepartload 0x33e00000 $(UpgradeImage) 0x23e0e52 0xbb1000
+unlz4 0x33e00000 0x2f300000 0x4b00000
+partition erase mmc 0 boot_a
+partition erase mmc 0 boot_b
+partition write mmc 0 boot_a 0x2F300000 $(filesize)
+partition write mmc 0 boot_b 0x2F300000 $(filesize)
+setenv bootcmd partition read mmc 0 boot 0x2DE00000 0x4B00000\; abootimg get dtb --index=0 fdtaddr\; bootm 0x2DE00000
+setenv recoverycmd partition read mmc 0 boot 0x2DE00000 0x4B00000\; abootimg get dtb --index=0 fdtaddr\; bootm 0x2DE00000
+saveenv
+filepartload 0x2f300000 $(UpgradeImage) 0x2ad2a0 0x2fa1000
+partition erase mmc 0 optee_a
+partition erase mmc 0 optee_b
+partition write mmc 0 optee_a 0x2F300000 $(filesize)
+partition write mmc 0 optee_b 0x2F300000 $(filesize)
+filepartload 0x2f300000 $(UpgradeImage) 0x12d20 0x3251000
+partition erase mmc 0 armfw_a
+partition erase mmc 0 armfw_b
+partition write mmc 0 armfw_a 0x2F300000 $(filesize)
+partition write mmc 0 armfw_b 0x2F300000 $(filesize)
+filepartload 0x2fb00000 $(UpgradeImage) 0x19d700 0x3271000
+unlz4 0x2fb00000 0x2f300000 0x800000
+partition erase mmc 0 dtbo_a
+partition erase mmc 0 dtbo_b
+partition write mmc 0 dtbo_a 0x2F300000 $(filesize)
+partition write mmc 0 dtbo_b 0x2F300000 $(filesize)
+filepartload 0x30300000 $(UpgradeImage) 0x10380 0x3411000
+unlz4 0x30300000 0x2f300000 0x1000000
+partition erase mmc 0 metadata
+partition write mmc 0 metadata 0x2F300000 $(filesize)
+filepartload 0x32a00000 $(UpgradeImage) 0x30e0289 0x3431000
+unlz4 0x32a00000 0x2f300000 0x3700000
+partition erase mmc 0 linux_rootfs_a_a
+partition erase mmc 0 linux_rootfs_a_b
+partition write mmc 0 linux_rootfs_a_a 0x2F300000 $(filesize)
+partition write mmc 0 linux_rootfs_a_b 0x2F300000 $(filesize)
+filepartload 0x31100000 $(UpgradeImage) 0xc7d8e 0x6521000
+unlz4 0x31100000 0x2f300000 0x1e00000
+partition erase mmc 0 3rd_a_a
+partition erase mmc 0 3rd_a_b
+partition write mmc 0 3rd_a_a 0x2F300000 $(filesize)
+partition write mmc 0 3rd_a_b 0x2F300000 $(filesize)
+filepartload 0x31100000 $(UpgradeImage) 0x1e48d 0x65f1000
+unlz4 0x31100000 0x2f300000 0x1e00000
+partition erase mmc 0 3rd_rw
+partition write mmc 0 3rd_rw 0x2F300000 $(filesize)
+partition erase mmc 0 super
+filepartload 0x35700000 $(UpgradeImage) 0x5e1c56e 0x6611000
+unlz4 0x35700000 0x2f300000 0x63ff068
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x34f70000 $(UpgradeImage) 0x5a89952 0xc431000
+unlz4 0x34f70000 0x2f300000 0x5c6304c
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x35700000 $(UpgradeImage) 0x5f359a6 0x11ec1000
+unlz4 0x35700000 0x2f300000 0x63ff04c
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x34f10000 $(UpgradeImage) 0x57442eb 0x17e01000
+unlz4 0x34f10000 0x2f300000 0x5c0104c
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x35700000 $(UpgradeImage) 0x602c583 0x1d551000
+unlz4 0x35700000 0x2f300000 0x63ff04c
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x34f10000 $(UpgradeImage) 0x5714eda 0x23581000
+unlz4 0x34f10000 0x2f300000 0x5c0104c
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x34c10000 $(UpgradeImage) 0x5345f64 0x28ca1000
+unlz4 0x34c10000 0x2f300000 0x5907074
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x35700000 $(UpgradeImage) 0x5c2345c 0x2dff1000
+unlz4 0x35700000 0x2f300000 0x63ff04c
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x35700000 $(UpgradeImage) 0x5f1960f 0x33c21000
+unlz4 0x35700000 0x2f300000 0x63ff0c4
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x33370000 $(UpgradeImage) 0x3931ae6 0x39b41000
+unlz4 0x33370000 0x2f300000 0x4061068
+partition swrite mmc 0 super 0x2F300000 $(filesize)
+filepartload 0x2f310000 $(UpgradeImage) 0x2bd 0x3d481000
+unlz4 0x2f310000 0x2f300000 0xa04c
+partition erase mmc 0 cache
+partition swrite mmc 0 cache 0x2F300000 $(filesize)
+filepartload 0x39a00000 $(UpgradeImage) 0x54719d2 0x3d491000
+unlz4 0x39a00000 0x2f300000 0xa700000
+partition erase mmc 0 tvservice_a
+partition erase mmc 0 tvservice_b
+partition write mmc 0 tvservice_a 0x2F300000 $(filesize)
+partition write mmc 0 tvservice_b 0x2F300000 $(filesize)
+filepartload 0x2fb00000 $(UpgradeImage) 0xe526 0x42911000
+unlz4 0x2fb00000 0x2f300000 0x800000
+partition erase mmc 0 factory_a_a
+partition erase mmc 0 factory_a_b
+partition write mmc 0 factory_a_a 0x2F300000 $(filesize)
+partition write mmc 0 factory_a_b 0x2F300000 $(filesize)
+wipeuserdata
+filepartload 0x31b00000 $(UpgradeImage) 0x53e6bf 0x42921000
+unlz4 0x31b00000 0x2f300000 0x2800000
+partition erase mmc 0 bootdata_a
+partition erase mmc 0 bootdata_b
+partition write mmc 0 bootdata_a 0x2F300000 $(filesize)
+partition write mmc 0 bootdata_b 0x2F300000 $(filesize)
+filepartload 0x30700000 $(UpgradeImage) 0x1940b 0x42e61000
+unlz4 0x30700000 0x2f300000 0x1400000
+partition erase mmc 0 persist
+partition write mmc 0 persist 0x2F300000 $(filesize)
+filepartload 0x2fd00000 $(UpgradeImage) 0xbfed 0x42e81000
+unlz4 0x2fd00000 0x2f300000 0xa00000
+partition erase mmc 0 private
+partition write mmc 0 private 0x2F300000  $(filesize)
+filepartload 0x2f500000 $(UpgradeImage) 0x20be 0x42e91000
+unlz4 0x2f500000 0x2f300000 0x200000
+partition erase mmc 0 trddev
+partition write mmc 0 trddev 0x2F300000  $(filesize)
+setenv bootargs console=ttyS0,115200 androidboot.console=ttyS0 init=/init root=/dev/ram rw rootwait CORE_DUMP_PATH=/data/core_dump.%%p.gz KDebug=1 delaylogo=true security=selinux SD_CONFIG=2 loop.max_part=7
+setenv verify n
+setenv devicestate lock
+setenv usb_auto_upgrade enable
+setenv force_boot_recovery false
+setenv autoload 0
+setenv android_product griggs
+setenv android_manufacturer Mediatek
+setenv dtbo_whitelist config/dtb/dtbo_whitelist.ini
+setenv dtbo_mapping_cfg config/dtbo_mapping.ini
+setenv dtbo_cfg_part bootdata
+setenv dtbo_cfg_sel config/dtb/mt5873_h1v1_cd.ini
+saveenv
+addbootargs vmpressure_level_critical 80
+addbootargs cgroup.memory nokmem
+addbootargs utpa_str_fr 1
+addbootargs kfence.sample_interval 0
+addbootargs vmalloc 650M
+addbootargs kasan_multi_shot 1
+addbootargs firmware_class.path /vendor/firmware/
+addbootargs init_on_alloc 0
+addbootargs androidboot.selinux permissive
+addbootargs panic 0
+addbootargs androidboot.miuhit.panic on
+addbootargs loglevel 3
+mmc erase.p eeprom_a
+reset
+setenv MstarUpgrade_complete 1
+saveenv
