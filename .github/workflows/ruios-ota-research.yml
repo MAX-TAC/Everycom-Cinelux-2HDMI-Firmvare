@@ -1,0 +1,113 @@
+name: Investigate RUIOS OTA indexes and ZIP packages
+on:
+  push:
+    paths:
+      - ".github/workflows/ruios-ota-research.yml"
+      - "tools/discover_ruios_ota.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect bounded public OTA index identifiers
+        run: python3 -u tools/discover_ruios_ota.py
+      - name: Publish OTA catalog metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/RUIOS_OTA_Discovery
+          if ! git diff --cached --quiet; then
+            git commit -m "Record public RUIOS OTA model versions and package metadata"
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ruios-ota-public-catalog
+          path: analysis/RUIOS_OTA_Discovery/
+          retention-days: 60
+
+  inspect_archives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      matrix:
+        code: ["8052","8053"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify owner-supplied OTA ZIP
+        env:
+          CODE: ${{ matrix.code }}
+        run: |
+          mkdir -p /tmp/ota
+          if [ "$CODE" = "8052" ]; then
+            SHA="bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35"
+          else
+            SHA="9ca8276448e79587b82e55cec0cf3da55154b750774f608378f64619c84f556b"
+          fi
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_$CODE.zip" -o /tmp/ota/source.zip
+          echo "$SHA  /tmp/ota/source.zip" | sha256sum -c -
+      - name: Read ZIP file inventory and Android OTA metadata
+        env:
+          CODE: ${{ matrix.code }}
+        run: |
+          python3 - <<'PY'
+          import os,json,zipfile,re
+          from pathlib import Path
+          code=os.environ['CODE']
+          out=Path('analysis/RUIOS_OTA_Packages')/code;out.mkdir(parents=True,exist_ok=True)
+          src=Path('/tmp/ota/source.zip')
+          record={'code':code,'zip_size':src.stat().st_size,'entries':[],'small_metadata':{},'payload':None,'other_formats':{}}
+          with zipfile.ZipFile(src) as z:
+              for i in z.infolist():
+                  name=i.filename
+                  record['entries'].append({'name':name,'uncompressed_size':i.file_size,
+                                           'compressed_size':i.compress_size,'crc32':f'{i.CRC:08x}'})
+                  if i.file_size<=500000 and not name.endswith('/'):
+                      if re.search(r'(?i)(metadata|payload_properties|care_map|compatib|postinstall|version|upgrade|config|ota|updater-script)',name):
+                          data=z.read(name)
+                          record['small_metadata'][name]=data.decode('utf-8','replace')[:16000] if b'\0' not in data[:200] else data[:128].hex()
+                  if name.endswith('payload.bin'):
+                      with z.open(name) as f:head=f.read(64)
+                      meta={'size':i.file_size,'magic':head[:4].decode('ascii','replace')}
+                      if head.startswith(b'CrAU'):
+                          meta.update({'format_version':int.from_bytes(head[4:12],'big'),
+                                       'manifest_size':int.from_bytes(head[12:20],'big'),
+                                       'metadata_signature_size':int.from_bytes(head[20:24],'big')})
+                      record['payload']=meta
+                  if name.endswith(('.pkg','.bin','.img')):
+                      with z.open(name) as f:head=f.read(64)
+                      record['other_formats'][name]={'size':i.file_size,'first_bytes':head[:32].hex()}
+          (out/'package_metadata.json').write_text(json.dumps(record,ensure_ascii=False,indent=2))
+          lines=['# RUIOS OTA package '+code,'',f'ZIP size: {record["zip_size"]} bytes',
+                 f'File count: {len(record["entries"])}','','## ZIP file entries','',
+                 '| Name | Uncompressed bytes | Compressed bytes |','|---|---:|---:|']
+          for x in record['entries'][:140]:
+              lines.append(f'| {x["name"]} | {x["uncompressed_size"]} | {x["compressed_size"]} |')
+          lines+=['','## Android payload format','~~~json',json.dumps(record['payload'],indent=2),'~~~',
+                  '','## Small OTA metadata files']
+          for k,v in record['small_metadata'].items():
+              lines+=['','### '+k,'~~~',v[:5500],'~~~']
+          (out/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines[:100]),flush=True)
+          PY
+      - name: Publish ZIP metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/RUIOS_OTA_Packages/
+          if ! git diff --cached --quiet; then
+            git commit -m "Inspect manufacturer RUIOS OTA ZIP ${{ matrix.code }}"
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ruios-${{ matrix.code }}-metadata
+          path: analysis/RUIOS_OTA_Packages/
+          retention-days: 60
