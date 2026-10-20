@@ -93,6 +93,50 @@ jobs:
           (out/'README.md').write_text('\n'.join(lines)+'\n')
           print('\n'.join(lines)[:22000])
           PY
+      - name: Examine precise wrapper and REE body boundary
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess,json,zlib,lzma,math,collections,struct
+          path=Path('/tmp/cinelux/upgrade_image.pkg')
+          end=path.stat().st_size
+          with path.open('rb') as f:
+              header=f.read(4096)
+              f.seek(4096);block=f.read(2*1024*1024)
+              f.seek(end-384);trailer=f.read()
+          def hd(data,base):
+              out=[]
+              for p in range(0,len(data),16):
+                  chunk=data[p:p+16]
+                  out.append('%08x %s %s'%(base+p,chunk.hex(' '),
+                      ''.join(chr(c) if 32<=c<127 else '.' for c in chunk)))
+              return out
+          lines=['# CineLux PKG wrapper and REE body',
+          'Only read-only byte inspection was used.',
+          '','## Header at 0x300..0x600',
+          *hd(header[0x300:0x600],0x300),
+          '','## REE body start, 0x1000..0x1100',
+          *hd(block[:256],0x1000),
+          '','## Trailing 384 bytes',
+          *hd(trailer,end-384)]
+          patterns=[b'ANDROID!',b'\x3a\xff\x26\xed',b'hsqs',b'\xe2\xe1\xf5\xe0',b'CrAU',b'\x7fELF',b'PK\x03\x04',b'\x1f\x8b']
+          offsets={p.hex():block.find(p) for p in patterns if block.find(p)>=0}
+          lines+=['','Recognized header patterns inside first 2MiB of body:',json.dumps(offsets)]
+          for label,test in [('zlib',lambda:zlib.decompress(block)),('lzma',lambda:lzma.decompress(block)),
+             ('raw-deflate',lambda:zlib.decompress(block,-15)),('gzip',lambda:zlib.decompress(block,31))]:
+              try:
+                  x=test()
+                  lines.append(label+' unexpectedly decoded '+str(len(x))+' bytes')
+              except Exception as e:
+                  lines.append(label+' does not decode from body start: '+str(e)[:180])
+          lines.append('Body starts at 0x1000; body ends at 0x%x.'%(end-384))
+          result=Path('analysis/Original_Firmware/header/body_boundary.md')
+          result.write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print('Wrapper strings: ',[x.decode('latin1','replace') for x in header.split(b'\0') if b'REE_OFFSET' in x][:6])
+          print('Body opening hex:',block[:64].hex(' '))
+          print('Tail hex:',trailer[:80].hex(' '))
+          print('Diagnostic written:',result)
+          PY
       - name: Commit compact report
         run: |
           git config user.name "github-actions[bot]"
