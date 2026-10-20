@@ -6,6 +6,8 @@ on:
       - ".github/workflows/compare-hdmi-firmware.yml"
       - "tools/audit_cinelux_variant.py"
       - "tools/compare_cinelux_variants.py"
+      - "tools/audit_native_config.py"
+      - "tools/compare_native_config.py"
   workflow_dispatch:
 
 permissions:
@@ -117,6 +119,18 @@ jobs:
             fi
           done
           du -sh /tmp/erofs/* || true
+      - name: Inspect ELF library code and boot configuration
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          python3 -m pip install --quiet pyelftools
+          python3 -u tools/audit_native_config.py /tmp/erofs /tmp/parts "$VARIANT" /tmp/audit/native.json
+          ls -lh /tmp/audit/native.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cinelux-native-${{ matrix.variant }}
+          path: /tmp/audit/native.json
+          retention-days: 30
       - name: Record hashes of apps, services, libraries and other files
         env:
           VARIANT: ${{ matrix.variant }}
@@ -146,6 +160,18 @@ jobs:
         with:
           pattern: cinelux-variant-*
           path: /tmp/variant-manifests
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cinelux-native-*
+          path: /tmp/native-manifests
+      - name: Compare native executable code and configs
+        run: |
+          mkdir -p analysis/Deep_Native_Comparison
+          python3 tools/compare_native_config.py \
+            /tmp/native-manifests/cinelux-native-one/native.json \
+            /tmp/native-manifests/cinelux-native-two/native.json \
+            analysis/Deep_Native_Comparison
+          sed -n '1,60p' analysis/Deep_Native_Comparison/README.md
       - name: Compare both results
         run: |
           mkdir -p analysis/HDMI_Comparison
@@ -159,7 +185,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/HDMI_Comparison
+          git add analysis/HDMI_Comparison analysis/Deep_Native_Comparison
           if ! git diff --cached --quiet; then
             git commit -m "Compare decrypted CineLux one-HDMI and two-HDMI firmware"
             git pull --rebase origin main
