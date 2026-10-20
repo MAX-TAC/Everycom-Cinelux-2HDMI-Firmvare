@@ -1,0 +1,171 @@
+name: Inspect CineLux embedded Linux runtime
+
+on:
+  push:
+    paths:
+      - ".github/workflows/inspect-linux-rootfs.yml"
+      - "tools/audit_linux_rootfs.py"
+      - "tools/audit_linux_rootfs.py"
+      - "tools/audit_native_config.py"
+      - "tools/compare_native_config.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [one, two]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only firmware utilities
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs erofs-utils squashfs-tools
+          df -h /tmp
+      - name: Download the official archive and verify SHA256
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          mkdir -p /tmp/source /tmp/source/extracted /tmp/parts /tmp/erofs /tmp/logical /tmp/audit
+          if [ "$VARIANT" = "one" ]; then
+            URL="https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware_for_1_HDMI_ports/4K.HDMI-.-20260813.1.rar"
+            SHA="bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f"
+          else
+            URL="https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar"
+            SHA="170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3"
+          fi
+          curl -fL --retry 5 --retry-delay 4 "$URL" -o /tmp/source/source.rar
+          echo "$SHA  /tmp/source/source.rar" | sha256sum -c -
+          unar -q -o /tmp/source/extracted /tmp/source/source.rar
+          ls -lh /tmp/source/extracted
+      - name: Verify secure REE header and decrypt
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,subprocess
+          p=Path('/tmp/source/extracted/upgrade_image.pkg')
+          h=p.open('rb').read(4096)
+          a=re.search(rb'REE_OFFSET_START\s*=\s*0x([0-9A-Fa-f]+)',h)
+          b=re.search(rb'REE_OFFSET_LEN\s*=\s*0x([0-9A-Fa-f]+)',h)
+          assert a and b,'Not known secure MTK layout'
+          start=int(a.group(1),16);length=int(b.group(1),16)
+          assert start==4096 and length%16==0 and length<p.stat().st_size and h[0x500:0x508]==b'MTK.....'
+          print('Decrypting REE payload:',length,'bytes starting at',start,flush=True)
+          with p.open('rb') as source,open('/tmp/source/decrypted.bin','wb') as output:
+              source.seek(start)
+              process=subprocess.Popen(['openssl','enc','-d','-aes-256-cbc','-nopad',
+                 '-K','d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f',
+                 '-iv','00000000000000000000000000000000'],stdin=subprocess.PIPE,stdout=output,stderr=subprocess.PIPE)
+              remains=length
+              while remains:
+                  data=source.read(min(remains,8*1024*1024))
+                  if not data:raise EOFError('Incomplete encrypted data')
+                  process.stdin.write(data)
+                  remains-=len(data)
+              process.stdin.close()
+              rc=process.wait()
+              assert rc==0,'AES decryption failed'
+          plain=Path('/tmp/source/decrypted.bin')
+          assert plain.stat().st_size==length,'Decrypted body size differs'
+          header=plain.open('rb').read(32768)
+          assert b'gpt create mmc 0' in header and b'filepartload' in header,'Key did not decode MStar script'
+          print('Verified decrypted MStar script')
+          PY
+      - name: Reconstruct vendor Linux partition images without flashing
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          if [ "$VARIANT" = "one" ]; then
+            SCRIPT="analysis/One_HDMI/upgrade_script.txt"
+          else
+            SCRIPT="analysis/Original_Firmware/decrypted/upgrade_script.txt"
+          fi
+          python3 -u tools/reconstruct_cinelux.py \
+            /tmp/source/decrypted.bin /tmp/parts "$SCRIPT" /tmp/audit/rootfs-segments \
+            > /tmp/audit/reconstruction.log 2>&1
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          o=json.loads(Path('/tmp/audit/rootfs-segments/segments.json').read_text())
+          assert not o['errors'],o['errors']
+          print('Reconstructed',len(o['segments']),'segments.')
+          PY
+          file /tmp/parts/linux_rootfs_a_a.img /tmp/parts/3rd_a_a.img
+      - name: Inspect two separate root filesystems
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          python3 -u tools/audit_linux_rootfs.py /tmp/parts "$VARIANT" /tmp/audit/linux-rootfs.json
+          ls -lh /tmp/audit/linux-rootfs.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cinelux-linux-${{ matrix.variant }}
+          path: /tmp/audit/linux-rootfs.json
+          retention-days: 30
+
+  compare:
+    needs: audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cinelux-linux-*
+          path: /tmp/linux-manifests
+      - name: Compare embedded Linux environments
+        run: |
+          python3 - <<'PY'
+          import json,collections
+          from pathlib import Path
+          a=json.loads(Path('/tmp/linux-manifests/cinelux-linux-one/linux-rootfs.json').read_text())
+          b=json.loads(Path('/tmp/linux-manifests/cinelux-linux-two/linux-rootfs.json').read_text())
+          out=Path('analysis/Embedded_Linux');out.mkdir(parents=True,exist_ok=True)
+          obj={'filesystems':{},'services_one':a['service_names'],'services_two':b['service_names']}
+          lines=['# CineLux embedded Linux environments (not Android)','',
+             'Both firmware packages contain separate compressed Linux rootfs images. This scan compares file hashes and service configurations without running any firmware binaries.',
+             '']
+          for name in a['files']:
+              x=a['files'][name];y=b['files'][name]
+              common=set(x)&set(y)
+              eq=sorted(k for k in common if x[k]['sha256']==y[k]['sha256'])
+              dif=sorted(k for k in common if x[k]['sha256']!=y[k]['sha256'])
+              onlyx=sorted(set(x)-set(y));onlyy=sorted(set(y)-set(x))
+              obj['filesystems'][name]={'one':len(x),'two':len(y),
+                'shared_paths':len(common),'same':len(eq),'different':len(dif),
+                'one_only':onlyx,'two_only':onlyy,
+                'modified_files':dif,'same_files':eq}
+              lines+=['## '+name,'',
+                '1 HDMI files: '+str(len(x)), '2 HDMI files: '+str(len(y)),
+                'Unchanged: '+str(len(eq)), 'Different same paths: '+str(len(dif)),
+                'Unique one: '+str(len(onlyx)), 'Unique two: '+str(len(onlyy)),
+                '','### Changed binaries and configuration files','']
+              lines+=['- '+p for p in dif[:160]]
+              lines+=['','### One-HDMI-only files','']
+              lines+=['- '+p for p in onlyx[:60]]
+              lines+=['','### Two-HDMI-only files','']
+              lines+=['- '+p for p in onlyy[:60]]
+              lines+=['','### Service and startup scripts in Linux rootfs','']
+              lines+=['- '+p for p in a['service_names'][name][:100]]
+              lines+=['','']
+          (out/'linux_diff.json').write_text(json.dumps(obj,ensure_ascii=False,indent=1))
+          (out/'README.md').write_text('\n'.join(lines)+'\n')
+          print('linux comparison',[(k,v['same'],v['different']) for k,v in obj['filesystems'].items()])
+          PY
+      - name: Commit firmware component audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Embedded_Linux
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare OEM Linux rootfs and service startup data across HDMI variants"
+            git pull --rebase origin main
+            git push origin main
+          fi
