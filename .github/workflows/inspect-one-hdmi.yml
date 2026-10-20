@@ -1,0 +1,110 @@
+name: Inspect one-HDMI CineLux firmware
+
+on:
+  push:
+    paths:
+      - ".github/workflows/inspect-one-hdmi.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and verify one-HDMI manufacturer release
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar openssl file
+          mkdir -p /tmp/one_hdmi
+          curl -fL --retry 5 --retry-delay 4 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware_for_1_HDMI_ports/4K.HDMI-.-20260813.1.rar" \
+            -o /tmp/one_hdmi/source.rar
+          echo "bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f  /tmp/one_hdmi/source.rar" | sha256sum -c
+          mkdir -p /tmp/one_hdmi/extracted
+          unar -q -o /tmp/one_hdmi/extracted /tmp/one_hdmi/source.rar
+          find /tmp/one_hdmi/extracted -type f -printf '%P %s bytes\n'
+      - name: Read PKG header and attempt known public MStar secure key
+        run: |
+          mkdir -p analysis/One_HDMI
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess,re
+          src=Path('/tmp/one_hdmi/extracted')
+          files=[p for p in src.rglob('*') if p.is_file()]
+          report={'source_archive':{'name':'4K.HDMI-.-20260813.1.rar','size':1122636304,
+             'sha256':'bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f'},'files':[]}
+          for p in files:
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for buf in iter(lambda:f.read(8*1024*1024),b''):h.update(buf)
+              head=p.open('rb').read(4096)
+              info={'filename':str(p.relative_to(src)),'size':p.stat().st_size,
+                    'sha256':h.hexdigest(),
+                    'header_hex_first32':head[:32].hex(' '),
+                    'version':(re.findall(rb'V_[0-9.]{3,25}',head) or [b''])[0].decode('ascii',errors='replace'),
+                    'REE_OFFSET_START':None,'REE_OFFSET_LEN':None,
+                    'new_mstar_markers':{
+                       'chunk_id_head_at_0x500':head[0x500:0x508].decode('latin1'),
+                       'chunk_id_end_at_0x578':head[0x578:0x580].decode('latin1'),
+                    }}
+              for field in ('REE_OFFSET_START','REE_OFFSET_LEN'):
+                  m=re.search((field+r'\s*=\s*0x([0-9a-fA-F]+)').encode(),head)
+                  if m:info[field]=int(m.group(1),16)
+              if info['REE_OFFSET_START'] is not None and info['REE_OFFSET_LEN'] is not None:
+                  info['REE_BODY_FITS_FILE']=(info['REE_OFFSET_START']+info['REE_OFFSET_LEN']<=p.stat().st_size)
+              report['files'].append(info)
+              if info['new_mstar_markers']['chunk_id_head_at_0x500']=='MTK.....' and info['REE_BODY_FITS_FILE']:
+                  block_offset=info['REE_OFFSET_START']
+                  with p.open('rb') as f:
+                      f.seek(block_offset)
+                      enc=f.read(min(0x10000,info['REE_OFFSET_LEN']))
+                  enc=enc[:len(enc)//16*16]
+                  e=Path('/tmp/one_hdmi/enc.bin');e.write_bytes(enc)
+                  r=subprocess.run(['openssl','enc','-d','-aes-256-cbc','-nopad',
+                     '-K','d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f',
+                     '-iv','00000000000000000000000000000000',
+                     '-in',str(e),'-out','/tmp/one_hdmi/dec.bin'],capture_output=True)
+                  dec=Path('/tmp/one_hdmi/dec.bin').read_bytes() if r.returncode==0 else b''
+                  valid=(b'filepartload' in dec and b'gpt create' in dec and b'UpgradeImage' in dec)
+                  info['known_key_decrypts_upgrade_script']=valid
+                  if valid:
+                      idx=dec.find(b'# The random bytes')
+                      # Do not publish binary random IV, keys, serials, DRM
+                      raw=dec[dec.find(b'# The random bytes'):].split(b'\0',1)[0] if idx>=0 else dec[16:].split(b'\0',1)[0]
+                      raw=raw.split(b'% <- this is end of script symbol',1)[0]
+                      script=raw.decode('utf8','replace')
+                      clean=[]
+                      for line in script.splitlines():
+                          if re.search(r'(?i)(password|token|private.?key|serial|macaddr|widevine|hdcp.*key)',line):
+                              clean.append('# [redacted]')
+                          else:clean.append(line[:500])
+                      (Path('analysis/One_HDMI')/'upgrade_script.txt').write_text('\n'.join(clean)+'\n',encoding='utf8')
+                      info['upgrade_script_lines']=len(clean)
+                  else:info['decrypted_head_hex']=dec[:64].hex(' ')
+          Path('analysis/One_HDMI/first_pass.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
+          lines=['# CineLux one-HDMI image: first-pass container inspection','','Source: '+report['source_archive']['name'],
+              'Read-only test; **not a compatibility or flashing check**.','']
+          for x in report['files']:
+              lines+=['## '+x['filename'], 'Size: '+str(x['size']),
+                'SHA256: '+x['sha256'], 'Header version: '+str(x['version']),
+                'REE OFFSET: '+str(x['REE_OFFSET_START']), 'REE LENGTH: '+str(x['REE_OFFSET_LEN']),
+                'MTK markers: '+str(x['new_mstar_markers']),
+                'Recognized with public MStar AES key: '+str(x.get('known_key_decrypts_upgrade_script')),'']
+          (Path('analysis/One_HDMI')/'README.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print('\n'.join(lines))
+          PY
+      - name: Commit text reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/One_HDMI
+          if ! git diff --cached --quiet; then
+            git commit -m "Inspect one-HDMI original firmware and test secured MStar key"
+            git pull --rebase origin main
+            git push origin main
+          fi
