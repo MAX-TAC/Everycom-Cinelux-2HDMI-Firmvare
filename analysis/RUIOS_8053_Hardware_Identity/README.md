@@ -6,7 +6,7 @@ Read-only audit; hardware compatibility or safe cross-flashing NOT established.
 
 | Property | 8052 OTA | 8053 OTA | 8054 factory (2 HDMI) |
 |---|---|---|---|
-| ro.rjpj.machine.id | 8052 | 8053 | — |
+| ro.rjpj.machine.id | 8052 | 8053 | 8054 |
 | ro.rjpj.yunota.version | RUIOS.8052.1.0.4 | RUIOS.8053.1.0.0 | RUIOS.8054.1.0.1 |
 | ro.rjpj.hdmi.ports | HW6:HDMI | — | HW6:HDMI1,HW7:HDMI2 |
 | ro.rjpj.hdmi.port.count | 1 | — | 2 |

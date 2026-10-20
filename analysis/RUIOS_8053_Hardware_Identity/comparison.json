@@ -7,7 +7,7 @@
     "ro.rjpj.machine.id": {
       "8052_ota": "8052",
       "8053_ota": "8053",
-      "8054_stock_factory": null
+      "8054_stock_factory": "8054"
     },
     "ro.rjpj.yunota.version": {
       "8052_ota": "RUIOS.8052.1.0.4",
