@@ -11,8 +11,8 @@ BASE=Path(sys.argv[2])
 BASE.mkdir(parents=True,exist_ok=True)
 TEMP=BASE/"tmp"
 TEMP.mkdir(exist_ok=True)
-SCRIPT=Path("analysis/Original_Firmware/decrypted/upgrade_script.txt").read_text(encoding="utf8")
-OUT=Path("analysis/Original_Firmware/reconstructed")
+SCRIPT=Path(sys.argv[3] if len(sys.argv)>3 else "analysis/Original_Firmware/decrypted/upgrade_script.txt").read_text(encoding="utf8")
+OUT=Path(sys.argv[4] if len(sys.argv)>4 else "analysis/Original_Firmware/reconstructed")
 OUT.mkdir(parents=True,exist_ok=True)
 MAGIC=0xed26ff3a
 data={"source":{"path":str(SRC),"size":SRC.stat().st_size},
@@ -155,7 +155,7 @@ with SRC.open("rb") as inp,superpath.open("wb+") as superout:
     superout.truncate(super_cursor)
 data["super"]={"path":str(superpath),"size":superpath.stat().st_size,
                "format":fmt(superpath),"logical_bytes_written":super_cursor,
-               "expected_gpt_super_size":int("84a00000",16)}
+               "expected_gpt_super_size":int(__import__("re").search(r"name=super,size=0x([A-Fa-f0-9]+)",SCRIPT).group(1),16)}
 (OUT/"segments.json").write_text(json.dumps(data,indent=2,ensure_ascii=False),encoding="utf8")
 lines=["# CineLux source firmware reconstructed partitions",
        "Only static file extraction; original update archive was not executed or flashed.",
