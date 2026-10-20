@@ -1,0 +1,74 @@
+[
+  {
+    "line": "filepartload 0x38900000 $(UpgradeImage) 0x947021 0x21000",
+    "size": 9728033,
+    "offset": 135168,
+    "type": "LZ4 compressed data (v1.4+)",
+    "head": "04 22 4d 18 64 70 b9 0e 6a 00 00 1f 00 01 00 ff ff ff ef 62 80 25 00 00 00 96 05 04 62 5c 62 00 00 bd 21 0c 00 13 02 04 00 22 00 80 04 00 22 c0",
+    "lz4_status": 0,
+    "lz4_stdout": "",
+    "lz4_stderr": "\n                                                                               \n/tmp/part-0.bin      : decoded 157286400 bytes \n",
+    "lz4_size": 157286400,
+    "lz4_head": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+  },
+  {
+    "line": "filepartload 0x2f800000 $(UpgradeImage) 0x53bb 0x971000",
+    "size": 21435,
+    "offset": 9900032,
+    "type": "LZ4 compressed data (v1.4+)",
+    "head": "04 22 4d 18 64 70 b9 01 42 00 00 1f 00 01 00 ff ff ff ef 62 40 01 00 00 00 05 05 04 50 dd 00 00 00 34 10 00 43 00 00 00 02 04 00 22 00 80 04 00",
+    "lz4_status": 0,
+    "lz4_stdout": "",
+    "lz4_stderr": "\n                                                                               \n/tmp/part-1.bin      : decoded 5242880 bytes \n",
+    "lz4_size": 5242880,
+    "lz4_head": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+  },
+  {
+    "line": "filepartload 0x2f370000 $(UpgradeImage) 0x6544b 0x981000",
+    "size": 414795,
+    "offset": 9965568,
+    "type": "LZ4 compressed data (v1.4+)",
+    "head": "04 22 4d 18 64 70 b9 38 54 06 00 ff f8 bc 0e 99 c5 be e1 1a da 95 5a 62 d9 fb e9 5d af 53 eb b9 d4 23 4b ac eb 9a 24 55 1e a6 a3 6e be d3 db 93",
+    "lz4_status": 0,
+    "lz4_stdout": "",
+    "lz4_stderr": "\n                                                                               \n/tmp/part-2.bin      : decoded 451840 bytes \n",
+    "lz4_size": 451840,
+    "lz4_head": "bc 0e 99 c5 be e1 1a da 95 5a 62 d9 fb e9 5d af 53 eb b9 d4 23 4b ac eb 9a 24 55 1e a6 a3 6e be d3 db 93 0b 37 17 e7 98 dd 17 33 eb 8d 78 1a 92 f2 da 6f f4 0b 07 e5 21 f8 aa 3d 7c 3d 64 61 31"
+  },
+  {
+    "line": "filepartload 0x2f590000 $(UpgradeImage) 0x13922f 0x9f1000",
+    "size": 1282607,
+    "offset": 10424320,
+    "type": "LZ4 compressed data (v1.4+)",
+    "head": "04 22 4d 18 64 70 b9 1c 92 13 00 f1 00 00 04 00 00 00 00 40 27 40 89 68 27 40 8d 28 0c 00 00 12 00 60 01 03 00 00 07 b0 0a 00 0f 02 00 01 11 01",
+    "lz4_status": 0,
+    "lz4_stdout": "",
+    "lz4_stderr": "\n                                                                               \n/tmp/part-3.bin      : decoded 2658304 bytes \n",
+    "lz4_size": 2658304,
+    "lz4_head": "00 04 00 00 00 00 40 27 40 89 68 27 40 8d 28 00 00 00 40 27 00 00 00 00 01 03 00 00 07 b0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 04 00 00 00"
+  },
+  {
+    "line": "filepartload 0x2f310000 $(UpgradeImage) 0x1dc5 0xb31000",
+    "size": 7621,
+    "offset": 11735040,
+    "type": "LZ4 compressed data (v1.4+)",
+    "head": "04 22 4d 18 64 70 b9 b2 1d 00 00 95 41 56 42 30 00 00 00 01 00 01 00 22 02 40 0b 00 62 24 80 00 00 00 02 0c 00 05 02 00 13 20 0a 00 03 08 00 04",
+    "lz4_status": 0,
+    "lz4_stdout": "",
+    "lz4_stderr": "\n                                                                               \n/tmp/part-4.bin      : decoded 12288 bytes \n",
+    "lz4_size": 12288,
+    "lz4_head": "41 56 42 30 00 00 00 01 00 00 00 00 00 00 00 00 00 00 02 40 00 00 00 00 00 00 24 80 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 02 00"
+  },
+  {
+    "line": "filepartload 0x2f310000 $(UpgradeImage) 0x914 0xb41000",
+    "size": 2324,
+    "offset": 11800576,
+    "type": "LZ4 compressed data (v1.4+)",
+    "head": "04 22 4d 18 64 70 b9 01 09 00 00 95 41 56 42 30 00 00 00 01 00 01 00 22 02 40 0b 00 10 0b 07 00 10 02 05 00 07 02 00 13 20 0c 00 03 08 00 04 1f",
+    "lz4_status": 0,
+    "lz4_stdout": "",
+    "lz4_stderr": "\n                                                                               \n/tmp/part-5.bin      : decoded 4096 bytes \n",
+    "lz4_size": 4096,
+    "lz4_head": "41 56 42 30 00 00 00 01 00 00 00 00 00 00 00 00 00 00 02 40 00 00 00 00 00 00 0b 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 20 00 00 00 00 00 00 02 00"
+  }
+]
