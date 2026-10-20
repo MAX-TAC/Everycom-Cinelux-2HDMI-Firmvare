@@ -1,0 +1,70 @@
+{
+  "source": "verified stock OTA 8052/8053 and factory 2-HDMI 8054 textual evidence",
+  "dtbo_same_8052_8053_multiset": 205,
+  "dtbo_8052_to_8054_known_203_hashes": 203,
+  "dtbo_8053_to_8054_known_203_hashes": 201,
+  "public_properties": {
+    "ro.rjpj.machine.id": {
+      "8052_ota": "8052",
+      "8053_ota": "8053",
+      "8054_stock_factory": null
+    },
+    "ro.rjpj.yunota.version": {
+      "8052_ota": "RUIOS.8052.1.0.4",
+      "8053_ota": "RUIOS.8053.1.0.0",
+      "8054_stock_factory": "RUIOS.8054.1.0.1"
+    },
+    "ro.rjpj.hdmi.ports": {
+      "8052_ota": "HW6:HDMI",
+      "8053_ota": null,
+      "8054_stock_factory": "HW6:HDMI1,HW7:HDMI2"
+    },
+    "ro.rjpj.hdmi.port.count": {
+      "8052_ota": "1",
+      "8053_ota": null,
+      "8054_stock_factory": "2"
+    },
+    "ro.rjpj.support.toffunction": {
+      "8052_ota": "0",
+      "8053_ota": null,
+      "8054_stock_factory": "1"
+    },
+    "ro.rjpj.autokeystone.poweron": {
+      "8052_ota": "0",
+      "8053_ota": "0",
+      "8054_stock_factory": "1"
+    },
+    "ro.rjpj.autokeystone.move": {
+      "8052_ota": "0",
+      "8053_ota": "0",
+      "8054_stock_factory": "1"
+    },
+    "ro.rjpj.yunota.url": {
+      "8052_ota": "mt9660/8052/8052_ota.json",
+      "8053_ota": "mt9660/8053/8053_ota.json",
+      "8054_stock_factory": "mt9660/8054/8054_ota.json"
+    },
+    "ro.rjpj.yunota.zip": {
+      "8052_ota": "RJMT9660_firmware_8052.zip",
+      "8053_ota": "RJMT9660_firmware_8053.zip",
+      "8054_stock_factory": "RJMT9660_firmware_8054.zip"
+    }
+  },
+  "configuration_checks": {
+    "tvconfig_board_ini": {
+      "8052_sha256": "803b19c1781a0f88137184fa2ea879a4a88fd6cd8aa0eb1a4532b89a9f6c1229",
+      "8053_sha256": "8e10a83824d4d6d52cb197b631b98215af26adffbf6fddb7de53213022c0da2e",
+      "equal_sha256": false
+    },
+    "tvconfig_dtbo_mapping": {
+      "8052_sha256": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+      "8053_sha256": "339e8b4fd19df9acd23cd629d70d31dcf262a263fe7cb05e6290c847bb3ecc26",
+      "equal_sha256": false
+    },
+    "bootdata_dtbo_mapping": {
+      "8052_sha256": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+      "8053_sha256": "339e8b4fd19df9acd23cd629d70d31dcf262a263fe7cb05e6290c847bb3ecc26",
+      "equal_sha256": false
+    }
+  }
+}
