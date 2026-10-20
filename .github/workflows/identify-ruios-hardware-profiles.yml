@@ -1,0 +1,159 @@
+name: Identify RUIOS 8053 hardware profile vs 8052/8054
+
+on:
+  push:
+    branches: [ota-hardware-profiles-20261020]
+    paths:
+      - ".github/workflows/identify-ruios-hardware-profiles.yml"
+      - "tools/inspect_ruios_hardware_profiles.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { code: "8052", sha: "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35" }
+          - { code: "8053", sha: "9ca8276448e79587b82e55cec0cf3da55154b750774f608378f64619c84f556b" }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only image utilities
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils e2fsprogs xz-utils
+          curl -fL --retry 3 --retry-delay 3 \
+            https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz \
+            -o /tmp/payload-dumper.tar.gz
+          mkdir -p /tmp/pd /tmp/images /tmp/vendorfs
+          tar -xzf /tmp/payload-dumper.tar.gz -C /tmp/pd
+      - name: Download and verify genuine RUIOS OTA
+        run: |
+          curl -fL --retry 5 --retry-delay 3 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_${{ matrix.code }}.zip" \
+            -o /tmp/source.zip
+          echo "${{ matrix.sha }}  /tmp/source.zip" | sha256sum -c -
+      - name: Extract vendor, DTBO, tvconfig, bootdata only
+        run: |
+          BIN="$(find /tmp/pd -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p vendor,dtbo,tvconfig,bootdata -o /tmp/images /tmp/source.zip \
+            > /tmp/payload-extract.log 2>&1 || { tail -n 100 /tmp/payload-extract.log; exit 1; }
+          ls -lh /tmp/images
+          fsck.erofs --extract=/tmp/vendorfs /tmp/images/vendor.img \
+            > /tmp/vendor-extract.log 2>&1 || { tail -n 60 /tmp/vendor-extract.log; exit 1; }
+          python3 tools/inspect_ruios_hardware_profiles.py \
+            --code ${{ matrix.code }} --vendor-root /tmp/vendorfs \
+            --images /tmp/images --out /tmp/report
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ruios-hardware-${{ matrix.code }}
+          path: /tmp/report/
+          retention-days: 30
+
+  compare:
+    needs: inspect
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ruios-hardware-*
+          merge-multiple: true
+          path: /tmp/profile-results
+      - name: Compare with stock 8054 and publish report
+        run: |
+          python3 - <<'PY'
+          import json,hashlib,collections,re
+          from pathlib import Path
+          src=Path('/tmp/profile-results')
+          one=json.loads((src/'8052.json').read_text())
+          two=json.loads((src/'8053.json').read_text())
+          out=Path('analysis/RUIOS_8053_Hardware_Identity')
+          out.mkdir(parents=True,exist_ok=True)
+          def hashes(x):
+              return collections.Counter(e['sha256'] for e in x['dtbo']['entries'])
+          a=hashes(one); b=hashes(two)
+          matches=sum((a & b).values())
+          reference=json.loads(Path('analysis/DTBO_Comparison/diff.json').read_text())
+          # Reference covers 203 of the 207 blobs in the factory 2-HDMI firmware.
+          ref8054=collections.Counter(x['sha256'] for x in reference['two_changed'])
+          a_ref=sum((a & ref8054).values())
+          b_ref=sum((b & ref8054).values())
+          factory=Path('analysis/Deep_Native_Comparison/README.md').read_text()
+          stock8054={}
+          for line in factory.splitlines():
+              if line.startswith('+ro.rjpj.') and '=' in line:
+                  key,val=line[1:].split('=',1)
+                  if not any(t in key for t in ('password','secret','token','mac','serial')):
+                      stock8054[key]=val
+          public_keys=[
+              'ro.rjpj.machine.id','ro.rjpj.yunota.version','ro.rjpj.hdmi.ports',
+              'ro.rjpj.hdmi.port.count','ro.rjpj.support.toffunction',
+              'ro.rjpj.autokeystone.poweron','ro.rjpj.autokeystone.move',
+              'ro.rjpj.yunota.url','ro.rjpj.yunota.zip'
+          ]
+          comparison={
+              'source':'verified stock OTA 8052/8053 and factory 2-HDMI 8054 textual evidence',
+              'dtbo_same_8052_8053_multiset':matches,
+              'dtbo_8052_to_8054_known_203_hashes':a_ref,
+              'dtbo_8053_to_8054_known_203_hashes':b_ref,
+              'public_properties':{k:{
+                  '8052_ota':one['vendor_prop_public'].get(k),
+                  '8053_ota':two['vendor_prop_public'].get(k),
+                  '8054_stock_factory':stock8054.get(k)
+              } for k in public_keys},
+              'configuration_checks':{name:{
+                  '8052_sha256':(one.get(name) or {}).get('sha256'),
+                  '8053_sha256':(two.get(name) or {}).get('sha256'),
+                  'equal_sha256':bool((one.get(name) or {}).get('sha256')) and (one.get(name) or {}).get('sha256')==(two.get(name) or {}).get('sha256')
+              } for name in ('tvconfig_board_ini','tvconfig_dtbo_mapping','bootdata_dtbo_mapping')}
+          }
+          (out/'comparison.json').write_text(json.dumps(comparison,ensure_ascii=False,indent=2)+'\n')
+          for code,p in [('8052',one),('8053',two)]:
+              (out/(code+'.json')).write_text(json.dumps(p,ensure_ascii=False,indent=2)+'\n')
+          lines=['# RUIOS 8053 hardware identity — inspected genuine OTA partitions','',
+              'Read-only audit; hardware compatibility or safe cross-flashing NOT established.','',
+              '## OEM profile properties','',
+              '| Property | 8052 OTA | 8053 OTA | 8054 factory (2 HDMI) |',
+              '|---|---|---|---|']
+          for k in public_keys:
+              p=comparison['public_properties'][k]
+              lines.append('| '+k+' | '+' | '.join(str(p[s] or '—').replace('|','/') for s in ('8052_ota','8053_ota','8054_stock_factory'))+' |')
+          lines+=['','## DTBO content-level overlap',
+             f'- Matching blobs (8052 OTA vs 8053 OTA, multiset): {matches}/207.',
+             f'- OTA 8052 matches known 8054 stock blob hashes: {a_ref}/203.',
+             f'- OTA 8053 matches known 8054 stock blob hashes: {b_ref}/203.',
+             '- Stock 8054 reference contains hashes for 203 of 207 blobs; this comparison does not certify the active DTBO or index mapping.',
+             '','## Selected firmware files','',
+             '| File | 8052 vs 8053 SHA256 identical? |','|---|---|']
+          for k,v in comparison['configuration_checks'].items():
+              lines.append('| '+k+' | '+str(v['equal_sha256'])+' |')
+          lines+=['','### Selected TV config excerpts']
+          for code,p in [('8052',one),('8053',two)]:
+              lines+=['',f'#### {code}']
+              for k in ('tvconfig_board_ini','tvconfig_dtbo_mapping','bootdata_dtbo_mapping'):
+                  x=p.get(k) or {}
+                  lines+=['',f'**{k}** (SHA256: {x.get("sha256","unavailable")})']
+                  for line in x.get('preview_lines',[])[:20]:
+                      lines.append('- '+chr(96)+line.replace(chr(96),'')+chr(96))
+          (out/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines[:45]),flush=True)
+          PY
+      - name: Commit compact comparison to this research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/RUIOS_8053_Hardware_Identity/
+          if ! git diff --cached --quiet; then
+            git commit -m "Identify actual RUIOS 8053 hardware and compare with 8054 two-HDMI profile"
+            git pull --rebase origin ota-hardware-profiles-20261020
+            git push origin HEAD:ota-hardware-profiles-20261020
+          fi
