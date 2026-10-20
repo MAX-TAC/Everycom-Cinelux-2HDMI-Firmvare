@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
           sudo apt-get update -qq
-          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs
+          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs erofs-utils
           go version
           df -h /tmp
       - name: Download and decrypt the known PKG
@@ -60,6 +60,24 @@ jobs:
           find /tmp/cinelux-logical -maxdepth 1 -type f -printf '%f %s bytes\n' | head -n 60
           echo "Please see lpunpack log for any extraction errors."
           df -h /tmp
+      - name: Extract EROFS for read-only app and property inspection
+        run: |
+          mkdir -p /tmp/cinelux-erofs
+          for img in /tmp/cinelux-logical/*.img; do
+            [ -f "$img" ] || continue
+            case "$(file -b "$img")" in
+              *EROFS*)
+                name="$(basename "$img" .img)"
+                mkdir -p "/tmp/cinelux-erofs/$name"
+                echo "Extracting read-only EROFS partition: $name"
+                fsck.erofs --extract="/tmp/cinelux-erofs/$name" "$img" > "/tmp/$name-erofs.log" 2>&1 || {
+                   echo "fsck.erofs reported an error for $name"
+                   tail -n 15 "/tmp/$name-erofs.log"
+                }
+                ;;
+            esac
+          done
+          du -sh /tmp/cinelux-erofs/* 2>/dev/null || true
       - name: Record system properties and components
         if: always()
         run: |
@@ -93,6 +111,19 @@ jobs:
                         'ro.product.device','ro.product.board','ro.hardware','ro.board.platform','ro.build.type',
                         'ro.build.fingerprint','ro.product.manufacturer','ro.vendor.build.fingerprint'):
                           public[key]=val[:200]
+              erofs=Path('/tmp/cinelux-erofs')/img.stem
+              if erofs.is_dir():
+                  for source_path in ('system/build.prop','build.prop','vendor/build.prop','product/build.prop'):
+                      f=erofs/source_path
+                      if f.is_file() and f.stat().st_size<100000:
+                          for line in f.read_text(errors='replace').splitlines():
+                              if '=' not in line or line.startswith('#'):continue
+                              key,val=line.split('=',1)
+                              if key in ('ro.build.version.release','ro.build.version.sdk','ro.build.version.security_patch',
+                                  'ro.product.model','ro.product.device','ro.product.board','ro.hardware',
+                                  'ro.board.platform','ro.build.type','ro.build.fingerprint',
+                                  'ro.product.manufacturer','ro.vendor.build.fingerprint'):
+                                  public[key]=val[:200]
               if public:out['build_props'][img.name]=public
               dirs=[]
               for path in ('/system/app','/system/priv-app','/app','/priv-app','/product/app','/product/priv-app'):
@@ -100,7 +131,20 @@ jobs:
                   if rc==0 and len(s)>60 and 'File not found' not in e:
                       names=[a[5] for a in (r.split('/') for r in s.splitlines()) if len(a)>5 and a[5] not in ('','.','..')]
                       if names:dirs.append({'path':path,'names':names[:180]})
+              if erofs.is_dir():
+                  for source_path in ('system/app','system/priv-app','app','priv-app','product/app','product/priv-app'):
+                      folder=erofs/source_path
+                      if folder.is_dir():
+                          names=sorted(p.name for p in folder.iterdir())[:180]
+                          if names:dirs.append({'path':source_path,'names':names})
               if dirs:out['package_dirs'][img.name]=dirs
+              if erofs.is_dir():
+                  for source_path in ('etc/vintf/manifest.xml','vendor/etc/vintf/manifest.xml'):
+                      f=erofs/source_path
+                      if f.is_file() and f.stat().st_size<200000:
+                          s=f.read_text(errors='replace')
+                          out['hal_manifests'][img.name]={
+                            'path':source_path,'hal_names':sorted(set(re.findall(r'<name>([^<]+)</name>',s)))[:120]}
               for path in ('/etc/vintf/manifest.xml','/vendor/etc/vintf/manifest.xml'):
                   s,e,rc=run(['debugfs','-R','cat '+path,str(img)])
                   if rc==0 and len(s)>100 and 'File not found' not in e:
