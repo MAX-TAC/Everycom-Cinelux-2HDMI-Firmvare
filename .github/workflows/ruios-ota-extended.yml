@@ -1,0 +1,28 @@
+name: Search additional RUIOS 8000-series public OTA indexes
+on:
+  push:
+    paths:
+      - "tools/discover_ruios_ota_extended.py"
+      - ".github/workflows/ruios-ota-extended.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - name: Slowly inspect other publicly exposed OTA JSON indexes
+        run: |
+          python3 -u tools/discover_ruios_ota_extended.py
+      - name: Commit metadata, not OTA binaries
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/RUIOS_OTA_Discovery_Extended
+          if ! git diff --cached --quiet; then
+            git commit -m "Record public RUIOS 8000-series OTA channels (rate limited)"
+            git pull --rebase origin main
+            git push origin main
+          fi
