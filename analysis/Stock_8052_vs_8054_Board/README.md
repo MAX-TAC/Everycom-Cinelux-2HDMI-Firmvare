@@ -6,8 +6,39 @@ A two-HDMI FlixTone also displays 8054; this does not prove that its PCB matches
 
 ## Android OEM settings
 
-| Property | 8052 | 8054 |
+Values extracted from the independent verified vendor build.prop comparison.
+
+| Property | Stock 8052 (Aug) | Stock 8054 (Sep) |
 |---|---|---|
+| ro.rjpj.machine.id | 8052 | 8054 |
+| ro.rjpj.yunota.version | RUIOS.8052.1.0.1 | RUIOS.8054.1.0.1 |
+| ro.product.ota | V618RJEN | V618RJENHD |
+| ro.zeasn.devicetype | rjpj9660global | rjpj9660fordexp |
+| ro.rjpj.hdmi.ports | HW6:HDMI | HW6:HDMI1,HW7:HDMI2 |
+| ro.rjpj.hdmi.port.count | 1 | 2 |
+| ro.rjpj.support.toffunction | 0 | 1 |
+| ro.rjpj.autokeystone.poweron | 0 | 1 |
+| ro.rjpj.autokeystone.move | 0 | 1 |
+| ro.rjpj.yunota.url | mt9660/8052/8052_ota.json | mt9660/8054/8054_ota.json |
+| ro.rjpj.yunota.zip | RJMT9660_firmware_8052.zip | RJMT9660_firmware_8054.zip |
+
+## Important crosscheck: latest 8052 OTA from October 12, 2026
+
+The **October 8052 OTA** has an OEM machine ID of **8052**, but its extracted stock configuration files are **byte-for-byte identical to the September 8054 factory image**:
+
+| Config file | August stock 8052 vs September stock 8054 | October OTA 8052 vs September stock 8054 |
+|---|---|---|
+| `board.ini` | Different | Exact same SHA-256 |
+| `tvconfig/config/dtbo_mapping.ini` | Different | Exact same SHA-256 |
+| `bootdata/config/dtbo_mapping.ini` | Different | Exact same SHA-256 |
+
+Therefore the changed GPIO table and DTBO ordering seen in the two original factory packages **cannot by themselves be attributed to the number of HDMI ports**. They may reflect a common manufacturer firmware revision subsequently delivered to the 8052 channel. This finding does **not** prove that physical boards or calibrations are interchangeable.
+
+These checks rely on independent SHA-256 values from `analysis/RUIOS_8053_Hardware_Identity/8052.json` in the earlier research branch and the newly decoded factory 8054 files.
+
+## Notes on RUIOS 8053 (not a hardware target)
+
+Do not use 8053 as a base for a shared firmware. Its `A2dpSinkPlayerTCN` could be examined as an optional Bluetooth-audio receiver component, and `Provision` as a reference for first-boot setup, but functionality and dependencies have not been validated. Copying these older APKs directly into 8052/8054 is not recommended.
 
 ## Board pins and GPIO from board.ini
 
