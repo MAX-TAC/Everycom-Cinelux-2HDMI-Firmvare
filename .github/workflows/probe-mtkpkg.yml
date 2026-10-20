@@ -1,0 +1,77 @@
+name: Probe MediaTek PKG unpacking
+
+on:
+  push:
+    paths:
+      - ".github/workflows/probe-mtkpkg.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and check official archive
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar build-essential cmake liblzo2-dev libssl-dev zlib1g-dev git
+          mkdir -p /tmp/firmware /tmp/probe
+          curl -fL --retry 5 --retry-delay 5 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/original.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/original.rar" | sha256sum -c
+          unar -q -o /tmp/firmware /tmp/original.rar
+      - name: Entropy sampling and header structure
+        run: |
+          python3 - <<'PY'
+          from collections import Counter
+          from math import log2
+          from pathlib import Path
+          import json,struct
+          path=Path('/tmp/firmware/upgrade_image.pkg')
+          samples=[]
+          size=path.stat().st_size
+          with path.open('rb') as f:
+              for offset in [0,4096,65536,1024*1024,size//4,size//2,(size*3)//4,size-1024*1024]:
+                  f.seek(offset)
+                  d=f.read(1024*1024)
+                  n=len(d)
+                  c=Counter(d)
+                  H=-sum(v/n*log2(v/n) for v in c.values()) if n else 0
+                  ascii_frac=sum(32<=b<127 for b in d)/n if n else 0
+                  zeros=d.count(0)/n if n else 0
+                  samples.append({'offset':offset,'entropy_bits':round(H,6),'printable_fraction':round(ascii_frac,5),'zero_fraction':round(zeros,6)})
+          head=path.open('rb').read(1024)
+          out={'size':size,'samples':samples,'header_hex':head.hex(' '),'printable_head':''.join(chr(x) if 32<=x<127 else '.' for x in head)}
+          Path('/tmp/probe/entropy.json').write_text(json.dumps(out,indent=2),encoding='utf8')
+          print(json.dumps({'samples':samples,'first_256_bytes_hex':head[:256].hex(' ')},indent=2))
+          PY
+      - name: Build pinned epk2extract
+        run: |
+          git clone --quiet https://github.com/openlgtv/epk2extract.git /tmp/epk2extract
+          git -C /tmp/epk2extract checkout --quiet 2b6af078b56dbedb89efc0f4943036150f1ecae9
+          cd /tmp/epk2extract
+          ./build.sh > /tmp/probe/build.log 2>&1
+          find . -type f -name epk2extract -executable -print
+      - name: Probe whether this PKG is recognized
+        run: |
+          mkdir -p /tmp/epk-output
+          BIN=$(find /tmp/epk2extract -type f -name epk2extract -executable | head -1)
+          if [ -z "$BIN" ]; then echo "No epk2extract binary built" | tee /tmp/probe/probe.log; exit 0; fi
+          cd /tmp/epk-output
+          set +e
+          ( ulimit -f 8192; timeout 70 "$BIN" /tmp/firmware/upgrade_image.pkg ) > /tmp/probe/probe.log 2>&1
+          RET=$?
+          set -e
+          echo "epk2extract exit: $RET" | tee -a /tmp/probe/probe.log
+          find /tmp/epk-output -maxdepth 3 -type f -printf '%p %s bytes\n' | head -n 60 | tee /tmp/probe/output-files.txt
+          sed -n '1,150p' /tmp/probe/probe.log
+      - name: Publish only diagnostic text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mtkpkg-probe
+          path: /tmp/probe/
+          retention-days: 30
