@@ -92,7 +92,7 @@ jobs:
           for line in factory.splitlines():
               if line.startswith('+ro.rjpj.') and '=' in line:
                   key,val=line[1:].split('=',1)
-                  if not any(t in key for t in ('password','secret','token','mac','serial')):
+                  if not any(t in key for t in ('password','secret','token','mac_address','serial')):
                       stock8054[key]=val
           public_keys=[
               'ro.rjpj.machine.id','ro.rjpj.yunota.version','ro.rjpj.hdmi.ports',
