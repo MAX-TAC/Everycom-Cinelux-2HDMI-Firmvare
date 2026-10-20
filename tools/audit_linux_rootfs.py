@@ -18,7 +18,7 @@ for name in ('linux_rootfs_a_a','3rd_a_a'):
   if not image.is_file():continue
   target=root/name
   target.mkdir(exist_ok=True)
-  cmd=['unsquashfs','-no-progress','-f','-d',str(target),str(image)]
+  cmd=['unsquashfs','-no-progress','-no-xattrs','-f','-d',str(target),str(image)]
   p=subprocess.run(cmd,capture_output=True,text=True,errors='replace',timeout=240)
   if p.returncode:raise RuntimeError(name+' squashfs extract failed: '+p.stderr[-800:])
   files={}
