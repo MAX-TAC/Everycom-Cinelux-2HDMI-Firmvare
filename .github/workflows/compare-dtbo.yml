@@ -1,0 +1,134 @@
+name: Compare CineLux board DTBO overlays
+
+on:
+  push:
+    paths:
+      - ".github/workflows/compare-dtbo.yml"
+      - "tools/compare_dtbo_entries.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        variant: [one, two]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve and verify factory package
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq && sudo apt-get install -y -qq unar lz4 openssl
+          mkdir -p /tmp/firmware /tmp/output
+          if [ "$VARIANT" = one ]; then
+            URL="https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/Original_Firmware_for_1_HDMI_ports/4K.HDMI-.-20260813.1.rar"
+            SHA="bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f"
+          else
+            URL="https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar"
+            SHA="170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3"
+          fi
+          curl -fL --retry 5 "$URL" -o /tmp/firmware/source.rar
+          echo "$SHA  /tmp/firmware/source.rar" | sha256sum -c -
+          unar -q -o /tmp/firmware /tmp/firmware/source.rar
+      - name: Extract only device tree image from encrypted REE area
+        env:
+          VARIANT: ${{ matrix.variant }}
+        run: |
+          python3 - <<'PY'
+          import os,re,subprocess
+          from pathlib import Path
+          variant=os.environ['VARIANT']
+          script=Path('analysis/One_HDMI/upgrade_script.txt' if variant=='one' else
+            'analysis/Original_Firmware/decrypted/upgrade_script.txt').read_text()
+          lines=script.splitlines()
+          found=None
+          for i,s in enumerate(lines):
+              if 'partition write mmc 0 dtbo_a' in s:
+                  load=next(x for x in reversed(lines[:i]) if x.startswith('filepartload '))
+                  a=load.split()
+                  found=(int(a[4],16),int(a[3],16))
+                  break
+          assert found, 'No DTBO update command'
+          offset,length=found
+          p=Path('/tmp/firmware/upgrade_image.pkg')
+          hd=p.open('rb').read(4096)
+          assert b'REE_OFFSET_START = 0x1000' in hd and offset>=0x1000
+          # CBC decoding from body start; no flash/device writes.
+          cipher_len=offset+length-4096
+          cipher_len=(cipher_len+15)//16*16
+          with p.open('rb') as f:
+              f.seek(4096)
+              enc=f.read(cipher_len)
+          assert len(enc)==cipher_len
+          dec=subprocess.run(['openssl','enc','-d','-aes-256-cbc','-nopad',
+            '-K','d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f',
+            '-iv','00000000000000000000000000000000'],input=enc,capture_output=True,check=True).stdout
+          Path('/tmp/firmware/dtbo.lz4').write_bytes(dec[offset-4096:offset-4096+length])
+          subprocess.run(['lz4','-d','-f','-q','/tmp/firmware/dtbo.lz4','/tmp/firmware/dtbo.img'],check=True)
+          print(variant,'decoded DTBO',Path('/tmp/firmware/dtbo.img').stat().st_size)
+          PY
+          python3 tools/compare_dtbo_entries.py /tmp/firmware/dtbo.img /tmp/output/dtbo.json "$VARIANT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dtbo-${{ matrix.variant }}
+          path: /tmp/output/dtbo.json
+          retention-days: 30
+
+  compare:
+    needs: analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: dtbo-*
+          path: /tmp/dtbo
+      - name: Compare device tree entries
+        run: |
+          mkdir -p analysis/DTBO_Comparison
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/dtbo/dtbo-one/dtbo.json').read_text())
+          y=json.loads(Path('/tmp/dtbo/dtbo-two/dtbo.json').read_text())
+          A=x['entries'];B=y['entries']
+          same=[i for i in range(min(len(A),len(B))) if A[i]['sha256']==B[i]['sha256']]
+          different=[i for i in range(min(len(A),len(B))) if A[i]['sha256']!=B[i]['sha256']]
+          changed_meta=[i for i in range(min(len(A),len(B))) if
+             (A[i]['id'],A[i]['rev'],A[i]['custom']) != (B[i]['id'],B[i]['rev'],B[i]['custom'])]
+          o={'one_count':len(A),'two_count':len(B),'equal_indexed_entries':same,
+             'different_indexed_entries':different,'changed_entry_metadata':changed_meta,
+             'one_changed':[A[i] for i in different],
+             'two_changed':[B[i] for i in different]}
+          p=Path('analysis/DTBO_Comparison')
+          (p/'diff.json').write_text(json.dumps(o,ensure_ascii=False,indent=2))
+          lines=['# CineLux hardware DTBO overlay comparison','',
+            'DTBO is a collection of low-level descriptions of electrical connections and hardware. Every entry is compared by SHA256.',
+            'This does not prove which overlay is selected at boot.','',
+            f"Entries: {len(A)} / {len(B)}",
+            f"Identical at same position: {len(same)}",
+            f"Different at same position: {len(different)}",
+            f"Metadata changes: {len(changed_meta)}",'',
+            'Changed indexes: '+str(different),'']
+          for i in different[:35]:
+            lines+=['## Entry '+str(i), '1 HDMI: '+str(A[i]),
+               '2 HDMI: '+str(B[i]),'']
+          (p/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines)[:11000])
+          PY
+      - name: Commit DTBO comparison
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/DTBO_Comparison/
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare all 207 DTBO descriptions between CineLux board variants"
+            git pull --rebase origin main
+            git push origin main
+          fi
