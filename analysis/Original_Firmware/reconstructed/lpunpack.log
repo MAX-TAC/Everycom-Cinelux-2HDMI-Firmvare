@@ -1,0 +1,13 @@
+  Geometry at offset 4096
+  Geometry offset: 4096, maxSize=65536 slots=3 blockSize=4096
+  Primary metadata offset: 12288 (0.01 MB)
+  Metadata v10.2: 8 partitions, 4 extents
+Super Image: /tmp/cinelux-parts/super.img (24.9 GB)
+  Partitions: 4
+
+Extracting system_a (826.7 MB)...
+Extracting vendor_a (250.4 MB)...
+Extracting product_a (73.6 MB)...
+Extracting system_ext_a (83.2 MB)...
+
+Extracted 4 partition(s) to /tmp/cinelux-logical

@@ -1,0 +1,35 @@
+Identified 33 segments
+Segment 1 tvconfig_a,tvconfig_b Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files) ok
+Segment 2 project_id Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files) ok
+Segment 3 emmc_boot data ok
+Segment 4 mboot_a,mboot_b data ok
+Segment 5 vbmeta_a,vbmeta_b data ok
+Segment 6 vbmeta_system_a,vbmeta_system_b data ok
+Segment 7 boot_a,boot_b Android bootimg, kernel, ramdisk (0x1000000), page size: 2048, cmdline (androidboot.boot_devices=1c660000.mtk-mmc-fcie bootvideo.enable=1 buildvariant=userdebug) ok
+Segment 8 optee_a,optee_b data ok
+Segment 9 armfw_a,armfw_b data ok
+Segment 10 dtbo_a,dtbo_b data ok
+Segment 11 metadata Linux rev 1.0 ext4 filesystem data, UUID=cf1115cc-5b7f-474e-9b5e-796f485f4abd, volume name "metadata" (extents) (large files) (huge files) ok
+Segment 12 linux_rootfs_a_a,linux_rootfs_a_b Squashfs filesystem, little endian, version 4.0, lzo compressed, 48992685 bytes, 1124 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:49 2026 ok
+Segment 13 3rd_a_a,3rd_a_b Squashfs filesystem, little endian, version 4.0, lzo compressed, 697267 bytes, 19 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:50 2026 ok
+Segment 14 3rd_rw Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files) ok
+Segment 15 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 6 input chunks. ok
+Segment 16 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 17 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 18 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 19 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 20 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 21 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 22 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 7 input chunks. ok
+Segment 23 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks. ok
+Segment 24 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 9 input chunks. ok
+Segment 25 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 8 input chunks. ok
+Segment 26 super Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 6 input chunks. ok
+Segment 27 cache Android sparse image, version: 1.0, Total of 1280 4096-byte output blocks in 4 input chunks. ok
+Segment 28 tvservice_a,tvservice_b Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files) ok
+Segment 29 factory_a_a,factory_a_b Linux rev 1.0 ext2 filesystem data, UUID=8fdf0e8a-e9c9-4dbc-a793-f8a30554e80c, volume name "vendor/factory" (extents) (large files) (huge files) ok
+Segment 30 bootdata_a,bootdata_b Linux rev 1.0 ext4 filesystem data, UUID=87818157-033f-4c84-be2b-21f218b6b4d4, volume name "mnt/vendor/bootd/mnt/vendor/bootdata" (extents) (large files) (huge files) ok
+Segment 31 persist Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files) ok
+Segment 32 private Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files) ok
+Segment 33 trddev data ok
+Completed, super: {'path': '/tmp/cinelux-parts/super.img', 'size': 26700939264, 'format': 'data', 'logical_bytes_written': 26700939264, 'expected_gpt_super_size': 2225078272} errors: []

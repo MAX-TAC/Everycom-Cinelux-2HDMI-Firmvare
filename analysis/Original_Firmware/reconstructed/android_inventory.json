@@ -1,5 +1,26 @@
 {
-  "logical_partitions": [],
+  "logical_partitions": [
+    {
+      "name": "product_a.img",
+      "size": 77152256,
+      "type": "data"
+    },
+    {
+      "name": "system_a.img",
+      "size": 866844672,
+      "type": "EROFS filesystem, compat: SB_CHKSUM MTIME, blocksize=12, exslots=0, uuid=7BEE08A9-2373-C154-A38A-3AD926C42451, incompat: LZ4_0PADDING"
+    },
+    {
+      "name": "system_ext_a.img",
+      "size": 87273472,
+      "type": "data"
+    },
+    {
+      "name": "vendor_a.img",
+      "size": 262610944,
+      "type": "data"
+    }
+  ],
   "build_props": {},
   "package_dirs": {},
   "hal_manifests": {}

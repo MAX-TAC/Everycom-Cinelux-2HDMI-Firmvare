@@ -1,0 +1,657 @@
+{
+  "source": {
+    "path": "/tmp/cinelux-plain-body.bin",
+    "size": 1301020672
+  },
+  "segments": [
+    {
+      "index": 1,
+      "offset": 135168,
+      "compressed_size": 9728033,
+      "unlz4": true,
+      "target": [
+        "tvconfig_a",
+        "tvconfig_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 157286400,
+      "decoded_bytes": 157286400,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "index": 2,
+      "offset": 9900032,
+      "compressed_size": 21435,
+      "unlz4": true,
+      "target": [
+        "project_id"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 5242880,
+      "decoded_bytes": 5242880,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "index": 3,
+      "offset": 9965568,
+      "compressed_size": 414795,
+      "unlz4": true,
+      "target": [
+        "emmc_boot"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 451840,
+      "decoded_bytes": 451840,
+      "format": "data"
+    },
+    {
+      "index": 4,
+      "offset": 10424320,
+      "compressed_size": 1282607,
+      "unlz4": true,
+      "target": [
+        "mboot_a",
+        "mboot_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 2658304,
+      "decoded_bytes": 2658304,
+      "format": "data"
+    },
+    {
+      "index": 5,
+      "offset": 11735040,
+      "compressed_size": 7621,
+      "unlz4": true,
+      "target": [
+        "vbmeta_a",
+        "vbmeta_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 12288,
+      "decoded_bytes": 12288,
+      "format": "data"
+    },
+    {
+      "index": 6,
+      "offset": 11800576,
+      "compressed_size": 2324,
+      "unlz4": true,
+      "target": [
+        "vbmeta_system_a",
+        "vbmeta_system_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 4096,
+      "decoded_bytes": 4096,
+      "format": "data"
+    },
+    {
+      "index": 7,
+      "offset": 11866112,
+      "compressed_size": 37623217,
+      "unlz4": true,
+      "target": [
+        "boot_a",
+        "boot_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 78643200,
+      "decoded_bytes": 78643200,
+      "format": "Android bootimg, kernel, ramdisk (0x1000000), page size: 2048, cmdline (androidboot.boot_devices=1c660000.mtk-mmc-fcie bootvideo.enable=1 buildvariant=userdebug)"
+    },
+    {
+      "index": 8,
+      "offset": 49549312,
+      "compressed_size": 2806432,
+      "unlz4": false,
+      "target": [
+        "optee_a",
+        "optee_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": null,
+      "decoded_bytes": 2806432,
+      "format": "data"
+    },
+    {
+      "index": 9,
+      "offset": 52367360,
+      "compressed_size": 77088,
+      "unlz4": false,
+      "target": [
+        "armfw_a",
+        "armfw_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": null,
+      "decoded_bytes": 77088,
+      "format": "data"
+    },
+    {
+      "index": 10,
+      "offset": 52498432,
+      "compressed_size": 1686560,
+      "unlz4": true,
+      "target": [
+        "dtbo_a",
+        "dtbo_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 8388608,
+      "decoded_bytes": 8388608,
+      "format": "data"
+    },
+    {
+      "index": 11,
+      "offset": 54202368,
+      "compressed_size": 66432,
+      "unlz4": true,
+      "target": [
+        "metadata"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 16777216,
+      "decoded_bytes": 16777216,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=cf1115cc-5b7f-474e-9b5e-796f485f4abd, volume name \"metadata\" (extents) (large files) (huge files)"
+    },
+    {
+      "index": 12,
+      "offset": 54333440,
+      "compressed_size": 48313788,
+      "unlz4": true,
+      "target": [
+        "linux_rootfs_a_a",
+        "linux_rootfs_a_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 57671680,
+      "decoded_bytes": 57671680,
+      "format": "Squashfs filesystem, little endian, version 4.0, lzo compressed, 48992685 bytes, 1124 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:49 2026"
+    },
+    {
+      "index": 13,
+      "offset": 102699008,
+      "compressed_size": 818590,
+      "unlz4": true,
+      "target": [
+        "3rd_a_a",
+        "3rd_a_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 31457280,
+      "decoded_bytes": 31457280,
+      "format": "Squashfs filesystem, little endian, version 4.0, lzo compressed, 697267 bytes, 19 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:50 2026"
+    },
+    {
+      "index": 14,
+      "offset": 103550976,
+      "compressed_size": 124045,
+      "unlz4": true,
+      "target": [
+        "3rd_rw"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 31457280,
+      "decoded_bytes": 31457280,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "index": 15,
+      "offset": 103682048,
+      "compressed_size": 98683490,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853608,
+      "decoded_bytes": 104853608,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 6 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 6,
+        "kinds": {
+          "0xcac2": 1,
+          "0xcac1": 3,
+          "0xcac3": 2
+        }
+      }
+    },
+    {
+      "index": 16,
+      "offset": 202379264,
+      "compressed_size": 94747289,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 96874572,
+      "decoded_bytes": 96874572,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 17,
+      "offset": 297144320,
+      "compressed_size": 99801099,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853580,
+      "decoded_bytes": 104853580,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 18,
+      "offset": 396955648,
+      "compressed_size": 90757037,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 96473164,
+      "decoded_bytes": 96473164,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 19,
+      "offset": 487723008,
+      "compressed_size": 100881754,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853580,
+      "decoded_bytes": 104853580,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 20,
+      "offset": 588648448,
+      "compressed_size": 91486887,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 96473164,
+      "decoded_bytes": 96473164,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 21,
+      "offset": 680136704,
+      "compressed_size": 98933685,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853580,
+      "decoded_bytes": 104853580,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 22,
+      "offset": 779096064,
+      "compressed_size": 101690006,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104521844,
+      "decoded_bytes": 104521844,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 7 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 7,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 4,
+          "0xcac2": 1
+        }
+      }
+    },
+    {
+      "index": 23,
+      "offset": 880807936,
+      "compressed_size": 98241869,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853580,
+      "decoded_bytes": 104853580,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 4 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 4,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 2
+        }
+      }
+    },
+    {
+      "index": 24,
+      "offset": 979111936,
+      "compressed_size": 96709850,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853648,
+      "decoded_bytes": 104853648,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 9 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 9,
+        "kinds": {
+          "0xcac3": 3,
+          "0xcac1": 4,
+          "0xcac2": 2
+        }
+      }
+    },
+    {
+      "index": 25,
+      "offset": 1075843072,
+      "compressed_size": 99551359,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 104853632,
+      "decoded_bytes": 104853632,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 8 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 8,
+        "kinds": {
+          "0xcac3": 3,
+          "0xcac1": 4,
+          "0xcac2": 1
+        }
+      }
+    },
+    {
+      "index": 26,
+      "offset": 1175457792,
+      "compressed_size": 31406792,
+      "unlz4": true,
+      "target": [
+        "super"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 37134440,
+      "decoded_bytes": 37134440,
+      "format": "Android sparse image, version: 1.0, Total of 543232 4096-byte output blocks in 6 input chunks.",
+      "sparse_result": {
+        "expanded_bytes": 2225078272,
+        "block_size": 4096,
+        "chunks": 6,
+        "kinds": {
+          "0xcac3": 2,
+          "0xcac1": 3,
+          "0xcac2": 1
+        }
+      }
+    },
+    {
+      "index": 27,
+      "offset": 1206915072,
+      "compressed_size": 701,
+      "unlz4": true,
+      "target": [
+        "cache"
+      ],
+      "sparse": true,
+      "expected_uncompressed_size": 41036,
+      "decoded_bytes": 41036,
+      "format": "Android sparse image, version: 1.0, Total of 1280 4096-byte output blocks in 4 input chunks."
+    },
+    {
+      "index": 28,
+      "offset": 1206980608,
+      "compressed_size": 88538574,
+      "unlz4": true,
+      "target": [
+        "tvservice_a",
+        "tvservice_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 175112192,
+      "decoded_bytes": 175112192,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "index": 29,
+      "offset": 1295519744,
+      "compressed_size": 58630,
+      "unlz4": true,
+      "target": [
+        "factory_a_a",
+        "factory_a_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 8388608,
+      "decoded_bytes": 8388608,
+      "format": "Linux rev 1.0 ext2 filesystem data, UUID=8fdf0e8a-e9c9-4dbc-a793-f8a30554e80c, volume name \"vendor/factory\" (extents) (large files) (huge files)"
+    },
+    {
+      "index": 30,
+      "offset": 1295585280,
+      "compressed_size": 5125425,
+      "unlz4": true,
+      "target": [
+        "bootdata_a",
+        "bootdata_b"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 41943040,
+      "decoded_bytes": 41943040,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=87818157-033f-4c84-be2b-21f218b6b4d4, volume name \"mnt/vendor/bootd/mnt/vendor/bootdata\" (extents) (large files) (huge files)"
+    },
+    {
+      "index": 31,
+      "offset": 1300762624,
+      "compressed_size": 103422,
+      "unlz4": true,
+      "target": [
+        "persist"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 20971520,
+      "decoded_bytes": 20971520,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "index": 32,
+      "offset": 1300893696,
+      "compressed_size": 49141,
+      "unlz4": true,
+      "target": [
+        "private"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 10485760,
+      "decoded_bytes": 10485760,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    {
+      "index": 33,
+      "offset": 1300959232,
+      "compressed_size": 8382,
+      "unlz4": true,
+      "target": [
+        "trddev"
+      ],
+      "sparse": false,
+      "expected_uncompressed_size": 2097152,
+      "decoded_bytes": 2097152,
+      "format": "data"
+    }
+  ],
+  "super": {
+    "path": "/tmp/cinelux-parts/super.img",
+    "size": 26700939264,
+    "format": "data",
+    "logical_bytes_written": 26700939264,
+    "expected_gpt_super_size": 2225078272
+  },
+  "partitions": {
+    "tvconfig_a": {
+      "size": 157286400,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    "project_id": {
+      "size": 5242880,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    "emmc_boot": {
+      "size": 451840,
+      "format": "data"
+    },
+    "mboot_a": {
+      "size": 2658304,
+      "format": "data"
+    },
+    "vbmeta_a": {
+      "size": 12288,
+      "format": "data"
+    },
+    "vbmeta_system_a": {
+      "size": 4096,
+      "format": "data"
+    },
+    "boot_a": {
+      "size": 78643200,
+      "format": "Android bootimg, kernel, ramdisk (0x1000000), page size: 2048, cmdline (androidboot.boot_devices=1c660000.mtk-mmc-fcie bootvideo.enable=1 buildvariant=userdebug)"
+    },
+    "optee_a": {
+      "size": 2806432,
+      "format": "data"
+    },
+    "armfw_a": {
+      "size": 77088,
+      "format": "data"
+    },
+    "dtbo_a": {
+      "size": 8388608,
+      "format": "data"
+    },
+    "metadata": {
+      "size": 16777216,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=cf1115cc-5b7f-474e-9b5e-796f485f4abd, volume name \"metadata\" (extents) (large files) (huge files)"
+    },
+    "linux_rootfs_a_a": {
+      "size": 57671680,
+      "format": "Squashfs filesystem, little endian, version 4.0, lzo compressed, 48992685 bytes, 1124 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:49 2026"
+    },
+    "3rd_a_a": {
+      "size": 31457280,
+      "format": "Squashfs filesystem, little endian, version 4.0, lzo compressed, 697267 bytes, 19 inodes, blocksize: 131072 bytes, created: Wed Sep 30 07:47:50 2026"
+    },
+    "3rd_rw": {
+      "size": 31457280,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    "cache": {
+      "size": 41036,
+      "format": "Android sparse image, version: 1.0, Total of 1280 4096-byte output blocks in 4 input chunks."
+    },
+    "tvservice_a": {
+      "size": 175112192,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    "factory_a_a": {
+      "size": 8388608,
+      "format": "Linux rev 1.0 ext2 filesystem data, UUID=8fdf0e8a-e9c9-4dbc-a793-f8a30554e80c, volume name \"vendor/factory\" (extents) (large files) (huge files)"
+    },
+    "bootdata_a": {
+      "size": 41943040,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=87818157-033f-4c84-be2b-21f218b6b4d4, volume name \"mnt/vendor/bootd/mnt/vendor/bootdata\" (extents) (large files) (huge files)"
+    },
+    "persist": {
+      "size": 20971520,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    "private": {
+      "size": 10485760,
+      "format": "Linux rev 1.0 ext4 filesystem data, UUID=57f8f4bc-abf4-655f-bf67-946fc0f9f25b (extents) (large files)"
+    },
+    "trddev": {
+      "size": 2097152,
+      "format": "data"
+    }
+  },
+  "errors": []
+}
