@@ -88,7 +88,7 @@ jobs:
           log=Path('/tmp/unixtract-run.log')
           logtext=log.read_text(errors='replace') if log.exists() else 'Extraction step did not begin.'
           # Use the actual reported text without exposing decryption keys, signatures or private binary
-          logtext=re.sub(r'(?i)\b(?:key|aes key|password)\s*[:=]\s*[a-f0-9]{24,}',r'\1 [REDACTED]',logtext)
+          logtext=re.sub(r'(?i)\b(?:key|aes key|password)\s*[:=]\s*[a-f0-9]{24,}','[REDACTED]',logtext)
           (dest/'extractor.log').write_text(logtext[-30000:],encoding='utf8')
           (dest/'inventory.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
           lines=['# CineLux / D11 related original firmware — decrypted image inspection','',
