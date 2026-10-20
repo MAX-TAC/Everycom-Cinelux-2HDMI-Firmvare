@@ -1,0 +1,70 @@
+name: Quick CineLux archive structure
+
+on:
+  push:
+    paths:
+      - ".github/workflows/quick-original.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install extraction tool
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq unar
+      - name: Verify and extract original firmware
+        run: |
+          mkdir -p /tmp/firmware
+          curl -fL --retry 5 --retry-delay 5 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" -o /tmp/source.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/source.rar" | sha256sum -c
+          unar -q -o /tmp/firmware /tmp/source.rar
+      - name: Identify top-level content
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess,json
+          out=Path('analysis/Original_Firmware')
+          out.mkdir(parents=True,exist_ok=True)
+          root=Path('/tmp/firmware')
+          files=sorted((p for p in root.rglob('*') if p.is_file()),key=lambda p:-p.stat().st_size)
+          sigs={
+            'mstar':b'# MSTAR FIRMWARE','android-boot':b'ANDROID!',
+            'android-sparse':b'\x3a\xff\x26\xed','android-payload':b'CrAU',
+            'erofs':b'\xe2\xe1\xf5\xe0','squashfs':b'hsqs',
+            'zip':b'PK\x03\x04'
+          }
+          report=['# CineLux original firmware: quick structure',
+                  'Read-only check of archive members and 32 MiB of each file; no flash compatibility claimed.','']
+          found=[]
+          for f in files[:80]:
+              typ=subprocess.run(['file','-b',str(f)],capture_output=True,text=True).stdout.strip()
+              entry={'path':str(f.relative_to(root)),'bytes':f.stat().st_size,'file_type':typ}
+              report.append('## '+entry['path'])
+              report.append('Bytes: '+str(entry['bytes'])+'; type: '+typ)
+              if f.stat().st_size>4096:
+                  with f.open('rb') as fd:b=fd.read(32*1024*1024)
+                  entry['begin_hex']=b[:256].hex(' ')
+                  entry['begin_text']=''.join(chr(c) if 32<=c<127 else '.' for c in b[:400])
+                  entry['signatures_first_32MiB']={k:v for k,s in sigs.items() if (v:=b.find(s))>=0}
+                  report.append('Start preview: '+entry['begin_text'])
+                  report.append('Magic positions first 32MiB: '+json.dumps(entry['signatures_first_32MiB']))
+              found.append(entry)
+          (out/'quick_structure.json').write_text(json.dumps(found,indent=2,ensure_ascii=False))
+          (out/'quick_structure.md').write_text('\n'.join(report)+'\n')
+          print('\n'.join(report)[:14000])
+          PY
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/quick_structure.*
+          if ! git diff --cached --quiet; then
+            git commit -m "Summarize original CineLux firmware archive structure"
+            git pull --rebase origin main
+            git push origin main
+          fi
