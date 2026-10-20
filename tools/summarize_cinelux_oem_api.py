@@ -2,9 +2,9 @@
 """Generate a concise auditable interface map from static signature metadata."""
 import json,re
 from pathlib import Path
-root=Path("analysis/OEM_API_8054")
+root=Path("analysis/OEM_API_8052_Latest")
 root.mkdir(parents=True,exist_ok=True)
-raw=json.loads(Path("/tmp/oem-api/8054-stock.json").read_text())
+raw=json.loads(Path("/tmp/oem-api/8052-ota.json").read_text())
 groups=[
 ("Settings I2C and hardware","TvSettingsPlus","ProjectorManager|I2CDevice|FocusSettingsSecondaryController|ProjectionModeSecondaryController|AdvanceSettingsSecondaryController|SourceSubMenuController|i2c"),
 ("Factory engineering interface","Factory","ProjectorManager|I2CDevice|FanActivity|i2c"),
@@ -16,9 +16,9 @@ groups=[
 ("OEM settings","KuSettings","Bluetooth|Sound|Projector|Source|Display|I2C")
 ]
 lines=[
-"# OEM settings and hardware interfaces — RUIOS 8054",
+"# OEM settings and hardware interfaces — RUIOS 8052 latest OTA",
 "",
-"Read-only static study of SHA256-verified factory 8054 (two HDMI, ToF).",
+"Read-only static study of SHA256-verified OTA 8052 Oct 2026 (one HDMI).",
 "App signatures extracted via JADX. JNI dynamic symbols collected with readelf.",
 "No proprietary decompiled Java source is committed.",
 "No code has been executed on a real projector. Interfaces remain unverified at runtime.",
@@ -69,11 +69,11 @@ for filename,row in sorted(raw["bluetooth_audio"].items()):
 lines+=["","## Safe integration path","",
 "1. Prefer OEM settings activities and existing Binder service over direct hardware I2C access.",
 "2. Identify actual package export flags and Binder service registration on a real device before implementing a companion.",
-"3. Keep dedicated hardware profiles for one-HDMI 8052 and two-HDMI/ToF 8054.",
+"3. Use separate hardware profiles for one-HDMI 8052 and two-HDMI/ToF 8054.",
 "4. Bound motor steps, preserve emergency stop, and verify ToF presence and privileges before tests.",
 "5. Treat HDMI selection, image options, and keystone separately; keep stock services until tested.",
 "6. For two Bluetooth headphones, inspect A2DP source multiplicity, Android audio routing, BT stack and HAL. App-level audio duplication alone does not guarantee support.",
-"7. Keep stock 8054 KuSetupWizard. Do not import 8053 Provision or A2DP sink functionality.",
+"7. Keep the stock, device-matched initial setup application. Do not import 8053 Provision or A2DP sink functionality.",
 "",
 "## Limits","",
 "- Decompiled signatures and JNI exports are not a public supported SDK.",
@@ -84,6 +84,6 @@ lines+=["","## Safe integration path","",
 for value in raw["apps"].values():
     if len(value.get("declarations",[]))>500:value["declarations"]=value["declarations"][:500]
     if len(value.get("call_sites",[]))>200:value["call_sites"]=value["call_sites"][:200]
-(root/"8054-stock.json").write_text(json.dumps(raw,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+(root/"8052-ota.json").write_text(json.dumps(raw,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
 print("REPORT",len(lines),"lines; libs",len(raw["native"]),"APKs",len(raw["apps"]),flush=True)
 print("\n".join(lines[:45]),flush=True)
