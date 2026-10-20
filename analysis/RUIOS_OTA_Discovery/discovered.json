@@ -1,0 +1,180 @@
+[
+  {
+    "code": 8045,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8045/8045_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8046,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8046/8046_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8047,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8047/8047_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8048,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8048/8048_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8049,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8049/8049_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8050,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8050/8050_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8051,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8051/8051_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8052,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8052/8052_ota.json",
+    "status": 200,
+    "bytes": 862,
+    "content_type": "application/json",
+    "json": {
+      "ver": "RUIOS.8052.1.0.4",
+      "url": "https://www.szrjyun.com/ota/android/mt9660/8052/RJMT9660_firmware_8052.zip",
+      "size": "851685795",
+      "md5": "497d1bf803300b6c98c49328b6105c33",
+      "desc1": "1. Optimization image display quality;",
+      "desc2": "2. Optimization some APPs",
+      "desc3": "3. Fix some bugs;",
+      "forcepush": "disable",
+      "forceselect": "disable",
+      "pushstyle": "demo",
+      "pushinfo1": "1. Optimization image display quality;",
+      "pushinfo2": "2. Optimization some APPs",
+      "pushinfo3": "3. Fix some bugs;",
+      "ab_update": "direct",
+      "ab_offset": "2728",
+      "ab_size": "851679571",
+      "ab_prop1": "FILE_HASH=4GMfEIO9bDQQZCXu6nYyfNmBr/ZwsVsuHozlWDa7CeE=",
+      "ab_prop2": "FILE_SIZE=851679571",
+      "ab_prop3": "METADATA_HASH=qBPDdgEacleO906Iwsf855lQzsThavxt5B/7rX2WIf0=",
+      "ab_prop4": "METADATA_SIZE=46287"
+    }
+  },
+  {
+    "code": 8053,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8053/8053_ota.json",
+    "status": 200,
+    "bytes": 862,
+    "content_type": "application/json",
+    "json": {
+      "ver": "RUIOS.8053.1.0.0",
+      "url": "https://www.szrjyun.com/ota/android/mt9660/8053/RJMT9660_firmware_8053.zip",
+      "size": "841648271",
+      "md5": "9be6e18503c9ce9805fa9c3d4fd91a83",
+      "desc1": "1. Optimization image display quality;",
+      "desc2": "2. Optimization some APPs",
+      "desc3": "3. Fix some bugs;",
+      "forcepush": "disable",
+      "forceselect": "disable",
+      "pushstyle": "demo",
+      "pushinfo1": "1. Optimization image display quality;",
+      "pushinfo2": "2. Optimization some APPs",
+      "pushinfo3": "3. Fix some bugs;",
+      "ab_update": "direct",
+      "ab_offset": "2719",
+      "ab_size": "841642056",
+      "ab_prop1": "FILE_HASH=L9iiH5WmIgIbt8+a1IafosdeXdeZrq7vwG4ps1TBjNc=",
+      "ab_prop2": "FILE_SIZE=841642056",
+      "ab_prop3": "METADATA_HASH=1/y5SElq38DBO2EQ8tJsRvOtBKKfJuo26VNkAozfmF8=",
+      "ab_prop4": "METADATA_SIZE=45944"
+    }
+  },
+  {
+    "code": 8054,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8054/8054_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8055,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8055/8055_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8056,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8056/8056_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8057,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8057/8057_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8058,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8058/8058_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8059,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8059/8059_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8060,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8060/8060_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8061,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8061/8061_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8062,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8062/8062_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8063,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8063/8063_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8064,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8064/8064_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8065,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8065/8065_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8066,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8066/8066_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8067,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8067/8067_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8068,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8068/8068_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8069,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8069/8069_ota.json",
+    "status": 404
+  },
+  {
+    "code": 8070,
+    "url": "https://www.szrjyun.com/ota/android/mt9660/8070/8070_ota.json",
+    "status": 404
+  }
+]
