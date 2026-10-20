@@ -13,7 +13,37 @@ Reconstructed and analyzed in read-only form, not flashed.
 
 ## Build properties
 
+### system_a.img
+
+~~~
+ro.build.version.sdk=33
+ro.build.version.release=13
+ro.build.version.security_patch=2026-04-05
+ro.build.type=userdebug
+~~~
+### vendor_a.img
+
+~~~
+ro.vendor.build.fingerprint=MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/suhaixiong09300739:userdebug/test-keys
+ro.product.board=mt5873_cd
+ro.board.platform=mt5873
+ro.product.model=Projetor
+~~~
 
 ## System app directories
+### product_a.img
+app: Camera2, LatinIME, ModuleMetadata, VendorDisclaimer, WallpaperPicker, webview
+### system_a.img
+system/app: BasicDreams, CertInstaller, CompanionDeviceManager, CtsShimPrebuilt, ExtShared, FTAirplayWireless, HTMLViewer, KeyChain, KuSettings, KuSetupWizard, KuSourceRJ, PacProcessor, PlatformCaptivePortalLogin, PrintSpooler, RJBluetoothSpeaker, RuiAutoFocus, SecureElement, TrdDreamPic, TrdFactoryTest, WallpaperBackup, trdservice, zxlauncher, zxstore
+system/priv-app: BackupRestoreConfirmation, CalendarProvider, ContactsProvider, CtsShimPrivPrebuilt, DownloadProvider, DynamicSystemInstallationService, ExternalStorageProvider, FusedLocation, InProcessNetworkStack, InputDevices, KeystoneCorrection, LocalTransport, MediaProviderLegacy, PackageInstaller, ProxyHandler, RuiYunOta, SettingsProvider, SharedStorageBackup, Shell, SoundPicker, StatementService, TvProvider, UserDictionaryProvider, VpnDialogs
+### system_ext_a.img
+app: AutoPair, Factory, TvFrameworkPackageStubs, WFDSinkTest
+priv-app: LiveTV, MtkNetworkMonitorService, MtkTvInput, MultiMediaPlayer, RemoteProvisioner, RetailDisplay, SystemUI, TvServices, TvSettingsPlus
+### vendor_a.img
+priv-app: trdmiddle
 
 ## Declared HALs
+### system_ext_a.img
+
+### vendor_a.img
+IAllocator, IAudioCapture, IBluetoothAudioProviderFactory, IBluetoothHci, ICameraProvider, ICodec2InfoService, IComponentStore, IComposer, IDevicesFactory, IEffectsFactory, IExternalbuffer, IGatekeeper, IHCmpb, IHdmiCec, IImgDisp, IImgHwDec, IInterTunnel, IMapper, IMmDisp, IMtkCalman, IMtkDmCommon, IMtkMediaPluginService, IMtkPhotoService, IMtkRm, IMtkTvApi, IMtkTvApiBroadcast, IMtkTvApiCI, IMtkTvApiCec, IMtkTvApiChannelList, IMtkTvApiConfig, IMtkTvApiCustom, IMtkTvApiEvent, IMtkTvApiInputSrc, IMtkTvApiMultiview, IMtkTvApiPvrbrowser, IMtkTvApiRating, IMtkTvApiRecord, IMtkTvApiScan, IMtkTvApiTime, IMtkTvApiTimeshift, IMtkTvFApiAudio, IMtkTvFApiCustom, IMtkTvFApiDisplay, IMtkTvFApiDisplayTest, IMtkTvFApiInformation, IMtkTvFApiInputSource, IMtkTvFApiManager, IMtkTvFApiNetwork, IMtkTvFApiPeripheral, IMtkTvFApiSystem, IMtkTvFApiTv, IMtkTvVoc, IMtkVssService, IMtkWifiDisplay, INetworkProxy, IOmx, IOmxStore, IScreenCapture, IScreenEncoder, ISensors, ITvInput, android.hardware.audio, android.hardware.audio.effect, android.hardware.bluetooth, android.hardware.bluetooth.audio, android.hardware.camera.provider, android.hardware.gatekeeper, android.hardware.graphics.allocator, android.hardware.graphics.composer, android.hardware.graphics.mapper, android.hardware.media.c2, android.hardware.media.omx, android.hardware.sensors, android.hardware.tv.cec, android.hardware.tv.input, mstar.hardware.imgdisp, mstar.hardware.imghwdec, mstar.hardware.intertunnel, mstar.hardware.mmdisp, vendor.mediatek.api.mtktvapi, vendor.mediatek.custom.mtktvapicustom, vendor.mediatek.graphics.externalbuffer, vendor.mediatek.hardware.c2.info, vendor.mediatek.hardware.tv.networkproxy, vendor.mediatek.tv.Mm.Mm.mtktvfapicustom, vendor.mediatek.tv.cmpb, vendor.mediatek.tv.mtkcalman, vendor.mediatek.tv.mtkdmservice, vendor.mediatek.tv.mtkmtalservice, vendor.mediatek.tv.mtkrm, vendor.mediatek.tv.mtktvfactory, vendor.mediatek.tv.mtktvvoc, vendor.mediatek.tv.screenrecord, vendor.mediatek.wifidisplay
