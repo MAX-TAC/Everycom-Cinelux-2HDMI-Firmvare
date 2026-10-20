@@ -1,0 +1,68 @@
+{
+  "code": "8053",
+  "zip_size": 841648271,
+  "entries": [
+    {
+      "name": "META-INF/com/android/metadata",
+      "uncompressed_size": 698,
+      "compressed_size": 698,
+      "crc32": "2cb3bb92"
+    },
+    {
+      "name": "META-INF/com/android/metadata.pb",
+      "uncompressed_size": 1179,
+      "compressed_size": 1179,
+      "crc32": "d7d2136c"
+    },
+    {
+      "name": "apex_info.pb",
+      "uncompressed_size": 0,
+      "compressed_size": 0,
+      "crc32": "00000000"
+    },
+    {
+      "name": "care_map.pb",
+      "uncompressed_size": 563,
+      "compressed_size": 563,
+      "crc32": "4fd5f252"
+    },
+    {
+      "name": "payload.bin",
+      "uncompressed_size": 841642056,
+      "compressed_size": 841642056,
+      "crc32": "8a540256"
+    },
+    {
+      "name": "payload_properties.txt",
+      "uncompressed_size": 154,
+      "compressed_size": 154,
+      "crc32": "2cfe6adc"
+    },
+    {
+      "name": "META-INF/com/android/otacert",
+      "uncompressed_size": 1675,
+      "compressed_size": 943,
+      "crc32": "c3fc0954"
+    }
+  ],
+  "small_metadata": {
+    "META-INF/com/android/metadata": "ota-property-files=payload_metadata.bin:2719:46211,payload.bin:2719:841642056,payload_properties.txt:841644833:154,apex_info.pb:2062:0,care_map.pb:2109:563,metadata:69:698,metadata.pb:835:1179                      \nota-required-cache=0\nota-streaming-property-files=payload.bin:2719:841642056,payload_properties.txt:841644833:154,apex_info.pb:2062:0,care_map.pb:2109:563,metadata:69:698,metadata.pb:835:1179                        \nota-type=AB\npost-build=MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/eng.luzhih.20260612.083454:userdebug/test-keys\npost-build-incremental=eng.luzhih.20260612.083454\npost-sdk-level=33\npost-security-patch-level=2026-04-05\npost-timestamp=1781253379\npre-device=mt5873\n",
+    "META-INF/com/android/metadata.pb": "\b\u0001\"�\u0001\n\u0012ota-property-files\u0012�\u0001payload_metadata.bin:2719:46211,payload.bin:2719:841642056,payload_properties.txt:841644833:154,apex_info.pb:2062:0,care_map.pb:2109:563,metadata:69:698,metadata.pb:835:1179                      \"�\u0001\n\u001cota-streaming-property-files\u0012�\u0001payload.bin:2719:841642056,payload_properties.txt:841644833:154,apex_info.pb:2062:0,care_map.pb:2109:563,metadata:69:698,metadata.pb:835:1179                        *\b\n\u0006mt58732�\u0005\n\u0006mt5873\u0012^MediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/eng.luzhih.20260612.083454:userdebug/test-keys\u001a\u001aeng.luzhih.20260612.083454 ����\u0006*\u0002332\n2026-04-05:q\n\u0004boot\u0012\u0006mt5873\u001aUMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\"\n1781253379:t\n\u0007product\u0012\u0006mt5873\u001aUMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\"\n1781253379:s\n\u0006system\u0012\u0006mt5873\u001aUMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\"\n1781253379:w\n\nsystem_ext\u0012\u0006mt5873\u001aUMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\"\n1781253379:s\n\u0006vendor\u0012\u0006mt5873\u001aUMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\"\n1781253379",
+    "care_map.pb": "\n�\u0001\n\u0007product\u0012\t2,0,18461\u001a\u001cro.product.build.fingerprint\"UMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\n�\u0001\n\u0006system\u0012\n2,0,151044\u001a\u001bro.system.build.fingerprint\"UMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\n�\u0001\n\nsystem_ext\u0012\t2,0,21046\u001a\u001fro.system_ext.build.fingerprint\"UMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys\n�\u0001\n\u0006vendor\u0012\t2,0,43311\u001a\u001bro.vendor.build.fingerprint\"UMediaTek/mt5873_cd/mt5873:13/TP1A.220624.021.A1/luzhiheng06120828:userdebug/test-keys",
+    "payload_properties.txt": "FILE_HASH=L9iiH5WmIgIbt8+a1IafosdeXdeZrq7vwG4ps1TBjNc=\nFILE_SIZE=841642056\nMETADATA_HASH=1/y5SElq38DBO2EQ8tJsRvOtBKKfJuo26VNkAozfmF8=\nMETADATA_SIZE=45944\n",
+    "META-INF/com/android/otacert": "-----BEGIN CERTIFICATE-----\nMIIEqDCCA5CgAwIBAgIJAJNurL4H8gHfMA0GCSqGSIb3DQEBBQUAMIGUMQswCQYD\nVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4g\nVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UE\nAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAe\nFw0wODAyMjkwMTMzNDZaFw0zNTA3MTcwMTMzNDZaMIGUMQswCQYDVQQGEwJVUzET\nMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4G\nA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9p\nZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZI\nhvcNAQEBBQADggENADCCAQgCggEBANaTGQTexgskse3HYuDZ2CU+Ps1s6x3i/waM\nqOi8qM1r03hupwqnbOYOuw+ZNVn/2T53qUPn6D1LZLjk/qLT5lbx4meoG7+yMLV4\nwgRDvkxyGLhG9SEVhvA4oU6Jwr44f46+z4/Kw9oe4zDJ6pPQp8PcSvNQIg1QCAcy\n4ICXF+5qBTNZ5qaU7Cyz8oSgpGbIepTYOzEJOmc3Li9kEsBubULxWBjf/gOBzAzU\nRNps3cO4JFgZSAGzJWQTT7/emMkod0jb9WdqVA2BVMi7yge54kdVMxHEa5r3b97s\nzI5p58ii0I54JiCUP5lyfTwE/nKZHZnfm644oLIXf6MdW2r+6R8CAQOjgfwwgfkw\nHQYDVR0OBBYEFEhZAFY9JyxGrhGGBaR0GawJyowRMIHJBgNVHSMEgcEwgb6AFEhZ\nAFY9JyxGrhGGBaR0GawJyowRoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UE\nCBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMH\nQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAG\nCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJAJNurL4H8gHfMAwGA1Ud\nEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBAHqvlozrUMRBBVEY0NqrrwFbinZa\nJ6cVosK0TyIUFf/azgMJWr+kLfcHCHJsIGnlw27drgQAvilFLAhLwn62oX6snb4Y\nLCBOsVMR9FXYJLZW2+TcIkCRLXWG/oiVHQGo/rWuWkJgU134NDEFJCJGjDbiLCpe\n+ZTWHdcwauTJ9pUbo8EvHRkU3cYfGmLaLfgn9gP+pWA7LFQNvXwBnDa6sppCccEX\n31I828XzgXpJ4O+mDL1/dBd+ek8ZPUP0IgdyZm5MTYPhvVqGCHzzTy3sIeJFymwr\nsBbmg2OAUNLEMO6nwmocSdN2ClirfxqCzJOLSDE4QyS9BAH6EhY6UFcOaE0=\n-----END CERTIFICATE-----\n"
+  },
+  "payload": {
+    "size": 841642056,
+    "magic": "CrAU",
+    "format_version": 2,
+    "manifest_size": 45920,
+    "metadata_signature_size": 267
+  },
+  "other_formats": {
+    "payload.bin": {
+      "size": 841642056,
+      "first_bytes": "437241550000000000000002000000000000b3600000010b18802020baf5a691"
+    }
+  }
+}
