@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install read-only firmware tools
         run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
           sudo apt-get update -qq
           sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs
           go version
