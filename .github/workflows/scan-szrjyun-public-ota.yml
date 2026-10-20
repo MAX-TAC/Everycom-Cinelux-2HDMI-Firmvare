@@ -1,0 +1,115 @@
+name: Scan public szrjyun MT9660 OTA IDs 1-10000
+
+on:
+  push:
+    branches: [ota-szrjyun-scan-20261020]
+    paths:
+      - ".github/workflows/scan-szrjyun-public-ota.yml"
+      - "tools/scan_szrjyun_public_ota.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Verify public OTA endpoint before scanning
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request
+          for code in (8052,8053):
+              url=f'https://www.szrjyun.com/ota/android/mt9660/{code}/{code}_ota.json'
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'CineLux-OTA-research/1.0'}),timeout=15) as r:
+                  data=json.loads(r.read(131072))
+                  assert r.status==200 and isinstance(data,dict), (code,r.status)
+                  print('PREFLIGHT',code,r.status,data.get('ver'),flush=True)
+          PY
+
+  scan:
+    needs: preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        include:
+          - { shard: "00001-02000", start: 1, end: 2000 }
+          - { shard: "02001-04000", start: 2001, end: 4000 }
+          - { shard: "04001-06000", start: 4001, end: 6000 }
+          - { shard: "06001-08000", start: 6001, end: 8000 }
+          - { shard: "08001-10000", start: 8001, end: 10000 }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan small public JSON files, with per-shard rate limits
+        run: |
+          python3 -u tools/scan_szrjyun_public_ota.py \
+            --start ${{ matrix.start }} --end ${{ matrix.end }} \
+            --out "scan-output/${{ matrix.shard }}"
+      - name: Upload completed or partial scan data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: szrjyun-ota-${{ matrix.shard }}
+          path: scan-output/${{ matrix.shard }}/
+          if-no-files-found: warn
+          retention-days: 30
+
+  aggregate:
+    if: always()
+    needs: [preflight, scan]
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: szrjyun-ota-*
+          path: /tmp/szrjyun-scan
+      - name: Assemble catalog (identify partial coverage)
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          src=Path('/tmp/szrjyun-scan')
+          target=Path('analysis/SZRJYUN_OTA_Public_Catalog')
+          target.mkdir(parents=True,exist_ok=True)
+          summaries=[]; hits=[]
+          for summary_path in sorted(src.glob('*/summary.json')):
+              root=summary_path.parent
+              summaries.append(json.loads(summary_path.read_text()))
+              hits.extend(json.loads((root/'hits.json').read_text()))
+          hits.sort(key=lambda r:r['id'])
+          expected=10000
+          checked=sum(x['checked'] for x in summaries)
+          complete=len(summaries)==5 and all(x['complete'] for x in summaries) and checked==expected
+          result={'complete':complete,'checked':checked,'expected':expected,
+                  'shards':summaries,'found':hits}
+          (target/'catalog.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+          lines=['# Public szrjyun MT9660 OTA JSON scan','',
+                 f'Coverage: {checked}/{expected}. Complete: {complete}.',
+                 'Only public JSON metadata was requested. OTA ZIP binaries were not downloaded.','',
+                 '| ID | Firmware version | URL |','|---|---|---|']
+          for h in hits:
+              meta=h.get('metadata') or {}
+              if not isinstance(meta,dict):meta={}
+              lines.append(f"| {h['id']} | {str(meta.get('ver','-')).replace('|','/')} | {h['url']} |")
+          lines+=['','## Shard status','', '| ID interval | Checked | Complete | Stop reason |','|---|---:|---|---|']
+          for x in summaries:
+              lines.append(f"| {x['start']}-{x['end']} | {x['checked']} | {x['complete']} | {x.get('stop_reason') or '-'} |")
+          (target/'README.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines),flush=True)
+          PY
+      - name: Commit small metadata files to the scanning branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/SZRJYUN_OTA_Public_Catalog/
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish scan of public szrjyun OTA model identifiers"
+            git pull --rebase origin ota-szrjyun-scan-20261020
+            git push origin HEAD:ota-szrjyun-scan-20261020
+          fi
