@@ -1,0 +1,358 @@
+[
+  {
+    "line": 3,
+    "content": "gpt clean mmc 0"
+  },
+  {
+    "line": 4,
+    "content": "gpt create mmc 0 name=tvcertificate,size=0x800000"
+  },
+  {
+    "line": 5,
+    "content": "gpt create mmc 0 name=linux_rootfs_a_a,size=0x3700000"
+  },
+  {
+    "line": 6,
+    "content": "gpt create mmc 0 name=linux_rootfs_a_b,size=0x3700000"
+  },
+  {
+    "line": 7,
+    "content": "gpt create mmc 0 name=3rd_a_a,size=0x1E00000"
+  },
+  {
+    "line": 8,
+    "content": "gpt create mmc 0 name=3rd_a_b,size=0x1E00000"
+  },
+  {
+    "line": 9,
+    "content": "gpt create mmc 0 name=3rd_rw,size=0x1E00000"
+  },
+  {
+    "line": 10,
+    "content": "gpt create mmc 0 name=cha,size=0x100000"
+  },
+  {
+    "line": 11,
+    "content": "gpt create mmc 0 name=chb,size=0x100000"
+  },
+  {
+    "line": 12,
+    "content": "gpt create mmc 0 name=tvservice_a,size=0xA700000"
+  },
+  {
+    "line": 13,
+    "content": "gpt create mmc 0 name=tvservice_b,size=0xA700000"
+  },
+  {
+    "line": 14,
+    "content": "gpt create mmc 0 name=factory_a_a,size=0x800000"
+  },
+  {
+    "line": 15,
+    "content": "gpt create mmc 0 name=factory_a_b,size=0x800000"
+  },
+  {
+    "line": 16,
+    "content": "gpt create mmc 0 name=eeprom_a,size=0x200000"
+  },
+  {
+    "line": 17,
+    "content": "gpt create mmc 0 name=persist,size=0x1400000"
+  },
+  {
+    "line": 18,
+    "content": "gpt create mmc 0 name=bootdata_a,size=0x2800000"
+  },
+  {
+    "line": 19,
+    "content": "gpt create mmc 0 name=bootdata_b,size=0x2800000"
+  },
+  {
+    "line": 20,
+    "content": "gpt create mmc 0 name=tvconfig_a,size=0x9600000"
+  },
+  {
+    "line": 21,
+    "content": "gpt create mmc 0 name=tvconfig_b,size=0x9600000"
+  },
+  {
+    "line": 22,
+    "content": "gpt create mmc 0 name=project_id,size=0x500000"
+  },
+  {
+    "line": 23,
+    "content": "gpt create mmc 0 name=misc,size=0x00100000"
+  },
+  {
+    "line": 25,
+    "content": "gpt create mmc 0 name=boot_a,size=0x4B00000"
+  },
+  {
+    "line": 26,
+    "content": "gpt create mmc 0 name=boot_b,size=0x4B00000"
+  },
+  {
+    "line": 27,
+    "content": "gpt create mmc 0 name=metadata,size=0x1000000"
+  },
+  {
+    "line": 28,
+    "content": "gpt create mmc 0 name=dtbo_a,size=0x800000"
+  },
+  {
+    "line": 29,
+    "content": "gpt create mmc 0 name=dtbo_b,size=0x800000"
+  },
+  {
+    "line": 30,
+    "content": "gpt create mmc 0 name=super,size=0x84A00000"
+  },
+  {
+    "line": 31,
+    "content": "gpt create mmc 0 name=cache,size=0x500000"
+  },
+  {
+    "line": 32,
+    "content": "gpt create mmc 0 name=vbmeta_a,size=0x100000"
+  },
+  {
+    "line": 33,
+    "content": "gpt create mmc 0 name=vbmeta_b,size=0x100000"
+  },
+  {
+    "line": 34,
+    "content": "gpt create mmc 0 name=vbmeta_system_a,size=0x100000"
+  },
+  {
+    "line": 35,
+    "content": "gpt create mmc 0 name=vbmeta_system_b,size=0x100000"
+  },
+  {
+    "line": 36,
+    "content": "gpt create mmc 0 name=optee_a,size=0x1800000"
+  },
+  {
+    "line": 37,
+    "content": "gpt create mmc 0 name=optee_b,size=0x1800000"
+  },
+  {
+    "line": 38,
+    "content": "gpt create mmc 0 name=armfw_a,size=0x100000"
+  },
+  {
+    "line": 39,
+    "content": "gpt create mmc 0 name=armfw_b,size=0x100000"
+  },
+  {
+    "line": 40,
+    "content": "gpt create mmc 0 name=private,size=0x1400000"
+  },
+  {
+    "line": 41,
+    "content": "gpt create mmc 0 name=trddev,size=0x200000"
+  },
+  {
+    "line": 42,
+    "content": "gpt create_adaptive mmc 0 userdata 0x1000"
+  },
+  {
+    "line": 43,
+    "content": "filepartload 0x38900000 $(UpgradeImage) 0x947021 0x21000"
+  },
+  {
+    "line": 49,
+    "content": "filepartload 0x2f800000 $(UpgradeImage) 0x53bb 0x971000"
+  },
+  {
+    "line": 53,
+    "content": "filepartload 0x2f370000 $(UpgradeImage) 0x6544b 0x981000"
+  },
+  {
+    "line": 57,
+    "content": "mmc partconf 0 0 1 0"
+  },
+  {
+    "line": 58,
+    "content": "filepartload 0x2f590000 $(UpgradeImage) 0x13922f 0x9f1000"
+  },
+  {
+    "line": 62,
+    "content": "filepartload 0x2f310000 $(UpgradeImage) 0x1dc5 0xb31000"
+  },
+  {
+    "line": 68,
+    "content": "filepartload 0x2f310000 $(UpgradeImage) 0x914 0xb41000"
+  },
+  {
+    "line": 74,
+    "content": "filepartload 0x33e00000 $(UpgradeImage) 0x23e15b1 0xb51000"
+  },
+  {
+    "line": 80,
+    "content": "setenv bootcmd partition read mmc 0 boot 0x2DE00000 0x4B00000\\; abootimg get dtb --index=0 fdtaddr\\; bootm 0x2DE00000"
+  },
+  {
+    "line": 81,
+    "content": "setenv recoverycmd partition read mmc 0 boot 0x2DE00000 0x4B00000\\; abootimg get dtb --index=0 fdtaddr\\; bootm 0x2DE00000"
+  },
+  {
+    "line": 83,
+    "content": "filepartload 0x2f300000 $(UpgradeImage) 0x2ad2a0 0x2f41000"
+  },
+  {
+    "line": 88,
+    "content": "filepartload 0x2f300000 $(UpgradeImage) 0x12d20 0x31f1000"
+  },
+  {
+    "line": 93,
+    "content": "filepartload 0x2fb00000 $(UpgradeImage) 0x19bc20 0x3211000"
+  },
+  {
+    "line": 99,
+    "content": "filepartload 0x30300000 $(UpgradeImage) 0x10380 0x33b1000"
+  },
+  {
+    "line": 103,
+    "content": "filepartload 0x32a00000 $(UpgradeImage) 0x2e135bc 0x33d1000"
+  },
+  {
+    "line": 109,
+    "content": "filepartload 0x31100000 $(UpgradeImage) 0xc7d9e 0x61f1000"
+  },
+  {
+    "line": 115,
+    "content": "filepartload 0x31100000 $(UpgradeImage) 0x1e48d 0x62c1000"
+  },
+  {
+    "line": 120,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x5e1ca62 0x62e1000"
+  },
+  {
+    "line": 123,
+    "content": "filepartload 0x34f70000 $(UpgradeImage) 0x5a5ba99 0xc101000"
+  },
+  {
+    "line": 126,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x5f2d80b 0x11b61000"
+  },
+  {
+    "line": 129,
+    "content": "filepartload 0x34f10000 $(UpgradeImage) 0x568d7ad 0x17a91000"
+  },
+  {
+    "line": 132,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x603555a 0x1d121000"
+  },
+  {
+    "line": 135,
+    "content": "filepartload 0x34f10000 $(UpgradeImage) 0x573faa7 0x23161000"
+  },
+  {
+    "line": 138,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x5e59bb5 0x288a1000"
+  },
+  {
+    "line": 141,
+    "content": "filepartload 0x356b0000 $(UpgradeImage) 0x60faa96 0x2e701000"
+  },
+  {
+    "line": 144,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x5db0d4d 0x34801000"
+  },
+  {
+    "line": 147,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x5c3acda 0x3a5c1000"
+  },
+  {
+    "line": 150,
+    "content": "filepartload 0x35700000 $(UpgradeImage) 0x5ef087f 0x40201000"
+  },
+  {
+    "line": 153,
+    "content": "filepartload 0x31670000 $(UpgradeImage) 0x1df3ac8 0x46101000"
+  },
+  {
+    "line": 156,
+    "content": "filepartload 0x2f310000 $(UpgradeImage) 0x2bd 0x47f01000"
+  },
+  {
+    "line": 160,
+    "content": "filepartload 0x39a00000 $(UpgradeImage) 0x546fdce 0x47f11000"
+  },
+  {
+    "line": 166,
+    "content": "filepartload 0x2fb00000 $(UpgradeImage) 0xe506 0x4d381000"
+  },
+  {
+    "line": 173,
+    "content": "filepartload 0x31b00000 $(UpgradeImage) 0x4e3531 0x4d391000"
+  },
+  {
+    "line": 179,
+    "content": "filepartload 0x30700000 $(UpgradeImage) 0x193fe 0x4d881000"
+  },
+  {
+    "line": 183,
+    "content": "filepartload 0x2fd00000 $(UpgradeImage) 0xbff5 0x4d8a1000"
+  },
+  {
+    "line": 187,
+    "content": "filepartload 0x2f500000 $(UpgradeImage) 0x20be 0x4d8b1000"
+  },
+  {
+    "line": 191,
+    "content": "setenv bootargs console=ttyS0,115200 androidboot.console=ttyS0 init=/init root=/dev/ram rw rootwait CORE_DUMP_PATH=/data/core_dump.%%p.gz KDebug=1 delaylogo=true security=selinux SD_CONFIG=2 loop.max_part=7"
+  },
+  {
+    "line": 192,
+    "content": "setenv verify n"
+  },
+  {
+    "line": 193,
+    "content": "setenv devicestate lock"
+  },
+  {
+    "line": 194,
+    "content": "setenv usb_auto_upgrade enable"
+  },
+  {
+    "line": 195,
+    "content": "setenv force_boot_recovery false"
+  },
+  {
+    "line": 196,
+    "content": "setenv autoload 0"
+  },
+  {
+    "line": 197,
+    "content": "setenv android_product griggs"
+  },
+  {
+    "line": 198,
+    "content": "setenv android_manufacturer Mediatek"
+  },
+  {
+    "line": 199,
+    "content": "setenv dtbo_whitelist config/dtb/dtbo_whitelist.ini"
+  },
+  {
+    "line": 200,
+    "content": "setenv dtbo_mapping_cfg config/dtbo_mapping.ini"
+  },
+  {
+    "line": 201,
+    "content": "setenv dtbo_cfg_part bootdata"
+  },
+  {
+    "line": 202,
+    "content": "setenv dtbo_cfg_sel config/dtb/mt5873_h1v1_cd.ini"
+  },
+  {
+    "line": 216,
+    "content": "mmc erase.p eeprom_a"
+  },
+  {
+    "line": 218,
+    "content": "setenv MstarUpgrade_complete 1"
+  }
+]
