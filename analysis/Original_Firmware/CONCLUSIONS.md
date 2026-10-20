@@ -1,3 +1,9 @@
+# ВАЖНО: исследование завершилось успешной расшифровкой
+
+**Сведения ниже относятся к предварительному этапу и устарели.** 20 октября 2026 года найден публичный AES-256-CBC ключ MSTAR_SECURE (unixtract), расшифрованы все данные, извлечены 33 компонента, восстановлен `super.img` и Android 13 с `system`, `vendor`, `product`, `system_ext`. Актуальные проверенные результаты: [DECRYPTED_SUCCESS.md](DECRYPTED_SUCCESS.md).
+
+---
+
 # Everycom CineLux 2-HDMI — firmware analysis conclusions
 
 Source release: Original_Firmware / 4KTOF.HDMI-.-DPLS.-09.30.rar. Firmware was NOT installed on any device.
