@@ -1,0 +1,125 @@
+name: Decrypt and inspect CineLux firmware
+
+on:
+  push:
+    paths:
+      - ".github/workflows/decrypt-cinelux.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install extraction utilities
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar file e2fsprogs zstd binutils
+          rustc --version
+          cargo --version
+          df -h /tmp
+      - name: Build unixtract at verified commit
+        run: |
+          git clone --quiet https://github.com/theubusu/unixtract.git /tmp/unixtract
+          git -C /tmp/unixtract checkout --quiet 144cf51e3e1b6e832119fde60f676a6def8266f7
+          cd /tmp/unixtract
+          cargo build --release --locked > /tmp/unixtract-build.log 2>&1 || { tail -n 120 /tmp/unixtract-build.log; exit 1; }
+          ./target/release/unixtract --help | head -n 50
+      - name: Fetch original firmware and verify
+        run: |
+          mkdir -p /tmp/cinelux-source /tmp/cinelux-out
+          curl -fL --retry 5 --retry-delay 5 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" \
+            -o /tmp/original.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/original.rar" | sha256sum --check
+          unar -q -o /tmp/cinelux-source /tmp/original.rar
+          echo "4abef5d594803d09c20316a7cd52ab623dd7fb1a228472eb0e243d6d750ebb4c  /tmp/cinelux-source/upgrade_image.pkg" | sha256sum --check
+          df -h /tmp
+      - name: Decrypt with public MStar Secure key and extract partitions
+        run: |
+          set +e
+          timeout 900 /tmp/unixtract/target/release/unixtract \
+            /tmp/cinelux-source/upgrade_image.pkg \
+            /tmp/cinelux-out \
+            > /tmp/unixtract-run.log 2>&1
+          status=$?
+          set -e
+          echo "unixtract exit status: $status"
+          sed -n '1,220p' /tmp/unixtract-run.log
+          echo "=== LAST 120 ==="
+          tail -n 120 /tmp/unixtract-run.log
+          echo "=== EXTRACTED FILES ==="
+          find /tmp/cinelux-out -type f -printf '%p %s bytes\n' | head -n 90
+          df -h /tmp
+          if [ "$status" -ne 0 ]; then
+             echo "Extractor returned nonzero, preserving partial analysis."
+          fi
+      - name: Produce text-only inventory
+        if: always()
+        run: |
+          mkdir -p analysis/Original_Firmware/decrypted
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, subprocess, json, re
+          base=Path('/tmp/cinelux-out')
+          dest=Path('analysis/Original_Firmware/decrypted')
+          data={'extractor':'theubusu/unixtract@144cf51e3e1b6e832119fde60f676a6def8266f7',
+                'source_sha256':'4abef5d594803d09c20316a7cd52ab623dd7fb1a228472eb0e243d6d750ebb4c',
+                'files':[]}
+          for p in sorted(base.rglob('*')) if base.exists() else []:
+              if not p.is_file():continue
+              info={'path':str(p.relative_to(base)),'bytes':p.stat().st_size}
+              with p.open('rb') as stream:
+                  head=stream.read(1024)
+              ft=subprocess.run(['file','-b',str(p)],capture_output=True,text=True).stdout.strip()
+              info['type']=ft[:250]
+              info['header_hex']=head[:48].hex(' ')
+              info['header_ascii']=''.join(chr(c) if 32<=c<127 else '.' for c in head[:120])
+              if p.stat().st_size<=64*1024*1024:
+                  h=hashlib.sha256()
+                  with p.open('rb') as stream:
+                      for chunk in iter(lambda:stream.read(4*1024*1024),b''):h.update(chunk)
+                  info['sha256']=h.hexdigest()
+              data['files'].append(info)
+          log=Path('/tmp/unixtract-run.log')
+          logtext=log.read_text(errors='replace') if log.exists() else 'Extraction step did not begin.'
+          # Use the actual reported text without exposing decryption keys, signatures or private binary
+          logtext=re.sub(r'(?i)\b(?:key|aes key|password)\s*[:=]\s*[a-f0-9]{24,}',r'\1 [REDACTED]',logtext)
+          (dest/'extractor.log').write_text(logtext[-30000:],encoding='utf8')
+          (dest/'inventory.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+          lines=['# CineLux / D11 related original firmware — decrypted image inspection','',
+           'Source archive SHA256 verified. Firmware was not executed or flashed.',
+           'Public unixtract MSTAR_SECURE default key used by extractor.',
+           '','## Extractor output','', '~~~', *logtext[-12000:].splitlines(), '~~~','',
+           '## Produced files','',
+           '| File | Bytes | Format |',
+           '|---|---:|---|']
+          for o in data['files']:
+              lines.append('| '+o['path'].replace('|','/')+' | '+str(o['bytes'])+
+                  ' | '+o['type'].replace('|','/')[:170]+' |')
+          (dest/'README.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print((dest/'README.md').read_text()[:18000])
+          PY
+      - name: Commit only compact analysis reports
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/decrypted/
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish decrypted CineLux image inventory and extraction diagnostics"
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - name: Upload reports artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cinelux-decryption-report
+          path: analysis/Original_Firmware/decrypted/
+          retention-days: 30
+          if-no-files-found: warn
