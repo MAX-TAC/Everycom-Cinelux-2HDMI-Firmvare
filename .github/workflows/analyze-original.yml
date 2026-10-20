@@ -1,0 +1,73 @@
+name: Analyze original CineLux firmware
+
+on:
+  push:
+    paths:
+      - "tools/inspect_original.py"
+      - ".github/workflows/analyze-original.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install non-executing firmware inspection tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar p7zip-full binwalk file e2fsprogs
+          mkdir -p /tmp/firmware
+          df -h /tmp
+      - name: Download and verify original release asset
+        run: |
+          curl -fL --retry 5 --retry-delay 5 --connect-timeout 30 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" \
+            -o "/tmp/source.rar"
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/source.rar" | sha256sum -c -
+      - name: Archive listing and extraction
+        run: |
+          lsar -json /tmp/source.rar > /tmp/rar-list.json || true
+          if ! unar -q -o /tmp/firmware /tmp/source.rar; then
+            echo "unar error; trying 7z" >&2
+            7z x -y -o/tmp/firmware /tmp/source.rar
+          fi
+          find /tmp/firmware -type f -printf '%p %s bytes\n' | head -n 80
+          df -h /tmp
+      - name: Inspect extracted files without execution
+        run: |
+          python3 tools/inspect_original.py --root /tmp/firmware --archive /tmp/source.rar
+          if [ -f /tmp/rar-list.json ]; then
+            python3 - <<'PY'
+          import json,pathlib
+          f=pathlib.Path('/tmp/rar-list.json')
+          try:
+              obj=json.loads(f.read_text())
+              items=[{'name':a.get('XADFileName'),'size':a.get('XADFileSize')} for a in obj.get('lsarContents',[])][:120]
+              pathlib.Path('analysis/Original_Firmware/archive_members.json').write_text(json.dumps(items,indent=2),encoding='utf8')
+          except Exception as e:
+              print('lsar listing parsing:',e)
+          PY
+          fi
+      - name: Commit compact reports only
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Original_Firmware/
+          if ! git diff --cached --quiet; then
+            git commit -m "Add static analysis of original two-HDMI CineLux firmware"
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - name: Save report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cinelux-original-analysis
+          path: analysis/Original_Firmware/
+          if-no-files-found: warn
+          retention-days: 30
