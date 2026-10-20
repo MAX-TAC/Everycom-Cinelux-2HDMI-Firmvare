@@ -1,0 +1,10 @@
+[
+  {
+    "path": "upgrade_image.pkg",
+    "bytes": 1301025152,
+    "file_type": "data",
+    "begin_hex": "49 e2 5e 4b b3 5e 20 b1 a9 ba 43 32 e2 3a 74 9d ba a6 ad b6 d0 66 86 da 82 99 b9 c0 cf 6f 9a a2 be 7b 37 9a 63 88 ae 7c 32 51 4e 77 f3 1a 22 5c db 8b d4 03 18 d0 dc 29 12 c1 07 ce f0 0b 21 e2 08 56 08 a3 9f 5d cc af 06 38 02 41 58 67 c1 c1 fd c0 ae 6f f2 8a 30 4e 2a 89 e8 49 fd 9a 20 50 48 a2 e7 0b 43 15 0e cf 6a 88 e3 f1 7f bd 9d 86 e1 4b 76 5c 65 e6 e3 f6 66 2c 23 dc 73 10 ab 20 53 a3 1e 32 b5 b0 2c bc 93 3d 52 12 32 8a 9c ea c0 40 85 7a ee 72 31 07 b1 f8 fc 6f 70 cc d2 9c d4 fb e8 40 cf 9c 8f 8a 7b ee 56 71 7d 75 22 97 4b a2 a5 44 e3 3c 73 1d d1 86 e8 08 1d 79 4d d5 7c a7 89 dd 74 cd 4d 3d 26 97 9f 5d 1d ff 03 cd f0 dd 20 17 03 ed 53 c4 41 5b 09 ef dc db e7 2c fe 9e 05 20 ad ce bc 09 bb 43 0b 29 fd eb 77 03 23 1d c4 1a b9 55 87 f0 2d ac 98 a0 4c 40 0f 5d",
+    "begin_text": "I.^K.^ ...C2.:t......f.......o...{7.c..|2QNw..\"\\.......)......!..V...]...8.AXg.....o..0N*..I.. PH...C...j........Kv\\e...f,#.s.. S..2..,..=R.2....@.z.r1....op......@....{.Vq}u\".K..D.<s......yM.|...t.M=&..]...... ...S.A[.....,... .....C.)..w.#....U..-...L@.]V_0.0.0.........................................................................................................................................",
+    "signatures_first_32MiB": {}
+  }
+]
