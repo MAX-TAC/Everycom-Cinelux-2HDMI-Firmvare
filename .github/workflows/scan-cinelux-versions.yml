@@ -5,7 +5,6 @@ on:
     paths:
       - ".github/workflows/scan-cinelux-versions.yml"
       - "tools/inspect_cinelux_versions.py"
-      - ".github/workflows/scan-cinelux-versions.yml"
   workflow_dispatch:
 
 permissions:
@@ -25,7 +24,7 @@ jobs:
         run: |
           sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
           sudo apt-get update -qq
-          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs erofs-utils
+          sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs erofs-utils aapt
           df -h /tmp
       - name: Download the official archive and verify SHA256
         env:
