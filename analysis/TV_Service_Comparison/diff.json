@@ -1,0 +1,165 @@
+{
+ "partitions": {
+  "bootdata_a": {
+   "one_count": 89,
+   "two_count": 89,
+   "identical": 86,
+   "changed": 3,
+   "one_only": [],
+   "two_only": [],
+   "changed_paths": [
+    "boot0.jpg",
+    "config/dtbo_mapping.ini",
+    "pmu/pmu_mcs51_sign.bin"
+   ],
+   "selected_settings": [
+    {
+     "path": "config/dtbo_mapping.ini",
+     "one": [
+      "[panel]",
+      "mmap_mt5879_mtk_2g_an_iommu_h1v1=74",
+      "[uboot_pcb]",
+      "uboot_MT5879_H1V1_B6_S=99",
+      "uboot_MT5879_H3V1_B6_S=100",
+      "uboot_MT5873_H2V1_B6_S=101",
+      "uboot_MT5873_H4V1_B6_S=102",
+      "uboot_MT5879_H2V1_B6_S=103",
+      "uboot_MT5873_H1V1_B6_S=104",
+      "uboot_MT5873_H3V1_B6_S=105"
+     ],
+     "two": [
+      "[panel]",
+      "mmap_mt5879_mtk_2g_an_iommu_h1v1=54",
+      "[uboot]",
+      "uboot_mt5879=85",
+      "uboot_mt5896_e3=86",
+      "uboot_mt5896=87",
+      "uboot_mt5873=88",
+      "uboot_mt5876=89",
+      "uboot_mt5897=90",
+      "[uboot_pcb]"
+     ]
+    }
+   ]
+  },
+  "project_id": {
+   "one_count": 1,
+   "two_count": 1,
+   "identical": 1,
+   "changed": 0,
+   "one_only": [],
+   "two_only": [],
+   "changed_paths": [],
+   "selected_settings": []
+  },
+  "tvconfig_a": {
+   "one_count": 812,
+   "two_count": 812,
+   "identical": 804,
+   "changed": 8,
+   "one_only": [],
+   "two_only": [],
+   "changed_paths": [
+    "bsp/board/BD_MT5873_H1V1_B6_S/board.ini",
+    "bsp/chip/aq/InputSrc/BasicSound_DTV.ini",
+    "bsp/chip/aq/InputSrc/BasicSound_HDMI.ini",
+    "bsp/chip/aq/InputSrc/BasicSound_MM.ini",
+    "bsp/common/PQ_general/gammatable_1.ini",
+    "bsp/common/misc/boot0.jpg",
+    "config/dtbo_mapping.ini",
+    "platform/data/misc/ConfigDefaultValue.ini"
+   ],
+   "selected_settings": [
+    {
+     "path": "config/dtbo_mapping.ini",
+     "one": [
+      "[panel]",
+      "mmap_mt5879_mtk_2g_an_iommu_h1v1=74",
+      "[uboot_pcb]",
+      "uboot_MT5879_H1V1_B6_S=99",
+      "uboot_MT5879_H3V1_B6_S=100",
+      "uboot_MT5873_H2V1_B6_S=101",
+      "uboot_MT5873_H4V1_B6_S=102",
+      "uboot_MT5879_H2V1_B6_S=103",
+      "uboot_MT5873_H1V1_B6_S=104",
+      "uboot_MT5873_H3V1_B6_S=105"
+     ],
+     "two": [
+      "[panel]",
+      "mmap_mt5879_mtk_2g_an_iommu_h1v1=54",
+      "[uboot]",
+      "uboot_mt5879=85",
+      "uboot_mt5896_e3=86",
+      "uboot_mt5896=87",
+      "uboot_mt5873=88",
+      "uboot_mt5876=89",
+      "uboot_mt5897=90",
+      "[uboot_pcb]"
+     ]
+    }
+   ]
+  },
+  "tvservice_a": {
+   "one_count": 185,
+   "two_count": 185,
+   "identical": 135,
+   "changed": 50,
+   "one_only": [],
+   "two_only": [],
+   "changed_paths": [
+    "bin/midaemon",
+    "bin/midemo",
+    "glibc/directfb/directfb-1.4-0/gfxdrivers/libdirectfb_mstar_gles2.la",
+    "glibc/directfb/directfb-1.4-0/gfxdrivers/libdirectfb_mstar_gles2.so",
+    "glibc/directfb/directfb-1.4-0/gfxdrivers/libdirectfb_mstar_mi.la",
+    "glibc/directfb/directfb-1.4-0/gfxdrivers/libdirectfb_mstar_mi.so",
+    "glibc/directfb/directfb-1.4-0/inputdrivers/libdirectfb_mtnet.la",
+    "glibc/directfb/directfb-1.4-0/inputdrivers/libdirectfb_mtnet.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBFont/libidirectfbfont_dgiff.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBFont/libidirectfbfont_dgiff.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBFont/libidirectfbfont_ft2.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBFont/libidirectfbfont_ft2.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_bmp.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_bmp.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_v4l.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_v4l.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBWindows/libidirectfbwindows_default.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IDirectFBWindows/libidirectfbwindows_default.so",
+    "glibc/directfb/directfb-1.4-0/interfaces/IWater/libiwater_default.la",
+    "glibc/directfb/directfb-1.4-0/interfaces/IWater/libiwater_default.so",
+    "glibc/directfb/directfb-1.4-0/systems/libdirectfb_devmem.la",
+    "glibc/directfb/directfb-1.4-0/systems/libdirectfb_devmem.so",
+    "glibc/directfb/directfb-1.4-0/wm/libdirectfbwm_default.la",
+    "glibc/directfb/directfb-1.4-0/wm/libdirectfbwm_default.so",
+    "glibc/directfb/libdirect-1.4.so.0.2.0",
+    "glibc/directfb/libdirect.la",
+    "glibc/directfb/libdirectfb-1.4.so.0.2.0",
+    "glibc/directfb/libdirectfb.la",
+    "glibc/directfb/libfusion-1.4.so.0.2.0",
+    "glibc/directfb/libfusion.la",
+    "glibc/libkms.so",
+    "glibc/libmi.so",
+    "glibc/libmi3demo.so",
+    "glibc/libmi_client.so",
+    "glibc/libmi_server.so",
+    "glibc/libmmsdk_porting.so",
+    "glibc/libmtk_tinyalsa_link_plugin.so",
+    "glibc/libsndcardparser.so",
+    "glibc/libtinyalsa-master.so",
+    "glibc/libtzcmif.so"
+   ],
+   "selected_settings": []
+  }
+ },
+ "notes": "Only packed factory images; no private running device calibration dumped."
+}
