@@ -8,8 +8,10 @@
 2. [**APK_ALL_PACKAGES_RU.md**](APK_ALL_PACKAGES_RU.md) — 89 APK из объединённого каталога заводских образов с решениями KEEP / REPLACE / MIGRATE / OPTIONAL.
 3. [**SETTINGS_FUNCTION_GAPS_RU.md**](SETTINGS_FUNCTION_GAPS_RU.md) — карта Android TV Settings и OEM экранов: что уже реализовано как код, какие функции нужно открыть, перенести, проверить.
 4. [**UNRESOLVED_AUDIT_GATES_RU.md**](UNRESOLVED_AUDIT_GATES_RU.md) — полный реестр оставшихся вопросов и условий, при которых можно безопасно начинать редактирование.
-5. [**OTA8052_INIT_PERMISSIONS_KEYLAYOUT_RU.md**](OTA8052_INIT_PERMISSIONS_KEYLAYOUT_RU.md) — новый статический аудит оригинальных `init.rc`, privilege XML, всех APK и раскладок пульта из октябрьской OTA 8052 (генерируется GitHub Actions).
-6. Машинные данные: [apk_all_packages.json](apk_all_packages.json), [ota8052_init_permissions_keylayout.json](ota8052_init_permissions_keylayout.json).
+5. [**OTA8052_KEY_SERVICES_FINDINGS_RU.md**](OTA8052_KEY_SERVICES_FINDINGS_RU.md) — ключевые находки: TRD автозагрузка, спецкнопки FOCUS/SOURCE/TRD_POPMENU, права Android TV Settings.
+6. [**IMPLEMENTATION_ROADMAP_RU.md**](IMPLEMENTATION_ROADMAP_RU.md) — последовательность будущей разработки FLauncher, миграции настроек, очищения и двух сборок.
+7. [**OTA8052_INIT_PERMISSIONS_KEYLAYOUT_RU.md**](OTA8052_INIT_PERMISSIONS_KEYLAYOUT_RU.md) — новый статический аудит оригинальных `init.rc`, privilege XML, всех APK и раскладок пульта из октябрьской OTA 8052 (готовый результат успешного GitHub Actions 39608516488).
+8. Машинные данные: [apk_all_packages.json](apk_all_packages.json), [ota8052_init_permissions_keylayout.json](ota8052_init_permissions_keylayout.json).
 
 ## Короткие инженерные решения
 
