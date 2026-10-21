@@ -1,0 +1,95 @@
+name: Verify OTA 8052.1.0.4 AVB public key matches
+
+on:
+  push:
+    paths:
+      - ".github/workflows/verify-8052-ota-avb-key.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified OTA and extract only vbmeta
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/dumper /tmp/avb
+          curl -fL --retry 5 --retry-delay 3 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+          DUMPER="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          test -n "$DUMPER"
+          chmod +x "$DUMPER"
+          "$DUMPER" -c 2 -p vbmeta,vbmeta_system -o /tmp/avb /tmp/ota.zip
+          ls -lh /tmp/avb/vbmeta*.img
+
+      - name: Compare embedded AVB public keys, not full image hashes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          stock="dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe"
+          aosp="7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6"
+          root=Path('/tmp/avb')
+          out=Path('analysis/AVB_Key_Research_20261021')
+          out.mkdir(parents=True,exist_ok=True)
+          report={"source":"RUIOS.8052.1.0.4, owner archive verified with SHA256",
+                  "stock_factory_8052_8054_avb_public_key_sha256":stock,
+                  "aosp_reference_avb_testkey_sha256":aosp,
+                  "partitions":[]}
+          for name in ('vbmeta','vbmeta_system'):
+              image=(root/(name+'.img')).read_bytes()
+              assert image[:4]==b'AVB0',(name,image[:8].hex())
+              auth=int.from_bytes(image[12:20],'big')
+              aux=int.from_bytes(image[20:28],'big')
+              alg=int.from_bytes(image[28:32],'big')
+              puboff=int.from_bytes(image[64:72],'big')
+              publen=int.from_bytes(image[72:80],'big')
+              assert 0<publen<=4096 and 0<=puboff<aux and puboff+publen<=aux
+              assert 256+auth+aux<=len(image)
+              pub=image[256+auth+puboff:256+auth+puboff+publen]
+              digest=hashlib.sha256(pub).hexdigest()
+              report['partitions'].append({
+                  'name':name,'size':len(image),'sha256_image':hashlib.sha256(image).hexdigest(),
+                  'algorithm_id':alg,'flags':int.from_bytes(image[120:124],'big'),
+                  'rollback_index':int.from_bytes(image[112:120],'big'),
+                  'public_key_size':publen,'public_key_sha256':digest,
+                  'matches_stock_factory_8052_8054':digest==stock,
+                  'matches_aosp_reference_avb_testkey':digest==aosp})
+          (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
+          lines=['# Проверка AVB ключа из OTA 8052.1.0.4','',
+             'Оригинальный ZIP подтверждён SHA256, извлечены только vbmeta и vbmeta_system.',
+             'Сравнение отпечатков бинарного публичного ключа AVB, не SHA всего образа и не OTA сертификата.',
+             '','| Раздел | SHA256 открытого ключа AVB | Совпадает с заводским | Совпадает с AOSP |',
+             '|---|---|---|---|']
+          for x in report['partitions']:
+              lines.append('| '+x['name']+' | '+x['public_key_sha256']+' | '+str(x['matches_stock_factory_8052_8054'])+' | '+str(x['matches_aosp_reference_avb_testkey'])+' |')
+          lines+=['','Важно: закрытый ключ не содержится в vbmeta. Отдельно нужно проверить доверие ключу загрузчиком.',
+                   '','Подробности: report.json.']
+          (out/'README_RU.md').write_text('\n'.join(lines)+'\n')
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Publish report to research branch
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/AVB_Key_Research_20261021/
+          if ! git diff --cached --quiet; then
+            git commit -m "Verify live OTA vbmeta public keys against stock and AOSP"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verified-avb-public-key-report-8052
+          path: analysis/AVB_Key_Research_20261021/
+          if-no-files-found: warn
+          retention-days: 30
