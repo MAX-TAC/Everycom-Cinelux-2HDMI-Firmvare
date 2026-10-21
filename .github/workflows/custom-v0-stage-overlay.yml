@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/custom-v0-common-apks.yml/runs?branch=custom-v0-staging-8052-8054-20261021&status=completed&per_page=30" --jq '.workflow_runs | map(select(.conclusion=="success")) | first | .id')"
+          ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/custom-v0-common-apks.yml/runs?branch=${GITHUB_REF_NAME}&status=completed&per_page=30" --jq '.workflow_runs | map(select(.conclusion=="success")) | first | .id')"
           test -n "$ID" && test "$ID" != "null" || { echo "No successful common APK build"; exit 1; }
           echo "COMMON_APK_RUN_ID=$ID" >> "$GITHUB_ENV"
           echo "Pinned common APK build workflow run: $ID"
