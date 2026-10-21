@@ -1,0 +1,709 @@
+{
+  "sources": {
+    "ota8052": "RUIOS.8052.1.0.4 (2026-10-12)",
+    "factory8054": "RUIOS.8054.1.0.1 (2026-09-30)"
+  },
+  "configs": {
+    "board.ini": {
+      "same_sha": true,
+      "ota_sha": "803b19c1781a0f88137184fa2ea879a4a88fd6cd8aa0eb1a4532b89a9f6c1229",
+      "stock8054_sha": "803b19c1781a0f88137184fa2ea879a4a88fd6cd8aa0eb1a4532b89a9f6c1229",
+      "ota_length": 79598,
+      "stock_length": 79598
+    },
+    "tvconfig/dtbo_mapping.ini": {
+      "same_sha": true,
+      "ota_sha": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+      "stock8054_sha": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+      "ota_length": 5557,
+      "stock_length": 5557
+    },
+    "bootdata/dtbo_mapping.ini": {
+      "same_sha": true,
+      "ota_sha": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+      "stock8054_sha": "bedc690bf595e8d52fefbb4f8189991994f95c74fbff57b2ecd4bae49c378ba7",
+      "ota_length": 5557,
+      "stock_length": 5557
+    },
+    "BasicSound_HDMI.ini": {
+      "same_sha": true,
+      "ota_sha": "b49956c1bfc0bff61a815dd85b6479615e62b96dbd663518c69162f76e4b05f2",
+      "stock8054_sha": "b49956c1bfc0bff61a815dd85b6479615e62b96dbd663518c69162f76e4b05f2",
+      "ota_length": 6077,
+      "stock_length": 6077
+    },
+    "BasicSound_DTV.ini": {
+      "same_sha": true,
+      "ota_sha": "0d5be061982777612de6b5b578056b7c4cdc5cde675c54c93d15c69b8aea1040",
+      "stock8054_sha": "0d5be061982777612de6b5b578056b7c4cdc5cde675c54c93d15c69b8aea1040",
+      "ota_length": 5886,
+      "stock_length": 5886
+    },
+    "BasicSound_MM.ini": {
+      "same_sha": true,
+      "ota_sha": "2697cc743d5e5308b7a1ef79483dc29b4ba319852a73d7ffb40bccf76014342a",
+      "stock8054_sha": "2697cc743d5e5308b7a1ef79483dc29b4ba319852a73d7ffb40bccf76014342a",
+      "ota_length": 6015,
+      "stock_length": 6015
+    },
+    "ConfigDefaultValue.ini": {
+      "same_sha": false,
+      "ota_sha": "b80919bf42b27a8accc618c429d596fe78539e716756b63604ca3fc7757c47a5",
+      "stock8054_sha": "8d5a6d393fe84b5de6433f45909c134d17eeb37fbf5dfb1c958e24d22d83558d",
+      "ota_length": 216002,
+      "stock_length": 216002
+    },
+    "gammatable_1.ini": {
+      "same_sha": false,
+      "ota_sha": "6a23fb78025563c9853ce250d5af1bfa79fad1463674fc666481a082c95d6355",
+      "stock8054_sha": "0c838b46084a537a8c9bdf84ef1c43c5eba8ba3a79789e580c4f54d5f4a0aa5d",
+      "ota_length": 19336,
+      "stock_length": 19326
+    },
+    "pmu_mcs51_sign.bin": {
+      "same_sha": false,
+      "ota_sha": "fd67dca025c62c0030b09fe56291210ef5d51e695f62f1d5fc03c4f00f15d428",
+      "stock8054_sha": "e0fb3bcc676003f6db04b447fcbdd239e0faad36e4337c30901fd9e945a4d649",
+      "ota_length": 65792,
+      "stock_length": 65792
+    }
+  },
+  "apps": {
+    "TvSettingsPlus": {
+      "ota_present": true,
+      "ota_sha": "e4184a13fbf56fa069effc6a40ea50c0da7e9190321b389f59ba34700a80d0a1",
+      "stock8054_sha": "e4184a13fbf56fa069effc6a40ea50c0da7e9190321b389f59ba34700a80d0a1",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "131913536ae9458deaf30f5b59a92fbf6883dac94781a3fbed98e1e1390f06c5",
+          "size": 2218892
+        },
+        "classes10.dex": {
+          "sha256": "bfbb555d522e519fc43f42d1cc21ac7653a43febf5385f97d25b01ec6b2f5721",
+          "size": 1436352
+        },
+        "classes11.dex": {
+          "sha256": "beb4b704ecdd53bec32a4117836228885e3ca5dab12564de0d8bdac204736429",
+          "size": 1718428
+        },
+        "classes12.dex": {
+          "sha256": "8bc33a1967f3881e09389274fcbea4233f5dcc0acd177732cf3aaff2c9469107",
+          "size": 1966800
+        },
+        "classes13.dex": {
+          "sha256": "3015b022ebaf3bedf3a38d25b6c24c31fc63b77ef8380a005959b9eb5d782b31",
+          "size": 2147912
+        },
+        "classes14.dex": {
+          "sha256": "93fabb72c2e7ba068419c1c77016cc169060fcc4b96516021f7a26cdddd63caa",
+          "size": 3005148
+        },
+        "classes15.dex": {
+          "sha256": "61a5daeaad88a44b0814dff954b1882ad009b057f80cda139fe98c8693dd104c",
+          "size": 2947236
+        },
+        "classes16.dex": {
+          "sha256": "4c5d78890a7c9b9bf3b4b1fd072ce21d582a15b9910feceb9c1009828d99c37e",
+          "size": 4574056
+        },
+        "classes2.dex": {
+          "sha256": "b1be1cafb9ca897b59a67d5160f8d7272b13ef13bd2c320b4deb62b64ea35fe3",
+          "size": 2034668
+        },
+        "classes3.dex": {
+          "sha256": "0adb55fd04c24848a73c98d7844954d5c9ddb7ae21fe0801766b95f2ff2248c8",
+          "size": 2424624
+        },
+        "classes4.dex": {
+          "sha256": "6d729be26002350f9de2d4593f9e63cb0b887aa109446abc7d03b69a366675c5",
+          "size": 3485528
+        },
+        "classes5.dex": {
+          "sha256": "fb7abec9a0908f40a031a2b313d91a703e74886b7d6c58bfeedb0f1af3efd1e4",
+          "size": 2363088
+        },
+        "classes6.dex": {
+          "sha256": "2229dff2738cd51456bf31fc3b94227d9988d51b28ff7a87c94a7452a0ea6d61",
+          "size": 1571796
+        },
+        "classes7.dex": {
+          "sha256": "a50fb984e0885e6d7e0be1c8acffa57972897aa6188ab73e6fc0545cbfe2dc00",
+          "size": 1295896
+        },
+        "classes8.dex": {
+          "sha256": "2a2e8a89244fd07b3c417d749d1bdb64bd42eee61de6f868632e9ec527516573",
+          "size": 2080964
+        },
+        "classes9.dex": {
+          "sha256": "5b32d2e27f2cacefcabf808a476a7c40acfb736ce2302ae669913a1416ba96e2",
+          "size": 1540812
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "131913536ae9458deaf30f5b59a92fbf6883dac94781a3fbed98e1e1390f06c5",
+          "size": 2218892
+        },
+        "classes10.dex": {
+          "sha256": "bfbb555d522e519fc43f42d1cc21ac7653a43febf5385f97d25b01ec6b2f5721",
+          "size": 1436352
+        },
+        "classes11.dex": {
+          "sha256": "beb4b704ecdd53bec32a4117836228885e3ca5dab12564de0d8bdac204736429",
+          "size": 1718428
+        },
+        "classes12.dex": {
+          "sha256": "8bc33a1967f3881e09389274fcbea4233f5dcc0acd177732cf3aaff2c9469107",
+          "size": 1966800
+        },
+        "classes13.dex": {
+          "sha256": "3015b022ebaf3bedf3a38d25b6c24c31fc63b77ef8380a005959b9eb5d782b31",
+          "size": 2147912
+        },
+        "classes14.dex": {
+          "sha256": "93fabb72c2e7ba068419c1c77016cc169060fcc4b96516021f7a26cdddd63caa",
+          "size": 3005148
+        },
+        "classes15.dex": {
+          "sha256": "61a5daeaad88a44b0814dff954b1882ad009b057f80cda139fe98c8693dd104c",
+          "size": 2947236
+        },
+        "classes16.dex": {
+          "sha256": "4c5d78890a7c9b9bf3b4b1fd072ce21d582a15b9910feceb9c1009828d99c37e",
+          "size": 4574056
+        },
+        "classes2.dex": {
+          "sha256": "b1be1cafb9ca897b59a67d5160f8d7272b13ef13bd2c320b4deb62b64ea35fe3",
+          "size": 2034668
+        },
+        "classes3.dex": {
+          "sha256": "0adb55fd04c24848a73c98d7844954d5c9ddb7ae21fe0801766b95f2ff2248c8",
+          "size": 2424624
+        },
+        "classes4.dex": {
+          "sha256": "6d729be26002350f9de2d4593f9e63cb0b887aa109446abc7d03b69a366675c5",
+          "size": 3485528
+        },
+        "classes5.dex": {
+          "sha256": "fb7abec9a0908f40a031a2b313d91a703e74886b7d6c58bfeedb0f1af3efd1e4",
+          "size": 2363088
+        },
+        "classes6.dex": {
+          "sha256": "2229dff2738cd51456bf31fc3b94227d9988d51b28ff7a87c94a7452a0ea6d61",
+          "size": 1571796
+        },
+        "classes7.dex": {
+          "sha256": "a50fb984e0885e6d7e0be1c8acffa57972897aa6188ab73e6fc0545cbfe2dc00",
+          "size": 1295896
+        },
+        "classes8.dex": {
+          "sha256": "2a2e8a89244fd07b3c417d749d1bdb64bd42eee61de6f868632e9ec527516573",
+          "size": 2080964
+        },
+        "classes9.dex": {
+          "sha256": "5b32d2e27f2cacefcabf808a476a7c40acfb736ce2302ae669913a1416ba96e2",
+          "size": 1540812
+        }
+      }
+    },
+    "Factory": {
+      "ota_present": true,
+      "ota_sha": "40e755ec443340f1df1781388cd9807822176c848fb1d3082c48ff3719a1bcab",
+      "stock8054_sha": "40e755ec443340f1df1781388cd9807822176c848fb1d3082c48ff3719a1bcab",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "10f11fa6e69d76d271be88e2439c6c4d2829d9abc5c03c4a8d31f206077bd322",
+          "size": 8225740
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "10f11fa6e69d76d271be88e2439c6c4d2829d9abc5c03c4a8d31f206077bd322",
+          "size": 8225740
+        }
+      }
+    },
+    "KeystoneCorrection": {
+      "ota_present": true,
+      "ota_sha": "23c68874b1ad2147549b3538ebe7f9ad7c97987a99ccb165ec528a6467b98829",
+      "stock8054_sha": "23c68874b1ad2147549b3538ebe7f9ad7c97987a99ccb165ec528a6467b98829",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "7dc3aebef140e95e48a37af2b8cafe0e3ccb6572a8959a5aad272cba7614169e",
+          "size": 1096372
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "7dc3aebef140e95e48a37af2b8cafe0e3ccb6572a8959a5aad272cba7614169e",
+          "size": 1096372
+        }
+      }
+    },
+    "RuiAutoFocus": {
+      "ota_present": true,
+      "ota_sha": "aa5257b38dc299d2160a5b5293915f3e0b4a88e690c5b6cd5a0bc2c940dc842f",
+      "stock8054_sha": "0aea0476514dbab19b561b3c853b4ebf6d52ead05c702bdf95afe39c0b13502a",
+      "same_apk": false,
+      "same_dex": false,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "3f584f15594dad4ccef57115c2fd35591365fea6a259d564a96a11c9443ee24f",
+          "size": 4485708
+        },
+        "classes2.dex": {
+          "sha256": "681cca2aa649eab0f2d4632cc2a8c480304b29bd1a6a8d51b82f8fedfbc5e3c8",
+          "size": 147764
+        },
+        "classes3.dex": {
+          "sha256": "7e9d0986503cc7dfd1eb6a12b8a92ce07b9ed677cb6ac1cd1a78f3611fd2a01b",
+          "size": 43088
+        },
+        "classes4.dex": {
+          "sha256": "19b22a64cf08d622cfecfeffb7e0f5147cc59da48a2f4ca65dd4906976a63e8d",
+          "size": 940
+        },
+        "classes5.dex": {
+          "sha256": "82e4a5b04293d2a76e3d23b13d80f201578e9ac25aa76a1a2004165f9bee4cfe",
+          "size": 1948
+        },
+        "classes6.dex": {
+          "sha256": "ed483abf0682164370028b85b771c97fe95829cde0cb3de8a901186e56b9bbe1",
+          "size": 29168
+        },
+        "classes7.dex": {
+          "sha256": "c3a35d7f37762d967459517b961906b669d7d53aea657364e7631b3895eaadeb",
+          "size": 66460
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "3f584f15594dad4ccef57115c2fd35591365fea6a259d564a96a11c9443ee24f",
+          "size": 4485708
+        },
+        "classes2.dex": {
+          "sha256": "681cca2aa649eab0f2d4632cc2a8c480304b29bd1a6a8d51b82f8fedfbc5e3c8",
+          "size": 147764
+        },
+        "classes3.dex": {
+          "sha256": "3357d4e1f10745c14e8cf0d925f1f7811ef38a8a68085b3b1244fb7701d73222",
+          "size": 43592
+        },
+        "classes4.dex": {
+          "sha256": "19b22a64cf08d622cfecfeffb7e0f5147cc59da48a2f4ca65dd4906976a63e8d",
+          "size": 940
+        },
+        "classes5.dex": {
+          "sha256": "82e4a5b04293d2a76e3d23b13d80f201578e9ac25aa76a1a2004165f9bee4cfe",
+          "size": 1948
+        },
+        "classes6.dex": {
+          "sha256": "1d24783c547e91af00384e7959c039c221482ee61529ea5fe373b38b7a633727",
+          "size": 30792
+        },
+        "classes7.dex": {
+          "sha256": "6186cc75ff24ca3bddb5e5487fbfc4f3b3793419d67e144b2d7612a63c328391",
+          "size": 67068
+        }
+      }
+    },
+    "KuSourceRJ": {
+      "ota_present": true,
+      "ota_sha": "15bf7b9fe31844bace197989ae393af7c3e4ca5a9c3c2019a4f662f0a9d881cc",
+      "stock8054_sha": "15bf7b9fe31844bace197989ae393af7c3e4ca5a9c3c2019a4f662f0a9d881cc",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "71bcf813d9c987fa3ce17d540daa97d74d75a1d416040b11925668f0a9a69a80",
+          "size": 8885076
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "71bcf813d9c987fa3ce17d540daa97d74d75a1d416040b11925668f0a9a69a80",
+          "size": 8885076
+        }
+      }
+    },
+    "trdservice": {
+      "ota_present": true,
+      "ota_sha": "309eaf1098bf3d544907b57fa24ae6ad31c591fe942133fd8ef1c69832d538f1",
+      "stock8054_sha": "309eaf1098bf3d544907b57fa24ae6ad31c591fe942133fd8ef1c69832d538f1",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "fc0a082fe72234ac7457c37f0ab1a34802d8567236c406e1d55cacafb7524d05",
+          "size": 995016
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "fc0a082fe72234ac7457c37f0ab1a34802d8567236c406e1d55cacafb7524d05",
+          "size": 995016
+        }
+      }
+    },
+    "trdmiddle": {
+      "ota_present": true,
+      "ota_sha": "d51088086756a96ad184ec31189c2b8babe7ba3b605b55375fd9e07c4f58bfa4",
+      "stock8054_sha": "d51088086756a96ad184ec31189c2b8babe7ba3b605b55375fd9e07c4f58bfa4",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "ec01fe8e996c7a0b9a2b162f0d9a4228f1812adb1359b9b1cb3a5ecabd9ed1b8",
+          "size": 2219096
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "ec01fe8e996c7a0b9a2b162f0d9a4228f1812adb1359b9b1cb3a5ecabd9ed1b8",
+          "size": 2219096
+        }
+      }
+    },
+    "KuSettings": {
+      "ota_present": true,
+      "ota_sha": "bd678e646a0cbc164f34273bcd396f9cf9221037b4c688d9d08464840cfca58b",
+      "stock8054_sha": "bd678e646a0cbc164f34273bcd396f9cf9221037b4c688d9d08464840cfca58b",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "bef226dcb2a24f8469f6684c27f731c6499cd57c9ce060d06e194507e5fec231",
+          "size": 10802208
+        },
+        "classes10.dex": {
+          "sha256": "c97b13347d587007796469c024aa022b0b9af1974288d7fc9e666fe6da22379a",
+          "size": 7360
+        },
+        "classes11.dex": {
+          "sha256": "5428c3c1ea907009e4f78353b158adcd6d345e66f7c88f9cb9503701cb98562e",
+          "size": 47972
+        },
+        "classes12.dex": {
+          "sha256": "c68b813d0a401dfe4de5748e1ee1ba0d4043d870154ca3a9dca1d39973fa4964",
+          "size": 210732
+        },
+        "classes13.dex": {
+          "sha256": "4ba4f36f7e821e37ca3759a635478ed1a6106cb1a1c40086ddd514f17e859568",
+          "size": 76896
+        },
+        "classes14.dex": {
+          "sha256": "f791a63cd0704905416593984aad3e19f8e20106ace541a4e3b943da0d6f1871",
+          "size": 108564
+        },
+        "classes15.dex": {
+          "sha256": "571a7d6cb2d38f712625308d3e5ad2ffcd975711d0da0b8512b9263a26a7ca67",
+          "size": 1263860
+        },
+        "classes2.dex": {
+          "sha256": "a9a6eb2bb5bae321163296237c6907e074106575423b6f649770960d370207b6",
+          "size": 513600
+        },
+        "classes3.dex": {
+          "sha256": "96e41f4dfcaf47d0b88146c43911a8948f4e1d108f0a5c9b9adc5b0d892802bf",
+          "size": 45364
+        },
+        "classes4.dex": {
+          "sha256": "67947c11fc9e3223283a6d6c36f2287567c6276fe22c7f7d78f5c85b865bfa85",
+          "size": 41456
+        },
+        "classes5.dex": {
+          "sha256": "e94d5f6c364159efa8b0f584d089d964879b550f3685487980ee8b306c9e1d6c",
+          "size": 77836
+        },
+        "classes6.dex": {
+          "sha256": "d6271c767c79674f2a61186c615fb1e14392ec49e8d4f21fb6aa594a9257556f",
+          "size": 20088
+        },
+        "classes7.dex": {
+          "sha256": "f3ed3cbdf4110183eed8516268bbc102cb2f9a9143e94f8d418b5cd49c5da7ac",
+          "size": 34720
+        },
+        "classes8.dex": {
+          "sha256": "a6bdcca2ec28e3339090d8eca7ab5ad7a7c51814922df86f8e275d6606035c74",
+          "size": 3168
+        },
+        "classes9.dex": {
+          "sha256": "43cc351f81d3829733f4de94ffcf205cb3dbb638c2ddaa4cf98fd2054d8287cd",
+          "size": 26888
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "bef226dcb2a24f8469f6684c27f731c6499cd57c9ce060d06e194507e5fec231",
+          "size": 10802208
+        },
+        "classes10.dex": {
+          "sha256": "c97b13347d587007796469c024aa022b0b9af1974288d7fc9e666fe6da22379a",
+          "size": 7360
+        },
+        "classes11.dex": {
+          "sha256": "5428c3c1ea907009e4f78353b158adcd6d345e66f7c88f9cb9503701cb98562e",
+          "size": 47972
+        },
+        "classes12.dex": {
+          "sha256": "c68b813d0a401dfe4de5748e1ee1ba0d4043d870154ca3a9dca1d39973fa4964",
+          "size": 210732
+        },
+        "classes13.dex": {
+          "sha256": "4ba4f36f7e821e37ca3759a635478ed1a6106cb1a1c40086ddd514f17e859568",
+          "size": 76896
+        },
+        "classes14.dex": {
+          "sha256": "f791a63cd0704905416593984aad3e19f8e20106ace541a4e3b943da0d6f1871",
+          "size": 108564
+        },
+        "classes15.dex": {
+          "sha256": "571a7d6cb2d38f712625308d3e5ad2ffcd975711d0da0b8512b9263a26a7ca67",
+          "size": 1263860
+        },
+        "classes2.dex": {
+          "sha256": "a9a6eb2bb5bae321163296237c6907e074106575423b6f649770960d370207b6",
+          "size": 513600
+        },
+        "classes3.dex": {
+          "sha256": "96e41f4dfcaf47d0b88146c43911a8948f4e1d108f0a5c9b9adc5b0d892802bf",
+          "size": 45364
+        },
+        "classes4.dex": {
+          "sha256": "67947c11fc9e3223283a6d6c36f2287567c6276fe22c7f7d78f5c85b865bfa85",
+          "size": 41456
+        },
+        "classes5.dex": {
+          "sha256": "e94d5f6c364159efa8b0f584d089d964879b550f3685487980ee8b306c9e1d6c",
+          "size": 77836
+        },
+        "classes6.dex": {
+          "sha256": "d6271c767c79674f2a61186c615fb1e14392ec49e8d4f21fb6aa594a9257556f",
+          "size": 20088
+        },
+        "classes7.dex": {
+          "sha256": "f3ed3cbdf4110183eed8516268bbc102cb2f9a9143e94f8d418b5cd49c5da7ac",
+          "size": 34720
+        },
+        "classes8.dex": {
+          "sha256": "a6bdcca2ec28e3339090d8eca7ab5ad7a7c51814922df86f8e275d6606035c74",
+          "size": 3168
+        },
+        "classes9.dex": {
+          "sha256": "43cc351f81d3829733f4de94ffcf205cb3dbb638c2ddaa4cf98fd2054d8287cd",
+          "size": 26888
+        }
+      }
+    },
+    "RuiYunOta": {
+      "ota_present": true,
+      "ota_sha": "40f399ff15b692180243ce103469230bcb7f90278fc4ad5f6c7d86cbc75961a2",
+      "stock8054_sha": "40f399ff15b692180243ce103469230bcb7f90278fc4ad5f6c7d86cbc75961a2",
+      "same_apk": true,
+      "same_dex": true,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "4919bd7341af085620ad7382f59cf4b4f319c86b339343b838c9309bbc659b39",
+          "size": 112936
+        }
+      },
+      "stock8054_dex": {
+        "classes.dex": {
+          "sha256": "4919bd7341af085620ad7382f59cf4b4f319c86b339343b838c9309bbc659b39",
+          "size": 112936
+        }
+      }
+    },
+    "KuSetupWizard": {
+      "ota_present": true,
+      "ota_sha": "17aaba977289fce5c991e44bd6018c37549f91dae1b99154b00b80b5a3a2c898",
+      "stock8054_sha": null,
+      "same_apk": null,
+      "same_dex": null,
+      "ota_dex": {
+        "classes.dex": {
+          "sha256": "bef226dcb2a24f8469f6684c27f731c6499cd57c9ce060d06e194507e5fec231",
+          "size": 10802208
+        },
+        "classes10.dex": {
+          "sha256": "c97b13347d587007796469c024aa022b0b9af1974288d7fc9e666fe6da22379a",
+          "size": 7360
+        },
+        "classes11.dex": {
+          "sha256": "5428c3c1ea907009e4f78353b158adcd6d345e66f7c88f9cb9503701cb98562e",
+          "size": 47972
+        },
+        "classes12.dex": {
+          "sha256": "47c207bbb57de203668a8d441a4f7bcb1d109b336e660dc59bf109b09a66f0c3",
+          "size": 210760
+        },
+        "classes13.dex": {
+          "sha256": "4ba4f36f7e821e37ca3759a635478ed1a6106cb1a1c40086ddd514f17e859568",
+          "size": 76896
+        },
+        "classes14.dex": {
+          "sha256": "f791a63cd0704905416593984aad3e19f8e20106ace541a4e3b943da0d6f1871",
+          "size": 108564
+        },
+        "classes15.dex": {
+          "sha256": "571a7d6cb2d38f712625308d3e5ad2ffcd975711d0da0b8512b9263a26a7ca67",
+          "size": 1263860
+        },
+        "classes2.dex": {
+          "sha256": "a9a6eb2bb5bae321163296237c6907e074106575423b6f649770960d370207b6",
+          "size": 513600
+        },
+        "classes3.dex": {
+          "sha256": "96e41f4dfcaf47d0b88146c43911a8948f4e1d108f0a5c9b9adc5b0d892802bf",
+          "size": 45364
+        },
+        "classes4.dex": {
+          "sha256": "67947c11fc9e3223283a6d6c36f2287567c6276fe22c7f7d78f5c85b865bfa85",
+          "size": 41456
+        },
+        "classes5.dex": {
+          "sha256": "e94d5f6c364159efa8b0f584d089d964879b550f3685487980ee8b306c9e1d6c",
+          "size": 77836
+        },
+        "classes6.dex": {
+          "sha256": "d6271c767c79674f2a61186c615fb1e14392ec49e8d4f21fb6aa594a9257556f",
+          "size": 20088
+        },
+        "classes7.dex": {
+          "sha256": "f3ed3cbdf4110183eed8516268bbc102cb2f9a9143e94f8d418b5cd49c5da7ac",
+          "size": 34720
+        },
+        "classes8.dex": {
+          "sha256": "a6bdcca2ec28e3339090d8eca7ab5ad7a7c51814922df86f8e275d6606035c74",
+          "size": 3168
+        },
+        "classes9.dex": {
+          "sha256": "43cc351f81d3829733f4de94ffcf205cb3dbb638c2ddaa4cf98fd2054d8287cd",
+          "size": 26888
+        }
+      },
+      "stock8054_dex": null
+    },
+    "Provision": {
+      "ota_present": false,
+      "stock8054_recorded": false
+    }
+  },
+  "props": {
+    "ro.zeasn.devicetype": {
+      "ota8052": "rjpj9660global",
+      "factory8054": "rjpj9660fordexp",
+      "same": false
+    },
+    "ro.rjpj.machine.id": {
+      "ota8052": "8052",
+      "factory8054": "8054",
+      "same": false
+    },
+    "ro.rjpj.yunota.version": {
+      "ota8052": "RUIOS.8052.1.0.4",
+      "factory8054": "RUIOS.8054.1.0.1",
+      "same": false
+    },
+    "ro.rjpj.hdmi.ports": {
+      "ota8052": "HW6:HDMI",
+      "factory8054": "HW6:HDMI1,HW7:HDMI2",
+      "same": false
+    },
+    "ro.rjpj.hdmi.port.count": {
+      "ota8052": "1",
+      "factory8054": "2",
+      "same": false
+    },
+    "ro.rjpj.support.toffunction": {
+      "ota8052": "0",
+      "factory8054": "1",
+      "same": false
+    },
+    "ro.rjpj.yunota.url": {
+      "ota8052": "mt9660/8052/8052_ota.json",
+      "factory8054": "mt9660/8054/8054_ota.json",
+      "same": false
+    },
+    "ro.rjpj.yunota.zip": {
+      "ota8052": "RJMT9660_firmware_8052.zip",
+      "factory8054": "RJMT9660_firmware_8054.zip",
+      "same": false
+    },
+    "ro.product.ota": {
+      "ota8052": "V618RJEN",
+      "factory8054": "V618RJENHD",
+      "same": false
+    },
+    "ro.rjpj.autofocus.poweron": {
+      "ota8052": "1",
+      "factory8054": null,
+      "same": null
+    },
+    "ro.rjpj.autokeystone.poweron": {
+      "ota8052": "0",
+      "factory8054": "1",
+      "same": false
+    },
+    "ro.rjpj.autofocus.move": {
+      "ota8052": "1",
+      "factory8054": null,
+      "same": null
+    },
+    "ro.rjpj.autokeystone.move": {
+      "ota8052": "0",
+      "factory8054": "1",
+      "same": false
+    }
+  },
+  "libs": {
+    "system/system/lib/libsettingsi2c_jni.so": {
+      "present_ota8052": true,
+      "sha256": "d9a8d644b400153d2b53eaadd892af5715acaa9b65caa6d52e697277ab20e724"
+    },
+    "system/system/lib/libfactoryi2c_jni.so": {
+      "present_ota8052": true,
+      "sha256": "7f4aa383f1346fa16c04d5569d6cdd2da4b27e8c49f5100e3b1c236c5635e258"
+    },
+    "system/system/lib/libi2c_jni.so": {
+      "present_ota8052": true,
+      "sha256": "105cd91625968377c91c8b79adc8e84d416ae3d32e9839da0be7511c1f76d491"
+    },
+    "system/system/lib/libtrd_jni.so": {
+      "present_ota8052": true,
+      "sha256": "7d409b1df3c2d9d0f46252b3efbea2f22007b4f7683bbd18f94de86338993df7"
+    },
+    "system/system/lib/libtof_jni.so": {
+      "present_ota8052": true,
+      "sha256": "3bfb96ca96581c5e86efd0d2ac4b5f3c96be335bd5b5dd0bd87bf233495d1b85"
+    },
+    "system/system/lib/librjpj_private_function.so": {
+      "present_ota8052": true,
+      "sha256": "e436a1e31c3f7c49fb0e52894b83a12eb7a387b68144400ed24271785f1ae0d3"
+    },
+    "vendor/lib/modules/ruimotor.ko": {
+      "present_ota8052": true,
+      "sha256": "7c8c9a8fcc2c91416b98c97ed92244a0d4a1c92778b8cb7c1cb36e49f1bd751e"
+    },
+    "vendor/lib/modules/stmvl53l1.ko": {
+      "present_ota8052": true,
+      "sha256": "3ea9d5c1178eb48905b1f20a7a4b4fcab46aa22e86ff2f407517ae65639de03a"
+    },
+    "vendor/etc/audio_policy_configuration.xml": {
+      "present_ota8052": true,
+      "sha256": "6c17bb2bc4ff309d5e3045a5f1fc476b559952df3b4e43aff08ff077bbd6810e"
+    }
+  },
+  "dtbo": {
+    "entries": 207,
+    "unique_hashes": 188,
+    "image_sha": "755b9158991a31c88cdfe9a9a1b207da3c8ac9885fe1c3ccdde7b632017f5cd4",
+    "stock8054_blob_compare": "not performed: full stock per-blob SHA list not committed"
+  }
+}
