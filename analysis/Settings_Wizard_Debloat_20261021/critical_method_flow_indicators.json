@@ -1,0 +1,1312 @@
+{
+  "source": "verified Oct 8052.1.0.4 OTA",
+  "targets": {
+    "KuSetupWizard": {
+      "com/my/settings/wifi/ProvisionWifiActivity.java": {
+        "methods": [
+          {
+            "method": "next",
+            "start_line": 93,
+            "bytes": 87,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "onCreate",
+            "start_line": 73,
+            "bytes": 226,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings"
+            ]
+          },
+          {
+            "method": "onBackPressed",
+            "start_line": 83,
+            "bytes": 5,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "dispatchKeyEvent",
+            "start_line": 87,
+            "bytes": 147,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "next",
+          "onCreate",
+          "onBackPressed",
+          "dispatchKeyEvent"
+        ],
+        "missing_methods": []
+      },
+      "com/my/settings/bluetooth/ProvisionBluetoothActivity.java": {
+        "methods": [
+          {
+            "method": "next",
+            "start_line": 228,
+            "bytes": 87,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "onCreate",
+            "start_line": 58,
+            "bytes": 182,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings"
+            ]
+          },
+          {
+            "method": "onBackPressed",
+            "start_line": 67,
+            "bytes": 5,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "dispatchKeyEvent",
+            "start_line": 71,
+            "bytes": 205,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "next",
+          "onCreate",
+          "onBackPressed",
+          "dispatchKeyEvent"
+        ],
+        "missing_methods": []
+      },
+      "com/my/service/BootupReceiver.java": {
+        "methods": [
+          {
+            "method": "onReceive",
+            "start_line": 10,
+            "bytes": 242,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "onReceive"
+        ],
+        "missing_methods": []
+      },
+      "com/my/utils/IntentUtils.java": {
+        "methods": [
+          {
+            "method": "provisionWifiIntent",
+            "start_line": 118,
+            "bytes": 192,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings",
+              "startActivity"
+            ]
+          },
+          {
+            "method": "provisionBluetoothIntent",
+            "start_line": 113,
+            "bytes": 202,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings",
+              "startActivity"
+            ]
+          },
+          {
+            "method": "provisionMenuIntent",
+            "start_line": 123,
+            "bytes": 193,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings",
+              "startActivity"
+            ]
+          },
+          {
+            "method": "myWifi",
+            "start_line": 16,
+            "bytes": 185,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings",
+              "startActivity"
+            ]
+          },
+          {
+            "method": "startOta",
+            "start_line": 64,
+            "bytes": 333,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 2
+            },
+            "public_keys": [
+              "android.settings.SYSTEMUPDATE"
+            ],
+            "called_public_api_tokens": [
+              "com.rjpj.yunota"
+            ]
+          }
+        ],
+        "requested": [
+          "provisionWifiIntent",
+          "provisionBluetoothIntent",
+          "provisionMenuIntent",
+          "myWifi",
+          "startOta"
+        ],
+        "missing_methods": []
+      }
+    },
+    "KuSettings": {
+      "com/my/service/BootupReceiver.java": {
+        "methods": [
+          {
+            "method": "onReceive",
+            "start_line": 10,
+            "bytes": 242,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "onReceive"
+        ],
+        "missing_methods": []
+      },
+      "com/my/service/ScreenServices.java": {
+        "methods": [
+          {
+            "method": "onStartCommand",
+            "start_line": 32,
+            "bytes": 162,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "setKeyStore",
+            "start_line": 37,
+            "bytes": 112,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "property_write": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "SystemProperties.set"
+            ]
+          },
+          {
+            "method": "takeScreenShot",
+            "start_line": 64,
+            "bytes": 2433,
+            "branches": {
+              "if": 2,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "intent": 1,
+              "lifecycle": 2,
+              "errors": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "bindService",
+              "catch (",
+              "printStackTrace",
+              "setClassName",
+              "unbindService"
+            ]
+          },
+          {
+            "method": "startShot",
+            "start_line": 43,
+            "bytes": 853,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "errors": 2,
+              "steps": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "Thread.sleep",
+              "catch (",
+              "printStackTrace"
+            ]
+          }
+        ],
+        "requested": [
+          "onStartCommand",
+          "setKeyStore",
+          "takeScreenShot",
+          "startShot"
+        ],
+        "missing_methods": []
+      },
+      "com/my/service/MySetTimeService.java": {
+        "methods": [
+          {
+            "method": "onStartCommand",
+            "start_line": 25,
+            "bytes": 51,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "registerTimeTick",
+            "start_line": 29,
+            "bytes": 121,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "lifecycle": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "registerReceiver"
+            ]
+          }
+        ],
+        "requested": [
+          "onStartCommand",
+          "registerTimeTick"
+        ],
+        "missing_methods": []
+      },
+      "com/my/settings/SettingActivity.java": {
+        "methods": [
+          {
+            "method": "onCreate",
+            "start_line": 44,
+            "bytes": 166,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings"
+            ]
+          },
+          {
+            "method": "enterClick",
+            "start_line": 142,
+            "bytes": 3602,
+            "branches": {
+              "if": 20,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 19
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.my.settings"
+            ]
+          },
+          {
+            "method": "onDestroy",
+            "start_line": 68,
+            "bytes": 93,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "onCreate",
+          "enterClick",
+          "onDestroy"
+        ],
+        "missing_methods": []
+      },
+      "com/my/utils/IntentUtils.java": {
+        "methods": [
+          {
+            "method": "startOta",
+            "start_line": 64,
+            "bytes": 333,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 2
+            },
+            "public_keys": [
+              "android.settings.SYSTEMUPDATE"
+            ],
+            "called_public_api_tokens": [
+              "com.rjpj.yunota"
+            ]
+          },
+          {
+            "method": "imageDigitalIntent",
+            "start_line": 109,
+            "bytes": 73,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "keystoneIntent",
+            "start_line": 105,
+            "bytes": 74,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [
+              "android.settings.KEYSTONE_SETTINGS"
+            ],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "bootSoure",
+            "start_line": 81,
+            "bytes": 75,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [
+              "android.settings.BOOTSOURE_SETTINGS"
+            ],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "poweron",
+            "start_line": 85,
+            "bytes": 75,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [
+              "android.settings.POWERMODE_SETTINGS"
+            ],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "startUniversalKJ",
+            "start_line": 133,
+            "bytes": 115,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "startOta",
+          "imageDigitalIntent",
+          "keystoneIntent",
+          "bootSoure",
+          "poweron",
+          "startUniversalKJ"
+        ],
+        "missing_methods": []
+      }
+    },
+    "TvSettingsPlus": {
+      "com/android/tv/settings/MainSettings.java": {
+        "methods": [
+          {
+            "method": "createSettingsFragment",
+            "start_line": 11,
+            "bytes": 199,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          }
+        ],
+        "requested": [
+          "createSettingsFragment"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/MainFragment.java": {
+        "methods": [
+          {
+            "method": "onCreatePreferences",
+            "start_line": 161,
+            "bytes": 1498,
+            "branches": {
+              "if": 7,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [
+              "KEY_ACCESSORIES",
+              "KEY_ACCOUNTS_AND_SIGN_IN",
+              "KEY_APPLICATIONS",
+              "KEY_DISPLAY_AND_SOUND",
+              "KEY_PRIVACY"
+            ],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "onPreferenceTreeClick",
+            "start_line": 498,
+            "bytes": 1063,
+            "branches": {
+              "if": 3,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "thirdparty": 3
+            },
+            "public_keys": [
+              "KEY_ACCESSORIES",
+              "KEY_ACCOUNTS_AND_SIGN_IN",
+              "KEY_BASIC_MODE_EXIT",
+              "KEY_CHANNELS_AND_INPUTS",
+              "KEY_DISPLAY_AND_SOUND"
+            ],
+            "called_public_api_tokens": [
+              "com.android.tv.settings",
+              "startActivity"
+            ]
+          }
+        ],
+        "requested": [
+          "onCreatePreferences",
+          "onPreferenceTreeClick"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/uicustom/MainActivity.java": {
+        "methods": [
+          {
+            "method": "onCreate",
+            "start_line": 111,
+            "bytes": 244,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "onKeyDown",
+            "start_line": 293,
+            "bytes": 2580,
+            "branches": {
+              "if": 14,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "initPageManager",
+            "start_line": 233,
+            "bytes": 161,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          }
+        ],
+        "requested": [
+          "onCreate",
+          "onKeyDown",
+          "initPageManager"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/uicustom/fragment/projector/FocusSettingsFragment.java": {
+        "methods": [
+          {
+            "method": "setPowerOnAutoFocus",
+            "start_line": 67,
+            "bytes": 191,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [
+              "persist.rjpj.autofocus.poweron"
+            ],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "setMoveAutoFocus",
+            "start_line": 73,
+            "bytes": 185,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [
+              "persist.rjpj.autofocus.move"
+            ],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "setAccurateFocus",
+            "start_line": 79,
+            "bytes": 196,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 1
+            },
+            "public_keys": [
+              "persist.rjpj.tof.autofocus"
+            ],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          }
+        ],
+        "requested": [
+          "setPowerOnAutoFocus",
+          "setMoveAutoFocus",
+          "setAccurateFocus"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/uicustom/fragment/projector/KeystoneCalibrationActivity.java": {
+        "methods": [
+          {
+            "method": "resetFactoryCalibrationData",
+            "start_line": 346,
+            "bytes": 1525,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "intent": 2,
+              "property_write": 4,
+              "binder_hal": 2,
+              "errors": 2,
+              "thirdparty": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "MtkTv",
+              "SystemProperties.set",
+              "catch (",
+              "com.android.tv.settings",
+              "printStackTrace",
+              "sendBroadcast",
+              "setComponent"
+            ]
+          },
+          {
+            "method": "startFactoryCalib",
+            "start_line": 328,
+            "bytes": 845,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 2,
+              "thirdparty": 3
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings",
+              "com.hysd.screen",
+              "setComponent",
+              "startService"
+            ]
+          },
+          {
+            "method": "saveFactoryCalibrationData",
+            "start_line": 388,
+            "bytes": 924,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 3
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "checkFactoryData",
+            "start_line": 150,
+            "bytes": 27,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          }
+        ],
+        "requested": [
+          "resetFactoryCalibrationData",
+          "startFactoryCalib",
+          "saveFactoryCalibrationData",
+          "checkFactoryData"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/uicustom/fragment/projector/ProjectorFragment.java": {
+        "methods": [
+          {
+            "method": "startAutoFocus",
+            "start_line": 146,
+            "bytes": 903,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "intent": 2,
+              "property_read": 2,
+              "errors": 2,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "SystemProperties.get",
+              "catch (",
+              "com.hysd.screen",
+              "printStackTrace",
+              "setComponent",
+              "startService"
+            ]
+          },
+          {
+            "method": "startAutoKeystone",
+            "start_line": 166,
+            "bytes": 903,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "intent": 2,
+              "property_read": 2,
+              "errors": 2,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "SystemProperties.get",
+              "catch (",
+              "com.hysd.screen",
+              "printStackTrace",
+              "setComponent",
+              "startService"
+            ]
+          },
+          {
+            "method": "resetTrapezoid",
+            "start_line": 219,
+            "bytes": 508,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "intent": 2,
+              "binder_hal": 1,
+              "errors": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "MtkTv",
+              "catch (",
+              "printStackTrace",
+              "sendBroadcast",
+              "setComponent"
+            ]
+          },
+          {
+            "method": "jumpActivityByAction",
+            "start_line": 232,
+            "bytes": 214,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "binder_hal": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "MtkTv",
+              "startActivity"
+            ]
+          }
+        ],
+        "requested": [
+          "startAutoFocus",
+          "startAutoKeystone",
+          "resetTrapezoid",
+          "jumpActivityByAction"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/uicustom/floatmenu/controller/source/SourceSubMenuController.java": {
+        "methods": [
+          {
+            "method": "initBoardConfig",
+            "start_line": 99,
+            "bytes": 1548,
+            "branches": {
+              "if": 9,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "validateEdidVersion",
+            "start_line": 379,
+            "bytes": 80,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "updateEdidEnableState",
+            "start_line": 384,
+            "bytes": 542,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "checkBluetoothSpeakerPackage",
+            "start_line": 417,
+            "bytes": 269,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "errors": 1
+            },
+            "public_keys": [
+              "BLUETOOTH_SPEAKER_PACKAGE"
+            ],
+            "called_public_api_tokens": [
+              "catch ("
+            ]
+          },
+          {
+            "method": "switchToHDMI",
+            "start_line": 425,
+            "bytes": 1053,
+            "branches": {
+              "if": 2,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "binder_hal": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "MtkTv",
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "switchToAV",
+            "start_line": 442,
+            "bytes": 961,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "binder_hal": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "MtkTv",
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "switchToUSB",
+            "start_line": 457,
+            "bytes": 456,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 1,
+              "catch": 1
+            },
+            "call_indicators": {
+              "intent": 1,
+              "binder_hal": 1,
+              "errors": 2,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "MtkTv",
+              "catch (",
+              "com.android.tv.settings",
+              "printStackTrace",
+              "setAction"
+            ]
+          }
+        ],
+        "requested": [
+          "initBoardConfig",
+          "validateEdidVersion",
+          "updateEdidEnableState",
+          "checkBluetoothSpeakerPackage",
+          "switchToHDMI",
+          "switchToAV",
+          "switchToUSB"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/partnercustomizer/tvsettingservice/TvBootupReceiver.java": {
+        "methods": [
+          {
+            "method": "onReceive",
+            "start_line": 6,
+            "bytes": 273,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "intent": 1,
+              "thirdparty": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings",
+              "startService"
+            ]
+          }
+        ],
+        "requested": [
+          "onReceive"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/partnercustomizer/tvsettingservice/WirelessSpeakerServices.java": {
+        "methods": [
+          {
+            "method": "onCreate",
+            "start_line": 161,
+            "bytes": 928,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "thirdparty": 2
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "com.android.tv.settings"
+            ]
+          },
+          {
+            "method": "onDestroy",
+            "start_line": 176,
+            "bytes": 366,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "updateWirelessSpeakerService",
+            "start_line": 202,
+            "bytes": 379,
+            "branches": {
+              "if": 1,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {
+              "property_read": 1
+            },
+            "public_keys": [],
+            "called_public_api_tokens": [
+              "Settings.Global.get"
+            ]
+          }
+        ],
+        "requested": [
+          "onCreate",
+          "onDestroy",
+          "updateWirelessSpeakerService"
+        ],
+        "missing_methods": []
+      },
+      "com/android/tv/settings/partnercustomizer/utils/SoundEARCReceiver.java": {
+        "methods": [
+          {
+            "method": "onReceive",
+            "start_line": 8,
+            "bytes": 123,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 0,
+              "catch": 0
+            },
+            "call_indicators": {},
+            "public_keys": [],
+            "called_public_api_tokens": []
+          },
+          {
+            "method": "updateEARCSettingValueToDrive",
+            "start_line": 12,
+            "bytes": 895,
+            "branches": {
+              "if": 0,
+              "switch": 0,
+              "try": 2,
+              "catch": 2
+            },
+            "call_indicators": {
+              "property_read": 1,
+              "binder_hal": 1,
+              "errors": 4,
+              "thirdparty": 2
+            },
+            "public_keys": [
+              "KEY_SOUND_EARC"
+            ],
+            "called_public_api_tokens": [
+              "Log.w(",
+              "MtkTv",
+              "Settings.Global.get",
+              "catch (",
+              "com.android.tv.settings",
+              "printStackTrace"
+            ]
+          }
+        ],
+        "requested": [
+          "onReceive",
+          "updateEARCSettingValueToDrive"
+        ],
+        "missing_methods": []
+      }
+    }
+  },
+  "limitations": [
+    "JADX source is reconstructed; method boundaries are approximate.",
+    "Do not infer runtime invocation from static method content.",
+    "AOSP Android 13 stock base tag not proven to be OEM's actual fork.",
+    "No branch is a confirmed bug without reproducible behavior and logs."
+  ]
+}
