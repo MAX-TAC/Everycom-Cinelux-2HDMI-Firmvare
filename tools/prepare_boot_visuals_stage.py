@@ -207,6 +207,13 @@ def main():
     if cfg["audio_sha"]:
         assert sha256(audios[0]) == cfg["audio_sha"], "Stock MP3 SHA mismatch"
     assert a.animation_zip.is_file() and a.animation_zip.stat().st_size > 0
+    # Exact "Working and Tested" ZIP from khurramrizvi/atv11_bootanimation (Git blob SHA-1).
+    # Do not silently substitute the different top-level bootanimation.zip.
+    with a.animation_zip.open("rb") as upstream:
+        payload = upstream.read()
+    git_sha = hashlib.sha1(b"blob " + str(len(payload)).encode() + b"\0" + payload).hexdigest()
+    assert git_sha == "3b1f39b90f7ffe28d5c4a7219190d411d3913fc5", \
+        "Unexpected upstream animation source (Git blob SHA mismatch)"
     out = a.out.resolve()
     assert not (out == b or out == t or b in out.parents or t in out.parents), \
         "Refusing to write inside stock partitions"
