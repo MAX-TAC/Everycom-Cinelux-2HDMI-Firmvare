@@ -102,6 +102,8 @@ Different .text SHA means different machine-code bytes, not necessarily a bug fi
 - Named functions common / changed: 800/55
 - Dynamic dependency set changed: False
 - Changed exported function examples:
+- Different disassembled mnemonic sequences: 5
+- Identical mnemonic sequence despite code byte changes: 50
 - `cfg_parser_list_all_configs_info`
 - `cfg_parser_set_config_value`
 - `cli_alias`
