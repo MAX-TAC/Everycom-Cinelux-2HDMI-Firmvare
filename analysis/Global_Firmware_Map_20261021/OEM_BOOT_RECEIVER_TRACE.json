@@ -1,0 +1,1190 @@
+{
+  "source": "verified 8052.1.0.4 October OTA",
+  "files": {
+    "KuSettings": {
+      "com/my/service/BootupReceiver.java": {
+        "line_count": 17,
+        "markers": [
+          {
+            "line": 6,
+            "op": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "ACTION_BOOT",
+              "android.intent.action.BOOT_COMPLETED"
+            ]
+          },
+          {
+            "line": 10,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 13,
+            "op": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.intent.action.BOOT_COMPLETED"
+            ]
+          }
+        ]
+      },
+      "com/my/service/ScreenServices.java": {
+        "line_count": 106,
+        "markers": [
+          {
+            "line": 32,
+            "op": [
+              "onStartCommand"
+            ],
+            "method_decl": "onStartCommand",
+            "identifiers": [
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 39,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set"
+            ]
+          },
+          {
+            "line": 70,
+            "op": [
+              "setClassName"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "com.android.systemui",
+              "com.android.systemui.screenshot.TakeScreenshotService"
+            ]
+          },
+          {
+            "line": 102,
+            "op": [
+              "bindService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "bindService",
+              "serviceConnection"
+            ]
+          }
+        ]
+      },
+      "com/my/settings/SettingActivity.java": {
+        "line_count": 235,
+        "markers": [
+          {
+            "line": 35,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 44,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": "onCreate",
+            "identifiers": [
+              "android.os.Bundle"
+            ]
+          },
+          {
+            "line": 45,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 224,
+            "op": [
+              "registerReceiver"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "registerReceiver",
+              "this.isUpdataOtaReceiver"
+            ]
+          }
+        ]
+      },
+      "com/my/utils/IntentUtils.java": {
+        "line_count": 272,
+        "markers": [
+          {
+            "line": 19,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 24,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 116,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 121,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 126,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 131,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 150,
+            "op": [
+              "setAction"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 153,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 167,
+            "op": [
+              "setAction"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 171,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 188,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 194,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 206,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName"
+            ]
+          },
+          {
+            "line": 208,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 227,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.app.ActivityManager",
+              "context.getSystemService"
+            ]
+          },
+          {
+            "line": 238,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "context.startService"
+            ]
+          },
+          {
+            "line": 256,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.app.ActivityManager",
+              "context.getSystemService"
+            ]
+          },
+          {
+            "line": 268,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.coolux.source",
+              "com.coolux.source.service.TimeService"
+            ]
+          },
+          {
+            "line": 269,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "context.startService"
+            ]
+          }
+        ]
+      }
+    },
+    "TvSettingsPlus": {
+      "com/android/tv/settings/BootReceiver.java": {
+        "line_count": 16,
+        "markers": [
+          {
+            "line": 10,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 14,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.Intent",
+              "com.android.tv.settings.accessories.BluetoothDevicesService.class",
+              "context.startService"
+            ]
+          }
+        ]
+      },
+      "com/android/tv/settings/partnercustomizer/tvsettingservice/TvBootupReceiver.java": {
+        "line_count": 10,
+        "markers": [
+          {
+            "line": 6,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 8,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.Intent",
+              "com.android.tv.settings.partnercustomizer.tvsettingservice.WirelessSpeakerServices.class",
+              "context.startService"
+            ]
+          }
+        ]
+      },
+      "com/android/tv/settings/partnercustomizer/utils/SoundEARCReceiver.java": {
+        "line_count": 28,
+        "markers": [
+          {
+            "line": 8,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 9,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "com.mediatek.wwtv.tvcenter.util.MtkLog.d"
+            ]
+          },
+          {
+            "line": 16,
+            "op": [
+              "Settings.Global"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Global.getInt",
+              "com.android.tv.settings.partnercustomizer.tvsettingservice.util.PreferenceConfigUtilsBase.KEY_SOUND_EARC"
+            ]
+          }
+        ]
+      },
+      "com/android/tv/settings/MainSettings.java": {
+        "line_count": 14,
+        "markers": []
+      },
+      "com/android/tv/settings/uicustom/MainActivity.java": {
+        "line_count": 491,
+        "markers": [
+          {
+            "line": 58,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 107,
+            "op": [
+              "registerReceiver"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "registerReceiver",
+              "this.mBroadcastReceiver"
+            ]
+          },
+          {
+            "line": 111,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": "onCreate",
+            "identifiers": [
+              "android.os.Bundle"
+            ]
+          },
+          {
+            "line": 112,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 189,
+            "op": [
+              "android.settings.SETTINGS"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.settings.SETTINGS"
+            ]
+          },
+          {
+            "line": 293,
+            "op": [
+              "onKeyDown"
+            ],
+            "method_decl": "onKeyDown",
+            "identifiers": [
+              "android.view.KeyEvent",
+              "keyEvent",
+              "onKeyDown"
+            ]
+          },
+          {
+            "line": 341,
+            "op": [
+              "onKeyDown"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.util.Log.i",
+              "onKeyDown",
+              "previousFocus"
+            ]
+          },
+          {
+            "line": 348,
+            "op": [
+              "onKeyDown"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "keyEvent",
+              "super.onKeyDown"
+            ]
+          }
+        ]
+      }
+    },
+    "KuSetupWizard": {
+      "com/my/settings/wifi/ProvisionWifiActivity.java": {
+        "line_count": 622,
+        "markers": [
+          {
+            "line": 54,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 73,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": "onCreate",
+            "identifiers": [
+              "android.os.Bundle"
+            ]
+          },
+          {
+            "line": 74,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 88,
+            "op": [
+              "getKeyCode"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "event.getKeyCode"
+            ]
+          },
+          {
+            "line": 300,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.net.ConnectivityManager",
+              "ctx.getSystemService"
+            ]
+          },
+          {
+            "line": 358,
+            "op": [
+              "Settings.Global"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Global.getInt",
+              "wifiScanningMode",
+              "wifi_scan_always_enabled"
+            ]
+          },
+          {
+            "line": 389,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.app.admin.DevicePolicyManager",
+              "context.getSystemService"
+            ]
+          },
+          {
+            "line": 406,
+            "op": [
+              "Settings.Global"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Global.getInt",
+              "wifi_device_owner_configs_lockdown"
+            ]
+          },
+          {
+            "line": 606,
+            "op": [
+              "registerReceiver"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "registerReceiver",
+              "this.wifiReceiver"
+            ]
+          }
+        ]
+      },
+      "com/my/utils/IntentUtils.java": {
+        "line_count": 272,
+        "markers": [
+          {
+            "line": 19,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 24,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 116,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 121,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 126,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 131,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 150,
+            "op": [
+              "setAction"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 153,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 167,
+            "op": [
+              "setAction"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 171,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 188,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 194,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 206,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName"
+            ]
+          },
+          {
+            "line": 208,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 227,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.app.ActivityManager",
+              "context.getSystemService"
+            ]
+          },
+          {
+            "line": 238,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "context.startService"
+            ]
+          },
+          {
+            "line": 256,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.app.ActivityManager",
+              "context.getSystemService"
+            ]
+          },
+          {
+            "line": 268,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.coolux.source",
+              "com.coolux.source.service.TimeService"
+            ]
+          },
+          {
+            "line": 269,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "context.startService"
+            ]
+          }
+        ]
+      }
+    },
+    "trdservice": {
+      "com/trd/service/communication/GlobalKeyEventProcess.java": {
+        "line_count": 141,
+        "markers": [
+          {
+            "line": 41,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.app.ActivityManager",
+              "android.app.ActivityManager.RunningTaskInfo",
+              "context.getSystemService"
+            ]
+          },
+          {
+            "line": 52,
+            "op": [
+              "SystemProperties.get"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.get",
+              "persist.trd.machine",
+              "trd"
+            ]
+          },
+          {
+            "line": 110,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.trd.factory",
+              "com.trd.factory.SplashActivity"
+            ]
+          },
+          {
+            "line": 112,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 118,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.trd.projector.settings",
+              "com.trd.projector.settings.MainSettingsActivity"
+            ]
+          },
+          {
+            "line": 120,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 126,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.mediatek.wwtv.tvcenter",
+              "com.mediatek.wwtv.tvcenter.nav.inputpanel.InputsPanelActivity"
+            ]
+          },
+          {
+            "line": 128,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 133,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.android.tv.settings",
+              "com.android.tv.settings.device.storage.ResetActivity"
+            ]
+          },
+          {
+            "line": 135,
+            "op": [
+              "startActivity"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 139,
+            "op": [
+              "SystemProperties.get"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.get",
+              "service.trd.age.mode"
+            ]
+          }
+        ]
+      },
+      "com/trd/service/TrdService.java": {
+        "line_count": 348,
+        "markers": [
+          {
+            "line": 79,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 100,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 115,
+            "op": [
+              "onReceive"
+            ],
+            "method_decl": "onReceive",
+            "identifiers": [
+              "android.content.Context",
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 148,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": "onCreate",
+            "identifiers": []
+          },
+          {
+            "line": 149,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 172,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 178,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 190,
+            "op": [
+              "registerReceiver"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "registerReceiver",
+              "this.mNetworkReceiver"
+            ]
+          },
+          {
+            "line": 200,
+            "op": [
+              "SystemProperties.get"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.get"
+            ]
+          },
+          {
+            "line": 204,
+            "op": [
+              "getSystemService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.net.ConnectivityManager",
+              "android.net.NetworkInfo",
+              "getSystemService"
+            ]
+          },
+          {
+            "line": 222,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.rjpj.yunota.OTACheckService"
+            ]
+          },
+          {
+            "line": 224,
+            "op": [
+              "startService"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "mContext.startService"
+            ]
+          },
+          {
+            "line": 225,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set"
+            ]
+          },
+          {
+            "line": 237,
+            "op": [
+              "onStartCommand"
+            ],
+            "method_decl": "onStartCommand",
+            "identifiers": [
+              "android.content.Intent"
+            ]
+          },
+          {
+            "line": 283,
+            "op": [
+              "setComponent"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.content.ComponentName",
+              "com.rjpj.tcorrection.TCorrectionBroadcastReceiver"
+            ]
+          },
+          {
+            "line": 286,
+            "op": [
+              "sendBroadcast"
+            ],
+            "method_decl": null,
+            "identifiers": []
+          },
+          {
+            "line": 297,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set"
+            ]
+          },
+          {
+            "line": 307,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set"
+            ]
+          },
+          {
+            "line": 315,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": "lambda$onCreate$0",
+            "identifiers": []
+          },
+          {
+            "line": 319,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set",
+              "persist.rjpj.projector.mode"
+            ]
+          },
+          {
+            "line": 321,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set",
+              "persist.rjpj.projector.mode"
+            ]
+          },
+          {
+            "line": 323,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set",
+              "persist.rjpj.projector.mode"
+            ]
+          },
+          {
+            "line": 325,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set",
+              "persist.rjpj.projector.mode"
+            ]
+          },
+          {
+            "line": 327,
+            "op": [
+              "SystemProperties.set"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.os.SystemProperties.set",
+              "persist.rjpj.projector.mode"
+            ]
+          },
+          {
+            "line": 336,
+            "op": [
+              "onCreate"
+            ],
+            "method_decl": "lambda$onCreate$1",
+            "identifiers": []
+          },
+          {
+            "line": 338,
+            "op": [
+              "Settings.Secure"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Secure.getInt"
+            ]
+          },
+          {
+            "line": 339,
+            "op": [
+              "Settings.Secure"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Secure.putInt"
+            ]
+          },
+          {
+            "line": 341,
+            "op": [
+              "Settings.Secure"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Secure.getInt"
+            ]
+          },
+          {
+            "line": 342,
+            "op": [
+              "Settings.Secure"
+            ],
+            "method_decl": null,
+            "identifiers": [
+              "android.provider.Settings.Secure.putInt"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "notes": []
+}
