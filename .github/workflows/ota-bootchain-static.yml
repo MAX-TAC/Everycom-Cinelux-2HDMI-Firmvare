@@ -5,9 +5,11 @@ on:
     paths:
       - ".github/workflows/ota-bootchain-static.yml"
       - "tools/audit_ota_bootchain_metadata.py"
+      - "tools/compare_bootchain_ota_vs_factory.py"
   workflow_dispatch:
 permissions:
   contents: write
+  actions: read
 jobs:
   audit-bootchain:
     runs-on: ubuntu-latest
@@ -30,11 +32,22 @@ jobs:
           "$BIN" -c 3 -p boot,mboot,optee,vbmeta,vbmeta_system,dtbo,armfw -o /tmp/images /tmp/ota.zip > /tmp/dump.log 2>&1 || { tail -n 60 /tmp/dump.log; exit 1; }
           python3 -u tools/audit_ota_bootchain_metadata.py --images /tmp/images --out analysis/Stock_8052_8054_Deep_Audit
           head -n 85 analysis/Stock_8052_8054_Deep_Audit/bootchain_ota_metadata.md
+      - name: Retrieve verified stock 8054 factory partition hashes
+        uses: actions/download-artifact@v4
+        with:
+          name: cinelux-variant-two
+          run-id: 39422365902
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/stock-partitions
+      - name: Compare stock 8052/8054 boot partition hashes
+        run: |
+          python3 -u tools/compare_bootchain_ota_vs_factory.py --ota analysis/Stock_8052_8054_Deep_Audit/bootchain_ota_metadata.json --stock /tmp/stock-partitions/manifest.json --out analysis/Stock_8052_8054_Deep_Audit
+          cat analysis/Stock_8052_8054_Deep_Audit/bootchain_8052_vs_8054.md
       - name: Commit public metadata only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/Stock_8052_8054_Deep_Audit/bootchain_ota_metadata.*
+          git add analysis/Stock_8052_8054_Deep_Audit/bootchain_*.json analysis/Stock_8052_8054_Deep_Audit/bootchain_*.md
           if ! git diff --cached --quiet; then
             git commit -m "Audit signed 8052 OTA bootchain headers and AVB metadata"
             git pull --rebase origin stock-8052-8054-deep-audit-20261021
