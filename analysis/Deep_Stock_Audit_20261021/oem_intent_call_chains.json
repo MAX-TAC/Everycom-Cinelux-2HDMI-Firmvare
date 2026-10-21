@@ -1,0 +1,5026 @@
+{
+  "packages": {
+    "zxlauncher": "com.zeasn.whale.saas",
+    "zxstore": "zeasn.open.technical.tv.store",
+    "KuSettings": "com.my.settings",
+    "TvSettingsPlus": "com.android.tv.settings",
+    "RuiYunOta": "com.rjpj.yunota",
+    "KuSourceRJ": "com.coolux.source",
+    "RuiAutoFocus": "com.hysd.screen",
+    "trdservice": "com.trd.service",
+    "trdmiddle": "com.trd.framework",
+    "KuSetupWizard": "com.android.provision"
+  },
+  "components": {
+    "zxlauncher": [
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.MainActivity",
+        "exported": null,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.core.content.FileProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.MyAppActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.DetailsActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.SeasonDetailsActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.RecentlyViewActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.TopSortActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.launcher.ui.LoadMoreActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.zeasn.ad.connector.access.ABService",
+        "exported": true,
+        "actions": [],
+        "permissions": [
+          "android.permission.BIND_ACCESSIBILITY_SERVICE"
+        ]
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.installer.UninstallReceiverFor28",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.installer.InstallReceiverFor28",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.installer.xapi_lib.InstallActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.WeeklyActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.PersianCalendarWeeklyActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.SearchActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.TouchWeeklyActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.TouchSearchActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.WhaleSearchActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.WhaleSearchNewActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.weatherplugin.ui.WhaleSearchTouchActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.plugin.StubActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.zeasn.plugin.ProxyService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.plugin.installation.PermissionTools$InstallCallbackReceiver",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.google.android.gms.version",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.google.android.gms.common.api.GoogleApiActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.lifecycle.ProcessLifecycleOwnerInitializer",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.journeyapps.barcodescanner.CaptureActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "zxstore": [
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.MainActivity",
+        "exported": null,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.MoreActivity",
+        "exported": null,
+        "actions": [
+          "android.intent.action.VIEW"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.SearchActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.SettingTouActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.ErrorAcivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.SettingAboutActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.SettingCacheActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.SettingUpgradeActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.UpgradeClientActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "zeasn.open.technical.tv.store.ui.AppDetailActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.VIEW",
+          "android.intent.action.VIEW",
+          "android.intent.action.VIEW"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.core.content.FileProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "zeasn.open.technical.tv.store.app.StartBroadcastReceiver",
+        "exported": null,
+        "actions": [
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "zeasn.open.technical.tv.store.app.StoreService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.installer.UninstallReceiverFor28",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.installer.InstallReceiverFor28",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.installer.InstallReceiverForXpak",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.installer.xapi_lib.InstallActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.zeasn.plugin.StubActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.zeasn.plugin.ProxyService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.google.android.gms.version",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.zeasn.analytics.PowerReceiver",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "com.squareup.picasso.PicassoProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.google.android.gms.common.api.GoogleApiActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.lifecycle.ProcessLifecycleOwnerInitializer",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "KuSettings": [
+      {
+        "kind": "activity",
+        "name": "com.my.settings.SettingActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.wifi.MyWifiActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.bluetooth.MyBluetoothActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.bluetooth.MyAutoBluetoothActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.language.LanguageActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.language.LanguageLocalActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.time.DateTimeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.time.MyZonePicker",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.activity.ScreenshotActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.my.service.ScreenServices",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.activity.ProjectionActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.activity.AllAppActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.my.service.BootupReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.my.service.MySetTimeService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.startup.InitializationProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "androidx.profileinstaller.ProfileInstallReceiver",
+        "exported": true,
+        "actions": [
+          "androidx.profileinstaller.action.INSTALL_PROFILE",
+          "androidx.profileinstaller.action.SKIP_FILE",
+          "androidx.profileinstaller.action.SAVE_PROFILE",
+          "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+        ],
+        "permissions": [
+          "android.permission.DUMP"
+        ]
+      }
+    ],
+    "TvSettingsPlus": [
+      {
+        "kind": "provider",
+        "name": "androidx.startup.InitializationProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.timer.TimerActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.retailmode.RetailModeConfirmActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.EnergyCommonActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.AudioResetActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.picture.PictureResetActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.inputs.InputsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.power.PowerActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.power.PictureOffActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.vendor.channels.ChannelsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.vendor.channels.DiseqcTypeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.vendor.channels.ChannelsTwoPanalActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.vendor.channels.ChannelConfirmActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.retailmode.RetailModeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.sound.SoundActivity",
+        "exported": true,
+        "actions": [
+          "com.android.tv.action.VIEW_SOUND_SETTINGS"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.picture.PictureActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.timer.TimePickerActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.multicast.NormalCastActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.picture.DisplayModeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.sound.AudioOutputActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.utils.ProgressDialogActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.picture.PictureConfirmActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.vendor.ResetActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.timer.TimerSetActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.date.DateTimeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.DisplayAndSoundActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.WirelessAddNoteActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.WirelessNoteCommonActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.SpeakerDevicesBeyondActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.SpeakerDeviceBeyondTipsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.ResetSpeakerActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.SelectListActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.StatelliteSpeakerLayoutActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.partnercustomizer.sound.wireless.StatelliteSpeakerLayoutChangeTipsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.partnercustomizer.network.NetworkSliceBroadcastReceiver",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "com.android.tv.settings.partnercustomizer.TvSettingsSliceProvider",
+        "exported": true,
+        "actions": [
+          "android.intent.action.VIEW"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "com.android.tv.settings.partnercustomizer.CustomizedContentProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.BluetoothReconnectService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.partnercustomizer.switchofftimer.SwitchOffTimerService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.WirelessSpeakerServices",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.partnercustomizer.utils.SoundEARCReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.TvBootupReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.partnercustomizer.reeciver.LanguageChangeReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.LOCALE_CHANGED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.uicustom.MainActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.uicustom.fragment.projector.KeystoneCalibrationActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.uicustom.floatmenu.MenuJumpActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.uicustom.floatmenu.FloatMenuService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.MainSettings",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN",
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.setup.WifiSetupActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.NetworkRequestDialogActivity",
+        "exported": true,
+        "actions": [
+          "com.android.settings.wifi.action.NETWORK_REQUEST"
+        ],
+        "permissions": [
+          "android.permission.NETWORK_SETTINGS"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.WifiConnectionActivity",
+        "exported": true,
+        "actions": [
+          "com.android.settings.wifi.action.WIFI_CONNECTION_SETTINGS"
+        ],
+        "permissions": [
+          "android.permission.NETWORK_SETTINGS"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.EditProxySettingsActivity",
+        "exported": true,
+        "actions": [
+          "com.android.settings.wifi.action.EDIT_PROXY_SETTINGS"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.EditIpSettingsActivity",
+        "exported": true,
+        "actions": [
+          "com.android.settings.wifi.action.EDIT_IP_SETTINGS"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.AddWifiNetworkActivity",
+        "exported": true,
+        "actions": [
+          "com.android.settings.wifi.action.ADD_WIFI_NETWORK"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.AccountSliceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.AccountsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.AccountsTrampolineActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.google.android.tv.settings.AccountActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.AccountSyncActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.ManageUserServicesSliceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.google.android.tv.settings.ManageUserServicesActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.RemoveAccountDialog",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accounts.AddAccountWithTypeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.AppsActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.AllAppsActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.specialaccess.AllFilesAccessActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.specialaccess.AppUsageAccessActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.specialaccess.PictureInPictureActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.specialaccess.SystemAlertActivity",
+        "exported": true,
+        "actions": [
+          "android.settings.action.MANAGE_OVERLAY_PERMISSION",
+          "android.settings.action.MANAGE_OVERLAY_PERMISSION"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.specialaccess.AlarmsAndRemindersActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.AppManagementActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.AUTO_REVOKE_PERMISSIONS"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.StorageResetActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN",
+          "android.intent.action.MANAGE_PACKAGE_STORAGE",
+          "android.os.storage.action.MANAGE_STORAGE"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.storage.ResetActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.connectivity.NetworkActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN",
+          "android.settings.panel.action.INTERNET_CONNECTIVITY",
+          "android.settings.panel.action.WIFI"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.oemlink.NetworkSettingsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.SecurityActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.users.RestrictedProfileActivityLauncherEntry",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.displaysound.DisplaySoundActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN",
+          "android.settings.panel.action.VOLUME"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.display.ambient.AmbientSliceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.google.android.tv.settings.AmbientActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.display.daydream.DaydreamActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.display.daydream.DaydreamVoiceAction",
+        "exported": true,
+        "actions": [
+          "com.google.android.pano.action.SLEEP"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.CaptionSetupActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.oemlink.AccessibilityCaptionActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.DateTimeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.LocationActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.TextToSpeechActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.development.DevelopmentActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.development.AppPicker",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.inputmethod.KeyboardActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.autofill.AutofillPickerActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.autofill.AutofillPickerTrampolineActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.AppLanguageActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.LanguageActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.InputsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accessories.BluetoothAccessoryActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": [
+          "android.permission.BLUETOOTH_CONNECT"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accessories.AddAccessoryActivity",
+        "exported": true,
+        "actions": [
+          "com.google.android.intent.action.CONNECT_INPUT"
+        ],
+        "permissions": [
+          "android.permission.BLUETOOTH_CONNECT"
+        ]
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.accessories.BluetoothPairingRequest",
+        "exported": true,
+        "actions": [
+          "android.bluetooth.device.action.PAIRING_REQUEST"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accessories.BluetoothPairingDialog",
+        "exported": true,
+        "actions": [
+          "android.bluetooth.device.action.PAIRING_REQUEST"
+        ],
+        "permissions": [
+          "android.permission.BLUETOOTH_PRIVILEGED"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accessories.BluetoothDevicePickerActivity",
+        "exported": true,
+        "actions": [
+          "android.bluetooth.devicepicker.action.LAUNCH"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.about.AboutActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.about.StatusActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.about.LicenseActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.name.DeviceNameSettingsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.name.DeviceNameSuggestionActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.name.setup.DeviceNameFlowStartActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.users.UserSwitchListenerService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.users.UserSwitchListenerService$BootReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.LOCKED_BOOT_COMPLETED",
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.device.storage.DiskReceiver",
+        "exported": true,
+        "actions": [
+          "android.os.storage.action.VOLUME_STATE_CHANGED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.users.RestrictedProfilePinService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.device.storage.SettingsStorageService$Impl",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.storage.NewStorageActivity",
+        "exported": true,
+        "actions": [
+          "com.android.tv.settings.action.NEW_STORAGE"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.storage.UnmountActivity",
+        "exported": true,
+        "actions": [
+          "com.android.tv.settings.action.UNMOUNT_STORAGE"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.storage.FormatActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.storage.MigrateStorageActivity",
+        "exported": true,
+        "actions": [
+          "com.android.tv.settings.action.MIGRATE_STORAGE"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.MoveAppActivity",
+        "exported": true,
+        "actions": [
+          "com.android.tv.settings.action.MOVE_APP"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accessories.BluetoothRequestPermissionActivity",
+        "exported": true,
+        "actions": [
+          "android.bluetooth.adapter.action.REQUEST_DISCOVERABLE",
+          "android.bluetooth.adapter.action.REQUEST_ENABLE"
+        ],
+        "permissions": [
+          "android.permission.BLUETOOTH"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.system.FallbackHome",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.inputmethod.InputMethodAndSubtypeEnablerActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.specialaccess.ExternalSourcesActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.privacy.NotificationAccessActivity",
+        "exported": true,
+        "actions": [
+          "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.privacy.SensorToggleActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.EmptyStubActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.core.content.FileProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "com.android.tv.settings.name.SuggestionContentProvider",
+        "exported": true,
+        "actions": [
+          "com.android.settings.action.SUGGESTION_STATE_PROVIDER"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.deviceadmin.ProfileOwnerAdd",
+        "exported": true,
+        "actions": [
+          "android.app.action.SET_PROFILE_OWNER"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.ActionDisabledByAdminDialog",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.deviceadmin.DeviceAdminAdd",
+        "exported": true,
+        "actions": [
+          "android.app.action.ADD_DEVICE_ADMIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.slice.SliceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.oemlink.AccessibilitySettingsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.oemlink.AccessibilityServiceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.oemlink.FactoryResetActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.FACTORY_RESET"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.vendor.VendorActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.DeviceSettingBroadcastReceiver",
+        "exported": true,
+        "actions": [],
+        "permissions": [
+          "android.permission.READ_PRIVILEGED_PHONE_STATE"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.accessories.BluetoothActionActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.android.tv.settings.accessories.BluetoothDevicesService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "com.android.tv.settings.accessories.ConnectedDevicesSliceProvider",
+        "exported": true,
+        "actions": [
+          "android.intent.action.VIEW"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.accessories.ConnectedDevicesSliceBroadcastReceiver",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.BootReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.RemoteBugreportActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": [
+          "android.permission.DUMP"
+        ]
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.enterprise.EnterprisePrivacySettingsActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.tv.settings.device.apps.ConfirmationActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.android.tv.settings.GlobalKeyReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.GLOBAL_BUTTON"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.android.settingslib.users.AvatarPickerActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "androidx.remotecallback.ProviderRelayReceiver",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "androidx.slice.compat.SlicePermissionActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "RuiYunOta": [
+      {
+        "kind": "activity",
+        "name": ".OTASystemNetworkUpdateActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": ".OTASystemLocalUpdateActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": ".OTADownloadService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": ".OTACheckService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.rjpj.yunota.FileSelector",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.rjpj.yunota.AbUpdate",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "KuSourceRJ": [
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.MainActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.BootSoureActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.BrightActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.VoiceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.RestoreActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.HighTemperatureActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.FanDetectionActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.AllAppAutoActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.AuthorizationActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.DustproofActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.coolux.source.service.BootupReceiver",
+        "exported": true,
+        "actions": [
+          "android.intent.action.BOOT_COMPLETED"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.coolux.source.service.ScreensaverReceiver",
+        "exported": true,
+        "actions": [
+          "com.action.screensaver"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.coolux.source.service.BrightReceiver",
+        "exported": true,
+        "actions": [
+          "com.action.brightReceiver"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.coolux.source.service.TimeService",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.PoweronModeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.ProjectModelActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.KeystoneActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.AutomaticAdmissionActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.MyTestActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.TestCastActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.InterfaceTestActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.StandbyActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.DlpActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.InterfaceActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.BrightTestActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.AudioVideoActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.LeftRightVideoActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.AgingModelActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.AgingActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.RebootNumActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.PrintTestActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.CustomBrightActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.OtherActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.ClearTimeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.SetTimeActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.WifiSNActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.coolux.source.activity.testcast.WiredSNActivity",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.startup.InitializationProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "RuiAutoFocus": [
+      {
+        "kind": "service",
+        "name": "com.hysd.client.VAF2S",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.hysd.xymscreen.MainActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      }
+    ],
+    "trdservice": [
+      {
+        "kind": "activity",
+        "name": "com.trd.service.MainActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.trd.service.TrdService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "com.trd.service.system.shutdown.PreShutdownReceiver",
+        "exported": true,
+        "actions": [
+          "com.android.server.power.ACTION_PRE_SHUTDOWN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.startup.InitializationProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "trdmiddle": [
+      {
+        "kind": "activity",
+        "name": "com.trd.framework.MainActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "service",
+        "name": "com.trd.framework.TrdSystemService",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      }
+    ],
+    "KuSetupWizard": [
+      {
+        "kind": "activity",
+        "name": "com.my.settings.wifi.ProvisionWifiActivity",
+        "exported": true,
+        "actions": [
+          "android.intent.action.MAIN"
+        ],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.activity.MenuPromptActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "activity",
+        "name": "com.my.settings.activity.WarningActivity",
+        "exported": null,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "provider",
+        "name": "androidx.startup.InitializationProvider",
+        "exported": true,
+        "actions": [],
+        "permissions": []
+      },
+      {
+        "kind": "receiver",
+        "name": "androidx.profileinstaller.ProfileInstallReceiver",
+        "exported": true,
+        "actions": [
+          "androidx.profileinstaller.action.INSTALL_PROFILE",
+          "androidx.profileinstaller.action.SKIP_FILE",
+          "androidx.profileinstaller.action.SAVE_PROFILE",
+          "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+        ],
+        "permissions": [
+          "android.permission.DUMP"
+        ]
+      }
+    ]
+  },
+  "candidate_edges": [
+    {
+      "from": "zxlauncher",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "com/zeasn/utils/AppUtil.java",
+      "line": 645,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxlauncher",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "com/zeasn/utils/TvSetting.java",
+      "line": 7,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxlauncher",
+      "target_literal": "com.zeasn.whale.saas",
+      "target_known_package": "zxlauncher",
+      "class": "com/zeasn/launcher/view/NavigationView.java",
+      "line": 62,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxlauncher",
+      "target_literal": "com.zeasn.whale.saas",
+      "target_known_package": "zxlauncher",
+      "class": "com/zeasn/launcher/config/MyJumpMgr.java",
+      "line": 154,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "com/zeasn/utils/AppUtil.java",
+      "line": 650,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "com/zeasn/utils/TvSetting.java",
+      "line": 7,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "zeasn.open.technical.tv.store",
+      "target_known_package": "zxstore",
+      "class": "zeasn/open/technical/tv/store/app/StartBroadcastReceiver.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "startForegroundService",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "zeasn.open.technical.tv.store",
+      "target_known_package": "zxstore",
+      "class": "zeasn/open/technical/tv/store/app/StoreService.java",
+      "line": 141,
+      "nearby_dispatch_operations": [
+        "startForegroundService",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "zeasn.open.technical.tv.store",
+      "target_known_package": "zxstore",
+      "class": "zeasn/open/technical/tv/store/ui/UpgradeClientActivity.java",
+      "line": 133,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "zeasn/open/technical/tv/store/ui/UpgradeClientActivity.java",
+      "line": 149,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "zeasn.open.technical.tv.store",
+      "target_known_package": "zxstore",
+      "class": "zeasn/open/technical/tv/store/ui/dialogbuilder/NetworkWrongDialogBuilder.java",
+      "line": 41,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "zeasn.open.technical.tv.store",
+      "target_known_package": "zxstore",
+      "class": "zeasn/open/technical/tv/store/ui/dialogbuilder/NetworkWrongDialogBuilder.java",
+      "line": 44,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "zxstore",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "zeasn/open/technical/tv/store/ui/dialogbuilder/NetworkWrongDialogBuilder.java",
+      "line": 58,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/settingslib/RestrictedLockUtilsInternal.java",
+      "line": 329,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 18,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 155,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 196,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 258,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/settings/wifi/WifiConfigController.java",
+      "line": 1443,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSettings",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/settings/activity/ScreenshotActivity.java",
+      "line": 188,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/BootReceiver.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/MainFragment.java",
+      "line": 491,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/SuggestionQuickSettingPrefsContainer.java",
+      "line": 161,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/GlobalKeyReceiver.java",
+      "line": 20,
+      "nearby_dispatch_operations": [
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/PreferenceUtils.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/TvSettingsSliceProvider.java",
+      "line": 138,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/TvSettingsSliceProvider.java",
+      "line": 170,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accounts/AccountsFragment.java",
+      "line": 132,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accounts/AddAccountWithTypeActivity.java",
+      "line": 74,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accounts/AccountsTrampolineActivity.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/users/AppRestrictionsFragment.java",
+      "line": 541,
+      "nearby_dispatch_operations": [
+        "sendOrderedBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accessories/BluetoothActionActivity.java",
+      "line": 10,
+      "nearby_dispatch_operations": [
+        "bindService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accessories/BluetoothAccessoryFragment.java",
+      "line": 328,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "com/android/tv/settings/accessories/ConnectedDevicesSliceProvider.java",
+      "line": 54,
+      "nearby_dispatch_operations": [
+        "bindService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accessories/ConnectedDevicesSliceProvider.java",
+      "line": 59,
+      "nearby_dispatch_operations": [
+        "bindService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accessories/BluetoothPairingRequest.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accessories/BluetoothPairingRequest.java",
+      "line": 11,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/accessibility/AccessibilityServiceFragment.java",
+      "line": 25,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/privacy/PrivacyFragment.java",
+      "line": 66,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/autofill/AutofillPickerTrampolineActivity.java",
+      "line": 10,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/connectivity/NetworkFragmentCompat.java",
+      "line": 16,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/connectivity/NetworkFragment.java",
+      "line": 170,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/connectivity/NetworkFragment.java",
+      "line": 356,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/connectivity/NetworkFragment.java",
+      "line": 382,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/CaptionFragment.java",
+      "line": 181,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/DateTimeFragment.java",
+      "line": 183,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/TtsEngineSettingsFragment.java",
+      "line": 115,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/TtsEngineSettingsFragment.java",
+      "line": 213,
+      "nearby_dispatch_operations": [
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/SecurityFragment.java",
+      "line": 374,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+      "line": 201,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/LocationFragment.java",
+      "line": 200,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/oemlink/FactoryResetActivity.java",
+      "line": 53,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/name/DeviceManager.java",
+      "line": 5,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/about/AboutFragment.java",
+      "line": 268,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/about/AboutFragment.java",
+      "line": 304,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/about/AboutFragment.java",
+      "line": 320,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/about/LicenseActivity.java",
+      "line": 70,
+      "nearby_dispatch_operations": [
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/WhiteBalanceCorrection11Fragment.java",
+      "line": 29,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/AutoBacklightFragment.java",
+      "line": 60,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/ColorTuneSaturationFragment.java",
+      "line": 30,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/ColorTuneBrightnessFragment.java",
+      "line": 26,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/VGAFragment.java",
+      "line": 74,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/ColorTuneHueFragment.java",
+      "line": 26,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/GammaFragment.java",
+      "line": 66,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/ColorTuneOffsetFragment.java",
+      "line": 26,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/PictureFragment.java",
+      "line": 225,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/AutoBrightnessFragment.java",
+      "line": 60,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/FilmmakerFragment.java",
+      "line": 63,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/ColorTemperatureFragment.java",
+      "line": 88,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/ColorTuneGainFragment.java",
+      "line": 26,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/picture/PictureModeFragment.java",
+      "line": 234,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/inputs/InputsFragment.java",
+      "line": 176,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/retailmode/RetailModeSettingFragment.java",
+      "line": 37,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/retailmode/RetailModeSettingFragment.java",
+      "line": 109,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/retailmode/RetailModeSettingFragment.java",
+      "line": 114,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/DisplayPreviewFragment.java",
+      "line": 39,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/DisplayPreviewFragment.java",
+      "line": 55,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/DisplayPreviewFragment.java",
+      "line": 75,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/MultiCastFragment.java",
+      "line": 117,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/ResetActivity.java",
+      "line": 12,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/ResetActivity.java",
+      "line": 34,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/ResetActivity.java",
+      "line": 179,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/DisplayAndSoundFragment.java",
+      "line": 32,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/DisplayAndSoundFragment.java",
+      "line": 47,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/DisplayAndSoundFragment.java",
+      "line": 64,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/utils/ChannelsUtils.java",
+      "line": 1322,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/utils/ChannelsUtils.java",
+      "line": 1801,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/utils/ChannelsUtils.java",
+      "line": 1814,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/utils/ProgressBarVerticalFragment.java",
+      "line": 188,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/utils/ProgressBarDialog.java",
+      "line": 497,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/network/NetworkSliceBroadcastReceiver.java",
+      "line": 5,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/network/NetworkWakeConfigsFragment.java",
+      "line": 155,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/date/DateTimeFragment.java",
+      "line": 159,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/tvsettingservice/TvBootupReceiver.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/tvsettingservice/TVSettingConfig.java",
+      "line": 373,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/timer/TimerFragment.java",
+      "line": 62,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/switchofftimer/SwitchOffTimerService.java",
+      "line": 170,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/power/AutoSleepFragment.java",
+      "line": 75,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/power/PowerFragment.java",
+      "line": 204,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/power/PowerFragment.java",
+      "line": 222,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/power/PowerFragment.java",
+      "line": 309,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/EarcFragment.java",
+      "line": 60,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/FastScanOperatorsFragment.java",
+      "line": 94,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelInstallModeFragment.java",
+      "line": 96,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelsScanFragment.java",
+      "line": 570,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelsScanFragment.java",
+      "line": 602,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelsScanFragment.java",
+      "line": 619,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/OperatorsFragment.java",
+      "line": 53,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelConfirmActivity.java",
+      "line": 46,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelConfirmActivity.java",
+      "line": 301,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelConfirmActivity.java",
+      "line": 321,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/vendor/channels/ChannelConfirmActivity.java",
+      "line": 325,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/wireless/WirelessSpeakerFragment.java",
+      "line": 440,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/wireless/StatelliteSpeakerLayoutActivity.java",
+      "line": 88,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/wireless/WirelessAddNoteActivity.java",
+      "line": 71,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/wireless/SpeakerDeviceBeyondTipsActivity.java",
+      "line": 31,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/wireless/WirelessNoteCommonActivity.java",
+      "line": 191,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/wireless/SpeakerDeviceInfoFragment.java",
+      "line": 174,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/partnercustomizer/sound/equalizerdetail/EqualizerDetailFragment.java",
+      "line": 26,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/SettingsStorageService.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/SettingsStorageService.java",
+      "line": 133,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/DiskReceiver.java",
+      "line": 67,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/FormatActivity.java",
+      "line": 18,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/FormatActivity.java",
+      "line": 164,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/ResetActivity.java",
+      "line": 132,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/BackupAppsStepFragment.java",
+      "line": 157,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/NewStorageActivity.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/storage/NewStorageActivity.java",
+      "line": 112,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/apps/AppManagementFragment.java",
+      "line": 146,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/apps/AppManagementFragment.java",
+      "line": 293,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/apps/AppManagementFragment.java",
+      "line": 318,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/apps/AppManagementFragment.java",
+      "line": 322,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/apps/ForceStopPreference.java",
+      "line": 19,
+      "nearby_dispatch_operations": [
+        "sendOrderedBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/sound/AudioOutputFragment.java",
+      "line": 32,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/sound/SoundFragment.java",
+      "line": 168,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/device/display/daydream/DaydreamFragment.java",
+      "line": 138,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/settingslib/InputMethodHelper.java",
+      "line": 60,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/settingslib/DreamBackend.java",
+      "line": 232,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/settingslib/AutofillHelper.java",
+      "line": 48,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/enterprise/EnterprisePrivacyFeatureProviderImpl.java",
+      "line": 181,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/enterprise/EnterprisePrivacyFeatureProviderImpl.java",
+      "line": 202,
+      "nearby_dispatch_operations": [
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/basic/BasicModeFeatureProviderImplX.java",
+      "line": 28,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/network/NetworkState.java",
+      "line": 260,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/network/NetworkState.java",
+      "line": 269,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/network/AddEasyConnectPreferenceController.java",
+      "line": 15,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/accessibility/AccessibilityServiceState.java",
+      "line": 67,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/privacy/LocationState.java",
+      "line": 134,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/system/DateTimeState.java",
+      "line": 173,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/inputmethod/InputMethodPreferenceController.java",
+      "line": 122,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/inputmethod/InputMethodPreferenceController.java",
+      "line": 136,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/inputmethod/InputMethodPreferenceController.java",
+      "line": 157,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/util/PreferenceCompatUtils.java",
+      "line": 8,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/about/DevelopmentSettingsEnabler.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/about/DeviceManager.java",
+      "line": 5,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/about/AboutState.java",
+      "line": 253,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/about/AboutState.java",
+      "line": 307,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/about/AboutState.java",
+      "line": 321,
+      "nearby_dispatch_operations": [
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/about/LegalState.java",
+      "line": 62,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/settingslib/enterprise/BiometricActionDisabledByAdminController.java",
+      "line": 28,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/enterprise/apps/InstalledAppCounter.java",
+      "line": 13,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/apps/AppManagementState.java",
+      "line": 177,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/apps/AppManagementState.java",
+      "line": 280,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/apps/AppManagementState.java",
+      "line": 284,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/apps/RecentAppsPreferenceController.java",
+      "line": 150,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/apps/AppUtils.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/apps/ForceStopPreferenceController.java",
+      "line": 40,
+      "nearby_dispatch_operations": [
+        "sendOrderedBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/device/display/daydream/DaydreamState.java",
+      "line": 132,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/library/startup/startup/StartupVerificationFeatureProviderImplX.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/dialog/old/DialogActivity.java",
+      "line": 113,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/dialog/old/BaseDialogFragment.java",
+      "line": 13,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/dialog/old/LiteFragment.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/system/development/AppPicker.java",
+      "line": 76,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/FloatMenuManager.java",
+      "line": 344,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/MenuJumpActivity.java",
+      "line": 66,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+      "line": 44,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+      "line": 48,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/DateTimeFragment.java",
+      "line": 134,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/GeneralFragment.java",
+      "line": 97,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/GeneralFragment.java",
+      "line": 100,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/android/tv/settings/uicustom/fragment/general/GeneralFragment.java",
+      "line": 113,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/GeneralFragment.java",
+      "line": 126,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/BrightnessModeSettingsFragment.java",
+      "line": 86,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/BrightnessModeSettingsFragment.java",
+      "line": 87,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/general/BrightnessModeSettingsFragment.java",
+      "line": 88,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/source/SourceFragment.java",
+      "line": 236,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/ProjectorFragment.java",
+      "line": 135,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.hysd.screen",
+      "target_known_package": "RuiAutoFocus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/ProjectorFragment.java",
+      "line": 149,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/ProjectorFragment.java",
+      "line": 200,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/ProjectorFragment.java",
+      "line": 202,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/ProjectorFragment.java",
+      "line": 209,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/KeystoneSettingsFragment.java",
+      "line": 146,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/KeystoneCalibrationActivity.java",
+      "line": 329,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.hysd.screen",
+      "target_known_package": "RuiAutoFocus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/KeystoneCalibrationActivity.java",
+      "line": 330,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/projector/KeystoneCalibrationActivity.java",
+      "line": 340,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/wifi/WifiNewFragment.java",
+      "line": 496,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/wifi/WifiNewFragment.java",
+      "line": 500,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/system/SystemFragment.java",
+      "line": 96,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/system/SystemFragment.java",
+      "line": 99,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/system/SystemFragment.java",
+      "line": 108,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/fragment/system/SystemFragment.java",
+      "line": 109,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent",
+        "setPackage",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/general/BrightnessModeSettingsSecondaryController.java",
+      "line": 100,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/general/BrightnessModeSettingsSecondaryController.java",
+      "line": 103,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/general/DateTimeSecondaryController.java",
+      "line": 163,
+      "nearby_dispatch_operations": [
+        "sendBroadcast"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/general/GeneralSubMenuController.java",
+      "line": 118,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/general/GeneralSubMenuController.java",
+      "line": 135,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/source/SourceSubMenuController.java",
+      "line": 436,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/source/SourceSubMenuController.java",
+      "line": 452,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/source/SourceSubMenuController.java",
+      "line": 463,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/source/SourceSubMenuController.java",
+      "line": 518,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/projector/ProjectorSubMenuController.java",
+      "line": 120,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.hysd.screen",
+      "target_known_package": "RuiAutoFocus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/projector/ProjectorSubMenuController.java",
+      "line": 135,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/projector/ProjectorSubMenuController.java",
+      "line": 173,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/projector/ProjectorSubMenuController.java",
+      "line": 178,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/projector/KeystoneSettingsSecondaryController.java",
+      "line": 191,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/projector/KeystoneSettingsSecondaryController.java",
+      "line": 203,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/system/SystemSubMenuController.java",
+      "line": 80,
+      "nearby_dispatch_operations": [
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/system/SystemSubMenuController.java",
+      "line": 84,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/system/SystemSubMenuController.java",
+      "line": 93,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/system/SystemSubMenuController.java",
+      "line": 111,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/network/wifi/WifiSubMenuController.java",
+      "line": 563,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "TvSettingsPlus",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/android/tv/settings/uicustom/floatmenu/controller/network/wifi/WifiSubMenuController.java",
+      "line": 567,
+      "nearby_dispatch_operations": [
+        "setClassName",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/rjpj/yunota/OTASystemNetworkUpdateActivity.java",
+      "line": 580,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/rjpj/yunota/OTASystemNetworkUpdateActivity.java",
+      "line": 603,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota.OTASystemNetworkUpdateActivity",
+      "target_known_package": null,
+      "class": "com/rjpj/yunota/OTASystemNetworkUpdateActivity.java",
+      "line": 603,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/rjpj/yunota/OTASystemLocalUpdateActivity.java",
+      "line": 330,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/rjpj/yunota/OTACheckService.java",
+      "line": 143,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota.OTASystemNetworkUpdateActivity",
+      "target_known_package": null,
+      "class": "com/rjpj/yunota/OTACheckService.java",
+      "line": 143,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota.OTACheckService",
+      "target_known_package": null,
+      "class": "com/rjpj/yunota/OTACheckService.java",
+      "line": 154,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/rjpj/yunota/FileSelector.java",
+      "line": 107,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiYunOta",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/rjpj/yunota/OTADownloadService.java",
+      "line": 72,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSourceRJ",
+      "target_literal": "com.hysd.screen",
+      "target_known_package": "RuiAutoFocus",
+      "class": "com/coolux/source/utils/IntentUtils.java",
+      "line": 29,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSourceRJ",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/coolux/source/utils/IntentUtils.java",
+      "line": 37,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSourceRJ",
+      "target_literal": "android.settings.SETTINGS",
+      "target_known_package": null,
+      "class": "com/coolux/source/utils/IntentUtils.java",
+      "line": 171,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSourceRJ",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/coolux/source/utils/IntentUtils.java",
+      "line": 228,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSourceRJ",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/coolux/source/utils/UtilsTools.java",
+      "line": 120,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "RuiAutoFocus",
+      "target_literal": "com.hysd.screen",
+      "target_known_package": "RuiAutoFocus",
+      "class": "com/hysd/client/VAF2S.java",
+      "line": 226,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setAction",
+        "setPackage"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.service",
+      "target_known_package": "trdservice",
+      "class": "com/trd/service/TrdApp.java",
+      "line": 1,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.rjpj.yunota",
+      "target_known_package": "RuiYunOta",
+      "class": "com/trd/service/TrdService.java",
+      "line": 222,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.rjpj.yunota.OTACheckService",
+      "target_known_package": null,
+      "class": "com/trd/service/TrdService.java",
+      "line": 222,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.service",
+      "target_known_package": "trdservice",
+      "class": "com/trd/service/TrdService.java",
+      "line": 266,
+      "nearby_dispatch_operations": [
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.service",
+      "target_known_package": "trdservice",
+      "class": "com/trd/service/TrdService.java",
+      "line": 272,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setComponent"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.factory.SplashActivity",
+      "target_known_package": null,
+      "class": "com/trd/service/communication/GlobalKeyEventProcess.java",
+      "line": 110,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.projector.settings.MainSettingsActivity",
+      "target_known_package": null,
+      "class": "com/trd/service/communication/GlobalKeyEventProcess.java",
+      "line": 118,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.android.tv.settings",
+      "target_known_package": "TvSettingsPlus",
+      "class": "com/trd/service/communication/GlobalKeyEventProcess.java",
+      "line": 133,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.service",
+      "target_known_package": "trdservice",
+      "class": "com/trd/service/communication/KeyEventCtrlService.java",
+      "line": 22,
+      "nearby_dispatch_operations": [
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.service",
+      "target_known_package": "trdservice",
+      "class": "com/trd/service/communication/KeyEventCtrlService.java",
+      "line": 48,
+      "nearby_dispatch_operations": [
+        "sendBroadcast",
+        "setAction"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdservice",
+      "target_literal": "com.trd.service",
+      "target_known_package": "trdservice",
+      "class": "com/trd/service/communication/KeyEventCtrlService.java",
+      "line": 81,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "trdmiddle",
+      "target_literal": "com.trd.framework",
+      "target_known_package": "trdmiddle",
+      "class": "com/trd/framework/TrdApplication.java",
+      "line": 34,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/settingslib/RestrictedLockUtilsInternal.java",
+      "line": 329,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 18,
+      "nearby_dispatch_operations": [
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 155,
+      "nearby_dispatch_operations": [
+        "setAction",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 196,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startActivity"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.coolux.source",
+      "target_known_package": "KuSourceRJ",
+      "class": "com/my/utils/IntentUtils.java",
+      "line": 258,
+      "nearby_dispatch_operations": [
+        "setComponent",
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/settings/wifi/WifiConfigController.java",
+      "line": 1443,
+      "nearby_dispatch_operations": [
+        "setClassName"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    },
+    {
+      "from": "KuSetupWizard",
+      "target_literal": "com.my.settings",
+      "target_known_package": "KuSettings",
+      "class": "com/my/settings/activity/ScreenshotActivity.java",
+      "line": 188,
+      "nearby_dispatch_operations": [
+        "startService"
+      ],
+      "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
+    }
+  ],
+  "notes": []
+}
