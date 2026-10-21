@@ -1,0 +1,176 @@
+{
+  "compared": [
+    "RUIOS.8052.1.0.4 Oct 2026 OTA",
+    "RUIOS.8054.1.0.1 Sep 2026 stock PKG"
+  ],
+  "modules": [
+    {
+      "file": "vendor_a/lib/modules/wlan_mt7663.ko",
+      "same_full_file": false,
+      "sections": {
+        ".text": {
+          "same": false,
+          "size_8052": 1301824,
+          "size_8054": 1301824
+        },
+        ".rodata": {
+          "same": false,
+          "size_8052": 428852,
+          "size_8054": 428852
+        },
+        ".modinfo": {
+          "same": false,
+          "size_8052": 297,
+          "size_8054": 297
+        },
+        ".data": {
+          "same": true,
+          "size_8052": 29200,
+          "size_8054": 29200
+        },
+        ".data.rel.ro": {
+          "same": false,
+          "size_8052": null,
+          "size_8054": null
+        }
+      },
+      "modinfo_8052": [
+        "depends=cfg80211,mtreset_,wlan_mt7663_prealloc",
+        "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "modinfo_8054": [
+        "depends=cfg80211,mtreset_,wlan_mt7663_prealloc",
+        "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "common_named_functions": 0,
+      "changed_named_functions": 0,
+      "changed_named_sample": []
+    },
+    {
+      "file": "vendor_a/lib/modules/wlan_mt7902.ko",
+      "same_full_file": false,
+      "sections": {
+        ".text": {
+          "same": true,
+          "size_8052": 1653308,
+          "size_8054": 1653308
+        },
+        ".rodata": {
+          "same": false,
+          "size_8052": 548162,
+          "size_8054": 548162
+        },
+        ".modinfo": {
+          "same": false,
+          "size_8052": 286,
+          "size_8054": 286
+        },
+        ".data": {
+          "same": true,
+          "size_8052": 55184,
+          "size_8054": 55184
+        },
+        ".data.rel.ro": {
+          "same": false,
+          "size_8052": null,
+          "size_8054": null
+        }
+      },
+      "modinfo_8052": [
+        "depends=cfg80211,mtreset,mtprealloc",
+        "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "modinfo_8054": [
+        "depends=cfg80211,mtreset,mtprealloc",
+        "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "common_named_functions": 0,
+      "changed_named_functions": 0,
+      "changed_named_sample": []
+    },
+    {
+      "file": "vendor_a/lib/modules/wlan_mt7961.ko",
+      "same_full_file": false,
+      "sections": {
+        ".text": {
+          "same": true,
+          "size_8052": 2108772,
+          "size_8054": 2108772
+        },
+        ".rodata": {
+          "same": false,
+          "size_8052": 665808,
+          "size_8054": 665808
+        },
+        ".modinfo": {
+          "same": false,
+          "size_8052": 286,
+          "size_8054": 286
+        },
+        ".data": {
+          "same": true,
+          "size_8052": 53840,
+          "size_8054": 53840
+        },
+        ".data.rel.ro": {
+          "same": false,
+          "size_8052": null,
+          "size_8054": null
+        }
+      },
+      "modinfo_8052": [
+        "depends=cfg80211,mtreset,mtprealloc",
+        "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "modinfo_8054": [
+        "depends=cfg80211,mtreset,mtprealloc",
+        "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "common_named_functions": 0,
+      "changed_named_functions": 0,
+      "changed_named_sample": []
+    },
+    {
+      "file": "vendor_a/lib/modules/dtv_driver.ko",
+      "same_full_file": false,
+      "sections": {
+        ".text": {
+          "same": true,
+          "size_8052": 1326092,
+          "size_8054": 1326092
+        },
+        ".rodata": {
+          "same": false,
+          "size_8052": 411928,
+          "size_8054": 411928
+        },
+        ".modinfo": {
+          "same": false,
+          "size_8052": 512,
+          "size_8054": 512
+        },
+        ".data": {
+          "same": true,
+          "size_8052": 341792,
+          "size_8054": 341792
+        },
+        ".data.rel.ro": {
+          "same": false,
+          "size_8052": null,
+          "size_8054": null
+        }
+      },
+      "modinfo_8052": [
+        "depends=mik,time_stamp,mtk-sti_wrapper,iniparser,leds-breath,mtk-efuse,cb2",
+        "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "modinfo_8054": [
+        "depends=mik,time_stamp,mtk-sti_wrapper,iniparser,leds-breath,mtk-efuse,cb2",
+        "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+      ],
+      "common_named_functions": 5524,
+      "changed_named_functions": 0,
+      "changed_named_sample": []
+    }
+  ]
+}
