@@ -1,0 +1,114 @@
+{
+  "source_8052": "RUIOS.8052.1.0.4 OTA",
+  "source_8054": "RUIOS.8054.1.0.1 stock, verified deep-app artifact run 39421706994",
+  "jadx_exit_code": 0,
+  "counts": {
+    "same": 15928,
+    "changed": 10
+  },
+  "modified_or_added_sample": [
+    {
+      "class": "com/hysd/ai/AiFileUtils.java",
+      "method": "CheckHysdFiles(boolean isForce)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/ai/RuiCameraApi.java",
+      "method": "RuiCameraApi(android.content.Context context)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/ai/RuiCameraApi.java",
+      "method": "startTof()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/client/VAF2S.java",
+      "method": "onCreate()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/client/VAF2S.java",
+      "method": "onStartCommand(android.content.Intent intent, int flags, int startId)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "onCreate(android.os.Bundle savedInstanceState)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "onReceive(android.content.Context context, android.content.Intent intent)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "onStart()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "updateDataFast()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "updateDataSlow()",
+      "status": "changed"
+    }
+  ],
+  "hardware_relevant_sample": [
+    {
+      "class": "com/hysd/ai/AiFileUtils.java",
+      "method": "CheckHysdFiles(boolean isForce)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/ai/RuiCameraApi.java",
+      "method": "RuiCameraApi(android.content.Context context)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/ai/RuiCameraApi.java",
+      "method": "startTof()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/client/VAF2S.java",
+      "method": "onCreate()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/client/VAF2S.java",
+      "method": "onStartCommand(android.content.Intent intent, int flags, int startId)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "onCreate(android.os.Bundle savedInstanceState)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "onReceive(android.content.Context context, android.content.Intent intent)",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "onStart()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "updateDataFast()",
+      "status": "changed"
+    },
+    {
+      "class": "com/hysd/xymscreen/MainActivity.java",
+      "method": "updateDataSlow()",
+      "status": "changed"
+    }
+  ],
+  "note": "Digests derived from JADX output; changes may include compiler/decompiler artifacts. No source is published."
+}
