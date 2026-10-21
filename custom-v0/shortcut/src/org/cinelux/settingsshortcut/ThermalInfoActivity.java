@@ -131,7 +131,7 @@ public final class ThermalInfoActivity extends Activity {
                 case PowerManager.THERMAL_STATUS_SHUTDOWN: return "SHUTDOWN";
                 default: return String.valueOf(status);
             }
-        } catch (SecurityException | RuntimeException ex) {
+        } catch (RuntimeException ex) {
             return getString(R.string.thermal_unavailable);
         }
     }
