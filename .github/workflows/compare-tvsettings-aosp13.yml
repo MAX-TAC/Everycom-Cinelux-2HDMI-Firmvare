@@ -1,0 +1,57 @@
+name: Compare OEM TvSettingsPlus API to explicit AOSP Android 13 snapshot
+
+on:
+  push:
+    branches: [settings-wizard-debloat-audit-20261021]
+    paths:
+      - ".github/workflows/compare-tvsettings-aosp13.yml"
+      - "tools/compare_tvsettings_aosp13_reference.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch public upstream AOSP Android 13 TvSettings
+        run: |
+          git clone -q --depth 1 --branch android-13.0.0_r56 https://android.googlesource.com/platform/packages/apps/TvSettings /tmp/aosp-tv
+          test -d /tmp/aosp-tv/Settings/src/com/android/tv/settings
+          echo "AOSP commit $(git -C /tmp/aosp-tv rev-parse HEAD)"
+      - name: Install Java decompiler and extract original 8052 files
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils unzip
+          mkdir -p /tmp/jadx-bin /tmp/dumper /tmp/images /tmp/erofs/system_ext
+          curl -fL --retry 4 "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip" -o /tmp/jadx.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          curl -fL --retry 4 "https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz" -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+          curl -fL --retry 5 --retry-delay 3 "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip" | sha256sum -c -
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system_ext -o /tmp/images /tmp/ota.zip > /tmp/dump.log 2>&1 || { tail -n 60 /tmp/dump.log; exit 1; }
+          fsck.erofs --extract="/tmp/erofs/system_ext" /tmp/images/system_ext.img >/tmp/erofs.log 2>&1 || { tail -n 70 /tmp/erofs.log; exit 1; }
+          APK=/tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk
+          test -f "$APK"
+          /tmp/jadx-bin/bin/jadx --no-res --no-imports --threads-count 4 -d /tmp/tv-jadx "$APK" > /tmp/jadx.log 2>&1 || { tail -n 70 /tmp/jadx.log; exit 1; }
+      - name: Compare source component and method surfaces
+        run: |
+          python3 -u tools/compare_tvsettings_aosp13_reference.py
+          head -n 90 analysis/Settings_Wizard_Debloat_20261021/AOSP_TVSETTINGS_13_REFERENCE_RU.md
+      - name: Publish metadata only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Settings_Wizard_Debloat_20261021/AOSP_TVSETTINGS_13_REFERENCE_RU.md analysis/Settings_Wizard_Debloat_20261021/aosp_tvsettings_13_reference_diff.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare TV Settings OEM Java surface against public Android 13 TvSettings snapshot"
+            git pull --rebase origin settings-wizard-debloat-audit-20261021
+            git push origin HEAD:settings-wizard-debloat-audit-20261021
+          fi
