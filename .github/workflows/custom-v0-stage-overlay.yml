@@ -1,0 +1,117 @@
+name: Stage Custom v0 overlays for 8052 and 8054 original stock
+on:
+  push:
+    branches: [custom-v0-staging-8052-8054-20261021]
+    paths:
+      - ".github/workflows/custom-v0-stage-overlay.yml"
+      - "tools/build_custom_v0_overlay_stage.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: ["8052", "8054"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install filesystem and APK validation tools
+        run: |
+          set -euxo pipefail
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar openssl lz4 e2fsprogs erofs-utils file aapt unzip
+          mkdir -p /tmp/erofs /tmp/images /tmp/payload-bin /tmp/common-apks
+          df -h /tmp
+      - name: Locate last successful signed common APK build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          ID="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/custom-v0-common-apks.yml/runs?branch=custom-v0-staging-8052-8054-20261021&status=completed&per_page=30" --jq '.workflow_runs | map(select(.conclusion=="success")) | first | .id')"
+          test -n "$ID" && test "$ID" != "null" || { echo "No successful common APK build"; exit 1; }
+          echo "COMMON_APK_RUN_ID=$ID" >> "$GITHUB_ENV"
+          echo "Pinned common APK build workflow run: $ID"
+      - uses: actions/download-artifact@v4
+        with:
+          name: cinelux-custom-v0-common-apks
+          run-id: ${{ env.COMMON_APK_RUN_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/common-apks
+      - name: Validate official and original shortcut APKs
+        run: |
+          set -euo pipefail
+          echo "376fc528c880cdf7c7c04b2d3708c69f911144498218babb6300808b772af32e  /tmp/common-apks/FLauncher.apk" | sha256sum -c -
+          aapt dump badging /tmp/common-apks/FLauncher.apk | grep -m 1 "package: name='me.efesser.flauncher'"
+          aapt dump badging /tmp/common-apks/CineLuxSettingsShortcut.apk | grep -m 1 "package: name='org.cinelux.settingsshortcut'"
+      - name: Extract verified October OTA for single-HDMI 8052
+        if: matrix.variant == '8052'
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 4 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/8052-ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/8052-ota.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/payload.tar.gz
+          tar -xzf /tmp/payload.tar.gz -C /tmp/payload-bin
+          DUMPER="$(find /tmp/payload-bin -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$DUMPER"
+          "$DUMPER" -c 3 -p system,system_ext -o /tmp/images /tmp/8052-ota.zip > /tmp/dump.log 2>&1 || { tail -n 70 /tmp/dump.log; exit 1; }
+          for name in system system_ext; do
+            mkdir -p "/tmp/erofs/$name"
+            fsck.erofs --extract="/tmp/erofs/$name" "/tmp/images/$name.img" >"/tmp/$name.log" 2>&1 || { tail -n 75 "/tmp/$name.log"; exit 1; }
+          done
+          df -h /tmp
+      - name: Decrypt and extract the verified September 8054 factory images
+        if: matrix.variant == '8054'
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 5 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar" \
+            -o /tmp/8054-original.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/8054-original.rar" | sha256sum -c -
+          mkdir -p /tmp/8054-archive
+          unar -q -o /tmp/8054-archive /tmp/8054-original.rar
+          echo "4abef5d594803d09c20316a7cd52ab623dd7fb1a228472eb0e243d6d750ebb4c  /tmp/8054-archive/upgrade_image.pkg" | sha256sum -c -
+          dd if=/tmp/8054-archive/upgrade_image.pkg bs=4096 skip=1 count=317632 status=none | \
+            openssl enc -d -aes-256-cbc -nopad \
+              -K d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f \
+              -iv 00000000000000000000000000000000 -out /tmp/8054-decrypted.bin
+          df -h /tmp
+          mkdir -p /tmp/8054-reconstructed
+          python3 -u tools/reconstruct_cinelux.py /tmp/8054-decrypted.bin /tmp/8054-reconstructed \
+            analysis/Original_Firmware/decrypted/upgrade_script.txt /tmp/8054-analysis \
+            >/tmp/8054-reconstruct.log 2>&1 || { tail -n 100 /tmp/8054-reconstruct.log; exit 1; }
+          test -s /tmp/8054-reconstructed/super.img
+          git clone -q --depth 1 https://github.com/soe1hom-arch/lpunpack-go.git /tmp/lpunpack-go
+          (cd /tmp/lpunpack-go && go build -o /tmp/lpunpack-go-bin .)
+          mkdir -p /tmp/8054-logical
+          /tmp/lpunpack-go-bin -v /tmp/8054-reconstructed/super.img /tmp/8054-logical \
+            > /tmp/lpunpack.log 2>&1 || { tail -n 95 /tmp/lpunpack.log; exit 1; }
+          for name in system_a system_ext_a; do
+            test -s "/tmp/8054-logical/$name.img"
+            mkdir -p "/tmp/erofs/$name"
+            fsck.erofs --extract="/tmp/erofs/$name" "/tmp/8054-logical/$name.img" >"/tmp/$name.log" 2>&1 || { tail -n 80 "/tmp/$name.log"; exit 1; }
+          done
+          df -h /tmp
+      - name: Build profile-specific APK overlays without modification of stock
+        run: |
+          set -euxo pipefail
+          python3 -u tools/build_custom_v0_overlay_stage.py \
+            --variant ${{ matrix.variant }} --source /tmp/erofs \
+            --flauncher /tmp/common-apks/FLauncher.apk \
+            --shortcut /tmp/common-apks/CineLuxSettingsShortcut.apk \
+            --dest /tmp/custom-v0-stage
+          unzip -tq "/tmp/custom-v0-stage/CineLux-Custom-v0-${{ matrix.variant }}-STAGING-NOT-FLASHABLE.zip"
+          ls -lh /tmp/custom-v0-stage/
+          sha256sum /tmp/custom-v0-stage/*.zip
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: cinelux-custom-v0-${{ matrix.variant }}-NONFLASHABLE
+          path: /tmp/custom-v0-stage/
+          if-no-files-found: error
+          retention-days: 30
