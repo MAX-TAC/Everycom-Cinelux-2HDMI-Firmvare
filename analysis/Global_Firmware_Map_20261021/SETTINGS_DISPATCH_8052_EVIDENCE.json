@@ -1,0 +1,4084 @@
+{
+  "source": "verified 8052 2026-10 OTA; no 8054.1.0.4 dump",
+  "apps": {
+    "TvSettingsPlus": {
+      "path": "system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk",
+      "sha256": "e4184a13fbf56fa069effc6a40ea50c0da7e9190321b389f59ba34700a80d0a1",
+      "package": "com.android.tv.settings",
+      "manifest": {
+        "components_total": 146,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.timer.TimerActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.DATE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.EnergyCommonActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.power.PowerActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.vendor.channels.ChannelsActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.vendor.channels.DiseqcTypeActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.vendor.channels.ChannelConfirmActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.sound.SoundActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.SOUND_SPEAKER_STATUS",
+              "android.settings.oem.SOUND_SETTINGS",
+              "com.android.tv.action.VIEW_SOUND_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.picture.PictureActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.DISPLAY_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.picture.DisplayModeActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.sound.AudioOutputActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.vendor.ResetActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.timer.TimerSetActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.CAPTIONING_SETTINGS"
+            ],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.partnercustomizer.DisplayAndSoundActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.uicustom.MainActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.RJ_SETTINGS",
+              "android.settings.PICTURE_SETTINGS",
+              "android.settings.SOUND_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.uicustom.fragment.projector.KeystoneCalibrationActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.MainSettings",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LEANBACK_SETTINGS",
+              "android.intent.category.LEANBACK_LAUNCHER"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.setup.WifiSetupActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.NetworkRequestDialogActivity",
+            "exported": true,
+            "actions": [
+              "com.android.settings.wifi.action.NETWORK_REQUEST"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.WifiConnectionActivity",
+            "exported": true,
+            "actions": [
+              "com.android.settings.wifi.action.WIFI_CONNECTION_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.EditProxySettingsActivity",
+            "exported": true,
+            "actions": [
+              "com.android.settings.wifi.action.EDIT_PROXY_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.EditIpSettingsActivity",
+            "exported": true,
+            "actions": [
+              "com.android.settings.wifi.action.EDIT_IP_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.AddWifiNetworkActivity",
+            "exported": true,
+            "actions": [
+              "com.android.settings.wifi.action.ADD_WIFI_NETWORK"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.google.android.tv.settings.AccountActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.USER_SETTINGS",
+              "android.intent.action.MAIN",
+              "android.settings.ACCOUNT_SYNC_SETTINGS",
+              "android.settings.SYNC_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": "com.android.tv.settings.accounts.AccountsTrampolineActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accounts.AccountSyncActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.google.android.tv.settings.ManageUserServicesActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.MANAGE_USER_SERVICES_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": "com.android.tv.settings.accounts.ManageUserServicesSliceActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accounts.RemoveAccountDialog",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accounts.AddAccountWithTypeActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ADD_ACCOUNT_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.AppsActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.APPLICATION_SETTINGS",
+              "android.settings.MANAGE_APPLICATIONS_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.AllAppsActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.APPLICATION_SETTINGS",
+              "android.settings.MANAGE_ALL_APPLICATIONS_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.specialaccess.AllFilesAccessActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.MANAGE_APP_ALL_FILES_ACCESS_PERMISSION"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.specialaccess.AppUsageAccessActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.USAGE_ACCESS_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.specialaccess.PictureInPictureActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.PICTURE_IN_PICTURE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.specialaccess.SystemAlertActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.action.MANAGE_OVERLAY_PERMISSION"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.specialaccess.AlarmsAndRemindersActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.REQUEST_SCHEDULE_EXACT_ALARM"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.AppManagementActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.AUTO_REVOKE_PERMISSIONS",
+              "android.settings.APPLICATION_DETAILS_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.StorageResetActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.INTERNAL_STORAGE_SETTINGS",
+              "android.settings.MEMORY_CARD_SETTINGS",
+              "android.intent.action.MAIN",
+              "android.intent.action.MANAGE_PACKAGE_STORAGE",
+              "android.os.storage.action.MANAGE_STORAGE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.connectivity.NetworkActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.LOCATION_SCANNING_SETTINGS",
+              "android.settings.DATA_SAVER_SETTINGS",
+              "android.settings.DATA_ALERT_SETTINGS",
+              "android.settings.panel.action.INTERNET_CONNECTIVITY",
+              "android.settings.panel.action.WIFI",
+              "android.settings.WIFI_ADD_NETWORKS"
+            ],
+            "categories": [
+              "android.intent.category.LEANBACK_SETTINGS",
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.android.tv.settings.oemlink.NetworkSettingsActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.NETWORK_SETTINGS_TV_OEM_LINK"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": "com.android.tv.settings.connectivity.NetworkActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.SecurityActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.SECURITY_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.android.tv.settings.users.RestrictedProfileActivityLauncherEntry",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LEANBACK_SETTINGS"
+            ],
+            "target": "com.android.tv.settings.system.SecurityActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.displaysound.DisplaySoundActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.panel.action.VOLUME"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.google.android.tv.settings.AmbientActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": "com.android.tv.settings.device.display.ambient.AmbientSliceActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.display.daydream.DaydreamActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.display.daydream.DaydreamVoiceAction",
+            "exported": true,
+            "actions": [
+              "com.google.android.pano.action.SLEEP"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.CaptionSetupActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.CAPTIONING_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.android.tv.settings.oemlink.AccessibilityCaptionActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ACCESSIBILITY_CAPTION_TV_OEM_LINK"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": "com.android.tv.settings.system.CaptionSetupActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.DateTimeActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.DATE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.LocationActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.LOCATION_SOURCE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.TextToSpeechActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.TTS_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.development.DevelopmentActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.APPLICATION_DEVELOPMENT_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.inputmethod.KeyboardActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.INPUT_METHOD_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.VOICE_LAUNCH",
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.autofill.AutofillPickerTrampolineActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.REQUEST_SET_AUTOFILL_SERVICE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.AppLanguageActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.APP_LOCALE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.LanguageActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.LOCALE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.InputsActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accessories.BluetoothAccessoryActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accessories.AddAccessoryActivity",
+            "exported": true,
+            "actions": [
+              "com.google.android.intent.action.CONNECT_INPUT"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accessories.BluetoothPairingDialog",
+            "exported": true,
+            "actions": [
+              "android.bluetooth.device.action.PAIRING_REQUEST"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accessories.BluetoothDevicePickerActivity",
+            "exported": true,
+            "actions": [
+              "android.bluetooth.devicepicker.action.LAUNCH"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.about.AboutActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.DEVICE_INFO_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.about.StatusActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.about.LicenseActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.LICENSE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.name.DeviceNameSettingsActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.DEVICE_NAME"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.name.DeviceNameSuggestionActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.name.setup.DeviceNameFlowStartActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.START_DEVICE_NAME_FLOW"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.storage.NewStorageActivity",
+            "exported": false,
+            "actions": [
+              "com.android.tv.settings.action.NEW_STORAGE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.storage.UnmountActivity",
+            "exported": false,
+            "actions": [
+              "com.android.tv.settings.action.UNMOUNT_STORAGE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.storage.FormatActivity",
+            "exported": false,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.storage.MigrateStorageActivity",
+            "exported": false,
+            "actions": [
+              "com.android.tv.settings.action.MIGRATE_STORAGE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.MoveAppActivity",
+            "exported": false,
+            "actions": [
+              "com.android.tv.settings.action.MOVE_APP"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.accessories.BluetoothRequestPermissionActivity",
+            "exported": true,
+            "actions": [
+              "android.bluetooth.adapter.action.REQUEST_DISCOVERABLE",
+              "android.bluetooth.adapter.action.REQUEST_ENABLE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.system.FallbackHome",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.HOME",
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.inputmethod.InputMethodAndSubtypeEnablerActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.INPUT_METHOD_SUBTYPE_SETTINGS",
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.VOICE_LAUNCH"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.specialaccess.ExternalSourcesActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.MANAGE_UNKNOWN_APP_SOURCES"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.privacy.NotificationAccessActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.privacy.SensorToggleActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.MANAGE_MICROPHONE_PRIVACY",
+              "android.settings.MANAGE_CAMERA_PRIVACY"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.EmptyStubActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.WEBVIEW_SETTINGS",
+              "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS",
+              "android.settings.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+              "android.settings.IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS",
+              "android.settings.MANAGE_DEFAULT_APPS_SETTINGS",
+              "android.settings.HOME_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.deviceadmin.ProfileOwnerAdd",
+            "exported": true,
+            "actions": [
+              "android.app.action.SET_PROFILE_OWNER"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.ActionDisabledByAdminDialog",
+            "exported": true,
+            "actions": [
+              "android.settings.SHOW_ADMIN_SUPPORT_DETAILS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.deviceadmin.DeviceAdminAdd",
+            "exported": true,
+            "actions": [
+              "android.app.action.ADD_DEVICE_ADMIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.slice.SliceActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.SLICE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.oemlink.AccessibilitySettingsActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ACCESSIBILITY_TV_OEM_LINK",
+              "android.settings.ACCESSIBILITY_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.oemlink.AccessibilityServiceActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ACCESSIBILITY_SHORTCUT_SERVICES_TV_OEM_LINK"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.oemlink.FactoryResetActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.FACTORY_RESET_TV_OEM_LINK",
+              "android.intent.action.FACTORY_RESET"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.vendor.VendorActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.RemoteBugreportActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.SHOW_REMOTE_BUGREPORT_DIALOG"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.enterprise.EnterprisePrivacySettingsActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ENTERPRISE_PRIVACY_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.tv.settings.device.apps.ConfirmationActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ui.CONFIRM"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          }
+        ],
+        "boot_receivers": [
+          {
+            "kind": "receiver",
+            "name": "com.android.tv.settings.partnercustomizer.utils.SoundEARCReceiver",
+            "exported": true,
+            "actions": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "receiver",
+            "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.TvBootupReceiver",
+            "exported": true,
+            "actions": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "receiver",
+            "name": "com.android.tv.settings.users.UserSwitchListenerService$BootReceiver",
+            "exported": true,
+            "actions": [
+              "android.intent.action.LOCKED_BOOT_COMPLETED",
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "receiver",
+            "name": "com.android.tv.settings.BootReceiver",
+            "exported": true,
+            "actions": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "categories": [],
+            "target": null
+          }
+        ]
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "KuSettings": {
+      "path": "system/system/app/KuSettings/KuSettings.apk",
+      "sha256": "bd678e646a0cbc164f34273bcd396f9cf9221037b4c688d9d08464840cfca58b",
+      "package": "com.my.settings",
+      "manifest": {
+        "components_total": 16,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.my.settings.SettingActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER",
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.wifi.MyWifiActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.WIFI_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.LEANBACK_SETTINGS"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.bluetooth.MyBluetoothActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.BLUETOOTH_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.bluetooth.MyAutoBluetoothActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.AUTO_BLUETOOTH"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.language.LanguageActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.LAUGUAGE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.language.LanguageLocalActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.LAUGUAGE_LOCAL_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.time.DateTimeActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.DATETIME_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.activity.ScreenshotActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.SCREENSHOT_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.activity.ProjectionActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.PROJECTABOUT_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.my.settings.activity.AllAppActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ALLAPPS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          }
+        ],
+        "boot_receivers": [
+          {
+            "kind": "receiver",
+            "name": "com.my.service.BootupReceiver",
+            "exported": true,
+            "actions": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "categories": [],
+            "target": null
+          }
+        ]
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "trdservice": {
+      "path": "system/system/app/trdservice/trdservice.apk",
+      "sha256": "309eaf1098bf3d544907b57fa24ae6ad31c591fe942133fd8ef1c69832d538f1",
+      "package": "com.trd.service",
+      "manifest": {
+        "components_total": 4,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.trd.service.MainActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "zxlauncher": {
+      "path": "system/system/app/zxlauncher/zxlauncher.apk",
+      "sha256": "9a0e4b69eff2e1264e45810746e16acc26b598f186dd04e19089830164af4ffd",
+      "package": "com.zeasn.whale.saas",
+      "manifest": {
+        "components_total": 29,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.zeasn.launcher.ui.MainActivity",
+            "exported": null,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.HOME",
+              "android.intent.category.DEFAULT",
+              "android.intent.category.LAUNCHER",
+              "android.intent.category.LEANBACK_LAUNCHER"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.zeasn.plugin.StubActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "RuiAutoFocus": {
+      "path": "system/system/app/RuiAutoFocus/RuiAutoFocus.apk",
+      "sha256": "aa5257b38dc299d2160a5b5293915f3e0b4a88e690c5b6cd5a0bc2c940dc842f",
+      "package": "com.hysd.screen",
+      "manifest": {
+        "components_total": 2,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.hysd.xymscreen.MainActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "KuSetupWizard": {
+      "path": "system/system/app/KuSetupWizard/KuSetupWizard.apk",
+      "sha256": "17aaba977289fce5c991e44bd6018c37549f91dae1b99154b00b80b5a3a2c898",
+      "package": "com.android.provision",
+      "manifest": {
+        "components_total": 5,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.my.settings.wifi.ProvisionWifiActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.HOME",
+              "android.intent.category.DEFAULT",
+              "android.intent.category.SETUP_WIZARD"
+            ],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "KeystoneCorrection": {
+      "path": "system/system/priv-app/KeystoneCorrection/KeystoneCorrection.apk",
+      "sha256": "23c68874b1ad2147549b3538ebe7f9ad7c97987a99ccb165ec528a6467b98829",
+      "package": "com.rjpj.tcorrection",
+      "manifest": {
+        "components_total": 6,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.rjpj.tcorrection.FourCornerActivity",
+            "exported": true,
+            "actions": [
+              "rjpj.action.keystone.FOUR_CORNER"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.rjpj.tcorrection.DigitalZoomActivity",
+            "exported": true,
+            "actions": [
+              "rjpj.action.keystone.DIGITAL_ZOOM"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.rjpj.tcorrection.HVKeystoneActivity",
+            "exported": true,
+            "actions": [
+              "rjpj.action.keystone.HV"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.rjpj.tcorrection.MainActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "KuSourceRJ": {
+      "path": "system/system/app/KuSourceRJ/KuSourceRJ.apk",
+      "sha256": "15bf7b9fe31844bace197989ae393af7c3e4ca5a9c3c2019a4f662f0a9d881cc",
+      "package": "com.coolux.source",
+      "manifest": {
+        "components_total": 38,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.MainActivity",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN",
+              "android.settings.SOURCE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER",
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.BootSoureActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.BOOTSOURE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.BrightActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.BRIGHT_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.VoiceActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.VOICE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.RestoreActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.RESTORE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.HighTemperatureActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.FanDetectionActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.AllAppAutoActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.ALLAPPSAUTO"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.AuthorizationActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.DustproofActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.PoweronModeActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.POWERMODE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.ProjectModelActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.PROJECTMODEL_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.KeystoneActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.KEYSTONE_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.AutomaticAdmissionActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.Automatic_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.MyTestActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.TEST_SOURCE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.TestCastActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.InterfaceTestActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.InterfaceTest"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.StandbyActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.standby"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.DlpActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.InterfaceActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.BrightTestActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.BRIGHT_SETTINGS_TEST"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.AudioVideoActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.LeftRightVideoActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.AgingModelActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.Aging.model"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.AgingActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.Aging"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.RebootNumActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.rebootNum"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.PrintTestActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.CustomBrightActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.BRIGHT_Custom_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.OtherActivity",
+            "exported": true,
+            "actions": [
+              "android.settings.otherTest"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.ClearTimeActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.SetTimeActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.WifiSNActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.coolux.source.activity.testcast.WiredSNActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          }
+        ],
+        "boot_receivers": [
+          {
+            "kind": "receiver",
+            "name": "com.coolux.source.service.BootupReceiver",
+            "exported": true,
+            "actions": [
+              "android.intent.action.BOOT_COMPLETED"
+            ],
+            "categories": [],
+            "target": null
+          }
+        ]
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "RuiYunOta": {
+      "path": "system/system/priv-app/RuiYunOta/RuiYunOta.apk",
+      "sha256": "40f399ff15b692180243ce103469230bcb7f90278fc4ad5f6c7d86cbc75961a2",
+      "package": "com.rjpj.yunota",
+      "manifest": {
+        "components_total": 6,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": ".OTASystemNetworkUpdateActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": ".OTASystemLocalUpdateActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "SystemUI": {
+      "path": "system_ext/priv-app/SystemUI/SystemUI.apk",
+      "sha256": "383f625c1641a3eb86e8517868290d26b7eab15c23824f48447237edad5032fb",
+      "package": "com.android.systemui",
+      "manifest": {
+        "components_total": 71,
+        "entrypoint_candidates": [
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.tuner.TunerActivity",
+            "exported": true,
+            "actions": [
+              "com.android.settings.action.EXTRA_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.android.systemui.DemoMode",
+            "exported": true,
+            "actions": [
+              "com.android.settings.action.DEMO_MODE"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": "com.android.systemui.tuner.TunerActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.UsbConfirmActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.UsbPermissionActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.tv.TvUsbConfirmActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.tv.TvUsbPermissionActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.UsbResolverActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.hdmi.HdmiCecSetMenuLanguageActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.sensorprivacy.SensorUseStartedActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.sensorprivacy.television.TvUnblockSensorActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.UsbAccessoryUriActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.usb.UsbContaminantActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.android.systemui.UsbDebuggingActivityAlias",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": "com.android.systemui.usb.UsbDebuggingActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "name": "com.android.systemui.WifiDebuggingActivityAlias",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": "com.android.systemui.wifi.WifiDebuggingActivity"
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.net.NetworkOverLimitActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.media.MediaProjectionPermissionActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.SlicePermissionActivity",
+            "exported": true,
+            "actions": [],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.DessertCase",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.people.PeopleSpaceActivity",
+            "exported": true,
+            "actions": [
+              "android.appwidget.action.APPWIDGET_CONFIGURE"
+            ],
+            "categories": [],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.keyguard.WorkLockActivity",
+            "exported": false,
+            "actions": [
+              "android.app.action.CONFIRM_DEVICE_CREDENTIAL_WITH_USER"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.Somnambulator",
+            "exported": true,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT",
+              "android.intent.category.DESK_DOCK"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.settings.brightness.BrightnessDialog",
+            "exported": true,
+            "actions": [
+              "com.android.intent.action.SHOW_BRIGHTNESS_DIALOG"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          },
+          {
+            "kind": "activity",
+            "name": "com.android.systemui.ForegroundServicesDialog",
+            "exported": true,
+            "actions": [
+              "android.settings.FOREGROUND_SERVICES_SETTINGS"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "target": null
+          }
+        ],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    },
+    "SettingsProvider": {
+      "path": "system/system/priv-app/SettingsProvider/SettingsProvider.apk",
+      "sha256": "5df0c554554b71745c76befe9f869382bf25fddda5475680dc64d9578c0515bd",
+      "package": "com.android.providers.settings",
+      "manifest": {
+        "components_total": 2,
+        "entrypoint_candidates": [],
+        "boot_receivers": []
+      },
+      "signer_cert_sha256": [
+        "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8"
+      ],
+      "apksigner_verified": true
+    }
+  },
+  "dispatch": {
+    "TvSettingsPlus": {
+      "files": [
+        {
+          "file": "com/android/tv/settings/MainSettings.java",
+          "entries": [
+            {
+              "line": 1,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings"
+              ]
+            },
+            {
+              "line": 4,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.TvSettingsActivity"
+              ]
+            },
+            {
+              "line": 5,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.TvSettingsActivity"
+              ]
+            },
+            {
+              "line": 10,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.TvSettingsActivity"
+              ]
+            },
+            {
+              "line": 12,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.MainFragment.class.getName",
+                "com.android.tv.settings.overlay.FlavorUtils.getFeatureFactory"
+              ]
+            }
+          ]
+        },
+        {
+          "file": "com/android/tv/settings/uicustom/MainActivity.java",
+          "entries": [
+            {
+              "line": 1,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom"
+              ]
+            },
+            {
+              "line": 4,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.app.Activity",
+                "com.android.tv.settings.uicustom.fragment.BaseFragment.OnFragmentInteractionListener"
+              ]
+            },
+            {
+              "line": 40,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 41,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 42,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 43,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 44,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 45,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 46,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 47,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 48,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.manager.PageManager"
+              ]
+            },
+            {
+              "line": 50,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusResponsiveLayout"
+              ]
+            },
+            {
+              "line": 55,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.util.DebounceHelper"
+              ]
+            },
+            {
+              "line": 56,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.content.BroadcastReceiver",
+                "com.android.tv.settings.uicustom.MainActivity.1"
+              ]
+            },
+            {
+              "line": 61,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.SYSTEM_DIALOG_REASON_KEY"
+              ]
+            },
+            {
+              "line": 66,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.SYSTEM_DIALOG_REASON_HOME_KEY"
+              ]
+            },
+            {
+              "line": 69,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.SYSTEM_DIALOG_REASON_RECENT_APPS"
+              ]
+            },
+            {
+              "line": 75,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.this.finish"
+              ]
+            },
+            {
+              "line": 81,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.this.hideMainContainer"
+              ]
+            },
+            {
+              "line": 85,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.os.CountDownTimer",
+                "com.android.tv.settings.uicustom.MainActivity.2"
+              ]
+            },
+            {
+              "line": 92,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.this.finish"
+              ]
+            },
+            {
+              "line": 113,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.layout.activity_main"
+              ]
+            },
+            {
+              "line": 140,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.manager.PageManager"
+              ]
+            },
+            {
+              "line": 159,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.anim.slide_in_left",
+                "com.android.tv.settings.R.anim.slide_out_left"
+              ]
+            },
+            {
+              "line": 176,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.android.tv.settings.R.id.main_container"
+              ]
+            },
+            {
+              "line": 177,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.view_menu_bar",
+                "com.android.tv.settings.uicustom.view.FocusResponsiveLayout"
+              ]
+            },
+            {
+              "line": 178,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.FrameLayout",
+                "com.android.tv.settings.R.id.content_container"
+              ]
+            },
+            {
+              "line": 179,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_projector",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 180,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_wifi",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 181,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_bluetooth",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 182,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_source",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 183,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_picture",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 184,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_sound",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 185,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_general",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 186,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.item_system",
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 189,
+              "match": [
+                "android.settings.SETTINGS"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.settings.SETTINGS"
+              ]
+            },
+            {
+              "line": 235,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.content_container",
+                "com.android.tv.settings.uicustom.manager.PageManager"
+              ]
+            },
+            {
+              "line": 249,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.FocusItemView"
+              ]
+            },
+            {
+              "line": 250,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.View.OnFocusChangeListener",
+                "com.android.tv.settings.uicustom.MainActivity"
+              ]
+            },
+            {
+              "line": 322,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 336,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "onKeyDown"
+              ],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 351,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "onKeyDown"
+              ],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment.OnFragmentInteractionListener"
+              ]
+            },
+            {
+              "line": 428,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment.OnFragmentInteractionListener"
+              ]
+            },
+            {
+              "line": 433,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment.OnFragmentInteractionListener"
+              ]
+            },
+            {
+              "line": 439,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 440,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.manager.PageManager"
+              ]
+            },
+            {
+              "line": 449,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.animation.Animation",
+                "android.view.animation.AnimationUtils.loadAnimation",
+                "com.android.tv.settings.R.anim.slide_out_left"
+              ]
+            },
+            {
+              "line": 451,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.animation.Animation.AnimationListener",
+                "com.android.tv.settings.uicustom.MainActivity.3"
+              ]
+            },
+            {
+              "line": 462,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.this.main_container.setVisibility"
+              ]
+            },
+            {
+              "line": 463,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.MainActivity.this.onDestroy"
+              ]
+            }
+          ]
+        },
+        {
+          "file": "com/android/tv/settings/uicustom/fragment/general/GeneralFragment.java",
+          "entries": [
+            {
+              "line": 1,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general"
+              ]
+            },
+            {
+              "line": 4,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 6,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 7,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 8,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 9,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 10,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 11,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleSwitchView"
+              ]
+            },
+            {
+              "line": 18,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_font_size_small"
+              ]
+            },
+            {
+              "line": 21,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_font_size_medium"
+              ]
+            },
+            {
+              "line": 24,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_font_size_large"
+              ]
+            },
+            {
+              "line": 26,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_font_size_medium",
+                "com.android.tv.settings.R.string.general_font_size_xlarge"
+              ]
+            },
+            {
+              "line": 31,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_projection_brightness_mode_eco"
+              ]
+            },
+            {
+              "line": 34,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_projection_brightness_mode_standard"
+              ]
+            },
+            {
+              "line": 37,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_projection_brightness_mode_highlight"
+              ]
+            },
+            {
+              "line": 39,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.general_projection_brightness_mode_auto",
+                "com.android.tv.settings.R.string.general_projection_brightness_mode_standard"
+              ]
+            },
+            {
+              "line": 42,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 44,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.layout.fragment_general"
+              ]
+            },
+            {
+              "line": 47,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 51,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 53,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.util.MtkUtil.getInstance"
+              ]
+            },
+            {
+              "line": 56,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.util.MtkUtil.getInstance"
+              ]
+            },
+            {
+              "line": 59,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 61,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.tciv_general_language_settings",
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 62,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.tciv_general_date_time",
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 63,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.tciv_general_font_size",
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 64,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.tciv_general_screensaver_settings",
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 65,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.tciv_general_projection_brightness_mode",
+                "com.android.tv.settings.uicustom.view.TitleContentIconView"
+              ]
+            },
+            {
+              "line": 66,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.id.tsv_general_power_on_up",
+                "com.android.tv.settings.uicustom.view.TitleSwitchView"
+              ]
+            },
+            {
+              "line": 76,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.View.OnClickListener",
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.1"
+              ]
+            },
+            {
+              "line": 81,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.sendEventToActivity"
+              ]
+            },
+            {
+              "line": 84,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.View.OnClickListener",
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.2"
+              ]
+            },
+            {
+              "line": 89,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.sendEventToActivity"
+              ]
+            },
+            {
+              "line": 92,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.View.OnClickListener",
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.3"
+              ]
+            },
+            {
+              "line": 97,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.sendEventToActivity"
+              ]
+            },
+            {
+              "line": 100,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.View.OnClickListener",
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.4"
+              ]
+            },
+            {
+              "line": 105,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "setComponent"
+              ],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.sendEventToActivity"
+              ]
+            },
+            {
+              "line": 108,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "setComponent",
+                "startActivity"
+              ],
+              "symbols": [
+                "android.view.View.OnClickListener",
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.5"
+              ]
+            },
+            {
+              "line": 115,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "setComponent",
+                "startActivity"
+              ],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment",
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this"
+              ]
+            },
+            {
+              "line": 120,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "setComponent",
+                "startActivity"
+              ],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.sendEventToActivity"
+              ]
+            },
+            {
+              "line": 123,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.6",
+                "com.android.tv.settings.uicustom.view.TitleSwitchView.onTitleSwitchListener"
+              ]
+            },
+            {
+              "line": 124,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.view.TitleSwitchView.onTitleSwitchListener"
+              ]
+            },
+            {
+              "line": 126,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.isEnablePowerOnUp"
+              ]
+            },
+            {
+              "line": 127,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.general.GeneralFragment.this.isEnablePowerOnUp",
+                "com.android.tv.settings.uicustom.util.MtkUtil.getInstance"
+              ]
+            },
+            {
+              "line": 132,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 144,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.util.MtkUtil.getInstance"
+              ]
+            },
+            {
+              "line": 149,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            },
+            {
+              "line": 151,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.R.string.system_language"
+              ]
+            },
+            {
+              "line": 154,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings.uicustom.fragment.BaseFragment"
+              ]
+            }
+          ]
+        }
+      ],
+      "jadx_exit": 3
+    },
+    "KuSettings": {
+      "files": [
+        {
+          "file": "com/my/settings/SettingActivity.java",
+          "entries": [
+            {
+              "line": 1,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings"
+              ]
+            },
+            {
+              "line": 4,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.BaseActivity"
+              ]
+            },
+            {
+              "line": 27,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.view.View.OnClickListener",
+                "com.my.settings.SettingActivity.1"
+              ]
+            },
+            {
+              "line": 30,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.SettingActivity.this.enterClick"
+              ]
+            },
+            {
+              "line": 33,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.content.BroadcastReceiver",
+                "com.my.settings.SettingActivity.2"
+              ]
+            },
+            {
+              "line": 38,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.SettingActivity.this.viewIsUpdataOta"
+              ]
+            },
+            {
+              "line": 46,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.layout.activity_set"
+              ]
+            },
+            {
+              "line": 80,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.wifi_layout"
+              ]
+            },
+            {
+              "line": 81,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.bluetooth_layout"
+              ]
+            },
+            {
+              "line": 82,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.remote_control_layout"
+              ]
+            },
+            {
+              "line": 83,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.general_time_layout"
+              ]
+            },
+            {
+              "line": 84,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.language_method_layout"
+              ]
+            },
+            {
+              "line": 85,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.screens_hot_layout"
+              ]
+            },
+            {
+              "line": 86,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.projection_about_layout"
+              ]
+            },
+            {
+              "line": 87,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.bright_layout"
+              ]
+            },
+            {
+              "line": 88,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.voice_layout"
+              ]
+            },
+            {
+              "line": 89,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.RelativeLayout",
+                "com.my.settings.R.id.online_upgrade_layout"
+              ]
+            },
+            {
+              "line": 90,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.restore_layout"
+              ]
+            },
+            {
+              "line": 91,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.boot_source_layout"
+              ]
+            },
+            {
+              "line": 92,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.poweron_mode_layout"
+              ]
+            },
+            {
+              "line": 93,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.model_project_layout"
+              ]
+            },
+            {
+              "line": 94,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.mircast_layout"
+              ]
+            },
+            {
+              "line": 95,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.airplay_layout"
+              ]
+            },
+            {
+              "line": 96,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.keystone_layout"
+              ]
+            },
+            {
+              "line": 97,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.LinearLayout",
+                "com.my.settings.R.id.image_digital_layout"
+              ]
+            },
+            {
+              "line": 98,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.ImageView",
+                "com.my.settings.R.id.is_ota_image"
+              ]
+            },
+            {
+              "line": 99,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.TextView",
+                "com.my.settings.R.id.set_version"
+              ]
+            },
+            {
+              "line": 143,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.wifi_layout"
+              ]
+            },
+            {
+              "line": 147,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.bluetooth_layout"
+              ]
+            },
+            {
+              "line": 151,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.remote_control_layout"
+              ]
+            },
+            {
+              "line": 155,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.general_time_layout"
+              ]
+            },
+            {
+              "line": 159,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.language_method_layout"
+              ]
+            },
+            {
+              "line": 163,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.screens_hot_layout"
+              ]
+            },
+            {
+              "line": 167,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.projection_about_layout"
+              ]
+            },
+            {
+              "line": 171,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.bright_layout"
+              ]
+            },
+            {
+              "line": 175,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.voice_layout"
+              ]
+            },
+            {
+              "line": 179,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.online_upgrade_layout"
+              ]
+            },
+            {
+              "line": 185,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.widget.Toast.makeText",
+                "com.my.settings.R.string.not_network"
+              ]
+            },
+            {
+              "line": 192,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.restore_layout"
+              ]
+            },
+            {
+              "line": 196,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.boot_source_layout"
+              ]
+            },
+            {
+              "line": 200,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.poweron_mode_layout"
+              ]
+            },
+            {
+              "line": 204,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.model_project_layout"
+              ]
+            },
+            {
+              "line": 208,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.mircast_layout"
+              ]
+            },
+            {
+              "line": 212,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.airplay_layout"
+              ]
+            },
+            {
+              "line": 214,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.keystone_layout"
+              ]
+            },
+            {
+              "line": 216,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.my.settings.R.id.image_digital_layout"
+              ]
+            }
+          ]
+        },
+        {
+          "file": "com/my/utils/IntentUtils.java",
+          "entries": [
+            {
+              "line": 18,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.wifi.MyWifiActivity.class"
+              ]
+            },
+            {
+              "line": 23,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.bluetooth.MyBluetoothActivity.class"
+              ]
+            },
+            {
+              "line": 40,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.language.LanguageLocalActivity.class"
+              ]
+            },
+            {
+              "line": 45,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.time.MyZonePicker.class"
+              ]
+            },
+            {
+              "line": 115,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.bluetooth.ProvisionBluetoothActivity.class"
+              ]
+            },
+            {
+              "line": 120,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.wifi.ProvisionWifiActivity.class"
+              ]
+            },
+            {
+              "line": 125,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.activity.MenuPromptActivity.class"
+              ]
+            },
+            {
+              "line": 130,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "com.my.settings.activity.WarningActivity.class"
+              ]
+            },
+            {
+              "line": 155,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "resolveActivity",
+                "setAction",
+                "startActivity"
+              ],
+              "symbols": [
+                "android.widget.Toast.makeText",
+                "com.my.settings.R.string.app_notinstall"
+              ]
+            },
+            {
+              "line": 174,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "resolveActivity",
+                "setAction",
+                "startActivity"
+              ],
+              "symbols": [
+                "android.widget.Toast.makeText",
+                "com.my.settings.R.string.app_notinstall"
+              ]
+            },
+            {
+              "line": 196,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.widget.Toast.makeText",
+                "com.my.settings.R.string.app_notinstall"
+              ]
+            },
+            {
+              "line": 210,
+              "match": [
+                "com.my.settings"
+              ],
+              "calls_nearby": [
+                "setComponent",
+                "startActivity"
+              ],
+              "symbols": [
+                "android.widget.Toast.makeText",
+                "com.my.settings.R.string.app_notinstall"
+              ]
+            }
+          ]
+        }
+      ],
+      "jadx_exit": 3
+    },
+    "trdservice": {
+      "files": [
+        {
+          "file": "com/trd/service/communication/GlobalKeyEventProcess.java",
+          "entries": [
+            {
+              "line": 4,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": []
+            },
+            {
+              "line": 5,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": []
+            },
+            {
+              "line": 6,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.trd.service.communication.GlobalKeyEventProcess"
+              ]
+            },
+            {
+              "line": 16,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.trd.service.communication.GlobalKeyEventProcess"
+              ]
+            },
+            {
+              "line": 18,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.trd.service.communication.GlobalKeyEventProcess.class"
+              ]
+            },
+            {
+              "line": 20,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.trd.service.communication.GlobalKeyEventProcess"
+              ]
+            },
+            {
+              "line": 27,
+              "match": [
+                "GlobalKeyEventProcess"
+              ],
+              "calls_nearby": [],
+              "symbols": []
+            },
+            {
+              "line": 37,
+              "match": [
+                "com.android.tv.settings",
+                "com.trd.projector.settings"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.android.tv.settings",
+                "com.trd.projector.settings"
+              ]
+            },
+            {
+              "line": 118,
+              "match": [
+                "com.trd.projector.settings"
+              ],
+              "calls_nearby": [
+                "setComponent",
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.ComponentName",
+                "com.trd.projector.settings",
+                "com.trd.projector.settings.MainSettingsActivity"
+              ]
+            },
+            {
+              "line": 133,
+              "match": [
+                "com.android.tv.settings"
+              ],
+              "calls_nearby": [
+                "setComponent",
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.ComponentName",
+                "com.android.tv.settings",
+                "com.android.tv.settings.device.storage.ResetActivity"
+              ]
+            }
+          ]
+        }
+      ],
+      "jadx_exit": 0
+    },
+    "zxlauncher": {
+      "files": [
+        {
+          "file": "com/zeasn/utils/TvSetting.java",
+          "entries": [
+            {
+              "line": 7,
+              "match": [
+                "android.settings.SETTINGS"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "android.settings.SETTINGS"
+              ]
+            }
+          ]
+        },
+        {
+          "file": "com/zeasn/utils/AppUtil.java",
+          "entries": [
+            {
+              "line": 645,
+              "match": [
+                "android.settings.SETTINGS"
+              ],
+              "calls_nearby": [
+                "startActivity"
+              ],
+              "symbols": [
+                "android.content.Intent",
+                "android.settings.SETTINGS"
+              ]
+            }
+          ]
+        },
+        {
+          "file": "com/zeasn/launcher/CustomApplication.java",
+          "entries": [
+            {
+              "line": 178,
+              "match": [
+                "com.zeasn.whale.saas"
+              ],
+              "calls_nearby": [],
+              "symbols": [
+                "com.zeasn.launcher.base.viewbuilder.effect.ScaleFocusEffect",
+                "com.zeasn.whale.saas.R.drawable.bg_solid_transparent_white_selector"
+              ]
+            }
+          ]
+        }
+      ],
+      "jadx_exit": 3
+    },
+    "RuiAutoFocus": {
+      "files": [],
+      "jadx_exit": 0
+    }
+  },
+  "keylayout": {
+    "path": "vendor/usr/keylayout/Vendor_3697_Product_0001.kl",
+    "keys": [
+      {
+        "scan": "102",
+        "android": "HOME"
+      },
+      {
+        "scan": "139",
+        "android": "MENU"
+      },
+      {
+        "scan": "79",
+        "android": "TV_INPUT"
+      },
+      {
+        "scan": "528",
+        "android": "FOCUS"
+      },
+      {
+        "scan": "744",
+        "android": "FOCUS_PLUS"
+      },
+      {
+        "scan": "745",
+        "android": "FOCUS_MINUS"
+      },
+      {
+        "scan": "747",
+        "android": "TRD_POPMENU"
+      },
+      {
+        "scan": "751",
+        "android": "FOCUS_RESET"
+      },
+      {
+        "scan": "755",
+        "android": "SOURCE"
+      }
+    ]
+  },
+  "limitations": []
+}
