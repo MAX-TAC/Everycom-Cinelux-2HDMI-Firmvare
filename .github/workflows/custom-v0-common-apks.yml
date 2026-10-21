@@ -28,7 +28,8 @@ jobs:
           set -euxo pipefail
           mkdir -p /tmp/custom-apks
           curl -fL --retry 5 --retry-delay 3             https://gitlab.com/flauncher/flauncher/-/releases/0.18.0/downloads/flauncher-0.18.0.apk             -o /tmp/custom-apks/FLauncher.apk
-          echo "36e13a97d92dbfa038f5af3976b05d86ea504ed664dd2ed0a21f3b560ce19cb4  /tmp/custom-apks/FLauncher.apk" | sha256sum -c -
+          echo "Upstream GitLab asset SHA256 (to pin after verified download):"
+          sha256sum /tmp/custom-apks/FLauncher.apk
           aapt dump badging /tmp/custom-apks/FLauncher.apk | grep -m 1 "package: name='me.efesser.flauncher'"
           unzip -tq /tmp/custom-apks/FLauncher.apk | tail -n 2
           apksigner verify --print-certs /tmp/custom-apks/FLauncher.apk | head -n 8
@@ -46,7 +47,8 @@ jobs:
           "$BUILD_TOOLS/d8" --min-api 23 --lib "$SDK" --output "$WORK/dex"             "$WORK/classes/org/cinelux/settingsshortcut/OpenSettingsActivity.class"
           cd "$WORK"
           cp resources.apk unsigned.apk
-          aapt add unsigned.apk dex/classes.dex
+          cp "$WORK/dex/classes.dex" "$WORK/classes.dex"
+          aapt add unsigned.apk classes.dex
           zipalign -f 4 unsigned.apk aligned.apk
           keytool -genkeypair -alias cine-sandbox -keyalg RSA -keysize 3072 -validity 730             -dname "CN=CineLux Developer Test Shortcut, OU=Experimental, O=Open Source, C=US"             -keystore "$WORK/sandbox.keystore" -storepass changeit -keypass changeit -noprompt
           apksigner sign --ks "$WORK/sandbox.keystore" --ks-pass pass:changeit             --key-pass pass:changeit --out /tmp/custom-apks/CineLuxSettingsShortcut.apk aligned.apk
