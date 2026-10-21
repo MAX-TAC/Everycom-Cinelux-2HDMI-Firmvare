@@ -10,7 +10,8 @@
 4. [MEDIATEK_VS_OEM_SERVICES_RU.md](MEDIATEK_VS_OEM_SERVICES_RU.md) — почему MediaTek TV HAL и OEM TRD не являются взаимозаменяемыми; где возможен отказ от OEM-прослойки.
 5. [MT7663_DRIVER_COMPARISON_RU.md](MT7663_DRIVER_COMPARISON_RU.md) — проверенные `vermagic`, зависимости и отличия Wi-Fi модулей из обеих ревизий (ядро 5.15.189).
 6. [LAUNCHER_SELECTION_RU.md](LAUNCHER_SELECTION_RU.md) — простые HOME для Android 13 (AOSP sample, FLauncher), критерии выбора; Google TV/Home не приоритет.
-7. [LUMEN_HOME_PORT_RU.md](LUMEN_HOME_PORT_RU.md) — архивное исследование возможного переноса Lumen Home **для будущего этапа**, сейчас не используем.
+7. [NETWORK_WIFI_LAN_8052_TRIAGE_RU.md](NETWORK_WIFI_LAN_8052_TRIAGE_RU.md) — сообщения владельца о низкой скорости Wi-Fi и неработающем RJ45 на 8052.1.0.4; результаты сравнения Ethernet GMAC и условия диагностики.
+8. [LUMEN_HOME_PORT_RU.md](LUMEN_HOME_PORT_RU.md) — архивное исследование возможного переноса Lumen Home **для будущего этапа**, сейчас не используем.
 
 ## Краткие решения
 
