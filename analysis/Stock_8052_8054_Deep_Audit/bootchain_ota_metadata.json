@@ -1,0 +1,122 @@
+{
+  "source": "SHA256-verified original RUIOS 8052 OTA (2026-10-12)",
+  "factory_comparison": "Stock 8054 AVB key hash from analysis/HDMI_Comparison/AVB.md",
+  "parts": {
+    "boot": {
+      "size": 78643200,
+      "sha256": "094585da7764ff78c9bdc77a5797b3da1355bbd3bec0cfd28692c6af5aa4c66a",
+      "header_magic_ascii": "ANDROID!\bH(\u0002\u0000\u0000\u0000\u0000",
+      "is_android_boot_image": true
+    },
+    "mboot": {
+      "size": 2658304,
+      "sha256": "8819cc068a7a05243eebbc504289442e6cf24992af4562f84a4c51bdf7d691ee",
+      "header_magic_ascii": "\u0000\u0004\u0000\u0000\u0000\u0000@'@\\x89h'@\\x8d(\u0000",
+      "string_keyword_counts": {
+        "fastboot": 17,
+        "vbmeta": 39,
+        "verity": 20,
+        "rollback": 14,
+        "secureboot": 0,
+        "androidboot": 43,
+        "bootargs": 42,
+        "recovery": 44,
+        "unlock": 17,
+        "dtbo": 104,
+        "optee": 15,
+        "usb": 330,
+        "avb": 81,
+        "verify": 91
+      }
+    },
+    "optee": {
+      "size": 2809856,
+      "sha256": "7f1b13494c08f5b796c7e735879d1a00431ff8ed5d05ee78ae0e5559ff48e8bf",
+      "header_magic_ascii": "\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0002\u0010\u0000\u0000\u0000\u0000\u0000",
+      "string_keyword_counts": {
+        "fastboot": 0,
+        "vbmeta": 0,
+        "verity": 0,
+        "rollback": 0,
+        "secureboot": 0,
+        "androidboot": 0,
+        "bootargs": 0,
+        "recovery": 0,
+        "unlock": 0,
+        "dtbo": 0,
+        "optee": 2,
+        "usb": 0,
+        "avb": 0,
+        "verify": 0
+      }
+    },
+    "vbmeta": {
+      "size": 12288,
+      "sha256": "d9c0035e7884d7dcd6a242db95eec1344883e9020078b1c5625417a47b230412",
+      "header_magic_ascii": "AVB0\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "avb": {
+        "valid_avb_header": true,
+        "version": "1.0",
+        "alg_id": 2,
+        "auth_bytes": 576,
+        "aux_bytes": 9344,
+        "signature_size": 512,
+        "public_key_size": 1032,
+        "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+        "equals_factory_8054_public_key_sha256": true,
+        "rollback_index": 0,
+        "flags": 0,
+        "rollback_index_location": 0,
+        "release_info": "avbtool 1.2.0",
+        "descriptor_types": {
+          "4": 6,
+          "0": 7,
+          "2": 2,
+          "1": 1
+        },
+        "NOTE": "Metadata parsed offline. These fields do not prove live bootloader verification policy."
+      }
+    },
+    "vbmeta_system": {
+      "size": 4096,
+      "sha256": "11989885485f32576a544d85e15b2564c53db760b2d53fc3967f128870a0d49f",
+      "header_magic_ascii": "AVB0\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "avb": {
+        "valid_avb_header": true,
+        "version": "1.0",
+        "alg_id": 2,
+        "auth_bytes": 576,
+        "aux_bytes": 2816,
+        "signature_size": 512,
+        "public_key_size": 1032,
+        "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+        "equals_factory_8054_public_key_sha256": true,
+        "rollback_index": 0,
+        "flags": 0,
+        "rollback_index_location": 0,
+        "release_info": "avbtool 1.2.0",
+        "descriptor_types": {
+          "0": 9,
+          "1": 3
+        },
+        "NOTE": "Metadata parsed offline. These fields do not prove live bootloader verification policy."
+      }
+    },
+    "dtbo": {
+      "size": 8388608,
+      "sha256": "755b9158991a31c88cdfe9a9a1b207da3c8ac9885fe1c3ccdde7b632017f5cd4",
+      "header_magic_ascii": "\\xd7\\xb7\\xab\u001e\u0000:\b\\xf0\u0000\u0000\u0000 \u0000\u0000\u0000 ",
+      "dtbo_entries": 207
+    },
+    "armfw": {
+      "size": 77824,
+      "sha256": "8809923c93bd860ae28fb934e80ce1b7a45e60909122b704ca6bc344f271ab63",
+      "header_magic_ascii": "\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0002\u0010\u0000\u0000\u0000\u0000\u0000"
+    }
+  },
+  "limitations": [
+    "No stock 8054 bootloader body inspected by this tool; see physical inventory comparison.",
+    "No secure boot fuse, active trust policy, fastboot support or rollback behavior can be established from static string searches.",
+    "No partitions were modified, signed or flashed."
+  ]
+}
