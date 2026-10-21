@@ -1,11 +1,6 @@
 name: Determine OEM setup versus settings class overlap
 
 on:
-  push:
-    branches: [deep-stock-audit-8052-8054-20261021]
-    paths:
-      - ".github/workflows/audit-oem-setup-overlap.yml"
-      - "tools/analyze_oem_setup_overlap.py"
   workflow_dispatch:
 
 permissions:
