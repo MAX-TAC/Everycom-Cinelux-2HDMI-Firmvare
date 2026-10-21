@@ -1,0 +1,65 @@
+name: Deep stock app dependency and code-risk audit (8052 OTA)
+
+on:
+  push:
+    branches: [deep-stock-audit-8052-8054-20261021]
+    paths:
+      - ".github/workflows/deep-stock-app-dependencies.yml"
+      - "tools/audit_latest_8052_app_graph.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static Android tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils aapt unzip
+          curl -fL --retry 4 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
+          mkdir -p /tmp/jadx-bin /tmp/dumper /tmp/images /tmp/erofs
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+      - name: Download and verify official 8052 OTA ZIP
+        run: |
+          curl -fL --retry 5 --retry-delay 4 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/firmware.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/firmware.zip" | sha256sum -c -
+      - name: Extract original Android filesystem, without flashing
+        run: |
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext,vendor -o /tmp/images /tmp/firmware.zip > /tmp/payload.log 2>&1 || { tail -n 80 /tmp/payload.log; exit 1; }
+          for name in system system_ext vendor; do
+            mkdir -p "/tmp/erofs/$name"
+            fsck.erofs --extract="/tmp/erofs/$name" "/tmp/images/$name.img" > "/tmp/$name-extract.log" 2>&1 || { tail -n 70 "/tmp/$name-extract.log"; exit 1; }
+          done
+      - name: Scan manifest, API references and possible error sites
+        run: |
+          python3 -u tools/audit_latest_8052_app_graph.py > /tmp/apps.log 2>&1 || { tail -n 90 /tmp/apps.log; exit 1; }
+          tail -n 80 /tmp/apps.log
+          head -n 40 analysis/Deep_Stock_Audit_20261021/LATEST_8052_APP_GRAPH_RU.md
+      - name: Commit source-free dependency documentation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Deep_Stock_Audit_20261021/LATEST_8052_APP_GRAPH_RU.md analysis/Deep_Stock_Audit_20261021/latest_8052_app_graph.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit latest 8052 launcher/store and native OEM app dependencies"
+            git pull --rebase origin deep-stock-audit-8052-8054-20261021
+            git push origin HEAD:deep-stock-audit-8052-8054-20261021
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deep-stock-app-audit
+          path: analysis/Deep_Stock_Audit_20261021/
+          if-no-files-found: warn
+          retention-days: 30
