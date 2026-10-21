@@ -66,7 +66,11 @@ for name,rel in paths.items():
         value=re.search(r'="([^"]+)"',line)
         if attr.group(2)=="name" and level==depth+2 and value:cur["name"]=value.group(1)
         elif attr.group(2)=="exported" and level==depth+2:
-            cur["exported"]="0xffffffff" in line or "0x1" in line or "true" in line.lower()
+            boolean=re.search(r"\(type 0x12\)0x([0-9a-fA-F]+)",line)
+            if boolean:cur["exported"]=int(boolean.group(1),16)!=0
+            else:
+                attrtext=line.split("=",1)[-1].strip().strip('"').lower()
+                if attrtext in ("true","false"):cur["exported"]=attrtext=="true"
         elif attr.group(2)=="permission" and level==depth+2 and value:cur["permissions"].append(value.group(1))
         elif attr.group(2)=="name" and value and "action" in line.lower():cur["actions"].append(value.group(1))
     records["components"][name]=nodes
