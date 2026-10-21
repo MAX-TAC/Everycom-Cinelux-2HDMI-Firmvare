@@ -1,0 +1,2829 @@
+{
+  "source": "SHA256 verified original RUIOS.8052.1.0.4 October OTA",
+  "apk_paths": [
+    "product/app/Camera2/Camera2.apk",
+    "product/app/LatinIME/LatinIME.apk",
+    "product/app/ModuleMetadata/ModuleMetadata.apk",
+    "product/app/VendorDisclaimer/VendorDisclaimer.apk",
+    "product/app/WallpaperPicker/WallpaperPicker.apk",
+    "product/app/webview/webview.apk",
+    "system/system/apex/com.android.adservices/app/SdkSandbox@TP1A.220624.021.A1/SdkSandbox.apk",
+    "system/system/apex/com.android.adservices/priv-app/AdServicesApk@TP1A.220624.021.A1/AdServicesApk.apk",
+    "system/system/apex/com.android.btservices/app/Bluetooth@TP1A.220624.021.A1/Bluetooth.apk",
+    "system/system/apex/com.android.extservices/priv-app/ExtServices@TP1A.220624.021.A1/ExtServices.apk",
+    "system/system/apex/com.android.mediaprovider/priv-app/MediaProvider@TP1A.220624.021.A1/MediaProvider.apk",
+    "system/system/apex/com.android.ondevicepersonalization/app/OnDevicePersonalization@TP1A.220624.021.A1/OnDevicePersonalization.apk",
+    "system/system/apex/com.android.permission/priv-app/PermissionController@TP1A.220624.021.A1/PermissionController.apk",
+    "system/system/apex/com.android.permission/priv-app/SafetyCenterResources@TP1A.220624.021.A1/SafetyCenterResources.apk",
+    "system/system/apex/com.android.tethering.inprocess/priv-app/InProcessTethering@TP1A.220624.021.A1/InProcessTethering.apk",
+    "system/system/apex/com.android.tethering.inprocess/priv-app/ServiceConnectivityResources@TP1A.220624.021.A1/ServiceConnectivityResources.apk",
+    "system/system/apex/com.android.uwb/priv-app/ServiceUwbResources@TP1A.220624.021.A1/ServiceUwbResources.apk",
+    "system/system/apex/com.android.wifi/app/OsuLogin@TP1A.220624.021.A1/OsuLogin.apk",
+    "system/system/apex/com.android.wifi/app/WifiDialog@TP1A.220624.021.A1/WifiDialog.apk",
+    "system/system/apex/com.android.wifi/priv-app/ServiceWifiResources@TP1A.220624.021.A1/ServiceWifiResources.apk",
+    "system/system/app/BasicDreams/BasicDreams.apk",
+    "system/system/app/CertInstaller/CertInstaller.apk",
+    "system/system/app/CompanionDeviceManager/CompanionDeviceManager.apk",
+    "system/system/app/CtsShimPrebuilt/CtsShimPrebuilt.apk",
+    "system/system/app/ExtShared/ExtShared.apk",
+    "system/system/app/FTAirplayWireless/FTAirplayWireless.apk",
+    "system/system/app/HTMLViewer/HTMLViewer.apk",
+    "system/system/app/KeyChain/KeyChain.apk",
+    "system/system/app/KuSettings/KuSettings.apk",
+    "system/system/app/KuSetupWizard/KuSetupWizard.apk",
+    "system/system/app/KuSourceRJ/KuSourceRJ.apk",
+    "system/system/app/PacProcessor/PacProcessor.apk",
+    "system/system/app/PlatformCaptivePortalLogin/PlatformCaptivePortalLogin.apk",
+    "system/system/app/PrintSpooler/PrintSpooler.apk",
+    "system/system/app/RJBluetoothSpeaker/RJBluetoothSpeaker.apk",
+    "system/system/app/RuiAutoFocus/RuiAutoFocus.apk",
+    "system/system/app/SecureElement/SecureElement.apk",
+    "system/system/app/TrdDreamPic/TrdDreamPic.apk",
+    "system/system/app/TrdFactoryTest/TrdFactoryTest.apk",
+    "system/system/app/WallpaperBackup/WallpaperBackup.apk",
+    "system/system/app/trdservice/trdservice.apk",
+    "system/system/app/zxlauncher/zxlauncher.apk",
+    "system/system/app/zxstore/zxstore.apk",
+    "system/system/framework/framework-res.apk",
+    "system/system/priv-app/BackupRestoreConfirmation/BackupRestoreConfirmation.apk",
+    "system/system/priv-app/CalendarProvider/CalendarProvider.apk",
+    "system/system/priv-app/ContactsProvider/ContactsProvider.apk",
+    "system/system/priv-app/CtsShimPrivPrebuilt/CtsShimPrivPrebuilt.apk",
+    "system/system/priv-app/DownloadProvider/DownloadProvider.apk",
+    "system/system/priv-app/DynamicSystemInstallationService/DynamicSystemInstallationService.apk",
+    "system/system/priv-app/ExternalStorageProvider/ExternalStorageProvider.apk",
+    "system/system/priv-app/FusedLocation/FusedLocation.apk",
+    "system/system/priv-app/InProcessNetworkStack/InProcessNetworkStack.apk",
+    "system/system/priv-app/InputDevices/InputDevices.apk",
+    "system/system/priv-app/KeystoneCorrection/KeystoneCorrection.apk",
+    "system/system/priv-app/LocalTransport/LocalTransport.apk",
+    "system/system/priv-app/MediaProviderLegacy/MediaProviderLegacy.apk",
+    "system/system/priv-app/PackageInstaller/PackageInstaller.apk",
+    "system/system/priv-app/ProxyHandler/ProxyHandler.apk",
+    "system/system/priv-app/RuiYunOta/RuiYunOta.apk",
+    "system/system/priv-app/SettingsProvider/SettingsProvider.apk",
+    "system/system/priv-app/SharedStorageBackup/SharedStorageBackup.apk",
+    "system/system/priv-app/Shell/Shell.apk",
+    "system/system/priv-app/SoundPicker/SoundPicker.apk",
+    "system/system/priv-app/StatementService/StatementService.apk",
+    "system/system/priv-app/TvProvider/TvProvider.apk",
+    "system/system/priv-app/UserDictionaryProvider/UserDictionaryProvider.apk",
+    "system/system/priv-app/VpnDialogs/VpnDialogs.apk",
+    "system_ext/app/AutoPair/AutoPair.apk",
+    "system_ext/app/Factory/Factory.apk",
+    "system_ext/app/TvFrameworkPackageStubs/TvFrameworkPackageStubs.apk",
+    "system_ext/app/WFDSinkTest/WFDSinkTest.apk",
+    "system_ext/priv-app/LiveTV/LiveTV.apk",
+    "system_ext/priv-app/MtkNetworkMonitorService/MtkNetworkMonitorService.apk",
+    "system_ext/priv-app/MtkTvInput/MtkTvInput.apk",
+    "system_ext/priv-app/MultiMediaPlayer/MultiMediaPlayer.apk",
+    "system_ext/priv-app/RemoteProvisioner/RemoteProvisioner.apk",
+    "system_ext/priv-app/RetailDisplay/RetailDisplay.apk",
+    "system_ext/priv-app/SystemUI/SystemUI.apk",
+    "system_ext/priv-app/TvServices/TvServices.apk",
+    "system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk",
+    "vendor/overlay/TetheringInprocessRROOverlay.apk",
+    "vendor/overlay/TetheringRROOverlay.apk",
+    "vendor/overlay/WifiRROOverlay.apk",
+    "vendor/priv-app/trdmiddle/trdmiddle.apk"
+  ],
+  "boot_services": [
+    {
+      "rc": "system/system/etc/init/apexd.rc",
+      "line": 10,
+      "service": "apexd-bootstrap",
+      "executable": "/system/bin/apexd"
+    },
+    {
+      "rc": "system/system/etc/init/audioserver.rc",
+      "line": 1,
+      "service": "audioserver",
+      "executable": "/system/bin/audioserver"
+    },
+    {
+      "rc": "system/system/etc/init/bootanim.rc",
+      "line": 1,
+      "service": "bootanim",
+      "executable": "/system/bin/bootanimation"
+    },
+    {
+      "rc": "system/system/etc/init/atrace.rc",
+      "line": 393,
+      "service": "boottrace",
+      "executable": "/system/bin/atrace"
+    },
+    {
+      "rc": "vendor/etc/init/bootvideo.rc",
+      "line": 2,
+      "service": "bootvideo",
+      "executable": "/vendor/bin/sh"
+    },
+    {
+      "rc": "vendor/etc/init/cpu_audio.rc",
+      "line": 2,
+      "service": "cpu-audio",
+      "executable": "/vendor/bin/sh"
+    },
+    {
+      "rc": "vendor/etc/init/dtv_svc.rc",
+      "line": 2,
+      "service": "dtv-svc",
+      "executable": "/vendor/bin/sh"
+    },
+    {
+      "rc": "vendor/etc/init/factory_svc.rc",
+      "line": 1,
+      "service": "factory_svc",
+      "executable": "/mnt/vendor/factory/bin/factory_svc"
+    },
+    {
+      "rc": "vendor/etc/init/mtk_rm.rc",
+      "line": 2,
+      "service": "mtk_rm",
+      "executable": "/vendor/bin/sh"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.hardware.tv.networkproxy@1.0-service.rc",
+      "line": 1,
+      "service": "networkproxy-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.hardware.tv.networkproxy@1.0-service"
+    },
+    {
+      "rc": "system/system/etc/init/perfetto.rc",
+      "line": 119,
+      "service": "perfetto_trace_on_boot",
+      "executable": "/system/bin/perfetto"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.cmpb@1.0-service.rc",
+      "line": 1,
+      "service": "sample-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.cmpb@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.screenrecord@1.0-service.rc",
+      "line": 1,
+      "service": "screenrecord",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.screenrecord@1.0-service"
+    },
+    {
+      "rc": "system/init.trd.rc",
+      "line": 71,
+      "service": "trd_boot",
+      "executable": "/system/bin/sh"
+    },
+    {
+      "rc": "system/init.trd.rc",
+      "line": 85,
+      "service": "trd_module_loader",
+      "executable": "/vendor/bin/trd_module_loader.sh"
+    },
+    {
+      "rc": "vendor/etc/init/android.hardware.tv.input@1.0-service-mediatek.rc",
+      "line": 1,
+      "service": "tv-input-1-0",
+      "executable": "/vendor/bin/hw/android.hardware.tv.input@1.0-service-mediatek"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtkcalman@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtkcalman-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.mtkcalman@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtkdmservice@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtkdmservice-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.mtkdmservice@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtkmtalservice@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtkmtalservice-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.mtkmtalservice@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtkrm@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtkrm-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.mtkrm@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtktvapi@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtktvapi-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.api.mtktvapi@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtktvfactory@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtktvfactory-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.mtktvfactory@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.tv.mtktvvoc@1.0-service.rc",
+      "line": 1,
+      "service": "tv-mtktvvoc-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.tv.mtktvvoc@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.hardware.audio.service.rc",
+      "line": 1,
+      "service": "vendor.audio-hal",
+      "executable": "/vendor/bin/hw/vendor.mediatek.hardware.audio.service"
+    },
+    {
+      "rc": "vendor/etc/init/android.hardware.bluetooth@1.1-service.rc",
+      "line": 1,
+      "service": "vendor.bluetooth-1-1",
+      "executable": "/vendor/bin/hw/android.hardware.bluetooth@1.1-service"
+    },
+    {
+      "rc": "vendor/etc/init/android.hardware.boot@1.2-service.rc",
+      "line": 1,
+      "service": "vendor.boot-hal-1-2",
+      "executable": "/vendor/bin/hw/android.hardware.boot@1.2-service"
+    },
+    {
+      "rc": "vendor/etc/init/android.hardware.tv.cec@1.0-service.rc",
+      "line": 1,
+      "service": "vendor.cec-hal-1-0",
+      "executable": "/vendor/bin/hw/android.hardware.tv.cec@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.trd.hardware.hwtrd@1.0-service.rc",
+      "line": 1,
+      "service": "vendor.hwtrd-1-0",
+      "executable": "/vendor/bin/hw/vendor.trd.hardware.hwtrd@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/power-mediatek.rc",
+      "line": 1,
+      "service": "vendor.power-mediatek",
+      "executable": "/vendor/bin/hw/mediatek.hardware.power-service"
+    },
+    {
+      "rc": "vendor/etc/init/android.hardware.thermal@2.0-service.mediatek.rc",
+      "line": 1,
+      "service": "vendor.thermal-hal-2-0-mock",
+      "executable": "/vendor/bin/hw/android.hardware.thermal@2.0-service.mediatek"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.trd.hardware.tof@1.0-service.rc",
+      "line": 1,
+      "service": "vendor.tof-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.trd.hardware.tof@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc",
+      "line": 1,
+      "service": "vendor.wifi_hal_legacy",
+      "executable": "/vendor/bin/hw/android.hardware.wifi@1.0-service-lazy"
+    },
+    {
+      "rc": "system/system/etc/init/wificond.rc",
+      "line": 1,
+      "service": "wificond",
+      "executable": "/system/bin/wificond"
+    },
+    {
+      "rc": "vendor/etc/init/hw/init.common.rc",
+      "line": 130,
+      "service": "wificond",
+      "executable": "/system/bin/wificond"
+    },
+    {
+      "rc": "vendor/etc/init/vendor.mediatek.hardware.wifidisplay@1.0-service.rc",
+      "line": 1,
+      "service": "wifidisplay-hal-1-0",
+      "executable": "/vendor/bin/hw/vendor.mediatek.hardware.wifidisplay@1.0-service"
+    },
+    {
+      "rc": "vendor/etc/init/init.insmod.rc",
+      "line": 274,
+      "service": "wlan_dongle_detect",
+      "executable": "/vendor/bin/wlan_dongle_detect"
+    }
+  ],
+  "key_layouts": [
+    {
+      "path": "system/system/usr/keylayout/AVRCP.kl",
+      "sha256": "bce0de89d54c072dedc3025dce55ab2e3009fcd23c01c22c189cdc74eed4ba2e",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Generic.kl",
+      "sha256": "078ec2bfe11c073f4b772bf80cb9686dd0e904ba453ba35e8c339778904511c8",
+      "relevant_keys": [
+        {
+          "keycode": "43",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "86",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "102",
+          "action": "MOVE_HOME"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "127",
+          "action": "MENU"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "152",
+          "action": "POWER"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "528",
+          "action": "FOCUS"
+        },
+        {
+          "keycode": "744",
+          "action": "FOCUS_PLUS"
+        },
+        {
+          "keycode": "745",
+          "action": "FOCUS_MINUS"
+        },
+        {
+          "keycode": "747",
+          "action": "TRD_POPMENU"
+        },
+        {
+          "keycode": "751",
+          "action": "FOCUS_RESET"
+        },
+        {
+          "keycode": "755",
+          "action": "SOURCE"
+        },
+        {
+          "keycode": "182",
+          "action": "SOURCE"
+        }
+      ],
+      "relevant_key_count": 24
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0079_Product_0011.kl",
+      "sha256": "fbc04cb1038fb3ee439e7ff66c23292abebfbc9e669f29ceb404393e480e5c0b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0079_Product_18d4.kl",
+      "sha256": "efc683e90693b5521f62e2b1d9f15fbcb252c7047ebb61791ea44bc8109559ab",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0171_Product_0419.kl",
+      "sha256": "faf753e1c941328463dd2448874446d226e3d5e19a4cdca9c30bb8b3c9923197",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_044f_Product_b326.kl",
+      "sha256": "6a02af35fc963a81178580eae20320138c7e5ed1fe77b629f9705b3cce6b2504",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_028e.kl",
+      "sha256": "4cc683a67fe23848e8267c9f79dcd5b47c72d7923f5349a244438c5ed487bec1",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_028f.kl",
+      "sha256": "d1f88a204afc900069391cf238409078e594d296c7cd7fe42c1ecd372a3b215e",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02a1.kl",
+      "sha256": "77717962198c3502a4ea80d8abb6cf850d043b71c2637fbb8fd7349046694c50",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02d1.kl",
+      "sha256": "b57c05bd7c794f2c28a2d31d69401b7c808b4e3c9a2a491cf56b0d131dc292d9",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02dd.kl",
+      "sha256": "ef4733fb4ece60c6c821a05d1bd2a0e7e97abb55540ed7f2efe06e55edea9ef1",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02e0.kl",
+      "sha256": "1e5ed3fe7cd4a963f3780c4aebc645e94c1462b24b3c2b268f78963b64c6705b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02e3.kl",
+      "sha256": "8923c01f7f4a59b47860467c1c359d724aebadfa437e7bc2402b723ba0fe2155",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02ea.kl",
+      "sha256": "d56ce5097aec6e155c62b16b4d6fea1d11a6f95620f7ecb35fc96f898bddf61c",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_02fd.kl",
+      "sha256": "1c2fb9a8524b6c57be8a3c488d4f858b8529bc757707bb2907d3afb663ecf236",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_045e_Product_0b12.kl",
+      "sha256": "971e8be8b681567230174579f781d36ade2ed324c389ed64dbf4e134c8281172",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_b501.kl",
+      "sha256": "44f92cd2121beceb55fba4dcdeab16a2cac002dba7b9d167bece46aeac643851",
+      "relevant_keys": [
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "152",
+          "action": "POWER"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 11
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c216.kl",
+      "sha256": "7851977e760ef0bfee7c184f35e0da2076264a701f609a6c4fab2de1bea85312",
+      "relevant_keys": [
+        {
+          "keycode": "0x128",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c219.kl",
+      "sha256": "738ea5393578328f9a3bfe70b527e520d133b83f5b4e5d34da94930f1b471b63",
+      "relevant_keys": [
+        {
+          "keycode": "312",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c21d.kl",
+      "sha256": "eee743911e25fb58e8288b285c2dc2046f4ccb381eb881d1465e7ddfab5abf4e",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c21e.kl",
+      "sha256": "97bf9b5b32ee16d6283c54e8d936f5e19c3de2d69ea60e5159fd8062bc93128a",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c21f.kl",
+      "sha256": "ff5da9a1d4944cdd5e7e6921867e54fac9747735fef196f16c83d696f3f3d10e",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c242.kl",
+      "sha256": "cbdd5c98d23c6f180b4493a490566be0c67fec70a09e2d6f0d7f6216eb348d36",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c294.kl",
+      "sha256": "bb37625cac3c96647932e715479d15bafc729a2a3c29eb8daf1e99860f746d1e",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c299.kl",
+      "sha256": "ff5ebb8ece58ab909af3538a8a89dc62959d3a5cb8d4cf6ec81521fb044e683c",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_046d_Product_c532.kl",
+      "sha256": "adb12e9f67cecb798648e46e71c437000d69b76ee284188064e2b462fc2c16c7",
+      "relevant_keys": [
+        {
+          "keycode": "43",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "96",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "102",
+          "action": "MOVE_HOME"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "127",
+          "action": "MENU"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 13
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0268.kl",
+      "sha256": "f6822cb5260de37e318f5bc9f1dad5ad068ecf6d8263abe6fa66fe8b53139e9f",
+      "relevant_keys": [
+        {
+          "keycode": "0x124",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "0x125",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "0x126",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "0x127",
+          "action": "DPAD_LEFT"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0268_Version_8000.kl",
+      "sha256": "469bd4666efad0e0cc96be3b3d78b73c7b1210fba03d180f6a5af9816dd51c61",
+      "relevant_keys": [
+        {
+          "keycode": "0x220",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "0x223",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "0x221",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "0x222",
+          "action": "DPAD_LEFT"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0268_Version_8100.kl",
+      "sha256": "469bd4666efad0e0cc96be3b3d78b73c7b1210fba03d180f6a5af9816dd51c61",
+      "relevant_keys": [
+        {
+          "keycode": "0x220",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "0x223",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "0x221",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "0x222",
+          "action": "DPAD_LEFT"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0268_Version_8111.kl",
+      "sha256": "85619e7d8dd97e14c29ba8be399569a19d46acef974d2fec220d2ee1c89f3153",
+      "relevant_keys": [
+        {
+          "keycode": "0x220",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "0x223",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "0x221",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "0x222",
+          "action": "DPAD_LEFT"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_05c4.kl",
+      "sha256": "5f4882ab69f17282f82546962b3a3d030ad681fb5f775e5723b08ca458435d58",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_05c4_Version_8000.kl",
+      "sha256": "05d2fc180103962650c490b8e13bb32fae812c1e299a10e203280827e7ca8722",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_05c4_Version_8100.kl",
+      "sha256": "05d2fc180103962650c490b8e13bb32fae812c1e299a10e203280827e7ca8722",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_05c4_Version_8111.kl",
+      "sha256": "3b56f1a700dd31e0a3e18c6d543dc5b3e0c26acc83c9fbf5d60995c2999c1257",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_09cc.kl",
+      "sha256": "5f4882ab69f17282f82546962b3a3d030ad681fb5f775e5723b08ca458435d58",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_09cc_Version_8000.kl",
+      "sha256": "05d2fc180103962650c490b8e13bb32fae812c1e299a10e203280827e7ca8722",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_09cc_Version_8100.kl",
+      "sha256": "05d2fc180103962650c490b8e13bb32fae812c1e299a10e203280827e7ca8722",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_09cc_Version_8111.kl",
+      "sha256": "3b56f1a700dd31e0a3e18c6d543dc5b3e0c26acc83c9fbf5d60995c2999c1257",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0ba0.kl",
+      "sha256": "f1fbfded120338771725e5d0064a2dcf5137de512b32130ea3b1458b3d25f686",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0ba0_Version_8111.kl",
+      "sha256": "2d0f84eae513fb88bfc3de930463c8c4001c1643d1a65a025ad8271123142b68",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_054c_Product_0ce6.kl",
+      "sha256": "4cd1e87ac8d9df666c37abea0bd23966cc2208f387d65bc355f5528b9fe7ad8c",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_056e_Product_2004.kl",
+      "sha256": "eff57639bb51320d89d4633fb52e1f8381433d759d1e5438d9124bdf9e1b5976",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_056e_Product_2010.kl",
+      "sha256": "22a64d217961878f5ce31f3b39963ea95b9175af4be778651c2b66877d0fdd14",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_056e_Product_2013.kl",
+      "sha256": "6342165aa0b2f6a7256e242aefdd8b0f3238117f41d292bcda0d7b550b450365",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_057e_Product_2009.kl",
+      "sha256": "8dedcb73a98a3c26e1227506ed625bd0a3a0d8c91ade46cfdca223754d35495c",
+      "relevant_keys": [
+        {
+          "keycode": "0x220",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "0x221",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "0x222",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "0x223",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "0x13c",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 5
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0583_Product_2060.kl",
+      "sha256": "cf807d3df2a451ef1ba8c67942584b649cc72cf571c58a59763c4866ded46586",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_05ac_Product_0239.kl",
+      "sha256": "6e31ce1f1b45147002a5b83f37ba1caf4242ea6db6a85dec40ad0c8af91b9276",
+      "relevant_keys": [
+        {
+          "keycode": "43",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "102",
+          "action": "MOVE_HOME"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        }
+      ],
+      "relevant_key_count": 9
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_06a3_Product_f51a.kl",
+      "sha256": "01d7df425b7cfcac3a4cbc6496a06f9267dc3b1562b8b50bb00e0b2892cb7b04",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_4716.kl",
+      "sha256": "87e2d21decdfdb85e75d19c52f9ae9e45354575cb01a509bf2ca50559c6e59c5",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_4718.kl",
+      "sha256": "429f7bc588e4f14d4e2152fc5aa51fffdc74b5f18eeeb9debd2dc22ac81fde16",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_4726.kl",
+      "sha256": "88e344c75231160ffe7da8c1e07d44cbbc1285122c58d110fb2a6a195f640dba",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_4736.kl",
+      "sha256": "07998f21faa5d1bb32a1658e5f55799503244c8472b19c2dae3292c2b9030667",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_4740.kl",
+      "sha256": "39be5133e3a373026cdfcd62d4c866bc25aaffd4e6b6efc9803699e5394d357b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_9871.kl",
+      "sha256": "402823191adda6f1eff192e300ce6837870ea3093afeafcda55ec44fb7f49fee",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_b726.kl",
+      "sha256": "23c025d0065cb27a9c3cc0effd415bb19dcfadf7b4ec1b0fb579af4c9035398f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_beef.kl",
+      "sha256": "f7c62eea9ddfc3819d7f938f925d81a7719c7b2dd7217606b8ba891001ed7c34",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_cb02.kl",
+      "sha256": "b13bc83fcd9fa26b6620bac3a60178a08b4d8b947c2a788e4ac6c7cf4fa736d9",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_cb03.kl",
+      "sha256": "a4d6813fa02fdd924ae1907272af4ee27992b234b066577b3a1e09270ae76f4f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_cb29.kl",
+      "sha256": "8d9be63a47ca5cfd749886d627b1b8a00300505713d0e65b3e632362dd4fda1f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0738_Product_f738.kl",
+      "sha256": "9e26c17f25c52972c6cbbffa8cc035ba6190b5a2b9813805ff928a16c890b209",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_07ff_Product_ffff.kl",
+      "sha256": "16d492aec5ed562d9774b86f8a05abbc6a90f8b4d1cea7116f1b17f3f4d4a780",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0957_Product_0001.kl",
+      "sha256": "b49f9661f8102c67ab5ad619e355b2a9b3df8004367d6bd3a0ab9efdd6cdc0bf",
+      "relevant_keys": [
+        {
+          "keycode": "116",
+          "action": "TV_POWER"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        }
+      ],
+      "relevant_key_count": 11
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0b05_Product_4500.kl",
+      "sha256": "70272b1f948db26f53d2a6ca5f5f021244dfea93e96908860cd2290e4e78101e",
+      "relevant_keys": [
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0113.kl",
+      "sha256": "60a856b170917118ae2956a12a59b1dce5feb401d306bf4bb176e610d8127dc6",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_011f.kl",
+      "sha256": "a450acd1300dde833ba45fa8ae8beccb4f817fe1b73bca8ce858c3135f3f59ec",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0131.kl",
+      "sha256": "5579b0dc1c475b749a4776d6d2f624e0841614f5f1e9277805d3d5eceeb28b1b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0133.kl",
+      "sha256": "25e9e39bc5127a17fc106edbc3dd3c4987e7705c50aae69ac82cf4043aa07253",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0139.kl",
+      "sha256": "7cbd420851d4f2368e0bcf3066ac741771035a4235575c8b0d71c09a16676170",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_013a.kl",
+      "sha256": "f0d4f41bb5c6909d67598261297c2c33e06826b1fb172713bbcd6072ca31a58b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0146.kl",
+      "sha256": "11d947341c508d197425fdc54ecac4c7860fbca84c1bca56083f5cc2ecaa237d",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0147.kl",
+      "sha256": "706fe8152749fbb343a0f10942579a7d2bd0a8adf2e9fb3cef7bdb9214ed7183",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0161.kl",
+      "sha256": "f0d4f41bb5c6909d67598261297c2c33e06826b1fb172713bbcd6072ca31a58b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0162.kl",
+      "sha256": "f0d4f41bb5c6909d67598261297c2c33e06826b1fb172713bbcd6072ca31a58b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0163.kl",
+      "sha256": "f0d4f41bb5c6909d67598261297c2c33e06826b1fb172713bbcd6072ca31a58b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0164.kl",
+      "sha256": "e511b7cc28ede85e0f6f405fde9550534d036d1ec028012e8b0c2a30c7f4b3b6",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0165.kl",
+      "sha256": "194e8039e78a85fb20bc5b85dd89c4aef6530677d204686d42bca0a6abee0f3c",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0201.kl",
+      "sha256": "9ebca61f4dea014bec3bf40efe217d254f1a56e70ebef268c60fc3378c53d1af",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0213.kl",
+      "sha256": "cadeeb44bd1256e99d53365ec73c1b34d6b19cca58854f194c1db92e0cbc2730",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_021f.kl",
+      "sha256": "42193460e8588594b12c0d2cb4294b48ca2cca2ec6a708bb65eccb15591464ed",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0246.kl",
+      "sha256": "d70cbf97708812153cd4b1267ed752dea4a2778260a879ac2aa106903272e64f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_02a4.kl",
+      "sha256": "0108921505c505a67ce693311211f236734f5f81a03f6d6cccfb58568d40c430",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_02a6.kl",
+      "sha256": "1d0fe5d7af13bfba92cf21a85a9d4b5676c9400a6d217796f3382302142c8eed",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_02ab.kl",
+      "sha256": "269a94386be4fb8cb056e6da95baa1b7e9466efb08a38d041c8db7bf21e0ebd0",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0301.kl",
+      "sha256": "13ddc9988ee8d8309ce8a275da35030f33b4aa5920c5e3da99606a47b6e32ef0",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0346.kl",
+      "sha256": "825bd82868b6bbc2e5fe6e5a66178ffc19a7d4927b3a8e4cd8606d268e0eefaa",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0401.kl",
+      "sha256": "13ddc9988ee8d8309ce8a275da35030f33b4aa5920c5e3da99606a47b6e32ef0",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0413.kl",
+      "sha256": "60a856b170917118ae2956a12a59b1dce5feb401d306bf4bb176e610d8127dc6",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_0501.kl",
+      "sha256": "ab56e586803137e96fc726f15542a7a4da637cca8dca690581c616efc885f933",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_f501.kl",
+      "sha256": "b574d505aafc5a658236c8b4a56844c71b5de7eda313112f9020e5a8956b133d",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0e6f_Product_f900.kl",
+      "sha256": "ab8df56b249fd75ffcbd42d81020af6eecbf38223ceda91dbdecd1b96bec8b67",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0f0d_Product_000a.kl",
+      "sha256": "439b623a601ec024b27f576da524fc9a63bad173c4264c934c4b67a20bb52c93",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0f0d_Product_000c.kl",
+      "sha256": "91a91e180986a93b6d4108bd086418d712a82abb935816d3322f8929741e890f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0f0d_Product_0067.kl",
+      "sha256": "c0524897d1c170cdd37303d474710040b2505afb2d629ac9eddedfb7f45854ce",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_0f0d_Product_00c1.kl",
+      "sha256": "58558b6c03a75c81abf5d197a99768870dc26a43444adf856d641022e1742bca",
+      "relevant_keys": [
+        {
+          "keycode": "0x13c",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1038_Product_1412.kl",
+      "sha256": "b99b31b6baaa5733b84c832ab72e326ae58cbad926af82a592121bbee02c79ff",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1038_Product_1430.kl",
+      "sha256": "b0bf9c0ee78d5d4b9f2375f46f6dab44ea7c8465507f64ad5a4cd43a7420968d",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1038_Product_1431.kl",
+      "sha256": "b0bf9c0ee78d5d4b9f2375f46f6dab44ea7c8465507f64ad5a4cd43a7420968d",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_11c9_Product_55f0.kl",
+      "sha256": "580aca70d26b3450a7851ed3263dd9bff7e1059d9b5c1e169cfe378fbeab312d",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_12ab_Product_0301.kl",
+      "sha256": "fc30447b8937971d07f43fac703f379c4794711435cd3020e5ebe53899e3b1b1",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_12bd_Product_d015.kl",
+      "sha256": "2af703379a3c9f6c77b14c20b4ebc852f7b10e45e6eae9e6f68bf5743e862dbc",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1430_Product_4748.kl",
+      "sha256": "a282bdd73cb02e651540b12f853ab7e3e9924f1d7112c40f24c5eeb00ce08f0a",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1430_Product_f801.kl",
+      "sha256": "524d74da277d0fce8ea35a284d458e673b4a8e2ec647aa54f0b82b3736795595",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_146b_Product_0601.kl",
+      "sha256": "d69009dc09b6757753ec83c477ea0a3989d5a700f81a3654a98c083243795eb3",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_0037.kl",
+      "sha256": "58dce46cb76281c3c442336808f0f9b03966597ab7f8af9e22f1247805c223f5",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_0705.kl",
+      "sha256": "91d1677bc91663763ae987e9698f3dd5533bb755dc374e50591656bf68375691",
+      "relevant_keys": [
+        {
+          "keycode": "0x9e",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_0707.kl",
+      "sha256": "beebe0b2f5b537cda3fc41610f55cf7d787d961698df815b8d2b972ffcf17e61",
+      "relevant_keys": [
+        {
+          "keycode": "0x9e",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_0709.kl",
+      "sha256": "4bda3c1cf1f43581b0585a9e3d6d38399cec549a46528156236709c10163c2aa",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_0900.kl",
+      "sha256": "7ff33cb3da1e1a2d1fed903e1ce0b70ce5b480232cc8bcb17fdc81c5e3e0a0b9",
+      "relevant_keys": [
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_0a03.kl",
+      "sha256": "ddad08863f529362613be92eb23c73ddc673572da9da0de5fde4464d43580197",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_1004.kl",
+      "sha256": "c98ca402b7cf3c61f377a8717535109018eadf0cdac24895a929a99ff73db5c5",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_1007.kl",
+      "sha256": "3b5c7aa5493f514631d72d54b30279666409fd88a96c7f862a4586710a601b58",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_1009.kl",
+      "sha256": "78e9413e4a6d0ab3359b9309c5a2e827d88ac4d79d4dc88b9a0ee27cdb7a479f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1532_Product_100a.kl",
+      "sha256": "dae3b415fa60486c4f413597642ae55f640d8df612db0dbb8ec5c20886b14352",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_15e4_Product_3f00.kl",
+      "sha256": "fcef715d64ddea9ede470402886ca1e5c002799eb5187360870042d0122a4c95",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_15e4_Product_3f0a.kl",
+      "sha256": "c93ec9cdd292219bea8215a821f10362880b947238d9a5fba8a88e70209ceb5f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_15e4_Product_3f10.kl",
+      "sha256": "cdda4a00630de1c23c42cf29b498c1f8136bb2d7970093c4dddcf77886ff6ffc",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_162e_Product_beef.kl",
+      "sha256": "a0be31cfd834afe3c49e0a26fe750fc4e8728c970adba7b2483be52c449b44ca",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1689_Product_fd00.kl",
+      "sha256": "947e09d1c0f79e71a581c8861609eec2da8b084df0e34c20a27336aa4bb678f3",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        },
+        {
+          "keycode": "706",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "705",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "707",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "704",
+          "action": "DPAD_LEFT"
+        }
+      ],
+      "relevant_key_count": 6
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1689_Product_fd01.kl",
+      "sha256": "b1e954b43b52ad82290859c8d9737f24b927e3cec5cc6a04d7cd011c62963a7a",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1689_Product_fe00.kl",
+      "sha256": "83d9e1841f261d174ae5b3a675fa2c71fdabf9bf770710b1be079cd1cb5b8ee7",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_18d1_Product_0200.kl",
+      "sha256": "61b2626d7ea43a31e5971e39461ffeb7f518d6544e1bdfc0966805bee7d008a2",
+      "relevant_keys": [
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_18d1_Product_2c40.kl",
+      "sha256": "8472bad0e70434cb7d61313ffa6a6bf2e97b77131b8d56f483b4d1412f417ca6",
+      "relevant_keys": [
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_18d1_Product_5018.kl",
+      "sha256": "81c355325515df84293b2746e0c9176f7d549b39d84be8c73723c7d7fef9a7f3",
+      "relevant_keys": [
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1949_Product_0401.kl",
+      "sha256": "6da139238a79463fadd4eafb133ef75f3b3208d7682018f1dceab03306867a5b",
+      "relevant_keys": [
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "96",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 7
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_0002.kl",
+      "sha256": "12487c21390b2fd489de484ecaf026ea05aa3f318a1e009421d63e6a5ad233f6",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f016.kl",
+      "sha256": "2b67e16a321d66ffa26ee708cfd3602ec2abe2fbeab7a457cd347eeeb30393b8",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f021.kl",
+      "sha256": "13768a9c3471f4e5a401aea17a112e06a2c9c88d9f3003be16e0cf76ed3ea5f6",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f023.kl",
+      "sha256": "129334073ee5ebd742f6ee72e5f3427ce937ea8e25b49711e7eb8d0fd9ffb06d",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        }
+      ],
+      "relevant_key_count": 1
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f025.kl",
+      "sha256": "3340f1ea12182690a1226e28aff292ab3b8247e710edc63dceb9c3061c628934",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f027.kl",
+      "sha256": "ea00e14c1f7972307f86ede2b31caf0ba1fe908fff9b8a1c5faf9fc1c410f583",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f028.kl",
+      "sha256": "37160c849b0dfd9262af63f2c07dfda30d4b7df404d600d536149d49cc30d913",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f036.kl",
+      "sha256": "bdb74e2c1224bf33eda8a41b3ca9e77a48a2cea98a1903490889a643a7d2202d",
+      "relevant_keys": [
+        {
+          "keycode": "314",
+          "action": "BACK"
+        },
+        {
+          "keycode": "316",
+          "action": "HOME"
+        }
+      ],
+      "relevant_key_count": 2
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f038.kl",
+      "sha256": "35e9a3c7d627890e702030565ccadaa9e13d0e0d85f2b67aa777ae1b69af3ea7",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f501.kl",
+      "sha256": "816fceb17e43ae78b697853d39b40f0f1a2d10c18e77fe9f75389506295da7a1",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f506.kl",
+      "sha256": "03325f531f2dac4b70aca8fd3b5814475110f727af5d2fd56974d073de363aff",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f900.kl",
+      "sha256": "91422b76493bc996b2c3c4a9d8f2d64933cba9fbb73a1bba390a8a896e6c6789",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f901.kl",
+      "sha256": "ee89d3050d45ceb19a272675e50e87653e0d204041b87402a1f7d7420b055f9b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f903.kl",
+      "sha256": "c7a00b8f2ee8728a3e13c99ed34abe916571e15a4081f41560701a2d8a18b287",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_f904.kl",
+      "sha256": "6f3c24cfd66de3af76f3f1be22aa909529bff1ac35682dac88ae0f7d60d549d4",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_fa01.kl",
+      "sha256": "a999f83bf072e6f694156d49428fbcbc523ecfd40535d6dea730cfd39736743e",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_fd00.kl",
+      "sha256": "edad47e76e62cb528cff6e86cdabceba395282ae754aac6491c32c4361d87ced",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1bad_Product_fd01.kl",
+      "sha256": "75a4b3805c28f189c1a27a76982f3027024742c1979b7e915cb7a0fc6784cf1a",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_1d79_Product_0009.kl",
+      "sha256": "1723364da48d9a4d0a2d1e7e38dde3cc0e447f076f6ab5dd4203c70ecf5088b9",
+      "relevant_keys": [
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        }
+      ],
+      "relevant_key_count": 6
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_22b8_Product_093d.kl",
+      "sha256": "7f0309c1de67a80778fc204fd615de9545680f786e5a3a7781ff73385dfa7714",
+      "relevant_keys": [
+        {
+          "keycode": "1",
+          "action": "BACK"
+        },
+        {
+          "keycode": "43",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "102",
+          "action": "HOME"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "125",
+          "action": "MENU"
+        }
+      ],
+      "relevant_key_count": 11
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_2378_Product_1008.kl",
+      "sha256": "b5b9d34d900b6ac494d05028df1326b158b061a36928587d1830302a5f870ea9",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_2378_Product_100a.kl",
+      "sha256": "36d2e82908f427022e6860d417af1e2d0815f858e34753044149fa3633ab2188",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5300.kl",
+      "sha256": "4e9a4a2c25403ff731a4d402f73b911ab30dd6f6bca11bc9fa507e35f1fa7184",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5303.kl",
+      "sha256": "c93ec9cdd292219bea8215a821f10362880b947238d9a5fba8a88e70209ceb5f",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_530a.kl",
+      "sha256": "6bc481d5d32bc151ff50324e6649f0aee969907334695fc54d157d8ecce1c0e0",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_531a.kl",
+      "sha256": "3350b1461dc904a040d74a141ef731fc16ece48f911589f96b3bb28def0e2b53",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5397.kl",
+      "sha256": "788432c4bc5818b6101b57e124179e038cf3b55d390021516575c69eba544ea7",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_541a.kl",
+      "sha256": "b94f0bba103db2f93bf2bbb302daed8b8eceafa1199215c47872b2f126dc6671",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_542a.kl",
+      "sha256": "6e272f47323a2402924a7a800f0195ed495f94adaef4090e626c18ef0d1c685b",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_543a.kl",
+      "sha256": "85629e1d2daf92a524faa46b8f8af8d5acbdc4c9ec807104623da9f0a159a818",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5500.kl",
+      "sha256": "0a4c2fff61636ebcb8b345eca16b58d5b4487b7fcf8afd98f821576796a842d0",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5501.kl",
+      "sha256": "fede5ef2528538a5b37dbdd1a92c48c054a2b6635c2e0c7b6776ddfc1b3ffbdd",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5506.kl",
+      "sha256": "53c451fad68b1f803b36aacf9588641180a73b0bf6365ecd9e7ed4a28e3783ab",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_550d.kl",
+      "sha256": "014ec79723fed1c89499d7d5a2bbcee3d4d8acb16559b00bc3f53efb3e8b3cac",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_551a.kl",
+      "sha256": "384912d3e3cedd98f6471b342b270dbd0f0d4d460b369db6464e8258f3fb122e",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_561a.kl",
+      "sha256": "4467f1dd42ee5c54f9cdc6b5019cbe8dbcabc70c59f4c2e8db239d518f18b449",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5b02.kl",
+      "sha256": "981e5b5516fb30bd35a9405852cc682bb59b8346fef08c3f7492b91f793c7935",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_5d04.kl",
+      "sha256": "58dce46cb76281c3c442336808f0f9b03966597ab7f8af9e22f1247805c223f5",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_24c6_Product_fafe.kl",
+      "sha256": "42193460e8588594b12c0d2cb4294b48ca2cca2ec6a708bb65eccb15591464ed",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_27f8_Product_0bbe.kl",
+      "sha256": "22339e9848d3d87ab0d79b5190a06878d77db4d37d4fdb958d2ac36d0da064ff",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_27f8_Product_0bbf.kl",
+      "sha256": "7b3d7701718845cba5470a3deb6fe2fd6a7d3c33d158b72c43453ee8234863b7",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_28de_Product_1102.kl",
+      "sha256": "3860298e64d7fbe46797c15f8cdb4b4f3df357d28d6a50c134d4a417361479a6",
+      "relevant_keys": [
+        {
+          "keycode": "544",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "545",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "546",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "547",
+          "action": "DPAD_RIGHT"
+        }
+      ],
+      "relevant_key_count": 4
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_2dc8_Product_6101.kl",
+      "sha256": "2cd6844d8889112d6bb77feeb06e84d2c91c593b5c4d27b078ec9bef730468a8",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/Vendor_2e95_Product_7725.kl",
+      "sha256": "0800e8172c1f858c1e0f1cd8344f0553280e0607d0e00861aa576ce16ce31a82",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/idroid_con.kl",
+      "sha256": "343b0e49e3069c59f35e892d50fba1dc66171480670c5466741c75f4fbdd430c",
+      "relevant_keys": [],
+      "relevant_key_count": 0
+    },
+    {
+      "path": "system/system/usr/keylayout/qwerty.kl",
+      "sha256": "b18555881a90808b5b9189f6d34ed37731365f6b4bcd4ab6c00fd56010c4f7bd",
+      "relevant_keys": [
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "229",
+          "action": "MENU"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "59",
+          "action": "MENU"
+        },
+        {
+          "keycode": "232",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "102",
+          "action": "HOME"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "43",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "1",
+          "action": "BACK"
+        },
+        {
+          "keycode": "68",
+          "action": "MENU"
+        }
+      ],
+      "relevant_key_count": 16
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_000d_Product_3838.kl",
+      "sha256": "ee3994024ed680e498b4d9a04cce50e4d699e9575287a627c89b1be9edf9913f",
+      "relevant_keys": [
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "125",
+          "action": "HOME"
+        },
+        {
+          "keycode": "192",
+          "action": "BACK"
+        },
+        {
+          "keycode": "193",
+          "action": "MENU"
+        }
+      ],
+      "relevant_key_count": 11
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_0046_Product_3838.kl",
+      "sha256": "0fb3ba7874c212a59199356bd58c00b640625ec01daeb1d6389fe78442257157",
+      "relevant_keys": [
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "28",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        }
+      ],
+      "relevant_key_count": 6
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_0094_Product_0001.kl",
+      "sha256": "2c6ffc85f17c3ca7185e1155376fc7cc5668fc2012f19855db81db5b8726409c",
+      "relevant_keys": [
+        {
+          "keycode": "79",
+          "action": "TV_INPUT"
+        },
+        {
+          "keycode": "88",
+          "action": "TV_INPUT_COMPOSITE_2"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        },
+        {
+          "keycode": "183",
+          "action": "TV_INPUT_COMPONENT_2"
+        },
+        {
+          "keycode": "212",
+          "action": "TV_INPUT_VGA_1"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "376",
+          "action": "TV_INPUT"
+        },
+        {
+          "keycode": "386",
+          "action": "TV_INPUT_COMPOSITE_2"
+        }
+      ],
+      "relevant_key_count": 18
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_0094_Product_0002.kl",
+      "sha256": "d3ecb000bf05d2fc904ac46b4458401657e52290312575cc1bcf3d7012de8a62",
+      "relevant_keys": [
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "88",
+          "action": "TV_INPUT_COMPOSITE_2"
+        },
+        {
+          "keycode": "183",
+          "action": "TV_INPUT_COMPONENT_2"
+        },
+        {
+          "keycode": "212",
+          "action": "TV_INPUT_VGA_1"
+        },
+        {
+          "keycode": "386",
+          "action": "TV_INPUT_COMPOSITE_2"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        }
+      ],
+      "relevant_key_count": 16
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_045e_Product_077c.kl",
+      "sha256": "87d4e5ee8cc740569c4bf706887c0910c245fce13512b52b6a16cb49c688a2ea",
+      "relevant_keys": [
+        {
+          "keycode": "43",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "86",
+          "action": "BACKSLASH"
+        },
+        {
+          "keycode": "102",
+          "action": "MOVE_HOME"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "127",
+          "action": "MENU"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "152",
+          "action": "POWER"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "172",
+          "action": "HOME"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        }
+      ],
+      "relevant_key_count": 17
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_1d5a_Product_c080.kl",
+      "sha256": "5ad5ab29528adbb37fc4cf3d28b1f723efdc53b6edd129a192f6ee85f3e3e081",
+      "relevant_keys": [
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "353",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        }
+      ],
+      "relevant_key_count": 5
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_3697_Product_0001.kl",
+      "sha256": "0367aa14685dc79f992c32f43d2bb9f004e40b049344dd437d785b666982a26d",
+      "relevant_keys": [
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "28",
+          "action": "DPAD_CENTER"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "88",
+          "action": "TV_INPUT_COMPOSITE_2"
+        },
+        {
+          "keycode": "102",
+          "action": "HOME"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "365",
+          "action": "BACK"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "212",
+          "action": "TV_INPUT_VGA_1"
+        },
+        {
+          "keycode": "356",
+          "action": "TV_POWER"
+        },
+        {
+          "keycode": "79",
+          "action": "TV_INPUT"
+        },
+        {
+          "keycode": "528",
+          "action": "FOCUS"
+        },
+        {
+          "keycode": "744",
+          "action": "FOCUS_PLUS"
+        },
+        {
+          "keycode": "745",
+          "action": "FOCUS_MINUS"
+        },
+        {
+          "keycode": "747",
+          "action": "TRD_POPMENU"
+        },
+        {
+          "keycode": "751",
+          "action": "FOCUS_RESET"
+        },
+        {
+          "keycode": "755",
+          "action": "SOURCE"
+        }
+      ],
+      "relevant_key_count": 23
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_3697_Product_0002.kl",
+      "sha256": "a3dfbfbb2205ef2fd2e159c28db030dd559b5c2b7e8c48b544d180b724d55aab",
+      "relevant_keys": [
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "79",
+          "action": "TV_INPUT"
+        },
+        {
+          "keycode": "402",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "403",
+          "action": "DPAD_DOWN"
+        }
+      ],
+      "relevant_key_count": 5
+    },
+    {
+      "path": "vendor/usr/keylayout/Vendor_3697_Product_0003.kl",
+      "sha256": "2ca167e4dc39dcf528faa04edf1255af81f7db3c833769d3bad9f2ee6b166c32",
+      "relevant_keys": [
+        {
+          "keycode": "116",
+          "action": "POWER"
+        },
+        {
+          "keycode": "113",
+          "action": "VOLUME_MUTE"
+        },
+        {
+          "keycode": "139",
+          "action": "MENU"
+        },
+        {
+          "keycode": "158",
+          "action": "BACK"
+        },
+        {
+          "keycode": "103",
+          "action": "DPAD_UP"
+        },
+        {
+          "keycode": "108",
+          "action": "DPAD_DOWN"
+        },
+        {
+          "keycode": "105",
+          "action": "DPAD_LEFT"
+        },
+        {
+          "keycode": "106",
+          "action": "DPAD_RIGHT"
+        },
+        {
+          "keycode": "115",
+          "action": "VOLUME_UP"
+        },
+        {
+          "keycode": "114",
+          "action": "VOLUME_DOWN"
+        },
+        {
+          "keycode": "102",
+          "action": "HOME"
+        },
+        {
+          "keycode": "467",
+          "action": "TV_INPUT"
+        }
+      ],
+      "relevant_key_count": 12
+    }
+  ],
+  "privileged_grants": [
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.tvinput",
+      "requested_or_granted": [
+        "android.permission.CHANGE_HDMI_CEC_ACTIVE_SOURCE",
+        "android.permission.HDMI_CEC",
+        "android.permission.MODIFY_PARENTAL_CONTROLS",
+        "android.permission.TV_INPUT_HARDWARE"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.wwtv.setupwizard",
+      "requested_or_granted": [
+        "android.permission.MODIFY_PARENTAL_CONTROLS",
+        "android.permission.MOUNT_FORMAT_FILESYSTEMS",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.wwtv.mediaplayer",
+      "requested_or_granted": [
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.HDMI_CEC",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.REBOOT",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SHUTDOWN",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.tv.agent",
+      "requested_or_granted": [
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.DEVICE_POWER",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.INTERACT_ACROSS_USERS_FULL",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MASTER_CLEAR",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.PACKAGE_USAGE_STATS",
+        "android.permission.READ_DREAM_STATE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_LOGS",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.SET_ACTIVITY_WATCHER",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.tv.service",
+      "requested_or_granted": [
+        "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.DEVICE_POWER",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.HDMI_CEC",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.INTERACT_ACROSS_USERS_FULL",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MASTER_CLEAR",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.PACKAGE_USAGE_STATS",
+        "android.permission.READ_DREAM_STATE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_LOGS",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.SET_ACTIVITY_WATCHER",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_DREAM_STATE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.wwtv.tvcenter",
+      "requested_or_granted": [
+        "android.permission.BIND_TV_INPUT",
+        "android.permission.BIND_TV_REMOTE_SERVICE",
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.CHANGE_HDMI_CEC_ACTIVE_SOURCE",
+        "android.permission.DEVICE_POWER",
+        "android.permission.HDMI_CEC",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.KILL_BACKGROUND_PROCESSES",
+        "android.permission.MANAGE_EXTERNAL_STORAGE",
+        "android.permission.MODIFY_AUDIO_ROUTING",
+        "android.permission.MODIFY_PARENTAL_CONTROLS",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.READ_CONTENT_RATING_SYSTEMS",
+        "android.permission.READ_DREAM_STATE",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.RECOVERY",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SHUTDOWN",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WRITE_DREAM_STATE",
+        "android.permission.WRITE_SECURE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.hotkey.dispatcher",
+      "requested_or_granted": [
+        "android.permission.READ_DREAM_STATE",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.WRITE_DREAM_STATE"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.alphonso.acr",
+      "requested_or_granted": [
+        "android.permission.PACKAGE_USAGE_STATS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.android.tv.settings",
+      "requested_or_granted": [
+        "android.permission.BACKUP",
+        "android.permission.BIND_TV_INPUT",
+        "android.permission.BLUETOOTH_PRIVILEGED",
+        "android.permission.DELETE_CACHE_FILES",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_ACCOUNTS_PRIVILEGED",
+        "android.permission.MANAGE_DEBUGGING",
+        "android.permission.MANAGE_USERS",
+        "android.permission.OVERRIDE_WIFI_CONFIG",
+        "android.permission.REBOOT",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SET_UNRESTRICTED_KEEP_CLEAR_AREAS",
+        "android.permission.START_ACTIVITIES_FROM_BACKGROUND",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.USE_RESERVED_DISK",
+        "android.permission.WRITE_EPG_DATA",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.tv.freeviewplay",
+      "requested_or_granted": [
+        "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+        "android.permission.HDMI_CEC",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.MANAGE_USERS",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.WRITE_SECURE_SETTINGS"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.bluetooth",
+      "requested_or_granted": [
+        "android.permission.BLUETOOTH_PRIVILEGED",
+        "android.permission.MODIFY_PHONE_STATE",
+        "android.permission.RECEIVE_BLUETOOTH_MAP"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system_ext/etc/permissions/privapp-permissions-mediatek.xml",
+      "package": "com.mediatek.opapp",
+      "requested_or_granted": [
+        "android.permission.INSTALL_PACKAGES",
+        "android.permission.REQUEST_DELETE_PACKAGES",
+        "android.permission.REQUEST_INSTALL_PACKAGES"
+      ],
+      "denied": []
+    },
+    {
+      "source": "system/system/etc/permissions/privapp-permissions-com.rjpj.yunota.xml",
+      "package": "com.rjpj.yunota",
+      "requested_or_granted": [
+        "android.permission.BACKUP",
+        "android.permission.DELETE_CACHE_FILES",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_ACCOUNTS_PRIVILEGED",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.OVERRIDE_WIFI_CONFIG",
+        "android.permission.REBOOT",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.USE_RESERVED_DISK",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS"
+      ],
+      "denied": []
+    }
+  ],
+  "overlays": [
+    "vendor/overlay/WifiRROOverlay.apk",
+    "vendor/overlay/TetheringInprocessRROOverlay.apk",
+    "vendor/overlay/TetheringRROOverlay.apk"
+  ],
+  "errors": [],
+  "counts": {
+    "apk_paths": 85,
+    "init_service_entries_matching_oem_or_hardware": 36,
+    "key_layout_files": 179,
+    "privilege_xml_declarations": 13,
+    "overlay_apks": 3
+  }
+}
