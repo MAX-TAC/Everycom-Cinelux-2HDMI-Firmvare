@@ -76,9 +76,10 @@ for name in sorted(set(new)|set(old)):
     classification,notes=RISK.get(name,("unclassified_keep_until_review","Additional analysis needed"))
     refs=x.get("referenced_oem_java_symbols",[])
     rows[name]={
-      "ota_present":not x.get("missing",True),"stock_present":not y.get("missing",True),
+      "ota_present":bool(x.get("sha256")) and not x.get("missing",False),"stock_present":bool(y.get("sha256")) and not y.get("missing",False),
       "apk_identical":x.get("sha256")==y.get("sha256") if x.get("sha256") and y.get("sha256") else None,
       "dex_identical":x.get("dex")==y.get("dex") if x.get("dex") and y.get("dex") else None,
+      "method_deltas_are_decompiler_noise_if_dex_identical":bool(x.get("dex") and y.get("dex") and x.get("dex")==y.get("dex")),
       "package":x.get("package"),"apk_path":x.get("path"),
       "component_counts":dict(collections.Counter(e["type"] for e in manifest_entries)),
       "exported_components":exported[:150],
@@ -94,6 +95,8 @@ for name in sorted(set(new)|set(old)):
 result={"subject":"RUIOS Oct-8052 OTA vs Sep-8054 OEM app code and removal impact",
         "apps":rows,
         "caveats":["No app disabled and no Android setting changed.",
+         "When APK and DEX hashes match, individual JADX method-hash differences are decompiler artifacts, NOT changes to original code.",
+         "Package and permission parsing from aapt may be incomplete because upstream audit trims stdout; do not infer absence from an empty field.",
          "Static Java reference is not proof of Binder IPC or runtime dependency.",
          "Exported component presence is not proof it can be called without signature permissions.",
          "Risk indicators are candidates for manual defect review; zero confirmed bugs by this tool."]}
@@ -103,12 +106,13 @@ md=["# OEM application deep audit — latest 8052 OTA vs factory 8054","",
 "NO app removed, no signed APK recreated, no OEM code or private data redistributed.",
 "",
 "## Replacement and removal risk","",
-"| App | Risk and plan | APK same? | Methods changed | Exported components |",
+"| App | Risk and plan | APK same? | JADX deltas* | Exported components |",
 "|---|---|---|---:|---:|"]
 for name,x in rows.items():
     md.append("| "+name+" | "+x["classification"]+" | "+str(x["apk_identical"])+" | "+
       str(x["method_deltas"].get("changed",0))+" | "+str(len(x["exported_components"]))+" |")
-md+=["","## App-by-app evidence and required runtime validation",""]
+md+=["","* A nonzero JADX delta with identical DEX is a decompiler artifact, not a change of firmware code.","",
+"## App-by-app evidence and required runtime validation",""]
 for name,x in rows.items():
     md+=["### "+name,"",
        "- Recommendation: "+x["classification"]+"; inspect "+x["required_review"]+".",
