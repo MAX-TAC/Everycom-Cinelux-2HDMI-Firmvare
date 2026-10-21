@@ -28,8 +28,7 @@ jobs:
           set -euxo pipefail
           mkdir -p /tmp/custom-apks
           curl -fL --retry 5 --retry-delay 3             https://gitlab.com/flauncher/flauncher/-/releases/0.18.0/downloads/flauncher-0.18.0.apk             -o /tmp/custom-apks/FLauncher.apk
-          echo "Upstream GitLab asset SHA256 (to pin after verified download):"
-          sha256sum /tmp/custom-apks/FLauncher.apk
+          echo "376fc528c880cdf7c7c04b2d3708c69f911144498218babb6300808b772af32e  /tmp/custom-apks/FLauncher.apk" | sha256sum -c -
           aapt dump badging /tmp/custom-apks/FLauncher.apk | grep -m 1 "package: name='me.efesser.flauncher'"
           unzip -tq /tmp/custom-apks/FLauncher.apk | tail -n 2
           apksigner verify --print-certs /tmp/custom-apks/FLauncher.apk | head -n 8
@@ -38,7 +37,7 @@ jobs:
           set -euxo pipefail
           WORK=/tmp/custom-shortcut
           mkdir -p "$WORK/classes" "$WORK/dex"
-          SDK="$ANDROID_HOME/platforms/android-33/android.jar"
+          SDK="$ANDROID_HOME/platforms/android-34/android.jar"
           test -f "$SDK"
           BUILD_TOOLS="$(find "$ANDROID_HOME/build-tools" -maxdepth 1 -type d -name '3[5-6]*' | sort -V | tail -n 1)"
           test -x "$BUILD_TOOLS/d8"
