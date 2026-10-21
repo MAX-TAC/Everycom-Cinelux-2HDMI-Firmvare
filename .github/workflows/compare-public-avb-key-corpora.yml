@@ -1,0 +1,102 @@
+name: Compare 8052 AVB public key with known Android signing key corpora
+
+on:
+  push:
+    paths:
+      - ".github/workflows/compare-public-avb-key-corpora.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect published known AVB signing key examples
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/keycorpus
+          git clone -q --depth=1 https://github.com/nccgroup/test_avb_key.git /tmp/keycorpus/nccgroup
+          git clone -q --depth=1 https://github.com/alltechdev/haha-you-used-testkeys.git /tmp/keycorpus/aosp-signing-example
+          git clone -q --depth=1 https://github.com/TheGammaSqueeze/UnisocBypass.git /tmp/keycorpus/unisoc-reference
+          python3 - <<'PY'
+          import cryptography; print('cryptography',cryptography.__version__)
+          PY
+
+      - name: Compare all parseable RSA-4096 keys in matching AVB binary representation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, struct, subprocess
+          from cryptography.hazmat.primitives import serialization
+          TARGET='dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe'
+          root=Path('/tmp/keycorpus')
+          rows=[]
+          seen=set()
+          counts={'examined_files':0,'readable_RSA_4096_keys':0,'other_RSA_sizes':0}
+          for path in root.rglob('*'):
+              if not path.is_file() or path.stat().st_size > 100000 or path.suffix.lower() not in ('.pem','.der','.key','.pub','.crt','.bin'):
+                  continue
+              counts['examined_files']+=1
+              process=subprocess.run(['openssl','pkey','-in',str(path),'-pubout','-outform','DER'],capture_output=True)
+              if process.returncode != 0:
+                  process=subprocess.run(['openssl','pkey','-pubin','-in',str(path),'-pubout','-outform','DER'],capture_output=True)
+              if process.returncode != 0:
+                  continue
+              try:
+                  rsa=serialization.load_der_public_key(process.stdout).public_numbers()
+              except Exception:
+                  continue
+              n,e=rsa.n,rsa.e
+              bits=n.bit_length()
+              if bits != 4096:
+                  counts['other_RSA_sizes']+=1
+                  continue
+              counts['readable_RSA_4096_keys']+=1
+              b=1<<32
+              n0inv=(-pow(n,-1,b))%b
+              rr=pow(2,8192,n)
+              avb=(struct.pack('!II',4096,n0inv)+n.to_bytes(512,'big')+rr.to_bytes(512,'big'))
+              h=hashlib.sha256(avb).hexdigest()
+              # Record unique candidates while preserving actual source file provenance.
+              rel=str(path.relative_to(root))
+              if (h,rel) in seen: continue
+              seen.add((h,rel))
+              rows.append({'source':rel,'avb_public_key_sha256':h,'matches_8052':h==TARGET})
+          out=Path('analysis/AVB_Key_Research_20261021')
+          out.mkdir(parents=True,exist_ok=True)
+          data={'target_key_sha256':TARGET,'repositories':['nccgroup/test_avb_key','alltechdev/haha-you-used-testkeys','TheGammaSqueeze/UnisocBypass'],'counts':counts,'matches':[r for r in rows if r['matches_8052']],'candidates':rows}
+          (out/'known_key_corpus_match.json').write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+          summary=['# Сопоставление ключа проекторов 8052/8054 с открытыми тестовыми ключами',
+          '', 'Сравниваются бинарные AVB-публичные ключи RSA4096, вычисленные **из опубликованных** PEM-файлов в открытых репозиториях.',
+          'Самих закрытых ключей проекторов здесь нет. Публичные примеры тестовых ключей не публикуются повторно.',
+          '', f"Проверено файлов: {counts['examined_files']}; распознано RSA4096-ключей: {counts['readable_RSA_4096_keys']}; совпадений: {len(data['matches'])}.",
+          '', '| Исходный файл в публичном репозитории | SHA256 (ключ AVB) | Совпадение |', '|---|---|---|']
+          for row in rows:
+              summary.append('| '+row['source']+' | '+row['avb_public_key_sha256']+' | '+str(row['matches_8052'])+' |')
+          summary +=['','Список источников: https://github.com/nccgroup/test_avb_key ; https://github.com/alltechdev/haha-you-used-testkeys ; https://github.com/TheGammaSqueeze/UnisocBypass',
+          '', 'Отрицательный результат относится только к перечисленным опубликованным кандидатам. Это не доказательство отсутствия ключа в интернете.']
+          (out/'KNOWN_KEYS_COMPARE_RU.md').write_text('\n'.join(summary)+'\n')
+          print('CHECKED',counts)
+          print('MATCHES',data['matches'])
+          PY
+      - name: Commit public-only audit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/AVB_Key_Research_20261021/known_key_corpus_match.json analysis/AVB_Key_Research_20261021/KNOWN_KEYS_COMPARE_RU.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare projector AVB fingerprints to NCC Group, AOSP, and Unisoc known key sets"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: avb-known-key-comparison
+          path: analysis/AVB_Key_Research_20261021/
+          if-no-files-found: warn
+          retention-days: 30
