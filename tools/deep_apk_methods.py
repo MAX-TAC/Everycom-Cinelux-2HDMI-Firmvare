@@ -121,6 +121,39 @@ for app,rel in apps.items():
         row['interesting_classes'].append(relative)
       for m in re.finditer(r'["\x27]((?:com\.(?:trd|rjpj|my|coolux|mediatek|zeasn)\.|vendor\.|mstar\.|android\.hardware\.)[a-zA-Z0-9_.$@/-]{5,120})["\x27]',code):
         if len(strings)<200:strings.add(m.group(1))
+    # Static indicators are triage leads, NOT verified vulnerabilities or defects.
+    hazards={
+      "raw_i2c_write":r"\bwriteRegister\s*\(",
+      "motor_control":r"\b(?:Motor(?:Back|Front|Stop)|RunMotor(?:Back|Front|Stop))\s*\(",
+      "privileged_property_write":r"\bSystemProperties\s*\.\s*set\s*\(",
+      "android_settings_write":r"\bSettings\s*\.\s*(?:Global|Secure|System)\s*\.\s*put[A-Za-z]*\s*\(",
+      "shell_execution":r"\b(?:getRuntime\s*\(\s*\)\s*\.\s*exec|ProcessBuilder)\s*\(",
+      "system_process_exit":r"\bSystem\s*\.\s*exit\s*\(",
+      "binder_service_access":r"\b(?:ServiceManager\.getService|ITrdSystemService|bindService)\b",
+      "cross_app_intent":r"\b(?:sendBroadcast|startActivity|startService)\s*\(",
+      "exception_swallowed":r"catch\s*\([^)]+\)\s*\{\s*\}",
+      "forced_permission_change":r"(?:chmod\s+777|setenforce\s+0)",
+      "sleep_on_ui_candidate":r"\bThread\.sleep\s*\("
+    }
+    compiled_hazards={k:re.compile(v) for k,v in hazards.items()}
+    hazard_counts=collections.Counter();evidence=[];references=collections.Counter()
+    for j in java:
+      relative=j.relative_to(dst/'sources').as_posix()
+      content=j.read_text(errors='replace')
+      for marker,rx in compiled_hazards.items():
+        matches=list(rx.finditer(content))
+        if matches:
+          hazard_counts[marker]+=len(matches)
+          if len(evidence)<180:
+            evidence.extend([{"indicator":marker,"class":relative,"line":content.count("\n",0,m.start())+1}
+                           for m in matches[:min(3,len(matches))]][:180-len(evidence)])
+      for hit in set(re.findall(r"\bcom\.(?:trd|rjpj|coolux|hysd|my\.settings|android\.tv\.settings|mediatek|zeasn|zxlauncher|zxstore)[\w.$]+",content)):
+        # Java references may be bundled classes, not IPC or runtime dependency.
+        if not re.search(r"(?i)(secret|password|token|serial|macaddress|private|imei)",hit):
+          references[hit[:130]]+=1
+    row["risk_indicator_counts"]=dict(hazard_counts)
+    row["risk_indicator_examples"]=evidence[:180]
+    row["referenced_oem_java_symbols"]=sorted(references,key=lambda s:(-references[s],s))[:100]
     row['api_usage_count']=dict(counts)
     row['native_libraries']=sorted(loads)
     row['referenced_service_strings']=sorted(strings)
