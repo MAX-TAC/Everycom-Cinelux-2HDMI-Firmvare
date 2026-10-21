@@ -1,0 +1,3117 @@
+{
+  "sources": {
+    "8052-factory": {
+      "stats": {
+        "files_examined": 4348,
+        "wifi_modules": 9,
+        "eth_modules": 2,
+        "firmware_candidates": 33,
+        "init_config_files_with_refs": 15
+      }
+    },
+    "8052-ota": {
+      "stats": {
+        "files_examined": 4349,
+        "wifi_modules": 9,
+        "eth_modules": 2,
+        "firmware_candidates": 33,
+        "init_config_files_with_refs": 15
+      }
+    },
+    "8054-factory": {
+      "stats": {
+        "files_examined": 4356,
+        "wifi_modules": 9,
+        "eth_modules": 2,
+        "firmware_candidates": 33,
+        "init_config_files_with_refs": 15
+      }
+    }
+  },
+  "kernel_modules": {
+    "btmtk_usb.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "btmtk_usb.ko",
+          "path": "vendor_a/lib/modules/btmtk_usb.ko",
+          "sha": "4a3d62bb32183c15f7c8294ecace75b9fdced9587b8167a7b49200bb36023c24",
+          "text": "27bf732b60116eeceb9d3a906b574598c998047ab92db64dd58fcf75885c75fd",
+          "rodata": "d0f1014a1002a65a7a7d17b2429ff9cd48e5da4a7547de0be27d4b1c84b917c1",
+          "modinfo": [
+            "depends=mtreset_mt7663",
+            "srcversion=2EE5D818833FEFCEF1D992C",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64",
+            "version=9.0.20260128"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "btmtk_usb.ko",
+          "path": "vendor_a/lib/modules/btmtk_usb.ko",
+          "sha": "a07e112ca0e8603af330bc3f7f1217df11cee4d83660f11ccf32c2f1928eef17",
+          "text": "27bf732b60116eeceb9d3a906b574598c998047ab92db64dd58fcf75885c75fd",
+          "rodata": "fe0bb76b2713a119a6790d387236b0149e2d75620942c6cbf74e78ca8457e335",
+          "modinfo": [
+            "depends=mtreset_mt7663",
+            "srcversion=2EE5D818833FEFCEF1D992C",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64",
+            "version=9.0.20260128"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "btmtk_usb.ko",
+          "path": "vendor_a/lib/modules/btmtk_usb.ko",
+          "sha": "8c9eabf53df11f25c17313b9be733c10e35702aca54d693044c269fd5d3ae1ea",
+          "text": "27bf732b60116eeceb9d3a906b574598c998047ab92db64dd58fcf75885c75fd",
+          "rodata": "fe0bb76b2713a119a6790d387236b0149e2d75620942c6cbf74e78ca8457e335",
+          "modinfo": [
+            "depends=mtreset_mt7663",
+            "srcversion=2EE5D818833FEFCEF1D992C",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64",
+            "version=9.0.20260128"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "btmtk_usb_unify.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "btmtk_usb_unify.ko",
+          "path": "vendor_a/lib/modules/btmtk_usb_unify.ko",
+          "sha": "a217cf9c0b6bef2b2dfadc827a3e851d7a75fd9a66df63b08a78bd59f78a89d3",
+          "text": "d8314b89b2081ecd1a1b524fe3ee43ad57977d45b6383ae4605d9f508192f634",
+          "rodata": "31178f2b5a198f9270f39347cc42b5c3db293b4cf750b66d4d9d90110a906500",
+          "modinfo": [
+            "depends=mtreset",
+            "srcversion=E49F8DC7BCDD95EC4AF11DB",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64",
+            "version=8.0.2026020601:connac3_dev"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "btmtk_usb_unify.ko",
+          "path": "vendor_a/lib/modules/btmtk_usb_unify.ko",
+          "sha": "79cdd880221ef4e50bdb5e337137bd633d8f8f8a6c1ab8700bdbfc07e49bf2eb",
+          "text": "d8314b89b2081ecd1a1b524fe3ee43ad57977d45b6383ae4605d9f508192f634",
+          "rodata": "52fefed211d7ef4fb7209ee11c72146a8f8e740a851b7e80c23e75338f0d989b",
+          "modinfo": [
+            "depends=mtreset",
+            "srcversion=E49F8DC7BCDD95EC4AF11DB",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64",
+            "version=8.0.2026020601:connac3_dev"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "btmtk_usb_unify.ko",
+          "path": "vendor_a/lib/modules/btmtk_usb_unify.ko",
+          "sha": "3a69281755c80e47e4991fe99b617939ec560bdbfc04e78f0abf052fb213197b",
+          "text": "d8314b89b2081ecd1a1b524fe3ee43ad57977d45b6383ae4605d9f508192f634",
+          "rodata": "52fefed211d7ef4fb7209ee11c72146a8f8e740a851b7e80c23e75338f0d989b",
+          "modinfo": [
+            "depends=mtreset",
+            "srcversion=E49F8DC7BCDD95EC4AF11DB",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64",
+            "version=8.0.2026020601:connac3_dev"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "mtk_gmac_mt5896.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "ethernet_modules",
+          "name": "mtk_gmac_mt5896.ko",
+          "path": "vendor_a/lib/modules/mtk_gmac_mt5896.ko",
+          "sha": "0ef90f62a4c08738e130be505203dd146cc4d395bc129bdc0cf20994082d77b7",
+          "text": "44c34d3cd578ffc801f1c52c671fd6af383e2a2713c4477b8a3da909f8345df2",
+          "rodata": "19142be5003ca7fa821b43aa8166086ebc6b8ca6bbd194b4051d99fd6327f62a",
+          "modinfo": [
+            "depends=mtk-pm",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "ethernet_modules",
+          "name": "mtk_gmac_mt5896.ko",
+          "path": "vendor_a/lib/modules/mtk_gmac_mt5896.ko",
+          "sha": "57a4aa906b1b32e4f3ac1a1877d9793f08e300e14b3b644310e6c4af059d4e1a",
+          "text": "44c34d3cd578ffc801f1c52c671fd6af383e2a2713c4477b8a3da909f8345df2",
+          "rodata": "e589ccd6c5e0b9fa133149477f4c50a4338623b91a2485766f69c468074e8b48",
+          "modinfo": [
+            "depends=mtk-pm",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "ethernet_modules",
+          "name": "mtk_gmac_mt5896.ko",
+          "path": "vendor_a/lib/modules/mtk_gmac_mt5896.ko",
+          "sha": "a8e6ed97c1894270b2302bb550ad23dfaaca09c594af77b8800b9debd825c350",
+          "text": "44c34d3cd578ffc801f1c52c671fd6af383e2a2713c4477b8a3da909f8345df2",
+          "rodata": "e589ccd6c5e0b9fa133149477f4c50a4338623b91a2485766f69c468074e8b48",
+          "modinfo": [
+            "depends=mtk-pm",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "mtprealloc_mt7663.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7663.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7663.ko",
+          "sha": "35c4f14b2363fd858a42d5dea7d620b8e31fe51dcda145ab83b743022abbdde6",
+          "text": "318f673e9dcdc6887ded32b1d49d6fbf25214f4e46bca7509d4a054f39329b2d",
+          "rodata": "834c4ed6b10c7fef471d4b8c74b401691bc89a2918fc0f8d0a7097f96c48e280",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7663.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7663.ko",
+          "sha": "70dfee37d6c766efebd42dff070b9aee0b379347192d915bce93b7b3fdabe7bc",
+          "text": "318f673e9dcdc6887ded32b1d49d6fbf25214f4e46bca7509d4a054f39329b2d",
+          "rodata": "834c4ed6b10c7fef471d4b8c74b401691bc89a2918fc0f8d0a7097f96c48e280",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7663.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7663.ko",
+          "sha": "84949177ddc3d25ecf3e5b3f2e5dfd32f63661ed41e102e8328d395c482b35f9",
+          "text": "318f673e9dcdc6887ded32b1d49d6fbf25214f4e46bca7509d4a054f39329b2d",
+          "rodata": "834c4ed6b10c7fef471d4b8c74b401691bc89a2918fc0f8d0a7097f96c48e280",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "mtprealloc_mt7902.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7902.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7902.ko",
+          "sha": "f909eca02cdc64fe3df6f9a7c352779f797a5ab037bb80fe090aa04866546a4e",
+          "text": "07a1ec3571b5d3df3c6e5f49e00a1d7f606778141ac40d5d3421c35bd2ff59a6",
+          "rodata": "4cc50039797c62c3fd22a0fcac70431bf7865aa3781f07965ef9d54cb1ee9518",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7902.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7902.ko",
+          "sha": "cae039e8bfe8b9a4facf5d9e2e2937a9a75b848568afd1fd3a669d7a8ae3eeb6",
+          "text": "07a1ec3571b5d3df3c6e5f49e00a1d7f606778141ac40d5d3421c35bd2ff59a6",
+          "rodata": "4cc50039797c62c3fd22a0fcac70431bf7865aa3781f07965ef9d54cb1ee9518",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7902.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7902.ko",
+          "sha": "f9bbea9bd85ffea6d3d36d07411df0ad687e9e264e5fb4cbefdfec185077c2eb",
+          "text": "07a1ec3571b5d3df3c6e5f49e00a1d7f606778141ac40d5d3421c35bd2ff59a6",
+          "rodata": "4cc50039797c62c3fd22a0fcac70431bf7865aa3781f07965ef9d54cb1ee9518",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "mtprealloc_mt7961.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7961.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7961.ko",
+          "sha": "0e72bd317a748dc8f71c2b32011ef5d6bbfac2c7c719bdebe57d61c0c307548e",
+          "text": "07a1ec3571b5d3df3c6e5f49e00a1d7f606778141ac40d5d3421c35bd2ff59a6",
+          "rodata": "4cc50039797c62c3fd22a0fcac70431bf7865aa3781f07965ef9d54cb1ee9518",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7961.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7961.ko",
+          "sha": "997976887cca6d766c514a4500619ad4d4da7786f617ee330136ef84d64773e2",
+          "text": "07a1ec3571b5d3df3c6e5f49e00a1d7f606778141ac40d5d3421c35bd2ff59a6",
+          "rodata": "4cc50039797c62c3fd22a0fcac70431bf7865aa3781f07965ef9d54cb1ee9518",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "mtprealloc_mt7961.ko",
+          "path": "vendor_a/lib/modules/mtprealloc_mt7961.ko",
+          "sha": "f771f7c397b42b063deb97c5bd92520128abf08d7a7c8dfc0c326584d5e71462",
+          "text": "07a1ec3571b5d3df3c6e5f49e00a1d7f606778141ac40d5d3421c35bd2ff59a6",
+          "rodata": "4cc50039797c62c3fd22a0fcac70431bf7865aa3781f07965ef9d54cb1ee9518",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "mtreset_mt7663.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "mtreset_mt7663.ko",
+          "path": "vendor_a/lib/modules/mtreset_mt7663.ko",
+          "sha": "88517048ec05d0689af2f522ff160625cd6adddffb47cb2ffb5bcebd7353ee49",
+          "text": "8bd9710f7aaf07b9b80616cd3871bcbcf79f0a91cf7344cabe5136c641dc5a9d",
+          "rodata": "f4e6136b5590eeb0ee15f4c40fa8d6ef30ce28d06dcb341c515e3d091bcc9dce",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "mtreset_mt7663.ko",
+          "path": "vendor_a/lib/modules/mtreset_mt7663.ko",
+          "sha": "5aeb87dbb90741b5334aedb5a251a0138186ea23798c16569f02525436be9eff",
+          "text": "8bd9710f7aaf07b9b80616cd3871bcbcf79f0a91cf7344cabe5136c641dc5a9d",
+          "rodata": "b45674515d0da4335ee52e59a5889c1c7c5ad1170878cdd8b4d9360155bbbc6c",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "mtreset_mt7663.ko",
+          "path": "vendor_a/lib/modules/mtreset_mt7663.ko",
+          "sha": "cdfe608bf4031a5e4cbe5929c4f4bb5419317348ef11249bc80c7dabab012eef",
+          "text": "8bd9710f7aaf07b9b80616cd3871bcbcf79f0a91cf7344cabe5136c641dc5a9d",
+          "rodata": "b45674515d0da4335ee52e59a5889c1c7c5ad1170878cdd8b4d9360155bbbc6c",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "phy-mtk-tphy-tv.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "ethernet_modules",
+          "name": "phy-mtk-tphy-tv.ko",
+          "path": "vendor_a/lib/modules/phy-mtk-tphy-tv.ko",
+          "sha": "eb6d4a11a499e3b05410a29d97a2d1f401648d45593ab239d22ef919e17ded80",
+          "text": "e103d909af503469b0191cf5b9fe274b0dab4863c4414ea8eda44b5a2b4769fc",
+          "rodata": "65f625a56320f063563f1a05ae368e26d8fdd8fd7cc1bf7adc0d7af93b171827",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "ethernet_modules",
+          "name": "phy-mtk-tphy-tv.ko",
+          "path": "vendor_a/lib/modules/phy-mtk-tphy-tv.ko",
+          "sha": "1b97f6e20da280d1e27421df84955040b86f3fd2e7f75e368c9d2e930ef00ac3",
+          "text": "e103d909af503469b0191cf5b9fe274b0dab4863c4414ea8eda44b5a2b4769fc",
+          "rodata": "65f625a56320f063563f1a05ae368e26d8fdd8fd7cc1bf7adc0d7af93b171827",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "ethernet_modules",
+          "name": "phy-mtk-tphy-tv.ko",
+          "path": "vendor_a/lib/modules/phy-mtk-tphy-tv.ko",
+          "sha": "dc83480daa615effa4c876201c96ccb3137690700305d71caa1d4c55a776521c",
+          "text": "e103d909af503469b0191cf5b9fe274b0dab4863c4414ea8eda44b5a2b4769fc",
+          "rodata": "65f625a56320f063563f1a05ae368e26d8fdd8fd7cc1bf7adc0d7af93b171827",
+          "modinfo": [
+            "depends=",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": true,
+        "same_modinfo": false
+      }
+    },
+    "wlan_mt7663.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7663.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7663.ko",
+          "sha": "94116f9dc131872d93bfbbffa50db03daaaabf7aa73616afc10c877b4400b0db",
+          "text": "4d960f4e1da851ad774c5517d76fc4060bdbc4ad6b7ba31341c5bf87378ddcf0",
+          "rodata": "10337143755c488baf34b22e89cda406b7833822a59d557090d41bbf00d2541b",
+          "modinfo": [
+            "depends=cfg80211,mtreset_,wlan_mt7663_prealloc",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7663.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7663.ko",
+          "sha": "074588ead3284a0d6914af43a7492cbe2574f2725b50f792e8339945ab884cf5",
+          "text": "8ae727f9b33c9dba2fc7a13720f16420f84964cae9640b5ec6bc78927fbb6aed",
+          "rodata": "697cfeeb0db5509015222d1e978ccef9a47b80e8e9139602a564ca662d4aa756",
+          "modinfo": [
+            "depends=cfg80211,mtreset_,wlan_mt7663_prealloc",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7663.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7663.ko",
+          "sha": "def2e5649ba3603407e57b18874931b4e1e2504a8062c47cf2d1ca92771466ad",
+          "text": "f52a6444d168887320bd385177836f9bfa8cef1a2afd6cbbfce05c872c6da4ec",
+          "rodata": "c8eee1aca3648643f8eca365a4609a8a5431eb60878ad680b128e590e1b3a939",
+          "modinfo": [
+            "depends=cfg80211,mtreset_,wlan_mt7663_prealloc",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": false,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": false,
+        "same_rodata": false,
+        "same_modinfo": false
+      }
+    },
+    "wlan_mt7902.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7902.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7902.ko",
+          "sha": "24938585824c4afcfc6105ed5eea0c48f129ebbe4c5e3344dd95e4fcf06f7132",
+          "text": "2056dc456bdf8650b368b84184507f1b7659c36a95ed308c10305e37e1c0c558",
+          "rodata": "09425646b77b4b8133e53c2347895c8c8f53b989030e6f1e5ca36d275224bab2",
+          "modinfo": [
+            "depends=cfg80211,mtreset,mtprealloc",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7902.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7902.ko",
+          "sha": "16144c112f820fe46dd5654569d4720c07266887bb5d20e82844ab9c2d2b2fed",
+          "text": "2056dc456bdf8650b368b84184507f1b7659c36a95ed308c10305e37e1c0c558",
+          "rodata": "2b3207397775e441c2ab254587a2adabae570371956acba893c5818bad1359e3",
+          "modinfo": [
+            "depends=cfg80211,mtreset,mtprealloc",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7902.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7902.ko",
+          "sha": "d0fb9563edf3d212dc2270b9978adbbe1d5a7aaf35ce3cef1771c0380646cf73",
+          "text": "2056dc456bdf8650b368b84184507f1b7659c36a95ed308c10305e37e1c0c558",
+          "rodata": "dc8ee6679f29ebac0035527fbe9ed29f67bf4edafa0e7a8898b34ff9dd128c72",
+          "modinfo": [
+            "depends=cfg80211,mtreset,mtprealloc",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      }
+    },
+    "wlan_mt7961.ko": {
+      "versions": {
+        "8052-factory": {
+          "variant": "8052-factory",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7961.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7961.ko",
+          "sha": "9661ca1b280e95b46f784c215b6208725874d5af326f5e88811904e244f0d80f",
+          "text": "f123907ec245c45afa9c868a90a4706850e49a37f7abeed8785523fbd1068342",
+          "rodata": "14793036604d22238ae68f303bc9d965adefe1077fa91cd62cd9b1142785cf8f",
+          "modinfo": [
+            "depends=cfg80211,mtreset,mtprealloc",
+            "vermagic=5.15.189-android13-8-gc519afa5fccf-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8052-ota": {
+          "variant": "8052-ota",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7961.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7961.ko",
+          "sha": "bb6f8bfa698af0bb0a56ede33c53944e6fab6fba94414628bf4ff807c6992e78",
+          "text": "f123907ec245c45afa9c868a90a4706850e49a37f7abeed8785523fbd1068342",
+          "rodata": "b640928246a62a84100734f114ad2ebe805712597e773e4686633a41e705ab21",
+          "modinfo": [
+            "depends=cfg80211,mtreset,mtprealloc",
+            "vermagic=5.15.189-android13-8-g887c38a79694-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        },
+        "8054-factory": {
+          "variant": "8054-factory",
+          "kind": "wifi_modules",
+          "name": "wlan_mt7961.ko",
+          "path": "vendor_a/lib/modules/wlan_mt7961.ko",
+          "sha": "b1f23887882b98fc31d90c4beeeba03bba45ad09278ea20c69409bdccdc490ec",
+          "text": "f123907ec245c45afa9c868a90a4706850e49a37f7abeed8785523fbd1068342",
+          "rodata": "ce6b8eccfc2359b4f68c91329ba55e896b9a9322d4f4ab65011c359fc040ffac",
+          "modinfo": [
+            "depends=cfg80211,mtreset,mtprealloc",
+            "vermagic=5.15.189-android13-8-g9d1556453fde-dirty SMP preempt mod_unload modversions aarch64"
+          ]
+        }
+      },
+      "8052-factory__8052-ota": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      },
+      "8052-ota__8054-factory": {
+        "both_present": true,
+        "same_full": false,
+        "same_code": true,
+        "same_rodata": false,
+        "same_modinfo": false
+      }
+    }
+  },
+  "firmware": {
+    "vendor_a/firmware/EEPROM_MT7902_1.bin": {
+      "8052-factory": {
+        "sha256": "3846db74cde1873ee235634b4ee2d0bd8071277744c7c81c1dfc06b52f2df8a5",
+        "size": 2048
+      },
+      "8052-ota": {
+        "sha256": "3846db74cde1873ee235634b4ee2d0bd8071277744c7c81c1dfc06b52f2df8a5",
+        "size": 2048
+      },
+      "8054-factory": {
+        "sha256": "3846db74cde1873ee235634b4ee2d0bd8071277744c7c81c1dfc06b52f2df8a5",
+        "size": 2048
+      }
+    },
+    "vendor_a/firmware/WIFI_RAM_CODE_MT7961_1a.bin": {
+      "8052-factory": {
+        "sha256": "c1333d06c7003dcc8767791a1bada843b960c4aaab8f8ad12c54e2e949b9ed67",
+        "size": 781380
+      },
+      "8052-ota": {
+        "sha256": "c1333d06c7003dcc8767791a1bada843b960c4aaab8f8ad12c54e2e949b9ed67",
+        "size": 781380
+      },
+      "8054-factory": {
+        "sha256": "c1333d06c7003dcc8767791a1bada843b960c4aaab8f8ad12c54e2e949b9ed67",
+        "size": 781380
+      }
+    },
+    "vendor_a/firmware/WIFI_MT7961_patch_mcu_1a_2_hdr.bin": {
+      "8052-factory": {
+        "sha256": "dea36196e5ed5953f2b8e4b84538858cf36f8c5bd7b66cf145a429eac2fd0c9f",
+        "size": 100384
+      },
+      "8052-ota": {
+        "sha256": "dea36196e5ed5953f2b8e4b84538858cf36f8c5bd7b66cf145a429eac2fd0c9f",
+        "size": 100384
+      },
+      "8054-factory": {
+        "sha256": "dea36196e5ed5953f2b8e4b84538858cf36f8c5bd7b66cf145a429eac2fd0c9f",
+        "size": 100384
+      }
+    },
+    "vendor_a/firmware/EEPROM_MT7961_1.bin": {
+      "8052-factory": {
+        "sha256": "1e076fa1ff0ba1603847686f3dda1a5964477b5673790ea5125413be056e7001",
+        "size": 2560
+      },
+      "8052-ota": {
+        "sha256": "1e076fa1ff0ba1603847686f3dda1a5964477b5673790ea5125413be056e7001",
+        "size": 2560
+      },
+      "8054-factory": {
+        "sha256": "1e076fa1ff0ba1603847686f3dda1a5964477b5673790ea5125413be056e7001",
+        "size": 2560
+      }
+    },
+    "vendor_a/firmware/BT_RAM_CODE_MT7902_1_1_hdr.bin": {
+      "8052-factory": {
+        "sha256": "8d12742e919c21afcd26c0248dd358c7aafa41abf508287042bf4c8b3127bdc2",
+        "size": 506888
+      },
+      "8052-ota": {
+        "sha256": "8d12742e919c21afcd26c0248dd358c7aafa41abf508287042bf4c8b3127bdc2",
+        "size": 506888
+      },
+      "8054-factory": {
+        "sha256": "8d12742e919c21afcd26c0248dd358c7aafa41abf508287042bf4c8b3127bdc2",
+        "size": 506888
+      }
+    },
+    "vendor_a/firmware/bt_mt7961_1a_1.cfg": {
+      "8052-factory": {
+        "sha256": "d78f3403891686093d27150d3e3e1202dd3ab121a1b4801dd74fcce3e9f5c095",
+        "size": 1383
+      },
+      "8052-ota": {
+        "sha256": "d78f3403891686093d27150d3e3e1202dd3ab121a1b4801dd74fcce3e9f5c095",
+        "size": 1383
+      },
+      "8054-factory": {
+        "sha256": "d78f3403891686093d27150d3e3e1202dd3ab121a1b4801dd74fcce3e9f5c095",
+        "size": 1383
+      }
+    },
+    "vendor_a/firmware/EEPROM_MT7961_1a.bin": {
+      "8052-factory": {
+        "sha256": "024548428ef5a6af965d05e11ad9fba93a36107a7d3c9d87a3a620caae124913",
+        "size": 1536
+      },
+      "8052-ota": {
+        "sha256": "024548428ef5a6af965d05e11ad9fba93a36107a7d3c9d87a3a620caae124913",
+        "size": 1536
+      },
+      "8054-factory": {
+        "sha256": "024548428ef5a6af965d05e11ad9fba93a36107a7d3c9d87a3a620caae124913",
+        "size": 1536
+      }
+    },
+    "vendor_a/firmware/WIFI_MT7902_patch_mcu_1_1_hdr.bin": {
+      "8052-factory": {
+        "sha256": "8e6f841af4296dbd17ec931b0e5710a5c92df44ce42487d15dd00b14a1a45270",
+        "size": 118432
+      },
+      "8052-ota": {
+        "sha256": "8e6f841af4296dbd17ec931b0e5710a5c92df44ce42487d15dd00b14a1a45270",
+        "size": 118432
+      },
+      "8054-factory": {
+        "sha256": "8e6f841af4296dbd17ec931b0e5710a5c92df44ce42487d15dd00b14a1a45270",
+        "size": 118432
+      }
+    },
+    "vendor_a/firmware/bt_mt7961_1_1.cfg": {
+      "8052-factory": {
+        "sha256": "d78f3403891686093d27150d3e3e1202dd3ab121a1b4801dd74fcce3e9f5c095",
+        "size": 1383
+      },
+      "8052-ota": {
+        "sha256": "d78f3403891686093d27150d3e3e1202dd3ab121a1b4801dd74fcce3e9f5c095",
+        "size": 1383
+      },
+      "8054-factory": {
+        "sha256": "d78f3403891686093d27150d3e3e1202dd3ab121a1b4801dd74fcce3e9f5c095",
+        "size": 1383
+      }
+    },
+    "vendor_a/firmware/BT_RAM_CODE_MT7961_1_2_hdr.bin": {
+      "8052-factory": {
+        "sha256": "75afdc2f0b101e559ebfb4e35797acd43f6a0c84bfd4cdbedf0df061dd0c5207",
+        "size": 537876
+      },
+      "8052-ota": {
+        "sha256": "75afdc2f0b101e559ebfb4e35797acd43f6a0c84bfd4cdbedf0df061dd0c5207",
+        "size": 537876
+      },
+      "8054-factory": {
+        "sha256": "75afdc2f0b101e559ebfb4e35797acd43f6a0c84bfd4cdbedf0df061dd0c5207",
+        "size": 537876
+      }
+    },
+    "vendor_a/firmware/EEPROM_MT7663.bin": {
+      "8052-factory": {
+        "sha256": "dece9d9570bf0e436667d747cdc431325dd6502d517714f21ea835c334674698",
+        "size": 1536
+      },
+      "8052-ota": {
+        "sha256": "dece9d9570bf0e436667d747cdc431325dd6502d517714f21ea835c334674698",
+        "size": 1536
+      },
+      "8054-factory": {
+        "sha256": "dece9d9570bf0e436667d747cdc431325dd6502d517714f21ea835c334674698",
+        "size": 1536
+      }
+    },
+    "vendor_a/firmware/wifi_mt7961.cfg": {
+      "8052-factory": {
+        "sha256": "c19128712708df0c9482729ef8d59c061fb21dc8b80a95c016a0bc15f59abbd6",
+        "size": 1171
+      },
+      "8052-ota": {
+        "sha256": "c19128712708df0c9482729ef8d59c061fb21dc8b80a95c016a0bc15f59abbd6",
+        "size": 1171
+      },
+      "8054-factory": {
+        "sha256": "c19128712708df0c9482729ef8d59c061fb21dc8b80a95c016a0bc15f59abbd6",
+        "size": 1171
+      }
+    },
+    "vendor_a/firmware/bt_mt7961_1_2.cfg": {
+      "8052-factory": {
+        "sha256": "7f93ec9df528b44aaaaf14c931705c77e9d677cc03d47350d49694b610645e64",
+        "size": 2066
+      },
+      "8052-ota": {
+        "sha256": "7f93ec9df528b44aaaaf14c931705c77e9d677cc03d47350d49694b610645e64",
+        "size": 2066
+      },
+      "8054-factory": {
+        "sha256": "7f93ec9df528b44aaaaf14c931705c77e9d677cc03d47350d49694b610645e64",
+        "size": 2066
+      }
+    },
+    "vendor_a/firmware/bt_mt7902_1_1.cfg": {
+      "8052-factory": {
+        "sha256": "5c9468840916e76c3f0f50e823126fc5f731f70f78db9a61a0f97fc57574695f",
+        "size": 1383
+      },
+      "8052-ota": {
+        "sha256": "5c9468840916e76c3f0f50e823126fc5f731f70f78db9a61a0f97fc57574695f",
+        "size": 1383
+      },
+      "8054-factory": {
+        "sha256": "5c9468840916e76c3f0f50e823126fc5f731f70f78db9a61a0f97fc57574695f",
+        "size": 1383
+      }
+    },
+    "vendor_a/firmware/WIFI_RAM_CODE_MT7961_1.bin": {
+      "8052-factory": {
+        "sha256": "e4012e613366bfa8d48e99ec9f4e42b17a68c02a3b8b1783e26560ae2b703b79",
+        "size": 787524
+      },
+      "8052-ota": {
+        "sha256": "e4012e613366bfa8d48e99ec9f4e42b17a68c02a3b8b1783e26560ae2b703b79",
+        "size": 787524
+      },
+      "8054-factory": {
+        "sha256": "e4012e613366bfa8d48e99ec9f4e42b17a68c02a3b8b1783e26560ae2b703b79",
+        "size": 787524
+      }
+    },
+    "vendor_a/firmware/WIFI_MT7961_patch_mcu_1_2_hdr.bin": {
+      "8052-factory": {
+        "sha256": "001c91a953089610ba1ee9d3168a525312c2d5451ca65e000bf352b936959ee0",
+        "size": 92192
+      },
+      "8052-ota": {
+        "sha256": "001c91a953089610ba1ee9d3168a525312c2d5451ca65e000bf352b936959ee0",
+        "size": 92192
+      },
+      "8054-factory": {
+        "sha256": "001c91a953089610ba1ee9d3168a525312c2d5451ca65e000bf352b936959ee0",
+        "size": 92192
+      }
+    },
+    "vendor_a/firmware/WIFI_RAM_CODE_MT7902_1.bin": {
+      "8052-factory": {
+        "sha256": "c0d47fedbf8ce8ef6c29093dc05bf7e321f03a644d512fe1b0d3ce86c77e6d3f",
+        "size": 710200
+      },
+      "8052-ota": {
+        "sha256": "c0d47fedbf8ce8ef6c29093dc05bf7e321f03a644d512fe1b0d3ce86c77e6d3f",
+        "size": 710200
+      },
+      "8054-factory": {
+        "sha256": "c0d47fedbf8ce8ef6c29093dc05bf7e321f03a644d512fe1b0d3ce86c77e6d3f",
+        "size": 710200
+      }
+    },
+    "vendor_a/firmware/WIFI_RAM_CODE_MT7663.bin": {
+      "8052-factory": {
+        "sha256": "57a8a980a65b1a4237e22b079aeec5a08dd9ec679ea75ba135d8b2fd359905e8",
+        "size": 445496
+      },
+      "8052-ota": {
+        "sha256": "57a8a980a65b1a4237e22b079aeec5a08dd9ec679ea75ba135d8b2fd359905e8",
+        "size": 445496
+      },
+      "8054-factory": {
+        "sha256": "57a8a980a65b1a4237e22b079aeec5a08dd9ec679ea75ba135d8b2fd359905e8",
+        "size": 445496
+      }
+    },
+    "vendor_a/firmware/wifi_mt7663.cfg": {
+      "8052-factory": {
+        "sha256": "8fe77a833ea2ac9940fa873dc8be85b2910d959a3572484e9254e2e777c22709",
+        "size": 945
+      },
+      "8052-ota": {
+        "sha256": "8fe77a833ea2ac9940fa873dc8be85b2910d959a3572484e9254e2e777c22709",
+        "size": 945
+      },
+      "8054-factory": {
+        "sha256": "8fe77a833ea2ac9940fa873dc8be85b2910d959a3572484e9254e2e777c22709",
+        "size": 945
+      }
+    },
+    "vendor_a/firmware/BT_RAM_CODE_MT7961_1a_2_hdr.bin": {
+      "8052-factory": {
+        "sha256": "5aacb03eace3d2bdac85cea9a0bb75a648edda9318948d173401af9a1e0753b7",
+        "size": 483476
+      },
+      "8052-ota": {
+        "sha256": "5aacb03eace3d2bdac85cea9a0bb75a648edda9318948d173401af9a1e0753b7",
+        "size": 483476
+      },
+      "8054-factory": {
+        "sha256": "5aacb03eace3d2bdac85cea9a0bb75a648edda9318948d173401af9a1e0753b7",
+        "size": 483476
+      }
+    },
+    "vendor_a/firmware/bt_mt7961_1a_2.cfg": {
+      "8052-factory": {
+        "sha256": "0df347949aec3271b09e0d9759f91e5e5a85888163750bf7df250806b921e7f9",
+        "size": 2039
+      },
+      "8052-ota": {
+        "sha256": "0df347949aec3271b09e0d9759f91e5e5a85888163750bf7df250806b921e7f9",
+        "size": 2039
+      },
+      "8054-factory": {
+        "sha256": "0df347949aec3271b09e0d9759f91e5e5a85888163750bf7df250806b921e7f9",
+        "size": 2039
+      }
+    },
+    "vendor_a/firmware/mt7663_patch_e2_hdr.bin": {
+      "8052-factory": {
+        "sha256": "ad79a3d3acbdf5bbead8dd6cce5da1aec83bc5762e356a05c27ef68a1128968a",
+        "size": 278558
+      },
+      "8052-ota": {
+        "sha256": "ad79a3d3acbdf5bbead8dd6cce5da1aec83bc5762e356a05c27ef68a1128968a",
+        "size": 278558
+      },
+      "8054-factory": {
+        "sha256": "ad79a3d3acbdf5bbead8dd6cce5da1aec83bc5762e356a05c27ef68a1128968a",
+        "size": 278558
+      }
+    },
+    "vendor_a/firmware/wifi_mt7902.cfg": {
+      "8052-factory": {
+        "sha256": "a59ae7bfc97f63d2518cfaf6ab3dc74a4304c5597bb4431d50dd707d961f0f98",
+        "size": 1018
+      },
+      "8052-ota": {
+        "sha256": "a59ae7bfc97f63d2518cfaf6ab3dc74a4304c5597bb4431d50dd707d961f0f98",
+        "size": 1018
+      },
+      "8054-factory": {
+        "sha256": "a59ae7bfc97f63d2518cfaf6ab3dc74a4304c5597bb4431d50dd707d961f0f98",
+        "size": 1018
+      }
+    },
+    "vendor_a/etc/wifi/wifi.cfg": {
+      "8052-factory": {
+        "sha256": "f5c587f26c37790d3e4f5c2f4de2c0250462ff181a4c6d6e5026a662432504e4",
+        "size": 1249
+      },
+      "8052-ota": {
+        "sha256": "f5c587f26c37790d3e4f5c2f4de2c0250462ff181a4c6d6e5026a662432504e4",
+        "size": 1249
+      },
+      "8054-factory": {
+        "sha256": "f5c587f26c37790d3e4f5c2f4de2c0250462ff181a4c6d6e5026a662432504e4",
+        "size": 1249
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/wifi.sh": {
+      "8052-factory": {
+        "sha256": "652e787541c0e345af379d2c36f6a8cb6238f73bd9a9f0d65394cf9f893ab27d",
+        "size": 3147
+      },
+      "8052-ota": {
+        "sha256": "652e787541c0e345af379d2c36f6a8cb6238f73bd9a9f0d65394cf9f893ab27d",
+        "size": 3147
+      },
+      "8054-factory": {
+        "sha256": "652e787541c0e345af379d2c36f6a8cb6238f73bd9a9f0d65394cf9f893ab27d",
+        "size": 3147
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10101.sh": {
+      "8052-factory": {
+        "sha256": "be7b58eee4a4e8fb2894f01c83cde705c344cb8bb7bdcd598b6fc595fc6561c7",
+        "size": 1281
+      },
+      "8052-ota": {
+        "sha256": "be7b58eee4a4e8fb2894f01c83cde705c344cb8bb7bdcd598b6fc595fc6561c7",
+        "size": 1281
+      },
+      "8054-factory": {
+        "sha256": "be7b58eee4a4e8fb2894f01c83cde705c344cb8bb7bdcd598b6fc595fc6561c7",
+        "size": 1281
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10501.sh": {
+      "8052-factory": {
+        "sha256": "0cbc64cbf5d9dbdba322d7b7ec2681b202bfbd79ca032763cd6a337fe7630ef8",
+        "size": 478
+      },
+      "8052-ota": {
+        "sha256": "0cbc64cbf5d9dbdba322d7b7ec2681b202bfbd79ca032763cd6a337fe7630ef8",
+        "size": 478
+      },
+      "8054-factory": {
+        "sha256": "0cbc64cbf5d9dbdba322d7b7ec2681b202bfbd79ca032763cd6a337fe7630ef8",
+        "size": 478
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10301.sh": {
+      "8052-factory": {
+        "sha256": "cc91e74c17304793bdeb8c6c29da2eb994b825e8d4b2452535b22d6ca3bcfe15",
+        "size": 941
+      },
+      "8052-ota": {
+        "sha256": "cc91e74c17304793bdeb8c6c29da2eb994b825e8d4b2452535b22d6ca3bcfe15",
+        "size": 941
+      },
+      "8054-factory": {
+        "sha256": "cc91e74c17304793bdeb8c6c29da2eb994b825e8d4b2452535b22d6ca3bcfe15",
+        "size": 941
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10401.sh": {
+      "8052-factory": {
+        "sha256": "3b4f2370f0f38184407b805bbe3c6a21544d6b65dce848449ce08ecb66e717a3",
+        "size": 1175
+      },
+      "8052-ota": {
+        "sha256": "3b4f2370f0f38184407b805bbe3c6a21544d6b65dce848449ce08ecb66e717a3",
+        "size": 1175
+      },
+      "8054-factory": {
+        "sha256": "3b4f2370f0f38184407b805bbe3c6a21544d6b65dce848449ce08ecb66e717a3",
+        "size": 1175
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10701.sh": {
+      "8052-factory": {
+        "sha256": "52e189bdb97c8504537cfea850b4e9835e539c19c7c8723d072534d4999e13c8",
+        "size": 841
+      },
+      "8052-ota": {
+        "sha256": "52e189bdb97c8504537cfea850b4e9835e539c19c7c8723d072534d4999e13c8",
+        "size": 841
+      },
+      "8054-factory": {
+        "sha256": "52e189bdb97c8504537cfea850b4e9835e539c19c7c8723d072534d4999e13c8",
+        "size": 841
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10201.sh": {
+      "8052-factory": {
+        "sha256": "c331d3ed7fce9807e87feec34e1a7a12e7ff20c10d79d4e9ade7550cb78334d3",
+        "size": 1117
+      },
+      "8052-ota": {
+        "sha256": "c331d3ed7fce9807e87feec34e1a7a12e7ff20c10d79d4e9ade7550cb78334d3",
+        "size": 1117
+      },
+      "8054-factory": {
+        "sha256": "c331d3ed7fce9807e87feec34e1a7a12e7ff20c10d79d4e9ade7550cb78334d3",
+        "size": 1117
+      }
+    },
+    "vendor_a/bin/autolog/modules/bsp/wifi/scenario/wifi_10601.sh": {
+      "8052-factory": {
+        "sha256": "d51e481499a06b8bd4bdfcba41042d68eec2c0a2cfca00eccc9e61267ac3db42",
+        "size": 967
+      },
+      "8052-ota": {
+        "sha256": "d51e481499a06b8bd4bdfcba41042d68eec2c0a2cfca00eccc9e61267ac3db42",
+        "size": 967
+      },
+      "8054-factory": {
+        "sha256": "d51e481499a06b8bd4bdfcba41042d68eec2c0a2cfca00eccc9e61267ac3db42",
+        "size": 967
+      }
+    },
+    "vendor_a/bin/autolog/modules/platform/bluetooth/bluetooth_android.sh": {
+      "8052-factory": {
+        "sha256": "cab782495d138d4cfce098ee765df1509e1d2bea0f2cdb8ebfa48d38af3591db",
+        "size": 9259
+      },
+      "8052-ota": {
+        "sha256": "cab782495d138d4cfce098ee765df1509e1d2bea0f2cdb8ebfa48d38af3591db",
+        "size": 9259
+      },
+      "8054-factory": {
+        "sha256": "cab782495d138d4cfce098ee765df1509e1d2bea0f2cdb8ebfa48d38af3591db",
+        "size": 9259
+      }
+    }
+  },
+  "network_runtime_config": {
+    "8052-factory": [
+      {
+        "path": "system_a/init.trd.rc",
+        "sha256": "9ab1fc4eda192ce46f99c303ae443037a602c4bdb3f94da112306535237c11e5",
+        "matches": [
+          {
+            "line": 66,
+            "text": "setprop wifi.direct.interface p2p0"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/build.prop",
+        "sha256": "fc7de68ed94363a1d2a1f832dd2533040eb404fc81cf5529446dc7118beb809a",
+        "matches": [
+          {
+            "line": 56,
+            "text": "ro.wifi.channels="
+          },
+          {
+            "line": 117,
+            "text": "bluetooth.profile.hfp.ag.enabled=true"
+          },
+          {
+            "line": 118,
+            "text": "bluetooth.profile.hfp.hf.enabled=true"
+          },
+          {
+            "line": 119,
+            "text": "bluetooth.profile.pan.nap.enabled=false"
+          },
+          {
+            "line": 120,
+            "text": "bluetooth.profile.pan.panu.enabled=false"
+          },
+          {
+            "line": 121,
+            "text": "bluetooth.profile.pbap.client.enabled=false"
+          },
+          {
+            "line": 122,
+            "text": "bluetooth.profile.pbap.server.enabled=false"
+          },
+          {
+            "line": 123,
+            "text": "bluetooth.profile.map.client.enabled=false"
+          },
+          {
+            "line": 124,
+            "text": "bluetooth.profile.map.server.enabled=false"
+          },
+          {
+            "line": 125,
+            "text": "bluetooth.profile.opp.enabled=false"
+          },
+          {
+            "line": 126,
+            "text": "bluetooth.profile.hid.device.enabled=true"
+          },
+          {
+            "line": 127,
+            "text": "bluetooth.profile.hid.host.enabled=true"
+          },
+          {
+            "line": 128,
+            "text": "bluetooth.profile.a2dp.sink.enabled=true"
+          },
+          {
+            "line": 129,
+            "text": "bluetooth.profile.a2dp.source.enabled=true"
+          },
+          {
+            "line": 130,
+            "text": "bluetooth.profile.bap.broadcast.assist.enabled=false"
+          },
+          {
+            "line": 131,
+            "text": "bluetooth.profile.bap.broadcast.source.enabled=false"
+          },
+          {
+            "line": 132,
+            "text": "bluetooth.profile.bap.unicast.client.enabled=false"
+          },
+          {
+            "line": 133,
+            "text": "bluetooth.profile.bas.client.enabled=false"
+          },
+          {
+            "line": 134,
+            "text": "bluetooth.profile.avrcp.controller.enabled=true"
+          },
+          {
+            "line": 135,
+            "text": "bluetooth.profile.avrcp.target.enabled=true"
+          },
+          {
+            "line": 136,
+            "text": "bluetooth.profile.gatt.enabled=true"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/wifi.rc",
+        "sha256": "d2c32a50b7ed4c7b5b83e70f56f7ecb04c649f89d04b92ab12b43dc7432701c4",
+        "matches": [
+          {
+            "line": 17,
+            "text": "# These are needed for migration of data to wifi apex directory."
+          },
+          {
+            "line": 19,
+            "text": "restorecon_recursive /data/misc/apexdata/com.android.wifi"
+          },
+          {
+            "line": 22,
+            "text": "restorecon_recursive /data/misc_ce/0/apexdata/com.android.wifi"
+          },
+          {
+            "line": 30,
+            "text": "mkdir /sys/kernel/debug/tracing/instances/wifi 711"
+          },
+          {
+            "line": 31,
+            "text": "restorecon_recursive /sys/kernel/debug/tracing/instances/wifi"
+          },
+          {
+            "line": 32,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/tracing_on 0"
+          },
+          {
+            "line": 33,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/buffer_size_kb 1"
+          },
+          {
+            "line": 34,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/trace_options disable_on_free"
+          },
+          {
+            "line": 36,
+            "text": "mkdir /sys/kernel/tracing/instances/wifi 711"
+          },
+          {
+            "line": 37,
+            "text": "restorecon_recursive /sys/kernel/tracing/instances/wifi"
+          },
+          {
+            "line": 38,
+            "text": "write /sys/kernel/tracing/instances/wifi/tracing_on 0"
+          },
+          {
+            "line": 39,
+            "text": "write /sys/kernel/tracing/instances/wifi/buffer_size_kb 1"
+          },
+          {
+            "line": 40,
+            "text": "write /sys/kernel/tracing/instances/wifi/trace_options disable_on_free"
+          },
+          {
+            "line": 44,
+            "text": "#   /sys/kernel/debug/tracing/instances/wifi/tracing_on."
+          },
+          {
+            "line": 48,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_assoc/enable 1"
+          },
+          {
+            "line": 49,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_auth/enable 1"
+          },
+          {
+            "line": 50,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_connect/enable 1"
+          },
+          {
+            "line": 57,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_assoc/enable 1"
+          },
+          {
+            "line": 58,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_auth/enable 1"
+          },
+          {
+            "line": 59,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_connect/enable 1"
+          },
+          {
+            "line": 64,
+            "text": "# Enable datapath events for Wifi."
+          },
+          {
+            "line": 66,
+            "text": "#   /sys/kernel/debug/tracing/instances/wifi/tracing_on."
+          },
+          {
+            "line": 69,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}"
+          },
+          {
+            "line": 70,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/net_dev_queue/enable 1"
+          },
+          {
+            "line": 71,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/net_dev_xmit/enable 1"
+          },
+          {
+            "line": 72,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/netif_rx/enable 1"
+          },
+          {
+            "line": 73,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/netif_receive_skb/enable 1"
+          },
+          {
+            "line": 75,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}"
+          },
+          {
+            "line": 76,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/net_dev_queue/enable 1"
+          },
+          {
+            "line": 77,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/net_dev_xmit/enable 1"
+          },
+          {
+            "line": 78,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/netif_rx/enable 1"
+          },
+          {
+            "line": 79,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/netif_receive_skb/enable 1"
+          },
+          {
+            "line": 81,
+            "text": "# Set DAC to allow system to enable/disable, and read wifi trace"
+          },
+          {
+            "line": 83,
+            "text": "chown system /sys/kernel/debug/tracing/instances/wifi/tracing_on"
+          },
+          {
+            "line": 84,
+            "text": "chown system /sys/kernel/debug/tracing/instances/wifi/free_buffer"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/wificond.rc",
+        "sha256": "7ec3ef548e88bcd13577b59239ca88b594454622818e4a9190ad274b1aadee38",
+        "matches": [
+          {
+            "line": 3,
+            "text": "user wifi"
+          },
+          {
+            "line": 4,
+            "text": "group wifi net_raw net_admin"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/hw/init.rc",
+        "sha256": "27b0f4dc9e6e414359647400d2489fcbbc1ca1c7fa23f32ac5ac1cf72a14af11",
+        "matches": [
+          {
+            "line": 696,
+            "text": "mkdir /data/vendor/tombstones/wifi 0771 wifi wifi"
+          },
+          {
+            "line": 764,
+            "text": "mkdir /data/misc/bluedroid 02770 bluetooth bluetooth"
+          },
+          {
+            "line": 767,
+            "text": "chown bluetooth bluetooth /data/misc/bluedroid/bt_config.conf"
+          },
+          {
+            "line": 768,
+            "text": "mkdir /data/misc/bluetooth 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 769,
+            "text": "mkdir /data/misc/bluetooth/logs 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 787,
+            "text": "mkdir /data/misc/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 788,
+            "text": "mkdir /data/misc/wifi/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 789,
+            "text": "mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi"
+          },
+          {
+            "line": 790,
+            "text": "mkdir /data/misc/ethernet 0770 system system"
+          },
+          {
+            "line": 794,
+            "text": "chmod 0660 /data/misc/wifi/wpa_supplicant.conf"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/build.prop",
+        "sha256": "f8a6dee0c4dc5ee5b4e999e634ea3b8c4d2f5305370f15c36ce6ec108e753dfd",
+        "matches": [
+          {
+            "line": 147,
+            "text": "bluetooth.device.class_of_device=44,4,32"
+          },
+          {
+            "line": 181,
+            "text": "wifi.interface=wlan0"
+          },
+          {
+            "line": 182,
+            "text": "ro.vendor.wifi.sap.interface=ap0"
+          },
+          {
+            "line": 183,
+            "text": "wifi.concurrent.interface=ap0"
+          },
+          {
+            "line": 265,
+            "text": "persist.vendor.bluetooth.a2dp_src_sink_both_enable=true"
+          },
+          {
+            "line": 266,
+            "text": "persist.vendor.bluetooth.mtk_bt_consumer_feature=true"
+          },
+          {
+            "line": 267,
+            "text": "persist.vendor.bluetooth.a2dp_dualaudio_enable=true"
+          },
+          {
+            "line": 269,
+            "text": "ro.bt.bdaddr_path=/vendor/etc/bluetooth/bt_addr.conf"
+          },
+          {
+            "line": 283,
+            "text": "persist.bluetooth.btsnoopenable=false"
+          },
+          {
+            "line": 284,
+            "text": "persist.bluetooth.btsnooppath=/sdcard/btsnoop_hci.cfa"
+          },
+          {
+            "line": 285,
+            "text": "persist.bluetooth.btsnoopsize=0xffff"
+          },
+          {
+            "line": 286,
+            "text": "persist.bluetooth.aiccoex=true"
+          },
+          {
+            "line": 287,
+            "text": "bluetooth.enable_timeout_ms=11000"
+          },
+          {
+            "line": 299,
+            "text": "service.bluetooth.enablesink=false"
+          },
+          {
+            "line": 305,
+            "text": "service.bluetooth.enablesink=false"
+          },
+          {
+            "line": 308,
+            "text": "vendor.mtk.wifi.driver=aic"
+          },
+          {
+            "line": 322,
+            "text": "ro.rjpj.wifi.id="
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/init.insmod.rc",
+        "sha256": "c90f0095551213eb2eaca1b7c03e0ee66ac0555d76d3a4df6ddb87223cd43442",
+        "matches": [
+          {
+            "line": 78,
+            "text": "# for mtk bluetooth"
+          },
+          {
+            "line": 212,
+            "text": "# for mtk bluetooth"
+          },
+          {
+            "line": 269,
+            "text": "on property:vendor.mtk.wifi.driver=mt7663"
+          },
+          {
+            "line": 270,
+            "text": "setprop bluetooth.profile.hfp.ag.enabled false"
+          },
+          {
+            "line": 271,
+            "text": "setprop bluetooth.profile.hfp.hf.enabled false"
+          },
+          {
+            "line": 273,
+            "text": "# wlan dongle detect service"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/bootvideo.rc",
+        "sha256": "bccb1939e2e1558f388ea694cda7db046dc72def20d3bab15c3c78d39751dbdc",
+        "matches": [
+          {
+            "line": 5,
+            "text": "group media system graphics input bluetooth shell drmrpc mediacodec vendor_dtv_ww_rpc"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/android.hardware.wifi@1.0-service-lazy.rc",
+        "sha256": "9e4374cacb1fa06caff382e97d704b9dcaf7753471fcb837af7b9dbb10ec3afc",
+        "matches": [
+          {
+            "line": 13,
+            "text": "user wifi"
+          },
+          {
+            "line": 14,
+            "text": "group wifi gps"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/hostapd.android.rc",
+        "sha256": "a09021175637f73d790f1015b849e3a6c441dba05477fbcde33fa35ce64fb1b6",
+        "matches": [
+          {
+            "line": 10,
+            "text": "mkdir /data/vendor/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 11,
+            "text": "mkdir /data/vendor/wifi/hostapd 0770 wifi wifi"
+          },
+          {
+            "line": 12,
+            "text": "mkdir /data/vendor/wifi/hostapd/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 15,
+            "text": "interface aidl android.hardware.wifi.hostapd.IHostapd/default"
+          },
+          {
+            "line": 18,
+            "text": "user wifi"
+          },
+          {
+            "line": 19,
+            "text": "group wifi net_raw net_admin"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/android.hardware.bluetooth@1.1-service.rc",
+        "sha256": "b57e88929ed80924b19bc839f468d80dde894a59cfbf956d0e6e7ae8f15ae923",
+        "matches": [
+          {
+            "line": 6,
+            "text": "user bluetooth"
+          },
+          {
+            "line": 7,
+            "text": "group bluetooth"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/dtv_svc.rc",
+        "sha256": "cd90ed6fe6efb4701ca4d9514d47adbb36d394c8e08450c912ec636536652d0a",
+        "matches": [
+          {
+            "line": 6,
+            "text": "group media system audio graphics input bluetooth shell drmrpc vendor_mtk_rm"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/vendor.mediatek.tv.mtktvfactory@1.0-service.rc",
+        "sha256": "bf834b48fcaf7ab872caa45c2cf117860c853e20ccaafc5beb3f6febb4c3004a",
+        "matches": [
+          {
+            "line": 5,
+            "text": "group system media system graphics input bluetooth shell drmrpc media_rw everybody"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/init.fusion.rc",
+        "sha256": "d6afbbf4749ba0715dbdbfae459139e0c6b6b6f762ff4b6c28bff19628b4ce0c",
+        "matches": [
+          {
+            "line": 209,
+            "text": "# wifi tput"
+          },
+          {
+            "line": 210,
+            "text": "write /sys/class/net/wlan0/queues/rx-0/rps_cpus \"e\""
+          },
+          {
+            "line": 211,
+            "text": "write /sys/class/net/wlan0/queues/rx-1/rps_cpus \"e\""
+          },
+          {
+            "line": 212,
+            "text": "write /sys/class/net/wlan0/queues/rx-2/rps_cpus \"e\""
+          },
+          {
+            "line": 213,
+            "text": "write /sys/class/net/wlan0/queues/rx-3/rps_cpus \"e\""
+          },
+          {
+            "line": 219,
+            "text": "on property:sys.boot_completed=1 && property:vendor.mtk.wifi.driver=mt6639"
+          },
+          {
+            "line": 220,
+            "text": "# wifi tput - CPU performance mode"
+          },
+          {
+            "line": 229,
+            "text": "# wifi tput - TCP mem"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/hw/init.common.rc",
+        "sha256": "12844b9ec949b6f7a9a433f754fb5a44cc5c974390964ca04c9e3f1a5ccc0678",
+        "matches": [
+          {
+            "line": 52,
+            "text": "mkdir /data/system/wpa_supplicant 0770 wifi wifi"
+          },
+          {
+            "line": 57,
+            "text": "# realtek bluetooth"
+          },
+          {
+            "line": 58,
+            "text": "mkdir /data/misc/bluedroid 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 59,
+            "text": "# bluetooth LPM"
+          },
+          {
+            "line": 60,
+            "text": "chown bluetooth bluetooth /proc/bluetooth/sleep/lpm"
+          },
+          {
+            "line": 61,
+            "text": "chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite"
+          },
+          {
+            "line": 65,
+            "text": "chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state"
+          },
+          {
+            "line": 66,
+            "text": "chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type"
+          },
+          {
+            "line": 67,
+            "text": "# bluetooth MAC address programming"
+          },
+          {
+            "line": 68,
+            "text": "chown bluetooth bluetooth \"/data/misc/bluetooth/bdaddr\""
+          },
+          {
+            "line": 94,
+            "text": "mkdir /data/vendor/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 95,
+            "text": "mkdir /data/vendor/wifi/wpa 0770 wifi wifi"
+          },
+          {
+            "line": 96,
+            "text": "mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 132,
+            "text": "user wifi"
+          },
+          {
+            "line": 133,
+            "text": "group wifi net_raw net_admin"
+          },
+          {
+            "line": 139,
+            "text": "group wifi"
+          },
+          {
+            "line": 153,
+            "text": "user wifi"
+          },
+          {
+            "line": 154,
+            "text": "group wifi net_raw net_admin"
+          },
+          {
+            "line": 159,
+            "text": "interface aidl android.hardware.wifi.supplicant.ISupplicant/default"
+          },
+          {
+            "line": 161,
+            "text": "socket wpa_wlan0 dgram 660 wifi wifi"
+          }
+        ]
+      }
+    ],
+    "8052-ota": [
+      {
+        "path": "system_a/init.trd.rc",
+        "sha256": "9ab1fc4eda192ce46f99c303ae443037a602c4bdb3f94da112306535237c11e5",
+        "matches": [
+          {
+            "line": 66,
+            "text": "setprop wifi.direct.interface p2p0"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/build.prop",
+        "sha256": "453fd30d18cc68b4091dffe6ab41139341e6e8bd51fb2b0671067e2b8441d399",
+        "matches": [
+          {
+            "line": 56,
+            "text": "ro.wifi.channels="
+          },
+          {
+            "line": 117,
+            "text": "bluetooth.profile.hfp.ag.enabled=true"
+          },
+          {
+            "line": 118,
+            "text": "bluetooth.profile.hfp.hf.enabled=true"
+          },
+          {
+            "line": 119,
+            "text": "bluetooth.profile.pan.nap.enabled=false"
+          },
+          {
+            "line": 120,
+            "text": "bluetooth.profile.pan.panu.enabled=false"
+          },
+          {
+            "line": 121,
+            "text": "bluetooth.profile.pbap.client.enabled=false"
+          },
+          {
+            "line": 122,
+            "text": "bluetooth.profile.pbap.server.enabled=false"
+          },
+          {
+            "line": 123,
+            "text": "bluetooth.profile.map.client.enabled=false"
+          },
+          {
+            "line": 124,
+            "text": "bluetooth.profile.map.server.enabled=false"
+          },
+          {
+            "line": 125,
+            "text": "bluetooth.profile.opp.enabled=false"
+          },
+          {
+            "line": 126,
+            "text": "bluetooth.profile.hid.device.enabled=true"
+          },
+          {
+            "line": 127,
+            "text": "bluetooth.profile.hid.host.enabled=true"
+          },
+          {
+            "line": 128,
+            "text": "bluetooth.profile.a2dp.sink.enabled=true"
+          },
+          {
+            "line": 129,
+            "text": "bluetooth.profile.a2dp.source.enabled=true"
+          },
+          {
+            "line": 130,
+            "text": "bluetooth.profile.bap.broadcast.assist.enabled=false"
+          },
+          {
+            "line": 131,
+            "text": "bluetooth.profile.bap.broadcast.source.enabled=false"
+          },
+          {
+            "line": 132,
+            "text": "bluetooth.profile.bap.unicast.client.enabled=false"
+          },
+          {
+            "line": 133,
+            "text": "bluetooth.profile.bas.client.enabled=false"
+          },
+          {
+            "line": 134,
+            "text": "bluetooth.profile.avrcp.controller.enabled=true"
+          },
+          {
+            "line": 135,
+            "text": "bluetooth.profile.avrcp.target.enabled=true"
+          },
+          {
+            "line": 136,
+            "text": "bluetooth.profile.gatt.enabled=true"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/wifi.rc",
+        "sha256": "d2c32a50b7ed4c7b5b83e70f56f7ecb04c649f89d04b92ab12b43dc7432701c4",
+        "matches": [
+          {
+            "line": 17,
+            "text": "# These are needed for migration of data to wifi apex directory."
+          },
+          {
+            "line": 19,
+            "text": "restorecon_recursive /data/misc/apexdata/com.android.wifi"
+          },
+          {
+            "line": 22,
+            "text": "restorecon_recursive /data/misc_ce/0/apexdata/com.android.wifi"
+          },
+          {
+            "line": 30,
+            "text": "mkdir /sys/kernel/debug/tracing/instances/wifi 711"
+          },
+          {
+            "line": 31,
+            "text": "restorecon_recursive /sys/kernel/debug/tracing/instances/wifi"
+          },
+          {
+            "line": 32,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/tracing_on 0"
+          },
+          {
+            "line": 33,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/buffer_size_kb 1"
+          },
+          {
+            "line": 34,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/trace_options disable_on_free"
+          },
+          {
+            "line": 36,
+            "text": "mkdir /sys/kernel/tracing/instances/wifi 711"
+          },
+          {
+            "line": 37,
+            "text": "restorecon_recursive /sys/kernel/tracing/instances/wifi"
+          },
+          {
+            "line": 38,
+            "text": "write /sys/kernel/tracing/instances/wifi/tracing_on 0"
+          },
+          {
+            "line": 39,
+            "text": "write /sys/kernel/tracing/instances/wifi/buffer_size_kb 1"
+          },
+          {
+            "line": 40,
+            "text": "write /sys/kernel/tracing/instances/wifi/trace_options disable_on_free"
+          },
+          {
+            "line": 44,
+            "text": "#   /sys/kernel/debug/tracing/instances/wifi/tracing_on."
+          },
+          {
+            "line": 48,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_assoc/enable 1"
+          },
+          {
+            "line": 49,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_auth/enable 1"
+          },
+          {
+            "line": 50,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_connect/enable 1"
+          },
+          {
+            "line": 57,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_assoc/enable 1"
+          },
+          {
+            "line": 58,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_auth/enable 1"
+          },
+          {
+            "line": 59,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_connect/enable 1"
+          },
+          {
+            "line": 64,
+            "text": "# Enable datapath events for Wifi."
+          },
+          {
+            "line": 66,
+            "text": "#   /sys/kernel/debug/tracing/instances/wifi/tracing_on."
+          },
+          {
+            "line": 69,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}"
+          },
+          {
+            "line": 70,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/net_dev_queue/enable 1"
+          },
+          {
+            "line": 71,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/net_dev_xmit/enable 1"
+          },
+          {
+            "line": 72,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/netif_rx/enable 1"
+          },
+          {
+            "line": 73,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/netif_receive_skb/enable 1"
+          },
+          {
+            "line": 75,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}"
+          },
+          {
+            "line": 76,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/net_dev_queue/enable 1"
+          },
+          {
+            "line": 77,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/net_dev_xmit/enable 1"
+          },
+          {
+            "line": 78,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/netif_rx/enable 1"
+          },
+          {
+            "line": 79,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/netif_receive_skb/enable 1"
+          },
+          {
+            "line": 81,
+            "text": "# Set DAC to allow system to enable/disable, and read wifi trace"
+          },
+          {
+            "line": 83,
+            "text": "chown system /sys/kernel/debug/tracing/instances/wifi/tracing_on"
+          },
+          {
+            "line": 84,
+            "text": "chown system /sys/kernel/debug/tracing/instances/wifi/free_buffer"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/wificond.rc",
+        "sha256": "7ec3ef548e88bcd13577b59239ca88b594454622818e4a9190ad274b1aadee38",
+        "matches": [
+          {
+            "line": 3,
+            "text": "user wifi"
+          },
+          {
+            "line": 4,
+            "text": "group wifi net_raw net_admin"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/hw/init.rc",
+        "sha256": "27b0f4dc9e6e414359647400d2489fcbbc1ca1c7fa23f32ac5ac1cf72a14af11",
+        "matches": [
+          {
+            "line": 696,
+            "text": "mkdir /data/vendor/tombstones/wifi 0771 wifi wifi"
+          },
+          {
+            "line": 764,
+            "text": "mkdir /data/misc/bluedroid 02770 bluetooth bluetooth"
+          },
+          {
+            "line": 767,
+            "text": "chown bluetooth bluetooth /data/misc/bluedroid/bt_config.conf"
+          },
+          {
+            "line": 768,
+            "text": "mkdir /data/misc/bluetooth 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 769,
+            "text": "mkdir /data/misc/bluetooth/logs 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 787,
+            "text": "mkdir /data/misc/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 788,
+            "text": "mkdir /data/misc/wifi/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 789,
+            "text": "mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi"
+          },
+          {
+            "line": 790,
+            "text": "mkdir /data/misc/ethernet 0770 system system"
+          },
+          {
+            "line": 794,
+            "text": "chmod 0660 /data/misc/wifi/wpa_supplicant.conf"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/build.prop",
+        "sha256": "191b9ec97683fe501a9e156bb6d7686dd6a21147bc94337083aac376fcaf93e4",
+        "matches": [
+          {
+            "line": 147,
+            "text": "bluetooth.device.class_of_device=44,4,32"
+          },
+          {
+            "line": 181,
+            "text": "wifi.interface=wlan0"
+          },
+          {
+            "line": 182,
+            "text": "ro.vendor.wifi.sap.interface=ap0"
+          },
+          {
+            "line": 183,
+            "text": "wifi.concurrent.interface=ap0"
+          },
+          {
+            "line": 265,
+            "text": "persist.vendor.bluetooth.a2dp_src_sink_both_enable=true"
+          },
+          {
+            "line": 266,
+            "text": "persist.vendor.bluetooth.mtk_bt_consumer_feature=true"
+          },
+          {
+            "line": 267,
+            "text": "persist.vendor.bluetooth.a2dp_dualaudio_enable=true"
+          },
+          {
+            "line": 269,
+            "text": "ro.bt.bdaddr_path=/vendor/etc/bluetooth/bt_addr.conf"
+          },
+          {
+            "line": 283,
+            "text": "persist.bluetooth.btsnoopenable=false"
+          },
+          {
+            "line": 284,
+            "text": "persist.bluetooth.btsnooppath=/sdcard/btsnoop_hci.cfa"
+          },
+          {
+            "line": 285,
+            "text": "persist.bluetooth.btsnoopsize=0xffff"
+          },
+          {
+            "line": 286,
+            "text": "persist.bluetooth.aiccoex=true"
+          },
+          {
+            "line": 287,
+            "text": "bluetooth.enable_timeout_ms=11000"
+          },
+          {
+            "line": 299,
+            "text": "service.bluetooth.enablesink=false"
+          },
+          {
+            "line": 305,
+            "text": "service.bluetooth.enablesink=false"
+          },
+          {
+            "line": 308,
+            "text": "vendor.mtk.wifi.driver=aic"
+          },
+          {
+            "line": 322,
+            "text": "ro.rjpj.wifi.id="
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/init.insmod.rc",
+        "sha256": "c90f0095551213eb2eaca1b7c03e0ee66ac0555d76d3a4df6ddb87223cd43442",
+        "matches": [
+          {
+            "line": 78,
+            "text": "# for mtk bluetooth"
+          },
+          {
+            "line": 212,
+            "text": "# for mtk bluetooth"
+          },
+          {
+            "line": 269,
+            "text": "on property:vendor.mtk.wifi.driver=mt7663"
+          },
+          {
+            "line": 270,
+            "text": "setprop bluetooth.profile.hfp.ag.enabled false"
+          },
+          {
+            "line": 271,
+            "text": "setprop bluetooth.profile.hfp.hf.enabled false"
+          },
+          {
+            "line": 273,
+            "text": "# wlan dongle detect service"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/bootvideo.rc",
+        "sha256": "bccb1939e2e1558f388ea694cda7db046dc72def20d3bab15c3c78d39751dbdc",
+        "matches": [
+          {
+            "line": 5,
+            "text": "group media system graphics input bluetooth shell drmrpc mediacodec vendor_dtv_ww_rpc"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/android.hardware.wifi@1.0-service-lazy.rc",
+        "sha256": "9e4374cacb1fa06caff382e97d704b9dcaf7753471fcb837af7b9dbb10ec3afc",
+        "matches": [
+          {
+            "line": 13,
+            "text": "user wifi"
+          },
+          {
+            "line": 14,
+            "text": "group wifi gps"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/hostapd.android.rc",
+        "sha256": "a09021175637f73d790f1015b849e3a6c441dba05477fbcde33fa35ce64fb1b6",
+        "matches": [
+          {
+            "line": 10,
+            "text": "mkdir /data/vendor/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 11,
+            "text": "mkdir /data/vendor/wifi/hostapd 0770 wifi wifi"
+          },
+          {
+            "line": 12,
+            "text": "mkdir /data/vendor/wifi/hostapd/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 15,
+            "text": "interface aidl android.hardware.wifi.hostapd.IHostapd/default"
+          },
+          {
+            "line": 18,
+            "text": "user wifi"
+          },
+          {
+            "line": 19,
+            "text": "group wifi net_raw net_admin"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/android.hardware.bluetooth@1.1-service.rc",
+        "sha256": "b57e88929ed80924b19bc839f468d80dde894a59cfbf956d0e6e7ae8f15ae923",
+        "matches": [
+          {
+            "line": 6,
+            "text": "user bluetooth"
+          },
+          {
+            "line": 7,
+            "text": "group bluetooth"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/dtv_svc.rc",
+        "sha256": "cd90ed6fe6efb4701ca4d9514d47adbb36d394c8e08450c912ec636536652d0a",
+        "matches": [
+          {
+            "line": 6,
+            "text": "group media system audio graphics input bluetooth shell drmrpc vendor_mtk_rm"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/vendor.mediatek.tv.mtktvfactory@1.0-service.rc",
+        "sha256": "bf834b48fcaf7ab872caa45c2cf117860c853e20ccaafc5beb3f6febb4c3004a",
+        "matches": [
+          {
+            "line": 5,
+            "text": "group system media system graphics input bluetooth shell drmrpc media_rw everybody"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/init.fusion.rc",
+        "sha256": "d6afbbf4749ba0715dbdbfae459139e0c6b6b6f762ff4b6c28bff19628b4ce0c",
+        "matches": [
+          {
+            "line": 209,
+            "text": "# wifi tput"
+          },
+          {
+            "line": 210,
+            "text": "write /sys/class/net/wlan0/queues/rx-0/rps_cpus \"e\""
+          },
+          {
+            "line": 211,
+            "text": "write /sys/class/net/wlan0/queues/rx-1/rps_cpus \"e\""
+          },
+          {
+            "line": 212,
+            "text": "write /sys/class/net/wlan0/queues/rx-2/rps_cpus \"e\""
+          },
+          {
+            "line": 213,
+            "text": "write /sys/class/net/wlan0/queues/rx-3/rps_cpus \"e\""
+          },
+          {
+            "line": 219,
+            "text": "on property:sys.boot_completed=1 && property:vendor.mtk.wifi.driver=mt6639"
+          },
+          {
+            "line": 220,
+            "text": "# wifi tput - CPU performance mode"
+          },
+          {
+            "line": 229,
+            "text": "# wifi tput - TCP mem"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/hw/init.common.rc",
+        "sha256": "12844b9ec949b6f7a9a433f754fb5a44cc5c974390964ca04c9e3f1a5ccc0678",
+        "matches": [
+          {
+            "line": 52,
+            "text": "mkdir /data/system/wpa_supplicant 0770 wifi wifi"
+          },
+          {
+            "line": 57,
+            "text": "# realtek bluetooth"
+          },
+          {
+            "line": 58,
+            "text": "mkdir /data/misc/bluedroid 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 59,
+            "text": "# bluetooth LPM"
+          },
+          {
+            "line": 60,
+            "text": "chown bluetooth bluetooth /proc/bluetooth/sleep/lpm"
+          },
+          {
+            "line": 61,
+            "text": "chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite"
+          },
+          {
+            "line": 65,
+            "text": "chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state"
+          },
+          {
+            "line": 66,
+            "text": "chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type"
+          },
+          {
+            "line": 67,
+            "text": "# bluetooth MAC address programming"
+          },
+          {
+            "line": 68,
+            "text": "chown bluetooth bluetooth \"/data/misc/bluetooth/bdaddr\""
+          },
+          {
+            "line": 94,
+            "text": "mkdir /data/vendor/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 95,
+            "text": "mkdir /data/vendor/wifi/wpa 0770 wifi wifi"
+          },
+          {
+            "line": 96,
+            "text": "mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 132,
+            "text": "user wifi"
+          },
+          {
+            "line": 133,
+            "text": "group wifi net_raw net_admin"
+          },
+          {
+            "line": 139,
+            "text": "group wifi"
+          },
+          {
+            "line": 153,
+            "text": "user wifi"
+          },
+          {
+            "line": 154,
+            "text": "group wifi net_raw net_admin"
+          },
+          {
+            "line": 159,
+            "text": "interface aidl android.hardware.wifi.supplicant.ISupplicant/default"
+          },
+          {
+            "line": 161,
+            "text": "socket wpa_wlan0 dgram 660 wifi wifi"
+          }
+        ]
+      }
+    ],
+    "8054-factory": [
+      {
+        "path": "system_a/init.trd.rc",
+        "sha256": "9ab1fc4eda192ce46f99c303ae443037a602c4bdb3f94da112306535237c11e5",
+        "matches": [
+          {
+            "line": 66,
+            "text": "setprop wifi.direct.interface p2p0"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/build.prop",
+        "sha256": "2dad73497b5c234441aba4f2b78fd0fff58103b4a50be890c4bdb337329457ad",
+        "matches": [
+          {
+            "line": 56,
+            "text": "ro.wifi.channels="
+          },
+          {
+            "line": 117,
+            "text": "bluetooth.profile.hfp.ag.enabled=true"
+          },
+          {
+            "line": 118,
+            "text": "bluetooth.profile.hfp.hf.enabled=true"
+          },
+          {
+            "line": 119,
+            "text": "bluetooth.profile.pan.nap.enabled=false"
+          },
+          {
+            "line": 120,
+            "text": "bluetooth.profile.pan.panu.enabled=false"
+          },
+          {
+            "line": 121,
+            "text": "bluetooth.profile.pbap.client.enabled=false"
+          },
+          {
+            "line": 122,
+            "text": "bluetooth.profile.pbap.server.enabled=false"
+          },
+          {
+            "line": 123,
+            "text": "bluetooth.profile.map.client.enabled=false"
+          },
+          {
+            "line": 124,
+            "text": "bluetooth.profile.map.server.enabled=false"
+          },
+          {
+            "line": 125,
+            "text": "bluetooth.profile.opp.enabled=false"
+          },
+          {
+            "line": 126,
+            "text": "bluetooth.profile.hid.device.enabled=true"
+          },
+          {
+            "line": 127,
+            "text": "bluetooth.profile.hid.host.enabled=true"
+          },
+          {
+            "line": 128,
+            "text": "bluetooth.profile.a2dp.sink.enabled=true"
+          },
+          {
+            "line": 129,
+            "text": "bluetooth.profile.a2dp.source.enabled=true"
+          },
+          {
+            "line": 130,
+            "text": "bluetooth.profile.bap.broadcast.assist.enabled=false"
+          },
+          {
+            "line": 131,
+            "text": "bluetooth.profile.bap.broadcast.source.enabled=false"
+          },
+          {
+            "line": 132,
+            "text": "bluetooth.profile.bap.unicast.client.enabled=false"
+          },
+          {
+            "line": 133,
+            "text": "bluetooth.profile.bas.client.enabled=false"
+          },
+          {
+            "line": 134,
+            "text": "bluetooth.profile.avrcp.controller.enabled=true"
+          },
+          {
+            "line": 135,
+            "text": "bluetooth.profile.avrcp.target.enabled=true"
+          },
+          {
+            "line": 136,
+            "text": "bluetooth.profile.gatt.enabled=true"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/wifi.rc",
+        "sha256": "d2c32a50b7ed4c7b5b83e70f56f7ecb04c649f89d04b92ab12b43dc7432701c4",
+        "matches": [
+          {
+            "line": 17,
+            "text": "# These are needed for migration of data to wifi apex directory."
+          },
+          {
+            "line": 19,
+            "text": "restorecon_recursive /data/misc/apexdata/com.android.wifi"
+          },
+          {
+            "line": 22,
+            "text": "restorecon_recursive /data/misc_ce/0/apexdata/com.android.wifi"
+          },
+          {
+            "line": 30,
+            "text": "mkdir /sys/kernel/debug/tracing/instances/wifi 711"
+          },
+          {
+            "line": 31,
+            "text": "restorecon_recursive /sys/kernel/debug/tracing/instances/wifi"
+          },
+          {
+            "line": 32,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/tracing_on 0"
+          },
+          {
+            "line": 33,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/buffer_size_kb 1"
+          },
+          {
+            "line": 34,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/trace_options disable_on_free"
+          },
+          {
+            "line": 36,
+            "text": "mkdir /sys/kernel/tracing/instances/wifi 711"
+          },
+          {
+            "line": 37,
+            "text": "restorecon_recursive /sys/kernel/tracing/instances/wifi"
+          },
+          {
+            "line": 38,
+            "text": "write /sys/kernel/tracing/instances/wifi/tracing_on 0"
+          },
+          {
+            "line": 39,
+            "text": "write /sys/kernel/tracing/instances/wifi/buffer_size_kb 1"
+          },
+          {
+            "line": 40,
+            "text": "write /sys/kernel/tracing/instances/wifi/trace_options disable_on_free"
+          },
+          {
+            "line": 44,
+            "text": "#   /sys/kernel/debug/tracing/instances/wifi/tracing_on."
+          },
+          {
+            "line": 48,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_assoc/enable 1"
+          },
+          {
+            "line": 49,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_auth/enable 1"
+          },
+          {
+            "line": 50,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/cfg80211/rdev_connect/enable 1"
+          },
+          {
+            "line": 57,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_assoc/enable 1"
+          },
+          {
+            "line": 58,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_auth/enable 1"
+          },
+          {
+            "line": 59,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/cfg80211/rdev_connect/enable 1"
+          },
+          {
+            "line": 64,
+            "text": "# Enable datapath events for Wifi."
+          },
+          {
+            "line": 66,
+            "text": "#   /sys/kernel/debug/tracing/instances/wifi/tracing_on."
+          },
+          {
+            "line": 69,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}"
+          },
+          {
+            "line": 70,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/net_dev_queue/enable 1"
+          },
+          {
+            "line": 71,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/net_dev_xmit/enable 1"
+          },
+          {
+            "line": 72,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/netif_rx/enable 1"
+          },
+          {
+            "line": 73,
+            "text": "write /sys/kernel/debug/tracing/instances/wifi/events/net/netif_receive_skb/enable 1"
+          },
+          {
+            "line": 75,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/filter name==${wifi.interface:-wlan0}"
+          },
+          {
+            "line": 76,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/net_dev_queue/enable 1"
+          },
+          {
+            "line": 77,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/net_dev_xmit/enable 1"
+          },
+          {
+            "line": 78,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/netif_rx/enable 1"
+          },
+          {
+            "line": 79,
+            "text": "write /sys/kernel/tracing/instances/wifi/events/net/netif_receive_skb/enable 1"
+          },
+          {
+            "line": 81,
+            "text": "# Set DAC to allow system to enable/disable, and read wifi trace"
+          },
+          {
+            "line": 83,
+            "text": "chown system /sys/kernel/debug/tracing/instances/wifi/tracing_on"
+          },
+          {
+            "line": 84,
+            "text": "chown system /sys/kernel/debug/tracing/instances/wifi/free_buffer"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/wificond.rc",
+        "sha256": "7ec3ef548e88bcd13577b59239ca88b594454622818e4a9190ad274b1aadee38",
+        "matches": [
+          {
+            "line": 3,
+            "text": "user wifi"
+          },
+          {
+            "line": 4,
+            "text": "group wifi net_raw net_admin"
+          }
+        ]
+      },
+      {
+        "path": "system_a/system/etc/init/hw/init.rc",
+        "sha256": "27b0f4dc9e6e414359647400d2489fcbbc1ca1c7fa23f32ac5ac1cf72a14af11",
+        "matches": [
+          {
+            "line": 696,
+            "text": "mkdir /data/vendor/tombstones/wifi 0771 wifi wifi"
+          },
+          {
+            "line": 764,
+            "text": "mkdir /data/misc/bluedroid 02770 bluetooth bluetooth"
+          },
+          {
+            "line": 767,
+            "text": "chown bluetooth bluetooth /data/misc/bluedroid/bt_config.conf"
+          },
+          {
+            "line": 768,
+            "text": "mkdir /data/misc/bluetooth 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 769,
+            "text": "mkdir /data/misc/bluetooth/logs 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 787,
+            "text": "mkdir /data/misc/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 788,
+            "text": "mkdir /data/misc/wifi/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 789,
+            "text": "mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi"
+          },
+          {
+            "line": 790,
+            "text": "mkdir /data/misc/ethernet 0770 system system"
+          },
+          {
+            "line": 794,
+            "text": "chmod 0660 /data/misc/wifi/wpa_supplicant.conf"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/build.prop",
+        "sha256": "1ff03b89688b274e4455d044a11ebe6e23cc7335de4cc77a1e1b5cb4f008fafc",
+        "matches": [
+          {
+            "line": 147,
+            "text": "bluetooth.device.class_of_device=44,4,32"
+          },
+          {
+            "line": 181,
+            "text": "wifi.interface=wlan0"
+          },
+          {
+            "line": 182,
+            "text": "ro.vendor.wifi.sap.interface=ap0"
+          },
+          {
+            "line": 183,
+            "text": "wifi.concurrent.interface=ap0"
+          },
+          {
+            "line": 265,
+            "text": "persist.vendor.bluetooth.a2dp_src_sink_both_enable=true"
+          },
+          {
+            "line": 266,
+            "text": "persist.vendor.bluetooth.mtk_bt_consumer_feature=true"
+          },
+          {
+            "line": 267,
+            "text": "persist.vendor.bluetooth.a2dp_dualaudio_enable=true"
+          },
+          {
+            "line": 269,
+            "text": "ro.bt.bdaddr_path=/vendor/etc/bluetooth/bt_addr.conf"
+          },
+          {
+            "line": 283,
+            "text": "persist.bluetooth.btsnoopenable=false"
+          },
+          {
+            "line": 284,
+            "text": "persist.bluetooth.btsnooppath=/sdcard/btsnoop_hci.cfa"
+          },
+          {
+            "line": 285,
+            "text": "persist.bluetooth.btsnoopsize=0xffff"
+          },
+          {
+            "line": 286,
+            "text": "persist.bluetooth.aiccoex=true"
+          },
+          {
+            "line": 287,
+            "text": "bluetooth.enable_timeout_ms=11000"
+          },
+          {
+            "line": 299,
+            "text": "service.bluetooth.enablesink=false"
+          },
+          {
+            "line": 305,
+            "text": "service.bluetooth.enablesink=false"
+          },
+          {
+            "line": 308,
+            "text": "vendor.mtk.wifi.driver=aic"
+          },
+          {
+            "line": 322,
+            "text": "ro.rjpj.wifi.id="
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/init.insmod.rc",
+        "sha256": "c90f0095551213eb2eaca1b7c03e0ee66ac0555d76d3a4df6ddb87223cd43442",
+        "matches": [
+          {
+            "line": 78,
+            "text": "# for mtk bluetooth"
+          },
+          {
+            "line": 212,
+            "text": "# for mtk bluetooth"
+          },
+          {
+            "line": 269,
+            "text": "on property:vendor.mtk.wifi.driver=mt7663"
+          },
+          {
+            "line": 270,
+            "text": "setprop bluetooth.profile.hfp.ag.enabled false"
+          },
+          {
+            "line": 271,
+            "text": "setprop bluetooth.profile.hfp.hf.enabled false"
+          },
+          {
+            "line": 273,
+            "text": "# wlan dongle detect service"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/bootvideo.rc",
+        "sha256": "bccb1939e2e1558f388ea694cda7db046dc72def20d3bab15c3c78d39751dbdc",
+        "matches": [
+          {
+            "line": 5,
+            "text": "group media system graphics input bluetooth shell drmrpc mediacodec vendor_dtv_ww_rpc"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/android.hardware.wifi@1.0-service-lazy.rc",
+        "sha256": "9e4374cacb1fa06caff382e97d704b9dcaf7753471fcb837af7b9dbb10ec3afc",
+        "matches": [
+          {
+            "line": 13,
+            "text": "user wifi"
+          },
+          {
+            "line": 14,
+            "text": "group wifi gps"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/hostapd.android.rc",
+        "sha256": "a09021175637f73d790f1015b849e3a6c441dba05477fbcde33fa35ce64fb1b6",
+        "matches": [
+          {
+            "line": 10,
+            "text": "mkdir /data/vendor/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 11,
+            "text": "mkdir /data/vendor/wifi/hostapd 0770 wifi wifi"
+          },
+          {
+            "line": 12,
+            "text": "mkdir /data/vendor/wifi/hostapd/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 15,
+            "text": "interface aidl android.hardware.wifi.hostapd.IHostapd/default"
+          },
+          {
+            "line": 18,
+            "text": "user wifi"
+          },
+          {
+            "line": 19,
+            "text": "group wifi net_raw net_admin"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/android.hardware.bluetooth@1.1-service.rc",
+        "sha256": "b57e88929ed80924b19bc839f468d80dde894a59cfbf956d0e6e7ae8f15ae923",
+        "matches": [
+          {
+            "line": 6,
+            "text": "user bluetooth"
+          },
+          {
+            "line": 7,
+            "text": "group bluetooth"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/dtv_svc.rc",
+        "sha256": "cd90ed6fe6efb4701ca4d9514d47adbb36d394c8e08450c912ec636536652d0a",
+        "matches": [
+          {
+            "line": 6,
+            "text": "group media system audio graphics input bluetooth shell drmrpc vendor_mtk_rm"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/vendor.mediatek.tv.mtktvfactory@1.0-service.rc",
+        "sha256": "bf834b48fcaf7ab872caa45c2cf117860c853e20ccaafc5beb3f6febb4c3004a",
+        "matches": [
+          {
+            "line": 5,
+            "text": "group system media system graphics input bluetooth shell drmrpc media_rw everybody"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/init.fusion.rc",
+        "sha256": "d6afbbf4749ba0715dbdbfae459139e0c6b6b6f762ff4b6c28bff19628b4ce0c",
+        "matches": [
+          {
+            "line": 209,
+            "text": "# wifi tput"
+          },
+          {
+            "line": 210,
+            "text": "write /sys/class/net/wlan0/queues/rx-0/rps_cpus \"e\""
+          },
+          {
+            "line": 211,
+            "text": "write /sys/class/net/wlan0/queues/rx-1/rps_cpus \"e\""
+          },
+          {
+            "line": 212,
+            "text": "write /sys/class/net/wlan0/queues/rx-2/rps_cpus \"e\""
+          },
+          {
+            "line": 213,
+            "text": "write /sys/class/net/wlan0/queues/rx-3/rps_cpus \"e\""
+          },
+          {
+            "line": 219,
+            "text": "on property:sys.boot_completed=1 && property:vendor.mtk.wifi.driver=mt6639"
+          },
+          {
+            "line": 220,
+            "text": "# wifi tput - CPU performance mode"
+          },
+          {
+            "line": 229,
+            "text": "# wifi tput - TCP mem"
+          }
+        ]
+      },
+      {
+        "path": "vendor_a/etc/init/hw/init.common.rc",
+        "sha256": "12844b9ec949b6f7a9a433f754fb5a44cc5c974390964ca04c9e3f1a5ccc0678",
+        "matches": [
+          {
+            "line": 52,
+            "text": "mkdir /data/system/wpa_supplicant 0770 wifi wifi"
+          },
+          {
+            "line": 57,
+            "text": "# realtek bluetooth"
+          },
+          {
+            "line": 58,
+            "text": "mkdir /data/misc/bluedroid 0770 bluetooth bluetooth"
+          },
+          {
+            "line": 59,
+            "text": "# bluetooth LPM"
+          },
+          {
+            "line": 60,
+            "text": "chown bluetooth bluetooth /proc/bluetooth/sleep/lpm"
+          },
+          {
+            "line": 61,
+            "text": "chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite"
+          },
+          {
+            "line": 65,
+            "text": "chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state"
+          },
+          {
+            "line": 66,
+            "text": "chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type"
+          },
+          {
+            "line": 67,
+            "text": "# bluetooth MAC address programming"
+          },
+          {
+            "line": 68,
+            "text": "chown bluetooth bluetooth \"/data/misc/bluetooth/bdaddr\""
+          },
+          {
+            "line": 94,
+            "text": "mkdir /data/vendor/wifi 0770 wifi wifi"
+          },
+          {
+            "line": 95,
+            "text": "mkdir /data/vendor/wifi/wpa 0770 wifi wifi"
+          },
+          {
+            "line": 96,
+            "text": "mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi"
+          },
+          {
+            "line": 132,
+            "text": "user wifi"
+          },
+          {
+            "line": 133,
+            "text": "group wifi net_raw net_admin"
+          },
+          {
+            "line": 139,
+            "text": "group wifi"
+          },
+          {
+            "line": 153,
+            "text": "user wifi"
+          },
+          {
+            "line": 154,
+            "text": "group wifi net_raw net_admin"
+          },
+          {
+            "line": 159,
+            "text": "interface aidl android.hardware.wifi.supplicant.ISupplicant/default"
+          },
+          {
+            "line": 161,
+            "text": "socket wpa_wlan0 dgram 660 wifi wifi"
+          }
+        ]
+      }
+    ]
+  },
+  "network_feature_xml": {
+    "8052-factory": [
+      {
+        "path": "vendor_a/etc/permissions/android.hardware.wifi.passpoint.xml",
+        "sha256": "9996ae086333a6abcc7a1d124280d48e9632f02db8f38ba0bde7c529cbba6d1e"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi.supplicant.xml",
+        "sha256": "97dde4611aba5c011f081e8ffc2ea727c0e3c7d98a503580b8b0b98f41a3978c"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi.hostapd.xml",
+        "sha256": "b31161b0977654b052f349bf91511a97a26567dace51f81199dfcbe2ca20648d"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml",
+        "sha256": "77abd2663193ba1935c1c7607d8db67eeea1db057958820e4e69e8fa6d5f3cd6"
+      }
+    ],
+    "8052-ota": [
+      {
+        "path": "vendor_a/etc/permissions/android.hardware.wifi.passpoint.xml",
+        "sha256": "9996ae086333a6abcc7a1d124280d48e9632f02db8f38ba0bde7c529cbba6d1e"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi.supplicant.xml",
+        "sha256": "97dde4611aba5c011f081e8ffc2ea727c0e3c7d98a503580b8b0b98f41a3978c"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi.hostapd.xml",
+        "sha256": "b31161b0977654b052f349bf91511a97a26567dace51f81199dfcbe2ca20648d"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml",
+        "sha256": "77abd2663193ba1935c1c7607d8db67eeea1db057958820e4e69e8fa6d5f3cd6"
+      }
+    ],
+    "8054-factory": [
+      {
+        "path": "vendor_a/etc/permissions/android.hardware.wifi.passpoint.xml",
+        "sha256": "9996ae086333a6abcc7a1d124280d48e9632f02db8f38ba0bde7c529cbba6d1e"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi.supplicant.xml",
+        "sha256": "97dde4611aba5c011f081e8ffc2ea727c0e3c7d98a503580b8b0b98f41a3978c"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi.hostapd.xml",
+        "sha256": "b31161b0977654b052f349bf91511a97a26567dace51f81199dfcbe2ca20648d"
+      },
+      {
+        "path": "vendor_a/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml",
+        "sha256": "77abd2663193ba1935c1c7607d8db67eeea1db057958820e4e69e8fa6d5f3cd6"
+      }
+    ]
+  },
+  "module_load_lists": {
+    "8052-factory": [
+      {
+        "path": "vendor_a/lib/modules/modules.load",
+        "matched_lines": []
+      },
+      {
+        "path": "vendor_a/lib/modules/modules.dep",
+        "matched_lines": []
+      },
+      {
+        "path": "vendor_a/lib/modules/modules.alias",
+        "matched_lines": [
+          "alias of:N*T*Cmediatek,mt5896-gmac mtk_gmac_mt5896"
+        ]
+      }
+    ],
+    "8052-ota": [
+      {
+        "path": "vendor_a/lib/modules/modules.load",
+        "matched_lines": []
+      },
+      {
+        "path": "vendor_a/lib/modules/modules.dep",
+        "matched_lines": []
+      },
+      {
+        "path": "vendor_a/lib/modules/modules.alias",
+        "matched_lines": [
+          "alias of:N*T*Cmediatek,mt5896-gmac mtk_gmac_mt5896"
+        ]
+      }
+    ],
+    "8054-factory": [
+      {
+        "path": "vendor_a/lib/modules/modules.load",
+        "matched_lines": []
+      },
+      {
+        "path": "vendor_a/lib/modules/modules.dep",
+        "matched_lines": []
+      },
+      {
+        "path": "vendor_a/lib/modules/modules.alias",
+        "matched_lines": [
+          "alias of:N*T*Cmediatek,mt5896-gmac mtk_gmac_mt5896"
+        ]
+      }
+    ]
+  },
+  "note": "Static image evidence. Ethernet drivers may be built into boot kernel; PHY may be disabled by DT even if source files exist."
+}
