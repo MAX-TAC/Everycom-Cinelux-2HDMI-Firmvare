@@ -1,0 +1,4605 @@
+{
+  "source": "Latest SHA256-verified 8052 OTA 2026-10-12",
+  "apps": {
+    "zxlauncher": {
+      "sha256": "9a0e4b69eff2e1264e45810746e16acc26b598f186dd04e19089830164af4ffd",
+      "package": "com.zeasn.whale.saas",
+      "permissions": [
+        "android.permission.ACCESS_DOWNLOAD_MANAGER",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.CAMERA",
+        "android.permission.CHANGE_NETWORK_STATE",
+        "android.permission.DELETE_PACKAGES",
+        "android.permission.DOWNLOAD_WITHOUT_NOTIFICATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.INSTALL_PACKAGES",
+        "android.permission.INTERNET",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.READ_PRIVILEGED_PHONE_STATE",
+        "android.permission.REQUEST_DELETE_PACKAGES",
+        "android.permission.REQUEST_INSTALL_PACKAGES",
+        "android.permission.REQUEST_INSTALL_PACKAGES ",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "com.google.android.gms.permission.AD_ID"
+      ],
+      "launcher": [
+        "com.zeasn.launcher.ui.MainActivity",
+        "com.zeasn.launcher.ui.MainActivity"
+      ],
+      "manifest_component_counts": {
+        "activity": 19,
+        "provider": 2,
+        "service": 4,
+        "receiver": 4
+      },
+      "has_boot_completed": false,
+      "home_hint": true,
+      "classes": 10819,
+      "match_counts": {
+        "review": 9,
+        "installer": 153,
+        "settings": 2
+      },
+      "samples": {
+        "review": [
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 741,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 766,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/zeasn/utils/ActivityManager.java",
+            "line": 147,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "com/zeasn/launcher/dialog/AuthDialogBuilder.java",
+            "line": 65,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/zeasn/launcher/dialog/AuthDialogBuilder.java",
+            "line": 91,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "com/zeasn/launcher/base/ui/dialog/BaseMacAuthDialogBuilder.java",
+            "line": 103,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "com/android/media/api/service_api/utils/AppUtils.java",
+            "line": 103,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 8,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 9,
+            "identifier": "System.exit"
+          }
+        ],
+        "installer": [
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 757,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 899,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 899,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 899,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 900,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 900,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 901,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 905,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 909,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 913,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 918,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 920,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 925,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 926,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 929,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 929,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 929,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 929,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/live_data/LocalAppDataProvider.java",
+            "line": 140,
+            "identifier": "packageinstaller"
+          },
+          {
+            "class": "com/zeasn/live_data/LocalAppDataProvider.java",
+            "line": 596,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/installer/InstallResult.java",
+            "line": 14,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "com/zeasn/installer/InstallResult.java",
+            "line": 19,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "com/zeasn/c/download/install/InstallConst.java",
+            "line": 11,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "com/zeasn/c/download/install/Android_P_Installer.java",
+            "line": 5,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "com/zeasn/c/download/install/Android_P_Installer.java",
+            "line": 7,
+            "identifier": "PackageInstaller"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/zeasn/ad/connector/access/ABSettingHelper.java",
+            "line": 93,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/zeasn/ad/connector/access/ABSettingHelper.java",
+            "line": 94,
+            "identifier": "Settings.Secure.put"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "zxstore": {
+      "sha256": "d2f646175e0abb1f5abfe3b1d0915e40ca40cb3d5112edd7085b560ee6df6586",
+      "package": "zeasn.open.technical.tv.store",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_COARSE_UPDATES",
+        "android.permission.ACCESS_DOWNLOAD_MANAGER",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BROADCAST_STICKY",
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.CLEAR_APP_CACHE",
+        "android.permission.CLEAR_APP_USER_DATA",
+        "android.permission.DELETE_PACKAGES",
+        "android.permission.DOWNLOAD_WITHOUT_NOTIFICATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.INSTALL_PACKAGES",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.INTERNET",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.READ_PRIVILEGED_PHONE_STATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.REORDER_TASKS",
+        "android.permission.REQUEST_DELETE_PACKAGES",
+        "android.permission.REQUEST_INSTALL_PACKAGES",
+        "android.permission.RESTART_PACKAGES",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.SYSTEM_OVERLAY_WINDOW",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "com.google.android.gms.permission.AD_ID"
+      ],
+      "launcher": [
+        "zeasn.open.technical.tv.store.ui.MainActivity",
+        "zeasn.open.technical.tv.store.ui.MainActivity"
+      ],
+      "manifest_component_counts": {
+        "activity": 13,
+        "provider": 3,
+        "receiver": 5,
+        "service": 4
+      },
+      "has_boot_completed": true,
+      "home_hint": true,
+      "classes": 10729,
+      "match_counts": {
+        "installer": 196,
+        "review": 9,
+        "hdmi": 4,
+        "settings": 3
+      },
+      "samples": {
+        "installer": [
+          {
+            "class": "pm/PackageManager.java",
+            "line": 246,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "pm/PackageManager.java",
+            "line": 246,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "pm/PackageManager.java",
+            "line": 363,
+            "identifier": "packageinstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 763,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 913,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 920,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 920,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 920,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 921,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 921,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 922,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 926,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 930,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 934,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 939,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 941,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 946,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 947,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 950,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 950,
+            "identifier": "packageInstaller"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 950,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/live_data/LocalAppDataProvider.java",
+            "line": 102,
+            "identifier": "packageinstaller"
+          },
+          {
+            "class": "com/zeasn/live_data/LocalAppDataProvider.java",
+            "line": 584,
+            "identifier": "PackageInstaller"
+          },
+          {
+            "class": "com/zeasn/installer/InstallResult.java",
+            "line": 14,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "com/zeasn/installer/InstallResult.java",
+            "line": 19,
+            "identifier": "INSTALL_SUCCESS"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 746,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "com/zeasn/utils/AppUtil.java",
+            "line": 772,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/zeasn/utils/ActivityManager.java",
+            "line": 147,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "com/android/media/api/service_api/utils/AppUtils.java",
+            "line": 104,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "zeasn/open/technical/tv/store/app/InstallRunnable.java",
+            "line": 72,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "zeasn/open/technical/tv/store/ui/dialogbuilder/BaseMacAuthDialogBuilder.java",
+            "line": 151,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "zeasn/open/technical/tv/store/ui/dialogbuilder/NetworkWrongDialogBuilder.java",
+            "line": 28,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 8,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 9,
+            "identifier": "System.exit"
+          }
+        ],
+        "hdmi": [
+          {
+            "class": "com/hisilicon/android/tvapi/SourceManager.java",
+            "line": 63,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/hisilicon/android/tvapi/constant/EnumSystemCmd.java",
+            "line": 481,
+            "identifier": "SETBOOTSOURCE"
+          },
+          {
+            "class": "com/hisilicon/android/tvapi/impl/SourceManagerImpl.java",
+            "line": 160,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/hisilicon/android/tvapi/impl/SourceManagerImpl.java",
+            "line": 161,
+            "identifier": "SETBOOTSOURCE"
+          }
+        ],
+        "settings": [
+          {
+            "class": "zeasn/open/technical/tv/store/app/InstallRunnable.java",
+            "line": 292,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "zeasn/open/technical/tv/store/app/AppDetailBoner.java",
+            "line": 599,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "zeasn/open/technical/tv/store/ui/UpgradeClientActivity.java",
+            "line": 163,
+            "identifier": "Settings.Global.put"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "KuSettings": {
+      "sha256": "bd678e646a0cbc164f34273bcd396f9cf9221037b4c688d9d08464840cfca58b",
+      "package": "com.my.settings",
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BACKUP",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_PRIVILEGED",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.CHANGE_NETWORK_STATE",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.CLEAR_APP_USER_DATA",
+        "android.permission.CONNECTIVITY_INTERNAL",
+        "android.permission.DELETE_CACHE_FILES",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_ACCOUNTS",
+        "android.permission.GET_PACKAGE_SIZE",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERNET",
+        "android.permission.MANAGE_ACCOUNTS",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MASTER_CLEAR",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.OVERRIDE_WIFI_CONFIG",
+        "android.permission.QUERY_ALL_PACKAGES",
+        "android.permission.READ_CONTACTS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.RECOVERY",
+        "android.permission.SET_PREFERRED_APPLICATIONS",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.TETHER_PRIVILEGED",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "com.my.settings.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "launcher": [
+        "com.my.settings.SettingActivity"
+      ],
+      "manifest_component_counts": {
+        "activity": 11,
+        "service": 2,
+        "receiver": 2,
+        "provider": 1
+      },
+      "has_boot_completed": true,
+      "home_hint": true,
+      "classes": 3470,
+      "match_counts": {
+        "ota": 1,
+        "settings": 8,
+        "binder": 1,
+        "review": 3,
+        "installer": 2
+      },
+      "samples": {
+        "ota": [
+          {
+            "class": "com/my/utils/IntentUtils.java",
+            "line": 68,
+            "identifier": "OTASystemNetworkUpdateActivity"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/my/settings/AirplaneModeEnabler.java",
+            "line": 41,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/service/ScreenServices.java",
+            "line": 39,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/my/settings/language/InputMethodManagerUtils.java",
+            "line": 33,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/my/settings/time/DateTimeUtils.java",
+            "line": 33,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/settings/time/DateTimeUtils.java",
+            "line": 37,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 36,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 37,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 38,
+            "identifier": "Settings.Secure.put"
+          }
+        ],
+        "binder": [
+          {
+            "class": "com/my/settings/Utils.java",
+            "line": 310,
+            "identifier": "ServiceManager.getService"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 49,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 8,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 9,
+            "identifier": "System.exit"
+          }
+        ],
+        "installer": [
+          {
+            "class": "androidx/profileinstaller/ProfileInstaller.java",
+            "line": 50,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "androidx/profileinstaller/ProfileInstaller.java",
+            "line": 105,
+            "identifier": "INSTALL_SUCCESS"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "TvSettingsPlus": {
+      "sha256": "e4184a13fbf56fa069effc6a40ea50c0da7e9190321b389f59ba34700a80d0a1",
+      "package": "com.android.tv.settings",
+      "permissions": [
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BACKUP",
+        "android.permission.BIND_TV_INPUT",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_ADVERTISE",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_PRIVILEGED",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.CLEAR_APP_USER_DATA",
+        "android.permission.DELETE_CACHE_FILES",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_ACCOUNTS_PRIVILEGED",
+        "android.permission.GET_PACKAGE_SIZE",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERNET",
+        "android.permission.MANAGE_ACCOUNTS",
+        "android.permission.MANAGE_DEBUGGING",
+        "android.permission.MANAGE_EXTERNAL_STORAGE",
+        "android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS",
+        "android.permission.MANAGE_SCOPED_ACCESS_DIRECTORY_PERMISSIONS",
+        "android.permission.MANAGE_SENSOR_PRIVACY",
+        "android.permission.MANAGE_SLICE_PERMISSIONS",
+        "android.permission.MANAGE_USERS",
+        "android.permission.NETWORK_SETTINGS",
+        "android.permission.OBSERVE_SENSOR_PRIVACY",
+        "android.permission.OVERRIDE_WIFI_CONFIG",
+        "android.permission.PEERS_MAC_ADDRESS",
+        "android.permission.QUERY_ALL_PACKAGES",
+        "android.permission.READ_CONTACTS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_PROFILE",
+        "android.permission.REBOOT",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.REQUEST_DELETE_PACKAGES",
+        "android.permission.SET_PREFERRED_APPLICATIONS",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SET_UNRESTRICTED_KEEP_CLEAR_AREAS",
+        "android.permission.START_ACTIVITIES_FROM_BACKGROUND",
+        "android.permission.SUGGEST_MANUAL_TIME_AND_ZONE",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.USE_RESERVED_DISK",
+        "android.permission.WRITE_EPG_DATA",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "androidx.appcompat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.leanback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.leanback.preference.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.legacy.preference.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.legacy.v4.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.preference.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.recyclerview.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.android.providers.tv.permission.WRITE_EPG_DATA",
+        "com.android.settingslib.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.android.tv.settings.library.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.android.tv.twopanelsettings.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.google.android.assistant.READ_HOTWORD_STATE",
+        "com.google.android.assistant.WRITE_HOTWORD_STATE",
+        "com.mediatek.tv.permission.BROADCAST",
+        "com.netflix.ninja.permission.ESN",
+        "com.netflix.ninja.permission.ESN_RESPONSE"
+      ],
+      "launcher": [
+        "com.android.tv.settings.MainSettings"
+      ],
+      "manifest_component_counts": {
+        "provider": 6,
+        "activity": 120,
+        "receiver": 12,
+        "service": 8
+      },
+      "has_boot_completed": true,
+      "home_hint": true,
+      "classes": 5796,
+      "match_counts": {
+        "binder": 20,
+        "hdmi": 175,
+        "installer": 254,
+        "settings": 375,
+        "i2c": 26,
+        "ota": 12,
+        "review": 7
+      },
+      "samples": {
+        "binder": [
+          {
+            "class": "com/mediatek/dm/DMServer.java",
+            "line": 44,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/settingslib/dream/DreamBackend.java",
+            "line": 76,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/PowerAllowlistBackend.java",
+            "line": 15,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/device/apps/ClearDefaultsPreference.java",
+            "line": 10,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/device/apps/ClearDefaultsPreference.java",
+            "line": 60,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/AdbKeysDialog.java",
+            "line": 25,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/WirelessDebuggingFragment.java",
+            "line": 51,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/WirelessDebuggingFragment.java",
+            "line": 385,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/AdbDeviceDetailsFragment.java",
+            "line": 22,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/DevelopmentFragment.java",
+            "line": 163,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/DevelopmentFragment.java",
+            "line": 164,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/DevelopmentFragment.java",
+            "line": 771,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/DevelopmentFragment.java",
+            "line": 791,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/system/development/DevelopmentFragment.java",
+            "line": 806,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/library/settingslib/DreamBackend.java",
+            "line": 61,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/library/system/DevelopmentState.java",
+            "line": 162,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/library/system/DevelopmentState.java",
+            "line": 163,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/library/device/apps/AppManagementState.java",
+            "line": 161,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/library/device/apps/ClearDefaultsPreferenceController.java",
+            "line": 21,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/android/tv/settings/library/device/apps/specialaccess/PowerAllowlistBackend.java",
+            "line": 15,
+            "identifier": "ServiceManager.getService"
+          }
+        ],
+        "hdmi": [
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/mediatek/support/androidversioncompatiblelib/CompatibleApis.java",
+            "line": 6,
+            "identifier": "HdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/support/androidversioncompatiblelib/CompatibleApis.java",
+            "line": 11,
+            "identifier": "HdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/support/androidversioncompatiblelib/CompatibleApis.java",
+            "line": 11,
+            "identifier": "HdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/google/android/setupdesign/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/google/android/setupdesign/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/google/android/setupcompat/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/google/android/setupcompat/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/google/android/material/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/google/android/material/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/airbnb/lottie/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/airbnb/lottie/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/wifitrackerlib/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/wifitrackerlib/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/utils/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/utils/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/collapsingtoolbar/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/collapsingtoolbar/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/transition/R.java",
+            "line": 7745,
+            "identifier": "hdmi_cec"
+          },
+          {
+            "class": "com/android/settingslib/transition/R.java",
+            "line": 9886,
+            "identifier": "hdmi_cec"
+          }
+        ],
+        "installer": [
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 10312,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 10324,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 10325,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 10312,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 10324,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 10325,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupdesign/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupdesign/R.java",
+            "line": 10312,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupdesign/R.java",
+            "line": 10324,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupdesign/R.java",
+            "line": 10325,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupcompat/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupcompat/R.java",
+            "line": 10312,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupcompat/R.java",
+            "line": 10324,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/setupcompat/R.java",
+            "line": 10325,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/material/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/material/R.java",
+            "line": 10312,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/material/R.java",
+            "line": 10324,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/google/android/material/R.java",
+            "line": 10325,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/airbnb/lottie/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/airbnb/lottie/R.java",
+            "line": 10312,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/airbnb/lottie/R.java",
+            "line": 10324,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/airbnb/lottie/R.java",
+            "line": 10325,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/android/settingslib/R.java",
+            "line": 9665,
+            "identifier": "install_success"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/android/settingslib/Utils.java",
+            "line": 16,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/notification/ZenDurationDialog.java",
+            "line": 85,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/dream/DreamBackend.java",
+            "line": 238,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/dream/DreamBackend.java",
+            "line": 314,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 135,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 143,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 144,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 145,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 146,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 185,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogpersistPreferenceController.java",
+            "line": 186,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractEnableAdbPreferenceController.java",
+            "line": 84,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/settingslib/development/DevelopmentSettingsEnabler.java",
+            "line": 11,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogdSizePreferenceController.java",
+            "line": 118,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogdSizePreferenceController.java",
+            "line": 127,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogdSizePreferenceController.java",
+            "line": 131,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/development/AbstractLogdSizePreferenceController.java",
+            "line": 132,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/BatterySaverUtils.java",
+            "line": 53,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/BatterySaverUtils.java",
+            "line": 83,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/BatterySaverUtils.java",
+            "line": 87,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/BatterySaverUtils.java",
+            "line": 94,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/BatterySaverUtils.java",
+            "line": 110,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/BatterySaverUtils.java",
+            "line": 111,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/Estimate.java",
+            "line": 77,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/settingslib/fuelgauge/Estimate.java",
+            "line": 78,
+            "identifier": "Settings.Global.put"
+          }
+        ],
+        "i2c": [
+          {
+            "class": "com/android/tv/settings/uicustom/I2CDevice.java",
+            "line": 4,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/I2CDevice.java",
+            "line": 11,
+            "identifier": "readRegister"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/I2CDevice.java",
+            "line": 13,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 44,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 44,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 48,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 48,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 48,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 50,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 50,
+            "identifier": "/dev/i2c-"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 51,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 51,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 53,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 53,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 57,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 57,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 59,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 60,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 63,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 63,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 65,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 67,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 71,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 71,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/ProjectorManager.java",
+            "line": 72,
+            "identifier": "i2CDevice"
+          }
+        ],
+        "ota": [
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 38,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 58,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 149,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 189,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 194,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 196,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 201,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 318,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 334,
+            "identifier": "updateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/system/TextToSpeechFragment.java",
+            "line": 346,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/fragment/system/SystemFragment.java",
+            "line": 65,
+            "identifier": "OTASystemNetworkUpdateActivity"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/floatmenu/controller/system/SystemSubMenuController.java",
+            "line": 63,
+            "identifier": "OTASystemNetworkUpdateActivity"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/android/tv/settings/uicustom/util/MtkUtil.java",
+            "line": 161,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/MtkUtil.java",
+            "line": 161,
+            "identifier": "processBuilder"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/MtkUtil.java",
+            "line": 161,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/MtkUtil.java",
+            "line": 162,
+            "identifier": "processBuilder"
+          },
+          {
+            "class": "com/android/tv/settings/uicustom/util/MtkUtil.java",
+            "line": 164,
+            "identifier": "processBuilder"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 10,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 11,
+            "identifier": "System.exit"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "RuiYunOta": {
+      "sha256": "40f399ff15b692180243ce103469230bcb7f90278fc4ad5f6c7d86cbc75961a2",
+      "package": "com.rjpj.yunota",
+      "permissions": [
+        "android.permission.ACCESS_DOWNLOAD_MANAGER",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BACKUP",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.CLEAR_APP_USER_DATA",
+        "android.permission.DELETE_CACHE_FILES",
+        "android.permission.DOWNLOAD_WITHOUT_NOTIFICATION",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_ACCOUNTS_PRIVILEGED",
+        "android.permission.GET_PACKAGE_SIZE",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERNET",
+        "android.permission.MANAGE_ACCOUNTS",
+        "android.permission.MANAGE_SCOPED_ACCESS_DIRECTORY_PERMISSIONS",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.NETWORK_SETTINGS",
+        "android.permission.OVERRIDE_WIFI_CONFIG",
+        "android.permission.PEERS_MAC_ADDRESS",
+        "android.permission.READ_CONTACTS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.REBOOT",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.REQUEST_DELETE_PACKAGES",
+        "android.permission.SET_PREFERRED_APPLICATIONS",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.USE_RESERVED_DISK",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "com.google.android.assistant.READ_HOTWORD_STATE",
+        "com.google.android.assistant.WRITE_HOTWORD_STATE",
+        "com.netflix.ninja.permission.ESN",
+        "com.netflix.ninja.permission.ESN_RESPONSE"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 4,
+        "service": 2
+      },
+      "has_boot_completed": true,
+      "home_hint": false,
+      "classes": 75,
+      "match_counts": {
+        "ota": 269,
+        "review": 1
+      },
+      "samples": {
+        "ota": [
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 45,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 45,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 261,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 261,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 458,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 478,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 481,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 495,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 497,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 509,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/AbUpdate.java",
+            "line": 734,
+            "identifier": "UpdateEngine"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 4,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 12,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 23,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 27,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 28,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 29,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 30,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 30,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 31,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 31,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 33,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 34,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 35,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/rjpj/yunota/OTACheckService.java",
+            "line": 35,
+            "identifier": "oTACheckService"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/rjpj/yunota/OTASystemNetworkUpdateActivity.java",
+            "line": 271,
+            "identifier": "System.exit"
+          }
+        ]
+      },
+      "decompile_exit": 0
+    },
+    "KuSourceRJ": {
+      "sha256": "15bf7b9fe31844bace197989ae393af7c3e4ca5a9c3c2019a4f662f0a9d881cc",
+      "package": "com.coolux.source",
+      "permissions": [
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BIND_TV_INPUT",
+        "android.permission.CHANGE_NETWORK_STATE",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.INTERNET",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WRITE_EPG_DATA",
+        "com.android.providers.tv.permission.WRITE_EPG_DATA",
+        "com.coolux.source.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "launcher": [
+        "com.coolux.source.MainActivity"
+      ],
+      "manifest_component_counts": {
+        "activity": 33,
+        "receiver": 3,
+        "service": 1,
+        "provider": 1
+      },
+      "has_boot_completed": true,
+      "home_hint": true,
+      "classes": 3007,
+      "match_counts": {
+        "binder": 118,
+        "hdmi": 17,
+        "settings": 8,
+        "motor_tof": 37,
+        "review": 4
+      },
+      "samples": {
+        "binder": [
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 49,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 53,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 71,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 75,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 79,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 89,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 98,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 102,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 398,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 402,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/common/TrdContext.java",
+            "line": 6,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 4,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 6,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 12,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 17,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 22,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 23,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 27,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 32,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 37,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 42,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 43,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 47,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 56,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 64,
+            "identifier": "getTofCtrl"
+          }
+        ],
+        "hdmi": [
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 117,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/BootSoureActivity.java",
+            "line": 78,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/BootSoureActivity.java",
+            "line": 79,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/BootSoureActivity.java",
+            "line": 154,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/BootSoureActivityOld.java",
+            "line": 76,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/BootSoureActivityOld.java",
+            "line": 77,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/BootSoureActivityOld.java",
+            "line": 160,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/coolux/source/activity/AllAppAutoActivity.java",
+            "line": 81,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 211,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 385,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 471,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 539,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 952,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 964,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/sdk/SystemCtrl.java",
+            "line": 91,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/sdk/impl/SystemCtrlImpl.java",
+            "line": 65,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/sdk/impl/SystemCtrlImpl.java",
+            "line": 67,
+            "identifier": "setBootSource"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 137,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 430,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 438,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 446,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 454,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 462,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 470,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/coolux/source/utils/ImageUtils.java",
+            "line": 492,
+            "identifier": "SystemProperties.set"
+          }
+        ],
+        "motor_tof": [
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 43,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 64,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 149,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 296,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 305,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 4,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 6,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 7,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 12,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 21,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 33,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 34,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 48,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 53,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 54,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 56,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 88,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 89,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 93,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 105,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 112,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 113,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 123,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 130,
+            "identifier": "ITofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITofCtrl.java",
+            "line": 131,
+            "identifier": "ITofCtrl"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/trd/common/utils/FileUtil.java",
+            "line": 474,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/trd/common/utils/FileUtil.java",
+            "line": 490,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 8,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 9,
+            "identifier": "System.exit"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "RuiAutoFocus": {
+      "sha256": "aa5257b38dc299d2160a5b5293915f3e0b4a88e690c5b6cd5a0bc2c940dc842f",
+      "package": "com.hysd.screen",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.CAMERA",
+        "android.permission.DISABLE_KEYGUARD",
+        "android.permission.FLASHLIGHT",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.INTERNET",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.SENSOR_ENABLE",
+        "android.permission.SENSOR_INFO",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.SYSTEM_OVERLAY_WINDOW",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "service": 1,
+        "activity": 1
+      },
+      "has_boot_completed": true,
+      "home_hint": false,
+      "classes": 1091,
+      "match_counts": {
+        "motor_tof": 214,
+        "settings": 167,
+        "binder": 105,
+        "hdmi": 9,
+        "review": 2
+      },
+      "samples": {
+        "motor_tof": [
+          {
+            "class": "com/rui/cameraapi/MotorJNI.java",
+            "line": 4,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/rui/cameraapi/MotorJNI.java",
+            "line": 21,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/rui/cameraapi/MotorJNI.java",
+            "line": 23,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/rui/cameraapi/MotorJNI.java",
+            "line": 25,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 392,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 394,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 409,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 411,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 609,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 639,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 729,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 754,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/hysd/xymscreen/MainActivity.java",
+            "line": 815,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 854,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 860,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 866,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 966,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1151,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1161,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1172,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1181,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1233,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1243,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1254,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/hysd/client/VAF2S.java",
+            "line": 1263,
+            "identifier": "MotorFront"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/hysd/ai/RuiCameraApi.java",
+            "line": 337,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/TestProperties.java",
+            "line": 171,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 165,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 173,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 181,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 195,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 203,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 211,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 219,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 227,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 235,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 243,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 251,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 259,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 267,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 275,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 283,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 291,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 299,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 307,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 315,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 323,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 331,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 339,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 347,
+            "identifier": "SystemProperties.set"
+          }
+        ],
+        "binder": [
+          {
+            "class": "com/trd/common/TrdContext.java",
+            "line": 6,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 4,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 9,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 17,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 21,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 22,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 26,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 31,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 32,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 36,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 41,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 46,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 51,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 56,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 57,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 67,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 68,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 71,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 75,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 82,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 87,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 88,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 90,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 115,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 145,
+            "identifier": "getTofCtrl"
+          }
+        ],
+        "hdmi": [
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 89,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 147,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 470,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 540,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 961,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/ISystemCtrl.java",
+            "line": 974,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/sdk/SystemCtrl.java",
+            "line": 91,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/sdk/impl/SystemCtrlImpl.java",
+            "line": 69,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/sdk/impl/SystemCtrlImpl.java",
+            "line": 71,
+            "identifier": "setBootSource"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/trd/common/utils/FileUtil.java",
+            "line": 473,
+            "identifier": "ProcessBuilder"
+          },
+          {
+            "class": "com/trd/common/utils/FileUtil.java",
+            "line": 491,
+            "identifier": "ProcessBuilder"
+          }
+        ]
+      },
+      "decompile_exit": 0
+    },
+    "KeystoneCorrection": {
+      "sha256": "23c68874b1ad2147549b3538ebe7f9ad7c97987a99ccb165ec528a6467b98829",
+      "package": "com.rjpj.tcorrection",
+      "permissions": [
+        "androidx.constraintlayout.widget.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 4,
+        "receiver": 1,
+        "provider": 1
+      },
+      "has_boot_completed": false,
+      "home_hint": false,
+      "classes": 449,
+      "match_counts": {
+        "i2c": 158,
+        "settings": 9,
+        "binder": 28
+      },
+      "samples": {
+        "i2c": [
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 114,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 114,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 118,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 118,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 118,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 120,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 120,
+            "identifier": "/dev/i2c-"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 122,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 122,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 126,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 126,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 127,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 127,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 128,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 128,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 129,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 129,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 131,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 131,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 132,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 132,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 133,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 133,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 134,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 134,
+            "identifier": "writeRegister"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 226,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 273,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 274,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 275,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 276,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 277,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 278,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 279,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 280,
+            "identifier": "SystemProperties.set"
+          }
+        ],
+        "binder": [
+          {
+            "class": "com/rjpj/tcorrection/KeystoneUtil.java",
+            "line": 264,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/common/TrdContext.java",
+            "line": 6,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 4,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 5,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 7,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 8,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 12,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 13,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 14,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 16,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 19,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 20,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 32,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 33,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 38,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 39,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 39,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 50,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 51,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 4,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 5,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 7,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 9,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 11,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/impl/ProjectorCtrlImpl.java",
+            "line": 11,
+            "identifier": "ITrdSystemService"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "trdservice": {
+      "sha256": "309eaf1098bf3d544907b57fa24ae6ad31c591fe942133fd8ef1c69832d538f1",
+      "package": "com.trd.service",
+      "permissions": [
+        "android.Manifest.permission.WRITE_DREAM_STATE",
+        "android.permission.ACCESS_TUNED_INFO",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.HDMI_CEC",
+        "android.permission.INTERNET",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "androidx.constraintlayout.widget.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 1,
+        "service": 1,
+        "receiver": 1,
+        "provider": 1
+      },
+      "has_boot_completed": false,
+      "home_hint": false,
+      "classes": 438,
+      "match_counts": {
+        "binder": 35,
+        "ota": 4,
+        "settings": 12,
+        "motor_tof": 35
+      },
+      "samples": {
+        "binder": [
+          {
+            "class": "com/trd/common/TrdContext.java",
+            "line": 6,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 4,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 9,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 10,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 14,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 15,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 16,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 18,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 21,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 22,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 34,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 40,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 41,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 51,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 57,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 58,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 69,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/ITrdSystemService.java",
+            "line": 70,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 4,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 5,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 7,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 9,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/sdk/TrdSystemManager.java",
+            "line": 11,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 82,
+            "identifier": "TrdSystemManager"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 84,
+            "identifier": "TrdSystemManager"
+          }
+        ],
+        "ota": [
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 17,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 209,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 211,
+            "identifier": "OTACheckService"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 222,
+            "identifier": "OTACheckService"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 225,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 297,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 307,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 319,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 321,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 323,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 325,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 327,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 339,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/trd/service/TrdService.java",
+            "line": 342,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/trd/service/savemac/SaveMacToUsb.java",
+            "line": 23,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/trd/service/savemac/SaveMacToUsb.java",
+            "line": 227,
+            "identifier": "SystemProperties.set"
+          }
+        ],
+        "motor_tof": [
+          {
+            "class": "com/trd/service/jni/MotorJNI.java",
+            "line": 4,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/jni/MotorJNI.java",
+            "line": 9,
+            "identifier": "MotorBack"
+          },
+          {
+            "class": "com/trd/service/jni/MotorJNI.java",
+            "line": 11,
+            "identifier": "MotorFront"
+          },
+          {
+            "class": "com/trd/service/jni/MotorJNI.java",
+            "line": 13,
+            "identifier": "MotorStop"
+          },
+          {
+            "class": "com/trd/service/ui/RJFocusDialog.java",
+            "line": 55,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/RJFocusDialog.java",
+            "line": 55,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/RJFocusDialog.java",
+            "line": 55,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/RJFocusDialog.java",
+            "line": 56,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/RJFocusDialog.java",
+            "line": 57,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 52,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 52,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 52,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 53,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 54,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 73,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 73,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 73,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 74,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/ui/UICtrlImpl.java",
+            "line": 75,
+            "identifier": "motorJNI"
+          },
+          {
+            "class": "com/trd/service/communication/KeyEventCtrlService.java",
+            "line": 8,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/communication/KeyEventCtrlService.java",
+            "line": 8,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/communication/KeyEventCtrlService.java",
+            "line": 19,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/communication/KeyEventCtrlService.java",
+            "line": 19,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/communication/KeyEventCtrlService.java",
+            "line": 100,
+            "identifier": "MotorJNI"
+          },
+          {
+            "class": "com/trd/service/communication/KeyEventCtrlService.java",
+            "line": 100,
+            "identifier": "MotorFront"
+          }
+        ]
+      },
+      "decompile_exit": 0
+    },
+    "trdmiddle": {
+      "sha256": "d51088086756a96ad184ec31189c2b8babe7ba3b605b55375fd9e07c4f58bfa4",
+      "package": "com.trd.framework",
+      "permissions": [
+        "android.Manifest.permission.WRITE_DREAM_STATE",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.INTERNET",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 1,
+        "service": 1
+      },
+      "has_boot_completed": false,
+      "home_hint": false,
+      "classes": 568,
+      "match_counts": {
+        "settings": 47,
+        "hdmi": 7,
+        "binder": 18,
+        "motor_tof": 1
+      },
+      "samples": {
+        "settings": [
+          {
+            "class": "o/a.java",
+            "line": 263,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "l/b.java",
+            "line": 494,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "l/b.java",
+            "line": 502,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "l/i.java",
+            "line": 97,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "l/i.java",
+            "line": 106,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 373,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 374,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 375,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 376,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 377,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 378,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 379,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 380,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 401,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 406,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 407,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 408,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 409,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 475,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "e/c.java",
+            "line": 476,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "i/a.java",
+            "line": 169,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "i/a.java",
+            "line": 170,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "i/a.java",
+            "line": 171,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "i/a.java",
+            "line": 458,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "i/a.java",
+            "line": 469,
+            "identifier": "Settings.Global.put"
+          }
+        ],
+        "hdmi": [
+          {
+            "class": "e/h.java",
+            "line": 53,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "e/c.java",
+            "line": 474,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "e/c.java",
+            "line": 477,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "k/a.java",
+            "line": 1423,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "k/a.java",
+            "line": 1424,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/e.java",
+            "line": 42,
+            "identifier": "setBootSource"
+          },
+          {
+            "class": "com/trd/framework/e.java",
+            "line": 469,
+            "identifier": "setBootSource"
+          }
+        ],
+        "binder": [
+          {
+            "class": "d/d.java",
+            "line": 23,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 8,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 19,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 24,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 29,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 35,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 36,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 41,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 47,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 53,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 59,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 65,
+            "identifier": "ITrdSystemService"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 66,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 80,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/k.java",
+            "line": 88,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/TrdSystemService.java",
+            "line": 112,
+            "identifier": "getProjectorCtrl"
+          },
+          {
+            "class": "com/trd/framework/TrdSystemService.java",
+            "line": 132,
+            "identifier": "getTofCtrl"
+          },
+          {
+            "class": "com/trd/framework/projector/TrapezoidUtil.java",
+            "line": 36,
+            "identifier": "ServiceManager.getService"
+          }
+        ],
+        "motor_tof": [
+          {
+            "class": "com/trd/framework/h.java",
+            "line": 7,
+            "identifier": "ITofCtrl"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "Factory": {
+      "sha256": "40e755ec443340f1df1781388cd9807822176c848fb1d3082c48ff3719a1bcab",
+      "package": "mediatek.factorymenu.ui",
+      "permissions": [
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.CHANGE_NETWORK_STATE",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.INTERNET",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.NETWROK_SETTINGS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "com.mediatek.select.source",
+        "com.mediatek.tv.stop.source"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 21,
+        "service": 2
+      },
+      "has_boot_completed": false,
+      "home_hint": false,
+      "classes": 1866,
+      "match_counts": {
+        "review": 8,
+        "settings": 178,
+        "i2c": 26
+      },
+      "samples": {
+        "review": [
+          {
+            "class": "org/jtransforms/fft/BenchmarkDoubleFFT.java",
+            "line": 540,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/fft/BenchmarkFloatFFT.java",
+            "line": 538,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/dct/BenchmarkDoubleDCT.java",
+            "line": 304,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/dct/BenchmarkFloatDCT.java",
+            "line": 297,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/dht/BenchmarkDoubleDHT.java",
+            "line": 297,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/dht/BenchmarkFloatDHT.java",
+            "line": 297,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/dst/BenchmarkFloatDST.java",
+            "line": 297,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "org/jtransforms/dst/BenchmarkDoubleDST.java",
+            "line": 297,
+            "identifier": "System.exit"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/android/tv/settings/partnercustomizer/tvsettingservice/TVSettingConfig.java",
+            "line": 673,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/android/tv/settings/partnercustomizer/tvsettingservice/TVSettingConfig.java",
+            "line": 761,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "mediatek/sysprop/TestProperties.java",
+            "line": 171,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 165,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 173,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 181,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 195,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 203,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 211,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 219,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 227,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 235,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 243,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 251,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 259,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 267,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 275,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 283,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 291,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 299,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 307,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 315,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 323,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 331,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "mediatek/sysprop/VendorProperties.java",
+            "line": 339,
+            "identifier": "SystemProperties.set"
+          }
+        ],
+        "i2c": [
+          {
+            "class": "mediatek/util/I2CDevice.java",
+            "line": 4,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "mediatek/util/I2CDevice.java",
+            "line": 11,
+            "identifier": "readRegister"
+          },
+          {
+            "class": "mediatek/util/I2CDevice.java",
+            "line": 13,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 71,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 71,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 75,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 75,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 75,
+            "identifier": "I2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 77,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 77,
+            "identifier": "/dev/i2c-"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 78,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 78,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 80,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 80,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 84,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 84,
+            "identifier": "writeRegister"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 86,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 87,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 90,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 90,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 92,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 94,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 98,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 98,
+            "identifier": "i2CDevice"
+          },
+          {
+            "class": "mediatek/tvsetting/factory/ui/ProjectorManager.java",
+            "line": 99,
+            "identifier": "i2CDevice"
+          }
+        ]
+      },
+      "decompile_exit": 0
+    },
+    "TvServices": {
+      "sha256": "d5260ce75c48978bd57383eed14c0ba524a73837bb079fb70147cef6078995e4",
+      "package": "com.mediatek.tv.service",
+      "permissions": [
+        "adnroid.permission.ACCESS_CHECKIN_PROPERTTES",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BROADCAST_STICKY",
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.DEVICE_POWER",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_TASKS",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.INTERACT_ACROSS_USERS_FULL",
+        "android.permission.INTERNET",
+        "android.permission.KILL_BACKGROUND_PROCESSES",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MASTER_CLEAR",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.PACKAGE_USAGE_STATS",
+        "android.permission.READ_DREAM_STATE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_LOGS",
+        "android.permission.READ_TV_LISTINGS",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.REORDER_TASKS",
+        "android.permission.SET_ACTIVITY_WATCHER",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.START_ANY_ACTIVITY",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "androidx.tvprovider.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.android.providers.tv.permission.ACCESS_ALL_EPG_DATA",
+        "com.android.providers.tv.permission.READ_EPG_DATA",
+        "com.android.providers.tv.permission.WRITE_EPG_DATA",
+        "com.android.tv.permission.RECEIVE_INPUT_EVENT",
+        "com.google.android.permission.GLOBAL_BUTTON",
+        "com.google.android.tv.permission.RECEIVE_INPUT_EVENT",
+        "com.mediatek.exoplayer.permission.BROADCAST",
+        "com.mediatek.tv.permission.BROADCAST",
+        "com.netflix.ninja.permission.NETFLIX_KEY",
+        "mtk.intent.EAS.message.permission"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "receiver": 7,
+        "provider": 4,
+        "service": 17,
+        "activity": 2
+      },
+      "has_boot_completed": true,
+      "home_hint": false,
+      "classes": 474,
+      "match_counts": {
+        "binder": 3,
+        "settings": 30
+      },
+      "samples": {
+        "binder": [
+          {
+            "class": "com/mediatek/dm/DMServer.java",
+            "line": 44,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/mediatek/tv/agent/HBBTVService.java",
+            "line": 18,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/mediatek/tv/agent/DolbyVisionService.java",
+            "line": 57,
+            "identifier": "ServiceManager.getService"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/mediatek/hotkey/dispatcher/action/Action.java",
+            "line": 145,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/RetailModeService.java",
+            "line": 312,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/RetailModeService.java",
+            "line": 317,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/LiveTVLauncher.java",
+            "line": 124,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/LiveTVLauncher.java",
+            "line": 125,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/LiveTVLauncher.java",
+            "line": 126,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/SetAutoSleepDefValServices.java",
+            "line": 38,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/SetAutoSleepDefValServices.java",
+            "line": 41,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/MonitorActivityService.java",
+            "line": 298,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/MonitorActivityService.java",
+            "line": 299,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/BootupReceiver.java",
+            "line": 74,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/BootupReceiver.java",
+            "line": 95,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/TVMenuSettingsService.java",
+            "line": 71,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/TVMenuSettingsService.java",
+            "line": 750,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/TVMenuSettingsService.java",
+            "line": 783,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/TVMenuSettingsService.java",
+            "line": 1352,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/SoundSpeakerStatusService.java",
+            "line": 163,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/TimeMsgProcess.java",
+            "line": 156,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/TimeMsgProcess.java",
+            "line": 251,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/util/AudioContinuous.java",
+            "line": 57,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/util/AudioContinuous.java",
+            "line": 64,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/util/AudioContinuous.java",
+            "line": 77,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/defaultvalues/DefaultValues.java",
+            "line": 27,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/defaultvalues/DefaultValues.java",
+            "line": 143,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/tv/agent/defaultvalues/DefaultValues.java",
+            "line": 152,
+            "identifier": "Settings.Global.put"
+          }
+        ]
+      },
+      "decompile_exit": 0
+    },
+    "LiveTV": {
+      "sha256": "c7c7c8c66d927ea1e36814104e95e85bd95402d29952b973cc0ee1edde4a790b",
+      "package": "com.mediatek.wwtv.tvcenter",
+      "permissions": [
+        "android.permission.ACCESS_CHECKIN_PROPERTTES",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BIND_TV_INPUT",
+        "android.permission.BIND_TV_REMOTE_SERVICE",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BROADCAST_STICKY",
+        "android.permission.CHANGE_CONFIGURATION",
+        "android.permission.CHANGE_HDMI_CEC_ACTIVE_SOURCE",
+        "android.permission.DEVICE_POWER",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.GET_TASKS",
+        "android.permission.HDMI_CEC",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERACT_ACROSS_USERS",
+        "android.permission.INTERNET",
+        "android.permission.KILL_BACKGROUND_PROCESSES",
+        "android.permission.MANAGE_EXTERNAL_STORAGE",
+        "android.permission.MODIFY_AUDIO_ROUTING",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.MODIFY_PARENTAL_CONTROLS",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.READ_CONTENT_RATING_SYSTEMS",
+        "android.permission.READ_DREAM_STATE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.REAL_GET_TASKS",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.RECOVERY",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SHUTDOWN",
+        "android.permission.START_ANY_ACTIVITY",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.TV_INPUT_HARDWARE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_DREAM_STATE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "androidx.appcompat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.leanback.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.leanback.preference.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.legacy.preference.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.lifecycle.extensions.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.paging.runtime.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.palette.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.preference.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.recyclerview.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "androidx.tvprovider.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+        "com.android.providers.tv.permission.ACCESS_ALL_EPG_DATA",
+        "com.android.providers.tv.permission.READ_EPG_DATA",
+        "com.android.providers.tv.permission.WRITE_EPG_DATA",
+        "com.android.tv.permission.RECEIVE_INPUT_EVENT",
+        "com.google.android.tv.permission.RECEIVE_INPUT_EVENT",
+        "com.mediatek.tv.permission.BROADCAST",
+        "com.mediatek.wwtv.permission.DVR_READ",
+        "com.mediatek.wwtv.permission.DVR_WRITE"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 28,
+        "provider": 2,
+        "receiver": 5,
+        "service": 4
+      },
+      "has_boot_completed": true,
+      "home_hint": false,
+      "classes": 2246,
+      "match_counts": {
+        "binder": 4,
+        "installer": 12,
+        "settings": 11,
+        "hdmi": 19
+      },
+      "samples": {
+        "binder": [
+          {
+            "class": "com/mediatek/dm/DMServer.java",
+            "line": 44,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/mediatek/mtkaudiopatchmanager/MtkAudioPatchManager.java",
+            "line": 265,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/view/VgaPowerManager.java",
+            "line": 32,
+            "identifier": "ServiceManager.getService"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 364,
+            "identifier": "ServiceManager.getService"
+          }
+        ],
+        "installer": [
+          {
+            "class": "com/mediatek/wwtv/tvcenter/R.java",
+            "line": 5749,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/R.java",
+            "line": 8392,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/R.java",
+            "line": 8393,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/opapp/OpAppService.java",
+            "line": 620,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/view/FacSetup.java",
+            "line": 365,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/view/FacSetup.java",
+            "line": 695,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 5749,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 8392,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/tv/ui/R.java",
+            "line": 8393,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 5749,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 8392,
+            "identifier": "install_success"
+          },
+          {
+            "class": "com/mediatek/support/sharecode/R.java",
+            "line": 8393,
+            "identifier": "install_success"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1447,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/util/DestroyApp.java",
+            "line": 141,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/util/BootBroadcastReceiver.java",
+            "line": 39,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 1075,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/dvr/controller/StateDvr.java",
+            "line": 112,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/dvr/controller/StateDvr.java",
+            "line": 483,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/preferences/MenuListPreferenceFragment.java",
+            "line": 346,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/preferences/PreferenceUtil.java",
+            "line": 722,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/preferences/PreferenceUtil.java",
+            "line": 755,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/util/MenuConfigManager.java",
+            "line": 1144,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/mediatek/wwtv/setting/util/MenuConfigManager.java",
+            "line": 1146,
+            "identifier": "Settings.Global.put"
+          }
+        ],
+        "hdmi": [
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1720,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1861,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1862,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1862,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1863,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1864,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/TurnkeyUiMainActivity.java",
+            "line": 1865,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/search/TvProviderSearch.java",
+            "line": 8,
+            "identifier": "switchsource"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 82,
+            "identifier": "HdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 82,
+            "identifier": "hdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 83,
+            "identifier": "hdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 83,
+            "identifier": "HdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/InputSourceManager.java",
+            "line": 84,
+            "identifier": "hdmiControlManager"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/JpInputUtil.java",
+            "line": 236,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/JpInputUtil.java",
+            "line": 370,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/JpInputUtil.java",
+            "line": 373,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/JpInputUtil.java",
+            "line": 380,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/JpInputUtil.java",
+            "line": 412,
+            "identifier": "SelectInput"
+          },
+          {
+            "class": "com/mediatek/wwtv/tvcenter/nav/util/JpInputUtil.java",
+            "line": 415,
+            "identifier": "SelectInput"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    },
+    "KuSetupWizard": {
+      "sha256": "17aaba977289fce5c991e44bd6018c37549f91dae1b99154b00b80b5a3a2c898",
+      "package": "com.android.provision",
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.BACKUP",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_PRIVILEGED",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+        "android.permission.CHANGE_NETWORK_STATE",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.CLEAR_APP_USER_DATA",
+        "android.permission.CONNECTIVITY_INTERNAL",
+        "android.permission.DELETE_CACHE_FILES",
+        "android.permission.DUMP",
+        "android.permission.FORCE_STOP_PACKAGES",
+        "android.permission.GET_ACCOUNTS",
+        "android.permission.GET_PACKAGE_SIZE",
+        "android.permission.INJECT_EVENTS",
+        "android.permission.INTERNET",
+        "android.permission.MANAGE_ACCOUNTS",
+        "android.permission.MANAGE_USERS",
+        "android.permission.MASTER_CLEAR",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.OVERRIDE_WIFI_CONFIG",
+        "android.permission.QUERY_ALL_PACKAGES",
+        "android.permission.READ_CONTACTS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.RECOVERY",
+        "android.permission.SET_PREFERRED_APPLICATIONS",
+        "android.permission.SET_TIME",
+        "android.permission.SET_TIME_ZONE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.TETHER_PRIVILEGED",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_MEDIA_STORAGE",
+        "android.permission.WRITE_SECURE_SETTINGS",
+        "android.permission.WRITE_SETTINGS",
+        "com.android.provision.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "launcher": [],
+      "manifest_component_counts": {
+        "activity": 3,
+        "provider": 1,
+        "receiver": 1
+      },
+      "has_boot_completed": true,
+      "home_hint": true,
+      "classes": 3471,
+      "match_counts": {
+        "ota": 1,
+        "settings": 8,
+        "binder": 1,
+        "review": 3,
+        "installer": 2
+      },
+      "samples": {
+        "ota": [
+          {
+            "class": "com/my/utils/IntentUtils.java",
+            "line": 68,
+            "identifier": "OTASystemNetworkUpdateActivity"
+          }
+        ],
+        "settings": [
+          {
+            "class": "com/my/settings/AirplaneModeEnabler.java",
+            "line": 41,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/service/ScreenServices.java",
+            "line": 39,
+            "identifier": "SystemProperties.set"
+          },
+          {
+            "class": "com/my/settings/language/InputMethodManagerUtils.java",
+            "line": 33,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/my/settings/time/DateTimeUtils.java",
+            "line": 33,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/settings/time/DateTimeUtils.java",
+            "line": 37,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 36,
+            "identifier": "Settings.Global.put"
+          },
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 37,
+            "identifier": "Settings.Secure.put"
+          },
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 38,
+            "identifier": "Settings.Secure.put"
+          }
+        ],
+        "binder": [
+          {
+            "class": "com/my/settings/Utils.java",
+            "line": 310,
+            "identifier": "ServiceManager.getService"
+          }
+        ],
+        "review": [
+          {
+            "class": "com/my/settings/activity/WarningActivity.java",
+            "line": 49,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 8,
+            "identifier": "System.exit"
+          },
+          {
+            "class": "kotlin/system/ProcessKt.java",
+            "line": 9,
+            "identifier": "System.exit"
+          }
+        ],
+        "installer": [
+          {
+            "class": "androidx/profileinstaller/ProfileInstaller.java",
+            "line": 50,
+            "identifier": "INSTALL_SUCCESS"
+          },
+          {
+            "class": "androidx/profileinstaller/ProfileInstaller.java",
+            "line": 105,
+            "identifier": "INSTALL_SUCCESS"
+          }
+        ]
+      },
+      "decompile_exit": 3
+    }
+  }
+}
