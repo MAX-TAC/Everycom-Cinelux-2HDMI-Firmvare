@@ -1,0 +1,124 @@
+name: Extract original boot logo and Android animation 8052 8054
+on:
+  push:
+    branches: [inspect-stock-boot-visuals-20261021]
+    paths:
+      - ".github/workflows/extract-boot-visuals.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 95
+    strategy:
+      fail-fast: false
+      matrix:
+        model: ["8052","8054"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install filesystem and binary tools
+        run: |
+          set -euo pipefail
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq e2fsprogs erofs-utils unzip unar lz4 file python3-pil
+          mkdir -p /tmp/images /tmp/dumper /tmp/erofs /tmp/reconstructed /tmp/boot_extract
+      - name: Get SHA verified 8052 October OTA images
+        if: matrix.model == '8052'
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 4 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/original.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/original.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/payload.tar.gz
+          tar -xzf /tmp/payload.tar.gz -C /tmp/dumper
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p bootdata,tvconfig,system,product -o /tmp/images /tmp/original.zip > /tmp/payload.log 2>&1 || { tail -n 85 /tmp/payload.log; exit 1; }
+          cp /tmp/images/bootdata.img /tmp/boot_extract/bootdata.img
+          cp /tmp/images/tvconfig.img /tmp/boot_extract/tvconfig.img
+      - name: Get SHA verified 8054 September factory images
+        if: matrix.model == '8054'
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 5 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/Original_Firmware/4KTOF.HDMI-.-DPLS.-09.30.rar -o /tmp/original.rar
+          echo "170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3  /tmp/original.rar" | sha256sum -c -
+          mkdir -p /tmp/archive
+          unar -q -o /tmp/archive /tmp/original.rar
+          echo "4abef5d594803d09c20316a7cd52ab623dd7fb1a228472eb0e243d6d750ebb4c  /tmp/archive/upgrade_image.pkg" | sha256sum -c -
+          dd if=/tmp/archive/upgrade_image.pkg bs=4096 skip=1 count=317632 status=none | openssl enc -d -aes-256-cbc -nopad -K d43ba86d31b3bd0091ef13b8e1e0ac912a88c5fe593f8e401b44976d6d04322f -iv 00000000000000000000000000000000 -out /tmp/decrypted.bin
+          python3 -u tools/reconstruct_cinelux.py /tmp/decrypted.bin /tmp/reconstructed analysis/Original_Firmware/decrypted/upgrade_script.txt /tmp/reconstruct-report >/tmp/reconstruct.log 2>&1 || { tail -n 100 /tmp/reconstruct.log; exit 1; }
+          cp /tmp/reconstructed/bootdata_a.img /tmp/boot_extract/bootdata.img
+          cp /tmp/reconstructed/tvconfig_a.img /tmp/boot_extract/tvconfig.img
+      - name: Extract manufacturer originals and check sound/Android animation
+        env:
+          MODEL: ${{ matrix.model }}
+        run: |
+          set -euo pipefail
+          DEST="analysis/Boot_Visuals_20261021/$MODEL"
+          mkdir -p "$DEST" /tmp/bootfiles
+          for dir in tvconfig bootdata; do
+            mkdir -p "/tmp/bootfiles/$dir"
+            debugfs -R "rdump / /tmp/bootfiles/$dir" "/tmp/boot_extract/$dir.img" >/tmp/debugfs_$dir.log 2>&1 || { tail -n 40 "/tmp/debugfs_$dir.log"; exit 1; }
+          done
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import os,json,hashlib,shutil
+          model=os.environ["MODEL"]
+          target=Path("analysis/Boot_Visuals_20261021")/model
+          folders={"tvconfig":Path("/tmp/bootfiles/tvconfig"),"bootdata":Path("/tmp/bootfiles/bootdata")}
+          report={"model":model,"version":"8052.1.0.4" if model=="8052" else "8054.1.0.1","image_files":[],"audio_candidates":[],"boot_anim":[]}
+          for part,folder in folders.items():
+           for f in folder.rglob("*"):
+            if not f.is_file():continue
+            rel=f.relative_to(folder).as_posix()
+            if f.suffix.lower() in (".mp3",".ogg",".wav",".m4a",".flac"):
+             report["audio_candidates"].append({"partition":part,"path":rel,"bytes":f.stat().st_size})
+            if "boot0" in f.name.lower() and f.suffix.lower() in (".jpg",".jpeg",".png"):
+             try:
+              with Image.open(f) as im:
+               im.verify()
+              with Image.open(f) as im:size=list(im.size)
+              dst=target/(part+"_"+f.name)
+              shutil.copy2(f,dst)
+              report["image_files"].append({"partition":part,"path":rel,"asset":dst.name,"size":size,
+              "bytes":dst.stat().st_size,"sha256":hashlib.sha256(dst.read_bytes()).hexdigest()})
+             except Exception as e: print("IMAGE_ERROR",f,str(e))
+          Path(target/"inventory.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n")
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          PY
+          if test "$MODEL" = "8052"; then
+            for part in system product; do
+              test -s "/tmp/images/$part.img" || continue
+              mkdir -p "/tmp/erofs/$part"
+              fsck.erofs --extract="/tmp/erofs/$part" "/tmp/images/$part.img" >/tmp/extract_$part.log 2>&1 || { tail -n 40 "/tmp/extract_$part.log"; exit 1; }
+            done
+            find /tmp/erofs -type f \( -iname '*bootanim*' -o -iname '*boot*sound*' -o -iname 'poweron.mp3' -o -iname 'boot.mp3' -o -iname 'startup.wav' \) -printf '%p (%s bytes)\n' > "$DEST/android_startup_file_candidates.txt"
+            find /tmp/erofs -type f -iname 'bootanimation.zip' -print -quit | while IFS= read -r f; do
+              cp "$f" "$DEST/android_bootanimation_original.zip"
+              unzip -l "$f" | head -n 25
+              unzip -p "$f" desc.txt > "$DEST/android_bootanimation_desc.txt" || true
+            done
+          fi
+          cat "$DEST/inventory.json"
+          ls -lh "$DEST"
+      - name: Publish actual boot0 JPEGs and metadata to research branch
+        env:
+          MODEL: ${{ matrix.model }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "analysis/Boot_Visuals_20261021/$MODEL"
+          if ! git diff --cached --quiet; then
+            git commit -m "Extract original $MODEL boot splash photographs without modification"
+            git pull --rebase origin inspect-stock-boot-visuals-20261021
+            git push origin HEAD:inspect-stock-boot-visuals-20261021
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-boot-visuals-${{ matrix.model }}
+          path: analysis/Boot_Visuals_20261021/${{ matrix.model }}
+          if-no-files-found: error
+          retention-days: 30
