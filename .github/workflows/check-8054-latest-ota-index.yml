@@ -1,0 +1,33 @@
+name: Check exact public 8052 and 8054 OTA JSON indexes
+
+on:
+  push:
+    branches: [global-firmware-map-8052-8054-20261021]
+    paths:
+      - ".github/workflows/check-8054-latest-ota-index.yml"
+      - "tools/check_exact_public_8052_8054_ota_metadata.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read public metadata without downloading firmware ZIPs
+        run: |
+          python3 -u tools/check_exact_public_8052_8054_ota_metadata.py
+          head -n 50 analysis/Global_Firmware_Map_20261021/PUBLIC_8052_8054_OTA_METADATA_RU.md
+      - name: Publish sanitized OTA metadata observations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Global_Firmware_Map_20261021/PUBLIC_8052_8054_OTA_METADATA_RU.md analysis/Global_Firmware_Map_20261021/PUBLIC_8052_8054_OTA_METADATA.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record current public RUIOS 8052 and 8054 OTA index metadata"
+            git pull --rebase origin global-firmware-map-8052-8054-20261021
+            git push origin HEAD:global-firmware-map-8052-8054-20261021
+          fi
