@@ -1,0 +1,53 @@
+name: Extract stock 8052 startup audio boot0.mp3
+on:
+  push:
+    branches: [inspect-stock-boot-visuals-20261021]
+    paths: [".github/workflows/extract-boot0-audio-8052.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq e2fsprogs ffmpeg
+          mkdir -p /tmp/dumper /tmp/images
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+      - name: Read and verify exact original OTA
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 4 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip" | sha256sum -c -
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p bootdata,tvconfig -o /tmp/images /tmp/ota.zip >/tmp/dump.log 2>&1 || { tail -n 65 /tmp/dump.log; exit 1; }
+      - name: Export exactly the original MP3 audio files
+        run: |
+          set -euo pipefail
+          mkdir -p analysis/Boot_Visuals_20261021/8052
+          debugfs -R "dump /boot0.mp3 analysis/Boot_Visuals_20261021/8052/bootdata_boot0.mp3" /tmp/images/bootdata.img
+          debugfs -R "dump /bsp/common/misc/boot0.mp3 analysis/Boot_Visuals_20261021/8052/tvconfig_boot0.mp3" /tmp/images/tvconfig.img
+          sha256sum analysis/Boot_Visuals_20261021/8052/*mp3
+          ffprobe -v error -show_entries format=duration,bit_rate,size -of default=noprint_wrappers=1 analysis/Boot_Visuals_20261021/8052/bootdata_boot0.mp3 || true
+          cmp analysis/Boot_Visuals_20261021/8052/bootdata_boot0.mp3 analysis/Boot_Visuals_20261021/8052/tvconfig_boot0.mp3
+          echo "Two original manufacturer MP3 copies are byte-identical." > analysis/Boot_Visuals_20261021/8052/AUDIO_README.txt
+      - name: Publish original audio to GitHub research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Boot_Visuals_20261021/8052/*mp3 analysis/Boot_Visuals_20261021/8052/AUDIO_README.txt
+          git commit -m "Publish verified original 8052 startup MP3 for user audition"
+          git pull --rebase origin inspect-stock-boot-visuals-20261021
+          git push origin HEAD:inspect-stock-boot-visuals-20261021
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-8052-boot-audio
+          path: analysis/Boot_Visuals_20261021/8052/*mp3
+          retention-days: 30
