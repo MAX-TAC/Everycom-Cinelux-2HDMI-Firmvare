@@ -1,0 +1,52 @@
+{
+  "model": "8054",
+  "version": "8054.1.0.1",
+  "image_files": [
+    {
+      "partition": "tvconfig",
+      "path": "bsp/common/misc/boot0_4K.jpg",
+      "asset": "tvconfig_boot0_4K.jpg",
+      "size": [
+        3840,
+        2160
+      ],
+      "bytes": 166176,
+      "sha256": "9d161b79603b1d2ddb0c23b0fe120a013775a7995f93296014fb24fe10ff1b9c"
+    },
+    {
+      "partition": "tvconfig",
+      "path": "bsp/common/misc/boot0.jpg",
+      "asset": "tvconfig_boot0.jpg",
+      "size": [
+        1920,
+        1080
+      ],
+      "bytes": 115519,
+      "sha256": "c61563b2580ab2a4a74cc3a958aa0c9f0b789cc19c96ecc5cddac4df7d5d56db"
+    },
+    {
+      "partition": "bootdata",
+      "path": "boot0.jpg",
+      "asset": "bootdata_boot0.jpg",
+      "size": [
+        1920,
+        1080
+      ],
+      "bytes": 115519,
+      "sha256": "c61563b2580ab2a4a74cc3a958aa0c9f0b789cc19c96ecc5cddac4df7d5d56db"
+    }
+  ],
+  "audio_candidates": [
+    {
+      "partition": "tvconfig",
+      "path": "bsp/common/misc/boot0.mp3",
+      "bytes": 59952
+    },
+    {
+      "partition": "bootdata",
+      "path": "boot0.mp3",
+      "bytes": 59952
+    }
+  ],
+  "boot_anim": []
+}
