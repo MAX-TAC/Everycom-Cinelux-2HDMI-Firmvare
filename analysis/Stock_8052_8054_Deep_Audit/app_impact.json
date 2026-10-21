@@ -2,8 +2,8 @@
   "subject": "RUIOS Oct-8052 OTA vs Sep-8054 OEM app code and removal impact",
   "apps": {
     "Factory": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": "mediatek.factorymenu.ui",
@@ -650,11 +650,13 @@
         "com.mediatek.twoworlds.tv.model.MtkTvTeletextPageBase"
       ],
       "classification": "keep_for_recovery_diagnostics",
-      "required_review": "factory test and native I2C"
+      "required_review": "factory test and native I2C",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "KeystoneCorrection": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": "com.rjpj.tcorrection",
@@ -1230,11 +1232,13 @@
         "com.rjpj.tcorrection.R.attr.colorControlHighlight"
       ],
       "classification": "keep_hardware_core",
-      "required_review": "projector trapezoid and display functions"
+      "required_review": "projector trapezoid and display functions",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "KuSettings": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": null,
@@ -2002,11 +2006,13 @@
         "com.my.settings.R.attr.buttonCompat"
       ],
       "classification": "UI_replacement_only_after_proof",
-      "required_review": "OEM settings, privileged permissions and TRD control"
+      "required_review": "OEM settings, privileged permissions and TRD control",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "KuSetupWizard": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": null,
@@ -2673,11 +2679,13 @@
         "com.my.settings.R.string.bluetooth_hid_profile_summary_use_for"
       ],
       "classification": "keep_for_first_boot",
-      "required_review": "first boot and provisioning"
+      "required_review": "first boot and provisioning",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "KuSourceRJ": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": null,
@@ -3683,11 +3691,13 @@
         "com.coolux.source.R.attr.alertDialogStyle"
       ],
       "classification": "keep_until_adapter_tested",
-      "required_review": "input source switching and HDMI boot selection"
+      "required_review": "input source switching and HDMI boot selection",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "LiveTV": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": null,
@@ -4651,11 +4661,13 @@
         "com.mediatek.wwtv.tvcenter.nav.input.ISource"
       ],
       "classification": "keep_until_input_regression_test",
-      "required_review": "TV input framework and HDMI handling"
+      "required_review": "TV input framework and HDMI handling",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "RuiAutoFocus": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": false,
       "dex_identical": false,
       "package": null,
@@ -5319,11 +5331,13 @@
         "com.hysd.screen.R.attr.layout_keyline"
       ],
       "classification": "keep_hardware_core",
-      "required_review": "motor, ToF, camera and optical calibration"
+      "required_review": "motor, ToF, camera and optical calibration",
+      "method_deltas_are_decompiler_noise_if_dex_identical": false,
+      "method_deltas_validation": "DEX differs; inspect changed methods and bundled libraries individually"
     },
     "RuiYunOta": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": "com.rjpj.yunota",
@@ -5513,11 +5527,13 @@
         "com.rjpj.yunota.OTACheckService.this.mHandler.removeMessages"
       ],
       "classification": "keep_until_rollback_ready",
-      "required_review": "OEM OTA client and update permission chain"
+      "required_review": "OEM OTA client and update permission chain",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "TvServices": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": "com.mediatek.tv.service",
@@ -6400,11 +6416,13 @@
         "com.mediatek.wwtv.tvrecommendation.ProgramInfo"
       ],
       "classification": "keep_until_tv_regression_test",
-      "required_review": "Android TV service lifecycle"
+      "required_review": "Android TV service lifecycle",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "TvSettingsPlus": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": null,
@@ -8367,11 +8385,13 @@
         "com.android.tv.settings.R.attr.badgeRadius"
       ],
       "classification": "privileged_core_until_adapter",
-      "required_review": "Android-TV system settings, HDMI and I2C JNI"
+      "required_review": "Android-TV system settings, HDMI and I2C JNI",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "trdmiddle": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": "com.trd.framework",
@@ -9035,11 +9055,13 @@
         "com.mediatek.twoworlds.factory.clientwrapper.MtkTvFApiSystemWrapper.getInstance"
       ],
       "classification": "keep_hardware_core",
-      "required_review": "TRD Binder/HIDL ToF and projector middleware"
+      "required_review": "TRD Binder/HIDL ToF and projector middleware",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "trdservice": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": true,
       "dex_identical": true,
       "package": "com.trd.service",
@@ -9637,11 +9659,13 @@
         "com.trd.service.R.attr.closeIcon"
       ],
       "classification": "keep_hardware_core",
-      "required_review": "motor, key and boot event service"
+      "required_review": "motor, key and boot event service",
+      "method_deltas_are_decompiler_noise_if_dex_identical": true,
+      "method_deltas_validation": "byte-identical DEX; differences in normalized JADX output are artifacts"
     },
     "zxlauncher": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": false,
       "dex_identical": false,
       "package": null,
@@ -11103,11 +11127,13 @@
         "com.zeasn.whale.saas.R.attr.actionModePasteDrawable"
       ],
       "classification": "candidate_replacement",
-      "required_review": "HOME role, key routing, boot startup, callbacks, TV/source actions"
+      "required_review": "HOME role, key routing, boot startup, callbacks, TV/source actions",
+      "method_deltas_are_decompiler_noise_if_dex_identical": false,
+      "method_deltas_validation": "DEX differs; inspect changed methods and bundled libraries individually"
     },
     "zxstore": {
-      "ota_present": false,
-      "stock_present": false,
+      "ota_present": true,
+      "stock_present": true,
       "apk_identical": false,
       "dex_identical": false,
       "package": null,
@@ -12552,13 +12578,17 @@
         "com.zeasn.live_data.NetworkLiveData.getInstance"
       ],
       "classification": "candidate_later_disable",
-      "required_review": "APK install/update dependencies, intents, package events, download provider"
+      "required_review": "APK install/update dependencies, intents, package events, download provider",
+      "method_deltas_are_decompiler_noise_if_dex_identical": false,
+      "method_deltas_validation": "DEX differs; inspect changed methods and bundled libraries individually"
     }
   },
   "caveats": [
     "No app disabled and no Android setting changed.",
     "Static Java reference is not proof of Binder IPC or runtime dependency.",
     "Exported component presence is not proof it can be called without signature permissions.",
-    "Risk indicators are candidates for manual defect review; zero confirmed bugs by this tool."
+    "Risk indicators are candidates for manual defect review; zero confirmed bugs by this tool.",
+    "Fields such as package and requested permissions can be incomplete due to truncation in legacy APK metadata extraction; empty is not evidence of absence.",
+    "Code-review counts include bundled libraries; static indicators do not constitute verified bugs."
   ]
 }
