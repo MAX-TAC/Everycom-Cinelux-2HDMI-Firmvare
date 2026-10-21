@@ -14,25 +14,31 @@ Scripts only read trusted source images, never execute binaries or flash the dev
 
 - Matched native ELF paths: 1335
 - ELF paths only in OTA/factory: 0/0
-- Relevant ELF with changed .text: 0.
+- Relevant ELF with changed .text: 1.
 
 ## Changed .text in likely hardware code
 
 | Path | Bytes OTA / factory | Added dependencies | Removed dependencies |
 |---|---|---|---|
-| No differing code-section SHA in selected paths | — | — | — |
+| vendor/lib/libmediatek_tv_basic.so | Code section differs | no new linked libraries | none removed |
+
+## Another ELF difference without executable code change
+
+- vendor/lib/libmediatek_tv_rpcwrapper.so differs as a complete binary, but its .text section is identical in the two images.
+- No difference in linked library names was detected for the two changed binaries.
+- Only a function-by-function inspection and build provenance can establish whether the libmediatek_tv_basic.so change is a common bug fix or profile-specific behavior.
 
 ## Full original physical boot / TV partitions
 
 | Partition | SHA identical? | OTA bytes | 8054 factory bytes |
 |---|---|---:|---:|
-| 3rd | not comparable | — | — |
+| 3rd | not compared by initial name normalizer (now fixed for next run) | — | — |
 | armfw | False | 77824 | 77088 |
 | boot | False | 78643200 | 78643200 |
 | bootdata | False | 41943040 | 41943040 |
 | dtbo | False | 8388608 | 8388608 |
-| factory | not comparable | — | — |
-| linux_rootfs | not comparable | — | — |
+| factory | not compared by initial name normalizer (now fixed for next run) | — | — |
+| linux_rootfs | not compared by initial name normalizer (now fixed for next run) | — | — |
 | mboot | False | 2658304 | 2658304 |
 | optee | False | 2809856 | 2806432 |
 | tvconfig | False | 157286400 | 157286400 |
