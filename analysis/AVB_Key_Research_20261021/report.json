@@ -1,0 +1,31 @@
+{
+  "source": "RUIOS.8052.1.0.4, owner archive verified with SHA256",
+  "stock_factory_8052_8054_avb_public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+  "aosp_reference_avb_testkey_sha256": "7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6",
+  "partitions": [
+    {
+      "name": "vbmeta",
+      "size": 12288,
+      "sha256_image": "d9c0035e7884d7dcd6a242db95eec1344883e9020078b1c5625417a47b230412",
+      "algorithm_id": 2,
+      "flags": 0,
+      "rollback_index": 0,
+      "public_key_size": 1032,
+      "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+      "matches_stock_factory_8052_8054": true,
+      "matches_aosp_reference_avb_testkey": false
+    },
+    {
+      "name": "vbmeta_system",
+      "size": 4096,
+      "sha256_image": "11989885485f32576a544d85e15b2564c53db760b2d53fc3967f128870a0d49f",
+      "algorithm_id": 2,
+      "flags": 0,
+      "rollback_index": 0,
+      "public_key_size": 1032,
+      "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+      "matches_stock_factory_8052_8054": true,
+      "matches_aosp_reference_avb_testkey": false
+    }
+  ]
+}
