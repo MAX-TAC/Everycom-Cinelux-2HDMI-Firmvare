@@ -1,0 +1,126 @@
+{
+  "target_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+  "repositories": [
+    "nccgroup/test_avb_key",
+    "alltechdev/haha-you-used-testkeys",
+    "TheGammaSqueeze/UnisocBypass"
+  ],
+  "counts": {
+    "examined_files": 56,
+    "readable_RSA_4096_keys": 22,
+    "other_RSA_sizes": 15
+  },
+  "matches": [],
+  "candidates": [
+    {
+      "source": "unisoc-reference/keys/rsa4096_modem.pem",
+      "avb_public_key_sha256": "c1694a13baf4185f6dbc522c15393dffa23de9f1276ac1d7a0d42addcd5cc60f",
+      "matches_8052": false
+    },
+    {
+      "source": "unisoc-reference/keys/rsa4096_system.pem",
+      "avb_public_key_sha256": "754a54e3a8f4e8cc339cf7c55c708f9ae30bf3ee54e00bd7e935bda104ecdd6b",
+      "matches_8052": false
+    },
+    {
+      "source": "unisoc-reference/keys/rsa4096_product.pem",
+      "avb_public_key_sha256": "31d44f8f7baf629fcc00bfc7f9fceea1fbdfc7fe6139e5c418efe2fe0690ab68",
+      "matches_8052": false
+    },
+    {
+      "source": "unisoc-reference/keys/rsa4096_boot.pem",
+      "avb_public_key_sha256": "eb0619c347731386b26d1a116a5705a437e3268d840d892d7fa83400ea89466f",
+      "matches_8052": false
+    },
+    {
+      "source": "unisoc-reference/keys/rsa4096_vendor.pem",
+      "avb_public_key_sha256": "db43fce3407465af0dee506d2318108d636a756d00cae1e0be9b725b58784c78",
+      "matches_8052": false
+    },
+    {
+      "source": "unisoc-reference/keys/rsa4096_vbmeta.pem",
+      "avb_public_key_sha256": "7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6",
+      "matches_8052": false
+    },
+    {
+      "source": "unisoc-reference/keys/rsa4096_recovery.pem",
+      "avb_public_key_sha256": "54b4e2a6902dddd7e128dab52127f4c34bd178c33ac66f2f61dca54cbf7e199d",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/sign_key.pem",
+      "avb_public_key_sha256": "f2cfc4f17ccc67ac11e6223ca6a2594decf865603aed8895adb68c868e77ee47",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_atx_psk.pem",
+      "avb_public_key_sha256": "7ec02ee1be696366f3fa91240a8ec68125c4145d698f597aa2b3464b59ca7fc3",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_rsa4096_oneplus.pem",
+      "avb_public_key_sha256": "cf2f0bc143c118fe0075574ae952bac295b99045c2b2557566f176f48644da5f",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_rsa4096_pub.pem",
+      "avb_public_key_sha256": "7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_rsa4096.pem",
+      "avb_public_key_sha256": "7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_atx_pik.pem",
+      "avb_public_key_sha256": "ce464c0fefc023760adc3fe0207c282d337e1b91e3df7ab4fee43fcd620db46d",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_rsa4096_realtek.pem",
+      "avb_public_key_sha256": "ec2647574df2ea01127ee210f838965daa884e61888c49bbf6a9c59457f46b89",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_atx_prk.pem",
+      "avb_public_key_sha256": "86b04a9d62807fda80cbf445118e8a4a73aa5937283b49e018e432dd8e3a76a1",
+      "matches_8052": false
+    },
+    {
+      "source": "nccgroup/sample/aosp/external/avb/test/data/testkey_atx_puk.pem",
+      "avb_public_key_sha256": "c608ffa5e7ee92984f4486e03088440c360cf315ec6a5f52aef790cb30efcec9",
+      "matches_8052": false
+    },
+    {
+      "source": "aosp-signing-example/tools/avb-tools/test/data/testkey_cert_pik.pem",
+      "avb_public_key_sha256": "ce464c0fefc023760adc3fe0207c282d337e1b91e3df7ab4fee43fcd620db46d",
+      "matches_8052": false
+    },
+    {
+      "source": "aosp-signing-example/tools/avb-tools/test/data/testkey_rsa4096_pub.pem",
+      "avb_public_key_sha256": "7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6",
+      "matches_8052": false
+    },
+    {
+      "source": "aosp-signing-example/tools/avb-tools/test/data/testkey_rsa4096.pem",
+      "avb_public_key_sha256": "7728e30f50bfa5cea165f473175a08803f6a8346642b5aa10913e9d9e6defef6",
+      "matches_8052": false
+    },
+    {
+      "source": "aosp-signing-example/tools/avb-tools/test/data/testkey_cert_puk.pem",
+      "avb_public_key_sha256": "c608ffa5e7ee92984f4486e03088440c360cf315ec6a5f52aef790cb30efcec9",
+      "matches_8052": false
+    },
+    {
+      "source": "aosp-signing-example/tools/avb-tools/test/data/testkey_cert_prk.pem",
+      "avb_public_key_sha256": "86b04a9d62807fda80cbf445118e8a4a73aa5937283b49e018e432dd8e3a76a1",
+      "matches_8052": false
+    },
+    {
+      "source": "aosp-signing-example/tools/avb-tools/test/data/testkey_cert_psk.pem",
+      "avb_public_key_sha256": "7ec02ee1be696366f3fa91240a8ec68125c4145d698f597aa2b3464b59ca7fc3",
+      "matches_8052": false
+    }
+  ]
+}
