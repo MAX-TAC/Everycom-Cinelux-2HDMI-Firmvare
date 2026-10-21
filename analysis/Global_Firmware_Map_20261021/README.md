@@ -2,6 +2,14 @@
 
 Цель: **один общий набор изменений на двух разных оригинальных стоковых базах**. FLauncher — выбранный HOME; отдельные `zxstore` и `zxlauncher` будут исключены, `KuSettings` — после переноса его функций в `TvSettingsPlus`. Hardware HAL/TRD/TV services остаются штатными, если не обнаружен подтверждённый дефект. Никаких изменений в оригинальных образах в ходе этой работы не выполнялось.
 
+## Новое подтверждение 21.10: проблема OEM Settings и AOSP platform key
+
+- [**SETTINGS_8052_VS_8054_VERDICT_RU.md**](SETTINGS_8052_VS_8054_VERDICT_RU.md) — итоговое объяснение, почему ACTION_SETTINGS открывает KuSettings, различия MainSettings/uicustom, найденный AOSP platform test certificate, boot dependencies и ограничения 8054.
+- [**SETTINGS_ENTRYPOINT_ROOT_CAUSE_RU.md**](SETTINGS_ENTRYPOINT_ROOT_CAUSE_RU.md) — подробная инженерная причина и план явного ярлыка Android TV Settings в FLauncher.
+- [**SETTINGS_DISPATCH_8052_RU.md**](SETTINGS_DISPATCH_8052_RU.md) — реальные активности, Intent actions/categories и отпечатки подписей 11 оригинальных APK.
+- [**OEM_BOOT_RECEIVER_TRACE_RU.md**](OEM_BOOT_RECEIVER_TRACE_RU.md) — статические вызовы BootupReceiver, ScreenServices, TV Settings boot services и TRD.
+- [**PUBLIC_8052_8054_OTA_METADATA_RU.md**](PUBLIC_8052_8054_OTA_METADATA_RU.md) — публичный OTA index 8052=200, 8054=404.
+
 ## Отчёты по порядку использования
 
 1. [**GLOBAL_COMPONENT_ARCHITECTURE_RU.md**](GLOBAL_COMPONENT_ARCHITECTURE_RU.md) — полная схема зависимостей Android / MediaTek / OEM / TV Linux и карта сохранения компонентов для каждой ревизии.
