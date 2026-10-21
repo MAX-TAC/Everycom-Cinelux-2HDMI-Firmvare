@@ -1,0 +1,733 @@
+{
+  "source": "Factory 8052 Aug / 8054 Sep APK union",
+  "count": 89,
+  "counts": {
+    "KEEP_PENDING_REVIEW": 56,
+    "OPTIONAL_TEST": 9,
+    "KEEP_REMOTE": 1,
+    "KEEP_CORE": 9,
+    "KEEP_DIAGNOSTIC": 2,
+    "KEEP_HARDWARE": 4,
+    "MIGRATE_REMOVE": 1,
+    "KEEP_PROVISION": 2,
+    "KEEP_PER_BOARD": 1,
+    "KEEP_OTA": 1,
+    "PATCH_COMMON": 1,
+    "REPLACE_FLAUNCHER": 1,
+    "REMOVE": 1
+  },
+  "records": [
+    {
+      "file": "AdServicesApk",
+      "path": "system_a/system/apex/com.android.adservices/priv-app/AdServicesApk@TP1A.220624.021.A1/AdServicesApk.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "AmazonPrimeVideo_v3.0.459.345",
+      "path": "system_a/system/preinstall_del/AmazonPrimeVideo_v3.0.459.345.apk",
+      "comparison": "two_only",
+      "status": "OPTIONAL_TEST",
+      "kind": "preinstall",
+      "deep_october": false
+    },
+    {
+      "file": "AutoPair",
+      "path": "system_ext_a/app/AutoPair/AutoPair.apk",
+      "comparison": "changed",
+      "status": "KEEP_REMOTE",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "BackupRestoreConfirmation",
+      "path": "system_a/system/priv-app/BackupRestoreConfirmation/BackupRestoreConfirmation.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "BasicDreams",
+      "path": "system_a/system/app/BasicDreams/BasicDreams.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "Bluetooth",
+      "path": "system_a/system/apex/com.android.btservices/app/Bluetooth@TP1A.220624.021.A1/Bluetooth.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "CalendarProvider",
+      "path": "system_a/system/priv-app/CalendarProvider/CalendarProvider.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "Camera2",
+      "path": "product_a/app/Camera2/Camera2.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "CertInstaller",
+      "path": "system_a/system/app/CertInstaller/CertInstaller.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "CompanionDeviceManager",
+      "path": "system_a/system/app/CompanionDeviceManager/CompanionDeviceManager.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "ContactsProvider",
+      "path": "system_a/system/priv-app/ContactsProvider/ContactsProvider.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "CtsShimPrebuilt",
+      "path": "system_a/system/app/CtsShimPrebuilt/CtsShimPrebuilt.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "CtsShimPrivPrebuilt",
+      "path": "system_a/system/priv-app/CtsShimPrivPrebuilt/CtsShimPrivPrebuilt.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "DownloadProvider",
+      "path": "system_a/system/priv-app/DownloadProvider/DownloadProvider.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "DynamicSystemInstallationService",
+      "path": "system_a/system/priv-app/DynamicSystemInstallationService/DynamicSystemInstallationService.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ExternalStorageProvider",
+      "path": "system_a/system/priv-app/ExternalStorageProvider/ExternalStorageProvider.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ExtServices",
+      "path": "system_a/system/apex/com.android.extservices/priv-app/ExtServices@TP1A.220624.021.A1/ExtServices.apk",
+      "comparison": "changed",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ExtShared",
+      "path": "system_a/system/app/ExtShared/ExtShared.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "Factory",
+      "path": "system_ext_a/app/Factory/Factory.apk",
+      "comparison": "changed",
+      "status": "KEEP_DIAGNOSTIC",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "framework-res",
+      "path": "system_a/system/framework/framework-res.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "other",
+      "deep_october": false
+    },
+    {
+      "file": "FTAirplayWireless",
+      "path": "system_a/system/app/FTAirplayWireless/FTAirplayWireless.apk",
+      "comparison": "identical",
+      "status": "OPTIONAL_TEST",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "FusedLocation",
+      "path": "system_a/system/priv-app/FusedLocation/FusedLocation.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "HTMLViewer",
+      "path": "system_a/system/app/HTMLViewer/HTMLViewer.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "InProcessNetworkStack",
+      "path": "system_a/system/priv-app/InProcessNetworkStack/InProcessNetworkStack.apk",
+      "comparison": "changed",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "InProcessTethering",
+      "path": "system_a/system/apex/com.android.tethering.inprocess/priv-app/InProcessTethering@TP1A.220624.021.A1/InProcessTethering.apk",
+      "comparison": "changed",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "InputDevices",
+      "path": "system_a/system/priv-app/InputDevices/InputDevices.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "KeyChain",
+      "path": "system_a/system/app/KeyChain/KeyChain.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "KeystoneCorrection",
+      "path": "system_a/system/priv-app/KeystoneCorrection/KeystoneCorrection.apk",
+      "comparison": "changed",
+      "status": "KEEP_HARDWARE",
+      "kind": "priv-app",
+      "deep_october": true
+    },
+    {
+      "file": "KuSettings",
+      "path": "system_a/system/app/KuSettings/KuSettings.apk",
+      "comparison": "changed",
+      "status": "MIGRATE_REMOVE",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "KuSetupWizard",
+      "path": "system_a/system/app/KuSetupWizard/KuSetupWizard.apk",
+      "comparison": "two_only",
+      "status": "KEEP_PROVISION",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "KuSourceRJ",
+      "path": "system_a/system/app/KuSourceRJ/KuSourceRJ.apk",
+      "comparison": "changed",
+      "status": "KEEP_HARDWARE",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "LatinIME",
+      "path": "product_a/app/LatinIME/LatinIME.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "LiveTV",
+      "path": "system_ext_a/priv-app/LiveTV/LiveTV.apk",
+      "comparison": "changed",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": true
+    },
+    {
+      "file": "LocalTransport",
+      "path": "system_a/system/priv-app/LocalTransport/LocalTransport.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "MediaProvider",
+      "path": "system_a/system/apex/com.android.mediaprovider/priv-app/MediaProvider@TP1A.220624.021.A1/MediaProvider.apk",
+      "comparison": "changed",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "MediaProviderLegacy",
+      "path": "system_a/system/priv-app/MediaProviderLegacy/MediaProviderLegacy.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ModuleMetadata",
+      "path": "product_a/app/ModuleMetadata/ModuleMetadata.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "MtkNetworkMonitorService",
+      "path": "system_ext_a/priv-app/MtkNetworkMonitorService/MtkNetworkMonitorService.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "MtkTvInput",
+      "path": "system_ext_a/priv-app/MtkTvInput/MtkTvInput.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "MultiMediaPlayer",
+      "path": "system_ext_a/priv-app/MultiMediaPlayer/MultiMediaPlayer.apk",
+      "comparison": "changed",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "Netfix_v8.110.0",
+      "path": "system_a/system/preinstall_del/Netfix_v8.110.0.apk",
+      "comparison": "two_only",
+      "status": "OPTIONAL_TEST",
+      "kind": "preinstall",
+      "deep_october": false
+    },
+    {
+      "file": "OnDevicePersonalization",
+      "path": "system_a/system/apex/com.android.ondevicepersonalization/app/OnDevicePersonalization@TP1A.220624.021.A1/OnDevicePersonalization.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "OsuLogin",
+      "path": "system_a/system/apex/com.android.wifi/app/OsuLogin@TP1A.220624.021.A1/OsuLogin.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "PackageInstaller",
+      "path": "system_a/system/priv-app/PackageInstaller/PackageInstaller.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "PacProcessor",
+      "path": "system_a/system/app/PacProcessor/PacProcessor.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "PermissionController",
+      "path": "system_a/system/apex/com.android.permission/priv-app/PermissionController@TP1A.220624.021.A1/PermissionController.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "PlatformCaptivePortalLogin",
+      "path": "system_a/system/app/PlatformCaptivePortalLogin/PlatformCaptivePortalLogin.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "PrintSpooler",
+      "path": "system_a/system/app/PrintSpooler/PrintSpooler.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "Provision",
+      "path": "system_ext_a/priv-app/Provision/Provision.apk",
+      "comparison": "one_only",
+      "status": "KEEP_PROVISION",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ProxyHandler",
+      "path": "system_a/system/priv-app/ProxyHandler/ProxyHandler.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "RemoteProvisioner",
+      "path": "system_ext_a/priv-app/RemoteProvisioner/RemoteProvisioner.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "RetailDisplay",
+      "path": "system_ext_a/priv-app/RetailDisplay/RetailDisplay.apk",
+      "comparison": "identical",
+      "status": "OPTIONAL_TEST",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "RJBluetoothSpeaker",
+      "path": "system_a/system/app/RJBluetoothSpeaker/RJBluetoothSpeaker.apk",
+      "comparison": "identical",
+      "status": "OPTIONAL_TEST",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "RuiAutoFocus",
+      "path": "system_a/system/app/RuiAutoFocus/RuiAutoFocus.apk",
+      "comparison": "changed",
+      "status": "KEEP_PER_BOARD",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "RuiYunOta",
+      "path": "system_a/system/priv-app/RuiYunOta/RuiYunOta.apk",
+      "comparison": "identical",
+      "status": "KEEP_OTA",
+      "kind": "priv-app",
+      "deep_october": true
+    },
+    {
+      "file": "SafetyCenterResources",
+      "path": "system_a/system/apex/com.android.permission/priv-app/SafetyCenterResources@TP1A.220624.021.A1/SafetyCenterResources.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "SdkSandbox",
+      "path": "system_a/system/apex/com.android.adservices/app/SdkSandbox@TP1A.220624.021.A1/SdkSandbox.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "SecureElement",
+      "path": "system_a/system/app/SecureElement/SecureElement.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "ServiceConnectivityResources",
+      "path": "system_a/system/apex/com.android.tethering.inprocess/priv-app/ServiceConnectivityResources@TP1A.220624.021.A1/ServiceConnectivityResources.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ServiceUwbResources",
+      "path": "system_a/system/apex/com.android.uwb/priv-app/ServiceUwbResources@TP1A.220624.021.A1/ServiceUwbResources.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "ServiceWifiResources",
+      "path": "system_a/system/apex/com.android.wifi/priv-app/ServiceWifiResources@TP1A.220624.021.A1/ServiceWifiResources.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "SettingsProvider",
+      "path": "system_a/system/priv-app/SettingsProvider/SettingsProvider.apk",
+      "comparison": "changed",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "SharedStorageBackup",
+      "path": "system_a/system/priv-app/SharedStorageBackup/SharedStorageBackup.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "Shell",
+      "path": "system_a/system/priv-app/Shell/Shell.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "SoundPicker",
+      "path": "system_a/system/priv-app/SoundPicker/SoundPicker.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "StatementService",
+      "path": "system_a/system/priv-app/StatementService/StatementService.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "SystemUI",
+      "path": "system_ext_a/priv-app/SystemUI/SystemUI.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "TetheringInprocessRROOverlay",
+      "path": "vendor_a/overlay/TetheringInprocessRROOverlay.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "other",
+      "deep_october": false
+    },
+    {
+      "file": "TetheringRROOverlay",
+      "path": "vendor_a/overlay/TetheringRROOverlay.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "other",
+      "deep_october": false
+    },
+    {
+      "file": "TrdDreamPic",
+      "path": "system_a/system/app/TrdDreamPic/TrdDreamPic.apk",
+      "comparison": "identical",
+      "status": "OPTIONAL_TEST",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "TrdFactoryTest",
+      "path": "system_a/system/app/TrdFactoryTest/TrdFactoryTest.apk",
+      "comparison": "identical",
+      "status": "KEEP_DIAGNOSTIC",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "trdmiddle",
+      "path": "vendor_a/priv-app/trdmiddle/trdmiddle.apk",
+      "comparison": "identical",
+      "status": "KEEP_HARDWARE",
+      "kind": "priv-app",
+      "deep_october": true
+    },
+    {
+      "file": "trdservice",
+      "path": "system_a/system/app/trdservice/trdservice.apk",
+      "comparison": "changed",
+      "status": "KEEP_HARDWARE",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "TvFrameworkPackageStubs",
+      "path": "system_ext_a/app/TvFrameworkPackageStubs/TvFrameworkPackageStubs.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "TvProvider",
+      "path": "system_a/system/priv-app/TvProvider/TvProvider.apk",
+      "comparison": "identical",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "TvServices",
+      "path": "system_ext_a/priv-app/TvServices/TvServices.apk",
+      "comparison": "changed",
+      "status": "KEEP_CORE",
+      "kind": "priv-app",
+      "deep_october": true
+    },
+    {
+      "file": "TvSettingsPlus",
+      "path": "system_ext_a/priv-app/TvSettingsPlus/TvSettingsPlus.apk",
+      "comparison": "changed",
+      "status": "PATCH_COMMON",
+      "kind": "priv-app",
+      "deep_october": true
+    },
+    {
+      "file": "UserDictionaryProvider",
+      "path": "system_a/system/priv-app/UserDictionaryProvider/UserDictionaryProvider.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "VendorDisclaimer",
+      "path": "product_a/app/VendorDisclaimer/VendorDisclaimer.apk",
+      "comparison": "identical",
+      "status": "OPTIONAL_TEST",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "VpnDialogs",
+      "path": "system_a/system/priv-app/VpnDialogs/VpnDialogs.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "priv-app",
+      "deep_october": false
+    },
+    {
+      "file": "WallpaperBackup",
+      "path": "system_a/system/app/WallpaperBackup/WallpaperBackup.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "WallpaperPicker",
+      "path": "product_a/app/WallpaperPicker/WallpaperPicker.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "webview",
+      "path": "product_a/app/webview/webview.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "WFDSinkTest",
+      "path": "system_ext_a/app/WFDSinkTest/WFDSinkTest.apk",
+      "comparison": "changed",
+      "status": "OPTIONAL_TEST",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "WifiDialog",
+      "path": "system_a/system/apex/com.android.wifi/app/WifiDialog@TP1A.220624.021.A1/WifiDialog.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "app",
+      "deep_october": false
+    },
+    {
+      "file": "WifiRROOverlay",
+      "path": "vendor_a/overlay/WifiRROOverlay.apk",
+      "comparison": "identical",
+      "status": "KEEP_PENDING_REVIEW",
+      "kind": "other",
+      "deep_october": false
+    },
+    {
+      "file": "YouTube_v4.40.313.apk",
+      "path": "system_a/system/preinstall_del/YouTube_v4.40.313.apk.apk",
+      "comparison": "two_only",
+      "status": "OPTIONAL_TEST",
+      "kind": "preinstall",
+      "deep_october": false
+    },
+    {
+      "file": "zxlauncher",
+      "path": "system_a/system/app/zxlauncher/zxlauncher.apk",
+      "comparison": "changed",
+      "status": "REPLACE_FLAUNCHER",
+      "kind": "app",
+      "deep_october": true
+    },
+    {
+      "file": "zxstore",
+      "path": "system_a/system/app/zxstore/zxstore.apk",
+      "comparison": "changed",
+      "status": "REMOVE",
+      "kind": "app",
+      "deep_october": true
+    }
+  ]
+}
