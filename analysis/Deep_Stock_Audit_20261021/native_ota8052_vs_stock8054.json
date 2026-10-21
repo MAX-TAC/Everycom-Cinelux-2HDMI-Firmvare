@@ -626,7 +626,7 @@
         "needed_only_ota": []
       },
       "functions": {
-        "common_named": 0,
+        "common_named": 5524,
         "changed_named_count": 0,
         "changed_named_sample": [],
         "only_stock": [],
