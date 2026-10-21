@@ -1,0 +1,3 @@
+/tmp/erofs/system/system/lib/libbootanimation.so (71780 bytes)
+/tmp/erofs/system/system/etc/init/bootanim.rc (185 bytes)
+/tmp/erofs/system/system/bin/bootanimation (13172 bytes)

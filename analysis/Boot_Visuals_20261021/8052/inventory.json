@@ -1,0 +1,52 @@
+{
+  "model": "8052",
+  "version": "8052.1.0.4",
+  "image_files": [
+    {
+      "partition": "tvconfig",
+      "path": "bsp/common/misc/boot0_4K.jpg",
+      "asset": "tvconfig_boot0_4K.jpg",
+      "size": [
+        3840,
+        2160
+      ],
+      "bytes": 166176,
+      "sha256": "9d161b79603b1d2ddb0c23b0fe120a013775a7995f93296014fb24fe10ff1b9c"
+    },
+    {
+      "partition": "tvconfig",
+      "path": "bsp/common/misc/boot0.jpg",
+      "asset": "tvconfig_boot0.jpg",
+      "size": [
+        1920,
+        1080
+      ],
+      "bytes": 426706,
+      "sha256": "453a75b9a6d37227910065a2aefb13600fcda5a855cd95e2ef92d76308d75485"
+    },
+    {
+      "partition": "bootdata",
+      "path": "boot0.jpg",
+      "asset": "bootdata_boot0.jpg",
+      "size": [
+        1920,
+        1080
+      ],
+      "bytes": 426706,
+      "sha256": "453a75b9a6d37227910065a2aefb13600fcda5a855cd95e2ef92d76308d75485"
+    }
+  ],
+  "audio_candidates": [
+    {
+      "partition": "tvconfig",
+      "path": "bsp/common/misc/boot0.mp3",
+      "bytes": 59952
+    },
+    {
+      "partition": "bootdata",
+      "path": "boot0.mp3",
+      "bytes": 59952
+    }
+  ],
+  "boot_anim": []
+}
