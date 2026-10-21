@@ -36,14 +36,14 @@ jobs:
         run: |
           set -euxo pipefail
           WORK=/tmp/custom-shortcut
-          mkdir -p "$WORK/classes" "$WORK/dex"
+          mkdir -p "$WORK/classes" "$WORK/dex" "$WORK/gen"
           SDK="$ANDROID_HOME/platforms/android-34/android.jar"
           test -f "$SDK"
           BUILD_TOOLS="$(find "$ANDROID_HOME/build-tools" -maxdepth 1 -type d -name '3[5-6]*' | sort -V | tail -n 1)"
           test -x "$BUILD_TOOLS/d8"
-          aapt package -f -M custom-v0/shortcut/AndroidManifest.xml             -S custom-v0/shortcut/res -I "$SDK" -F "$WORK/resources.apk"
-          javac -source 8 -target 8 -classpath "$SDK" -d "$WORK/classes"             custom-v0/shortcut/src/org/cinelux/settingsshortcut/OpenSettingsActivity.java
-          "$BUILD_TOOLS/d8" --min-api 23 --lib "$SDK" --output "$WORK/dex"             "$WORK/classes/org/cinelux/settingsshortcut/OpenSettingsActivity.class"
+          aapt package -f -m -J "$WORK/gen" -M custom-v0/shortcut/AndroidManifest.xml             -S custom-v0/shortcut/res -I "$SDK" -F "$WORK/resources.apk"
+          javac -source 8 -target 8 -classpath "$SDK" -d "$WORK/classes"             custom-v0/shortcut/src/org/cinelux/settingsshortcut/OpenSettingsActivity.java "$WORK/gen/org/cinelux/settingsshortcut/R.java"
+          "$BUILD_TOOLS/d8" --min-api 23 --lib "$SDK" --output "$WORK/dex"             "$WORK/classes/org/cinelux/settingsshortcut/"*.class
           cd "$WORK"
           cp resources.apk unsigned.apk
           cp "$WORK/dex/classes.dex" "$WORK/classes.dex"
