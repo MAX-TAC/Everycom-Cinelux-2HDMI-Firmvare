@@ -71,6 +71,12 @@ def main():
   assert absolute(item).is_file(),f"BLOCKED: expected stock APK absent: {item} -> {absolute(item)}"
  fl=checked_apk(args.flauncher,"me.efesser.flauncher")
  sc=checked_apk(args.shortcut,"org.cinelux.settingsshortcut")
+ # Do not silently stage an old shortcut APK without the new read-only Activity.
+ manifest_xml=subprocess.run(["aapt","dump","xmltree",str(args.shortcut),"AndroidManifest.xml"],
+    capture_output=True,text=True,errors="replace",timeout=40)
+ assert manifest_xml.returncode==0 and "ThermalInfoActivity" in manifest_xml.stdout, (
+    "Thermal diagnostics Activity absent from SettingsShortcut.apk; rebuild common APKs from this branch")
+
  checked={}
  for path in cfg["removals"]+cfg["retain"]:
   p=absolute(path);checked[path]={"sha256":digest(p),"bytes":p.stat().st_size}
@@ -121,6 +127,8 @@ def main():
   "files_to_add":{p:{"sha256":digest(v),"size":v.stat().st_size} for p,v in additions.items()},
   "flauncher":fl,"shortcut":sc,"flauncher_native_libraries":native,
   "android_settings_component":"com.android.tv.settings/.MainSettings",
+  "thermal_diagnostics_component":"org.cinelux.settingsshortcut/.ThermalInfoActivity",
+  "thermal_integration":"Launcher Activity present in APK; entry under TvSettingsPlus/System NOT PATCHED YET",
   "projector_settings_component":"com.android.tv.settings/.uicustom.MainActivity",
   "preserve_hardware":["vendor","dtbo","boot","vbmeta","tvservice","PMU","factory","persist"] + ([] if visuals_metadata else ["bootdata","tvconfig"]),
   "preserve_within_visuals":["all non-boot0.* files inside bootdata/tvconfig, plus modes and labels"] if visuals_metadata else [],
