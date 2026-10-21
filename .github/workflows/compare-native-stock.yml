@@ -1,12 +1,5 @@
 name: Compare ELF code 8052 October vs 8054 September
 on:
-  push:
-    branches: [deep-stock-audit-8052-8054-20261021]
-    paths:
-      - ".github/workflows/compare-native-stock.yml"
-      - "tools/inspect_stock_native_sections.py"
-      - "tools/read_verified_factory_ree.py"
-      - "tools/compare_stock_native_sections.py"
   workflow_dispatch:
 permissions:
   contents: write
