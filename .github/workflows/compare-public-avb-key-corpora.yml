@@ -50,6 +50,8 @@ jobs:
                   rsa=serialization.load_der_public_key(process.stdout).public_numbers()
               except Exception:
                   continue
+              if not hasattr(rsa, 'n') or not hasattr(rsa, 'e'):
+                  continue
               n,e=rsa.n,rsa.e
               bits=n.bit_length()
               if bits != 4096:
