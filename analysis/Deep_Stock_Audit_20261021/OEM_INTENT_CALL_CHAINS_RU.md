@@ -3,20 +3,22 @@
 Static AndroidManifest and JADX source-code reference scan. This is not live execution proof.
 A target literal and dispatch function in the same source window is a candidate edge, not a proven dependency.
 
-## Exported and internal component inventory
+## Exported and internal component inventory (corrected)
 
-| APK | Components | Exported=true | Exported=false | Unresolved flags |
+| App | Components | True | False | Unspecified |
 |---|---:|---:|---:|---:|
-| zxlauncher | 29 | 14 | 0 | 15 |
-| zxstore | 25 | 12 | 0 | 13 |
-| KuSettings | 16 | 13 | 0 | 3 |
-| TvSettingsPlus | 146 | 141 | 0 | 5 |
+| zxlauncher | 29 | 4 | 10 | 15 |
+| zxstore | 25 | 7 | 5 | 13 |
+| KuSettings | 16 | 12 | 1 | 3 |
+| TvSettingsPlus | 146 | 99 | 42 | 5 |
 | RuiYunOta | 6 | 2 | 0 | 4 |
-| KuSourceRJ | 38 | 37 | 0 | 1 |
+| KuSourceRJ | 38 | 36 | 1 | 1 |
 | RuiAutoFocus | 2 | 2 | 0 | 0 |
-| trdservice | 4 | 4 | 0 | 0 |
+| trdservice | 4 | 3 | 1 | 0 |
 | trdmiddle | 2 | 2 | 0 | 0 |
-| KuSetupWizard | 5 | 3 | 0 | 2 |
+| KuSetupWizard | 5 | 2 | 1 | 2 |
+
+See corrected verification: [MANIFEST_EXPORTED_VERIFIED_RU.md](MANIFEST_EXPORTED_VERIFIED_RU.md).
 
 ## OEM cross-app call candidates
 

@@ -25,7 +25,7 @@
       {
         "kind": "provider",
         "name": "androidx.core.content.FileProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -104,7 +104,7 @@
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.WeeklyActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -118,42 +118,42 @@
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.SearchActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.TouchWeeklyActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.TouchSearchActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.WhaleSearchActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.WhaleSearchNewActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.zeasn.weatherplugin.ui.WhaleSearchTouchActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -202,14 +202,14 @@
       {
         "kind": "activity",
         "name": "com.google.android.gms.common.api.GoogleApiActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "provider",
         "name": "androidx.lifecycle.ProcessLifecycleOwnerInitializer",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -250,7 +250,7 @@
       {
         "kind": "activity",
         "name": "zeasn.open.technical.tv.store.ui.SettingTouActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -303,7 +303,7 @@
       {
         "kind": "provider",
         "name": "androidx.core.content.FileProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -389,21 +389,21 @@
       {
         "kind": "provider",
         "name": "com.squareup.picasso.PicassoProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.google.android.gms.common.api.GoogleApiActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "provider",
         "name": "androidx.lifecycle.ProcessLifecycleOwnerInitializer",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       }
@@ -514,7 +514,7 @@
       {
         "kind": "provider",
         "name": "androidx.startup.InitializationProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -537,7 +537,7 @@
       {
         "kind": "provider",
         "name": "androidx.startup.InitializationProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -551,7 +551,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.retailmode.RetailModeConfirmActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -565,21 +565,21 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.AudioResetActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.picture.PictureResetActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.inputs.InputsActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -593,7 +593,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.power.PictureOffActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -614,7 +614,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.vendor.channels.ChannelsTwoPanalActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -628,7 +628,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.retailmode.RetailModeActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -651,14 +651,14 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.timer.TimePickerActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.multicast.NormalCastActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -679,14 +679,14 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.utils.ProgressDialogActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.picture.PictureConfirmActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -707,7 +707,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.date.DateTimeActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -721,63 +721,63 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.WirelessAddNoteActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.WirelessNoteCommonActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.SpeakerDevicesBeyondActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.SpeakerDeviceBeyondTipsActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.ResetSpeakerActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.SelectListActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.StatelliteSpeakerLayoutActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.partnercustomizer.sound.wireless.StatelliteSpeakerLayoutChangeTipsActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "receiver",
         "name": "com.android.tv.settings.partnercustomizer.network.NetworkSliceBroadcastReceiver",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -839,7 +839,7 @@
       {
         "kind": "receiver",
         "name": "com.android.tv.settings.partnercustomizer.reeciver.LanguageChangeReceiver",
-        "exported": true,
+        "exported": false,
         "actions": [
           "android.intent.action.LOCALE_CHANGED"
         ],
@@ -944,21 +944,21 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.accounts.AccountSliceActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.accounts.AccountsActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.accounts.AccountsTrampolineActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -981,7 +981,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.accounts.ManageUserServicesSliceActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1136,7 +1136,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.device.display.ambient.AmbientSliceActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1212,7 +1212,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.system.development.AppPicker",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1228,7 +1228,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.autofill.AutofillPickerActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1360,7 +1360,7 @@
       {
         "kind": "service",
         "name": "com.android.tv.settings.users.UserSwitchListenerService",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1386,21 +1386,21 @@
       {
         "kind": "service",
         "name": "com.android.tv.settings.users.RestrictedProfilePinService",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "service",
         "name": "com.android.tv.settings.device.storage.SettingsStorageService$Impl",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.device.storage.NewStorageActivity",
-        "exported": true,
+        "exported": false,
         "actions": [
           "com.android.tv.settings.action.NEW_STORAGE"
         ],
@@ -1409,7 +1409,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.device.storage.UnmountActivity",
-        "exported": true,
+        "exported": false,
         "actions": [
           "com.android.tv.settings.action.UNMOUNT_STORAGE"
         ],
@@ -1418,14 +1418,14 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.device.storage.FormatActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "activity",
         "name": "com.android.tv.settings.device.storage.MigrateStorageActivity",
-        "exported": true,
+        "exported": false,
         "actions": [
           "com.android.tv.settings.action.MIGRATE_STORAGE"
         ],
@@ -1434,7 +1434,7 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.device.apps.MoveAppActivity",
-        "exported": true,
+        "exported": false,
         "actions": [
           "com.android.tv.settings.action.MOVE_APP"
         ],
@@ -1503,7 +1503,7 @@
       {
         "kind": "provider",
         "name": "androidx.core.content.FileProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1590,14 +1590,14 @@
       {
         "kind": "activity",
         "name": "com.android.tv.settings.accessories.BluetoothActionActivity",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
       {
         "kind": "service",
         "name": "com.android.tv.settings.accessories.BluetoothDevicesService",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1613,7 +1613,7 @@
       {
         "kind": "receiver",
         "name": "com.android.tv.settings.accessories.ConnectedDevicesSliceBroadcastReceiver",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -1995,7 +1995,7 @@
       {
         "kind": "provider",
         "name": "androidx.startup.InitializationProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       }
@@ -2047,7 +2047,7 @@
       {
         "kind": "provider",
         "name": "androidx.startup.InitializationProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       }
@@ -2097,7 +2097,7 @@
       {
         "kind": "provider",
         "name": "androidx.startup.InitializationProvider",
-        "exported": true,
+        "exported": false,
         "actions": [],
         "permissions": []
       },
@@ -5022,5 +5022,182 @@
       "evidence": "string literal and dispatch API occur within a bounded source window, not proven invocation"
     }
   ],
-  "notes": []
+  "notes": [],
+  "corrected_manifest_bool_parser": true,
+  "manifest_review_candidates": [
+    {
+      "app": "zxlauncher",
+      "kind": "receiver",
+      "name": "com.zeasn.installer.UninstallReceiverFor28",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "zxlauncher",
+      "kind": "receiver",
+      "name": "com.zeasn.installer.InstallReceiverFor28",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "zxstore",
+      "kind": "service",
+      "name": "zeasn.open.technical.tv.store.app.StoreService",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "zxstore",
+      "kind": "receiver",
+      "name": "com.zeasn.installer.UninstallReceiverFor28",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "zxstore",
+      "kind": "receiver",
+      "name": "com.zeasn.installer.InstallReceiverFor28",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "zxstore",
+      "kind": "receiver",
+      "name": "com.zeasn.installer.InstallReceiverForXpak",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "KuSettings",
+      "kind": "receiver",
+      "name": "com.my.service.BootupReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "provider",
+      "name": "com.android.tv.settings.partnercustomizer.TvSettingsSliceProvider",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "provider",
+      "name": "com.android.tv.settings.partnercustomizer.CustomizedContentProvider",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "service",
+      "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.BluetoothReconnectService",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "service",
+      "name": "com.android.tv.settings.partnercustomizer.switchofftimer.SwitchOffTimerService",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "service",
+      "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.WirelessSpeakerServices",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.partnercustomizer.utils.SoundEARCReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.partnercustomizer.tvsettingservice.TvBootupReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "service",
+      "name": "com.android.tv.settings.uicustom.floatmenu.FloatMenuService",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.accessories.BluetoothPairingRequest",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.users.UserSwitchListenerService$BootReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.device.storage.DiskReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "provider",
+      "name": "com.android.tv.settings.name.SuggestionContentProvider",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "provider",
+      "name": "com.android.tv.settings.accessories.ConnectedDevicesSliceProvider",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.BootReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "TvSettingsPlus",
+      "kind": "receiver",
+      "name": "com.android.tv.settings.GlobalKeyReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "KuSourceRJ",
+      "kind": "receiver",
+      "name": "com.coolux.source.service.BootupReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "KuSourceRJ",
+      "kind": "receiver",
+      "name": "com.coolux.source.service.ScreensaverReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "KuSourceRJ",
+      "kind": "receiver",
+      "name": "com.coolux.source.service.BrightReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "RuiAutoFocus",
+      "kind": "service",
+      "name": "com.hysd.client.VAF2S",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "trdservice",
+      "kind": "service",
+      "name": "com.trd.service.TrdService",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "trdservice",
+      "kind": "receiver",
+      "name": "com.trd.service.system.shutdown.PreShutdownReceiver",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    },
+    {
+      "app": "trdmiddle",
+      "kind": "service",
+      "name": "com.trd.framework.TrdSystemService",
+      "status": "Requires caller permission and runtime behavior audit; not a vulnerability finding"
+    }
+  ]
 }
