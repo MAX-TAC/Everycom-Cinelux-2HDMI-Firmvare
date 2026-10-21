@@ -1,0 +1,100 @@
+{
+  "title": "Proposed stock-custom APP pruning manifest — NOT YET EXECUTABLE",
+  "source_limitations": [
+    "8052 is Oct RUIOS.8052.1.0.4 OTA",
+    "8054 original known is Sep RUIOS.8054.1.0.1 factory",
+    "No complete newest 8054.1.0.4 image available",
+    "Do not execute without proven rollback, package dependencies and image sign/install plan"
+  ],
+  "common": {
+    "required_home": "FLauncher (fixed version/commit TBD, GPLv3; must boot cleanly)",
+    "required_settings_explicit": {
+      "package": "com.android.tv.settings",
+      "activity": "com.android.tv.settings.MainSettings"
+    },
+    "optional_projector_settings_explicit": {
+      "package": "com.android.tv.settings",
+      "activity": "com.android.tv.settings.uicustom.MainActivity",
+      "need_runtime_verification": true
+    },
+    "remove_after_fallback_home_proven": [
+      "com.zeasn.whale.saas",
+      "zeasn.open.technical.tv.store"
+    ],
+    "migrate_then_remove": [
+      "com.my.settings"
+    ],
+    "keep_until_firstboot_validated": [
+      "com.android.provision",
+      "com.android.tv.settings",
+      "com.rjpj.yunota",
+      "com.coolux.source",
+      "com.hysd.screen",
+      "com.trd.service",
+      "com.trd.framework"
+    ],
+    "retain_always_platform": [
+      "com.android.packageinstaller",
+      "com.android.systemui",
+      "com.android.providers.settings"
+    ],
+    "must_not_touch_subsystems": [
+      "boot",
+      "vbmeta",
+      "DTBO",
+      "vendor",
+      "tvservice",
+      "tvconfig",
+      "PMU",
+      "persist",
+      "eeprom",
+      "calibration"
+    ]
+  },
+  "board_profiles": {
+    "8052_oct_1.0.4": {
+      "remove_proposed": [
+        "system/system/app/zxlauncher/zxlauncher.apk",
+        "system/system/app/zxstore/zxstore.apk"
+      ],
+      "migrate_then_remove": [
+        "system/system/app/KuSettings/KuSettings.apk"
+      ],
+      "preserve": [
+        "system/system/app/KuSetupWizard/KuSetupWizard.apk",
+        "system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk"
+      ],
+      "consumer_preinstall_files_verified": [],
+      "note": "Netflix/Prime/YouTube APKs absent from verified October OTA system partitions; may nevertheless exist under userdata from earlier preinstall."
+    },
+    "8054_sep_1.0.1": {
+      "remove_proposed": [
+        "system_a/system/app/zxlauncher/zxlauncher.apk",
+        "system_a/system/app/zxstore/zxstore.apk",
+        "system_a/system/preinstall_del/Netfix_v8.110.0.apk",
+        "system_a/system/preinstall_del/AmazonPrimeVideo_v3.0.459.345.apk"
+      ],
+      "migrate_then_remove": [
+        "system_a/system/app/KuSettings/KuSettings.apk"
+      ],
+      "preserve": [
+        "system_a/system/app/KuSetupWizard/KuSetupWizard.apk",
+        "system_ext_a/priv-app/TvSettingsPlus/TvSettingsPlus.apk",
+        "system_a/system/preinstall_del/YouTube_v4.40.313.apk.apk"
+      ],
+      "note": "preinstall_del files in stock do not prove package name or state under userdata after first boot; do not wipe userdata."
+    }
+  },
+  "regression_tests": [
+    "FLauncher HOME/Back/remote after reboot",
+    "Explicit MainSettings TV settings",
+    "uicustom MainActivity projector features if exported/runnable",
+    "OTA and Bluetooth/IR accessory reconnection",
+    "YouTube playback and HDR",
+    "PackageInstaller sideload",
+    "HDMI1/HDMI2 profile-dependent input selection",
+    "First boot/factory reset/provisioning",
+    "No involuntary calibration reset"
+  ],
+  "status": "planned only: no OEM image modified, no packages removed"
+}
