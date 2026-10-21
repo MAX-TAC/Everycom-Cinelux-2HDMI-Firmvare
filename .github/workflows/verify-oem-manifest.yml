@@ -1,0 +1,50 @@
+name: Verify OEM manifest exported flags without Java decompilation
+on:
+  push:
+    branches: [deep-stock-audit-8052-8054-20261021]
+    paths:
+      - ".github/workflows/verify-oem-manifest.yml"
+      - "tools/verify_oem_manifest_exported.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install manifest reader and EROFS utilities
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils aapt
+          mkdir -p /tmp/dumper /tmp/images /tmp/erofs
+          curl -fL --retry 4 "https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz" -o /tmp/payload.tar.gz
+          tar -xzf /tmp/payload.tar.gz -C /tmp/dumper
+      - name: Download verified OTA and extract Android filesystems
+        run: |
+          curl -fL --retry 5 --retry-delay 4 "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip" | sha256sum -c -
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext,vendor -o /tmp/images /tmp/ota.zip >/tmp/payload.log 2>&1 || { tail -n 80 /tmp/payload.log; exit 1; }
+          for name in system system_ext vendor; do
+            mkdir -p "/tmp/erofs/$name"
+            fsck.erofs --extract="/tmp/erofs/$name" "/tmp/images/$name.img" >/tmp/erofs.log 2>&1 || { tail -n 75 /tmp/erofs.log; exit 1; }
+          done
+      - name: Recheck exported values and preserve existing Java call-site evidence
+        run: |
+          python3 -u tools/verify_oem_manifest_exported.py > /tmp/verify.log 2>&1 || { tail -n 70 /tmp/verify.log; exit 1; }
+          cat /tmp/verify.log
+          head -n 65 analysis/Deep_Stock_Audit_20261021/MANIFEST_EXPORTED_VERIFIED_RU.md
+      - name: Publish corrected manifest results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Deep_Stock_Audit_20261021/MANIFEST_EXPORTED_VERIFIED_RU.md analysis/Deep_Stock_Audit_20261021/OEM_INTENT_CALL_CHAINS_RU.md analysis/Deep_Stock_Audit_20261021/oem_intent_call_chains.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Correct exported component flags and document actual manifest values"
+            git pull --rebase origin deep-stock-audit-8052-8054-20261021
+            git push origin HEAD:deep-stock-audit-8052-8054-20261021
+          fi
