@@ -10,10 +10,17 @@
 
 ## Проверенные материалы
 
+- [MAJOR_FINDINGS_RU.md](MAJOR_FINDINGS_RU.md) — подробные технические выводы по двум версиям и оценка их достоверности.
+- [NATIVE_8052_OTA_VS_8054_RU.md](NATIVE_8052_OTA_VS_8054_RU.md) — актуальное сравнение 1527 ELF, секций и 55 изменённых функций.
+- [native_ota8052_vs_stock8054.json](native_ota8052_vs_stock8054.json) — машиночитаемые разницы ELF.
+- [LAUNCHER_STORE_SETUP_METHODS_RU.md](LAUNCHER_STORE_SETUP_METHODS_RU.md) — изменённые методы zxlauncher/zxstore и сравнение KuSetupWizard с 8054.
+- [OEM_INTENT_CALL_CHAINS_RU.md](OEM_INTENT_CALL_CHAINS_RU.md) — точки межприложенческих Intent-кандидатов.
+- [MANIFEST_EXPORTED_VERIFIED_RU.md](MANIFEST_EXPORTED_VERIFIED_RU.md) — проверенные exported-флаги манифестов.
+- [SETUP_VS_SETTINGS_RU.md](SETUP_VS_SETTINGS_RU.md) — разбор 99,39% сходства кода KuSetupWizard и KuSettings.
 - [ELF_CODE_DIFFERENCES_RU.md](ELF_CODE_DIFFERENCES_RU.md) — где действительно различается машинный код у заводских сборок, а где только SHA файла.
 - [APK_DEPENDENCY_MATRIX_RU.md](APK_DEPENDENCY_MATRIX_RU.md) — что потенциально связывает лаунчер, магазин, меню, OTA и аппаратные службы.
-- [LATEST_8052_APP_GRAPH_RU.md](LATEST_8052_APP_GRAPH_RU.md) — автоматический статический аудит манифестов/обращений (после успешного запуска).
-- [latest_8052_app_graph.json](latest_8052_app_graph.json) — машиночитаемый индекс APK (после успешного запуска).
+- [LATEST_8052_APP_GRAPH_RU.md](LATEST_8052_APP_GRAPH_RU.md) — завершённый автоматический статический индекс 14 APK.
+- [latest_8052_app_graph.json](latest_8052_app_graph.json) — машиночитаемый индекс 14 APK.
 - [Октябрьская 8052 vs сентябрьская 8054](../Latest_8052_OTA_vs_8054_Stock/README.md).
 - [Различия автофокуса](../Latest_8052_OTA_vs_8054_Stock/autofocus_method_diff.md).
 - [Результаты OTA-каталога](https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/blob/ota-szrjyun-scan-20261020/analysis/SZRJYUN_OTA_Public_Catalog/README.md).
