@@ -10,8 +10,8 @@
       "executable_text_differs": 1,
       "same_executable_text_but_other_bytes_differ": 1
     },
-    "critical_code_changes": 0,
-    "note": "section .text SHA equality is byte identity of code section; code changes may be bug fixes or board adaptations, not automatically attributable."
+    "critical_code_changes": 1,
+    "note": "Only one ELF .text differs, vendor/lib/libmediatek_tv_basic.so; one more ELF, vendor/lib/libmediatek_tv_rpcwrapper.so, has identical .text but differs in other bytes. No intent attribution without function-level analysis."
   },
   "partitions": {
     "3rd": {
@@ -131,11 +131,28 @@
   ],
   "only_ota": [],
   "only_factory": [],
-  "critical_code_changes": [],
+  "critical_code_changes": [
+    {
+      "path": "vendor/lib/libmediatek_tv_basic.so",
+      "classification": "executable_text_differs",
+      "text": "different",
+      "ota_text_sha": "39b5060eeb9a16225c7dfc9e6160a928b3125e14e1a9b27a99ab000e19fba4be",
+      "stock_text_sha": "218ca735969fd0ba7c68b4bf77baabee1be5e6196632ccac1f3895a2a50e11e1",
+      "ota_bytes": 607040,
+      "stock_bytes": 607040,
+      "ota_sha": "4e32349928a265c1bd5f894ece4e6a68a15bdaf33a0897c0289d18add7993899",
+      "stock_sha": "38a2eb9d7750440d22460fa585a0ed8639f3013ad0db23702e0077b3727b33c7",
+      "deps_only_ota": [],
+      "deps_only_stock": [],
+      "exports_only_ota": [],
+      "exports_only_stock": []
+    }
+  ],
   "limits": [
     "No actual device executed any code.",
     "Static code-section SHA alone cannot determine intent or functional change.",
     "Module runtime selection, SoC fuses, HDMI routing, AVB enforcement require actual hardware.",
-    "Stock manifest and OTA naming conventions were normalized, no crossflashing done."
+    "Stock manifest and OTA naming conventions were normalized, no crossflashing done.",
+    "Not-comparable physical partitions 3rd/factory/linux_rootfs were omitted by the initial suffix normalizer; fix committed in analyzer for next workflow run."
   ]
 }
