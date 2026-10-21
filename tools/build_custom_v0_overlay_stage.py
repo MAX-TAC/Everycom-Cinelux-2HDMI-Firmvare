@@ -112,6 +112,14 @@ def main():
   z.writestr("README_NOT_FLASHABLE_RU.txt",notice)
   z.writestr("manifest.json",json.dumps(manifest,indent=2,ensure_ascii=False)+"\n")
   z.writestr("REMOVALS.txt","\n".join(cfg["removals"])+"\n")
+  gpl=Path("/usr/share/common-licenses/GPL-3")
+  assert gpl.is_file(),"GNU GPL v3 license not found on build runner"
+  z.writestr("third_party/FLauncher_GPL-3.0_LICENSE.txt",gpl.read_text(encoding="utf-8"))
+  z.writestr("third_party/FLauncher_SOURCE.txt",
+    "FLauncher v0.18.0, upstream tag: https://gitlab.com/flauncher/flauncher/-/tags/0.18.0\\n"
+    "Corresponding source: https://gitlab.com/flauncher/flauncher/-/archive/0.18.0/flauncher-0.18.0.tar.gz\\n"
+    "Original upstream release unmodified, APK SHA256: 376fc528c880cdf7c7c04b2d3708c69f911144498218babb6300808b772af32e\\n"
+    "License GPL-3.0; source and copyright notices reside upstream.\\n")
   for name,file in additions.items():z.write(file,"overlay/"+name)
  assert zipfile.is_zipfile(archive)
  with zipfile.ZipFile(archive) as z:
