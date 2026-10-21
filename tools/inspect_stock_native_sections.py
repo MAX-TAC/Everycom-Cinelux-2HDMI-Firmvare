@@ -5,6 +5,7 @@ Run on unmodified, SHA-verified images. No ELF binaries/source or machine code p
 import argparse,hashlib,json,re
 from pathlib import Path
 from elftools.elf.elffile import ELFFile
+from capstone import Cs, CS_ARCH_ARM, CS_MODE_ARM, CS_MODE_THUMB, CS_MODE_LITTLE_ENDIAN
 
 p=argparse.ArgumentParser()
 p.add_argument("--root",type=Path,required=True)
@@ -58,7 +59,20 @@ for item in sorted(a.root.iterdir()):
                         # ARM thumb symbols can carry address LSB. Derive equivalent code region.
                         if start&1:start-=1
                         if size<=0 or start<0 or start+size>len(code):continue
-                        syms[sym.name[:250]]={"bytes":size,"sha256":hashstr(code[start:start+size])}
+                        
+                        metadata={"bytes":size,"sha256":hashstr(code[start:start+size])}
+                        if rel.endswith("/libmediatek_tv_basic.so") and elf['e_machine']=="EM_ARM":
+                            try:
+                                mode=(CS_MODE_THUMB if int(sym['st_value'])&1 else CS_MODE_ARM)|CS_MODE_LITTLE_ENDIAN
+                                dis=Cs(CS_ARCH_ARM,mode)
+                                opcodes=[ins.mnemonic for ins in dis.disasm(code[start:start+size],int(sym['st_value'])&~1)]
+                                if opcodes:
+                                    metadata["disasm_instructions"]=len(opcodes)
+                                    metadata["opcode_only_sha256"]=hashstr(" ".join(opcodes).encode())
+                                    metadata["branch_mnemonics"]=sum(1 for mnemonic in opcodes if mnemonic.startswith(("b","cb","tb")) or mnemonic in ("bl","blx"))
+                            except Exception as err:
+                                metadata["disasm_error"]=type(err).__name__
+                        syms[sym.name[:250]]=metadata
                 # This is a binary hash, distinct from .text equality.
                 bf.seek(0)
                 digest=hashlib.sha256()
