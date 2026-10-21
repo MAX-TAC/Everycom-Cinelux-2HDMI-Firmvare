@@ -1,0 +1,141 @@
+{
+  "summary": {
+    "total_ota_elf": 1335,
+    "total_factory_elf": 1335,
+    "matched": 1335,
+    "only_ota": 0,
+    "only_factory": 0,
+    "by_classification": {
+      "byte_identical": 1333,
+      "executable_text_differs": 1,
+      "same_executable_text_but_other_bytes_differ": 1
+    },
+    "critical_code_changes": 0,
+    "note": "section .text SHA equality is byte identity of code section; code changes may be bug fixes or board adaptations, not automatically attributable."
+  },
+  "partitions": {
+    "3rd": {
+      "ota_present": true,
+      "factory_comparable": false
+    },
+    "armfw": {
+      "ota_sha": "8809923c93bd860ae28fb934e80ce1b7a45e60909122b704ca6bc344f271ab63",
+      "stock8054_sha": "981db5b65fd5a5a92a6b41220d8ff185dd397ba19ab82163714a5fa212f21f47",
+      "same": false,
+      "ota_bytes": 77824,
+      "factory8054_bytes": 77088
+    },
+    "boot": {
+      "ota_sha": "094585da7764ff78c9bdc77a5797b3da1355bbd3bec0cfd28692c6af5aa4c66a",
+      "stock8054_sha": "2dd27dbdb0bdf09c83407daf792833345478f236188420ea58234c636b14c0de",
+      "same": false,
+      "ota_bytes": 78643200,
+      "factory8054_bytes": 78643200
+    },
+    "bootdata": {
+      "ota_sha": "80977fbceab8e324ee02485be566757cd604a3998fe32789fc1b107be258c3bf",
+      "stock8054_sha": "94b122db0511b400c1e5f1c192dd8cab84280f3d64bdb2f15986c85ac0fd3cb4",
+      "same": false,
+      "ota_bytes": 41943040,
+      "factory8054_bytes": 41943040
+    },
+    "dtbo": {
+      "ota_sha": "755b9158991a31c88cdfe9a9a1b207da3c8ac9885fe1c3ccdde7b632017f5cd4",
+      "stock8054_sha": "867819faeb4ed65ea12563c4e3e29c2a70fe6a1a8f926889494dd9d7fcad4d63",
+      "same": false,
+      "ota_bytes": 8388608,
+      "factory8054_bytes": 8388608
+    },
+    "factory": {
+      "ota_present": true,
+      "factory_comparable": false
+    },
+    "linux_rootfs": {
+      "ota_present": true,
+      "factory_comparable": false
+    },
+    "mboot": {
+      "ota_sha": "8819cc068a7a05243eebbc504289442e6cf24992af4562f84a4c51bdf7d691ee",
+      "stock8054_sha": "9231c4570ac959b7abf68666c22c698c0129f5ff798fd83a0dc881a1e65bf3cb",
+      "same": false,
+      "ota_bytes": 2658304,
+      "factory8054_bytes": 2658304
+    },
+    "optee": {
+      "ota_sha": "7f1b13494c08f5b796c7e735879d1a00431ff8ed5d05ee78ae0e5559ff48e8bf",
+      "stock8054_sha": "3efc08e05ced099788f69846c723d1c21778c5ebc07ec8a0d39efb05a19ea89b",
+      "same": false,
+      "ota_bytes": 2809856,
+      "factory8054_bytes": 2806432
+    },
+    "tvconfig": {
+      "ota_sha": "83d0625822c14133d63bef85fbe08f21afa271a05faa1dd68748dc2b8f95fe52",
+      "stock8054_sha": "8dcf759e29ba45ffe1072e71471c95b2b1fde2129e2f78a0b6eb395e5b34b9d5",
+      "same": false,
+      "ota_bytes": 157286400,
+      "factory8054_bytes": 157286400
+    },
+    "tvservice": {
+      "ota_sha": "13c2d103c4afca209433a28db65f5a8fc90b6ede288b1a8789fa88368c6d8488",
+      "stock8054_sha": "392284c191f6f3e7ae0ef01cb16e99d37c6642ddf075fb6b1321c795c06ffb8f",
+      "same": false,
+      "ota_bytes": 175112192,
+      "factory8054_bytes": 175112192
+    },
+    "vbmeta": {
+      "ota_sha": "d9c0035e7884d7dcd6a242db95eec1344883e9020078b1c5625417a47b230412",
+      "stock8054_sha": "78d6fb015c51b97ab70720a91d7c8d72b515eeb4302da453d456041507f291ba",
+      "same": false,
+      "ota_bytes": 12288,
+      "factory8054_bytes": 12288
+    },
+    "vbmeta_system": {
+      "ota_sha": "11989885485f32576a544d85e15b2564c53db760b2d53fc3967f128870a0d49f",
+      "stock8054_sha": "4497950a1426a2b4d6e293439007a224875be6f8efa6ba04ac09a7a9c49abc17",
+      "same": false,
+      "ota_bytes": 4096,
+      "factory8054_bytes": 4096
+    }
+  },
+  "elf_changes": [
+    {
+      "path": "vendor/lib/libmediatek_tv_basic.so",
+      "classification": "executable_text_differs",
+      "text": "different",
+      "ota_text_sha": "39b5060eeb9a16225c7dfc9e6160a928b3125e14e1a9b27a99ab000e19fba4be",
+      "stock_text_sha": "218ca735969fd0ba7c68b4bf77baabee1be5e6196632ccac1f3895a2a50e11e1",
+      "ota_bytes": 607040,
+      "stock_bytes": 607040,
+      "ota_sha": "4e32349928a265c1bd5f894ece4e6a68a15bdaf33a0897c0289d18add7993899",
+      "stock_sha": "38a2eb9d7750440d22460fa585a0ed8639f3013ad0db23702e0077b3727b33c7",
+      "deps_only_ota": [],
+      "deps_only_stock": [],
+      "exports_only_ota": [],
+      "exports_only_stock": []
+    },
+    {
+      "path": "vendor/lib/libmediatek_tv_rpcwrapper.so",
+      "classification": "same_executable_text_but_other_bytes_differ",
+      "text": "same",
+      "ota_text_sha": "3a59a6b0f9ee674792e1ff7d8edfb904c065888f06829ff643496bd0176d0328",
+      "stock_text_sha": "3a59a6b0f9ee674792e1ff7d8edfb904c065888f06829ff643496bd0176d0328",
+      "ota_bytes": 734140,
+      "stock_bytes": 734140,
+      "ota_sha": "db3a4bef8ad6beea1ce2eedba422f7e1b43552de6bf3e118232705335e2699f7",
+      "stock_sha": "2f53f173dc1cdeb4c2d9cccf6e9d38fc3ba146729b02305f1a7033d678e354e5",
+      "deps_only_ota": [],
+      "deps_only_stock": [],
+      "exports_only_ota": [],
+      "exports_only_stock": []
+    }
+  ],
+  "only_ota": [],
+  "only_factory": [],
+  "critical_code_changes": [],
+  "limits": [
+    "No actual device executed any code.",
+    "Static code-section SHA alone cannot determine intent or functional change.",
+    "Module runtime selection, SoC fuses, HDMI routing, AVB enforcement require actual hardware.",
+    "Stock manifest and OTA naming conventions were normalized, no crossflashing done."
+  ]
+}
