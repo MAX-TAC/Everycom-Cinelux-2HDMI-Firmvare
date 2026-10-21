@@ -15,10 +15,11 @@ if p.returncode or not p.stdout:
     raise RuntimeError("Extract failed: "+p.stderr.decode(errors="replace")[-250:])
 new=p.stdout.decode("utf-8","replace").splitlines()
 def redact(line):
+    if line.strip()=="# [redacted]":return "[sensitive key redacted]"
     if re.search(r"(?i)(ssid|password|passwd|private.?key|serial[_ -]?number|token|mac[_ -]?address|hdcp|widevine|certificate|device.?key|license)",line):
         return "[sensitive key redacted]"
     return line[:270]
-matcher=difflib.SequenceMatcher(None,old,new,autojunk=False)
+matcher=difflib.SequenceMatcher(None,[redact(x) for x in old],[redact(x) for x in new],autojunk=False)
 opcodes=[(tag,a0,a1,b0,b1) for tag,a0,a1,b0,b1 in matcher.get_opcodes() if tag!="equal"]
 changes=[]
 for tag,a0,a1,b0,b1 in opcodes:
@@ -57,6 +58,8 @@ for i,chg in enumerate(changes[:45],1):
     md+=["- "+s.replace("|","/") for s in chg["ota_preview"]]
     md+=[""]
 md+=["## Interpretation","",
+"- The repeated changed rows are within InputSourceID[0] through InputSourceID[11]; each relevant row is 70,75,50 in stock 8054 and 80,75,50 in OTA 8052.",
+"- Exact meaning of that InputSourceID table row is unverified; do not interpret 80/70 as a HDMI port count or brightness unit.",
 "- Do not swap the entire file across profiles based only on a small diff.",
 "- Determine which of the changed keys influences input source, picture defaults, brightness and panel calibration before changing values.",
 "- Read-only static evidence: no GPIO, I2C, flash or display setting was modified.",
