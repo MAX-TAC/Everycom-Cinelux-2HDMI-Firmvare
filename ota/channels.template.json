@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "PLANNING_ONLY_NO_UPDATES_PUBLISHED",
+  "allow_install": false,
+  "channels": {
+    "8052": {
+      "brand": "Everycom",
+      "model": "CineLux 4K",
+      "hardware_profile": "1xHDMI",
+      "baseline": "RUIOS.8052.1.0.4",
+      "releases": []
+    },
+    "8054": {
+      "brand": "FlixTone",
+      "model": "D11 Master",
+      "hardware_profile": "2xHDMI",
+      "baseline": "RUIOS.8054.1.0.1 (factory; not latest confirmed)",
+      "releases": []
+    }
+  }
+}
