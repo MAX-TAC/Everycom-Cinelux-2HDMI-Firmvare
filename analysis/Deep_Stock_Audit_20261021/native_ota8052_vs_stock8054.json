@@ -1,0 +1,7426 @@
+{
+  "sources": [
+    "ota8052",
+    "stock8054"
+  ],
+  "totals": {
+    "ota_all": 1527,
+    "stock_all": 1527,
+    "shared": 1527,
+    "only_in_ota": 0,
+    "only_in_stock": 0,
+    "cases": {
+      "identical_file": 1383,
+      "code_changed": 2,
+      "text_same_other_changed": 133,
+      "text_same_rodata_changed": 9
+    }
+  },
+  "changed": [
+    {
+      "path": "vendor_a/lib/libmediatek_tv_basic.so",
+      "kind": "code_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 166304,
+          "stock_size": 166304,
+          "same_hash": false
+        },
+        ".rodata": {
+          "ota_size": 336301,
+          "stock_size": 336301,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 35876,
+          "stock_size": 35876,
+          "same_hash": false
+        },
+        ".data.rel.ro": {
+          "ota_size": 384,
+          "stock_size": 384,
+          "same_hash": false
+        },
+        ".rel.dyn": {
+          "ota_size": 281,
+          "stock_size": 281,
+          "same_hash": true
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 32,
+        "stock_class": 32,
+        "machine": "EM_ARM",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 800,
+        "changed_named_count": 55,
+        "changed_named_sample": [
+          "cfg_parser_list_all_configs_info",
+          "cfg_parser_set_config_value",
+          "cli_alias",
+          "cli_feature_dump",
+          "cli_parse_cmd_from_root",
+          "dbg_init_count_data",
+          "dbg_set_enable_log2file",
+          "get_alita_version",
+          "handle_alloc",
+          "handle_free_all",
+          "kbir_main",
+          "multi_byte_to_unicode",
+          "multi_byte_to_unicode_ex",
+          "os_linux_ion_mmap_with_fd",
+          "os_linux_ion_register_mmap_fd_callback",
+          "os_linux_ion_send_mmap_fd_async",
+          "test_msgq_health_check_operations",
+          "test_msgq_operations",
+          "test_timer_operations",
+          "thread_init",
+          "timer_init",
+          "x_cli_feature_init_cmd",
+          "x_cli_show_log_level",
+          "x_dbg_abort",
+          "x_dbg_dump_trace_buff",
+          "x_do_dbg_abort",
+          "x_feature_is_ci_plus_record_suppport",
+          "x_feature_is_ci_plus_tz_support",
+          "x_feature_is_cli_support",
+          "x_feature_is_debug_support",
+          "x_feature_is_disable_basic_part",
+          "x_feature_is_dtmb_support",
+          "x_feature_is_dtv_record_support",
+          "x_feature_is_dvbt_ci_enable",
+          "x_feature_is_evctx_cur_evt_timeout_support",
+          "x_feature_is_mtk_tvap_proxy_custom_support",
+          "x_feature_is_multi_ts_support",
+          "x_feature_is_mw_dual_vid_support",
+          "x_feature_is_mw_fast_boot_pre_select_src_block",
+          "x_feature_is_mw_rating_block_delay",
+          "x_feature_is_mw_support_svl_builder_rm",
+          "x_feature_is_mw_wifi_support",
+          "x_feature_is_no_edb_init",
+          "x_feature_is_sel_tuner_by_serial_no",
+          "x_feature_is_sys_tvap_rpcapi_3rd_support",
+          "x_msg_q_create",
+          "x_msg_q_init_health_check",
+          "x_msg_q_send",
+          "x_thread_create",
+          "x_thread_set_pvt",
+          "x_thread_suspend",
+          "x_timer_delete",
+          "x_timer_resume",
+          "x_timer_start",
+          "x_timer_stop"
+        ],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/libmediatek_tv_rpcwrapper.so",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 426960,
+          "stock_size": 426960,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 116984,
+          "stock_size": 116984,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 132,
+          "stock_size": 132,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": 29096,
+          "stock_size": 29096,
+          "same_hash": true
+        },
+        ".rel.dyn": {
+          "ota_size": 545,
+          "stock_size": 545,
+          "same_hash": true
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 32,
+        "stock_class": 32,
+        "machine": "EM_ARM",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 2307,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/btmtk_usb.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 75436,
+          "stock_size": 75436,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 31104,
+          "stock_size": 31104,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 944,
+          "stock_size": 944,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/btmtk_usb_unify.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 283648,
+          "stock_size": 283648,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 79278,
+          "stock_size": 79278,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 13200,
+          "stock_size": 13200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/cb2.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 6520,
+          "stock_size": 6520,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1054,
+          "stock_size": 1054,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 472,
+          "stock_size": 472,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/cfg80211.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 483608,
+          "stock_size": 483608,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 45460,
+          "stock_size": 45460,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 94752,
+          "stock_size": 94752,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/cfi_nonGPL_patch.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4,
+          "stock_size": 4,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/clk_dbg.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 18136,
+          "stock_size": 18136,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5526,
+          "stock_size": 5526,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 528,
+          "stock_size": 528,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/cpufreq_ondemand.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4388,
+          "stock_size": 4388,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 298,
+          "stock_size": 298,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 544,
+          "stock_size": 544,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/devnode.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1204,
+          "stock_size": 1204,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1272,
+          "stock_size": 1272,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 64,
+          "stock_size": 64,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/dtv_driver.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1326092,
+          "stock_size": 1326092,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 411928,
+          "stock_size": 411928,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 341792,
+          "stock_size": 341792,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/emi-cen-tv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 6560,
+          "stock_size": 6560,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1552,
+          "stock_size": 1552,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 252,
+          "stock_size": 252,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/extcon-mtk-headset.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3604,
+          "stock_size": 3604,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1936,
+          "stock_size": 1936,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 384,
+          "stock_size": 384,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/fusion_mtk.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 71984,
+          "stock_size": 71984,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 11632,
+          "stock_size": 11632,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 432,
+          "stock_size": 432,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/hdcp1x.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 19064,
+          "stock_size": 19064,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4090,
+          "stock_size": 4090,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 240,
+          "stock_size": 240,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/hdcp1x_mt.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 21028,
+          "stock_size": 21028,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 6442,
+          "stock_size": 6442,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 544,
+          "stock_size": 544,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/hdcp2x.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 144512,
+          "stock_size": 144512,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 28739,
+          "stock_size": 28739,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 12224,
+          "stock_size": 12224,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/hdcp2x_mt.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 21116,
+          "stock_size": 21116,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 12704,
+          "stock_size": 12704,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 41120,
+          "stock_size": 41120,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/i2c-dev.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5836,
+          "stock_size": 5836,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 698,
+          "stock_size": 698,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 144,
+          "stock_size": 144,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/i2c-gpio.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1572,
+          "stock_size": 1572,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 732,
+          "stock_size": 732,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/i2c-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 21328,
+          "stock_size": 21328,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4576,
+          "stock_size": 4576,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 688,
+          "stock_size": 688,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/iniparser.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 17040,
+          "stock_size": 17040,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1738,
+          "stock_size": 1738,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/kdrv_ldm_sys.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 71944,
+          "stock_size": 71944,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 13494,
+          "stock_size": 13494,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 4496,
+          "stock_size": 4496,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/keypad-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5040,
+          "stock_size": 5040,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1312,
+          "stock_size": 1312,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/leds-breath.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4580,
+          "stock_size": 4580,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1442,
+          "stock_size": 1442,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 560,
+          "stock_size": 560,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/leds-gpio.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2356,
+          "stock_size": 2356,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 678,
+          "stock_size": 678,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 272,
+          "stock_size": 272,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/leds-mtk-irtx.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3708,
+          "stock_size": 3708,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1136,
+          "stock_size": 1136,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 272,
+          "stock_size": 272,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mali_kbase_mt5873.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 376832,
+          "stock_size": 376832,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 79124,
+          "stock_size": 79124,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 13248,
+          "stock_size": 13248,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mali_kbase_mt5876.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 377992,
+          "stock_size": 377992,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 80804,
+          "stock_size": 80804,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 13248,
+          "stock_size": 13248,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mali_kbase_mt5879.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 378144,
+          "stock_size": 378144,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 80804,
+          "stock_size": 80804,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 13248,
+          "stock_size": 13248,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mali_kbase_mt5896.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 380756,
+          "stock_size": 380756,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 80936,
+          "stock_size": 80936,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 12976,
+          "stock_size": 12976,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mali_kbase_mt5897.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 379588,
+          "stock_size": 379588,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 81092,
+          "stock_size": 81092,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 13248,
+          "stock_size": 13248,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-alsa_driver.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 19580,
+          "stock_size": 19580,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5636,
+          "stock_size": 5636,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 2896,
+          "stock_size": 2896,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-gflip.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 55008,
+          "stock_size": 55008,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3072,
+          "stock_size": 3072,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1584,
+          "stock_size": 1584,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-graphic.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 20524,
+          "stock_size": 20524,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1816,
+          "stock_size": 1816,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1672,
+          "stock_size": 1672,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-mpool.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5080,
+          "stock_size": 5080,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 616,
+          "stock_size": 616,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 448,
+          "stock_size": 448,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-pm.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 6196,
+          "stock_size": 6196,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1339,
+          "stock_size": 1339,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 2168,
+          "stock_size": 2168,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-sc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10708,
+          "stock_size": 10708,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 786,
+          "stock_size": 786,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1536,
+          "stock_size": 1536,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-semutex.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 32164,
+          "stock_size": 32164,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4664,
+          "stock_size": 4664,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 138944,
+          "stock_size": 138944,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mdrv-system.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 8592,
+          "stock_size": 8592,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1080,
+          "stock_size": 1080,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1216,
+          "stock_size": 1216,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mhal-alsa_driver.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 37044,
+          "stock_size": 37044,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 6593,
+          "stock_size": 6593,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1284,
+          "stock_size": 1284,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mik.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3015876,
+          "stock_size": 3015876,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2475740,
+          "stock_size": 2475740,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 94832,
+          "stock_size": 94832,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/misck.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 368124,
+          "stock_size": 368124,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 58803,
+          "stock_size": 58803,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 47456,
+          "stock_size": 47456,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mt5896-mailbox-mexico.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1264,
+          "stock_size": 1264,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 888,
+          "stock_size": 888,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 248,
+          "stock_size": 248,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mt5896-mailbox.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4120,
+          "stock_size": 4120,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1360,
+          "stock_size": 1360,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 320,
+          "stock_size": 320,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mt5896_saradc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1588,
+          "stock_size": 1588,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5928,
+          "stock_size": 5928,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mt58xx-thermal.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 784,
+          "stock_size": 784,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 577,
+          "stock_size": 577,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 264,
+          "stock_size": 264,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-ab-boot.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3292,
+          "stock_size": 3292,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1272,
+          "stock_size": 1272,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 8,
+          "stock_size": 8,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-aloop.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 33304,
+          "stock_size": 33304,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 8688,
+          "stock_size": 8688,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 736,
+          "stock_size": 736,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-audio-mcu-communication.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4136,
+          "stock_size": 4136,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1324,
+          "stock_size": 1324,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 416,
+          "stock_size": 416,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-audio-mcu.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 11432,
+          "stock_size": 11432,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4336,
+          "stock_size": 4336,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 776,
+          "stock_size": 776,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-bdma.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2568,
+          "stock_size": 2568,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 665,
+          "stock_size": 665,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 296,
+          "stock_size": 296,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-boottime.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1308,
+          "stock_size": 1308,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1016,
+          "stock_size": 1016,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-bw.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 43656,
+          "stock_size": 43656,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 10768,
+          "stock_size": 10768,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1424,
+          "stock_size": 1424,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-db-tool.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 15312,
+          "stock_size": 15312,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3152,
+          "stock_size": 3152,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 592,
+          "stock_size": 592,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-dramc-ca.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2016,
+          "stock_size": 2016,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 604,
+          "stock_size": 604,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-dramc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 37412,
+          "stock_size": 37412,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 12664,
+          "stock_size": 12664,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 556,
+          "stock_size": 556,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-es-buf-mgr.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 13760,
+          "stock_size": 13760,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3848,
+          "stock_size": 3848,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 48,
+          "stock_size": 48,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-ir-tx.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3280,
+          "stock_size": 3280,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1848,
+          "stock_size": 1848,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 312,
+          "stock_size": 312,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-ir.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 53360,
+          "stock_size": 53360,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 11236,
+          "stock_size": 11236,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 2288,
+          "stock_size": 2288,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-kmiup.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3828,
+          "stock_size": 3828,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 881,
+          "stock_size": 881,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 232,
+          "stock_size": 232,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-memory.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 12512,
+          "stock_size": 12512,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4448,
+          "stock_size": 4448,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 312,
+          "stock_size": 312,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-mic-capture.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 55396,
+          "stock_size": 55396,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 12996,
+          "stock_size": 12996,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 3344,
+          "stock_size": 3344,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-mic-communication.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 12832,
+          "stock_size": 12832,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1786,
+          "stock_size": 1786,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1120,
+          "stock_size": 1120,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-miup.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 12548,
+          "stock_size": 12548,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4096,
+          "stock_size": 4096,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 328,
+          "stock_size": 328,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-miup_debug.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4392,
+          "stock_size": 4392,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2248,
+          "stock_size": 2248,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 304,
+          "stock_size": 304,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-module_thermal.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1668,
+          "stock_size": 1668,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1304,
+          "stock_size": 1304,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 312,
+          "stock_size": 312,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-pm.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 6872,
+          "stock_size": 6872,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1504,
+          "stock_size": 1504,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 680,
+          "stock_size": 680,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-pmu-cec.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 6164,
+          "stock_size": 6164,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1280,
+          "stock_size": 1280,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 512,
+          "stock_size": 512,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-pmu-ir.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5068,
+          "stock_size": 5068,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1832,
+          "stock_size": 1832,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 312,
+          "stock_size": 312,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-pmu-keypad.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3864,
+          "stock_size": 3864,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1464,
+          "stock_size": 1464,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 296,
+          "stock_size": 296,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-smi-tv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5892,
+          "stock_size": 5892,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 10958,
+          "stock_size": 10958,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 12720,
+          "stock_size": 12720,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-stctrl.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 9440,
+          "stock_size": 9440,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5732,
+          "stock_size": 5732,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 2776,
+          "stock_size": 2776,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-tv-atrace.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1508,
+          "stock_size": 1508,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 64,
+          "stock_size": 64,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-v4l2-jpd.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 100736,
+          "stock_size": 100736,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 34890,
+          "stock_size": 34890,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1008,
+          "stock_size": 1008,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-vcodec-common.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 7532,
+          "stock_size": 7532,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3432,
+          "stock_size": 3432,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 64,
+          "stock_size": 64,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-vcodec-dec.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 49584,
+          "stock_size": 49584,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 26584,
+          "stock_size": 26584,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 608,
+          "stock_size": 608,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-vcodec-enc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 26540,
+          "stock_size": 26540,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 12744,
+          "stock_size": 12744,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 368,
+          "stock_size": 368,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk-vcu.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 12508,
+          "stock_size": 12508,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5080,
+          "stock_size": 5080,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 560,
+          "stock_size": 560,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_als.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 920,
+          "stock_size": 920,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 768,
+          "stock_size": 768,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_dmx.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 20204,
+          "stock_size": 20204,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2328,
+          "stock_size": 2328,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_gmac_mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 69364,
+          "stock_size": 69364,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 10142,
+          "stock_size": 10142,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 11184,
+          "stock_size": 11184,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_iommu.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 94384,
+          "stock_size": 94384,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 21056,
+          "stock_size": 21056,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 6640,
+          "stock_size": 6640,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_irs.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4188,
+          "stock_size": 4188,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1480,
+          "stock_size": 1480,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 232,
+          "stock_size": 232,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_light.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2604,
+          "stock_size": 2604,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 920,
+          "stock_size": 920,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 392,
+          "stock_size": 392,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_mic_mute_drv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2640,
+          "stock_size": 2640,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1262,
+          "stock_size": 1262,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 272,
+          "stock_size": 272,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_pmu_rproc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3612,
+          "stock_size": 3612,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1846,
+          "stock_size": 1846,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 240,
+          "stock_size": 240,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_realtime_example.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 9296,
+          "stock_size": 9296,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 671,
+          "stock_size": 671,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_realtime_producer.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 9476,
+          "stock_size": 9476,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 866,
+          "stock_size": 866,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 32,
+          "stock_size": 32,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_tee.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5780,
+          "stock_size": 5780,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2920,
+          "stock_size": 2920,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 96,
+          "stock_size": 96,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_test_cdev.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 864,
+          "stock_size": 864,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 592,
+          "stock_size": 592,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_v4l2loopback.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 19992,
+          "stock_size": 19992,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 7746,
+          "stock_size": 7746,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 448,
+          "stock_size": 448,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_zdec_drv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 8412,
+          "stock_size": 8412,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 606,
+          "stock_size": 606,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 240,
+          "stock_size": 240,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_zram.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 16864,
+          "stock_size": 16864,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1576,
+          "stock_size": 1576,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1000,
+          "stock_size": 1000,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_zram_genpool.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1332,
+          "stock_size": 1332,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 760,
+          "stock_size": 760,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtk_zsmalloc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 14336,
+          "stock_size": 14336,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 432,
+          "stock_size": 432,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 72,
+          "stock_size": 72,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-cpufreq-ca.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2060,
+          "stock_size": 2060,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 740,
+          "stock_size": 740,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-cpufreq-dbg.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3424,
+          "stock_size": 3424,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1360,
+          "stock_size": 1360,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-cpufreq.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10684,
+          "stock_size": 10684,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 4928,
+          "stock_size": 4928,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 656,
+          "stock_size": 656,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-regulator-mt5876-core-power.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3328,
+          "stock_size": 3328,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1512,
+          "stock_size": 1512,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 840,
+          "stock_size": 840,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-regulator-mt5876.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1104,
+          "stock_size": 1104,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 737,
+          "stock_size": 737,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 840,
+          "stock_size": 840,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-regulator-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1104,
+          "stock_size": 1104,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 600,
+          "stock_size": 600,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1208,
+          "stock_size": 1208,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtktv-thermal.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 3628,
+          "stock_size": 3628,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 984,
+          "stock_size": 984,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 264,
+          "stock_size": 264,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mtprealloc_mt7663.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 592,
+          "stock_size": 592,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 578,
+          "stock_size": 578,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtprealloc_mt7902.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 592,
+          "stock_size": 592,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 585,
+          "stock_size": 585,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtprealloc_mt7961.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 592,
+          "stock_size": 592,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 585,
+          "stock_size": 585,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtreset.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 13696,
+          "stock_size": 13696,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5588,
+          "stock_size": 5588,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1392,
+          "stock_size": 1392,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtreset_mt7663.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10452,
+          "stock_size": 10452,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3796,
+          "stock_size": 3796,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1184,
+          "stock_size": 1184,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtu3.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 46824,
+          "stock_size": 46824,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 8622,
+          "stock_size": 8622,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 6080,
+          "stock_size": 6080,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mtxx-serflash.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 7272,
+          "stock_size": 7272,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1056,
+          "stock_size": 1056,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mzc-mtk.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 8196,
+          "stock_size": 8196,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 745,
+          "stock_size": 745,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 208,
+          "stock_size": 208,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/mzc.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 440,
+          "stock_size": 440,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 5,
+          "stock_size": 5,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 384,
+          "stock_size": 384,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/mzc_hybrid.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1036,
+          "stock_size": 1036,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 102,
+          "stock_size": 102,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 384,
+          "stock_size": 384,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/ntfs3.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 180064,
+          "stock_size": 180064,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 8536,
+          "stock_size": 8536,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 432,
+          "stock_size": 432,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/optee.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 19404,
+          "stock_size": 19404,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2938,
+          "stock_size": 2938,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1360,
+          "stock_size": 1360,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/phy-mtk-tphy-tv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10040,
+          "stock_size": 10040,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2664,
+          "stock_size": 2664,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/pinctrl-mt5896-narcos.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 628,
+          "stock_size": 628,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 584,
+          "stock_size": 584,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/pnl_cust.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 11840,
+          "stock_size": 11840,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 18567,
+          "stock_size": 18567,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/pwm-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1816,
+          "stock_size": 1816,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 768,
+          "stock_size": 768,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/pwm_bl.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4420,
+          "stock_size": 4420,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1478,
+          "stock_size": 1478,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 496,
+          "stock_size": 496,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/pwmadc-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4080,
+          "stock_size": 4080,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1140,
+          "stock_size": 1140,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 408,
+          "stock_size": 408,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/pwmscan-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 9144,
+          "stock_size": 9144,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1768,
+          "stock_size": 1768,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 608,
+          "stock_size": 608,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/pwmseg-mtktv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10012,
+          "stock_size": 10012,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1288,
+          "stock_size": 1288,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 328,
+          "stock_size": 328,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/rpmsg_ns.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 992,
+          "stock_size": 992,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 264,
+          "stock_size": 264,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 184,
+          "stock_size": 184,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/rpmsg_st.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 604,
+          "stock_size": 604,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 528,
+          "stock_size": 528,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 4224,
+          "stock_size": 4224,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/rpmsg_ut.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 764,
+          "stock_size": 764,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 177,
+          "stock_size": 177,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 264,
+          "stock_size": 264,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/rtc-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5148,
+          "stock_size": 5148,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1736,
+          "stock_size": 1736,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 368,
+          "stock_size": 368,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/snd-aloop.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 13580,
+          "stock_size": 13580,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2539,
+          "stock_size": 2539,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 816,
+          "stock_size": 816,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/spi-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10636,
+          "stock_size": 10636,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1890,
+          "stock_size": 1890,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 480,
+          "stock_size": 480,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/spi-mtkdtv-ci.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4112,
+          "stock_size": 4112,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 864,
+          "stock_size": 864,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 200,
+          "stock_size": 200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    },
+    {
+      "path": "vendor_a/lib/modules/spidev.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 7316,
+          "stock_size": 7316,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3564,
+          "stock_size": 3564,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 272,
+          "stock_size": 272,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/sw_sync.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4156,
+          "stock_size": 4156,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 642,
+          "stock_size": 642,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 128,
+          "stock_size": 128,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/system_heap.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 4388,
+          "stock_size": 4388,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 376,
+          "stock_size": 376,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 16,
+          "stock_size": 16,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/tee.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 19252,
+          "stock_size": 19252,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 2744,
+          "stock_size": 2744,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1040,
+          "stock_size": 1040,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/time_stamp.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2960,
+          "stock_size": 2960,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 576,
+          "stock_size": 576,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 80,
+          "stock_size": 80,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/usbcam.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 14640,
+          "stock_size": 14640,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 9472,
+          "stock_size": 9472,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 400,
+          "stock_size": 400,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/vim2m.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 10192,
+          "stock_size": 10192,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3776,
+          "stock_size": 3776,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 1292,
+          "stock_size": 1292,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/virtio_rpmsg_bus.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 6440,
+          "stock_size": 6440,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1380,
+          "stock_size": 1380,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 512,
+          "stock_size": 512,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/wdt-mt5896.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 5112,
+          "stock_size": 5112,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 1184,
+          "stock_size": 1184,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 376,
+          "stock_size": 376,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/wlan_mt7663.ko",
+      "kind": "code_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1301824,
+          "stock_size": 1301824,
+          "same_hash": false
+        },
+        ".rodata": {
+          "ota_size": 428852,
+          "stock_size": 428852,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 29200,
+          "stock_size": 29200,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/wlan_mt7902.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 1653308,
+          "stock_size": 1653308,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 548162,
+          "stock_size": 548162,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 55184,
+          "stock_size": 55184,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/wlan_mt7961.ko",
+      "kind": "text_same_rodata_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 2108772,
+          "stock_size": 2108772,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 665808,
+          "stock_size": 665808,
+          "same_hash": false
+        },
+        ".data": {
+          "ota_size": 53840,
+          "stock_size": 53840,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/xcker.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 251580,
+          "stock_size": 251580,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 92576,
+          "stock_size": 92576,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 11160,
+          "stock_size": 11160,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": false
+    },
+    {
+      "path": "vendor_a/lib/modules/xhci-mtk-hcd-tv.ko",
+      "kind": "text_same_other_changed",
+      "section_status": {
+        ".text": {
+          "ota_size": 16156,
+          "stock_size": 16156,
+          "same_hash": true
+        },
+        ".rodata": {
+          "ota_size": 3506,
+          "stock_size": 3506,
+          "same_hash": true
+        },
+        ".data": {
+          "ota_size": 336,
+          "stock_size": 336,
+          "same_hash": true
+        },
+        ".data.rel.ro": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rel.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        },
+        ".rela.dyn": {
+          "ota_size": null,
+          "stock_size": null,
+          "same_hash": null
+        }
+      },
+      "abi": {
+        "ota_class": 64,
+        "stock_class": 64,
+        "machine": "EM_AARCH64",
+        "needed_only_stock": [],
+        "needed_only_ota": []
+      },
+      "functions": {
+        "common_named": 0,
+        "changed_named_count": 0,
+        "changed_named_sample": [],
+        "only_stock": [],
+        "only_ota": []
+      },
+      "hardware_relevant": true
+    }
+  ],
+  "missing_or_added": {
+    "only_ota": [],
+    "only_stock": []
+  },
+  "errors": []
+}
