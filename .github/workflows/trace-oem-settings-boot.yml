@@ -1,0 +1,52 @@
+name: Trace OEM Settings BootReceiver and system-side effects
+on:
+  push:
+    branches: [global-firmware-map-8052-8054-20261021]
+    paths:
+      - ".github/workflows/trace-oem-settings-boot.yml"
+      - "tools/trace_oem_boot_receivers.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install readonly Android filesystem and Java decompiler
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils unzip
+          curl -fL --retry 4 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
+          mkdir -p /tmp/jadx-bin /tmp/dumper /tmp/images /tmp/erofs
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/payload.tar.gz
+          tar -xzf /tmp/payload.tar.gz -C /tmp/dumper
+      - name: SHA verify and extract original October 8052
+        run: |
+          curl -fL --retry 5 --retry-delay 4 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/original.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/original.zip" | sha256sum -c -
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext -o /tmp/images /tmp/original.zip >/tmp/dump.log 2>&1 || { tail -n 70 /tmp/dump.log; exit 1; }
+          for name in system system_ext; do
+            mkdir -p "/tmp/erofs/$name"
+            fsck.erofs --extract="/tmp/erofs/$name" "/tmp/images/$name.img" >/tmp/$name.log 2>&1 || { tail -n 70 /tmp/$name.log; exit 1; }
+          done
+      - name: Trace boot handlers without publishing decompiled code
+        run: |
+          python3 -u tools/trace_oem_boot_receivers.py > /tmp/boot.log 2>&1 || { tail -n 80 /tmp/boot.log; exit 1; }
+          cat /tmp/boot.log
+          head -n 100 analysis/Global_Firmware_Map_20261021/OEM_BOOT_RECEIVER_TRACE_RU.md
+      - name: Commit source-free receiver and service audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Global_Firmware_Map_20261021/OEM_BOOT_RECEIVER_TRACE_RU.md analysis/Global_Firmware_Map_20261021/OEM_BOOT_RECEIVER_TRACE.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Trace OEM settings boot receiver side effects for safe removal planning"
+            git pull --rebase origin global-firmware-map-8052-8054-20261021
+            git push origin HEAD:global-firmware-map-8052-8054-20261021
+          fi
