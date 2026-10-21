@@ -1,0 +1,18 @@
+{
+  "source": "RUIOS OTA 8053 verified ZIP SHA256",
+  "reference_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+  "partitions": [
+    {
+      "name": "vbmeta",
+      "algorithm_type": 2,
+      "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+      "matches_reference_8052_8054": true
+    },
+    {
+      "name": "vbmeta_system",
+      "algorithm_type": 2,
+      "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+      "matches_reference_8052_8054": true
+    }
+  ]
+}
