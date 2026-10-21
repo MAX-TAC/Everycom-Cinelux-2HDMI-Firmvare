@@ -53,6 +53,7 @@ def main():
  p.add_argument("--flauncher",type=Path,required=True)
  p.add_argument("--shortcut",type=Path,required=True)
  p.add_argument("--dest",type=Path,required=True)
+ p.add_argument("--boot-visuals-stage",type=Path,help="Optional output from prepare_boot_visuals_stage.py; no partition images")
  args=p.parse_args()
  cfg=PROFILES[args.variant];source=args.source.resolve();dest=args.dest.resolve()
  assert source.is_dir(),"Missing extracted source tree"
@@ -83,6 +84,35 @@ def main():
  "system/app/FLauncher/FLauncher.apk":args.flauncher,
  "system/app/CineLuxSettingsShortcut/CineLuxSettingsShortcut.apk":args.shortcut
  }
+ visuals_metadata=None
+ if args.boot_visuals_stage:
+  stage=args.boot_visuals_stage.resolve()
+  meta=json.loads((stage/"manifest.json").read_text(encoding="utf-8"))
+  assert meta.get("profile")==args.variant, "Boot visuals variant != APK profile"
+  assert meta.get("format")=="CineLux boot visuals delta; NON-FLASHABLE"
+  expected={
+   "bootdata/boot0.jpg", "bootdata/boot0.mp3",
+   "tvconfig/bsp/common/misc/boot0.jpg",
+   "tvconfig/bsp/common/misc/boot0_4K.jpg",
+   "tvconfig/bsp/common/misc/boot0.mp3",
+   "system/media/bootanimation.zip"
+  }
+  files=meta.get("overlay_files",{})
+  assert set(files)==expected, f"Unexpected boot delta file set: {sorted(set(files)^expected)}"
+  for rel,props in files.items():
+   src=(stage/"overlay"/rel).resolve()
+   assert src.is_file() and src.is_relative_to((stage/"overlay").resolve())
+   assert src.stat().st_size==props["bytes"] and digest(src)==props["sha256"], "Boot stage hash failed: "+rel
+   assert rel not in additions
+   additions[rel]=src
+  visuals_metadata={
+   "status":"STAGED ONLY / NOT FLASHABLE",
+   "animation":meta["animation"],
+   "original_stock_hashes":meta["source_stock_sha256"],
+   "boot_audio_reference":meta["stock_mp3_properties"],
+   "validation_needed":meta["verification_gates"],
+   "note":"bootdata/tvconfig artwork files ONLY; never copy full partitions across boards"
+  }
  manifest={
   "bundle_kind":"overlay-delta-APK-STAGING-NOT-FLASHABLE",
   "variant":args.variant,"baseline":cfg["version"],"hdmi_port_count":cfg["target_hdmi_ports"],
@@ -92,8 +122,9 @@ def main():
   "flauncher":fl,"shortcut":sc,"flauncher_native_libraries":native,
   "android_settings_component":"com.android.tv.settings/.MainSettings",
   "projector_settings_component":"com.android.tv.settings/.uicustom.MainActivity",
-  "preserve_hardware":["vendor","dtbo","boot","vbmeta","tvconfig","tvservice","PMU","factory","persist"],
-  "status":"NOT_INSTALLED; NO IMG/PKG/BIN; Android system overlays only",
+  "preserve_hardware":["vendor","dtbo","boot","vbmeta","tvservice","PMU","factory","persist"],
+  "boot_visuals":visuals_metadata,
+  "status":"NOT_INSTALLED; NO IMG/PKG/BIN; overlay staged but NOT APPLIED",
   "notes":cfg["notes"],
   "blockers":["Target signature/AVB constraints unresolved.",
               "Boot/root fallback HOME has not been tested on real 8052 and 8054.",
@@ -106,6 +137,7 @@ def main():
  "Содержит готовые APK и проверенные списки изменений для указанных stock Android разделов.\n"
  "Образы system.img, super.img, PKG, BIN, OTA payload не сформированы.\n"
  "Не менять boot/vendor/tvservice/калибровки. KuSetupWizard и KuSettings пока сохранены.\n"
+ "Если добавлены bootdata/tvconfig, это ТОЛЬКО замены конкретных JPEG/MP3, а не полные разделы.\n"
  "Оставить первоначальный HOME как аварийный fallback до живых испытаний; "
  "пакет описывает план исключения OEM HOME только на следующей стадии применения.\n")
  with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
