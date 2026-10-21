@@ -13,7 +13,7 @@ p.add_argument("--out",type=Path,required=True)
 a=p.parse_args();a.out.parent.mkdir(exist_ok=True,parents=True)
 hashstr=lambda x:hashlib.sha256(x).hexdigest()
 interesting=re.compile(r"(?:trd|motor|tof|focus|keystone|source|hdmi|cec|audio|i2c|mtk|medi(a|ate)k|camera|display|tv|factory|projector|boot|pmu)",re.I)
-relevant_sections=(".text",".rodata",".data",".data.rel.ro",".got",".plt",".bss",".rela.dyn",".rel.dyn",".dynstr")
+relevant_sections=(".text",".rodata",".data",".data.rel.ro",".got",".plt",".bss",".rela.dyn",".rel.dyn",".dynstr",".modinfo")
 results={"variant":a.variant,"root_style":"Android extracted directories named system_a/system_ext_a/vendor_a/product_a",
          "apps":"excluded","files":{},"failed":[]}
 for item in sorted(a.root.iterdir()):
@@ -45,6 +45,8 @@ for item in sorted(a.root.iterdir()):
                         if tag.entry.d_tag=="DT_NEEDED":dynamics.append(tag.needed)
                 syms={}
                 dynsym=elf.get_section_by_name(".dynsym")
+                if dynsym is None and re.search(r"(wlan_mt|dtv_driver|mali_kbase|kdrv_ldm)",rel,re.I):
+                    dynsym=elf.get_section_by_name(".symtab")
                 text=elf.get_section_by_name(".text")
                 if dynsym is not None and text is not None and interesting.search(rel):
                     code=text.data()
@@ -61,7 +63,14 @@ for item in sorted(a.root.iterdir()):
                 bf.seek(0)
                 digest=hashlib.sha256()
                 for chunk in iter(lambda:bf.read(8*1024*1024),b""):digest.update(chunk)
-                results["files"][rel]={"sha256":digest.hexdigest(),"bytes":f.stat().st_size,
+                modinfo=elf.get_section_by_name(".modinfo")
+                modentries=[]
+                if modinfo is not None:
+                    for item in modinfo.data().split(bytes([0])):
+                        val=item.decode(errors="replace")
+                        if val.startswith(("vermagic=","srcversion=","version=","depends=")):
+                            modentries.append(val[:180])
+                results["files"][rel]={"sha256":digest.hexdigest(),"bytes":f.stat().st_size,"modinfo":sorted(set(modentries)),
                      "class":elf.elfclass,"machine":elf['e_machine'],"type":str(elf['e_type']),
                      "build_id":next((s.data().hex()[:130] for s in elf.iter_sections() if s.name==".note.gnu.build-id"),None),
                      "sections":sections,"deps":sorted(set(dynamics)),"functions":syms}
