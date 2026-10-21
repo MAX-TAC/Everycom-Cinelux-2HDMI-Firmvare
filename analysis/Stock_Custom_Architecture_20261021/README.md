@@ -7,16 +7,19 @@
 1. [BUILD_ARCHITECTURE_RU.md](BUILD_ARCHITECTURE_RU.md) — общая кодовая база, две аппаратные ревизии, что сохранять и что удалить, схема сборки и регрессионных проверок.
 2. [OEM_SETTINGS_MIGRATION_RU.md](OEM_SETTINGS_MIGRATION_RU.md) — оригинальные `KuSettings` / `TvSettingsPlus` / `KuSourceRJ`, карта уже реализованных настроек, Binder/JNI и порядок интеграции.
 3. [DELTA_CLASSIFICATION_RU.md](DELTA_CLASSIFICATION_RU.md) — причины различий: аппаратура или обновление программы; уровень уверенности и конкретная стратегия для каждого файла/службы.
-4. [LUMEN_HOME_PORT_RU.md](LUMEN_HOME_PORT_RU.md) — адаптация только UI лаунчера Lumen Home под Android 13/API33, требования и ограничения.
+4. [MEDIATEK_VS_OEM_SERVICES_RU.md](MEDIATEK_VS_OEM_SERVICES_RU.md) — почему MediaTek TV HAL и OEM TRD не являются взаимозаменяемыми; где возможен отказ от OEM-прослойки.
+5. [MT7663_DRIVER_COMPARISON_RU.md](MT7663_DRIVER_COMPARISON_RU.md) — проверенные `vermagic`, зависимости и отличия Wi-Fi модулей из обеих ревизий (ядро 5.15.189).
+6. [LAUNCHER_SELECTION_RU.md](LAUNCHER_SELECTION_RU.md) — простые HOME для Android 13 (AOSP sample, FLauncher), критерии выбора; Google TV/Home не приоритет.
+7. [LUMEN_HOME_PORT_RU.md](LUMEN_HOME_PORT_RU.md) — архивное исследование возможного переноса Lumen Home **для будущего этапа**, сейчас не используем.
 
 ## Краткие решения
 
 - **zxlauncher:** в финальном кастоме удалить после проверки нового HOME, ярлыка Android TV Settings и кнопок пульта.
 - **zxstore:** в финальном кастоме удалить. Не углубляться в его внутреннюю логику за исключением сохранения установки APK и важных ссылок.
 - **TvSettingsPlus:** есть собственное OEM меню `uicustom`, поэтому расширяем существующие Android TV Settings, а не копируем несуществующий UI из лаунчера.
-- **KuSettings:** отдельный APK производителя, пока сохранять; убрать только после подтверждения полного функционального покрытия средствами TV Settings.
+- **KuSettings:** отдельный APK производителя; цель финального кастома — исключить после переноса всех уникальных функций и перенаправления кнопки Settings. До этого сохранять.
 - **KuSourceRJ/RuiAutoFocus/TRD/TvServices/Factory/MediaTek HAL/PMU/GPIO:** оставить штатными аппаратными интерфейсами и различать аппаратный профиль.
-- **Lumen OS:** не портировать систему; потенциально адаптировать только Lumen Home, с проверкой Apache2 LICENSE/NOTICE. Оригинальный `minSdkVersion=34` не совместим с нашим Android 13 SDK33 без изменений.
+- **Lumen OS:** не портировать систему; отложить до отдельного этапа; в первой ревизии выбрать простой Android TV launcher, совместимый с Android 13. Для оригинального Lumen Home нужен API34.
 - **Два образа:** `8052` из подходящей 8052-основы, `8054` из подходящей 8054-основы. Поверх обеих накладывается один набор изменений UI, но не чужой boot/vendor/PMU/DTBO.
 - **Нет выпуска:** пока неизвестна корректная процедура безопасной установки, проверки AVB и восстановления оригинальной системы.
 
