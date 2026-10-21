@@ -1,12 +1,5 @@
 name: Static OEM 8052-8054 deep audit
 on:
-  push:
-    branches: [stock-8052-8054-deep-audit-20261021]
-    paths:
-      - ".github/workflows/stock-deep-audit-8052-8054.yml"
-      - "tools/audit_latest_native_against_8054.py"
-      - "tools/audit_oem_app_impact.py"
-      - "tools/deep_apk_methods.py"
   workflow_dispatch:
 permissions:
   contents: write
