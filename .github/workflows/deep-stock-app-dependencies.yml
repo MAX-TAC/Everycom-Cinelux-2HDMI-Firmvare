@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/deep-stock-app-dependencies.yml"
       - "tools/audit_latest_8052_app_graph.py"
+      - "tools/trace_oem_interactions.py"
   workflow_dispatch:
 
 permissions:
@@ -45,12 +46,14 @@ jobs:
         run: |
           python3 -u tools/audit_latest_8052_app_graph.py > /tmp/apps.log 2>&1 || { tail -n 90 /tmp/apps.log; exit 1; }
           tail -n 80 /tmp/apps.log
+          python3 -u tools/trace_oem_interactions.py > /tmp/chains.log 2>&1 || { tail -n 90 /tmp/chains.log; exit 1; }
+          tail -n 30 /tmp/chains.log
           head -n 40 analysis/Deep_Stock_Audit_20261021/LATEST_8052_APP_GRAPH_RU.md
       - name: Commit source-free dependency documentation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add analysis/Deep_Stock_Audit_20261021/LATEST_8052_APP_GRAPH_RU.md analysis/Deep_Stock_Audit_20261021/latest_8052_app_graph.json
+          git add analysis/Deep_Stock_Audit_20261021/LATEST_8052_APP_GRAPH_RU.md analysis/Deep_Stock_Audit_20261021/latest_8052_app_graph.json analysis/Deep_Stock_Audit_20261021/OEM_INTENT_CALL_CHAINS_RU.md analysis/Deep_Stock_Audit_20261021/oem_intent_call_chains.json
           if ! git diff --cached --quiet; then
             git commit -m "Audit latest 8052 launcher/store and native OEM app dependencies"
             git pull --rebase origin deep-stock-audit-8052-8054-20261021
