@@ -1,0 +1,52 @@
+name: Determine OEM setup versus settings class overlap
+
+on:
+  push:
+    branches: [deep-stock-audit-8052-8054-20261021]
+    paths:
+      - ".github/workflows/audit-oem-setup-overlap.yml"
+      - "tools/analyze_oem_setup_overlap.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  clone-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static Android APK tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils unzip aapt
+          curl -fL --retry 4 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
+          mkdir -p /tmp/jadx-bin /tmp/dumper /tmp/images /tmp/erofs/system/system/app
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/payload.tar.gz
+          tar -xzf /tmp/payload.tar.gz -C /tmp/dumper
+      - name: Download verified latest OTA
+        run: |
+          curl -fL --retry 5 --retry-delay 4 "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/source.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/source.zip" | sha256sum -c -
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system -o /tmp/images /tmp/source.zip > /tmp/payload.log 2>&1 || { tail -n 70 /tmp/payload.log; exit 1; }
+          fsck.erofs --extract="/tmp/erofs/system" /tmp/images/system.img > /tmp/extract.log 2>&1 || { tail -n 70 /tmp/extract.log; exit 1; }
+      - name: Analyze actual setup/settings class overlap
+        run: |
+          python3 -u tools/analyze_oem_setup_overlap.py > /tmp/setup.log 2>&1 || { tail -n 80 /tmp/setup.log; exit 1; }
+          tail -n 25 /tmp/setup.log
+          head -n 90 analysis/Deep_Stock_Audit_20261021/SETUP_VS_SETTINGS_RU.md
+      - name: Commit source-free clone relationship
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Deep_Stock_Audit_20261021/SETUP_VS_SETTINGS_RU.md analysis/Deep_Stock_Audit_20261021/setup_settings_overlap.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Document current stock setup wizard vs settings bytecode overlap"
+            git pull --rebase origin deep-stock-audit-8052-8054-20261021
+            git push origin HEAD:deep-stock-audit-8052-8054-20261021
+          fi
