@@ -1,11 +1,6 @@
 name: Deep diff latest launcher store and setup APKs versus 8054
 
 on:
-  push:
-    branches: [deep-stock-audit-8052-8054-20261021]
-    paths:
-      - ".github/workflows/diff-oem-user-apks.yml"
-      - "tools/diff_8052_8054_launcher_store_setup.py"
   workflow_dispatch:
 
 permissions:
