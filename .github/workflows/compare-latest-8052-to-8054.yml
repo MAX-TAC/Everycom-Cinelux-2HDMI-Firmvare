@@ -6,10 +6,12 @@ on:
     paths:
       - ".github/workflows/compare-latest-8052-to-8054.yml"
       - "tools/compare_8052_ota_8054_stock.py"
+      - "tools/diff_latest_8052_config_defaults.py"
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
   compare:
@@ -47,11 +49,19 @@ jobs:
           test -s /tmp/images/bootdata.img
           test -s /tmp/images/dtbo.img
           df -h /tmp
+      - name: Download verified stock 8054 config artifact from prior research
+        uses: actions/download-artifact@v4
+        with:
+          name: stock-board-8054
+          run-id: 39452884650
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/stock-8054
       - name: Compare latest OTA against archived stock 8054 metadata
         run: |
           python3 -u tools/compare_8052_ota_8054_stock.py --images /tmp/images --erofs /tmp/erofs \
             > /tmp/compare.log 2>&1 || { tail -n 100 /tmp/compare.log; exit 1; }
           cat /tmp/compare.log
+          python3 -u tools/diff_latest_8052_config_defaults.py
           head -n 75 analysis/Latest_8052_OTA_vs_8054_Stock/README.md
       - name: Publish only metadata and diff conclusions
         run: |
