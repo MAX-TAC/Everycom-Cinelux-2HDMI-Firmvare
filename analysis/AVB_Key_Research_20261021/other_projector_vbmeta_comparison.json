@@ -1,0 +1,10 @@
+{
+  "device": "Magcubic HY300 (Rockchip RK3326)",
+  "source": "BruBread/ProjectorRoot/backups/vbmeta_orig.img",
+  "image_bytes": 1048576,
+  "key_sha256_from_everycom_8052_8054": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+  "avb0_offset": 0,
+  "avb_algorithm_id": 0,
+  "public_key_length": 0,
+  "comment": "No valid public key slice"
+}
