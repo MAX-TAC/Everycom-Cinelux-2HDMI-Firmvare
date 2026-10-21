@@ -1,0 +1,61 @@
+name: Deep audit KuSetupWizard KuSettings and TvSettingsPlus
+
+on:
+  push:
+    branches: [settings-wizard-debloat-audit-20261021]
+    paths:
+      - ".github/workflows/deep-settings-wizard-20261021.yml"
+      - "tools/deep_settings_wizard_audit_20261021.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deep-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare JADX and read-only EROFS extraction
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils aapt unzip
+          mkdir -p /tmp/jadx-bin /tmp/dumper /tmp/images /tmp/erofs
+          curl -fL --retry 4 "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip" -o /tmp/jadx.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
+          curl -fL --retry 4 "https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz" -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+      - name: Verify stock October 8052 OTA and extract system partitions
+        run: |
+          curl -fL --retry 5 --retry-delay 3 "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip" | sha256sum -c -
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext -o /tmp/images /tmp/ota.zip >/tmp/extract.log 2>&1 || { tail -n 100 /tmp/extract.log; exit 1; }
+          for part in system system_ext; do
+            mkdir -p "/tmp/erofs/$part"
+            fsck.erofs --extract="/tmp/erofs/$part" "/tmp/images/$part.img" >/tmp/$part.log 2>&1 || { tail -n 85 "/tmp/$part.log"; exit 1; }
+          done
+      - name: Compare provisioning apps and index OEM Android TV Settings code and risks
+        run: |
+          python3 -u tools/deep_settings_wizard_audit_20261021.py > /tmp/audit.log 2>&1 || { tail -n 110 /tmp/audit.log; exit 1; }
+          cat /tmp/audit.log
+          head -n 100 analysis/Settings_Wizard_Debloat_20261021/DEEP_SETTINGS_WIZARD_RU.md
+      - name: Commit source-free audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Settings_Wizard_Debloat_20261021/DEEP_SETTINGS_WIZARD_RU.md analysis/Settings_Wizard_Debloat_20261021/deep_settings_wizard_analysis.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish deep OEM setup and Android TV Settings static audit"
+            git pull --rebase origin settings-wizard-debloat-audit-20261021
+            git push origin HEAD:settings-wizard-debloat-audit-20261021
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: latest-8052-deep-settings-wizard
+          path: analysis/Settings_Wizard_Debloat_20261021/
+          retention-days: 30
