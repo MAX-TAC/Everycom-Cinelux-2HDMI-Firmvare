@@ -12,6 +12,8 @@
       "rollback_index": 0,
       "public_key_size": 1032,
       "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+      "rsa_modulus_prefix_hex": "d8165a74a308a133f8e56c5509c85f1a98f39b84ffc313a1ed4a8f813fd68b2e",
+      "rsa_modulus_sha256": "a26fa2e24631b26429bf8a9dcf23b359d5af05efefb842fdca89f9db3c0c5ed6",
       "matches_stock_factory_8052_8054": true,
       "matches_aosp_reference_avb_testkey": false
     },
@@ -24,6 +26,8 @@
       "rollback_index": 0,
       "public_key_size": 1032,
       "public_key_sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe",
+      "rsa_modulus_prefix_hex": "d8165a74a308a133f8e56c5509c85f1a98f39b84ffc313a1ed4a8f813fd68b2e",
+      "rsa_modulus_sha256": "a26fa2e24631b26429bf8a9dcf23b359d5af05efefb842fdca89f9db3c0c5ed6",
       "matches_stock_factory_8052_8054": true,
       "matches_aosp_reference_avb_testkey": false
     }
