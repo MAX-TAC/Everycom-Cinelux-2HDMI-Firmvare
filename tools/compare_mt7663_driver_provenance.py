@@ -17,7 +17,7 @@ for target in target_names:
         sect={}
         for sec in (".text",".rodata",".modinfo",".data",".data.rel.ro"):
             lhs=x["sections"].get(sec);rhs=y["sections"].get(sec)
-            sect[sec]={"same":lhs is not None and rhs is not None and lhs["sha256"]==rhs["sha256"],
+            sect[sec]={"same":lhs["sha256"]==rhs["sha256"] if lhs is not None and rhs is not None else None,
                        "size_8052":lhs["bytes"] if lhs else None,
                        "size_8054":rhs["bytes"] if rhs else None}
         common=set(x.get("functions",{}))&set(y.get("functions",{}))
@@ -34,7 +34,7 @@ out=Path("analysis/Stock_Custom_Architecture_20261021")
 lines=["# Исходный драйвер MT7663 и альтернативные Wi-Fi модули: сравнительная метаинформация","",
 "Сравнение SHA-верифицированной октябрьской OTA 8052.1.0.4 и сентябрьской заводской 8054.1.0.1.",
 "Источник: два успешных job инвентаризации ELF (run 39574844708), без запуска модулей.",
-"**Наличие модуля в образе не означает его загрузку на конкретном устройстве.**",
+"**Наличие модуля в образе не означает его загрузку на конкретном устройстве.** По vermagic все исследованные модули собраны для 5.15.189-android13-8, но разными коммитами ядра: 8052 g887c38a79694, 8054 g9d1556453fde. Уточнить фактически запущенное ядро на устройстве.",
 "",
 "| Модуль | Полный файл совпадает? | Машинный код (.text) совпадает? | Константы (.rodata) совпадают? | .modinfo совпадает? | Общих функций / разный код |",
 "|---|---|---|---|---|---|"]
@@ -49,7 +49,7 @@ for r in results["modules"]:
             "- Текст version/vermagic/depends/srcversion из .modinfo 8052: "+(str(r["modinfo_8052"]) if r["modinfo_8052"] else "нет извлечённых полей"),
             "- Те же поля для 8054: "+(str(r["modinfo_8054"]) if r["modinfo_8054"] else "нет извлечённых полей")]
 lines+=["","## Источники возможного обновления","",
-"- Mainline Linux mt76/mt7615 supports MT7663 over PCIe/USB/SDIO, but a generic kernel 6.x module is not an interchangeable replacement for the OEM 5.10 BSP driver.",
+"- Mainline Linux mt76/mt7615 supports MT7663 over PCIe/USB/SDIO, but a generic kernel 6.x module is not an interchangeable replacement for this OEM Android 13 / Linux 5.15.189 BSP driver.",
 "- linux-firmware provides device microcode/firmware; firmware files, kernel Wi-Fi module and Bluetooth driver must be checked separately.",
 "- MediaTek Genio/Yocto announcement in Aug 2026 is *not* proof of Bluetooth restrictions in OEM RUIOS Android 13.",
 "- To choose a newer module: detect real Wi-Fi chip and bus, identify 8052/8054 OEM kernel vermagic/modversions, get compatible source + firmware, confirm WLAN/BT HAL/SELinux/power-management compatibility, then test rollback.",
