@@ -144,6 +144,10 @@ def repackage_animation(stock_zip, out, upscale=False):
             n.startswith(part + "/") and n.lower().endswith((".png", ".jpg", ".jpeg"))
             for part in part_names)]
         assert image_names, "No matching image frames"
+        # Optional trim.txt is needed for correctly displaying cropped frames.
+        aux_names = [n for n in members if any(
+            n == part + "/trim.txt" for part in part_names)]
+        assert not (upscale and aux_names), "4K upscale of trimmed frames needs trim-coordinate migration"
         skipped = []
         out.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(out, "w", compression=zipfile.ZIP_STORED, allowZip64=True) as dest:
@@ -152,20 +156,21 @@ def repackage_animation(stock_zip, out, upscale=False):
             for name in members:
                 if name == "desc.txt" or name.endswith("/"):
                     continue
-                if name not in image_names:
+                if name not in image_names and name not in aux_names:
                     skipped.append(name)
-                    continue  # Never copy audio.wav, audio.mp3, vendor extras, etc.
+                    continue  # Never copy audio.wav, audio.mp3, or unrecognized vendor extras.
                 payload = source.read(name)
-                with Image.open(io.BytesIO(payload)) as im:
-                    assert im.size == (width, height), "Unexpected frame dimensions: " + name
-                    if upscale:
-                        im = im.resize(target_size, Image.Resampling.LANCZOS)
-                        b = io.BytesIO()
-                        if name.lower().endswith(".png"):
-                            im.save(b, format="PNG", optimize=True)
-                        else:
-                            im.convert("RGB").save(b, format="JPEG", quality=93)
-                        payload = b.getvalue()
+                if name in image_names:
+                    with Image.open(io.BytesIO(payload)) as im:
+                        assert im.size == (width, height), "Unexpected frame dimensions: " + name
+                        if upscale:
+                            im = im.resize(target_size, Image.Resampling.LANCZOS)
+                            b = io.BytesIO()
+                            if name.lower().endswith(".png"):
+                                im.save(b, format="PNG", optimize=True)
+                            else:
+                                im.convert("RGB").save(b, format="JPEG", quality=93)
+                            payload = b.getvalue()
                 dest.writestr(name, payload)
     assert zipfile.ZipFile(out).testzip() is None
     return {"original_header": [width, height, fps],
