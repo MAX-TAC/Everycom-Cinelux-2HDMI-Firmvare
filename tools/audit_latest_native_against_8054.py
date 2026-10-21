@@ -47,7 +47,8 @@ for name in common:
 only_ota=sorted(N.keys()-S.keys());only_stock=sorted(S.keys()-N.keys())
 CHUNKS=["boot","mboot","optee","dtbo","vbmeta","vbmeta_system","linux_rootfs","tvservice","tvconfig","bootdata","factory","persist","super","armfw","project_id","3rd"]
 def parkey(stem):
-    return stem[:-2] if stem.endswith("_a") else stem
+    while stem.endswith("_a"):stem=stem[:-2]
+    return stem
 SP={parkey(k):v for k,v in stock_parts.items() if isinstance(v,dict)}
 images={}
 import hashlib
@@ -62,7 +63,7 @@ for img in sorted(a.ota_images.glob("*.img")):
             "ota_bytes":img.stat().st_size,"factory8054_bytes":x["size"]}
     elif name in CHUNKS:
         images[name]={"ota_present":True,"factory_comparable":False}
-core=r"(tof|motor|camera|focus|hdmi|cec|audio|mi_|mstar|mtk|display|tvservice|trd|project|drm|boot|keystone|pmu|panel|source)"
+core=r"(tof|motor|camera|focus|hdmi|cec|audio|mi_|mstar|mediatek|mtk|display|tvservice|trd|project|drm|boot|keystone|pmu|panel|source)"
 high=[r for r in changed if re.search(core,r["path"],re.I)]
 critical_code=[x for x in high if x["classification"]=="executable_text_differs"]
 summary={"total_ota_elf":len(N),"total_factory_elf":len(S),"matched":len(common),"only_ota":len(only_ota),
