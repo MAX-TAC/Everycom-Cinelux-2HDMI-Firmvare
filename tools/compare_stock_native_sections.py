@@ -30,6 +30,12 @@ for name in common:
     sx,sy=x.get("functions",{}),y.get("functions",{})
     symnames=set(sx)&set(sy)
     changed=[k for k in sorted(symnames) if sx[k]["sha256"]!=sy[k]["sha256"]]
+    opcode_changed=[k for k in changed if sx[k].get("opcode_only_sha256") and
+                    sy[k].get("opcode_only_sha256") and
+                    sx[k]["opcode_only_sha256"]!=sy[k]["opcode_only_sha256"]]
+    opcode_same=[k for k in changed if sx[k].get("opcode_only_sha256") and
+                    sy[k].get("opcode_only_sha256") and
+                    sx[k]["opcode_only_sha256"]==sy[k]["opcode_only_sha256"]]
     record={"path":name,"kind":case,"section_status":{
         sec:{"ota_size":x["sections"].get(sec,{}).get("bytes"),"stock_size":y["sections"].get(sec,{}).get("bytes"),
              "same_hash":equal_section(sec)}
@@ -39,6 +45,10 @@ for name in common:
                "needed_only_ota":sorted(set(x["deps"])-set(y["deps"]))},
         "functions":{"common_named":len(symnames),"changed_named_count":len(changed),
                      "changed_named_sample":changed[:140],
+                     "opcode_changed_count":len(opcode_changed),
+                     "opcode_same_but_bytes_changed_count":len(opcode_same),
+                     "opcode_changed_sample":opcode_changed[:120],
+                     "opcode_same_sample":opcode_same[:100],
                      "only_stock":sorted(set(sy)-set(sx))[:80],
                      "only_ota":sorted(set(sx)-set(sy))[:80]},
         "hardware_relevant":bool(hardware.search(name))}
@@ -72,7 +82,9 @@ for c in focus:
             "- .text sizes OTA / stock: "+str(c["section_status"][".text"]["ota_size"])+"/"+str(c["section_status"][".text"]["stock_size"]),
             "- Named functions common / changed: "+str(c["functions"]["common_named"])+"/"+str(c["functions"]["changed_named_count"]),
             "- Dynamic dependency set changed: "+str(bool(c["abi"]["needed_only_stock"] or c["abi"]["needed_only_ota"])),
-            "- Changed exported function examples:"]
+            "- Changed exported function examples:",
+            "- Different disassembled mnemonic sequences: "+str(c["functions"]["opcode_changed_count"]),
+            "- Identical mnemonic sequence despite code byte changes: "+str(c["functions"]["opcode_same_but_bytes_changed_count"])]
     lines.extend("- "+tick+z.replace(tick,"")+tick for z in c["functions"]["changed_named_sample"][:30])
     if not c["functions"]["changed_named_sample"]:lines.append("- Not available, possibly stripped binary.")
 lines+=["","## Confidence and next steps","",
