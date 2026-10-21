@@ -1,0 +1,1610 @@
+{
+  "baseline": "AOSP TvSettings android-13.0.0_r56 (reference ONLY; not proven OEM parent)",
+  "aosp_java_classes": 475,
+  "oem_java_classes": 987,
+  "both_paths": 475,
+  "aosp_only": 0,
+  "oem_only": 512,
+  "oem_path_group_counts": {
+    "device": 9,
+    "partnercustomizer": 164,
+    "library": 189,
+    "uicustom": 142,
+    "top-level": 5,
+    "users": 1,
+    "accessories": 1,
+    "util": 1
+  },
+  "aosp_path_group_counts": {},
+  "method_surface_changes": [
+    {
+      "class": "TvSettingsActivity.java",
+      "shared_methods": 17,
+      "aosp_only": [
+        "notifyUpdate",
+        "notifyUpdateAll",
+        "notifyUpdateScreenTitle"
+      ],
+      "oem_only": [
+        "accept",
+        "run",
+        "test"
+      ],
+      "aosp_total": 20,
+      "oem_total": 20
+    },
+    {
+      "class": "dialog/old/LiteFragment.java",
+      "shared_methods": 0,
+      "aosp_only": [
+        "getActivity",
+        "getArguments",
+        "getResources",
+        "getView",
+        "isAdded",
+        "startActivity"
+      ],
+      "oem_only": [],
+      "aosp_total": 6,
+      "oem_total": 0
+    },
+    {
+      "class": "dialog/PinDialogFragment.java",
+      "shared_methods": 31,
+      "aosp_only": [
+        "dispatchOnIsPinSet"
+      ],
+      "oem_only": [
+        "accept",
+        "onFocusChange",
+        "onKey",
+        "run"
+      ],
+      "aosp_total": 32,
+      "oem_total": 35
+    },
+    {
+      "class": "system/development/DevelopmentFragment.java",
+      "shared_methods": 116,
+      "aosp_only": [
+        "updateAudioRecordingMetrics"
+      ],
+      "oem_only": [
+        "accept",
+        "apply",
+        "onUpdateMetrics",
+        "run"
+      ],
+      "aosp_total": 117,
+      "oem_total": 120
+    },
+    {
+      "class": "connectivity/NetworkConfiguration.java",
+      "shared_methods": 0,
+      "aosp_only": [
+        "getIpConfiguration",
+        "getPrintableName",
+        "save",
+        "setIpConfiguration"
+      ],
+      "oem_only": [],
+      "aosp_total": 4,
+      "oem_total": 0
+    },
+    {
+      "class": "dialog/old/ActionAdapter.java",
+      "shared_methods": 25,
+      "aosp_only": [
+        "onActionClicked",
+        "onActionFocused",
+        "onActionSelect",
+        "onActionUnselect"
+      ],
+      "oem_only": [],
+      "aosp_total": 29,
+      "oem_total": 25
+    },
+    {
+      "class": "SettingsPreferenceFragment.java",
+      "shared_methods": 21,
+      "aosp_only": [],
+      "oem_only": [
+        "onChanged",
+        "onLayoutChange",
+        "onTouch"
+      ],
+      "aosp_total": 21,
+      "oem_total": 24
+    },
+    {
+      "class": "accessories/AddAccessoryActivity.java",
+      "shared_methods": 33,
+      "aosp_only": [],
+      "oem_only": [
+        "onComplete",
+        "run",
+        "test"
+      ],
+      "aosp_total": 33,
+      "oem_total": 36
+    },
+    {
+      "class": "accessories/BluetoothA2dpConnector.java",
+      "shared_methods": 7,
+      "aosp_only": [
+        "failed",
+        "handleMessage",
+        "succeeded"
+      ],
+      "oem_only": [],
+      "aosp_total": 10,
+      "oem_total": 7
+    },
+    {
+      "class": "accessories/BluetoothDevicesService.java",
+      "shared_methods": 14,
+      "aosp_only": [
+        "onDeviceUpdated"
+      ],
+      "oem_only": [
+        "accept",
+        "run"
+      ],
+      "aosp_total": 15,
+      "oem_total": 16
+    },
+    {
+      "class": "autofill/AutofillPickerFragment.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick",
+        "onShow",
+        "run"
+      ],
+      "aosp_total": 8,
+      "oem_total": 11
+    },
+    {
+      "class": "compat/PreferenceControllerFragmentCompat.java",
+      "shared_methods": 21,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [
+        "accept",
+        "onTouch"
+      ],
+      "aosp_total": 22,
+      "oem_total": 23
+    },
+    {
+      "class": "device/storage/ClearCachedDataPreference.java",
+      "shared_methods": 14,
+      "aosp_only": [
+        "clearCache"
+      ],
+      "oem_only": [
+        "apply",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 15,
+      "oem_total": 16
+    },
+    {
+      "class": "inputmethod/KeyboardFragment.java",
+      "shared_methods": 17,
+      "aosp_only": [
+        "updatePhysicalKeyboards"
+      ],
+      "oem_only": [
+        "onPreferenceChange",
+        "run"
+      ],
+      "aosp_total": 18,
+      "oem_total": 19
+    },
+    {
+      "class": "privacy/SensorFragment.java",
+      "shared_methods": 12,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick",
+        "onSensorPrivacyChanged",
+        "run"
+      ],
+      "aosp_total": 12,
+      "oem_total": 15
+    },
+    {
+      "class": "ActionDisabledByAdminDialogHelper.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "getEnforcementAdminUserId",
+        "onClick"
+      ],
+      "aosp_total": 3,
+      "oem_total": 5
+    },
+    {
+      "class": "MainFragment.java",
+      "shared_methods": 28,
+      "aosp_only": [],
+      "oem_only": [
+        "onConnectivityChange",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 28,
+      "oem_total": 30
+    },
+    {
+      "class": "accessories/AccessoryUtils.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "call",
+        "onBluetoothManagerInitialized"
+      ],
+      "aosp_total": 11,
+      "oem_total": 13
+    },
+    {
+      "class": "accounts/AccountsFragment.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onAccountsUpdate",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 11,
+      "oem_total": 13
+    },
+    {
+      "class": "compat/RenderUtil.java",
+      "shared_methods": 14,
+      "aosp_only": [],
+      "oem_only": [
+        "accept",
+        "test"
+      ],
+      "aosp_total": 14,
+      "oem_total": 16
+    },
+    {
+      "class": "connectivity/ConnectivityListener.java",
+      "shared_methods": 36,
+      "aosp_only": [],
+      "oem_only": [
+        "execute",
+        "onInterfaceStateChanged"
+      ],
+      "aosp_total": 36,
+      "oem_total": 38
+    },
+    {
+      "class": "connectivity/NetworkFragment.java",
+      "shared_methods": 21,
+      "aosp_only": [],
+      "oem_only": [
+        "accept",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 21,
+      "oem_total": 23
+    },
+    {
+      "class": "connectivity/NetworkRequestDialogFragment.java",
+      "shared_methods": 26,
+      "aosp_only": [],
+      "oem_only": [
+        "onItemClick",
+        "onShow"
+      ],
+      "aosp_total": 26,
+      "oem_total": 28
+    },
+    {
+      "class": "connectivity/WifiDetailsFragment.java",
+      "shared_methods": 15,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 15,
+      "oem_total": 17
+    },
+    {
+      "class": "device/apps/specialaccess/NotificationAccess.java",
+      "shared_methods": 7,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange",
+        "onServicesReloaded"
+      ],
+      "aosp_total": 7,
+      "oem_total": 9
+    },
+    {
+      "class": "device/apps/specialaccess/NotificationAccessCompat.java",
+      "shared_methods": 3,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 4,
+      "oem_total": 4
+    },
+    {
+      "class": "device/apps/specialaccess/SpecialAccessControllerFragmentCompat.java",
+      "shared_methods": 1,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 2,
+      "oem_total": 2
+    },
+    {
+      "class": "device/display/daydream/EnergySaverFragment.java",
+      "shared_methods": 15,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 15,
+      "oem_total": 17
+    },
+    {
+      "class": "device/displaysound/RadioPreferencesFragmentCompat.java",
+      "shared_methods": 1,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 2,
+      "oem_total": 2
+    },
+    {
+      "class": "device/storage/AllAppsSession.java",
+      "shared_methods": 17,
+      "aosp_only": [],
+      "oem_only": [
+        "compare",
+        "test"
+      ],
+      "aosp_total": 17,
+      "oem_total": 19
+    },
+    {
+      "class": "device/storage/FreeUpStorageFragment.java",
+      "shared_methods": 4,
+      "aosp_only": [],
+      "oem_only": [
+        "apply",
+        "onUpdateAppList"
+      ],
+      "aosp_total": 4,
+      "oem_total": 6
+    },
+    {
+      "class": "deviceadmin/DeviceAdminAdd.java",
+      "shared_methods": 14,
+      "aosp_only": [],
+      "oem_only": [
+        "run",
+        "test"
+      ],
+      "aosp_total": 14,
+      "oem_total": 16
+    },
+    {
+      "class": "deviceadmin/DeviceAdminListPreferenceController.java",
+      "shared_methods": 14,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 14,
+      "oem_total": 16
+    },
+    {
+      "class": "enterprise/EnterpriseSetDefaultAppsListPreferenceController.java",
+      "shared_methods": 6,
+      "aosp_only": [
+        "updateUi"
+      ],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 7,
+      "oem_total": 7
+    },
+    {
+      "class": "inputmethod/AvailableVirtualKeyboardFragmentCompat.java",
+      "shared_methods": 3,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 4,
+      "oem_total": 4
+    },
+    {
+      "class": "system/LanguageFragmentCompat.java",
+      "shared_methods": 3,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 4,
+      "oem_total": 4
+    },
+    {
+      "class": "system/LocationFragment.java",
+      "shared_methods": 15,
+      "aosp_only": [],
+      "oem_only": [
+        "apply",
+        "onPreferenceClick"
+      ],
+      "aosp_total": 15,
+      "oem_total": 17
+    },
+    {
+      "class": "system/development/LogpersistPreferenceController.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick",
+        "onDismiss"
+      ],
+      "aosp_total": 3,
+      "oem_total": 5
+    },
+    {
+      "class": "widget/ScrollAdapterBase.java",
+      "shared_methods": 0,
+      "aosp_only": [
+        "getScrapView",
+        "viewRemoved"
+      ],
+      "oem_only": [],
+      "aosp_total": 2,
+      "oem_total": 0
+    },
+    {
+      "class": "widget/ScrollAdapterView.java",
+      "shared_methods": 140,
+      "aosp_only": [
+        "onItemSelected",
+        "onScrolled"
+      ],
+      "oem_only": [],
+      "aosp_total": 142,
+      "oem_total": 140
+    },
+    {
+      "class": "RestrictedSettingsFragment.java",
+      "shared_methods": 20,
+      "aosp_only": [],
+      "oem_only": [
+        "onDismiss"
+      ],
+      "aosp_total": 20,
+      "oem_total": 21
+    },
+    {
+      "class": "SuggestionQuickSettingPrefsContainer.java",
+      "shared_methods": 4,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 4,
+      "oem_total": 5
+    },
+    {
+      "class": "about/AboutFragment.java",
+      "shared_methods": 16,
+      "aosp_only": [],
+      "oem_only": [
+        "apply"
+      ],
+      "aosp_total": 16,
+      "oem_total": 17
+    },
+    {
+      "class": "about/LegalFragment.java",
+      "shared_methods": 4,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick"
+      ],
+      "aosp_total": 4,
+      "oem_total": 5
+    },
+    {
+      "class": "about/RebootConfirmFragment.java",
+      "shared_methods": 7,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 7,
+      "oem_total": 8
+    },
+    {
+      "class": "accessibility/AccessibilityFragment.java",
+      "shared_methods": 7,
+      "aosp_only": [],
+      "oem_only": [
+        "onAccessibilityStateChanged"
+      ],
+      "aosp_total": 7,
+      "oem_total": 8
+    },
+    {
+      "class": "accessibility/AccessibilityFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "accessibility/AccessibilityServiceFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "accessibility/AccessibilityShortcutFragment.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "accessibility/AccessibilityShortcutFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 2,
+      "oem_total": 3
+    },
+    {
+      "class": "accessibility/AccessibilityShortcutServiceFragment.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "accessibility/AccessibilityShortcutServiceFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "accessories/AccessoriesFragment.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "getImageIdForDevice"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "accessories/ConnectedDevicesSliceProvider.java",
+      "shared_methods": 22,
+      "aosp_only": [],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 22,
+      "oem_total": 23
+    },
+    {
+      "class": "accounts/AccountSyncFragment.java",
+      "shared_methods": 22,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 22,
+      "oem_total": 23
+    },
+    {
+      "class": "accounts/AccountsUtil.java",
+      "shared_methods": 1,
+      "aosp_only": [],
+      "oem_only": [
+        "getAccountsFragmentToLaunch"
+      ],
+      "aosp_total": 1,
+      "oem_total": 2
+    },
+    {
+      "class": "connectivity/ActiveNetworkProvider.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "apply"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "connectivity/EditIpSettingsActivity.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "onFinish"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "connectivity/EditProxySettingsActivity.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "onFinish"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "connectivity/EthernetConfig.java",
+      "shared_methods": 4,
+      "aosp_only": [],
+      "oem_only": [
+        "execute"
+      ],
+      "aosp_total": 4,
+      "oem_total": 5
+    },
+    {
+      "class": "connectivity/NetworkFragmentCompat.java",
+      "shared_methods": 6,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 7,
+      "oem_total": 6
+    },
+    {
+      "class": "connectivity/NetworkRequestErrorDialogFragment.java",
+      "shared_methods": 4,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick"
+      ],
+      "aosp_total": 4,
+      "oem_total": 5
+    },
+    {
+      "class": "connectivity/setup/EnterPasswordState.java",
+      "shared_methods": 16,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick"
+      ],
+      "aosp_total": 16,
+      "oem_total": 17
+    },
+    {
+      "class": "connectivity/setup/SelectFromListWizardFragment.java",
+      "shared_methods": 33,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreDraw"
+      ],
+      "aosp_total": 33,
+      "oem_total": 34
+    },
+    {
+      "class": "connectivity/util/StateMachine.java",
+      "shared_methods": 13,
+      "aosp_only": [],
+      "oem_only": [
+        "onComplete"
+      ],
+      "aosp_total": 13,
+      "oem_total": 14
+    },
+    {
+      "class": "connectivity/util/WifiSecurityUtil.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "isEnhancedOpen"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "device/apps/AllAppsFragment.java",
+      "shared_methods": 26,
+      "aosp_only": [],
+      "oem_only": [
+        "test"
+      ],
+      "aosp_total": 26,
+      "oem_total": 27
+    },
+    {
+      "class": "device/apps/AllAppsFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "device/apps/AppManagementFragment.java",
+      "shared_methods": 29,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 29,
+      "oem_total": 30
+    },
+    {
+      "class": "device/apps/AppsFragment.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "device/apps/ClearCachePreference.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "device/apps/ClearDataPreference.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "device/apps/ClearDefaultsPreference.java",
+      "shared_methods": 5,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 5,
+      "oem_total": 6
+    },
+    {
+      "class": "device/apps/EnableDisablePreference.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "device/apps/ForceStopPreference.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "device/apps/UninstallPreference.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "device/apps/specialaccess/AlarmsAndReminders.java",
+      "shared_methods": 10,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 10,
+      "oem_total": 11
+    },
+    {
+      "class": "device/apps/specialaccess/AllFilesAccess.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "device/apps/specialaccess/AppUsageAccess.java",
+      "shared_methods": 10,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 10,
+      "oem_total": 11
+    },
+    {
+      "class": "device/apps/specialaccess/ExternalSources.java",
+      "shared_methods": 12,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 12,
+      "oem_total": 13
+    },
+    {
+      "class": "device/apps/specialaccess/HighPower.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "device/apps/specialaccess/PictureInPicture.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "device/apps/specialaccess/SystemAlertWindow.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "device/apps/specialaccess/TurnScreenOn.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "device/apps/specialaccess/WriteSettings.java",
+      "shared_methods": 10,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceChange"
+      ],
+      "aosp_total": 10,
+      "oem_total": 11
+    },
+    {
+      "class": "device/display/daydream/DaydreamFragment.java",
+      "shared_methods": 17,
+      "aosp_only": [],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 17,
+      "oem_total": 18
+    },
+    {
+      "class": "device/displaysound/AdvancedVolumeFragment.java",
+      "shared_methods": 23,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 23,
+      "oem_total": 24
+    },
+    {
+      "class": "device/displaysound/AdvancedVolumeFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "device/displaysound/HdrFormatSelectionFragment.java",
+      "shared_methods": 25,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 25,
+      "oem_total": 26
+    },
+    {
+      "class": "device/displaysound/HdrFormatSelectionFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "device/storage/BackupAppsStepFragment.java",
+      "shared_methods": 21,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 21,
+      "oem_total": 22
+    },
+    {
+      "class": "device/storage/ForgetPrivateConfirmFragment.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "device/storage/FormatAsPrivateStepFragment.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "device/storage/FormatAsPublicStepFragment.java",
+      "shared_methods": 4,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 4,
+      "oem_total": 5
+    },
+    {
+      "class": "device/storage/MoveAppStepFragment.java",
+      "shared_methods": 5,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 5,
+      "oem_total": 6
+    },
+    {
+      "class": "device/storage/NewStorageActivity.java",
+      "shared_methods": 13,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 13,
+      "oem_total": 14
+    },
+    {
+      "class": "device/storage/SlowDriveStepFragment.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "device/storage/StorageSummaryFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "device/storage/StorageUninstallAppsFragment.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "device/storage/UnmountActivity.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateGuidance"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "dialog/ProgressDialogFragment.java",
+      "shared_methods": 10,
+      "aosp_only": [],
+      "oem_only": [
+        "onCreateView"
+      ],
+      "aosp_total": 10,
+      "oem_total": 11
+    },
+    {
+      "class": "enterprise/AdminGrantedPermissionsPreferenceControllerBase.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onNumberOfAppsResult"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "enterprise/EnterpriseInstalledPackagesPreferenceController.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onNumberOfAppsResult"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "inputmethod/AvailableVirtualKeyboardFragment.java",
+      "shared_methods": 7,
+      "aosp_only": [],
+      "oem_only": [
+        "compare"
+      ],
+      "aosp_total": 7,
+      "oem_total": 8
+    },
+    {
+      "class": "inputmethod/KeyboardFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "inputmethod/PhysicalKeyboardHelper.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "compare"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "oemlink/FactoryResetActivity.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onDismiss"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "overlay/FeatureFactoryImpl.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "newSettingsFragment"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "overlay/FeatureFactoryImplTwoPanel.java",
+      "shared_methods": 5,
+      "aosp_only": [],
+      "oem_only": [
+        "newSettingsFragment"
+      ],
+      "aosp_total": 5,
+      "oem_total": 6
+    },
+    {
+      "class": "privacy/PhysicalPrivacyUnblockFragment.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "onSensorPrivacyChanged"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "privacy/PrivacyFragment.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onPreferenceClick"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "privacy/SensorFragmentCompat.java",
+      "shared_methods": 5,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 6,
+      "oem_total": 5
+    },
+    {
+      "class": "privacy/SensorToggleInfoFragment.java",
+      "shared_methods": 5,
+      "aosp_only": [],
+      "oem_only": [
+        "onSensorPrivacyChanged"
+      ],
+      "aosp_total": 5,
+      "oem_total": 6
+    },
+    {
+      "class": "suggestions/SuggestionPreference.java",
+      "shared_methods": 3,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick"
+      ],
+      "aosp_total": 3,
+      "oem_total": 4
+    },
+    {
+      "class": "system/DateTimeFragment.java",
+      "shared_methods": 16,
+      "aosp_only": [],
+      "oem_only": [
+        "accept"
+      ],
+      "aosp_total": 16,
+      "oem_total": 17
+    },
+    {
+      "class": "system/DateTimeFragmentCompat.java",
+      "shared_methods": 3,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 4,
+      "oem_total": 3
+    },
+    {
+      "class": "system/FallbackHome.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "isValidPackageName"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "system/LeanbackPickerDialogFragment.java",
+      "shared_methods": 8,
+      "aosp_only": [],
+      "oem_only": [
+        "onClick"
+      ],
+      "aosp_total": 8,
+      "oem_total": 9
+    },
+    {
+      "class": "system/LocationFragmentCompat.java",
+      "shared_methods": 2,
+      "aosp_only": [
+        "updatePref"
+      ],
+      "oem_only": [],
+      "aosp_total": 3,
+      "oem_total": 2
+    },
+    {
+      "class": "system/SecurityFragment.java",
+      "shared_methods": 25,
+      "aosp_only": [],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 25,
+      "oem_total": 26
+    },
+    {
+      "class": "system/TtsEngineSettingsFragment.java",
+      "shared_methods": 20,
+      "aosp_only": [],
+      "oem_only": [
+        "compare"
+      ],
+      "aosp_total": 20,
+      "oem_total": 21
+    },
+    {
+      "class": "system/development/WirelessDebuggingFragment.java",
+      "shared_methods": 34,
+      "aosp_only": [],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 34,
+      "oem_total": 35
+    },
+    {
+      "class": "users/AppRestrictionsFragment.java",
+      "shared_methods": 40,
+      "aosp_only": [],
+      "oem_only": [
+        "apply"
+      ],
+      "aosp_total": 40,
+      "oem_total": 41
+    },
+    {
+      "class": "users/RestrictedProfilePinDialogFragment.java",
+      "shared_methods": 11,
+      "aosp_only": [],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 11,
+      "oem_total": 12
+    },
+    {
+      "class": "widget/PreferenceContentProviderLiveData.java",
+      "shared_methods": 6,
+      "aosp_only": [],
+      "oem_only": [
+        "run"
+      ],
+      "aosp_total": 6,
+      "oem_total": 7
+    },
+    {
+      "class": "widget/ScrollAdapter.java",
+      "shared_methods": 0,
+      "aosp_only": [
+        "getExpandAdapter"
+      ],
+      "oem_only": [],
+      "aosp_total": 1,
+      "oem_total": 0
+    },
+    {
+      "class": "widget/ScrollAdapterCustomAlign.java",
+      "shared_methods": 0,
+      "aosp_only": [
+        "getItemAlignmentExtraOffset"
+      ],
+      "oem_only": [],
+      "aosp_total": 1,
+      "oem_total": 0
+    },
+    {
+      "class": "widget/ScrollAdapterTransform.java",
+      "shared_methods": 0,
+      "aosp_only": [
+        "transform"
+      ],
+      "oem_only": [],
+      "aosp_total": 1,
+      "oem_total": 0
+    }
+  ],
+  "unique_oem_examples": [
+    "EventLogTags.java",
+    "Manifest.java",
+    "PreferenceControllerFragment$$ExternalSyntheticLambda0.java",
+    "PreferenceExUtils.java",
+    "R.java",
+    "accessories/BluetoothA2dpsinkConnector.java",
+    "device/displaysound/HdrFormatPreferenceController$$ExternalSyntheticLambda0.java",
+    "device/displaysound/SoundFormatPreferenceController$$ExternalSyntheticLambda0.java",
+    "device/displaysound/SoundFormatPreferenceController$$ExternalSyntheticLambda1.java",
+    "device/sound/AudioOutputActivity.java",
+    "device/sound/AudioOutputFragment.java",
+    "device/sound/DigitalOutputFragment.java",
+    "device/sound/SoundActivity.java",
+    "device/sound/SoundFragment.java",
+    "device/storage/ClearCachedDataPreference$$ExternalSyntheticLambda3.java",
+    "library/ManagerUtil.java",
+    "library/PreferenceCompat.java",
+    "library/R.java",
+    "library/SettingsManager.java",
+    "library/State.java",
+    "library/UIUpdateCallback.java",
+    "library/about/AboutState.java",
+    "library/about/DevelopmentSettingsEnabler.java",
+    "library/about/DeviceInfoUtils.java",
+    "library/about/DeviceManager.java",
+    "library/about/LegalState.java",
+    "library/about/Utils.java",
+    "library/accessibility/AccessibilityServiceState.java",
+    "library/accessibility/AccessibilityShortcutServiceState.java",
+    "library/accessibility/AccessibilityShortcutState.java",
+    "library/accessibility/AccessibilityState.java",
+    "library/basic/BasicModeFeatureProvider.java",
+    "library/basic/BasicModeFeatureProviderImpl.java",
+    "library/basic/BasicModeFeatureProviderImplX.java",
+    "library/data/Module.java",
+    "library/data/PreferenceCompatManager.java",
+    "library/data/PreferenceControllerState.java",
+    "library/data/StateManager.java",
+    "library/device/apps/AllAppsState.java",
+    "library/device/apps/AppActionPreferenceController.java",
+    "library/device/apps/AppManagementState.java",
+    "library/device/apps/AppStoragePreferenceController.java",
+    "library/device/apps/AppUtils.java",
+    "library/device/apps/ApplicationsState.java",
+    "library/device/apps/AppsState.java",
+    "library/device/apps/ClearCachePreferenceController.java",
+    "library/device/apps/ClearDataPreferenceController.java",
+    "library/device/apps/ClearDefaultsPreferenceController.java",
+    "library/device/apps/EnableDisablePreferenceController.java",
+    "library/device/apps/ForceStopPreferenceController.java",
+    "library/device/apps/InstantAppDataProvider.java",
+    "library/device/apps/InterestingConfigChanges.java",
+    "library/device/apps/NotificationsPreferenceController.java",
+    "library/device/apps/RecentAppsPreferenceController.java",
+    "library/device/apps/UninstallPreferenceController.java",
+    "library/device/apps/specialaccess/AlarmsAndRemindersState.java",
+    "library/device/apps/specialaccess/AppUsageAccessState.java",
+    "library/device/apps/specialaccess/HighPowerState.java",
+    "library/device/apps/specialaccess/ManageAppOpState.java",
+    "library/device/apps/specialaccess/ManageApplicationsController.java",
+    "library/device/apps/specialaccess/NotificationAccessState.java",
+    "library/device/apps/specialaccess/PictureInPictureState.java",
+    "library/device/apps/specialaccess/PowerAllowlistBackend.java",
+    "library/device/apps/specialaccess/ServiceListing.java",
+    "library/device/apps/specialaccess/SpecialAppAccessState.java",
+    "library/device/apps/specialaccess/SystemAlertWindowState.java",
+    "library/device/apps/specialaccess/WriteSettingsState.java",
+    "library/device/display/daydream/ActiveDreamPC.java",
+    "library/device/display/daydream/AllowTurnScreenOffWithWakeLockPC.java",
+    "library/device/display/daydream/DaydreamState.java",
+    "library/device/display/daydream/DreamTimePC.java",
+    "library/device/display/daydream/EnergySaverState.java",
+    "library/device/display/daydream/SleepTimePC.java",
+    "library/device/display/displaysound/AdvancedDisplayState.java",
+    "library/device/display/displaysound/AdvancedVolumeState.java",
+    "library/device/display/displaysound/DisplaySoundState.java",
+    "library/device/display/displaysound/FontScaleState.java",
+    "library/device/display/displaysound/HdrFormatPreferenceController.java",
+    "library/device/display/displaysound/HdrFormatSelectionState.java",
+    "library/device/display/displaysound/MatchContentFrameRateState.java",
+    "library/device/display/displaysound/ResolutionSelectionState.java",
+    "library/device/display/displaysound/SoundFormatPreferenceController.java",
+    "library/device/storage/MissingStorageState.java",
+    "library/device/storage/StorageState.java",
+    "library/device/storage/StorageSummaryState.java",
+    "library/enterprise/AdminActionPreferenceControllerBase.java",
+    "library/enterprise/AdminGrantedCameraPermissionPreferenceController.java",
+    "library/enterprise/AdminGrantedLocationPermissionsPreferenceController.java",
+    "library/enterprise/AdminGrantedMicrophonePermissionPreferenceController.java",
+    "library/enterprise/AdminGrantedPermissionsPreferenceControllerBase.java",
+    "library/enterprise/AlwaysOnVpnCurrentUserPreferenceController.java",
+    "library/enterprise/AlwaysOnVpnManagedProfilePreferenceController.java",
+    "library/enterprise/BugReportsPreferenceController.java",
+    "library/enterprise/CaCertsCurrentUserPreferenceController.java",
+    "library/enterprise/CaCertsManagedProfilePreferenceController.java",
+    "library/enterprise/CaCertsPreferenceControllerBase.java",
+    "library/enterprise/EnterpriseInstalledPackagesPreferenceController.java",
+    "library/enterprise/EnterprisePrivacyFeatureProvider.java",
+    "library/enterprise/EnterprisePrivacyFeatureProviderImpl.java",
+    "library/enterprise/EnterpriseSetDefaultAppsPreferenceController.java",
+    "library/enterprise/FailedPasswordWipeCurrentUserPreferenceController.java",
+    "library/enterprise/FailedPasswordWipeManagedProfilePreferenceController.java",
+    "library/enterprise/FailedPasswordWipePreferenceControllerBase.java",
+    "library/enterprise/GlobalHttpProxyPreferenceController.java",
+    "library/enterprise/ImePreferenceController.java",
+    "library/enterprise/NetworkLogsPreferenceController.java",
+    "library/enterprise/PreferenceCategoryController.java",
+    "library/enterprise/SecurityLogsPreferenceController.java",
+    "library/enterprise/apps/AppCounter.java",
+    "library/enterprise/apps/AppLister.java",
+    "library/enterprise/apps/AppWithAdminGrantedPermissionsCounter.java",
+    "library/enterprise/apps/AppWithAdminGrantedPermissionsLister.java",
+    "library/enterprise/apps/ApplicationFeatureProvider.java",
+    "library/enterprise/apps/ApplicationFeatureProviderImpl.java",
+    "library/enterprise/apps/EnterpriseDefaultApps.java",
+    "library/enterprise/apps/InstalledAppCounter.java",
+    "library/enterprise/apps/InstalledAppLister.java",
+    "library/enterprise/apps/UserAppInfo.java",
+    "library/help/SupportFeatureProvider.java",
+    "library/help/SupportFeatureProviderImpl.java",
+    "library/inputmethod/AvailableVirtualKeyboadState.java",
+    "library/inputmethod/InputMethodPreferenceController.java",
+    "library/inputmethod/KeyboardState.java",
+    "library/network/AccessPoint.java",
+    "library/network/AccessPointPreferenceController.java",
+    "library/network/AddEasyConnectPreferenceController.java",
+    "library/network/AddWifiPreferenceController.java",
+    "library/network/ConnectivityListener.java",
+    "library/network/ForgetNetworkPreferenceController.java",
+    "library/network/IpSettingsPreferenceController.java",
+    "library/network/NetworkModule.java",
+    "library/network/NetworkState.java",
+    "library/network/ProxySettingsPreferenceController.java",
+    "library/network/TimestampedScoredNetwork.java",
+    "library/network/WifiDetailsState.java",
+    "library/network/WifiHelper.java",
+    "library/network/WifiSavedConfigUtils.java",
+    "library/network/WifiTracker.java",
+    "library/network/WifiUtils.java",
+    "library/overlay/FeatureFactory.java",
+    "library/overlay/FeatureFactoryImpl.java",
+    "library/overlay/FeatureFactoryImplTwoPanel.java",
+    "library/overlay/FeatureFactoryImplX.java",
+    "library/overlay/FlavorUtils.java",
+    "library/privacy/LocationModePC.java",
+    "library/privacy/LocationState.java",
+    "library/privacy/PrivacyState.java",
+    "library/privacy/PrivacyToggle.java",
+    "library/privacy/RecentlyAccessedByUtils.java",
+    "library/privacy/SensorState.java",
+    "library/settingslib/AccessibilityUtils.java",
+    "library/settingslib/AutofillHelper.java",
+    "library/settingslib/CandidateInfo.java",
+    "library/settingslib/DefaultAppInfo.java",
+    "library/settingslib/DreamBackend.java",
+    "library/settingslib/InputMethodAndSubtypeUtil.java",
+    "library/settingslib/InputMethodAndSubtypeUtilCompat.java",
+    "library/settingslib/InputMethodHelper.java",
+    "library/settingslib/InputMethodSettingValuesWrapper.java",
+    "library/settingslib/RecentLocationApps.java",
+    "library/settingslib/RestrictedLockUtils.java",
+    "library/settingslib/RestrictedLockUtilsInternal.java",
+    "library/settingslib/StorageMeasurement.java",
+    "library/settingslib/enterprise/ActionDisabledByAdminController.java",
+    "library/settingslib/enterprise/ActionDisabledLearnMoreButtonLauncher.java",
+    "library/settingslib/enterprise/BaseActionDisabledByAdminController.java",
+    "library/settingslib/enterprise/BiometricActionDisabledByAdminController.java",
+    "library/settingslib/enterprise/DeviceAdminStringProvider.java",
+    "library/settingslib/enterprise/FinancedDeviceActionDisabledByAdminController.java",
+    "library/settingslib/enterprise/ManagedDeviceActionDisabledByAdminController.java",
+    "library/startup/startup/StartupVerificationFeatureProvider.java",
+    "library/startup/startup/StartupVerificationFeatureProviderImpl.java",
+    "library/startup/startup/StartupVerificationFeatureProviderImplX.java",
+    "library/system/DateTimeState.java",
+    "library/system/DevelopmentState.java",
+    "library/system/LanguageState.java",
+    "library/system/development/audio/AudioDebug.java",
+    "library/system/development/audio/AudioMetrics.java",
+    "library/system/development/audio/AudioReader.java",
+    "library/system/development/audio/AudioReaderException.java",
+    "library/system/development/audio/WavWriter.java",
+    "library/users/RestrictedProfileModel.java",
+    "library/util/AbstractPreferenceController.java",
+    "library/util/LibUtils.java",
+    "library/util/PreferenceCompatUtils.java",
+    "library/util/ResourcesUtil.java",
+    "library/util/RestrictedPreferenceController.java",
+    "library/util/SliceUtils.java",
+    "library/util/StringUtil.java",
+    "library/util/ThreadUtils.java",
+    "library/util/lifecycle/Lifecycle.java",
+    "library/util/lifecycle/LifecycleObserver.java",
+    "library/util/lifecycle/events/OnAttach.java",
+    "library/util/lifecycle/events/OnCreate.java",
+    "library/util/lifecycle/events/OnCreateOptionsMenu.java",
+    "library/util/lifecycle/events/OnDestroy.java",
+    "library/util/lifecycle/events/OnOptionsItemSelected.java",
+    "library/util/lifecycle/events/OnPause.java",
+    "library/util/lifecycle/events/OnPrepareOptionsMenu.java",
+    "library/util/lifecycle/events/OnResume.java",
+    "library/util/lifecycle/events/OnSaveInstanceState.java",
+    "library/util/lifecycle/events/OnStart.java",
+    "library/util/lifecycle/events/OnStop.java",
+    "library/util/lifecycle/events/SetPreferenceScreen.java",
+    "partnercustomizer/CommonActivity.java",
+    "partnercustomizer/CustomizedContentProvider.java",
+    "partnercustomizer/DisplayAndSoundActivity.java",
+    "partnercustomizer/EnergyCommonActivity.java",
+    "partnercustomizer/MtkPreferenceCategory.java",
+    "partnercustomizer/TvSettingsSliceProvider.java",
+    "partnercustomizer/audio/AudioSettingFragment.java",
+    "partnercustomizer/audiosubtitle/AudioSubtitleFragment.java",
+    "partnercustomizer/date/DateTimeActivity.java",
+    "partnercustomizer/date/DateTimeFragment.java",
+    "partnercustomizer/date/TimeZoneFragment.java",
+    "partnercustomizer/device/Device3RdPrefFragment.java",
+    "partnercustomizer/inputs/CecDeviceListFragment.java",
+    "partnercustomizer/inputs/InputsActivity.java",
+    "partnercustomizer/inputs/InputsFragment.java",
+    "partnercustomizer/multicast/NormalCastActivity.java"
+  ],
+  "aosp_missing_examples": [],
+  "limits": [
+    "JADX is not original source; nested classes and synthetic constructs differ.",
+    "Tag 13_r56 is a known open upstream reference but not established OEM fork commit.",
+    "Method name differences do not prove bugs or behavior changes.",
+    "Only com/android/tv/settings class namespace is compared; OEM MediaTek copied classes outside it are excluded."
+  ]
+}
