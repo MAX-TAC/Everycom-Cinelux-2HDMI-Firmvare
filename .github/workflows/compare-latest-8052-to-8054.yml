@@ -7,6 +7,7 @@ on:
       - ".github/workflows/compare-latest-8052-to-8054.yml"
       - "tools/compare_8052_ota_8054_stock.py"
       - "tools/diff_latest_8052_config_defaults.py"
+      - "tools/diff_latest_8052_autofocus.py"
   workflow_dispatch:
 
 permissions:
@@ -24,6 +25,9 @@ jobs:
           sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
           sudo apt-get update -qq
           sudo apt-get install -y -qq unzip erofs-utils e2fsprogs
+          curl -fL --retry 4 --retry-delay 2 https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
+          mkdir -p /tmp/jadx-bin
+          unzip -q /tmp/jadx.zip -d /tmp/jadx-bin
           mkdir -p /tmp/dumper /tmp/images /tmp/erofs
           curl -fL --retry 4 --retry-delay 3 \
             https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/pd.tar.gz
@@ -56,12 +60,20 @@ jobs:
           run-id: 39452884650
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: /tmp/stock-8054
+      - name: Download verified stock 8054 method hashes from previous JADX run
+        uses: actions/download-artifact@v4
+        with:
+          name: cinelux-apk-methods-two
+          run-id: 39421706994
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/deep-8054
       - name: Compare latest OTA against archived stock 8054 metadata
         run: |
           python3 -u tools/compare_8052_ota_8054_stock.py --images /tmp/images --erofs /tmp/erofs \
             > /tmp/compare.log 2>&1 || { tail -n 100 /tmp/compare.log; exit 1; }
           cat /tmp/compare.log
           python3 -u tools/diff_latest_8052_config_defaults.py
+          python3 -u tools/diff_latest_8052_autofocus.py
           head -n 75 analysis/Latest_8052_OTA_vs_8054_Stock/README.md
       - name: Publish only metadata and diff conclusions
         run: |
