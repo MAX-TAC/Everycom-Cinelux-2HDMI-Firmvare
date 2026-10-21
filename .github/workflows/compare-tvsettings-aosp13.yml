@@ -40,7 +40,8 @@ jobs:
           fsck.erofs --extract="/tmp/erofs/system_ext" /tmp/images/system_ext.img >/tmp/erofs.log 2>&1 || { tail -n 70 /tmp/erofs.log; exit 1; }
           APK=/tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk
           test -f "$APK"
-          /tmp/jadx-bin/bin/jadx --no-res --no-imports --threads-count 4 -d /tmp/tv-jadx "$APK" > /tmp/jadx.log 2>&1 || { tail -n 70 /tmp/jadx.log; exit 1; }
+          /tmp/jadx-bin/bin/jadx --no-res --no-imports --threads-count 4 -d /tmp/tv-jadx "$APK" > /tmp/jadx.log 2>&1 || { echo "JADX non-fatal decompilation warnings:"; tail -n 14 /tmp/jadx.log; }
+          test -d /tmp/tv-jadx/sources/com/android/tv/settings
       - name: Compare source component and method surfaces
         run: |
           python3 -u tools/compare_tvsettings_aosp13_reference.py
