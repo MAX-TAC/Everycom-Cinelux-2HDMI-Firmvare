@@ -54,7 +54,12 @@ final class ThermalProbe {
 
         for (File d : directories("/sys/class/hwmon", "hwmon")) {
             String hwName = safeLabel(readLine(new File(d, "name")), d.getName());
-            File[] files = d.listFiles();
+            File[] files;
+            try {
+                files = d.listFiles();
+            } catch (SecurityException ex) {
+                files = null;
+            }
             if (files == null) {
                 continue;
             }
@@ -96,14 +101,23 @@ final class ThermalProbe {
     }
 
     private static List<File> directories(String parent, String prefix) {
-        File[] found = new File(parent).listFiles();
+        File[] found;
+        try {
+            found = new File(parent).listFiles();
+        } catch (SecurityException ex) {
+            found = null;
+        }
         if (found == null) {
             return Collections.emptyList();
         }
         List<File> result = new ArrayList<>();
         for (File item : found) {
-            if (item.isDirectory() && item.getName().startsWith(prefix)) {
-                result.add(item);
+            try {
+                if (item.isDirectory() && item.getName().startsWith(prefix)) {
+                    result.add(item);
+                }
+            } catch (SecurityException ignored) {
+                // Non-privileged app may not access a particular OEM node.
             }
         }
         Collections.sort(result, Comparator.comparing(File::getName));
