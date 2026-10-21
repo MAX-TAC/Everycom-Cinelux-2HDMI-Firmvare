@@ -1,12 +1,6 @@
 name: Deep stock app dependency and code-risk audit (8052 OTA)
 
 on:
-  push:
-    branches: [deep-stock-audit-8052-8054-20261021]
-    paths:
-      - ".github/workflows/deep-stock-app-dependencies.yml"
-      - "tools/audit_latest_8052_app_graph.py"
-      - "tools/trace_oem_interactions.py"
   workflow_dispatch:
 
 permissions:
