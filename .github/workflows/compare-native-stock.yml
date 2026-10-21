@@ -25,7 +25,7 @@ jobs:
           sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
           sudo apt-get update -qq
           sudo apt-get install -y -qq unar lz4 openssl file e2fsprogs erofs-utils unzip python3-pip
-          python3 -m pip install --break-system-packages pyelftools==0.32
+          python3 -m pip install --break-system-packages pyelftools==0.32 capstone==5.0.6
           mkdir -p /tmp/native/source /tmp/native/original /tmp/native/parts /tmp/native/logical /tmp/native/erofs /tmp/native/report /tmp/native/extracted
       - name: Verify, decrypt and unpack factory 8054
         if: matrix.variant == 'stock8054'
