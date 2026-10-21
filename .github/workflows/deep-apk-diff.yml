@@ -2,6 +2,7 @@ name: Deep APK method comparison for CineLux variants
 
 on:
   push:
+    branches: [main]
     paths:
       - ".github/workflows/deep-apk-diff.yml"
       - "tools/deep_apk_methods.py"
