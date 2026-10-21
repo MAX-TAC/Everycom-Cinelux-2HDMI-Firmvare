@@ -2,9 +2,9 @@
   "file": "tvconfig/platform/data/misc/ConfigDefaultValue.ini",
   "stock_lines": 11265,
   "ota_lines": 11265,
-  "changed_blocks": 14,
-  "added_lines": 14,
-  "removed_lines": 14,
+  "changed_blocks": 12,
+  "added_lines": 12,
+  "removed_lines": 12,
   "changes": [
     {
       "operation": "replace",
@@ -230,44 +230,6 @@
       ],
       "ota_preview": [
         "80,75,50,\\"
-      ],
-      "stock_line_count": 1,
-      "ota_line_count": 1
-    },
-    {
-      "operation": "replace",
-      "stock_line_range": [
-        11077,
-        11077
-      ],
-      "ota_line_range": [
-        11077,
-        11077
-      ],
-      "stock_preview": [
-        "# [redacted]"
-      ],
-      "ota_preview": [
-        "[sensitive key redacted]"
-      ],
-      "stock_line_count": 1,
-      "ota_line_count": 1
-    },
-    {
-      "operation": "replace",
-      "stock_line_range": [
-        11079,
-        11079
-      ],
-      "ota_line_range": [
-        11079,
-        11079
-      ],
-      "stock_preview": [
-        "# [redacted]"
-      ],
-      "ota_preview": [
-        "[sensitive key redacted]"
       ],
       "stock_line_count": 1,
       "ota_line_count": 1

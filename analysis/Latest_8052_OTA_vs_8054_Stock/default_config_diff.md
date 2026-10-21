@@ -3,7 +3,7 @@
 Factory 8054 metadata was extracted from the SHA-verified stock PKG in GitHub Actions run 39452884650.
 October 8052 file was extracted read-only from the verified OTA payload.
 
-Stock lines: 11265; OTA lines: 11265; changed blocks: 14; removed/added lines: 14/14.
+Stock lines: 11265; OTA lines: 11265; changed blocks: 12; removed/added lines: 12/12.
 
 Note: differences in config text can be changed defaults, comments or firmware version updates; not proof of physical board differences.
 
@@ -117,26 +117,10 @@ Stock lines [763, 763], OTA lines [763, 763]
 8052 OTA:
 - 80,75,50,\
 
-### Change 13 (replace)
-Stock lines [11077, 11077], OTA lines [11077, 11077]
-
-8054 stock:
-- # [redacted]
-
-8052 OTA:
-- [sensitive key redacted]
-
-### Change 14 (replace)
-Stock lines [11079, 11079], OTA lines [11079, 11079]
-
-8054 stock:
-- # [redacted]
-
-8052 OTA:
-- [sensitive key redacted]
-
 ## Interpretation
 
+- The repeated changed rows are within InputSourceID[0] through InputSourceID[11]; each relevant row is 70,75,50 in stock 8054 and 80,75,50 in OTA 8052.
+- Exact meaning of that InputSourceID table row is unverified; do not interpret 80/70 as a HDMI port count or brightness unit.
 - Do not swap the entire file across profiles based only on a small diff.
 - Determine which of the changed keys influences input source, picture defaults, brightness and panel calibration before changing values.
 - Read-only static evidence: no GPIO, I2C, flash or display setting was modified.
