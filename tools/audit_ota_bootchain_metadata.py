@@ -54,7 +54,7 @@ for name in ("boot","mboot","optee","vbmeta","vbmeta_system","dtbo","armfw"):
     if name.startswith("vbmeta"):rec["avb"]=avb(f)
     if name=="boot":rec["is_android_boot_image"]=head.startswith(b"ANDROID!")
     if name=="dtbo" and head.startswith(bytes.fromhex("d7b7ab1e")):
-        rec["dtbo_entries"]=be32(head,20)
+        rec["dtbo_entries"]=be32(head,16)
     if name in ("mboot","optee"):
         # A keyword hit is an indication of embedded diagnostics only,
         # not proof that a command or feature can be invoked on real hardware.
