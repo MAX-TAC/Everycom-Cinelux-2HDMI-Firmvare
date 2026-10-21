@@ -1,0 +1,72 @@
+name: Compare October 8052 OTA to September 8054 factory
+
+on:
+  push:
+    branches: [latest-8052-vs-stock-8054-20261021]
+    paths:
+      - ".github/workflows/compare-latest-8052-to-8054.yml"
+      - "tools/compare_8052_ota_8054_stock.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only file system and payload tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip erofs-utils e2fsprogs
+          mkdir -p /tmp/dumper /tmp/images /tmp/erofs
+          curl -fL --retry 4 --retry-delay 3 \
+            https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/pd.tar.gz
+          tar -xzf /tmp/pd.tar.gz -C /tmp/dumper
+      - name: Download original SHA-verified RUIOS OTA for 8052
+        run: |
+          curl -fL --retry 5 --retry-delay 4 \
+            "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" \
+            -o /tmp/ota8052.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota8052.zip" | sha256sum -c -
+      - name: Read signed payload and extract relevant partitions
+        run: |
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          test -n "$BIN"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext,vendor,tvconfig,bootdata,dtbo -o /tmp/images /tmp/ota8052.zip > /tmp/payload.log 2>&1 || { tail -n 90 /tmp/payload.log; exit 1; }
+          for name in system system_ext vendor; do
+            test -s "/tmp/images/$name.img"
+            mkdir -p "/tmp/erofs/$name"
+            fsck.erofs --extract="/tmp/erofs/$name" "/tmp/images/$name.img" > "/tmp/$name.log" 2>&1 || { tail -n 50 "/tmp/$name.log"; exit 1; }
+          done
+          test -s /tmp/images/tvconfig.img
+          test -s /tmp/images/bootdata.img
+          test -s /tmp/images/dtbo.img
+          df -h /tmp
+      - name: Compare latest OTA against archived stock 8054 metadata
+        run: |
+          python3 -u tools/compare_8052_ota_8054_stock.py --images /tmp/images --erofs /tmp/erofs \
+            > /tmp/compare.log 2>&1 || { tail -n 100 /tmp/compare.log; exit 1; }
+          cat /tmp/compare.log
+          head -n 75 analysis/Latest_8052_OTA_vs_8054_Stock/README.md
+      - name: Publish only metadata and diff conclusions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Latest_8052_OTA_vs_8054_Stock/
+          if ! git diff --cached --quiet; then
+            git commit -m "Compare 8052 latest OTA config and OEM bytecode to original 8054 factory"
+            git pull --rebase origin latest-8052-vs-stock-8054-20261021
+            git push origin HEAD:latest-8052-vs-stock-8054-20261021
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: latest-8052-vs-stock-8054-report
+          path: analysis/Latest_8052_OTA_vs_8054_Stock/
+          if-no-files-found: warn
+          retention-days: 30
