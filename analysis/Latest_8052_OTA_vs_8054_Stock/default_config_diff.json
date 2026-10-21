@@ -1,0 +1,276 @@
+{
+  "file": "tvconfig/platform/data/misc/ConfigDefaultValue.ini",
+  "stock_lines": 11265,
+  "ota_lines": 11265,
+  "changed_blocks": 14,
+  "added_lines": 14,
+  "removed_lines": 14,
+  "changes": [
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        686,
+        686
+      ],
+      "ota_line_range": [
+        686,
+        686
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        693,
+        693
+      ],
+      "ota_line_range": [
+        693,
+        693
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        700,
+        700
+      ],
+      "ota_line_range": [
+        700,
+        700
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        707,
+        707
+      ],
+      "ota_line_range": [
+        707,
+        707
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        714,
+        714
+      ],
+      "ota_line_range": [
+        714,
+        714
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        721,
+        721
+      ],
+      "ota_line_range": [
+        721,
+        721
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        728,
+        728
+      ],
+      "ota_line_range": [
+        728,
+        728
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        735,
+        735
+      ],
+      "ota_line_range": [
+        735,
+        735
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        742,
+        742
+      ],
+      "ota_line_range": [
+        742,
+        742
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        749,
+        749
+      ],
+      "ota_line_range": [
+        749,
+        749
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        756,
+        756
+      ],
+      "ota_line_range": [
+        756,
+        756
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        763,
+        763
+      ],
+      "ota_line_range": [
+        763,
+        763
+      ],
+      "stock_preview": [
+        "70,75,50,\\"
+      ],
+      "ota_preview": [
+        "80,75,50,\\"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        11077,
+        11077
+      ],
+      "ota_line_range": [
+        11077,
+        11077
+      ],
+      "stock_preview": [
+        "# [redacted]"
+      ],
+      "ota_preview": [
+        "[sensitive key redacted]"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    },
+    {
+      "operation": "replace",
+      "stock_line_range": [
+        11079,
+        11079
+      ],
+      "ota_line_range": [
+        11079,
+        11079
+      ],
+      "stock_preview": [
+        "# [redacted]"
+      ],
+      "ota_preview": [
+        "[sensitive key redacted]"
+      ],
+      "stock_line_count": 1,
+      "ota_line_count": 1
+    }
+  ]
+}
