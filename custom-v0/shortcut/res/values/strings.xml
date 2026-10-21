@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><string name="app_name">Настройки Android TV</string><string name="settings_not_found">Android TV Settings (MainSettings) не найдено. Проверьте наличие штатного TvSettingsPlus.</string><string name="ok">OK</string></resources>
+<resources>
+  <string name="app_name">Настройки Android TV</string>
+  <string name="settings_not_found">Android TV Settings (MainSettings) не найдено. Проверьте наличие штатного TvSettingsPlus.</string>
+  <string name="ok">ОК</string>
+  <string name="thermal_title">Температуры и охлаждение</string>
+  <string name="thermal_warning">Только просмотр. Показания системных датчиков не обязательно относятся к LCD-матрице или LED-источнику. Заводское управление охлаждением не изменяется.</string>
+  <string name="thermal_refresh">Обновить показания</string>
+  <string name="thermal_loading">Чтение доступных датчиков…</string>
+  <string name="thermal_last_update">Обновлено:</string>
+  <string name="thermal_optical">Оптический блок</string>
+  <string name="thermal_lcd">Температура LCD-матрицы</string>
+  <string name="thermal_led">Температура LED-источника</string>
+  <string name="thermal_unconfirmed">Датчик не подтверждён</string>
+  <string name="thermal_sensors">Доступные температурные датчики</string>
+  <string name="thermal_fans">Вентиляторы (тахометр)</string>
+  <string name="thermal_states">Логические состояния охлаждения</string>
+  <string name="thermal_no_data">Нет читаемых значений</string>
+  <string name="thermal_unavailable">Недоступно</string>
+  <string name="thermal_android_state">Термостатус Android:</string>
+  <string name="thermal_footer">Значения RPM отображаются только при наличии fan*_input. Состояние cooling_device — не скорость вращения.</string>
+</resources>
