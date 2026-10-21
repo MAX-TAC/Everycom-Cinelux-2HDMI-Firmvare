@@ -1,0 +1,43 @@
+[
+  {
+    "model": 8052,
+    "index": "https://www.szrjyun.com/ota/android/mt9660/8052/8052_ota.json",
+    "http": 200,
+    "bytes": 862,
+    "sha256": "8e18b7ec48fd4bb1d64ad899f3b0c24572f1270ecb62f3fcc38f0afa03c36a66",
+    "json_type": "dict",
+    "version_mentions": [
+      "RUIOS.8052.1.0.4"
+    ],
+    "firmware_zip_mentions": [
+      "RJMT9660_firmware_8052.zip"
+    ],
+    "top_keys": [
+      "ab_offset",
+      "ab_prop1",
+      "ab_prop2",
+      "ab_prop3",
+      "ab_prop4",
+      "ab_size",
+      "ab_update",
+      "desc1",
+      "desc2",
+      "desc3",
+      "forcepush",
+      "forceselect",
+      "md5",
+      "pushinfo1",
+      "pushinfo2",
+      "pushinfo3",
+      "pushstyle",
+      "size",
+      "url",
+      "ver"
+    ]
+  },
+  {
+    "model": 8054,
+    "index": "https://www.szrjyun.com/ota/android/mt9660/8054/8054_ota.json",
+    "error": "HTTPError: HTTP Error 404: Not Found"
+  }
+]
