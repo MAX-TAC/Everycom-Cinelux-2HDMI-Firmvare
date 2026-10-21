@@ -37,7 +37,7 @@ for item in sorted(a.root.iterdir()):
                             secsha=None
                         else:
                             secsha=hashstr(s.data())
-                        sections[s.name]={"bytes":s.data_size,"sha256":secsha}
+                        sections[s.name]={"bytes":int(s['sh_size']),"sha256":secsha}
                 dynamics=[]
                 sec=elf.get_section_by_name(".dynamic")
                 if sec is not None:
