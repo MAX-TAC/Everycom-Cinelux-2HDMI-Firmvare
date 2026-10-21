@@ -1,0 +1,60 @@
+name: Test unknown 8053 RUIOS OTA against shared AVB vendor public key
+
+on:
+  push:
+    paths:
+      - ".github/workflows/compare-8053-ruios-avb-key.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get verified existing 8053 OTA and extract vbmeta only
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/dumper /tmp/vb
+          curl -fL --retry 5 --retry-delay 3 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8053.zip -o /tmp/ota.zip
+          echo "9ca8276448e79587b82e55cec0cf3da55154b750774f608378f64619c84f556b  /tmp/ota.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+          BIN="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 2 -p vbmeta,vbmeta_system -o /tmp/vb /tmp/ota.zip
+      - name: Compare RSA public key to 8052 and 8054
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          expected="dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe"
+          result={'source':'RUIOS OTA 8053 verified ZIP SHA256', 'reference_key_sha256':expected,'partitions':[]}
+          for name in ['vbmeta','vbmeta_system']:
+              b=(Path('/tmp/vb')/(name+'.img')).read_bytes()
+              assert b[:4]==b'AVB0'
+              auth=int.from_bytes(b[12:20],'big')
+              aux=int.from_bytes(b[20:28],'big')
+              koff=int.from_bytes(b[64:72],'big')
+              klen=int.from_bytes(b[72:80],'big')
+              assert klen>0 and koff+klen<=aux and 256+auth+aux<=len(b)
+              pub=b[256+auth+koff:256+auth+koff+klen]
+              h=hashlib.sha256(pub).hexdigest()
+              result['partitions'].append({'name':name,'algorithm_type':int.from_bytes(b[28:32],'big'),'public_key_sha256':h,'matches_reference_8052_8054':h==expected})
+          out=Path('analysis/AVB_Key_Research_20261021');out.mkdir(parents=True,exist_ok=True)
+          (out/'ota8053_key_compare.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit public-only comparison metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/AVB_Key_Research_20261021/ota8053_key_compare.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Check third RUIOS MT9660 OTA channel for reuse of vendor AVB key"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
