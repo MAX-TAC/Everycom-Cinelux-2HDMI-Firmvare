@@ -1,0 +1,117 @@
+name: Investigate RUIOS Wi-Fi and Ethernet across three images
+
+on:
+  push:
+    branches: [network-diagnostics-8052-8054-20261021]
+    paths:
+      - ".github/workflows/network-regression-8052.yml"
+      - "tools/inventory_cinelux_network_drivers.py"
+      - "tools/compare_cinelux_network_images.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: 8052-factory
+            file: 4K.HDMI-.-20260813.1.rar
+            tag: Original_Firmware_for_1_HDMI_ports
+            sha: bff981a9d440d1495bd6ab48a72fb13c4572de69fcbe81448fc117a3bba5f30f
+            script: analysis/One_HDMI/upgrade_script.txt
+          - profile: 8052-ota
+            file: none
+            tag: none
+            sha: bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35
+            script: none
+          - profile: 8054-factory
+            file: 4KTOF.HDMI-.-DPLS.-09.30.rar
+            tag: Original_Firmware
+            sha: 170f745dc1711c2dae6410dd51f0a8bf5bb7c637e11b8dd3e5f59fbea8c388f3
+            script: analysis/Original_Firmware/decrypted/upgrade_script.txt
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install offline filesystem tools
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar lz4 openssl erofs-utils e2fsprogs python3-pip unzip
+          python3 -m pip install --break-system-packages pyelftools==0.32
+          mkdir -p /tmp/net/source /tmp/net/archive /tmp/net/parts /tmp/net/logical /tmp/net/erofs /tmp/net/report
+      - name: Reconstruct verified original factory image
+        if: matrix.file != 'none'
+        run: |
+          curl -fL --retry 5 --retry-delay 3 "https://github.com/MAX-TAC/Everycom-Cinelux-2HDMI-Firmvare/releases/download/${{ matrix.tag }}/${{ matrix.file }}" -o /tmp/net/source.rar
+          echo "${{ matrix.sha }}  /tmp/net/source.rar" | sha256sum -c -
+          unar -q -o /tmp/net/archive /tmp/net/source.rar
+          test -s /tmp/net/archive/upgrade_image.pkg
+          python3 tools/read_verified_factory_ree.py --pkg /tmp/net/archive/upgrade_image.pkg --out /tmp/net/source/plain.bin
+          python3 -u tools/reconstruct_cinelux.py /tmp/net/source/plain.bin /tmp/net/parts ${{ matrix.script }} /tmp/net/report/reconstruction > /tmp/net/reconstruct.log 2>&1 || { tail -n 80 /tmp/net/reconstruct.log; exit 1; }
+          git clone -q https://github.com/soe1hom-arch/lpunpack-go.git /tmp/lpunpack-go
+          (cd /tmp/lpunpack-go && go build -o /tmp/lpunpack .)
+          /tmp/lpunpack -v /tmp/net/parts/super.img /tmp/net/logical > /tmp/net/unpack.log 2>&1 || { tail -n 75 /tmp/net/unpack.log; exit 1; }
+      - name: Reconstruct verified October OTA 8052
+        if: matrix.profile == '8052-ota'
+        run: |
+          curl -fL --retry 5 --retry-delay 3 "https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip" -o /tmp/net/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/net/ota.zip" | sha256sum -c -
+          curl -fL --retry 4 "https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz" -o /tmp/net/payload.tar.gz
+          mkdir -p /tmp/net/dumper
+          tar -xzf /tmp/net/payload.tar.gz -C /tmp/net/dumper
+          BIN="$(find /tmp/net/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p system,system_ext,vendor,product -o /tmp/net/logical /tmp/net/ota.zip > /tmp/net/payload.log 2>&1 || { tail -n 80 /tmp/net/payload.log; exit 1; }
+          for name in system system_ext vendor product; do
+            if test -s "/tmp/net/logical/$name.img"; then
+              mv "/tmp/net/logical/$name.img" "/tmp/net/logical/$name""_a.img"
+            fi
+          done
+      - name: Extract original networking files and analyze
+        run: |
+          for name in system_a system_ext_a vendor_a product_a; do
+            IMG="/tmp/net/logical/$name.img"
+            if test -s "$IMG"; then
+              mkdir -p "/tmp/net/erofs/$name"
+              fsck.erofs --extract="/tmp/net/erofs/$name" "$IMG" >/tmp/net/extract.log 2>&1 || { tail -n 70 /tmp/net/extract.log; exit 1; }
+            fi
+          done
+          python3 -u tools/inventory_cinelux_network_drivers.py --root /tmp/net/erofs --variant ${{ matrix.profile }} --out /tmp/net/report/${{ matrix.profile }}.json > /tmp/net/audit.log 2>&1 || { tail -n 85 /tmp/net/audit.log; exit 1; }
+          cat /tmp/net/audit.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: network-${{ matrix.profile }}
+          path: /tmp/net/report/${{ matrix.profile }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  compare:
+    needs: scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: network-*
+          merge-multiple: true
+          path: /tmp/net-audit
+      - name: Classify probable 8052 Wi-Fi regression and Ethernet configurations
+        run: |
+          python3 -u tools/compare_cinelux_network_images.py
+          head -n 100 analysis/Network_8052_Regression_20261021/NETWORK_REGRESSION_RU.md
+      - name: Commit sanitized static-only findings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/Network_8052_Regression_20261021/
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit network drivers and Ethernet init in 8052 factory OTA and 8054"
+            git pull --rebase origin network-diagnostics-8052-8054-20261021
+            git push origin HEAD:network-diagnostics-8052-8054-20261021
+          fi
