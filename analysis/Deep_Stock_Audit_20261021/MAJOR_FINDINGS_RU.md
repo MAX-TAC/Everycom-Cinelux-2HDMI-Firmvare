@@ -80,3 +80,43 @@
 - [Setup clone analysis](SETUP_VS_SETTINGS_RU.md)
 - [Code risk queue](CODE_RISK_TRIAGE_RU.md)
 - [OEM dependency matrix](APK_DEPENDENCY_MATRIX_RU.md)
+
+
+## Новые результаты точного сравнения методов zxlauncher, zxstore, KuSetupWizard
+
+Повторная декомпиляция актуальной OTA 8052 и сравнение с оригинальной мета-базой заводской 8054:
+- `zxlauncher`: 1934 потенциально различающихся OEM-собственных методов. Изменены участки `CustomApplication`, ранняя инициализация, обработка HOME, инициализация плагинов, обновление списка приложений, аналитики и рекламных сервисов. Большая часть изменений сторонних SDK **не** считается OEM-функциональными исправлениями без ручной проверки.
+- `zxstore`: 193 OEM-метода изменены/появились/удалены; наиболее важны `InstallRunnable`, `AppDetailBoner`, `BonerPrivoder`, `DownloadUpdateUtil`, включая изменившуюся сигнатуру `onInstallFailed` (сокращение количества аргументов). Нельзя без проверки перемешивать разные версии SDK магазина/лаунчера.
+- `KuSetupWizard`: APK **побайтно совпадает между октябрьской OTA 8052 и заводской 8054**. Сходство именно с `KuSettings` внутри текущей 8052 отдельно проверено: 3449 из 3470 общих классов идентичны, но package/manifest/first-run lifecycle разные.
+
+[Подробный SHA и метод-дифф](LAUNCHER_STORE_SETUP_METHODS_RU.md).
+
+## Directed OEM calls — места исходящих Android Intent, требующие подтверждения runtime
+
+Из статических Java call-site кандидатов:
+- `TvSettingsPlus.GeneralFragment` -> `KuSourceRJ`, вызов перехода к выбору источника.
+- `TvSettingsPlus.ProjectorFragment`, `KeystoneCalibrationActivity`, `ProjectorSubMenuController` -> `RuiAutoFocus`.
+- `KuSourceRJ.IntentUtils` -> `RuiAutoFocus`.
+- `trdservice.TrdService` -> `RuiYunOta.OTACheckService`.
+- `trdservice.GlobalKeyEventProcess` -> OEM/Android TV Settings; необходимо изучить обработку кнопок пульта.
+- `zxstore.NetworkWrongDialogBuilder` -> `TvSettingsPlus`.
+- `KuSetupWizard` -> `KuSettings`: общие классы + явные строки пакета в Intent-кандидатах.
+
+[Точки входа и кандидаты цепочек](OEM_INTENT_CALL_CHAINS_RU.md). Обращение на основе статических строк рядом с Intent — **не** подтверждённая исполняемая цепочка.
+
+## Исправленный аудит AndroidManifest и прав
+
+Предыдущий анализатор ошибочно считал `(type 0x12)` значением `exported=true`; исправленная версия повторно читает действительное 0/1. У всех проверенных приложений теперь приведены отдельные явные `exported=true`, `exported=false` и отсутствующие атрибуты.
+
+После исправления осталось 29 Service/Receiver/Provider с явно экспортированным компонентом без непосредственного разрешения в его атрибутах. Особенно важны `com.hysd.client.VAF2S`, `com.trd.framework.TrdSystemService`, `com.trd.service.TrdService`, `TvSettingsPlus.FloatMenuService`. Это **кандидаты на проверку контролей доступа, а не доказанные проблемы безопасности**. Реальный доступ зависит от унаследованных ограничений, внутренних проверок, подписи, системных прав, SELinux и состояния служб.
+
+[Проверенные флаги экспортируемости](MANIFEST_EXPORTED_VERIFIED_RU.md).
+
+## Изменённые ARM-инструкции в libmediatek_tv_basic.so
+
+Из 55 именованных функций с разными машинными байтами, **50 имеют такую же последовательность мнемоник**, а у **5 она изменилась**:
+`get_alita_version`, `kbir_main`, `x_dbg_dump_trace_buff`, `x_feature_is_mw_fast_boot_pre_select_src_block`, `x_thread_suspend`.
+
+Сравнение мнемоник не различает изменение регистров, immediate-операндов и адресов. Для фиксации настоящего багфикса понадобится сравнить графы базовых блоков, контрольные ветвления и реальные вызовы. Драйвер `wlan_mt7663.ko` тоже имеет различия ARM64 `.text`, но функции не сопоставлены по именам.
+
+[ELF и частичный disassembly fingerprint](NATIVE_8052_OTA_VS_8054_RU.md).
