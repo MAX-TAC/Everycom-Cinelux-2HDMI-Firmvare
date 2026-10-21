@@ -5,7 +5,7 @@ NO app removed, no signed APK recreated, no OEM code or private data redistribut
 
 ## Replacement and removal risk
 
-| App | Risk and plan | APK same? | Methods changed | Exported components |
+| App | Risk and plan | APK same? | JADX method deltas* | Exported components |
 |---|---|---|---:|---:|
 | Factory | keep_for_recovery_diagnostics | True | 0 | 1 |
 | KeystoneCorrection | keep_hardware_core | True | 0 | 6 |
@@ -21,6 +21,12 @@ NO app removed, no signed APK recreated, no OEM code or private data redistribut
 | trdservice | keep_hardware_core | True | 0 | 4 |
 | zxlauncher | candidate_replacement | False | 6308 | 14 |
 | zxstore | candidate_later_disable | False | 1118 | 12 |
+
+**Data-validation note:** when APK/DEX SHA256 is identical, non-zero normalized-method differences are artifacts of JADX extraction, not differences in the original firmware. This applies to KuSettings, KuSetupWizard, KuSourceRJ, LiveTV, TvSettingsPlus and trdmiddle in the table above. The really changed DEX packages in this inventory are RuiAutoFocus, zxlauncher and zxstore.
+
+**Permission/package-data caveat:** Some empty package fields and permission subsets can result from truncation of the legacy aapt badging output; never infer that an Android component has no privileges from an empty value. Exported components also may require permissions.
+
+**Bug review caveat:** Risk indicators are regex sightings across OEM and bundled third-party classes. For example, a catch block heuristic alone does not prove a defect, and Thread.sleep does not prove it occurs on the UI thread.
 
 ## App-by-app evidence and required runtime validation
 
