@@ -60,6 +60,8 @@ jobs:
                   'algorithm_id':alg,'flags':int.from_bytes(image[120:124],'big'),
                   'rollback_index':int.from_bytes(image[112:120],'big'),
                   'public_key_size':publen,'public_key_sha256':digest,
+                  'rsa_modulus_prefix_hex':pub[8:40].hex(),
+                  'rsa_modulus_sha256':hashlib.sha256(pub[8:8+publen//2-4]).hexdigest(),
                   'matches_stock_factory_8052_8054':digest==stock,
                   'matches_aosp_reference_avb_testkey':digest==aosp})
           (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
