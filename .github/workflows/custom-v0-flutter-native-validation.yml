@@ -1,0 +1,41 @@
+name: Validate FLauncher as preinstalled system APK in Custom v0
+on:
+  push:
+    branches: [custom-v0-staging-8052-8054-20261021]
+    paths:
+      - ".github/workflows/custom-v0-flutter-native-validation.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-flutter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: cinelux-custom-v0-common-apks
+          run-id: 39625006651
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/common
+      - name: Inspect original APK structure, system installation compatibility and signer
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/microsoft-prod.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq aapt apksigner
+          echo "376fc528c880cdf7c7c04b2d3708c69f911144498218babb6300808b772af32e  /tmp/common/FLauncher.apk" | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile,collections,json
+          p='/tmp/common/FLauncher.apk'
+          with zipfile.ZipFile(p) as f:
+            libs=[x for x in f.infolist() if x.filename.startswith('lib/') and x.filename.endswith('.so')]
+            print(json.dumps({'n_libs':len(libs),'abi':sorted(set(x.filename.split('/')[1] for x in libs)),
+             'file_details':[{'name':x.filename,'zip_method':('stored' if x.compress_type==0 else 'deflated' if x.compress_type==8 else x.compress_type),
+                               'file_size':x.file_size} for x in libs]},indent=2))
+          PY
+          echo '=== FLauncher application manifest configuration ==='
+          aapt dump xmltree /tmp/common/FLauncher.apk AndroidManifest.xml | grep -Ei 'extractNativeLibs|usesCleartextTraffic|android:debuggable|supportsRtl|uses-sdk|targetSdkVersion|resizeableActivity|application|activity' | head -n 60 || true
+          echo '=== Signing information ==='
+          apksigner verify --print-certs /tmp/common/FLauncher.apk 2>&1 | grep -E 'Signer #1 certificate SHA-256|Verified using v[123]' | head -n 12 || true
