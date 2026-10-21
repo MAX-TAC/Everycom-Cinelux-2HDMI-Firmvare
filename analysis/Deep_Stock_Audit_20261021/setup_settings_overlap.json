@@ -1,0 +1,60 @@
+{
+  "apps": {
+    "KuSettings": {
+      "package": "com.my.settings",
+      "apk_sha256": "bd678e646a0cbc164f34273bcd396f9cf9221037b4c688d9d08464840cfca58b",
+      "class_count": 3470,
+      "components": {
+        "activity": 11,
+        "provider": 1,
+        "receiver": 2,
+        "service": 2
+      }
+    },
+    "KuSetupWizard": {
+      "package": "com.android.provision",
+      "apk_sha256": "17aaba977289fce5c991e44bd6018c37549f91dae1b99154b00b80b5a3a2c898",
+      "class_count": 3471,
+      "components": {
+        "activity": 3,
+        "provider": 1,
+        "receiver": 1
+      }
+    }
+  },
+  "shared_java": {
+    "common_paths": 3470,
+    "bytecode_decompiled_class_same": 3449,
+    "changed": 21,
+    "only_settings": 0,
+    "only_wizard": 1,
+    "identical_fraction_common": 0.9939,
+    "changed_paths": [
+      "androidx/appcompat/R.java",
+      "androidx/cardview/R.java",
+      "androidx/constraintlayout/widget/ConstraintSet.java",
+      "androidx/constraintlayout/widget/R.java",
+      "androidx/coordinatorlayout/R.java",
+      "androidx/core/R.java",
+      "androidx/core/app/AppLocalesStorageHelper.java",
+      "androidx/customview/R.java",
+      "androidx/drawerlayout/R.java",
+      "androidx/loader/R.java",
+      "androidx/recyclerview/R.java",
+      "androidx/vectordrawable/R.java",
+      "androidx/vectordrawable/animated/R.java",
+      "androidx/viewpager/R.java",
+      "androidx/viewpager2/R.java",
+      "com/bumptech/glide/R.java",
+      "com/google/android/material/R.java",
+      "com/my/settings/R.java",
+      "com/my/settings/activity/WarningActivity.java",
+      "kotlinx/coroutines/CoroutineContextKt.java",
+      "kotlinx/coroutines/SupervisorKt.java"
+    ],
+    "only_settings_paths": [],
+    "only_wizard_paths": [
+      "com/android/provision/R.java"
+    ]
+  }
+}
