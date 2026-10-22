@@ -8,6 +8,7 @@ on:
       - "tools/patch_tvsettingsplus_manifest.py"
       - "tools/inspect_tvsettings_preference_tree.py"
       - "tools/patch_tvsettingsplus_preferences.py"
+      - "tools/verify_tvsettingsplus_candidate.py"
       - "tvsettingsplus-mod/src/**"
   workflow_dispatch:
 
@@ -130,6 +131,12 @@ jobs:
           aapt dump badging /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk | grep -q "package: name='com.android.tv.settings'"
           echo 'EXPERIMENTAL ONLY. Signed candidate is not tested on hardware. DO NOT INSTALL until service migration, settings UI parity and rollback checks pass.' > /tmp/tvmod/README_DO_NOT_INSTALL.txt
           rm -f /tmp/platform.pk8 /tmp/platform.x509.pem
+
+      - name: Round-trip verify signed APK manifest and all TV System menu routes
+        run: |
+          set -euo pipefail
+          java -jar /tmp/apktool.jar d -f -s -p /tmp/apkframework -o /tmp/tvmod/redecoded /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk >/tmp/verify-decode.log 2>&1 || { tail -n 100 /tmp/verify-decode.log; exit 1; }
+          python3 tools/verify_tvsettingsplus_candidate.py /tmp/tvmod/decoded/AndroidManifest.xml.before-cinelux /tmp/tvmod/redecoded
 
       - uses: actions/upload-artifact@v4
         if: success()
