@@ -6,6 +6,7 @@ on:
       - ".github/workflows/test-tvsettingsplus-manifest.yml"
       - "tools/patch_tvsettingsplus_manifest.py"
       - "tests/test_patch_tvsettingsplus_manifest.py"
+      - "tvsettingsplus-mod/src/**"
   workflow_dispatch:
 
 permissions:
@@ -26,3 +27,11 @@ jobs:
         run: |
           python -m py_compile tools/patch_tvsettingsplus_manifest.py
           python -m unittest discover -s tests -p 'test_patch_tvsettingsplus_manifest.py' -v
+      - name: Compile staged TvSettingsPlus Java activities against Android SDK
+        run: |
+          set -euo pipefail
+          SDK="$ANDROID_HOME/platforms/android-34/android.jar"
+          test -s "$SDK"
+          mkdir -p /tmp/tvsettingsplus-compile
+          javac -source 8 -target 8 -classpath "$SDK" -d /tmp/tvsettingsplus-compile tvsettingsplus-mod/src/com/android/tv/settings/cinelux/*.java
+          find /tmp/tvsettingsplus-compile -type f -name '*.class' | sort
