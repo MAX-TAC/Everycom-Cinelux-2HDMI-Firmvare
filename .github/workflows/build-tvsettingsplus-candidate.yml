@@ -56,10 +56,23 @@ jobs:
       - name: Rebuild stock resources, preserving unchanged OEM runtime bytecode
         run: |
           set -euo pipefail
-          java -Xmx4G -jar /tmp/apktool.jar b --use-aapt2 /tmp/tvmod/decoded -o /tmp/tvmod/rebuilt.apk >/tmp/rebuild.log 2>&1 || { tail -n 125 /tmp/rebuild.log; exit 1; }
+          java -Xmx4G -jar /tmp/apktool.jar b /tmp/tvmod/decoded -o /tmp/tvmod/rebuilt.apk >/tmp/rebuild.log 2>&1 || { tail -n 125 /tmp/rebuild.log; exit 1; }
           test -s /tmp/tvmod/rebuilt.apk
           aapt dump badging /tmp/tvmod/rebuilt.apk | head -n 12
           unzip -tq /tmp/tvmod/rebuilt.apk | tail -n 3
+          python3 - <<'PY'
+          from hashlib import sha256
+          from zipfile import ZipFile
+          original='/tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk'
+          rebuilt='/tmp/tvmod/rebuilt.apk'
+          with ZipFile(original) as a, ZipFile(rebuilt) as b:
+              dex={x for x in a.namelist() if x.startswith('classes') and x.endswith('.dex')}
+              assert len(dex) >= 1
+              for name in sorted(dex):
+                  assert name in b.namelist(), 'Lost original '+name
+                  assert sha256(a.read(name)).digest() == sha256(b.read(name)).digest(), 'OEM dex modified: '+name
+          print('Verified original code retained:',len(dex),'identical dex files')
+          PY
 
       - name: Build new TV Activity classes as additional DEX
         run: |
