@@ -1,0 +1,105 @@
+name: Validate cryptographic AVB RSA signatures and inspect bootloader strings offline
+
+on:
+  push:
+    paths:
+      - ".github/workflows/verify-8052-vbmeta-signature-and-mboot.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download owner-verified original OTA and extract vbmeta + MBoot
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/avbaudit/dumper /tmp/avbaudit/images
+          curl -fL --retry 5 --retry-delay 3 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/avbaudit/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/avbaudit/ota.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/avbaudit/dumper.tgz
+          tar -xzf /tmp/avbaudit/dumper.tgz -C /tmp/avbaudit/dumper
+          EXE="$(find /tmp/avbaudit/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$EXE"
+          "$EXE" -c 3 -p vbmeta,vbmeta_system,mboot -o /tmp/avbaudit/images /tmp/avbaudit/ota.zip
+          ls -lh /tmp/avbaudit/images
+
+      - name: Independently validate both embedded PKCS1v15 SHA256 signatures and describe AVB
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from cryptography.hazmat.primitives.asymmetric import rsa,padding
+          from cryptography.hazmat.primitives import hashes
+          import hashlib,json,re
+          root=Path('/tmp/avbaudit/images')
+          report={'source':'Original RUIOS.8052.1.0.4 OTA ZIP, SHA256-verified', 'note':'Off-device cryptographic verification. Cannot establish bootloader enforcement on physical hardware.',
+                  'images':[]}
+          for n in ('vbmeta','vbmeta_system'):
+              raw=(root/(n+'.img')).read_bytes()
+              assert raw[:4]==b'AVB0'
+              u64=lambda i:int.from_bytes(raw[i:i+8],'big')
+              u32=lambda i:int.from_bytes(raw[i:i+4],'big')
+              auth,aux=u64(12),u64(20)
+              alg=u32(28)
+              ho,hs,so,ss=u64(32),u64(40),u64(48),u64(56)
+              ko,ks=u64(64),u64(72)
+              do,ds=u64(96),u64(104)
+              assert 256+auth+aux<=len(raw) and alg==2
+              assert hs==32 and ss==512 and ho+hs<=auth and so+ss<=auth and ko+ks<=aux
+              key=raw[256+auth+ko:256+auth+ko+ks]
+              assert len(key)==1032
+              bits=int.from_bytes(key[0:4],'big')
+              assert bits==4096
+              modulus=int.from_bytes(key[8:8+512],'big')
+              rsa_pub=rsa.RSAPublicNumbers(65537,modulus).public_key()
+              payload=raw[:256]+raw[256+auth:256+auth+aux]
+              digest=hashlib.sha256(payload).digest()
+              signed_digest=raw[256+ho:256+ho+hs]
+              sig=raw[256+so:256+so+ss]
+              verify_result='success'
+              try:
+                  rsa_pub.verify(sig,payload,padding.PKCS1v15(),hashes.SHA256())
+              except Exception as ex:
+                  verify_result=type(ex).__name__
+              tags={}
+              p=256+auth+do
+              end=p+ds
+              assert p<=end<=256+auth+aux
+              while p+16<=end:
+                  tag=int.from_bytes(raw[p:p+8],'big')
+                  num=int.from_bytes(raw[p+8:p+16],'big')
+                  if num>=(1<<24) or p+16+num>end:
+                      break
+                  tags[str(tag)]=tags.get(str(tag),0)+1
+                  p+=16+num
+              report['images'].append({'partition':n,'bytes':len(raw),'algorithm':alg,'flags':u32(120),
+                'rollback_index':u64(112),'embedded_public_key_sha256':hashlib.sha256(key).hexdigest(),
+                'authenticated_header_aux_sha256_matches':digest==signed_digest,
+                'rsa_pkcs1v15_signature_validation':verify_result,'descriptor_tag_counts':tags})
+              assert verify_result=='success' and digest==signed_digest
+          mboot=(root/'mboot.img').read_bytes()
+          ascii_runs=re.findall(rb'[\x20-\x7e]{9,}',mboot)
+          keyphrases=[b'avb_',b'vbmeta',b'androidboot.verifiedbootstate',b'androidboot.vbmeta',b'veritymode',b'devicestate',b'Vbmeta',b'avb_slot_verify']
+          strings=[x.decode('ascii','replace')[:160] for x in ascii_runs if any(t.lower() in x.lower() for t in keyphrases)]
+          report['mboot']={'size':len(mboot),'sha256':hashlib.sha256(mboot).hexdigest(),
+            'avb_relevant_printable_string_count':len(strings),'avb_relevant_printable_strings_sample':strings[:60],
+            'note':'Presence/absence of strings does not prove which checks are executed at startup'}
+          out=Path('analysis/AVB_Key_Research_20261021')
+          out.mkdir(parents=True,exist_ok=True)
+          (out/'offline_signature_and_bootloader_analysis.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
+          print(json.dumps(report,indent=2,ensure_ascii=False))
+          PY
+      - name: Commit read-only signature audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/AVB_Key_Research_20261021/offline_signature_and_bootloader_analysis.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Cryptographically verify OTA AVB RSA signatures and inspect MBoot evidence"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
