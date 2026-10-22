@@ -104,6 +104,4168 @@
       "references": []
     }
   },
+  "focused_assembly": {
+    "avb_root_key_reference_1": {
+      "center": "000a1b24",
+      "instructions": [
+        {
+          "pc": "000a1a24",
+          "asm": "strb w0,[x20]"
+        },
+        {
+          "pc": "000a1a28",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1a2c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1a30",
+          "asm": "ldr x21,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1a34",
+          "asm": "ldp x29,x30,[sp], #0x30",
+          "edges": [
+            "DATA:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "000a1a38",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1a3c",
+          "asm": "strb wzr,[x20]"
+        },
+        {
+          "pc": "000a1a40",
+          "asm": "b 0x000a1a28",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1a28"
+          ]
+        },
+        {
+          "pc": "000a1a44",
+          "asm": "adrp x19,0x1bd000"
+        },
+        {
+          "pc": "000a1a48",
+          "asm": "add x19,x19,#0xbab"
+        },
+        {
+          "pc": "000a1a4c",
+          "asm": "mov x0,x19",
+          "edges": [
+            "PARAM:001bdbab"
+          ]
+        },
+        {
+          "pc": "000a1a50",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "000a1a54",
+          "asm": "mov x1,x19",
+          "edges": [
+            "PARAM:001bdbab"
+          ]
+        },
+        {
+          "pc": "000a1a58",
+          "asm": "mov x2,x0"
+        },
+        {
+          "pc": "000a1a5c",
+          "asm": "mov x0,x21"
+        },
+        {
+          "pc": "000a1a60",
+          "asm": "bl 0x0015e904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e904"
+          ]
+        },
+        {
+          "pc": "000a1a64",
+          "asm": "cbz w0,0x000a1a3c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1a3c"
+          ]
+        },
+        {
+          "pc": "000a1a68",
+          "asm": "strb wzr,[x20]"
+        },
+        {
+          "pc": "000a1a6c",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1a70",
+          "asm": "b 0x000a1a2c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1a2c"
+          ]
+        },
+        {
+          "pc": "000a1a74",
+          "asm": "cmp x1,#0x0"
+        },
+        {
+          "pc": "000a1a78",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1a7c",
+          "asm": "b.eq 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a80",
+          "asm": "cmp x3,#0x24"
+        },
+        {
+          "pc": "000a1a84",
+          "asm": "b.ls 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a88",
+          "asm": "stp x29,x30,[sp, #-0xc0]!"
+        },
+        {
+          "pc": "000a1a8c",
+          "asm": "mov x0,x1"
+        },
+        {
+          "pc": "000a1a90",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1a94",
+          "asm": "str x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1a98",
+          "asm": "add x1,x29,#0x28"
+        },
+        {
+          "pc": "000a1a9c",
+          "asm": "mov x19,x2"
+        },
+        {
+          "pc": "000a1aa0",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1aa4",
+          "asm": "bl 0x0006b8d4",
+          "edges": [
+            "UNCONDITIONAL_CALL:0006b8d4"
+          ]
+        },
+        {
+          "pc": "000a1aa8",
+          "asm": "cbz w0,0x000a1abc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1abc"
+          ]
+        },
+        {
+          "pc": "000a1aac",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ab0",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1ab4",
+          "asm": "add x0,x29,#0x98"
+        },
+        {
+          "pc": "000a1ab8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1abc",
+          "asm": "add x1,x29,#0x98"
+        },
+        {
+          "pc": "000a1ac0",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ac4",
+          "asm": "mov x0,x19"
+        },
+        {
+          "pc": "000a1ac8",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1acc",
+          "asm": "strb wzr,[x19, #0x24]"
+        },
+        {
+          "pc": "000a1ad0",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ad4",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1ad8",
+          "asm": "ldp x29,x30,[sp], #0xc0"
+        },
+        {
+          "pc": "000a1adc",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae0",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1ae4",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae8",
+          "asm": "cmp x3,#0x0"
+        },
+        {
+          "pc": "000a1aec",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1af0",
+          "asm": "b.ne 0x000a1afc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1afc"
+          ]
+        },
+        {
+          "pc": "000a1af4",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1af8",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1afc",
+          "asm": "cbz x6,0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b00",
+          "asm": "strb wzr,[x6]"
+        },
+        {
+          "pc": "000a1b04",
+          "asm": "cmp x3,#0x408"
+        },
+        {
+          "pc": "000a1b08",
+          "asm": "b.ne 0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b0c",
+          "asm": "stp x29,x30,[sp, #-0x20]!"
+        },
+        {
+          "pc": "000a1b10",
+          "asm": "mov x1,x2"
+        },
+        {
+          "pc": "000a1b14",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b18",
+          "asm": "mov x2,x3"
+        },
+        {
+          "pc": "000a1b1c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b20",
+          "asm": "stp x19,x20,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1b24",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b28",
+          "asm": "mov x20,x7"
+        },
+        {
+          "pc": "000a1b2c",
+          "asm": "mov x19,x6"
+        },
+        {
+          "pc": "000a1b30",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b34",
+          "asm": "cbnz w0,0x000a1b40",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b40"
+          ]
+        },
+        {
+          "pc": "000a1b38",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b3c",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1b40",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b44",
+          "asm": "str w0,[x20]"
+        },
+        {
+          "pc": "000a1b48",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1b4c",
+          "asm": "ldp x19,x20,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1b50",
+          "asm": "ldp x29,x30,[sp], #0x20"
+        },
+        {
+          "pc": "000a1b54",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b58",
+          "asm": "cmp x2,#0x0"
+        },
+        {
+          "pc": "000a1b5c",
+          "asm": "ccmp x1,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1b60",
+          "asm": "b.ne 0x000a1b6c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b6c"
+          ]
+        },
+        {
+          "pc": "000a1b64",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1b68",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b6c",
+          "asm": "cbz x5,0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b70",
+          "asm": "strb wzr,[x5]"
+        },
+        {
+          "pc": "000a1b74",
+          "asm": "cmp x2,#0x408"
+        },
+        {
+          "pc": "000a1b78",
+          "asm": "b.ne 0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b7c",
+          "asm": "stp x29,x30,[sp, #-0x20]!"
+        },
+        {
+          "pc": "000a1b80",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b84",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b88",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b8c",
+          "asm": "str x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1b90",
+          "asm": "mov x19,x5"
+        },
+        {
+          "pc": "000a1b94",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b98",
+          "asm": "cbnz w0,0x000a1ba4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ba4"
+          ]
+        },
+        {
+          "pc": "000a1b9c",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1ba0",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1ba4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ba8",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1bac",
+          "asm": "ldp x29,x30,[sp], #0x20"
+        },
+        {
+          "pc": "000a1bb0",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1bb4",
+          "asm": "stp x29,x30,[sp, #-0x80]!",
+          "edges": [
+            "WRITE:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1bb8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1bbc",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1bc0",
+          "asm": "adrp x20,0x1cd000"
+        },
+        {
+          "pc": "000a1bc4",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "000a1bc8",
+          "asm": "stp x21,x22,[sp, #0x20]",
+          "edges": [
+            "WRITE:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1bcc",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bd0",
+          "asm": "mov x22,x2"
+        },
+        {
+          "pc": "000a1bd4",
+          "asm": "stp x23,x24,[sp, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1bd8",
+          "asm": "mov w24,w1"
+        },
+        {
+          "pc": "000a1bdc",
+          "asm": "mov x23,x3"
+        },
+        {
+          "pc": "000a1be0",
+          "asm": "cbnz w0,0x000a1bf8",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1bf8"
+          ]
+        },
+        {
+          "pc": "000a1be4",
+          "asm": "bl 0x0005b7a8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005b7a8"
+          ]
+        },
+        {
+          "pc": "000a1be8",
+          "asm": "cmp w0,#0x0"
+        },
+        {
+          "pc": "000a1bec",
+          "asm": "cset w0,eq"
+        },
+        {
+          "pc": "000a1bf0",
+          "asm": "add w0,w0,#0x1"
+        },
+        {
+          "pc": "000a1bf4",
+          "asm": "str w0,[x20, #0x6a8]",
+          "edges": [
+            "WRITE:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bf8",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bfc",
+          "asm": "cmp w0,#0x2"
+        },
+        {
+          "pc": "000a1c00",
+          "asm": "b.ne 0x000a1d0c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d0c"
+          ]
+        },
+        {
+          "pc": "000a1c04",
+          "asm": "adrp x1,0x17e000"
+        },
+        {
+          "pc": "000a1c08",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1c0c",
+          "asm": "add x1,x1,#0x866",
+          "edges": [
+            "PARAM:0017e866"
+          ]
+        },
+        {
+          "pc": "000a1c10",
+          "asm": "add x0,x0,#0x362",
+          "edges": [
+            "PARAM:0019f362"
+          ]
+        },
+        {
+          "pc": "000a1c14",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1c18",
+          "asm": "mov w0,#0x8"
+        },
+        {
+          "pc": "000a1c1c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1c20",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1c24",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1c28",
+          "asm": "ldp x29,x30,[sp], #0x80",
+          "edges": [
+            "DATA:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1c2c",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1c30",
+          "asm": "mov x1,x21",
+          "edges": [
+            "PARAM:0016b720"
+          ]
+        },
+        {
+          "pc": "000a1c34",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000a1c38",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1c3c",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c40",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c44",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1c48",
+          "asm": "mov x1,#0x0"
+        },
+        {
+          "pc": "000a1c4c",
+          "asm": "bl 0x00128cb4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128cb4"
+          ]
+        },
+        {
+          "pc": "000a1c50",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "000a1c54",
+          "asm": "cbnz x0,0x000a1c60",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c60"
+          ]
+        },
+        {
+          "pc": "000a1c58",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1c5c",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1c60",
+          "asm": "mov x2,#0x30"
+        },
+        {
+          "pc": "000a1c64",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1c68",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c6c",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1c70",
+          "asm": "add x1,x29,#0x40"
+        },
+        {
+          "pc": "000a1c74",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c78",
+          "asm": "bl 0x00128d4c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128d4c"
+          ]
+        },
+        {
+          "pc": "000a1c7c",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c80",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000a1c84",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1c88",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c8c",
+          "asm": "bl 0x00128ab4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ab4"
+          ]
+        },
+        {
+          "pc": "000a1c90",
+          "asm": "cbnz w0,0x000a1ca0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ca0"
+          ]
+        },
+        {
+          "pc": "000a1c94",
+          "asm": "ldr w0,[x29, #0x74]",
+          "edges": [
+            "READ:Stack[-0xc]"
+          ]
+        },
+        {
+          "pc": "000a1c98",
+          "asm": "str x20,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1c9c",
+          "asm": "str w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1ca0",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ca4",
+          "asm": "mov x2,#0x10"
+        },
+        {
+          "pc": "000a1ca8",
+          "asm": "cbz x0,0x000a1c30",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c30"
+          ]
+        },
+        {
+          "pc": "000a1cac",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1cb0",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1cb4",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1cb8",
+          "asm": "ldr w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1cbc",
+          "asm": "mov x3,x23"
+        },
+        {
+          "pc": "000a1cc0",
+          "asm": "stp w24,w0,[x29, #0x50]",
+          "edges": [
+            "WRITE:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "000a1cc4",
+          "asm": "mov w2,w22"
+        }
+      ]
+    },
+    "avb_root_key_reference_2": {
+      "center": "000a1b84",
+      "instructions": [
+        {
+          "pc": "000a1a84",
+          "asm": "b.ls 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a88",
+          "asm": "stp x29,x30,[sp, #-0xc0]!"
+        },
+        {
+          "pc": "000a1a8c",
+          "asm": "mov x0,x1"
+        },
+        {
+          "pc": "000a1a90",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1a94",
+          "asm": "str x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1a98",
+          "asm": "add x1,x29,#0x28"
+        },
+        {
+          "pc": "000a1a9c",
+          "asm": "mov x19,x2"
+        },
+        {
+          "pc": "000a1aa0",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1aa4",
+          "asm": "bl 0x0006b8d4",
+          "edges": [
+            "UNCONDITIONAL_CALL:0006b8d4"
+          ]
+        },
+        {
+          "pc": "000a1aa8",
+          "asm": "cbz w0,0x000a1abc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1abc"
+          ]
+        },
+        {
+          "pc": "000a1aac",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ab0",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1ab4",
+          "asm": "add x0,x29,#0x98"
+        },
+        {
+          "pc": "000a1ab8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1abc",
+          "asm": "add x1,x29,#0x98"
+        },
+        {
+          "pc": "000a1ac0",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ac4",
+          "asm": "mov x0,x19"
+        },
+        {
+          "pc": "000a1ac8",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1acc",
+          "asm": "strb wzr,[x19, #0x24]"
+        },
+        {
+          "pc": "000a1ad0",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ad4",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1ad8",
+          "asm": "ldp x29,x30,[sp], #0xc0"
+        },
+        {
+          "pc": "000a1adc",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae0",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1ae4",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae8",
+          "asm": "cmp x3,#0x0"
+        },
+        {
+          "pc": "000a1aec",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1af0",
+          "asm": "b.ne 0x000a1afc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1afc"
+          ]
+        },
+        {
+          "pc": "000a1af4",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1af8",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1afc",
+          "asm": "cbz x6,0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b00",
+          "asm": "strb wzr,[x6]"
+        },
+        {
+          "pc": "000a1b04",
+          "asm": "cmp x3,#0x408"
+        },
+        {
+          "pc": "000a1b08",
+          "asm": "b.ne 0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b0c",
+          "asm": "stp x29,x30,[sp, #-0x20]!"
+        },
+        {
+          "pc": "000a1b10",
+          "asm": "mov x1,x2"
+        },
+        {
+          "pc": "000a1b14",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b18",
+          "asm": "mov x2,x3"
+        },
+        {
+          "pc": "000a1b1c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b20",
+          "asm": "stp x19,x20,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1b24",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b28",
+          "asm": "mov x20,x7"
+        },
+        {
+          "pc": "000a1b2c",
+          "asm": "mov x19,x6"
+        },
+        {
+          "pc": "000a1b30",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b34",
+          "asm": "cbnz w0,0x000a1b40",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b40"
+          ]
+        },
+        {
+          "pc": "000a1b38",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b3c",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1b40",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b44",
+          "asm": "str w0,[x20]"
+        },
+        {
+          "pc": "000a1b48",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1b4c",
+          "asm": "ldp x19,x20,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1b50",
+          "asm": "ldp x29,x30,[sp], #0x20"
+        },
+        {
+          "pc": "000a1b54",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b58",
+          "asm": "cmp x2,#0x0"
+        },
+        {
+          "pc": "000a1b5c",
+          "asm": "ccmp x1,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1b60",
+          "asm": "b.ne 0x000a1b6c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b6c"
+          ]
+        },
+        {
+          "pc": "000a1b64",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1b68",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b6c",
+          "asm": "cbz x5,0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b70",
+          "asm": "strb wzr,[x5]"
+        },
+        {
+          "pc": "000a1b74",
+          "asm": "cmp x2,#0x408"
+        },
+        {
+          "pc": "000a1b78",
+          "asm": "b.ne 0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b7c",
+          "asm": "stp x29,x30,[sp, #-0x20]!"
+        },
+        {
+          "pc": "000a1b80",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b84",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b88",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b8c",
+          "asm": "str x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1b90",
+          "asm": "mov x19,x5"
+        },
+        {
+          "pc": "000a1b94",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b98",
+          "asm": "cbnz w0,0x000a1ba4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ba4"
+          ]
+        },
+        {
+          "pc": "000a1b9c",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1ba0",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1ba4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ba8",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1bac",
+          "asm": "ldp x29,x30,[sp], #0x20"
+        },
+        {
+          "pc": "000a1bb0",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1bb4",
+          "asm": "stp x29,x30,[sp, #-0x80]!",
+          "edges": [
+            "WRITE:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1bb8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1bbc",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1bc0",
+          "asm": "adrp x20,0x1cd000"
+        },
+        {
+          "pc": "000a1bc4",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "000a1bc8",
+          "asm": "stp x21,x22,[sp, #0x20]",
+          "edges": [
+            "WRITE:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1bcc",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bd0",
+          "asm": "mov x22,x2"
+        },
+        {
+          "pc": "000a1bd4",
+          "asm": "stp x23,x24,[sp, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1bd8",
+          "asm": "mov w24,w1"
+        },
+        {
+          "pc": "000a1bdc",
+          "asm": "mov x23,x3"
+        },
+        {
+          "pc": "000a1be0",
+          "asm": "cbnz w0,0x000a1bf8",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1bf8"
+          ]
+        },
+        {
+          "pc": "000a1be4",
+          "asm": "bl 0x0005b7a8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005b7a8"
+          ]
+        },
+        {
+          "pc": "000a1be8",
+          "asm": "cmp w0,#0x0"
+        },
+        {
+          "pc": "000a1bec",
+          "asm": "cset w0,eq"
+        },
+        {
+          "pc": "000a1bf0",
+          "asm": "add w0,w0,#0x1"
+        },
+        {
+          "pc": "000a1bf4",
+          "asm": "str w0,[x20, #0x6a8]",
+          "edges": [
+            "WRITE:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bf8",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bfc",
+          "asm": "cmp w0,#0x2"
+        },
+        {
+          "pc": "000a1c00",
+          "asm": "b.ne 0x000a1d0c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d0c"
+          ]
+        },
+        {
+          "pc": "000a1c04",
+          "asm": "adrp x1,0x17e000"
+        },
+        {
+          "pc": "000a1c08",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1c0c",
+          "asm": "add x1,x1,#0x866",
+          "edges": [
+            "PARAM:0017e866"
+          ]
+        },
+        {
+          "pc": "000a1c10",
+          "asm": "add x0,x0,#0x362",
+          "edges": [
+            "PARAM:0019f362"
+          ]
+        },
+        {
+          "pc": "000a1c14",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1c18",
+          "asm": "mov w0,#0x8"
+        },
+        {
+          "pc": "000a1c1c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1c20",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1c24",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1c28",
+          "asm": "ldp x29,x30,[sp], #0x80",
+          "edges": [
+            "DATA:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1c2c",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1c30",
+          "asm": "mov x1,x21",
+          "edges": [
+            "PARAM:0016b720"
+          ]
+        },
+        {
+          "pc": "000a1c34",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000a1c38",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1c3c",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c40",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c44",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1c48",
+          "asm": "mov x1,#0x0"
+        },
+        {
+          "pc": "000a1c4c",
+          "asm": "bl 0x00128cb4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128cb4"
+          ]
+        },
+        {
+          "pc": "000a1c50",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "000a1c54",
+          "asm": "cbnz x0,0x000a1c60",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c60"
+          ]
+        },
+        {
+          "pc": "000a1c58",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1c5c",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1c60",
+          "asm": "mov x2,#0x30"
+        },
+        {
+          "pc": "000a1c64",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1c68",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c6c",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1c70",
+          "asm": "add x1,x29,#0x40"
+        },
+        {
+          "pc": "000a1c74",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c78",
+          "asm": "bl 0x00128d4c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128d4c"
+          ]
+        },
+        {
+          "pc": "000a1c7c",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c80",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000a1c84",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1c88",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c8c",
+          "asm": "bl 0x00128ab4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ab4"
+          ]
+        },
+        {
+          "pc": "000a1c90",
+          "asm": "cbnz w0,0x000a1ca0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ca0"
+          ]
+        },
+        {
+          "pc": "000a1c94",
+          "asm": "ldr w0,[x29, #0x74]",
+          "edges": [
+            "READ:Stack[-0xc]"
+          ]
+        },
+        {
+          "pc": "000a1c98",
+          "asm": "str x20,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1c9c",
+          "asm": "str w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1ca0",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ca4",
+          "asm": "mov x2,#0x10"
+        },
+        {
+          "pc": "000a1ca8",
+          "asm": "cbz x0,0x000a1c30",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c30"
+          ]
+        },
+        {
+          "pc": "000a1cac",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1cb0",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1cb4",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1cb8",
+          "asm": "ldr w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1cbc",
+          "asm": "mov x3,x23"
+        },
+        {
+          "pc": "000a1cc0",
+          "asm": "stp w24,w0,[x29, #0x50]",
+          "edges": [
+            "WRITE:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "000a1cc4",
+          "asm": "mov w2,w22"
+        },
+        {
+          "pc": "000a1cc8",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ccc",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1cd0",
+          "asm": "bl 0x00128ad4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ad4"
+          ]
+        },
+        {
+          "pc": "000a1cd4",
+          "asm": "cbnz w0,0x000a1c58",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1cd8",
+          "asm": "ldr w1,[x29, #0x58]",
+          "edges": [
+            "READ:Stack[-0x28]"
+          ]
+        },
+        {
+          "pc": "000a1cdc",
+          "asm": "cbz w1,0x000a1cec",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1cec"
+          ]
+        },
+        {
+          "pc": "000a1ce0",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1ce4",
+          "asm": "add x0,x0,#0x37f",
+          "edges": [
+            "PARAM:0019f37f"
+          ]
+        },
+        {
+          "pc": "000a1ce8",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1cec",
+          "asm": "ldr w0,[x29, #0x58]",
+          "edges": [
+            "READ:Stack[-0x28]"
+          ]
+        },
+        {
+          "pc": "000a1cf0",
+          "asm": "mov w1,#0xffff0008"
+        },
+        {
+          "pc": "000a1cf4",
+          "asm": "cmp w0,w1"
+        },
+        {
+          "pc": "000a1cf8",
+          "asm": "b.eq 0x000a1c1c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1cfc",
+          "asm": "b.hi 0x000a1d1c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d1c"
+          ]
+        },
+        {
+          "pc": "000a1d00",
+          "asm": "cbnz w0,0x000a1c58",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1d04",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1d08",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1d0c",
+          "asm": "adrp x21,0x16b000"
+        },
+        {
+          "pc": "000a1d10",
+          "asm": "mov x20,#0x0"
+        },
+        {
+          "pc": "000a1d14",
+          "asm": "add x21,x21,#0x720"
+        },
+        {
+          "pc": "000a1d18",
+          "asm": "b 0x000a1ca0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1ca0"
+          ]
+        },
+        {
+          "pc": "000a1d1c",
+          "asm": "mov w1,#0xffff000c"
+        },
+        {
+          "pc": "000a1d20",
+          "asm": "cmp w0,w1"
+        },
+        {
+          "pc": "000a1d24",
+          "asm": "b.eq 0x000a1d48",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d48"
+          ]
+        }
+      ]
+    },
+    "boot_calls_avb_init": {
+      "center": "00093024",
+      "owning_function": "00092e14",
+      "instructions": [
+        {
+          "pc": "00092f24",
+          "asm": "add x0,x0,#0x78e",
+          "edges": [
+            "PARAM:0018378e"
+          ]
+        },
+        {
+          "pc": "00092f28",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00092f2c",
+          "asm": "cmp w23,#0x1"
+        },
+        {
+          "pc": "00092f30",
+          "asm": "b.ne 0x000930dc",
+          "edges": [
+            "CONDITIONAL_JUMP:000930dc"
+          ]
+        },
+        {
+          "pc": "00092f34",
+          "asm": "mov x0,#0x28"
+        },
+        {
+          "pc": "00092f38",
+          "asm": "mov w2,#0xfeff"
+        },
+        {
+          "pc": "00092f3c",
+          "asm": "movk x0,#0x1c02, LSL #16"
+        },
+        {
+          "pc": "00092f40",
+          "asm": "ldrh w1,[x0]",
+          "edges": [
+            "READ:1c020028"
+          ]
+        },
+        {
+          "pc": "00092f44",
+          "asm": "and w1,w1,#0xfffe"
+        },
+        {
+          "pc": "00092f48",
+          "asm": "strh w1,[x0]",
+          "edges": [
+            "WRITE:1c020028"
+          ]
+        },
+        {
+          "pc": "00092f4c",
+          "asm": "ldrh w1,[x0]",
+          "edges": [
+            "READ:1c020028"
+          ]
+        },
+        {
+          "pc": "00092f50",
+          "asm": "and w1,w1,w2"
+        },
+        {
+          "pc": "00092f54",
+          "asm": "strh w1,[x0]",
+          "edges": [
+            "WRITE:1c020028"
+          ]
+        },
+        {
+          "pc": "00092f58",
+          "asm": "adrp x0,0x183000"
+        },
+        {
+          "pc": "00092f5c",
+          "asm": "add x0,x0,#0x7a1",
+          "edges": [
+            "PARAM:001837a1"
+          ]
+        },
+        {
+          "pc": "00092f60",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00092f64",
+          "asm": "b 0x00093040",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00093040"
+          ]
+        },
+        {
+          "pc": "00092f68",
+          "asm": "mov x0,#0x2710"
+        },
+        {
+          "pc": "00092f6c",
+          "asm": "bl 0x0015eecc",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eecc"
+          ]
+        },
+        {
+          "pc": "00092f70",
+          "asm": "mov x0,x24"
+        },
+        {
+          "pc": "00092f74",
+          "asm": "bl 0x0015ede8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ede8"
+          ]
+        },
+        {
+          "pc": "00092f78",
+          "asm": "cmp x0,#0x3e7"
+        },
+        {
+          "pc": "00092f7c",
+          "asm": "b.ls 0x00092e90",
+          "edges": [
+            "CONDITIONAL_JUMP:00092e90"
+          ]
+        },
+        {
+          "pc": "00092f80",
+          "asm": "sub w19,w19,#0x1"
+        },
+        {
+          "pc": "00092f84",
+          "asm": "b 0x00092ea8",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00092ea8"
+          ]
+        },
+        {
+          "pc": "00092f88",
+          "asm": "bl 0x00080f84",
+          "edges": [
+            "UNCONDITIONAL_CALL:00080f84"
+          ]
+        },
+        {
+          "pc": "00092f8c",
+          "asm": "bl 0x00050d08",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050d08"
+          ]
+        },
+        {
+          "pc": "00092f90",
+          "asm": "bl 0x00050d24",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050d24"
+          ]
+        },
+        {
+          "pc": "00092f94",
+          "asm": "bl 0x000558e4",
+          "edges": [
+            "UNCONDITIONAL_CALL:000558e4"
+          ]
+        },
+        {
+          "pc": "00092f98",
+          "asm": "cmp w0,#0x1"
+        },
+        {
+          "pc": "00092f9c",
+          "asm": "b.ne 0x00092fb8",
+          "edges": [
+            "CONDITIONAL_JUMP:00092fb8"
+          ]
+        },
+        {
+          "pc": "00092fa0",
+          "asm": "adrp x1,0x1af000"
+        },
+        {
+          "pc": "00092fa4",
+          "asm": "adrp x0,0x19b000"
+        },
+        {
+          "pc": "00092fa8",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "00092fac",
+          "asm": "add x1,x1,#0xefe",
+          "edges": [
+            "PARAM:001afefe"
+          ]
+        },
+        {
+          "pc": "00092fb0",
+          "asm": "add x0,x0,#0x77a",
+          "edges": [
+            "PARAM:0019b77a"
+          ]
+        },
+        {
+          "pc": "00092fb4",
+          "asm": "bl 0x00054d10",
+          "edges": [
+            "UNCONDITIONAL_CALL:00054d10"
+          ]
+        },
+        {
+          "pc": "00092fb8",
+          "asm": "mov x1,#0x40"
+        },
+        {
+          "pc": "00092fbc",
+          "asm": "stp xzr,xzr,[x29, #0x40]",
+          "edges": [
+            "WRITE:Stack[-0x100]"
+          ]
+        },
+        {
+          "pc": "00092fc0",
+          "asm": "add x0,x29,x1"
+        },
+        {
+          "pc": "00092fc4",
+          "asm": "stp xzr,xzr,[x29, #0x50]",
+          "edges": [
+            "WRITE:Stack[-0xf0]"
+          ]
+        },
+        {
+          "pc": "00092fc8",
+          "asm": "stp xzr,xzr,[x29, #0x60]",
+          "edges": [
+            "WRITE:Stack[-0xe0]"
+          ]
+        },
+        {
+          "pc": "00092fcc",
+          "asm": "adrp x2,0x183000"
+        },
+        {
+          "pc": "00092fd0",
+          "asm": "stp xzr,xzr,[x29, #0x70]",
+          "edges": [
+            "WRITE:Stack[-0xd0]"
+          ]
+        },
+        {
+          "pc": "00092fd4",
+          "asm": "add x2,x2,#0x6f8",
+          "edges": [
+            "PARAM:001836f8"
+          ]
+        },
+        {
+          "pc": "00092fd8",
+          "asm": "bl 0x0016088c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0016088c"
+          ]
+        },
+        {
+          "pc": "00092fdc",
+          "asm": "adrp x19,0x183000"
+        },
+        {
+          "pc": "00092fe0",
+          "asm": "add x1,x29,#0x40"
+        },
+        {
+          "pc": "00092fe4",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "00092fe8",
+          "asm": "adrp x0,0x183000"
+        },
+        {
+          "pc": "00092fec",
+          "asm": "add x0,x0,#0x71c",
+          "edges": [
+            "PARAM:0018371c"
+          ]
+        },
+        {
+          "pc": "00092ff0",
+          "asm": "bl 0x00054d10",
+          "edges": [
+            "UNCONDITIONAL_CALL:00054d10"
+          ]
+        },
+        {
+          "pc": "00092ff4",
+          "asm": "add x19,x19,#0x733"
+        },
+        {
+          "pc": "00092ff8",
+          "asm": "adrp x0,0x1b4000"
+        },
+        {
+          "pc": "00092ffc",
+          "asm": "add x0,x0,#0x3c1",
+          "edges": [
+            "PARAM:001b43c1"
+          ]
+        },
+        {
+          "pc": "00093000",
+          "asm": "bl 0x0009149c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0009149c"
+          ]
+        },
+        {
+          "pc": "00093004",
+          "asm": "mov x1,x19",
+          "edges": [
+            "PARAM:00183733"
+          ]
+        },
+        {
+          "pc": "00093008",
+          "asm": "bl 0x0015ed50",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed50"
+          ]
+        },
+        {
+          "pc": "0009300c",
+          "asm": "cbnz x0,0x00093024",
+          "edges": [
+            "CONDITIONAL_JUMP:00093024"
+          ]
+        },
+        {
+          "pc": "00093010",
+          "asm": "adrp x1,0x183000"
+        },
+        {
+          "pc": "00093014",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "00093018",
+          "asm": "add x1,x1,#0x73c",
+          "edges": [
+            "PARAM:0018373c"
+          ]
+        },
+        {
+          "pc": "0009301c",
+          "asm": "mov x0,x19",
+          "edges": [
+            "PARAM:00183733"
+          ]
+        },
+        {
+          "pc": "00093020",
+          "asm": "bl 0x00054d10",
+          "edges": [
+            "UNCONDITIONAL_CALL:00054d10"
+          ]
+        },
+        {
+          "pc": "00093024",
+          "asm": "bl 0x00050d40",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050d40"
+          ]
+        },
+        {
+          "pc": "00093028",
+          "asm": "bl 0x000562a8",
+          "edges": [
+            "UNCONDITIONAL_CALL:000562a8"
+          ]
+        },
+        {
+          "pc": "0009302c",
+          "asm": "cbz w0,0x00093054",
+          "edges": [
+            "CONDITIONAL_JUMP:00093054"
+          ]
+        },
+        {
+          "pc": "00093030",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "00093034",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "00093038",
+          "asm": "mov w1,#0xffffffff"
+        },
+        {
+          "pc": "0009303c",
+          "asm": "bl 0x000a0d28",
+          "edges": [
+            "UNCONDITIONAL_CALL:000a0d28"
+          ]
+        },
+        {
+          "pc": "00093040",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x130]"
+          ]
+        },
+        {
+          "pc": "00093044",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x120]"
+          ]
+        },
+        {
+          "pc": "00093048",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x110]"
+          ]
+        },
+        {
+          "pc": "0009304c",
+          "asm": "ldp x29,x30,[sp], #0x140",
+          "edges": [
+            "DATA:Stack[-0x140]"
+          ]
+        },
+        {
+          "pc": "00093050",
+          "asm": "ret"
+        },
+        {
+          "pc": "00093054",
+          "asm": "mov x2,#0x100"
+        },
+        {
+          "pc": "00093058",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "0009305c",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "00093060",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "00093064",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "00093068",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "0009306c",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "00093070",
+          "asm": "cmp w0,#0xff"
+        },
+        {
+          "pc": "00093074",
+          "asm": "b.le 0x00093094",
+          "edges": [
+            "CONDITIONAL_JUMP:00093094"
+          ]
+        },
+        {
+          "pc": "00093078",
+          "asm": "adrp x0,0x183000"
+        },
+        {
+          "pc": "0009307c",
+          "asm": "add x0,x0,#0x747",
+          "edges": [
+            "PARAM:00183747"
+          ]
+        },
+        {
+          "pc": "00093080",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00093084",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "00093088",
+          "asm": "mov w1,#0xffffffff"
+        },
+        {
+          "pc": "0009308c",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "00093090",
+          "asm": "bl 0x000a0d28",
+          "edges": [
+            "UNCONDITIONAL_CALL:000a0d28"
+          ]
+        },
+        {
+          "pc": "00093094",
+          "asm": "sxtw x2,w19"
+        },
+        {
+          "pc": "00093098",
+          "asm": "mov x1,x20"
+        },
+        {
+          "pc": "0009309c",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000930a0",
+          "asm": "bl 0x0015e84c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e84c"
+          ]
+        },
+        {
+          "pc": "000930a4",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000930a8",
+          "asm": "bl 0x00056ce0",
+          "edges": [
+            "UNCONDITIONAL_CALL:00056ce0"
+          ]
+        },
+        {
+          "pc": "000930ac",
+          "asm": "tbz w0,#0x1f,0x000930cc",
+          "edges": [
+            "CONDITIONAL_JUMP:000930cc"
+          ]
+        },
+        {
+          "pc": "000930b0",
+          "asm": "adrp x0,0x183000"
+        },
+        {
+          "pc": "000930b4",
+          "asm": "add x0,x0,#0x76c",
+          "edges": [
+            "PARAM:0018376c"
+          ]
+        },
+        {
+          "pc": "000930b8",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000930bc",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000930c0",
+          "asm": "mov w1,#0xffffffff"
+        },
+        {
+          "pc": "000930c4",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000930c8",
+          "asm": "bl 0x000a0d28",
+          "edges": [
+            "UNCONDITIONAL_CALL:000a0d28"
+          ]
+        },
+        {
+          "pc": "000930cc",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000930d0",
+          "asm": "mov w1,#0xffffffff"
+        },
+        {
+          "pc": "000930d4",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000930d8",
+          "asm": "b 0x0009303c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0009303c"
+          ]
+        },
+        {
+          "pc": "000930dc",
+          "asm": "cmp w23,#0x3"
+        },
+        {
+          "pc": "000930e0",
+          "asm": "b.ne 0x00092f58",
+          "edges": [
+            "CONDITIONAL_JUMP:00092f58"
+          ]
+        },
+        {
+          "pc": "000930e4",
+          "asm": "mov x0,#0x28"
+        },
+        {
+          "pc": "000930e8",
+          "asm": "mov w2,#0xfeff"
+        },
+        {
+          "pc": "000930ec",
+          "asm": "movk x0,#0x1c02, LSL #16"
+        },
+        {
+          "pc": "000930f0",
+          "asm": "ldrh w1,[x0]",
+          "edges": [
+            "READ:1c020028"
+          ]
+        },
+        {
+          "pc": "000930f4",
+          "asm": "and w1,w1,w2"
+        },
+        {
+          "pc": "000930f8",
+          "asm": "strh w1,[x0]",
+          "edges": [
+            "WRITE:1c020028"
+          ]
+        },
+        {
+          "pc": "000930fc",
+          "asm": "ldrh w1,[x0]",
+          "edges": [
+            "READ:1c020028"
+          ]
+        },
+        {
+          "pc": "00093100",
+          "asm": "and w1,w1,#0x3fff"
+        },
+        {
+          "pc": "00093104",
+          "asm": "b 0x00092f54",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00092f54"
+          ]
+        },
+        {
+          "pc": "00093108",
+          "asm": "adrp x0,0x183000"
+        },
+        {
+          "pc": "0009310c",
+          "asm": "add x0,x0,#0x7b0",
+          "edges": [
+            "PARAM:001837b0"
+          ]
+        },
+        {
+          "pc": "00093110",
+          "asm": "b 0x00092f60",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00092f60"
+          ]
+        },
+        {
+          "pc": "00093114",
+          "asm": "adrp x0,0x18e000"
+        },
+        {
+          "pc": "00093118",
+          "asm": "add x0,x0,#0xc24",
+          "edges": [
+            "PARAM:0018ec24"
+          ]
+        },
+        {
+          "pc": "0009311c",
+          "asm": "b 0x00092f60",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00092f60"
+          ]
+        }
+      ]
+    },
+    "avb_init_handler": {
+      "center": "00050d40",
+      "owning_function": "00050d40",
+      "instructions": [
+        {
+          "pc": "00050c40",
+          "asm": "adrp x0,0x1b4000"
+        },
+        {
+          "pc": "00050c44",
+          "asm": "add x0,x0,#0x74c",
+          "edges": [
+            "PARAM:001b474c"
+          ]
+        },
+        {
+          "pc": "00050c48",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050c4c",
+          "asm": "mov w2,#0x2"
+        },
+        {
+          "pc": "00050c50",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050c54",
+          "asm": "adrp x0,0x18a000"
+        },
+        {
+          "pc": "00050c58",
+          "asm": "add x0,x0,#0xa43",
+          "edges": [
+            "PARAM:0018aa43"
+          ]
+        },
+        {
+          "pc": "00050c5c",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050c60",
+          "asm": "mov w2,#0x2"
+        },
+        {
+          "pc": "00050c64",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050c68",
+          "asm": "adrp x0,0x18a000"
+        },
+        {
+          "pc": "00050c6c",
+          "asm": "add x0,x0,#0xa50",
+          "edges": [
+            "PARAM:0018aa50"
+          ]
+        },
+        {
+          "pc": "00050c70",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050c74",
+          "asm": "mov w2,#0x3"
+        },
+        {
+          "pc": "00050c78",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050c7c",
+          "asm": "adrp x0,0x1b4000"
+        },
+        {
+          "pc": "00050c80",
+          "asm": "add x0,x0,#0xbd6",
+          "edges": [
+            "PARAM:001b4bd6"
+          ]
+        },
+        {
+          "pc": "00050c84",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050c88",
+          "asm": "mov w2,#0x3"
+        },
+        {
+          "pc": "00050c8c",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050c90",
+          "asm": "adrp x0,0x18a000"
+        },
+        {
+          "pc": "00050c94",
+          "asm": "add x0,x0,#0xa5f",
+          "edges": [
+            "PARAM:0018aa5f"
+          ]
+        },
+        {
+          "pc": "00050c98",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050c9c",
+          "asm": "mov w2,#0x3"
+        },
+        {
+          "pc": "00050ca0",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050ca4",
+          "asm": "adrp x0,0x18a000"
+        },
+        {
+          "pc": "00050ca8",
+          "asm": "add x0,x0,#0xa6e",
+          "edges": [
+            "PARAM:0018aa6e"
+          ]
+        },
+        {
+          "pc": "00050cac",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050cb0",
+          "asm": "mov w2,#0x3"
+        },
+        {
+          "pc": "00050cb4",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050cb8",
+          "asm": "adrp x0,0x1b4000"
+        },
+        {
+          "pc": "00050cbc",
+          "asm": "add x0,x0,#0x3ec",
+          "edges": [
+            "PARAM:001b43ec"
+          ]
+        },
+        {
+          "pc": "00050cc0",
+          "asm": "bl 0x00050f8c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00050f8c"
+          ]
+        },
+        {
+          "pc": "00050cc4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050cc8",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050ccc",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050cd0",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050cd4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050cd8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "00050cdc",
+          "asm": "bl 0x0005113c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005113c"
+          ]
+        },
+        {
+          "pc": "00050ce0",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050ce4",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050ce8",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050cec",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050cf0",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "00050cf4",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "00050cf8",
+          "asm": "bl 0x0005113c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005113c"
+          ]
+        },
+        {
+          "pc": "00050cfc",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050d00",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d04",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050d08",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d0c",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "00050d10",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "00050d14",
+          "asm": "bl 0x0005113c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005113c"
+          ]
+        },
+        {
+          "pc": "00050d18",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050d1c",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d20",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050d24",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d28",
+          "asm": "mov w0,#0x3"
+        },
+        {
+          "pc": "00050d2c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "00050d30",
+          "asm": "bl 0x0005113c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005113c"
+          ]
+        },
+        {
+          "pc": "00050d34",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050d38",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d3c",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050d40",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d44",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050d48",
+          "asm": "adrp x0,0x1b7000"
+        },
+        {
+          "pc": "00050d4c",
+          "asm": "add x0,x0,#0x85c",
+          "edges": [
+            "PARAM:001b785c"
+          ]
+        },
+        {
+          "pc": "00050d50",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "00050d54",
+          "asm": "bl 0x000a0ccc",
+          "edges": [
+            "UNCONDITIONAL_CALL:000a0ccc"
+          ]
+        },
+        {
+          "pc": "00050d58",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050d5c",
+          "asm": "adrp x0,0x18d000"
+        },
+        {
+          "pc": "00050d60",
+          "asm": "add x0,x0,#0xb01",
+          "edges": [
+            "PARAM:0018db01"
+          ]
+        },
+        {
+          "pc": "00050d64",
+          "asm": "bl 0x000a0ccc",
+          "edges": [
+            "UNCONDITIONAL_CALL:000a0ccc"
+          ]
+        },
+        {
+          "pc": "00050d68",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050d6c",
+          "asm": "adrp x0,0x18d000"
+        },
+        {
+          "pc": "00050d70",
+          "asm": "add x0,x0,#0xb0c",
+          "edges": [
+            "PARAM:0018db0c"
+          ]
+        },
+        {
+          "pc": "00050d74",
+          "asm": "bl 0x000a0ccc",
+          "edges": [
+            "UNCONDITIONAL_CALL:000a0ccc"
+          ]
+        },
+        {
+          "pc": "00050d78",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050d7c",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050d80",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050d84",
+          "asm": "stp x29,x30,[sp, #-0x60]!",
+          "edges": [
+            "WRITE:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "00050d88",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "00050d8c",
+          "asm": "stp x23,x24,[sp, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "00050d90",
+          "asm": "mov x24,x0"
+        },
+        {
+          "pc": "00050d94",
+          "asm": "adrp x0,0x262000"
+        },
+        {
+          "pc": "00050d98",
+          "asm": "stp x21,x22,[sp, #0x20]",
+          "edges": [
+            "WRITE:Stack[-0x40]"
+          ]
+        },
+        {
+          "pc": "00050d9c",
+          "asm": "stp x25,x26,[sp, #0x40]",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "00050da0",
+          "asm": "mov w25,w1"
+        },
+        {
+          "pc": "00050da4",
+          "asm": "ldr x21,[x0, #0x5a8]",
+          "edges": [
+            "READ:002625a8"
+          ]
+        },
+        {
+          "pc": "00050da8",
+          "asm": "add x26,x0,#0x5a8"
+        },
+        {
+          "pc": "00050dac",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "00050db0",
+          "asm": "str x27,[sp, #0x50]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050db4",
+          "asm": "cmp x21,x26"
+        },
+        {
+          "pc": "00050db8",
+          "asm": "b.ne 0x00050ddc",
+          "edges": [
+            "CONDITIONAL_JUMP:00050ddc"
+          ]
+        },
+        {
+          "pc": "00050dbc",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00050dc0",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "00050dc4",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x40]"
+          ]
+        },
+        {
+          "pc": "00050dc8",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "00050dcc",
+          "asm": "ldp x25,x26,[sp, #0x40]",
+          "edges": [
+            "READ:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "00050dd0",
+          "asm": "ldr x27,[sp, #0x50]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "00050dd4",
+          "asm": "ldp x29,x30,[sp], #0x60",
+          "edges": [
+            "DATA:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "00050dd8",
+          "asm": "ret"
+        },
+        {
+          "pc": "00050ddc",
+          "asm": "ldur w0,[x21, #-0x4]",
+          "edges": [
+            "READ:30000008cfffffc"
+          ]
+        },
+        {
+          "pc": "00050de0",
+          "asm": "sub x22,x21,#0x10"
+        },
+        {
+          "pc": "00050de4",
+          "asm": "cmp w0,w25"
+        },
+        {
+          "pc": "00050de8",
+          "asm": "b.ne 0x00050f00",
+          "edges": [
+            "CONDITIONAL_JUMP:00050f00"
+          ]
+        },
+        {
+          "pc": "00050dec",
+          "asm": "mov x0,#0x20"
+        },
+        {
+          "pc": "00050df0",
+          "asm": "bl 0x0009a884",
+          "edges": [
+            "UNCONDITIONAL_CALL:0009a884"
+          ]
+        },
+        {
+          "pc": "00050df4",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "00050df8",
+          "asm": "cbnz x0,0x00050e34",
+          "edges": [
+            "CONDITIONAL_JUMP:00050e34"
+          ]
+        },
+        {
+          "pc": "00050dfc",
+          "asm": "adrp x0,0x1c5000"
+        },
+        {
+          "pc": "00050e00",
+          "asm": "ldr w0,[x0, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "00050e04",
+          "asm": "tbz w0,#0x0,0x00050e2c",
+          "edges": [
+            "CONDITIONAL_JUMP:00050e2c"
+          ]
+        },
+        {
+          "pc": "00050e08",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "00050e0c",
+          "asm": "add x1,x1,#0x1cf",
+          "edges": [
+            "PARAM:0017a1cf"
+          ]
+        },
+        {
+          "pc": "00050e10",
+          "asm": "mov w2,#0x7a"
+        },
+        {
+          "pc": "00050e14",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "00050e18",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "00050e1c",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00050e20",
+          "asm": "adrp x0,0x1ac000"
+        },
+        {
+          "pc": "00050e24",
+          "asm": "add x0,x0,#0x7e5",
+          "edges": [
+            "PARAM:001ac7e5"
+          ]
+        },
+        {
+          "pc": "00050e28",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00050e2c",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "00050e30",
+          "asm": "b 0x00050dc0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00050dc0"
+          ]
+        },
+        {
+          "pc": "00050e34",
+          "asm": "add x20,x19,#0x10"
+        },
+        {
+          "pc": "00050e38",
+          "asm": "mov x2,#0x20"
+        },
+        {
+          "pc": "00050e3c",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050e40",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "00050e44",
+          "asm": "str x20,[x19, #0x10]"
+        },
+        {
+          "pc": "00050e48",
+          "asm": "str x20,[x20, #0x8]"
+        },
+        {
+          "pc": "00050e4c",
+          "asm": "ldr x0,[x22]",
+          "edges": [
+            "READ:30000008cfffff0"
+          ]
+        },
+        {
+          "pc": "00050e50",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "00050e54",
+          "asm": "add x0,x0,#0x1"
+        },
+        {
+          "pc": "00050e58",
+          "asm": "bl 0x0009a884",
+          "edges": [
+            "UNCONDITIONAL_CALL:0009a884"
+          ]
+        },
+        {
+          "pc": "00050e5c",
+          "asm": "str x0,[x19]"
+        },
+        {
+          "pc": "00050e60",
+          "asm": "mov x23,x0"
+        },
+        {
+          "pc": "00050e64",
+          "asm": "cbnz x0,0x00050ea4",
+          "edges": [
+            "CONDITIONAL_JUMP:00050ea4"
+          ]
+        },
+        {
+          "pc": "00050e68",
+          "asm": "adrp x0,0x1c5000"
+        },
+        {
+          "pc": "00050e6c",
+          "asm": "ldr w0,[x0, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "00050e70",
+          "asm": "tbz w0,#0x0,0x00050e98",
+          "edges": [
+            "CONDITIONAL_JUMP:00050e98"
+          ]
+        },
+        {
+          "pc": "00050e74",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "00050e78",
+          "asm": "add x1,x1,#0x1cf",
+          "edges": [
+            "PARAM:0017a1cf"
+          ]
+        },
+        {
+          "pc": "00050e7c",
+          "asm": "mov w2,#0x82"
+        },
+        {
+          "pc": "00050e80",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "00050e84",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "00050e88",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00050e8c",
+          "asm": "adrp x0,0x1ac000"
+        },
+        {
+          "pc": "00050e90",
+          "asm": "add x0,x0,#0x7fb",
+          "edges": [
+            "PARAM:001ac7fb"
+          ]
+        },
+        {
+          "pc": "00050e94",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00050e98",
+          "asm": "mov x0,x19"
+        },
+        {
+          "pc": "00050e9c",
+          "asm": "bl 0x0009a658",
+          "edges": [
+            "UNCONDITIONAL_CALL:0009a658"
+          ]
+        },
+        {
+          "pc": "00050ea0",
+          "asm": "b 0x00050e2c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00050e2c"
+          ]
+        },
+        {
+          "pc": "00050ea4",
+          "asm": "ldr x0,[x22]",
+          "edges": [
+            "READ:30000008cfffff0"
+          ]
+        },
+        {
+          "pc": "00050ea8",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "00050eac",
+          "asm": "add x2,x0,#0x1"
+        },
+        {
+          "pc": "00050eb0",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00050eb4",
+          "asm": "mov x0,x23"
+        },
+        {
+          "pc": "00050eb8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "00050ebc",
+          "asm": "ldr x23,[x22]",
+          "edges": [
+            "READ:30000008cfffff0"
+          ]
+        },
+        {
+          "pc": "00050ec0",
+          "asm": "ldr x27,[x19]"
+        },
+        {
+          "pc": "00050ec4",
+          "asm": "mov x0,x23"
+        },
+        {
+          "pc": "00050ec8",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "00050ecc",
+          "asm": "mov x1,x23"
+        },
+        {
+          "pc": "00050ed0",
+          "asm": "mov x2,x0"
+        },
+        {
+          "pc": "00050ed4",
+          "asm": "mov x0,x27"
+        },
+        {
+          "pc": "00050ed8",
+          "asm": "bl 0x0015e84c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e84c"
+          ]
+        },
+        {
+          "pc": "00050edc",
+          "asm": "ldr w0,[x22, #0x8]",
+          "edges": [
+            "READ:30000008cfffff8"
+          ]
+        },
+        {
+          "pc": "00050ee0",
+          "asm": "str w0,[x19, #0x8]"
+        }
+      ]
+    },
+    "dev_signature_function": {
+      "center": "000110b0",
+      "owning_function": "000110b0",
+      "instructions": [
+        {
+          "pc": "00010fb0",
+          "asm": "mov w19,#0x1"
+        },
+        {
+          "pc": "00010fb4",
+          "asm": "b 0x00011018",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00011018"
+          ]
+        },
+        {
+          "pc": "00010fb8",
+          "asm": "mov x20,x3"
+        },
+        {
+          "pc": "00010fbc",
+          "asm": "add x0,x29,#0x30"
+        },
+        {
+          "pc": "00010fc0",
+          "asm": "bl 0x000147c4",
+          "edges": [
+            "UNCONDITIONAL_CALL:000147c4"
+          ]
+        },
+        {
+          "pc": "00010fc4",
+          "asm": "mov w19,w0"
+        },
+        {
+          "pc": "00010fc8",
+          "asm": "cbnz w0,0x00010fb0",
+          "edges": [
+            "CONDITIONAL_JUMP:00010fb0"
+          ]
+        },
+        {
+          "pc": "00010fcc",
+          "asm": "ldr x0,[x20, #0x8]"
+        },
+        {
+          "pc": "00010fd0",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "00010fd4",
+          "asm": "mov x1,#0x0"
+        },
+        {
+          "pc": "00010fd8",
+          "asm": "bl 0x001613d0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001613d0"
+          ]
+        },
+        {
+          "pc": "00010fdc",
+          "asm": "mov x21,x0"
+        },
+        {
+          "pc": "00010fe0",
+          "asm": "cbz x0,0x00011000",
+          "edges": [
+            "CONDITIONAL_JUMP:00011000"
+          ]
+        },
+        {
+          "pc": "00010fe4",
+          "asm": "cmp x0,#0x1"
+        },
+        {
+          "pc": "00010fe8",
+          "asm": "b.eq 0x0001102c",
+          "edges": [
+            "CONDITIONAL_JUMP:0001102c"
+          ]
+        },
+        {
+          "pc": "00010fec",
+          "asm": "ldr x1,[x20]"
+        },
+        {
+          "pc": "00010ff0",
+          "asm": "adrp x0,0x1c2000"
+        },
+        {
+          "pc": "00010ff4",
+          "asm": "add x0,x0,#0x693",
+          "edges": [
+            "PARAM:001c2693"
+          ]
+        },
+        {
+          "pc": "00010ff8",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00010ffc",
+          "asm": "b 0x00010fb0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00010fb0"
+          ]
+        },
+        {
+          "pc": "00011000",
+          "asm": "adrp x0,0x1c2000"
+        },
+        {
+          "pc": "00011004",
+          "asm": "add x0,x0,#0x672",
+          "edges": [
+            "PARAM:001c2672"
+          ]
+        },
+        {
+          "pc": "00011008",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "0001100c",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "00011010",
+          "asm": "add x0,x29,#0x30"
+        },
+        {
+          "pc": "00011014",
+          "asm": "bl 0x000148d0",
+          "edges": [
+            "UNCONDITIONAL_CALL:000148d0"
+          ]
+        },
+        {
+          "pc": "00011018",
+          "asm": "mov w0,w19"
+        },
+        {
+          "pc": "0001101c",
+          "asm": "ldr x21,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x40]"
+          ]
+        },
+        {
+          "pc": "00011020",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "00011024",
+          "asm": "ldp x29,x30,[sp], #0x60",
+          "edges": [
+            "DATA:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "00011028",
+          "asm": "ret"
+        },
+        {
+          "pc": "0001102c",
+          "asm": "adrp x0,0x1c2000"
+        },
+        {
+          "pc": "00011030",
+          "asm": "add x0,x0,#0x683",
+          "edges": [
+            "PARAM:001c2683"
+          ]
+        },
+        {
+          "pc": "00011034",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00011038",
+          "asm": "mov w1,w21"
+        },
+        {
+          "pc": "0001103c",
+          "asm": "b 0x00011010",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00011010"
+          ]
+        },
+        {
+          "pc": "000110b0",
+          "asm": "stp x29,x30,[sp, #-0x140]!",
+          "edges": [
+            "WRITE:Stack[-0x140]"
+          ]
+        },
+        {
+          "pc": "000110b4",
+          "asm": "mov x2,#0x100"
+        },
+        {
+          "pc": "000110b8",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000110bc",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000110c0",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x130]"
+          ]
+        },
+        {
+          "pc": "000110c4",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000110c8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000110cc",
+          "asm": "adrp x20,0x1c5000"
+        },
+        {
+          "pc": "000110d0",
+          "asm": "stp xzr,xzr,[x29, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x110]"
+          ]
+        },
+        {
+          "pc": "000110d4",
+          "asm": "add x1,x29,#0x30"
+        },
+        {
+          "pc": "000110d8",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000110dc",
+          "asm": "str wzr,[x29, #0x28]",
+          "edges": [
+            "WRITE:Stack[-0x118]"
+          ]
+        },
+        {
+          "pc": "000110e0",
+          "asm": "bl 0x0007d258",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007d258"
+          ]
+        },
+        {
+          "pc": "000110e4",
+          "asm": "cmn w0,#0x1"
+        },
+        {
+          "pc": "000110e8",
+          "asm": "b.ne 0x00011128",
+          "edges": [
+            "CONDITIONAL_JUMP:00011128"
+          ]
+        },
+        {
+          "pc": "000110ec",
+          "asm": "ldr w0,[x20, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "000110f0",
+          "asm": "tbz w0,#0x0,0x00011118",
+          "edges": [
+            "CONDITIONAL_JUMP:00011118"
+          ]
+        },
+        {
+          "pc": "000110f4",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "000110f8",
+          "asm": "add x1,x1,#0x4b1",
+          "edges": [
+            "PARAM:0017a4b1"
+          ]
+        },
+        {
+          "pc": "000110fc",
+          "asm": "mov w2,#0xa3"
+        },
+        {
+          "pc": "00011100",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "00011104",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "00011108",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "0001110c",
+          "asm": "adrp x0,0x1c0000"
+        },
+        {
+          "pc": "00011110",
+          "asm": "add x0,x0,#0xfb3",
+          "edges": [
+            "PARAM:001c0fb3"
+          ]
+        },
+        {
+          "pc": "00011114",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00011118",
+          "asm": "ldr w0,[x20, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "0001111c",
+          "asm": "tbnz w0,#0x0,0x000111d0",
+          "edges": [
+            "CONDITIONAL_JUMP:000111d0"
+          ]
+        },
+        {
+          "pc": "00011120",
+          "asm": "mov w19,#0x1"
+        },
+        {
+          "pc": "00011124",
+          "asm": "b 0x0001127c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0001127c"
+          ]
+        },
+        {
+          "pc": "00011128",
+          "asm": "ldr x1,[x29, #0x38]",
+          "edges": [
+            "READ:Stack[-0x108]"
+          ]
+        },
+        {
+          "pc": "0001112c",
+          "asm": "mov x2,#0x100"
+        },
+        {
+          "pc": "00011130",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "00011134",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "00011138",
+          "asm": "mov x1,#0x100"
+        },
+        {
+          "pc": "0001113c",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "00011140",
+          "asm": "bl 0x000812f0",
+          "edges": [
+            "UNCONDITIONAL_CALL:000812f0"
+          ]
+        },
+        {
+          "pc": "00011144",
+          "asm": "stp xzr,xzr,[x29, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x110]"
+          ]
+        },
+        {
+          "pc": "00011148",
+          "asm": "add x1,x29,#0x30"
+        },
+        {
+          "pc": "0001114c",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "00011150",
+          "asm": "bl 0x0007d258",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007d258"
+          ]
+        },
+        {
+          "pc": "00011154",
+          "asm": "cmn w0,#0x1"
+        },
+        {
+          "pc": "00011158",
+          "asm": "b.eq 0x000111f8",
+          "edges": [
+            "CONDITIONAL_JUMP:000111f8"
+          ]
+        },
+        {
+          "pc": "0001115c",
+          "asm": "ldr x1,[x29, #0x38]",
+          "edges": [
+            "READ:Stack[-0x108]"
+          ]
+        },
+        {
+          "pc": "00011160",
+          "asm": "mov x2,#0x4"
+        },
+        {
+          "pc": "00011164",
+          "asm": "add x0,x29,#0x28"
+        },
+        {
+          "pc": "00011168",
+          "asm": "add x1,x1,#0x100"
+        },
+        {
+          "pc": "0001116c",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "00011170",
+          "asm": "mov x1,#0x4"
+        },
+        {
+          "pc": "00011174",
+          "asm": "add x0,x29,#0x28"
+        },
+        {
+          "pc": "00011178",
+          "asm": "bl 0x000812f0",
+          "edges": [
+            "UNCONDITIONAL_CALL:000812f0"
+          ]
+        },
+        {
+          "pc": "0001117c",
+          "asm": "mov w4,#0xc"
+        },
+        {
+          "pc": "00011180",
+          "asm": "adrp x3,0x1b2000"
+        },
+        {
+          "pc": "00011184",
+          "asm": "adrp x2,0x1c3000"
+        },
+        {
+          "pc": "00011188",
+          "asm": "add x3,x3,#0x3b9",
+          "edges": [
+            "PARAM:001b23b9"
+          ]
+        },
+        {
+          "pc": "0001118c",
+          "asm": "add x2,x2,#0xe20",
+          "edges": [
+            "PARAM:001c3e20"
+          ]
+        },
+        {
+          "pc": "00011190",
+          "asm": "add x1,x29,#0x28"
+        },
+        {
+          "pc": "00011194",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "00011198",
+          "asm": "bl 0x00066600",
+          "edges": [
+            "UNCONDITIONAL_CALL:00066600"
+          ]
+        },
+        {
+          "pc": "0001119c",
+          "asm": "mov w19,w0"
+        },
+        {
+          "pc": "000111a0",
+          "asm": "cbz w0,0x00011250",
+          "edges": [
+            "CONDITIONAL_JUMP:00011250"
+          ]
+        },
+        {
+          "pc": "000111a4",
+          "asm": "ldr w0,[x20, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "000111a8",
+          "asm": "tbz w0,#0x0,0x00011120",
+          "edges": [
+            "CONDITIONAL_JUMP:00011120"
+          ]
+        },
+        {
+          "pc": "000111ac",
+          "asm": "mov w2,#0xe1"
+        },
+        {
+          "pc": "000111b0",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "000111b4",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "000111b8",
+          "asm": "add x1,x1,#0x4ea",
+          "edges": [
+            "PARAM:0017a4ea"
+          ]
+        },
+        {
+          "pc": "000111bc",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "000111c0",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000111c4",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000111c8",
+          "asm": "add x0,x0,#0x746",
+          "edges": [
+            "PARAM:0019f746"
+          ]
+        },
+        {
+          "pc": "000111cc",
+          "asm": "b 0x000111f0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000111f0"
+          ]
+        },
+        {
+          "pc": "000111d0",
+          "asm": "mov w2,#0xcf"
+        },
+        {
+          "pc": "000111d4",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "000111d8",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "000111dc",
+          "asm": "add x1,x1,#0x4ea",
+          "edges": [
+            "PARAM:0017a4ea"
+          ]
+        },
+        {
+          "pc": "000111e0",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "000111e4",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000111e8",
+          "asm": "adrp x0,0x1c0000"
+        },
+        {
+          "pc": "000111ec",
+          "asm": "add x0,x0,#0xfd6",
+          "edges": [
+            "PARAM:001c0fd6"
+          ]
+        },
+        {
+          "pc": "000111f0",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000111f4",
+          "asm": "b 0x00011120",
+          "edges": [
+            "UNCONDITIONAL_JUMP:00011120"
+          ]
+        },
+        {
+          "pc": "000111f8",
+          "asm": "ldr w0,[x20, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "000111fc",
+          "asm": "tbz w0,#0x0,0x00011224",
+          "edges": [
+            "CONDITIONAL_JUMP:00011224"
+          ]
+        },
+        {
+          "pc": "00011200",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "00011204",
+          "asm": "add x1,x1,#0x4c2",
+          "edges": [
+            "PARAM:0017a4c2"
+          ]
+        },
+        {
+          "pc": "00011208",
+          "asm": "mov w2,#0xbd"
+        },
+        {
+          "pc": "0001120c",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "00011210",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "00011214",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00011218",
+          "asm": "adrp x0,0x1c0000"
+        },
+        {
+          "pc": "0001121c",
+          "asm": "add x0,x0,#0xfb3",
+          "edges": [
+            "PARAM:001c0fb3"
+          ]
+        },
+        {
+          "pc": "00011220",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00011224",
+          "asm": "ldr w0,[x20, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        },
+        {
+          "pc": "00011228",
+          "asm": "tbz w0,#0x0,0x00011120",
+          "edges": [
+            "CONDITIONAL_JUMP:00011120"
+          ]
+        },
+        {
+          "pc": "0001122c",
+          "asm": "mov w2,#0xd6"
+        },
+        {
+          "pc": "00011230",
+          "asm": "adrp x1,0x17a000"
+        },
+        {
+          "pc": "00011234",
+          "asm": "adrp x0,0x19c000"
+        },
+        {
+          "pc": "00011238",
+          "asm": "add x1,x1,#0x4ea",
+          "edges": [
+            "PARAM:0017a4ea"
+          ]
+        },
+        {
+          "pc": "0001123c",
+          "asm": "add x0,x0,#0x50c",
+          "edges": [
+            "PARAM:0019c50c"
+          ]
+        },
+        {
+          "pc": "00011240",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "00011244",
+          "asm": "adrp x0,0x1c0000"
+        },
+        {
+          "pc": "00011248",
+          "asm": "add x0,x0,#0xfff",
+          "edges": [
+            "PARAM:001c0fff"
+          ]
+        },
+        {
+          "pc": "0001124c",
+          "asm": "b 0x000111f0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000111f0"
+          ]
+        },
+        {
+          "pc": "00011250",
+          "asm": "ldr w0,[x20, #0x878]",
+          "edges": [
+            "READ:001c5878"
+          ]
+        }
+      ]
+    }
+  },
   "candidate_functions": [
     {
       "address": "000110b0",
@@ -133,6 +4295,12 @@
         "000a0ccc"
       ],
       "decompiled_excerpt": "\nundefined8 FUN_00050d40(void)\n\n{\n  FUN_000a0ccc(s_checkteesuccess_001b785c,0);\n  FUN_000a0ccc(s_avb_init_0_0018db01,0);\n  FUN_000a0ccc(s_ab_slt_0_0018db0c,0);\n  return 0;\n}\n\n"
+    },
+    {
+      "address": "00092e14",
+      "name": "FUN_00092e14",
+      "bytes": 780,
+      "decompiled_excerpt": "\n/* WARNING: Globals starting with \u0027_\u0027 overlap smaller symbols at the same address */\n\nvoid FUN_00092e14(long *param_1)\n\n{\n  bool bVar1;\n  int iVar2;\n  int iVar3;\n  int iVar4;\n  undefined8 uVar5;\n  long lVar6;\n  char *pcVar7;\n  ulong uVar8;\n  long extraout_x18;\n  long local_100 [32];\n  \n  iVar2 \u003d FUN_000506d4();\n  iVar4 \u003d DAT_00278050;\n  if ((DAT_00278050 \u003d\u003d -1) || (param_1 \u003d\u003d (long *)0x0)) {\nLAB_00092f00:\n    iVar4 \u003d FUN_000a7488(0x5d,0,local_100);\n    if (iVar4 \u003d\u003d 0) {\n      if (local_100[0] \u003d\u003d 0) {\n        pcVar7 \u003d s_get_wdt_device_error_____001837b0;\n      }\n      else {\n        FUN_0011fb38();\n        FUN_001609c0(s_jump_to_console_0018378e);\n        if (iVar2 \u003d\u003d 1) {\n          _DAT_1c020028 \u003d _DAT_1c020028 \u0026 0xfefe;\n        }\n        else if (iVar2 \u003d\u003d 3) {\n          _DAT_1c020028 \u003d _DAT_1c020028 \u0026 0x3eff;\n        }\n        pcVar7 \u003d s_disable_DRM_001837a1;\n      }\n    }\n    else {\n      pcVar7 \u003d s_WDT_get_device_Error______0018ec24;\n    }\n    FUN_001609c0(pcVar7);\n  }\n  else {\n    if (-1 \u003c DAT_00278050) {\n      FUN_001609c0(s_Hit_any_key_to_stop_autoboot___2_001836c7,DAT_00278050);\n      iVar3 \u003d FUN_0009a04c();\n      if ((iVar3 \u003d\u003d 0) || (iVar3 \u003d FUN_00099f8c(), iVar3 !\u003d 0xd \u0026\u0026 iVar3 !\u003d 10)) {\n        bVar1 \u003d false;\n        while ((bool)((bVar1 ^ 1U) \u0026 0 \u003c iVar4)) {\n          uVar5 \u003d FUN_0015ede8(0);\n          do {\n            iVar3 \u003d FUN_0009a04c();\n            if (iVar3 !\u003d 0) {\n              bVar1 \u003d true;\n              iVar4 \u003d 0;\n              FUN_00099f8c();\n              goto LAB_00092ea8;\n            }\n            FUN_0015eecc(10000);\n            uVar8 \u003d FUN_0015ede8(uVar5);\n          } while (uVar8 \u003c 1000);\n          iVar4 \u003d iVar4 + -1;\n          bVar1 \u003d false;\nLAB_00092ea8:\n          FUN_001609c0(\u0026DAT_001836f0,iVar4);\n        }\n      }\n      else {\n        bVar1 \u003d true;\n        FUN_0009a0e8(\u0026DAT_001836ea);\n      }\n      FUN_0009a094(10);\n      if (bVar1) {\n        lVar6 \u003d FUN_0009149c(s_uboot_console_off_001ae2e6);\n        if (lVar6 \u003d\u003d 0) {\n          *(ulong *)(extraout_x18 + 8) \u003d *(ulong *)(extraout_x18 + 8) \u0026 0xfffffffffffffffb;\n        }\n        goto LAB_00092f00;\n      }\n    }\n    FUN_00080f84();\n    FUN_00050d08();\n    FUN_00050d24();\n    iVar4 \u003d FUN_000558e4();\n    if (iVar4 \u003d\u003d 1) {\n      FUN_00054d10(s_androidboot_quiescent_0019b77a,s_androidboot_quiescent_1_001afefe,0);\n    }\n    local_100[0] \u003d 0;\n    local_100[1] \u003d 0;\n    local_100[2] \u003d 0;\n    local_100[3] \u003d 0;\n    local_100[4] \u003d 0;\n    local_100[5] \u003d 0;\n    local_100[6] \u003d 0;\n    local_100[7] \u003d 0;\n    FUN_0016088c(local_100,0x40,s_androidboot_bootloader_01_01_261_001836f8);\n    FUN_00054d10(s_androidboot_bootloader_0018371c,local_100,0);\n    uVar5 \u003d FUN_0009149c(s_U_Boot_sets_mmap_filename_to_boo_001b43a4 + 0x1d);\n    lVar6 \u003d FUN_0015ed50(uVar5,s_loglevel_00183733);\n    if (lVar6 \u003d\u003d 0) {\n      FUN_00054d10(s_loglevel_00183733,s_loglevel_3_0018373c,0);\n    }\n    FUN_00050d40();\n    iVar4 \u003d FUN_000562a8();\n    if (iVar4 \u003d\u003d 0) {\n      FUN_0015eb58(local_100,0,0x100);\n      iVar4 \u003d FUN_0015e960(param_1);\n      if (0xff \u003c iVar4) {\n        FUN_001609c0(s__ERROR__The_array_size_is_too_sm_00183747);\n        FUN_000a0d28(param_1,0xffffffff,0);\n      }\n      FUN_0015e84c(local_100,param_1,(long)iVar4);\n      iVar4 \u003d FUN_00056ce0(local_100);\n      if (iVar4 \u003c 0) {\n        FUN_001609c0(s__ERROR__check_boot_img_size_fail_0018376c);\n        FUN_000a0d28(param_1,0xffffffff,0);\n      }\n      param_1 \u003d local_100;\n    }\n    FUN_000a0d28(param_1,0xffffffff,0);\n  }\n  return;\n}\n\n"
     }
   ]
 }
