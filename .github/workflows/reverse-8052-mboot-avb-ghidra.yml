@@ -1,0 +1,87 @@
+name: RE stage 2 — Ghidra headless decompilation of MT9660 mboot AVB
+
+on:
+  push:
+    paths:
+      - ".github/workflows/reverse-8052-mboot-avb-ghidra.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ghidra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Obtain exact SHA256-verified 8052 OTA and extract U-Boot only
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ghidra8052/dumper /tmp/ghidra8052/parts /tmp/ghidra8052/reports
+          curl -fL --retry 5 --retry-delay 3 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/ghidra8052/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ghidra8052/ota.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/ghidra8052/dumper.tgz
+          tar -xzf /tmp/ghidra8052/dumper.tgz -C /tmp/ghidra8052/dumper
+          BIN="$(find /tmp/ghidra8052/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p mboot -o /tmp/ghidra8052/parts /tmp/ghidra8052/ota.zip
+          echo "8819cc068a7a05243eebbc504289442e6cf24992af4562f84a4c51bdf7d691ee  /tmp/ghidra8052/parts/mboot.img" | sha256sum -c -
+      - name: Download official Ghidra 12.1.4 and unzip
+        run: |
+          set -euo pipefail
+          curl -fL --retry 4 https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip -o /tmp/ghidra8052/ghidra.zip
+          unzip -q /tmp/ghidra8052/ghidra.zip -d /tmp/ghidra8052/
+          ls -l /tmp/ghidra8052/ghidra_12.1.4_PUBLIC/support/analyzeHeadless
+      - name: Headless AARCH64 raw binary analysis, actual key and AVB failure code XREF
+        env:
+          GHIDRA_AVB_OUTPUT: /tmp/ghidra8052/reports/ghidra_avb.json
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ghidra8052/project
+          /tmp/ghidra8052/ghidra_12.1.4_PUBLIC/support/analyzeHeadless \
+            /tmp/ghidra8052/project MT9660Uboot \
+            -import /tmp/ghidra8052/parts/mboot.img \
+            -processor AARCH64:LE:64:v8A \
+            -loader BinaryLoader -loader-baseAddr 0 \
+            -scriptPath "$PWD/tools/ghidra" \
+            -preScript MT9660Entry.py \
+            -postScript MT9660AvbXrefs.py \
+            -analysisTimeoutPerFile 450 -max-cpu 4 \
+            > /tmp/ghidra8052/headless.log 2>&1 || { tail -n 90 /tmp/ghidra8052/headless.log; exit 1; }
+          tail -n 90 /tmp/ghidra8052/headless.log
+          test -s "$GHIDRA_AVB_OUTPUT"
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/ghidra8052/reports/ghidra_avb.json'))
+          print('PROGRAM',d['image_name'],d['language'],'FUNCTIONS',d['function_count'])
+          for name,v in d['targets'].items():
+            print('XREF',name,'count',v['reference_count'],'refs',v['references'][:3])
+          print('DECOMPILED',len(d['candidate_functions']))
+          PY
+      - name: Commit non-flashing reverse-engineering evidence to separate research branch
+        if: success()
+        run: |
+          mkdir -p analysis/AVB_Chain_RE_8052
+          cp /tmp/ghidra8052/reports/ghidra_avb.json analysis/AVB_Chain_RE_8052/ghidra_avb.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/AVB_Chain_RE_8052/ghidra_avb.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Ghidra AArch64 AVB function xrefs and decompile excerpts of 8052 mboot"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ghidra-mt9660-avb-re
+          path: |
+            /tmp/ghidra8052/reports/
+            /tmp/ghidra8052/headless.log
+          if-no-files-found: warn
+          retention-days: 20
