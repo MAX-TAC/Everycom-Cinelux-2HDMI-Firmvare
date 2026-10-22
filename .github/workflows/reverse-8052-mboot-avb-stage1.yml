@@ -39,7 +39,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           import hashlib,re,json,collections,subprocess
-          from capstone import Cs,CS_ARCH_ARM64,CS_ARCH_ARM,CS_MODE_ARM,CS_MODE_LITTLE_ENDIAN
+          from capstone import Cs,CS_ARCH_ARM64,CS_ARCH_ARM,CS_ARCH_MIPS,CS_MODE_ARM,CS_MODE_THUMB,CS_MODE_MIPS32,CS_MODE_BIG_ENDIAN,CS_MODE_LITTLE_ENDIAN
           root=Path('/tmp/mbootre/parts')
           data=(root/'mboot.img').read_bytes()
           vb=(root/'vbmeta.img').read_bytes()
@@ -58,6 +58,25 @@ jobs:
           rel=[x for x in strings if any(re.search(p,x['text'],re.I) for p in patterns)]
           # avoid proprietary program strings in public report except AVB-related addresses and exact short diagnostics
           rel=[x for x in rel if len(x['text'])<=230]
+          # Sample architecture candidates at aligned offsets in the image; report actual mnemonics, not just heuristic scores.
+          candidate_offsets=[0,0x20,0x40,0x100,0x200,0x400,0x800,0x1000,0x2000,0x4000,0x10000,0x40000,0x80000,0x100000,0x140000,0x170000]
+          arch_candidates=[
+             ('aarch64_le',CS_ARCH_ARM64,CS_MODE_LITTLE_ENDIAN),
+             ('arm32_le',CS_ARCH_ARM,CS_MODE_ARM+CS_MODE_LITTLE_ENDIAN),
+             ('arm_thumb_le',CS_ARCH_ARM,CS_MODE_THUMB+CS_MODE_LITTLE_ENDIAN),
+             ('mips32_be',CS_ARCH_MIPS,CS_MODE_MIPS32+CS_MODE_BIG_ENDIAN),
+             ('mips32_le',CS_ARCH_MIPS,CS_MODE_MIPS32+CS_MODE_LITTLE_ENDIAN)]
+          sample={}
+          for off in candidate_offsets:
+              if off+256>len(data):continue
+              v={'bytes':data[off:off+64].hex(),'architectures':{}}
+              for label,arch,mode in arch_candidates:
+                  cs=Cs(arch,mode)
+                  inst=list(cs.disasm(data[off:off+256],off))
+                  v['architectures'][label]={
+                      'instructions':len(inst),'bytes_decoded':sum(i.size for i in inst),
+                      'first_instructions':[f'{i.mnemonic} {i.op_str}' for i in inst[:10]]}
+              sample[hex(off)]=v
           # detect file magic and valid ELF headers at any offset
           elf_offsets=[m.start() for m in re.finditer(re.escape(b'\x7fELF'),data)]
           uimage_offsets=[m.start() for m in re.finditer(re.escape(b'\x27\x05\x19\x56'),data)]
@@ -83,6 +102,7 @@ jobs:
             'elf_magic_offsets':elf_offsets[:20],'uimage_magic_offsets':uimage_offsets[:20],
             'known_public_avb_key':{'offset':key_at,'hex_offset':hex(key_at),'size':keylen,'sha256':hashlib.sha256(pub).hexdigest()},
             'architecture_probe':mboot_arch_tests,
+            'architecture_extended_sample':sample,
             'strings_count':len(strings),'selected_avb_strings':rel[:240],
             'strings_near_key':nearby[:100],
             'limits':[
