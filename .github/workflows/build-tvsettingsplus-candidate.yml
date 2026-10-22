@@ -36,9 +36,16 @@ jobs:
           echo 'bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip' | sha256sum -c -
           DUMPER="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
           chmod +x "$DUMPER"
-          "$DUMPER" -c 3 -p system_ext -o /tmp/images /tmp/ota.zip > /tmp/dump.log 2>&1 || { tail -n 60 /tmp/dump.log; exit 1; }
-          mkdir -p /tmp/erofs/system_ext
-          fsck.erofs --extract=/tmp/erofs/system_ext /tmp/images/system_ext.img >/tmp/extract.log 2>&1 || { tail -n 60 /tmp/extract.log; exit 1; }
+          "$DUMPER" -c 3 -p system,system_ext -o /tmp/images /tmp/ota.zip > /tmp/dump.log 2>&1 || { tail -n 60 /tmp/dump.log; exit 1; }
+          for part in system system_ext; do
+            mkdir -p "/tmp/erofs/$part"
+            fsck.erofs --extract="/tmp/erofs/$part" "/tmp/images/$part.img" >"/tmp/extract-$part.log" 2>&1 || { tail -n 60 "/tmp/extract-$part.log"; exit 1; }
+          done
+          OEM_FRAMEWORK=/tmp/erofs/system/system/framework/framework-res.apk
+          test -s "$OEM_FRAMEWORK"
+          mkdir -p /tmp/apkframework
+          java -jar /tmp/apktool.jar if -p /tmp/apkframework "$OEM_FRAMEWORK"
+          ls -lh /tmp/apkframework/
           SRC=/tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk
           test -s "$SRC"
           echo 'e4184a13fbf56fa069effc6a40ea50c0da7e9190321b389f59ba34700a80d0a1  /tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk' | sha256sum -c -
@@ -48,7 +55,7 @@ jobs:
       - name: Decompile verified original without altering any OEM DEX
         run: |
           set -euo pipefail
-          java -jar /tmp/apktool.jar d -f -s -o /tmp/tvmod/decoded /tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk >/tmp/decode.log 2>&1 || { tail -n 100 /tmp/decode.log; exit 1; }
+          java -jar /tmp/apktool.jar d -f -s -p /tmp/apkframework -o /tmp/tvmod/decoded /tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk >/tmp/decode.log 2>&1 || { tail -n 100 /tmp/decode.log; exit 1; }
           python3 tools/prepare_tvsettingsplus_candidate.py /tmp/tvmod/decoded
           test -f /tmp/tvmod/decoded/AndroidManifest.xml.before-cinelux
           ls -lh /tmp/tvmod/decoded/
@@ -56,7 +63,7 @@ jobs:
       - name: Rebuild stock resources, preserving unchanged OEM runtime bytecode
         run: |
           set -euo pipefail
-          java -Xmx4G -jar /tmp/apktool.jar b /tmp/tvmod/decoded -o /tmp/tvmod/rebuilt.apk >/tmp/rebuild.log 2>&1 || { tail -n 125 /tmp/rebuild.log; exit 1; }
+          java -Xmx4G -jar /tmp/apktool.jar b -p /tmp/apkframework /tmp/tvmod/decoded -o /tmp/tvmod/rebuilt.apk >/tmp/rebuild.log 2>&1 || { tail -n 125 /tmp/rebuild.log; exit 1; }
           test -s /tmp/tvmod/rebuilt.apk
           aapt dump badging /tmp/tvmod/rebuilt.apk | head -n 12
           unzip -tq /tmp/tvmod/rebuilt.apk | tail -n 3
