@@ -47,7 +47,7 @@ jobs:
             /tmp/ghidra8052/project MT9660Uboot \
             -import /tmp/ghidra8052/parts/mboot.img \
             -processor AARCH64:LE:64:v8A \
-            -loader BinaryLoader -loader-baseAddr 0 \
+            -loader BinaryLoader -loader-fileOffset 0x400 -loader-baseAddr 0 \
             -scriptPath "$PWD/tools/ghidra" \
             -preScript MT9660Entry.java \
             -postScript MT9660AvbXrefs.java \
@@ -58,7 +58,7 @@ jobs:
           python3 - <<'PY'
           import json
           d=json.load(open('/tmp/ghidra8052/reports/ghidra_avb.json'))
-          print('PROGRAM',d['image_name'],d['language'],'FUNCTIONS',d['function_count'])
+          print('PROGRAM',d['image'],d['language'],'FUNCTIONS',d['function_count'])
           for name,v in d['targets'].items():
             print('XREF',name,'count',v['reference_count'],'refs',v['references'][:3])
           print('DECOMPILED',len(d['candidate_functions']))
