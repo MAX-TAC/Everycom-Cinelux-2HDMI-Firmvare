@@ -103,6 +103,57 @@ public class MT9660AvbXrefs extends GhidraScript {
             }catch(Exception e){fi.put("decompile_error",e.toString());}
             selected.add(fi);
         }
+        // Exact ARM64 assembly neighborhoods for the two trust-key references and AVB init caller.
+        LinkedHashMap<String,Long> focuses=new LinkedHashMap<String,Long>();
+        focuses.put("avb_root_key_reference_1",0x0a1b24L);
+        focuses.put("avb_root_key_reference_2",0x0a1b84L);
+        focuses.put("boot_calls_avb_init",0x093024L);
+        focuses.put("avb_init_handler",0x050d40L);
+        focuses.put("dev_signature_function",0x0110b0L);
+        LinkedHashMap<String,Object> neighborhoods=new LinkedHashMap<String,Object>();
+        Listing listing=currentProgram.getListing();
+        for(Map.Entry<String,Long> where:focuses.entrySet()){
+            Address pc=toAddr(where.getValue());
+            Function ff=fm.getFunctionContaining(pc);
+            LinkedHashMap<String,Object> region=new LinkedHashMap<String,Object>();
+            region.put("center",pc.toString());
+            region.put("owning_function",ff==null?null:ff.getEntryPoint().toString());
+            List<Object> instrList=new ArrayList<Object>();
+            long start=Math.max(0L,where.getValue()-0x100L);
+            for(long at=start;at<=where.getValue()+0x1a0L;at+=4L){
+                Instruction ins=listing.getInstructionAt(toAddr(at));
+                if(ins==null)continue;
+                LinkedHashMap<String,Object> line=new LinkedHashMap<String,Object>();
+                line.put("pc",ins.getAddress().toString());
+                line.put("asm",ins.toString());
+                List<String> edges=new ArrayList<String>();
+                for(Reference rf:ins.getReferencesFrom())if(edges.size()<6)
+                    edges.add(rf.getReferenceType().toString()+":"+rf.getToAddress().toString());
+                if(!edges.isEmpty())line.put("edges",edges);
+                instrList.add(line);
+            }
+            region.put("instructions",instrList);
+            neighborhoods.put(where.getKey(),region);
+            if(ff!=null && selected.size()<25){
+                boolean already=false;
+                for(Object obj:selected)if(((Map)obj).get("address").equals(ff.getEntryPoint().toString()))already=true;
+                if(!already){
+                    LinkedHashMap<String,Object> fr=new LinkedHashMap<String,Object>();
+                    fr.put("address",ff.getEntryPoint().toString());
+                    fr.put("name",ff.getName());
+                    fr.put("bytes",ff.getBody().getNumAddresses());
+                    try{
+                        DecompileResults ds=dec.decompileFunction(ff,12,monitor);
+                        if(ds.decompileCompleted() && ds.getDecompiledFunction()!=null){
+                            String code=ds.getDecompiledFunction().getC();
+                            fr.put("decompiled_excerpt",code.substring(0,Math.min(code.length(),4000)));
+                        }else fr.put("decompile_error",ds.getErrorMessage());
+                    }catch(Exception e){fr.put("decompile_error",e.toString());}
+                    selected.add(fr);
+                }
+            }
+        }
+        report.put("focused_assembly",neighborhoods);
         report.put("candidate_functions",selected);
         String output=System.getenv("GHIDRA_AVB_OUTPUT");
         if(output==null || output.isEmpty())output="/tmp/ghidra_avb.json";
