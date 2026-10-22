@@ -1,0 +1,117 @@
+name: RE stage 1 — characterize 8052 mboot AVB image and cross-references
+
+on:
+  push:
+    paths:
+      - ".github/workflows/reverse-8052-mboot-avb-stage1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up static inspection tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq file binutils binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf > /dev/null
+          python3 -m pip install --quiet --break-system-packages capstone==5.0.6
+      - name: Download exact October OTA and extract mboot, vbmeta and vbmeta_system
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/mbootre/dumper /tmp/mbootre/parts
+          curl -fL --retry 5 --retry-delay 3 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/mbootre/ota.zip
+          echo "bedea70fbf3f08d3c18e59d5f91e7d128c77fac314c30fcc98332c32c88e35  /tmp/mbootre/ota.zip" | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/mbootre/dumper.tgz
+          tar -xzf /tmp/mbootre/dumper.tgz -C /tmp/mbootre/dumper
+          BIN="$(find /tmp/mbootre/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$BIN"
+          "$BIN" -c 3 -p mboot,vbmeta,vbmeta_system -o /tmp/mbootre/parts /tmp/mbootre/ota.zip
+          file /tmp/mbootre/parts/* | tee /tmp/mbootre/file_info.txt
+          xxd -l 256 /tmp/mbootre/parts/mboot.img | tee /tmp/mbootre/mboot_header.txt
+
+      - name: Inspect native architecture, strings, AVB key placement and AVB functions
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,re,json,collections,subprocess
+          from capstone import Cs,CS_ARCH_ARM64,CS_ARCH_ARM,CS_MODE_ARM,CS_MODE_LITTLE_ENDIAN
+          root=Path('/tmp/mbootre/parts')
+          data=(root/'mboot.img').read_bytes()
+          vb=(root/'vbmeta.img').read_bytes()
+          auth=int.from_bytes(vb[12:20],'big')
+          keyoff=int.from_bytes(vb[64:72],'big')
+          keylen=int.from_bytes(vb[72:80],'big')
+          pub=vb[256+auth+keyoff:256+auth+keyoff+keylen]
+          key_at=data.find(pub)
+          assert keylen==1032 and key_at>=0
+          strings=[]
+          for m in re.finditer(rb'[\x20-\x7e]{8,}',data):
+              s=m.group().decode('ascii','replace')
+              strings.append({'offset':m.start(),'text':s})
+          patterns=[r'avb',r'vbmeta',r'verif',r'key.*trust',r'trust.*key',r'rollback',r'device.*unlock',r'devicestate',
+            r'bootstate',r'verity',r'bootargs',r'rpmb',r'command.*boot',r'^bootcmd',r'unknown.*key',r'partition.*verify']
+          rel=[x for x in strings if any(re.search(p,x['text'],re.I) for p in patterns)]
+          # avoid proprietary program strings in public report except AVB-related addresses and exact short diagnostics
+          rel=[x for x in rel if len(x['text'])<=230]
+          # detect file magic and valid ELF headers at any offset
+          elf_offsets=[m.start() for m in re.finditer(re.escape(b'\x7fELF'),data)]
+          uimage_offsets=[m.start() for m in re.finditer(re.escape(b'\x27\x05\x19\x56'),data)]
+          mboot_arch_tests={}
+          for tag,arch,mode,step in [('aarch64',CS_ARCH_ARM64,CS_MODE_LITTLE_ENDIAN,4),('arm32',CS_ARCH_ARM,CS_MODE_ARM,4)]:
+              dis=Cs(arch,mode);dis.detail=False
+              candidate_windows=[(0,min(0x4000,len(data)))]
+              if elf_offsets:candidate_windows.append((elf_offsets[0],min(0x4000,len(data)-elf_offsets[0])))
+              scores=[]
+              for start,span in candidate_windows:
+                  if span<400:continue
+                  ins=list(dis.disasm(data[start:start+span],start))
+                  scores.append({'offset':start,'bytes_decoded':sum(x.size for x in ins),'count':len(ins),
+                    'top_mnemonics':collections.Counter(x.mnemonic for x in ins).most_common(14)})
+              mboot_arch_tests[tag]=scores
+          nearby=[x for x in strings if key_at-6144<=x['offset']<=key_at+6144]
+          # Extract reliable identified command names and AVB diagnostic strings only
+          mboot_report={
+            'source':'RUIOS.8052.1.0.4 SHA256-verified manufacturer ZIP, extracted mboot image',
+            'sha256_mboot':hashlib.sha256(data).hexdigest(),'size':len(data),
+            'start256_hex':data[:256].hex(),
+            'file_utility_result':Path('/tmp/mbootre/file_info.txt').read_text(),
+            'elf_magic_offsets':elf_offsets[:20],'uimage_magic_offsets':uimage_offsets[:20],
+            'known_public_avb_key':{'offset':key_at,'hex_offset':hex(key_at),'size':keylen,'sha256':hashlib.sha256(pub).hexdigest()},
+            'architecture_probe':mboot_arch_tests,
+            'strings_count':len(strings),'selected_avb_strings':rel[:240],
+            'strings_near_key':nearby[:100],
+            'limits':[
+              'A string or compiled function is not proof the function executes during normal boot.',
+              'This pass does not claim to identify call graph or active key policy.',
+              'No images modified; no passwords, device identifiers, or private material collected.']
+          }
+          dest=Path('analysis/AVB_Chain_RE_8052');dest.mkdir(parents=True,exist_ok=True)
+          (dest/'mboot_stage1.json').write_text(json.dumps(mboot_report,indent=2,ensure_ascii=False)+'\n')
+          print('MBOOT HEAD256',data[:256].hex()[:256])
+          print('ELF',elf_offsets[:12], 'UIMAGE',uimage_offsets[:12])
+          print('KEY',hex(key_at),len(pub))
+          print('ARCH PROBES',json.dumps(mboot_arch_tests))
+          print('AVB STRINGS',len(rel),'NEAR KEY',len(nearby))
+          PY
+      - name: Publish source-free analysis report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/AVB_Chain_RE_8052/mboot_stage1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Characterize real 8052 U-Boot image, AVB diagnostics, trusted public key location"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mb-re-stage1-8052
+          path: analysis/AVB_Chain_RE_8052
+          if-no-files-found: warn
+          retention-days: 30
