@@ -62,6 +62,971 @@
       }
     ]
   },
+  "architecture_extended_sample": {
+    "0x0": {
+      "bytes": "000400000000402740896827408d280000004027000000000103000007b000000000000000000000000000000000000000000000000001000000000004000000",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "udf #0x400"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 25,
+          "bytes_decoded": 100,
+          "first_instructions": [
+            "andeq r0, r0, r0, lsl #8",
+            "strbhs r0, [r0, -r0]",
+            "strbhs r8, [r8, -r0, asr #18]!",
+            "eoreq r8, r8, r0, asr #26",
+            "strbhs r0, [r0, -r0]",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r1, lsl #6",
+            "andeq fp, r0, r7",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 50,
+          "bytes_decoded": 100,
+          "first_instructions": [
+            "lsls r0, r0, #0x10",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r7, #0x40",
+            "ldrh r0, [r0, #0xa]",
+            "movs r7, #0x68",
+            "ldrh r0, [r0, #0x2a]",
+            "movs r0, r5",
+            "movs r0, r0",
+            "movs r7, #0x40"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 2,
+          "bytes_decoded": 8,
+          "first_instructions": [
+            "sll $zero, $a0, 0",
+            "not $t0, $zero"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 3,
+          "bytes_decoded": 12,
+          "first_instructions": [
+            "sll $zero, $zero, 0x10",
+            "addiu $zero, $k0, 0",
+            "addiu $t0, $k1, -0x76c0"
+          ]
+        }
+      }
+    },
+    "0x20": {
+      "bytes": "00000000000000000000000000000000000000000000010000000000040000000000000000000000000000000000000000000000000000000000000002000000",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 5,
+          "bytes_decoded": 20,
+          "first_instructions": [
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #0"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 17,
+          "bytes_decoded": 68,
+          "first_instructions": [
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r1, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r4",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 34,
+          "bytes_decoded": 68,
+          "first_instructions": [
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 15,
+          "bytes_decoded": 60,
+          "first_instructions": [
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "sll $zero, $zero, 4",
+            "nop ",
+            "bltz $zero, 0x40",
+            "nop ",
+            "nop "
+          ]
+        },
+        "mips32_le": {
+          "instructions": 17,
+          "bytes_decoded": 68,
+          "first_instructions": [
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "sll $zero, $at, 0",
+            "nop ",
+            "sllv $zero, $zero, $zero",
+            "nop ",
+            "nop "
+          ]
+        }
+      }
+    },
+    "0x40": {
+      "bytes": "000000000000000000000000000000000000000000000000000000000200000000000100ffffffff000000000000000000000000000000000000000000000000",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 8,
+          "bytes_decoded": 32,
+          "first_instructions": [
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #0",
+            "udf #2"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 9,
+          "bytes_decoded": 36,
+          "first_instructions": [
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r0",
+            "andeq r0, r0, r2",
+            "andeq r0, r1, r0"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 18,
+          "bytes_decoded": 36,
+          "first_instructions": [
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0",
+            "movs r0, r0"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 7,
+          "bytes_decoded": 28,
+          "first_instructions": [
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop "
+          ]
+        },
+        "mips32_le": {
+          "instructions": 9,
+          "bytes_decoded": 36,
+          "first_instructions": [
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "nop ",
+            "srl $zero, $zero, 0",
+            "sll $zero, $at, 0"
+          ]
+        }
+      }
+    },
+    "0x100": {
+      "bytes": "426f6172643d6d7435383936200a4d426f6f745f494e3d4d4d435f464c415348200a4b65726e656c3d3634424954200a53656375726974793d4f50544545200a",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "arm32_le": {
+          "instructions": 20,
+          "bytes_decoded": 80,
+          "first_instructions": [
+            "rsbvc r6, r1, #0x108",
+            "strbtvc r3, [sp], #-0xd64",
+            "shasxlo r3, sb, r5",
+            "submi r0, sp, #32, #20",
+            "svcpl #0x746f6f",
+            "ldcmi p14, c4, [sp, #-0x124]!",
+            "ldrbmi r4, [pc], -sp, asr #6",
+            "ldmdami r3, {r2, r3, r6, r8, lr} ^",
+            "strbvs r0, [fp, #-0xa20]",
+            "stclvs p14, c6, [r5], #-0x1c8"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 40,
+          "bytes_decoded": 80,
+          "first_instructions": [
+            "ldr r2, [r0, #0x74]",
+            "strb r1, [r4, #9]",
+            "subs r5, #0x64",
+            "strb r5, [r5, #0x11]",
+            "subs r0, #0x35",
+            "adds r6, #0x39",
+            "lsrs r0, r4, #8",
+            "rsbs r5, r1, #0",
+            "ldr r7, [r5, #0x74]",
+            "ldrsh r4, [r6, r5]"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        }
+      }
+    },
+    "0x200": {
+      "bytes": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "arm32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "arm_thumb_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_be": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        }
+      }
+    },
+    "0x400": {
+      "bytes": "0a0000141f2003d5000040270000000010bc25000000000010bc25000000000030642a00000000004d000014a07e3f10414238d53f3000f1a00000543f2000f1",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 2,
+          "bytes_decoded": 8,
+          "first_instructions": [
+            "b #0x428",
+            "nop "
+          ]
+        },
+        "arm32_le": {
+          "instructions": 13,
+          "bytes_decoded": 52,
+          "first_instructions": [
+            "strne r0, [r0], #-0xa",
+            "strle r2, [r3, #-0x1f]",
+            "strbhs r0, [r0, -r0]",
+            "andeq r0, r0, r0",
+            "eoreq fp, r5, r0, lsl ip",
+            "andeq r0, r0, r0",
+            "eoreq fp, r5, r0, lsl ip",
+            "andeq r0, r0, r0",
+            "eoreq r6, sl, r0, lsr r4",
+            "andeq r0, r0, r0"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 35,
+          "bytes_decoded": 76,
+          "first_instructions": [
+            "movs r2, r1",
+            "asrs r0, r0, #0x10",
+            "movs r0, #0x1f",
+            "bpl #0x410",
+            "movs r0, r0",
+            "movs r7, #0x40",
+            "movs r0, r0",
+            "movs r0, r0",
+            "pop {r4}",
+            "movs r5, r4"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 12,
+          "bytes_decoded": 48,
+          "first_instructions": [
+            "j 0x8000050",
+            "bgtz $t9, 0x135c",
+            "not $t0, $zero",
+            "nop ",
+            "beq $a1, $gp, 0x9814",
+            "nop ",
+            "beq $a1, $gp, 0x981c",
+            "nop ",
+            "andi $a0, $v1, 0x2a00",
+            "nop "
+          ]
+        },
+        "mips32_le": {
+          "instructions": 4,
+          "bytes_decoded": 16,
+          "first_instructions": [
+            "bnez $zero, 0x42c",
+            "ldc1 $f3, 0x201f($t0)",
+            "addiu $zero, $k0, 0",
+            "nop "
+          ]
+        }
+      }
+    },
+    "0x800": {
+      "bytes": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "arm32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "arm_thumb_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_be": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        }
+      }
+    },
+    "0x1000": {
+      "bytes": "21681591003014916e7f0594e00c0090001c15916b7f0594b7ffff17824a49b9a1a244f9e9770594804a49b9a02700f9cdffff1720011036a10b00f021681591",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "add x1, x1, #0x55a",
+            "add x0, x0, #0x50c",
+            "bl #0x160dc0",
+            "adrp x0, #0x19d000",
+            "add x0, x0, #0x547",
+            "bl #0x160dc0",
+            "b #0xef4",
+            "ldr w2, [x20, #0x948]",
+            "ldr x1, [x21, #0x940]",
+            "bl #0x15efc8"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 6,
+          "bytes_decoded": 24,
+          "first_instructions": [
+            "tstls r5, r1, lsr #16",
+            "tstls r4, r0",
+            "strls r7, [r5], #-0xf6e",
+            "andls r0, r0, r0, ror #25",
+            "tstls r5, r0, lsl #24",
+            "strls r7, [r5], #-0xf6b"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 12,
+          "bytes_decoded": 24,
+          "first_instructions": [
+            "ldr r1, [r4]",
+            "str r1, [sp, #0x54]",
+            "adds r0, #0",
+            "str r1, [sp, #0x50]",
+            "ldrb r6, [r5, #0x1d]",
+            "str r4, [sp, #0x14]",
+            "lsrs r0, r4, #0x13",
+            "str r0, [sp]",
+            "adds r0, r0, #0",
+            "str r1, [sp, #0x54]"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "addi $t0, $t3, 0x1591"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 14,
+          "bytes_decoded": 56,
+          "first_instructions": [
+            "lbu $s5, 0x6821($t0)",
+            "lbu $s4, 0x3000($t0)",
+            "lhu $a1, 0x7f6e($zero)",
+            "lbu $zero, 0xce0($zero)",
+            "lbu $s5, 0x1c00($t0)",
+            "lhu $a1, 0x7f6b($zero)",
+            "bne $ra, $ra, 0xef8",
+            "swr $t1, 0x4a82($t2)",
+            "sdc2 $4, -0x5d5f($t2)",
+            "lhu $a1, 0x77e9($zero)"
+          ]
+        }
+      }
+    },
+    "0x2000": {
+      "bytes": "00008052d7ffff17fd7bbaa9fd030091f35301a9330e0090f55b02a9f50300aa607a48b9f40301aaf76303a9f96b04a9fa0302aafb7305a9fb0303aa20011036",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "mov w0, #0",
+            "b #0x1f60",
+            "stp x29, x30, [sp, #-0x60]!",
+            "mov x29, sp",
+            "stp x19, x20, [sp, #0x10]",
+            "adrp x19, #0x1c6000",
+            "stp x21, x22, [sp, #0x20]",
+            "mov x21, x0",
+            "ldr w0, [x19, #0x878]",
+            "mov x20, x1"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 18,
+          "bytes_decoded": 72,
+          "first_instructions": [
+            "addpl r0, r0, #0",
+            "ubfxne pc, r7, #0x1f, #0x20",
+            "ldmibge sl!, {r0, r2, r3, r4, r5, r6, r7, r8, sb, fp, ip, sp, lr}",
+            "strdls r0, r1, [r0, -sp]",
+            "stmdbge r1, {r0, r1, r4, r5, r6, r7, r8, sb, ip, lr}",
+            "andls r0, r0, r3, lsr lr",
+            "stmdbge r2, {r0, r2, r4, r5, r6, r7, r8, sb, fp, ip, lr}",
+            "bge #0x2ff8",
+            "stmdblt r8, {r5, r6, sb, fp, ip, sp, lr} ^",
+            "bge #0x42ffc"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 2,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "movs r0, r0",
+            "strh r0, [r0, r2]"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_le": {
+          "instructions": 16,
+          "bytes_decoded": 64,
+          "first_instructions": [
+            "beql $s4, $zero, 0x2004",
+            "bne $ra, $ra, 0x1f64",
+            "swl $k0, 0x7bfd($t5)",
+            "lbu $zero, 0x3fd($t0)",
+            "swl $at, 0x53f3($t0)",
+            "lbu $zero, 0xe33($zero)",
+            "swl $v0, 0x5bf5($t0)",
+            "swl $zero, 0x3f5($s0)",
+            "swr $t0, 0x7a60($t2)",
+            "swl $at, 0x3f4($s0)"
+          ]
+        }
+      }
+    },
+    "0x4000": {
+      "bytes": "02008052410d00f0400d00f021180d9100e00b913f440194cbffff17607a48b940011836c10b00902174019182288052e00c009000700e9162730594400d00f0",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "mov w2, #0",
+            "adrp x1, #0x1af000",
+            "adrp x0, #0x1af000",
+            "add x1, x1, #0x346",
+            "add x0, x0, #0x2f8",
+            "bl #0x55110",
+            "b #0x3f44",
+            "ldr w0, [x19, #0x878]",
+            "tbz w0, #3, #0x4048",
+            "adrp x1, #0x17c000"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "addpl r0, r0, #2"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 10,
+          "bytes_decoded": 24,
+          "first_instructions": [
+            "movs r2, r0",
+            "strh r0, [r0, r2]",
+            "lsrs r1, r0, #0x15",
+            "and sp, r0, #0x40",
+            "and r8, r0, #0x210021",
+            "str r1, [sp, #0x34]",
+            "b #0x4014",
+            "str r1, [sp, #0x2c]",
+            "add r7, r7",
+            "str r4, [sp, #4]"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_le": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "beql $s4, $zero, 0x400c"
+          ]
+        }
+      }
+    },
+    "0x10000": {
+      "bytes": "216c3c9100d413916e430594800b00b0612e40b900a83b911600001475f7ff976003003560a2403920030034602e40b91f000071c0020054ed010054613640b9",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "add x1, x1, #0xf1b",
+            "add x0, x0, #0x4f5",
+            "bl #0x160dc0",
+            "adrp x0, #0x181000",
+            "ldr w1, [x19, #0x2c]",
+            "add x0, x0, #0xeea",
+            "b #0x10070",
+            "bl #0xddf0",
+            "cbnz w0, #0x1008c",
+            "ldrb w0, [x19, #0x28]"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 7,
+          "bytes_decoded": 28,
+          "first_instructions": [
+            "teqls ip, r1, lsr #24",
+            "tstls r3, r0, lsl #8",
+            "strls r4, [r5], #-0x36e",
+            "andlt r0, r0, r0, lsl #23",
+            "stmdblt r0, {r0, r5, r6, sb, sl, fp, sp} ^",
+            "teqls fp, r0, lsl #16",
+            "strne r0, [r0], #-0x16"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 31,
+          "bytes_decoded": 64,
+          "first_instructions": [
+            "ldr r1, [r4, #0x40]",
+            "str r1, [sp, #0xf0]",
+            "bmi #0x10008",
+            "str r1, [sp, #0x4c]",
+            "muls r6, r5, r6",
+            "str r4, [sp, #0x14]",
+            "lsrs r0, r0, #0xe",
+            "add sp, #0",
+            "cmp r6, #0x61",
+            "cbnz r0, #0x10026"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "addi $t4, $t3, 0x3c91"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 3,
+          "bytes_decoded": 12,
+          "first_instructions": [
+            "lbu $gp, 0x6c21($t1)",
+            "lbu $s3, -0x2c00($t0)",
+            "lhu $a1, 0x436e($zero)"
+          ]
+        }
+      }
+    },
+    "0x40000": {
+      "bytes": "e600080bc60c2c9bc60440b9f3ffff17e600080bc60c2c9bc60840b9efffff1706008052edffff1707008052f0ffff17fd7bb9a9ed03042afd030091f35301a9",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "add w6, w7, w8",
+            "smaddl x6, w6, w12, x3",
+            "ldr w6, [x6, #4]",
+            "b #0x3ffd8",
+            "add w6, w7, w8",
+            "smaddl x6, w6, w12, x3",
+            "ldr w6, [x6, #8]",
+            "b #0x3ffd8",
+            "mov w6, #0",
+            "b #0x3ffd8"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 3,
+          "bytes_decoded": 12,
+          "first_instructions": [
+            "bleq #0x2403a0",
+            "blls #0xb43324",
+            "stmdblt r0, {r1, r2, r6, r7, sl} ^"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 6,
+          "bytes_decoded": 12,
+          "first_instructions": [
+            "lsls r6, r4, #3",
+            "lsrs r0, r1, #0xc",
+            "lsrs r6, r0, #0x13",
+            "ldr r3, [sp, #0xb0]",
+            "lsls r6, r0, #0x13",
+            "cbnz r0, #0x4001e"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 3,
+          "bytes_decoded": 12,
+          "first_instructions": [
+            "swc1 $f0, 0x80b($s0)",
+            "lwc1 $f12, 0x2c9b($s0)",
+            "lwc1 $f4, 0x40b9($s0)"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 39,
+          "bytes_decoded": 156,
+          "first_instructions": [
+            "j 0xc200398",
+            "lwr $t4, 0xcc6($t9)",
+            "swr $zero, 0x4c6($t2)",
+            "bne $ra, $ra, 0x3ffdc",
+            "j 0xc200398",
+            "lwr $t4, 0xcc6($t9)",
+            "swr $zero, 0x8c6($t2)",
+            "bne $ra, $ra, 0x3ffdc",
+            "beql $s4, $zero, 0x4003c",
+            "bne $ra, $ra, 0x3ffdc"
+          ]
+        }
+      }
+    },
+    "0x80000": {
+      "bytes": "e103042af35301a9f40300aacaffff97210500d18c020caaf30300aa3f000cea010040f94102005442097e9220f07b92000002aaa2038092e2f3fff22100028a",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "mov w1, w4",
+            "stp x19, x20, [sp, #0x10]",
+            "mov x20, x0",
+            "bl #0x7ff34",
+            "sub x1, x9, #1",
+            "orr x12, x20, x12",
+            "mov x19, x0",
+            "tst x1, x12",
+            "ldr x1, [x0]",
+            "b.ne #0x8006c"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 4,
+          "bytes_decoded": 16,
+          "first_instructions": [
+            "bhs #0x180f8c",
+            "stmdbge r1, {r0, r1, r4, r5, r6, r7, r8, sb, ip, lr}",
+            "bge #0x80fe0",
+            "ldrbls pc, [pc, sl, asr #31]!"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 6,
+          "bytes_decoded": 12,
+          "first_instructions": [
+            "lsls r1, r4, #0xf",
+            "cmp r2, #4",
+            "strh r3, [r6, r7]",
+            "add r1, sp, #4",
+            "lsls r4, r6, #0xf",
+            "add r2, sp, #0"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "sc $v1, 0x42a($t0)"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 4,
+          "bytes_decoded": 16,
+          "first_instructions": [
+            "slti $a0, $s0, 0x3e1",
+            "swl $at, 0x53f3($t0)",
+            "swl $zero, 0x3f4($s0)",
+            "lhu $ra, -0x36($ra)"
+          ]
+        }
+      }
+    },
+    "0x100000": {
+      "bytes": "0202a072f50304aaf96b04a9fb7305a9d91c0012f60301aa2029a072810080529579ff97a200805200d89d520202a072810080522029a0728f79ff9721018052",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "movk w2, #0x10, lsl #16",
+            "mov x21, x4",
+            "stp x25, x26, [sp, #0x40]",
+            "stp x27, x28, [sp, #0x50]",
+            "and w25, w6, #0xff",
+            "mov x22, x1",
+            "movk w0, #0x149, lsl #16",
+            "mov w1, #4",
+            "bl #0xde674",
+            "mov w2, #5"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 8,
+          "bytes_decoded": 32,
+          "first_instructions": [
+            "adcvc r0, r0, #0x20000000",
+            "bge #0x200fe0",
+            "stmdbge r4, {r0, r3, r4, r5, r6, r7, r8, sb, fp, sp, lr}",
+            "stmdbge r5, {r0, r1, r3, r4, r5, r6, r7, r8, sb, ip, sp, lr}",
+            "andne r1, r0, #0xd900",
+            "bge #0x140ff4",
+            "adcvc r2, r0, #32, #18",
+            "addpl r0, r0, #0x81"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 110,
+          "bytes_decoded": 224,
+          "first_instructions": [
+            "lsls r2, r0, #8",
+            "strb r0, [r4, #0xa]",
+            "lsls r5, r6, #0xf",
+            "add r2, sp, #0x10",
+            "ldr r1, [r7, #0x3c]",
+            "add r1, sp, #0x10",
+            "strb r3, [r7, #0xf]",
+            "add r1, sp, #0x14",
+            "adds r1, r3, #3",
+            "asrs r0, r0, #8"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 10,
+          "bytes_decoded": 40,
+          "first_instructions": [
+            "tlt $s0, $v0, 0x281",
+            "sdc1 $f3, 0x4aa($t0)",
+            "sdc2 $11, 0x4a9($t3)",
+            "sdc2 $19, 0x5a9($k1)",
+            "ldc2 $28, 0x12($t0)",
+            "sdc1 $f3, 0x1aa($s0)",
+            "addi $t1, $at, -0x5f8e",
+            "lb $zero, -0x7fae($t0)",
+            "lhu $t9, -0x69($t3)",
+            "sb $zero, -0x7fae($s0)"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        }
+      }
+    },
+    "0x140000": {
+      "bytes": "400200d000942291f6ffff1700008012c0035fd620008052f5ffff17fd7bbea9fd030091f30b00f9f30302aae203032ac7fdff97a0000035e00313aaf30b40f9",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 64,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "adrp x0, #0x18a000",
+            "add x0, x0, #0x8a5",
+            "b #0x13ffe0",
+            "mov w0, #-1",
+            "ret ",
+            "mov w0, #1",
+            "b #0x13ffec",
+            "stp x29, x30, [sp, #-0x20]!",
+            "mov x29, sp",
+            "str x19, [sp, #0x10]"
+          ]
+        },
+        "arm32_le": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "andle r0, r0, r0, asr #4"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 4,
+          "bytes_decoded": 8,
+          "first_instructions": [
+            "lsls r0, r0, #9",
+            "beq #0x140006",
+            "str r4, [sp]",
+            "str r1, [sp, #0x88]"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "mips32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        }
+      }
+    },
+    "0x170000": {
+      "bytes": "755d0a005b55746f7069615d5b474f50206d4150495d3a200a2d2d2d25732025643a205472792044657374726f7957494e5b2574755d2c2072657475726e5b25",
+      "architectures": {
+        "aarch64_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        },
+        "arm32_le": {
+          "instructions": 19,
+          "bytes_decoded": 76,
+          "first_instructions": [
+            "andeq r5, sl, r5, ror sp",
+            "svcvs #0x74555b",
+            "stclpl p9, c6, [r1, #-0x1c0]!",
+            "subpl r4, pc, fp, asr r7",
+            "subpl r6, r1, r0, lsr #26",
+            "eorshs r5, sl, sb, asr #26",
+            "stchs p13, c2, [sp, #-0x28]!",
+            "strhs r7, [r0, #-0x325]!",
+            "strtpl r3, [r0], #-0xa64",
+            "strtmi r7, [r0], #-0x972"
+          ]
+        },
+        "arm_thumb_le": {
+          "instructions": 128,
+          "bytes_decoded": 256,
+          "first_instructions": [
+            "ldrb r5, [r6, r5]",
+            "movs r2, r1",
+            "strb r3, [r3, r5]",
+            "ldr r4, [r6, #0x74]",
+            "ldr r0, [r6, #0x14]",
+            "ldrb r1, [r4, r5]",
+            "bx fp",
+            "str r7, [r1, r1]",
+            "ldr r0, [r4, #0x50]",
+            "str r1, [r0, r1]"
+          ]
+        },
+        "mips32_be": {
+          "instructions": 1,
+          "bytes_decoded": 4,
+          "first_instructions": [
+            "jalx 0x5742800"
+          ]
+        },
+        "mips32_le": {
+          "instructions": 0,
+          "bytes_decoded": 0,
+          "first_instructions": []
+        }
+      }
+    }
+  },
   "strings_count": 14533,
   "selected_avb_strings": [
     {
