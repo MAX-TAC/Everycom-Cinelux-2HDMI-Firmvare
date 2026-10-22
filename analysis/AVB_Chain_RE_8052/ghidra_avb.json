@@ -4,19 +4,263 @@
   "image_base": "00000000",
   "boot_entry": "0x0",
   "image_header_skipped_bytes": 1024,
-  "function_count": 3925,
+  "function_count": 3926,
   "targets": {
+    "trusted_key_callback_a": {
+      "offset": "0xa1ae8",
+      "reference_count": 1,
+      "references": [
+        {
+          "from": "000a26b8",
+          "type": "DATA",
+          "function": "000a2628"
+        }
+      ]
+    },
+    "trusted_key_callback_b": {
+      "offset": "0xa1b58",
+      "reference_count": 1,
+      "references": [
+        {
+          "from": "000a2664",
+          "type": "DATA",
+          "function": "000a2628"
+        }
+      ]
+    },
+    "trusted_key_callback_wrapper": {
+      "offset": "0xa1bb4",
+      "reference_count": 7,
+      "references": [
+        {
+          "from": "000a1dfc",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1d50"
+        },
+        {
+          "from": "000a1ee8",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1e40"
+        },
+        {
+          "from": "000a1f98",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1f50"
+        },
+        {
+          "from": "000a1fc0",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1f50"
+        },
+        {
+          "from": "000a2020",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1fe8"
+        },
+        {
+          "from": "000a212c",
+          "type": "UNCONDITIONAL_CALL"
+        },
+        {
+          "from": "000a2198",
+          "type": "UNCONDITIONAL_CALL"
+        }
+      ]
+    },
+    "key_compare_routine": {
+      "offset": "0x15ed20",
+      "reference_count": 51,
+      "references": [
+        {
+          "from": "000a1b30",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1ae8"
+        },
+        {
+          "from": "000a1b94",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1b58"
+        },
+        {
+          "from": "0014cf98",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0014cef0"
+        },
+        {
+          "from": "0014d844",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0014d794"
+        },
+        {
+          "from": "0015eda8",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0015ed50"
+        },
+        {
+          "from": "00066c3c",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00066600"
+        },
+        {
+          "from": "00006020",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00005fdc"
+        },
+        {
+          "from": "00004f30",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00004d88"
+        },
+        {
+          "from": "00004f44",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00004d88"
+        },
+        {
+          "from": "00004f60",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00004d88"
+        },
+        {
+          "from": "00010538",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00010180"
+        },
+        {
+          "from": "0014cd10",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0014cc70"
+        },
+        {
+          "from": "000b6c24",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000b69bc"
+        },
+        {
+          "from": "0014adf4",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0014ad94"
+        },
+        {
+          "from": "00061fc0",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00061f88"
+        },
+        {
+          "from": "000a1388",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1210"
+        },
+        {
+          "from": "0009cea8",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0009ca4c"
+        },
+        {
+          "from": "0006aef0",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0006ae88"
+        },
+        {
+          "from": "0009f928",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0009f7d4"
+        },
+        {
+          "from": "0014c908",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0014c480"
+        },
+        {
+          "from": "000989e8",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000989b8"
+        },
+        {
+          "from": "000a1f18",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000a1e40"
+        },
+        {
+          "from": "0014d6c8",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0014d680"
+        },
+        {
+          "from": "000aa34c",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000aa2d0"
+        },
+        {
+          "from": "000bec1c",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000be8b4"
+        },
+        {
+          "from": "000bec98",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000be8b4"
+        },
+        {
+          "from": "000ce960",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000ce8a4"
+        },
+        {
+          "from": "00131568",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00131134"
+        },
+        {
+          "from": "001629b8",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "001628f0"
+        },
+        {
+          "from": "00163f98",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "00163efc"
+        },
+        {
+          "from": "0009d36c",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0009d35c"
+        },
+        {
+          "from": "00164160",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "001640c8"
+        },
+        {
+          "from": "0015dda0",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "0015dc70"
+        },
+        {
+          "from": "000cda08",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000cd60c"
+        },
+        {
+          "from": "000cdb38",
+          "type": "UNCONDITIONAL_CALL",
+          "function": "000cd60c"
+        }
+      ]
+    },
     "root_key_start": {
       "offset": "0x1cd6ac",
       "reference_count": 2,
       "references": [
         {
           "from": "000a1b24",
-          "type": "PARAM"
+          "type": "PARAM",
+          "function": "000a1ae8"
         },
         {
           "from": "000a1b84",
-          "type": "PARAM"
+          "type": "PARAM",
+          "function": "000a1b58"
         }
       ]
     },
@@ -105,8 +349,3523 @@
     }
   },
   "focused_assembly": {
+    "root_validate_candidate_A": {
+      "center": "000a1ae8",
+      "owning_function": "000a1ae8",
+      "instructions": [
+        {
+          "pc": "000a19e8",
+          "asm": "adrp x0,0x1bc000"
+        },
+        {
+          "pc": "000a19ec",
+          "asm": "add x0,x0,#0x73e",
+          "edges": [
+            "PARAM:001bc73e"
+          ]
+        },
+        {
+          "pc": "000a19f0",
+          "asm": "bl 0x0009149c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0009149c"
+          ]
+        },
+        {
+          "pc": "000a19f4",
+          "asm": "cbz x0,0x000a1a68",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1a68"
+          ]
+        },
+        {
+          "pc": "000a19f8",
+          "asm": "adrp x19,0x190000"
+        },
+        {
+          "pc": "000a19fc",
+          "asm": "add x19,x19,#0xbb1"
+        },
+        {
+          "pc": "000a1a00",
+          "asm": "mov x21,x0"
+        },
+        {
+          "pc": "000a1a04",
+          "asm": "mov x0,x19",
+          "edges": [
+            "PARAM:00190bb1"
+          ]
+        },
+        {
+          "pc": "000a1a08",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "000a1a0c",
+          "asm": "mov x2,x0"
+        },
+        {
+          "pc": "000a1a10",
+          "asm": "mov x1,x19",
+          "edges": [
+            "PARAM:00190bb1"
+          ]
+        },
+        {
+          "pc": "000a1a14",
+          "asm": "mov x0,x21"
+        },
+        {
+          "pc": "000a1a18",
+          "asm": "bl 0x0015e904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e904"
+          ]
+        },
+        {
+          "pc": "000a1a1c",
+          "asm": "cbnz w0,0x000a1a44",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1a44"
+          ]
+        },
+        {
+          "pc": "000a1a20",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1a24",
+          "asm": "strb w0,[x20]"
+        },
+        {
+          "pc": "000a1a28",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1a2c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1a30",
+          "asm": "ldr x21,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1a34",
+          "asm": "ldp x29,x30,[sp], #0x30",
+          "edges": [
+            "DATA:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "000a1a38",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1a3c",
+          "asm": "strb wzr,[x20]"
+        },
+        {
+          "pc": "000a1a40",
+          "asm": "b 0x000a1a28",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1a28"
+          ]
+        },
+        {
+          "pc": "000a1a44",
+          "asm": "adrp x19,0x1bd000"
+        },
+        {
+          "pc": "000a1a48",
+          "asm": "add x19,x19,#0xbab"
+        },
+        {
+          "pc": "000a1a4c",
+          "asm": "mov x0,x19",
+          "edges": [
+            "PARAM:001bdbab"
+          ]
+        },
+        {
+          "pc": "000a1a50",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "000a1a54",
+          "asm": "mov x1,x19",
+          "edges": [
+            "PARAM:001bdbab"
+          ]
+        },
+        {
+          "pc": "000a1a58",
+          "asm": "mov x2,x0"
+        },
+        {
+          "pc": "000a1a5c",
+          "asm": "mov x0,x21"
+        },
+        {
+          "pc": "000a1a60",
+          "asm": "bl 0x0015e904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e904"
+          ]
+        },
+        {
+          "pc": "000a1a64",
+          "asm": "cbz w0,0x000a1a3c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1a3c"
+          ]
+        },
+        {
+          "pc": "000a1a68",
+          "asm": "strb wzr,[x20]"
+        },
+        {
+          "pc": "000a1a6c",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1a70",
+          "asm": "b 0x000a1a2c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1a2c"
+          ]
+        },
+        {
+          "pc": "000a1a74",
+          "asm": "cmp x1,#0x0"
+        },
+        {
+          "pc": "000a1a78",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1a7c",
+          "asm": "b.eq 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a80",
+          "asm": "cmp x3,#0x24"
+        },
+        {
+          "pc": "000a1a84",
+          "asm": "b.ls 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a88",
+          "asm": "stp x29,x30,[sp, #-0xc0]!"
+        },
+        {
+          "pc": "000a1a8c",
+          "asm": "mov x0,x1"
+        },
+        {
+          "pc": "000a1a90",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1a94",
+          "asm": "str x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1a98",
+          "asm": "add x1,x29,#0x28"
+        },
+        {
+          "pc": "000a1a9c",
+          "asm": "mov x19,x2"
+        },
+        {
+          "pc": "000a1aa0",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1aa4",
+          "asm": "bl 0x0006b8d4",
+          "edges": [
+            "UNCONDITIONAL_CALL:0006b8d4"
+          ]
+        },
+        {
+          "pc": "000a1aa8",
+          "asm": "cbz w0,0x000a1abc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1abc"
+          ]
+        },
+        {
+          "pc": "000a1aac",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ab0",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1ab4",
+          "asm": "add x0,x29,#0x98"
+        },
+        {
+          "pc": "000a1ab8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1abc",
+          "asm": "add x1,x29,#0x98"
+        },
+        {
+          "pc": "000a1ac0",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ac4",
+          "asm": "mov x0,x19"
+        },
+        {
+          "pc": "000a1ac8",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1acc",
+          "asm": "strb wzr,[x19, #0x24]"
+        },
+        {
+          "pc": "000a1ad0",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ad4",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1ad8",
+          "asm": "ldp x29,x30,[sp], #0xc0"
+        },
+        {
+          "pc": "000a1adc",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae0",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1ae4",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae8",
+          "asm": "cmp x3,#0x0"
+        },
+        {
+          "pc": "000a1aec",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1af0",
+          "asm": "b.ne 0x000a1afc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1afc"
+          ]
+        },
+        {
+          "pc": "000a1af4",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1af8",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1afc",
+          "asm": "cbz x6,0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b00",
+          "asm": "strb wzr,[x6]"
+        },
+        {
+          "pc": "000a1b04",
+          "asm": "cmp x3,#0x408"
+        },
+        {
+          "pc": "000a1b08",
+          "asm": "b.ne 0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b0c",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b10",
+          "asm": "mov x1,x2"
+        },
+        {
+          "pc": "000a1b14",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b18",
+          "asm": "mov x2,x3"
+        },
+        {
+          "pc": "000a1b1c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b20",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b24",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b28",
+          "asm": "mov x20,x7"
+        },
+        {
+          "pc": "000a1b2c",
+          "asm": "mov x19,x6"
+        },
+        {
+          "pc": "000a1b30",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b34",
+          "asm": "cbnz w0,0x000a1b40",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b40"
+          ]
+        },
+        {
+          "pc": "000a1b38",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b3c",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1b40",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b44",
+          "asm": "str w0,[x20]"
+        },
+        {
+          "pc": "000a1b48",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1b4c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b50",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b54",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b58",
+          "asm": "cmp x2,#0x0"
+        },
+        {
+          "pc": "000a1b5c",
+          "asm": "ccmp x1,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1b60",
+          "asm": "b.ne 0x000a1b6c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b6c"
+          ]
+        },
+        {
+          "pc": "000a1b64",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1b68",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b6c",
+          "asm": "cbz x5,0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b70",
+          "asm": "strb wzr,[x5]"
+        },
+        {
+          "pc": "000a1b74",
+          "asm": "cmp x2,#0x408"
+        },
+        {
+          "pc": "000a1b78",
+          "asm": "b.ne 0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b7c",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b80",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b84",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b88",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b8c",
+          "asm": "str x19,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b90",
+          "asm": "mov x19,x5"
+        },
+        {
+          "pc": "000a1b94",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b98",
+          "asm": "cbnz w0,0x000a1ba4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ba4"
+          ]
+        },
+        {
+          "pc": "000a1b9c",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1ba0",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1ba4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ba8",
+          "asm": "ldr x19,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1bac",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1bb0",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1bb4",
+          "asm": "stp x29,x30,[sp, #-0x80]!",
+          "edges": [
+            "WRITE:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1bb8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1bbc",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1bc0",
+          "asm": "adrp x20,0x1cd000"
+        },
+        {
+          "pc": "000a1bc4",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "000a1bc8",
+          "asm": "stp x21,x22,[sp, #0x20]",
+          "edges": [
+            "WRITE:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1bcc",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bd0",
+          "asm": "mov x22,x2"
+        },
+        {
+          "pc": "000a1bd4",
+          "asm": "stp x23,x24,[sp, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1bd8",
+          "asm": "mov w24,w1"
+        },
+        {
+          "pc": "000a1bdc",
+          "asm": "mov x23,x3"
+        },
+        {
+          "pc": "000a1be0",
+          "asm": "cbnz w0,0x000a1bf8",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1bf8"
+          ]
+        },
+        {
+          "pc": "000a1be4",
+          "asm": "bl 0x0005b7a8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005b7a8"
+          ]
+        },
+        {
+          "pc": "000a1be8",
+          "asm": "cmp w0,#0x0"
+        },
+        {
+          "pc": "000a1bec",
+          "asm": "cset w0,eq"
+        },
+        {
+          "pc": "000a1bf0",
+          "asm": "add w0,w0,#0x1"
+        },
+        {
+          "pc": "000a1bf4",
+          "asm": "str w0,[x20, #0x6a8]",
+          "edges": [
+            "WRITE:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bf8",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bfc",
+          "asm": "cmp w0,#0x2"
+        },
+        {
+          "pc": "000a1c00",
+          "asm": "b.ne 0x000a1d0c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d0c"
+          ]
+        },
+        {
+          "pc": "000a1c04",
+          "asm": "adrp x1,0x17e000"
+        },
+        {
+          "pc": "000a1c08",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1c0c",
+          "asm": "add x1,x1,#0x866",
+          "edges": [
+            "PARAM:0017e866"
+          ]
+        },
+        {
+          "pc": "000a1c10",
+          "asm": "add x0,x0,#0x362",
+          "edges": [
+            "PARAM:0019f362"
+          ]
+        },
+        {
+          "pc": "000a1c14",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1c18",
+          "asm": "mov w0,#0x8"
+        },
+        {
+          "pc": "000a1c1c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1c20",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1c24",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1c28",
+          "asm": "ldp x29,x30,[sp], #0x80",
+          "edges": [
+            "DATA:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1c2c",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1c30",
+          "asm": "mov x1,x21",
+          "edges": [
+            "PARAM:0016b720"
+          ]
+        },
+        {
+          "pc": "000a1c34",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000a1c38",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1c3c",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c40",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c44",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1c48",
+          "asm": "mov x1,#0x0"
+        },
+        {
+          "pc": "000a1c4c",
+          "asm": "bl 0x00128cb4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128cb4"
+          ]
+        },
+        {
+          "pc": "000a1c50",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "000a1c54",
+          "asm": "cbnz x0,0x000a1c60",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c60"
+          ]
+        },
+        {
+          "pc": "000a1c58",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1c5c",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1c60",
+          "asm": "mov x2,#0x30"
+        },
+        {
+          "pc": "000a1c64",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1c68",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c6c",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1c70",
+          "asm": "add x1,x29,#0x40"
+        },
+        {
+          "pc": "000a1c74",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c78",
+          "asm": "bl 0x00128d4c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128d4c"
+          ]
+        },
+        {
+          "pc": "000a1c7c",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c80",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000a1c84",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1c88",
+          "asm": "mov x0,x20"
+        }
+      ]
+    },
+    "root_validate_candidate_B": {
+      "center": "000a1b58",
+      "owning_function": "000a1b58",
+      "instructions": [
+        {
+          "pc": "000a1a58",
+          "asm": "mov x2,x0"
+        },
+        {
+          "pc": "000a1a5c",
+          "asm": "mov x0,x21"
+        },
+        {
+          "pc": "000a1a60",
+          "asm": "bl 0x0015e904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e904"
+          ]
+        },
+        {
+          "pc": "000a1a64",
+          "asm": "cbz w0,0x000a1a3c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1a3c"
+          ]
+        },
+        {
+          "pc": "000a1a68",
+          "asm": "strb wzr,[x20]"
+        },
+        {
+          "pc": "000a1a6c",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1a70",
+          "asm": "b 0x000a1a2c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1a2c"
+          ]
+        },
+        {
+          "pc": "000a1a74",
+          "asm": "cmp x1,#0x0"
+        },
+        {
+          "pc": "000a1a78",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1a7c",
+          "asm": "b.eq 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a80",
+          "asm": "cmp x3,#0x24"
+        },
+        {
+          "pc": "000a1a84",
+          "asm": "b.ls 0x000a1ae0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ae0"
+          ]
+        },
+        {
+          "pc": "000a1a88",
+          "asm": "stp x29,x30,[sp, #-0xc0]!"
+        },
+        {
+          "pc": "000a1a8c",
+          "asm": "mov x0,x1"
+        },
+        {
+          "pc": "000a1a90",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1a94",
+          "asm": "str x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1a98",
+          "asm": "add x1,x29,#0x28"
+        },
+        {
+          "pc": "000a1a9c",
+          "asm": "mov x19,x2"
+        },
+        {
+          "pc": "000a1aa0",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1aa4",
+          "asm": "bl 0x0006b8d4",
+          "edges": [
+            "UNCONDITIONAL_CALL:0006b8d4"
+          ]
+        },
+        {
+          "pc": "000a1aa8",
+          "asm": "cbz w0,0x000a1abc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1abc"
+          ]
+        },
+        {
+          "pc": "000a1aac",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ab0",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1ab4",
+          "asm": "add x0,x29,#0x98"
+        },
+        {
+          "pc": "000a1ab8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1abc",
+          "asm": "add x1,x29,#0x98"
+        },
+        {
+          "pc": "000a1ac0",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ac4",
+          "asm": "mov x0,x19"
+        },
+        {
+          "pc": "000a1ac8",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1acc",
+          "asm": "strb wzr,[x19, #0x24]"
+        },
+        {
+          "pc": "000a1ad0",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ad4",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1ad8",
+          "asm": "ldp x29,x30,[sp], #0xc0"
+        },
+        {
+          "pc": "000a1adc",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae0",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1ae4",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae8",
+          "asm": "cmp x3,#0x0"
+        },
+        {
+          "pc": "000a1aec",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1af0",
+          "asm": "b.ne 0x000a1afc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1afc"
+          ]
+        },
+        {
+          "pc": "000a1af4",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1af8",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1afc",
+          "asm": "cbz x6,0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b00",
+          "asm": "strb wzr,[x6]"
+        },
+        {
+          "pc": "000a1b04",
+          "asm": "cmp x3,#0x408"
+        },
+        {
+          "pc": "000a1b08",
+          "asm": "b.ne 0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b0c",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b10",
+          "asm": "mov x1,x2"
+        },
+        {
+          "pc": "000a1b14",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b18",
+          "asm": "mov x2,x3"
+        },
+        {
+          "pc": "000a1b1c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b20",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b24",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b28",
+          "asm": "mov x20,x7"
+        },
+        {
+          "pc": "000a1b2c",
+          "asm": "mov x19,x6"
+        },
+        {
+          "pc": "000a1b30",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b34",
+          "asm": "cbnz w0,0x000a1b40",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b40"
+          ]
+        },
+        {
+          "pc": "000a1b38",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b3c",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1b40",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b44",
+          "asm": "str w0,[x20]"
+        },
+        {
+          "pc": "000a1b48",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1b4c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b50",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b54",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b58",
+          "asm": "cmp x2,#0x0"
+        },
+        {
+          "pc": "000a1b5c",
+          "asm": "ccmp x1,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1b60",
+          "asm": "b.ne 0x000a1b6c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b6c"
+          ]
+        },
+        {
+          "pc": "000a1b64",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1b68",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b6c",
+          "asm": "cbz x5,0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b70",
+          "asm": "strb wzr,[x5]"
+        },
+        {
+          "pc": "000a1b74",
+          "asm": "cmp x2,#0x408"
+        },
+        {
+          "pc": "000a1b78",
+          "asm": "b.ne 0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b7c",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b80",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b84",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b88",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b8c",
+          "asm": "str x19,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b90",
+          "asm": "mov x19,x5"
+        },
+        {
+          "pc": "000a1b94",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b98",
+          "asm": "cbnz w0,0x000a1ba4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ba4"
+          ]
+        },
+        {
+          "pc": "000a1b9c",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1ba0",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1ba4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ba8",
+          "asm": "ldr x19,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1bac",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1bb0",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1bb4",
+          "asm": "stp x29,x30,[sp, #-0x80]!",
+          "edges": [
+            "WRITE:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1bb8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1bbc",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1bc0",
+          "asm": "adrp x20,0x1cd000"
+        },
+        {
+          "pc": "000a1bc4",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "000a1bc8",
+          "asm": "stp x21,x22,[sp, #0x20]",
+          "edges": [
+            "WRITE:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1bcc",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bd0",
+          "asm": "mov x22,x2"
+        },
+        {
+          "pc": "000a1bd4",
+          "asm": "stp x23,x24,[sp, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1bd8",
+          "asm": "mov w24,w1"
+        },
+        {
+          "pc": "000a1bdc",
+          "asm": "mov x23,x3"
+        },
+        {
+          "pc": "000a1be0",
+          "asm": "cbnz w0,0x000a1bf8",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1bf8"
+          ]
+        },
+        {
+          "pc": "000a1be4",
+          "asm": "bl 0x0005b7a8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005b7a8"
+          ]
+        },
+        {
+          "pc": "000a1be8",
+          "asm": "cmp w0,#0x0"
+        },
+        {
+          "pc": "000a1bec",
+          "asm": "cset w0,eq"
+        },
+        {
+          "pc": "000a1bf0",
+          "asm": "add w0,w0,#0x1"
+        },
+        {
+          "pc": "000a1bf4",
+          "asm": "str w0,[x20, #0x6a8]",
+          "edges": [
+            "WRITE:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bf8",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bfc",
+          "asm": "cmp w0,#0x2"
+        },
+        {
+          "pc": "000a1c00",
+          "asm": "b.ne 0x000a1d0c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d0c"
+          ]
+        },
+        {
+          "pc": "000a1c04",
+          "asm": "adrp x1,0x17e000"
+        },
+        {
+          "pc": "000a1c08",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1c0c",
+          "asm": "add x1,x1,#0x866",
+          "edges": [
+            "PARAM:0017e866"
+          ]
+        },
+        {
+          "pc": "000a1c10",
+          "asm": "add x0,x0,#0x362",
+          "edges": [
+            "PARAM:0019f362"
+          ]
+        },
+        {
+          "pc": "000a1c14",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1c18",
+          "asm": "mov w0,#0x8"
+        },
+        {
+          "pc": "000a1c1c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1c20",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1c24",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1c28",
+          "asm": "ldp x29,x30,[sp], #0x80",
+          "edges": [
+            "DATA:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1c2c",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1c30",
+          "asm": "mov x1,x21",
+          "edges": [
+            "PARAM:0016b720"
+          ]
+        },
+        {
+          "pc": "000a1c34",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000a1c38",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1c3c",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c40",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c44",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1c48",
+          "asm": "mov x1,#0x0"
+        },
+        {
+          "pc": "000a1c4c",
+          "asm": "bl 0x00128cb4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128cb4"
+          ]
+        },
+        {
+          "pc": "000a1c50",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "000a1c54",
+          "asm": "cbnz x0,0x000a1c60",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c60"
+          ]
+        },
+        {
+          "pc": "000a1c58",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1c5c",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1c60",
+          "asm": "mov x2,#0x30"
+        },
+        {
+          "pc": "000a1c64",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1c68",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c6c",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1c70",
+          "asm": "add x1,x29,#0x40"
+        },
+        {
+          "pc": "000a1c74",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c78",
+          "asm": "bl 0x00128d4c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128d4c"
+          ]
+        },
+        {
+          "pc": "000a1c7c",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c80",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000a1c84",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1c88",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c8c",
+          "asm": "bl 0x00128ab4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ab4"
+          ]
+        },
+        {
+          "pc": "000a1c90",
+          "asm": "cbnz w0,0x000a1ca0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ca0"
+          ]
+        },
+        {
+          "pc": "000a1c94",
+          "asm": "ldr w0,[x29, #0x74]",
+          "edges": [
+            "READ:Stack[-0xc]"
+          ]
+        },
+        {
+          "pc": "000a1c98",
+          "asm": "str x20,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1c9c",
+          "asm": "str w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1ca0",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ca4",
+          "asm": "mov x2,#0x10"
+        },
+        {
+          "pc": "000a1ca8",
+          "asm": "cbz x0,0x000a1c30",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c30"
+          ]
+        },
+        {
+          "pc": "000a1cac",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1cb0",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1cb4",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1cb8",
+          "asm": "ldr w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1cbc",
+          "asm": "mov x3,x23"
+        },
+        {
+          "pc": "000a1cc0",
+          "asm": "stp w24,w0,[x29, #0x50]",
+          "edges": [
+            "WRITE:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "000a1cc4",
+          "asm": "mov w2,w22"
+        },
+        {
+          "pc": "000a1cc8",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ccc",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1cd0",
+          "asm": "bl 0x00128ad4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ad4"
+          ]
+        },
+        {
+          "pc": "000a1cd4",
+          "asm": "cbnz w0,0x000a1c58",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1cd8",
+          "asm": "ldr w1,[x29, #0x58]",
+          "edges": [
+            "READ:Stack[-0x28]"
+          ]
+        },
+        {
+          "pc": "000a1cdc",
+          "asm": "cbz w1,0x000a1cec",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1cec"
+          ]
+        },
+        {
+          "pc": "000a1ce0",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1ce4",
+          "asm": "add x0,x0,#0x37f",
+          "edges": [
+            "PARAM:0019f37f"
+          ]
+        },
+        {
+          "pc": "000a1ce8",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1cec",
+          "asm": "ldr w0,[x29, #0x58]",
+          "edges": [
+            "READ:Stack[-0x28]"
+          ]
+        },
+        {
+          "pc": "000a1cf0",
+          "asm": "mov w1,#0xffff0008"
+        },
+        {
+          "pc": "000a1cf4",
+          "asm": "cmp w0,w1"
+        },
+        {
+          "pc": "000a1cf8",
+          "asm": "b.eq 0x000a1c1c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c1c"
+          ]
+        }
+      ]
+    },
+    "root_validate_callback_setup": {
+      "center": "000a1bb4",
+      "owning_function": "000a1bb4",
+      "instructions": [
+        {
+          "pc": "000a1ab4",
+          "asm": "add x0,x29,#0x98"
+        },
+        {
+          "pc": "000a1ab8",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1abc",
+          "asm": "add x1,x29,#0x98"
+        },
+        {
+          "pc": "000a1ac0",
+          "asm": "mov x2,#0x25"
+        },
+        {
+          "pc": "000a1ac4",
+          "asm": "mov x0,x19"
+        },
+        {
+          "pc": "000a1ac8",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1acc",
+          "asm": "strb wzr,[x19, #0x24]"
+        },
+        {
+          "pc": "000a1ad0",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ad4",
+          "asm": "ldr x19,[sp, #0x10]"
+        },
+        {
+          "pc": "000a1ad8",
+          "asm": "ldp x29,x30,[sp], #0xc0"
+        },
+        {
+          "pc": "000a1adc",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae0",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1ae4",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1ae8",
+          "asm": "cmp x3,#0x0"
+        },
+        {
+          "pc": "000a1aec",
+          "asm": "ccmp x2,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1af0",
+          "asm": "b.ne 0x000a1afc",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1afc"
+          ]
+        },
+        {
+          "pc": "000a1af4",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1af8",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1afc",
+          "asm": "cbz x6,0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b00",
+          "asm": "strb wzr,[x6]"
+        },
+        {
+          "pc": "000a1b04",
+          "asm": "cmp x3,#0x408"
+        },
+        {
+          "pc": "000a1b08",
+          "asm": "b.ne 0x000a1af4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1af4"
+          ]
+        },
+        {
+          "pc": "000a1b0c",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b10",
+          "asm": "mov x1,x2"
+        },
+        {
+          "pc": "000a1b14",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b18",
+          "asm": "mov x2,x3"
+        },
+        {
+          "pc": "000a1b1c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b20",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b24",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b28",
+          "asm": "mov x20,x7"
+        },
+        {
+          "pc": "000a1b2c",
+          "asm": "mov x19,x6"
+        },
+        {
+          "pc": "000a1b30",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b34",
+          "asm": "cbnz w0,0x000a1b40",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b40"
+          ]
+        },
+        {
+          "pc": "000a1b38",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b3c",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1b40",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1b44",
+          "asm": "str w0,[x20]"
+        },
+        {
+          "pc": "000a1b48",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1b4c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b50",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b54",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b58",
+          "asm": "cmp x2,#0x0"
+        },
+        {
+          "pc": "000a1b5c",
+          "asm": "ccmp x1,#0x0,#0x4,ne"
+        },
+        {
+          "pc": "000a1b60",
+          "asm": "b.ne 0x000a1b6c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b6c"
+          ]
+        },
+        {
+          "pc": "000a1b64",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1b68",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1b6c",
+          "asm": "cbz x5,0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b70",
+          "asm": "strb wzr,[x5]"
+        },
+        {
+          "pc": "000a1b74",
+          "asm": "cmp x2,#0x408"
+        },
+        {
+          "pc": "000a1b78",
+          "asm": "b.ne 0x000a1b64",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1b64"
+          ]
+        },
+        {
+          "pc": "000a1b7c",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1b80",
+          "asm": "adrp x0,0x1cd000"
+        },
+        {
+          "pc": "000a1b84",
+          "asm": "add x0,x0,#0x6ac",
+          "edges": [
+            "PARAM:001cd6ac"
+          ]
+        },
+        {
+          "pc": "000a1b88",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1b8c",
+          "asm": "str x19,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1b90",
+          "asm": "mov x19,x5"
+        },
+        {
+          "pc": "000a1b94",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "000a1b98",
+          "asm": "cbnz w0,0x000a1ba4",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ba4"
+          ]
+        },
+        {
+          "pc": "000a1b9c",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1ba0",
+          "asm": "strb w0,[x19]"
+        },
+        {
+          "pc": "000a1ba4",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1ba8",
+          "asm": "ldr x19,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "000a1bac",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "000a1bb0",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1bb4",
+          "asm": "stp x29,x30,[sp, #-0x80]!",
+          "edges": [
+            "WRITE:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1bb8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "000a1bbc",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1bc0",
+          "asm": "adrp x20,0x1cd000"
+        },
+        {
+          "pc": "000a1bc4",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "000a1bc8",
+          "asm": "stp x21,x22,[sp, #0x20]",
+          "edges": [
+            "WRITE:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1bcc",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bd0",
+          "asm": "mov x22,x2"
+        },
+        {
+          "pc": "000a1bd4",
+          "asm": "stp x23,x24,[sp, #0x30]",
+          "edges": [
+            "WRITE:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1bd8",
+          "asm": "mov w24,w1"
+        },
+        {
+          "pc": "000a1bdc",
+          "asm": "mov x23,x3"
+        },
+        {
+          "pc": "000a1be0",
+          "asm": "cbnz w0,0x000a1bf8",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1bf8"
+          ]
+        },
+        {
+          "pc": "000a1be4",
+          "asm": "bl 0x0005b7a8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0005b7a8"
+          ]
+        },
+        {
+          "pc": "000a1be8",
+          "asm": "cmp w0,#0x0"
+        },
+        {
+          "pc": "000a1bec",
+          "asm": "cset w0,eq"
+        },
+        {
+          "pc": "000a1bf0",
+          "asm": "add w0,w0,#0x1"
+        },
+        {
+          "pc": "000a1bf4",
+          "asm": "str w0,[x20, #0x6a8]",
+          "edges": [
+            "WRITE:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bf8",
+          "asm": "ldr w0,[x20, #0x6a8]",
+          "edges": [
+            "READ:001cd6a8"
+          ]
+        },
+        {
+          "pc": "000a1bfc",
+          "asm": "cmp w0,#0x2"
+        },
+        {
+          "pc": "000a1c00",
+          "asm": "b.ne 0x000a1d0c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d0c"
+          ]
+        },
+        {
+          "pc": "000a1c04",
+          "asm": "adrp x1,0x17e000"
+        },
+        {
+          "pc": "000a1c08",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1c0c",
+          "asm": "add x1,x1,#0x866",
+          "edges": [
+            "PARAM:0017e866"
+          ]
+        },
+        {
+          "pc": "000a1c10",
+          "asm": "add x0,x0,#0x362",
+          "edges": [
+            "PARAM:0019f362"
+          ]
+        },
+        {
+          "pc": "000a1c14",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1c18",
+          "asm": "mov w0,#0x8"
+        },
+        {
+          "pc": "000a1c1c",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x70]"
+          ]
+        },
+        {
+          "pc": "000a1c20",
+          "asm": "ldp x21,x22,[sp, #0x20]",
+          "edges": [
+            "READ:Stack[-0x60]"
+          ]
+        },
+        {
+          "pc": "000a1c24",
+          "asm": "ldp x23,x24,[sp, #0x30]",
+          "edges": [
+            "READ:Stack[-0x50]"
+          ]
+        },
+        {
+          "pc": "000a1c28",
+          "asm": "ldp x29,x30,[sp], #0x80",
+          "edges": [
+            "DATA:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1c2c",
+          "asm": "ret"
+        },
+        {
+          "pc": "000a1c30",
+          "asm": "mov x1,x21",
+          "edges": [
+            "PARAM:0016b720"
+          ]
+        },
+        {
+          "pc": "000a1c34",
+          "asm": "add x0,x29,#0x40"
+        },
+        {
+          "pc": "000a1c38",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "000a1c3c",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c40",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c44",
+          "asm": "mov x2,#0x0"
+        },
+        {
+          "pc": "000a1c48",
+          "asm": "mov x1,#0x0"
+        },
+        {
+          "pc": "000a1c4c",
+          "asm": "bl 0x00128cb4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128cb4"
+          ]
+        },
+        {
+          "pc": "000a1c50",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "000a1c54",
+          "asm": "cbnz x0,0x000a1c60",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c60"
+          ]
+        },
+        {
+          "pc": "000a1c58",
+          "asm": "mov w0,#0x2"
+        },
+        {
+          "pc": "000a1c5c",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1c60",
+          "asm": "mov x2,#0x30"
+        },
+        {
+          "pc": "000a1c64",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1c68",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c6c",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1c70",
+          "asm": "add x1,x29,#0x40"
+        },
+        {
+          "pc": "000a1c74",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1c78",
+          "asm": "bl 0x00128d4c",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128d4c"
+          ]
+        },
+        {
+          "pc": "000a1c7c",
+          "asm": "mov x3,#0x0"
+        },
+        {
+          "pc": "000a1c80",
+          "asm": "mov w2,#0x0"
+        },
+        {
+          "pc": "000a1c84",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1c88",
+          "asm": "mov x0,x20"
+        },
+        {
+          "pc": "000a1c8c",
+          "asm": "bl 0x00128ab4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ab4"
+          ]
+        },
+        {
+          "pc": "000a1c90",
+          "asm": "cbnz w0,0x000a1ca0",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1ca0"
+          ]
+        },
+        {
+          "pc": "000a1c94",
+          "asm": "ldr w0,[x29, #0x74]",
+          "edges": [
+            "READ:Stack[-0xc]"
+          ]
+        },
+        {
+          "pc": "000a1c98",
+          "asm": "str x20,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1c9c",
+          "asm": "str w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1ca0",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ca4",
+          "asm": "mov x2,#0x10"
+        },
+        {
+          "pc": "000a1ca8",
+          "asm": "cbz x0,0x000a1c30",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c30"
+          ]
+        },
+        {
+          "pc": "000a1cac",
+          "asm": "mov w1,#0x0"
+        },
+        {
+          "pc": "000a1cb0",
+          "asm": "add x0,x29,#0x50"
+        },
+        {
+          "pc": "000a1cb4",
+          "asm": "bl 0x0015eb58",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015eb58"
+          ]
+        },
+        {
+          "pc": "000a1cb8",
+          "asm": "ldr w0,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1cbc",
+          "asm": "mov x3,x23"
+        },
+        {
+          "pc": "000a1cc0",
+          "asm": "stp w24,w0,[x29, #0x50]",
+          "edges": [
+            "WRITE:Stack[-0x30]"
+          ]
+        },
+        {
+          "pc": "000a1cc4",
+          "asm": "mov w2,w22"
+        },
+        {
+          "pc": "000a1cc8",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1ccc",
+          "asm": "add x1,x29,#0x50"
+        },
+        {
+          "pc": "000a1cd0",
+          "asm": "bl 0x00128ad4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ad4"
+          ]
+        },
+        {
+          "pc": "000a1cd4",
+          "asm": "cbnz w0,0x000a1c58",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1cd8",
+          "asm": "ldr w1,[x29, #0x58]",
+          "edges": [
+            "READ:Stack[-0x28]"
+          ]
+        },
+        {
+          "pc": "000a1cdc",
+          "asm": "cbz w1,0x000a1cec",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1cec"
+          ]
+        },
+        {
+          "pc": "000a1ce0",
+          "asm": "adrp x0,0x19f000"
+        },
+        {
+          "pc": "000a1ce4",
+          "asm": "add x0,x0,#0x37f",
+          "edges": [
+            "PARAM:0019f37f"
+          ]
+        },
+        {
+          "pc": "000a1ce8",
+          "asm": "bl 0x001609c0",
+          "edges": [
+            "UNCONDITIONAL_CALL:001609c0"
+          ]
+        },
+        {
+          "pc": "000a1cec",
+          "asm": "ldr w0,[x29, #0x58]",
+          "edges": [
+            "READ:Stack[-0x28]"
+          ]
+        },
+        {
+          "pc": "000a1cf0",
+          "asm": "mov w1,#0xffff0008"
+        },
+        {
+          "pc": "000a1cf4",
+          "asm": "cmp w0,w1"
+        },
+        {
+          "pc": "000a1cf8",
+          "asm": "b.eq 0x000a1c1c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1cfc",
+          "asm": "b.hi 0x000a1d1c",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d1c"
+          ]
+        },
+        {
+          "pc": "000a1d00",
+          "asm": "cbnz w0,0x000a1c58",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1d04",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "000a1d08",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1d0c",
+          "asm": "adrp x21,0x16b000"
+        },
+        {
+          "pc": "000a1d10",
+          "asm": "mov x20,#0x0"
+        },
+        {
+          "pc": "000a1d14",
+          "asm": "add x21,x21,#0x720"
+        },
+        {
+          "pc": "000a1d18",
+          "asm": "b 0x000a1ca0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1ca0"
+          ]
+        },
+        {
+          "pc": "000a1d1c",
+          "asm": "mov w1,#0xffff000c"
+        },
+        {
+          "pc": "000a1d20",
+          "asm": "cmp w0,w1"
+        },
+        {
+          "pc": "000a1d24",
+          "asm": "b.eq 0x000a1d48",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1d48"
+          ]
+        },
+        {
+          "pc": "000a1d28",
+          "asm": "mov w1,#0xffff3024"
+        },
+        {
+          "pc": "000a1d2c",
+          "asm": "cmp w0,w1"
+        },
+        {
+          "pc": "000a1d30",
+          "asm": "b.ne 0x000a1c58",
+          "edges": [
+            "CONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1d34",
+          "asm": "ldr w1,[x19, #0xa0]"
+        },
+        {
+          "pc": "000a1d38",
+          "asm": "ldr x0,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1d3c",
+          "asm": "bl 0x00128ac4",
+          "edges": [
+            "UNCONDITIONAL_CALL:00128ac4"
+          ]
+        },
+        {
+          "pc": "000a1d40",
+          "asm": "str xzr,[x19, #0x98]"
+        },
+        {
+          "pc": "000a1d44",
+          "asm": "b 0x000a1c58",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c58"
+          ]
+        },
+        {
+          "pc": "000a1d48",
+          "asm": "mov w0,#0x1"
+        },
+        {
+          "pc": "000a1d4c",
+          "asm": "b 0x000a1c1c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:000a1c1c"
+          ]
+        },
+        {
+          "pc": "000a1d50",
+          "asm": "stp x29,x30,[sp, #-0x80]!",
+          "edges": [
+            "WRITE:Stack[-0x80]"
+          ]
+        },
+        {
+          "pc": "000a1d54",
+          "asm": "mov x29,sp"
+        }
+      ]
+    },
+    "key_compare_routine": {
+      "center": "0015ed20",
+      "owning_function": "0015ed20",
+      "instructions": [
+        {
+          "pc": "0015ec20",
+          "asm": "mov x4,x0"
+        },
+        {
+          "pc": "0015ec24",
+          "asm": "b 0x0015ec00",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0015ec00"
+          ]
+        },
+        {
+          "pc": "0015ec28",
+          "asm": "ldrb w5,[x1, x3]"
+        },
+        {
+          "pc": "0015ec2c",
+          "asm": "strb w5,[x4, x3]"
+        },
+        {
+          "pc": "0015ec30",
+          "asm": "add x3,x3,#0x1"
+        },
+        {
+          "pc": "0015ec34",
+          "asm": "b 0x0015ec04",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0015ec04"
+          ]
+        },
+        {
+          "pc": "0015ec38",
+          "asm": "mov x3,x2"
+        },
+        {
+          "pc": "0015ec3c",
+          "asm": "cbz x2,0x0015ec8c",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ec8c"
+          ]
+        },
+        {
+          "pc": "0015ec40",
+          "asm": "mov x8,x0"
+        },
+        {
+          "pc": "0015ec44",
+          "asm": "mov x4,x1"
+        },
+        {
+          "pc": "0015ec48",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ec4c",
+          "asm": "mov x0,x1"
+        },
+        {
+          "pc": "0015ec50",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ec54",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "0015ec58",
+          "asm": "mov x7,x0"
+        },
+        {
+          "pc": "0015ec5c",
+          "asm": "cmp x3,x0"
+        },
+        {
+          "pc": "0015ec60",
+          "asm": "b.hi 0x0015ec68",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ec68"
+          ]
+        },
+        {
+          "pc": "0015ec64",
+          "asm": "sub x7,x3,#0x1"
+        },
+        {
+          "pc": "0015ec68",
+          "asm": "mov x2,x7"
+        },
+        {
+          "pc": "0015ec6c",
+          "asm": "mov x1,x4"
+        },
+        {
+          "pc": "0015ec70",
+          "asm": "mov x0,x8"
+        },
+        {
+          "pc": "0015ec74",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "0015ec78",
+          "asm": "strb wzr,[x8, x7]"
+        },
+        {
+          "pc": "0015ec7c",
+          "asm": "add x3,x7,#0x1"
+        },
+        {
+          "pc": "0015ec80",
+          "asm": "mov x0,x3"
+        },
+        {
+          "pc": "0015ec84",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ec88",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ec8c",
+          "asm": "mov x0,x2"
+        },
+        {
+          "pc": "0015ec90",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ec94",
+          "asm": "mov x6,x1"
+        },
+        {
+          "pc": "0015ec98",
+          "asm": "mov x5,x0"
+        },
+        {
+          "pc": "0015ec9c",
+          "asm": "mov x4,x2"
+        },
+        {
+          "pc": "0015eca0",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015eca4",
+          "asm": "mov x1,x2"
+        },
+        {
+          "pc": "0015eca8",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ecac",
+          "asm": "bl 0x0015e9bc",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e9bc"
+          ]
+        },
+        {
+          "pc": "0015ecb0",
+          "asm": "mov x9,x0"
+        },
+        {
+          "pc": "0015ecb4",
+          "asm": "sub x2,x4,x0"
+        },
+        {
+          "pc": "0015ecb8",
+          "asm": "mov x1,x6"
+        },
+        {
+          "pc": "0015ecbc",
+          "asm": "add x0,x5,x0"
+        },
+        {
+          "pc": "0015ecc0",
+          "asm": "bl 0x0015ec38",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ec38"
+          ]
+        },
+        {
+          "pc": "0015ecc4",
+          "asm": "add x0,x0,x9"
+        },
+        {
+          "pc": "0015ecc8",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015eccc",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ecd0",
+          "asm": "mov x7,x0"
+        },
+        {
+          "pc": "0015ecd4",
+          "asm": "cmp x0,x1"
+        },
+        {
+          "pc": "0015ecd8",
+          "asm": "b.ls 0x0015ece8",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ece8"
+          ]
+        },
+        {
+          "pc": "0015ecdc",
+          "asm": "add x0,x1,x2"
+        },
+        {
+          "pc": "0015ece0",
+          "asm": "cmp x7,x0"
+        },
+        {
+          "pc": "0015ece4",
+          "asm": "b.cc 0x0015ed0c",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed0c"
+          ]
+        },
+        {
+          "pc": "0015ece8",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ecec",
+          "asm": "mov x0,x7"
+        },
+        {
+          "pc": "0015ecf0",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ecf4",
+          "asm": "bl 0x0015ebc8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ebc8"
+          ]
+        },
+        {
+          "pc": "0015ecf8",
+          "asm": "mov x0,x7"
+        },
+        {
+          "pc": "0015ecfc",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ed00",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ed04",
+          "asm": "ldrb w0,[x1, x2]"
+        },
+        {
+          "pc": "0015ed08",
+          "asm": "strb w0,[x7, x2]"
+        },
+        {
+          "pc": "0015ed0c",
+          "asm": "sub x2,x2,#0x1"
+        },
+        {
+          "pc": "0015ed10",
+          "asm": "cmn x2,#0x1"
+        },
+        {
+          "pc": "0015ed14",
+          "asm": "b.ne 0x0015ed04",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed04"
+          ]
+        },
+        {
+          "pc": "0015ed18",
+          "asm": "mov x0,x7"
+        },
+        {
+          "pc": "0015ed1c",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ed20",
+          "asm": "mov x6,x0"
+        },
+        {
+          "pc": "0015ed24",
+          "asm": "mov x4,#0x0"
+        },
+        {
+          "pc": "0015ed28",
+          "asm": "cmp x4,x2"
+        },
+        {
+          "pc": "0015ed2c",
+          "asm": "b.ne 0x0015ed38",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed38"
+          ]
+        },
+        {
+          "pc": "0015ed30",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "0015ed34",
+          "asm": "b 0x0015ed4c",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0015ed4c"
+          ]
+        },
+        {
+          "pc": "0015ed38",
+          "asm": "ldrb w3,[x6, x4]"
+        },
+        {
+          "pc": "0015ed3c",
+          "asm": "ldrb w5,[x1, x4]"
+        },
+        {
+          "pc": "0015ed40",
+          "asm": "add x4,x4,#0x1"
+        },
+        {
+          "pc": "0015ed44",
+          "asm": "subs w0,w3,w5"
+        },
+        {
+          "pc": "0015ed48",
+          "asm": "b.eq 0x0015ed28",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed28"
+          ]
+        },
+        {
+          "pc": "0015ed4c",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ed50",
+          "asm": "mov x7,x0"
+        },
+        {
+          "pc": "0015ed54",
+          "asm": "mov x9,x1"
+        },
+        {
+          "pc": "0015ed58",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ed5c",
+          "asm": "mov x0,x1"
+        },
+        {
+          "pc": "0015ed60",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ed64",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "0015ed68",
+          "asm": "cbz w0,0x0015ed90",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed90"
+          ]
+        },
+        {
+          "pc": "0015ed6c",
+          "asm": "mov w8,w0"
+        },
+        {
+          "pc": "0015ed70",
+          "asm": "mov x0,x7"
+        },
+        {
+          "pc": "0015ed74",
+          "asm": "bl 0x0015e960",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015e960"
+          ]
+        },
+        {
+          "pc": "0015ed78",
+          "asm": "add w10,w0,w7"
+        },
+        {
+          "pc": "0015ed7c",
+          "asm": "sxtw x11,w8"
+        },
+        {
+          "pc": "0015ed80",
+          "asm": "sub w0,w10,w7"
+        },
+        {
+          "pc": "0015ed84",
+          "asm": "cmp w0,w8"
+        },
+        {
+          "pc": "0015ed88",
+          "asm": "b.ge 0x0015ed9c",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed9c"
+          ]
+        },
+        {
+          "pc": "0015ed8c",
+          "asm": "mov x7,#0x0"
+        },
+        {
+          "pc": "0015ed90",
+          "asm": "mov x0,x7"
+        },
+        {
+          "pc": "0015ed94",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ed98",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ed9c",
+          "asm": "mov x2,x11"
+        },
+        {
+          "pc": "0015eda0",
+          "asm": "mov x1,x9"
+        },
+        {
+          "pc": "0015eda4",
+          "asm": "mov x0,x7"
+        },
+        {
+          "pc": "0015eda8",
+          "asm": "bl 0x0015ed20",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ed20"
+          ]
+        },
+        {
+          "pc": "0015edac",
+          "asm": "cbz w0,0x0015ed90",
+          "edges": [
+            "CONDITIONAL_JUMP:0015ed90"
+          ]
+        },
+        {
+          "pc": "0015edb0",
+          "asm": "add x7,x7,#0x1"
+        },
+        {
+          "pc": "0015edb4",
+          "asm": "b 0x0015ed80",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0015ed80"
+          ]
+        },
+        {
+          "pc": "0015edb8",
+          "asm": "add x2,x0,x2"
+        },
+        {
+          "pc": "0015edbc",
+          "asm": "and w1,w1,#0xff"
+        },
+        {
+          "pc": "0015edc0",
+          "asm": "cmp x0,x2"
+        },
+        {
+          "pc": "0015edc4",
+          "asm": "b.ne 0x0015edd0",
+          "edges": [
+            "CONDITIONAL_JUMP:0015edd0"
+          ]
+        },
+        {
+          "pc": "0015edc8",
+          "asm": "mov x0,#0x0"
+        },
+        {
+          "pc": "0015edcc",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015edd0",
+          "asm": "mov x3,x0"
+        },
+        {
+          "pc": "0015edd4",
+          "asm": "ldrb w4,[x3], #0x1"
+        },
+        {
+          "pc": "0015edd8",
+          "asm": "cmp w4,w1"
+        },
+        {
+          "pc": "0015eddc",
+          "asm": "b.eq 0x0015edcc",
+          "edges": [
+            "CONDITIONAL_JUMP:0015edcc"
+          ]
+        },
+        {
+          "pc": "0015ede0",
+          "asm": "mov x0,x3"
+        },
+        {
+          "pc": "0015ede4",
+          "asm": "b 0x0015edc0",
+          "edges": [
+            "UNCONDITIONAL_JUMP:0015edc0"
+          ]
+        },
+        {
+          "pc": "0015ede8",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "0015edec",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015edf0",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015edf4",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "0015edf8",
+          "asm": "bl 0x0007f90c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f90c"
+          ]
+        },
+        {
+          "pc": "0015edfc",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "0015ee00",
+          "asm": "bl 0x0007f904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f904"
+          ]
+        },
+        {
+          "pc": "0015ee04",
+          "asm": "mov w0,w0"
+        },
+        {
+          "pc": "0015ee08",
+          "asm": "mov x1,#0x3e8"
+        },
+        {
+          "pc": "0015ee0c",
+          "asm": "mul x19,x19,x1"
+        },
+        {
+          "pc": "0015ee10",
+          "asm": "udiv x0,x19,x0"
+        },
+        {
+          "pc": "0015ee14",
+          "asm": "sub x0,x0,x20"
+        },
+        {
+          "pc": "0015ee18",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ee1c",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "0015ee20",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ee24",
+          "asm": "stp x29,x30,[sp, #-0x10]!",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ee28",
+          "asm": "mov x0,#0x0"
+        },
+        {
+          "pc": "0015ee2c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ee30",
+          "asm": "bl 0x0015ede8",
+          "edges": [
+            "UNCONDITIONAL_CALL:0015ede8"
+          ]
+        },
+        {
+          "pc": "0015ee34",
+          "asm": "mov w1,#0x2"
+        },
+        {
+          "pc": "0015ee38",
+          "asm": "bl 0x00056498",
+          "edges": [
+            "UNCONDITIONAL_CALL:00056498"
+          ]
+        },
+        {
+          "pc": "0015ee3c",
+          "asm": "mov w0,#0x0"
+        },
+        {
+          "pc": "0015ee40",
+          "asm": "ldp x29,x30,[sp], #0x10",
+          "edges": [
+            "DATA:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ee44",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ee48",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "0015ee4c",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ee50",
+          "asm": "str x19,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ee54",
+          "asm": "bl 0x0007f90c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f90c"
+          ]
+        },
+        {
+          "pc": "0015ee58",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "0015ee5c",
+          "asm": "bl 0x0007f904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f904"
+          ]
+        },
+        {
+          "pc": "0015ee60",
+          "asm": "mov x1,#0x4240"
+        },
+        {
+          "pc": "0015ee64",
+          "asm": "mov w0,w0"
+        },
+        {
+          "pc": "0015ee68",
+          "asm": "movk x1,#0xf, LSL #16"
+        },
+        {
+          "pc": "0015ee6c",
+          "asm": "mul x19,x19,x1"
+        },
+        {
+          "pc": "0015ee70",
+          "asm": "udiv x0,x19,x0"
+        },
+        {
+          "pc": "0015ee74",
+          "asm": "ldr x19,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ee78",
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "0015ee7c",
+          "asm": "ret"
+        },
+        {
+          "pc": "0015ee80",
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
+        },
+        {
+          "pc": "0015ee84",
+          "asm": "mov x29,sp"
+        },
+        {
+          "pc": "0015ee88",
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
+        },
+        {
+          "pc": "0015ee8c",
+          "asm": "mov x19,x0"
+        },
+        {
+          "pc": "0015ee90",
+          "asm": "bl 0x0007f90c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f90c"
+          ]
+        },
+        {
+          "pc": "0015ee94",
+          "asm": "mov x20,x0"
+        },
+        {
+          "pc": "0015ee98",
+          "asm": "bl 0x0007f904",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f904"
+          ]
+        },
+        {
+          "pc": "0015ee9c",
+          "asm": "mul x19,x19,x0"
+        },
+        {
+          "pc": "0015eea0",
+          "asm": "mov x0,#0x4240"
+        },
+        {
+          "pc": "0015eea4",
+          "asm": "movk x0,#0xf, LSL #16",
+          "edges": [
+            "PARAM:000f4240"
+          ]
+        },
+        {
+          "pc": "0015eea8",
+          "asm": "udiv x19,x19,x0"
+        },
+        {
+          "pc": "0015eeac",
+          "asm": "add x19,x19,x20"
+        },
+        {
+          "pc": "0015eeb0",
+          "asm": "add x19,x19,#0x1"
+        },
+        {
+          "pc": "0015eeb4",
+          "asm": "bl 0x0007f90c",
+          "edges": [
+            "UNCONDITIONAL_CALL:0007f90c"
+          ]
+        },
+        {
+          "pc": "0015eeb8",
+          "asm": "cmp x0,x19"
+        },
+        {
+          "pc": "0015eebc",
+          "asm": "b.cc 0x0015eeb4",
+          "edges": [
+            "CONDITIONAL_JUMP:0015eeb4"
+          ]
+        },
+        {
+          "pc": "0015eec0",
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
+        }
+      ]
+    },
     "avb_root_key_reference_1": {
       "center": "000a1b24",
+      "owning_function": "000a1ae8",
       "instructions": [
         {
           "pc": "000a1a24",
@@ -399,7 +4158,10 @@
         },
         {
           "pc": "000a1b0c",
-          "asm": "stp x29,x30,[sp, #-0x20]!"
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1b10",
@@ -419,7 +4181,10 @@
         },
         {
           "pc": "000a1b20",
-          "asm": "stp x19,x20,[sp, #0x10]"
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1b24",
@@ -472,11 +4237,17 @@
         },
         {
           "pc": "000a1b4c",
-          "asm": "ldp x19,x20,[sp, #0x10]"
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1b50",
-          "asm": "ldp x29,x30,[sp], #0x20"
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1b54",
@@ -529,7 +4300,10 @@
         },
         {
           "pc": "000a1b7c",
-          "asm": "stp x29,x30,[sp, #-0x20]!"
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1b80",
@@ -548,7 +4322,10 @@
         },
         {
           "pc": "000a1b8c",
-          "asm": "str x19,[sp, #0x10]"
+          "asm": "str x19,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1b90",
@@ -582,11 +4359,17 @@
         },
         {
           "pc": "000a1ba8",
-          "asm": "ldr x19,[sp, #0x10]"
+          "asm": "ldr x19,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1bac",
-          "asm": "ldp x29,x30,[sp], #0x20"
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1bb0",
@@ -962,6 +4745,7 @@
     },
     "avb_root_key_reference_2": {
       "center": "000a1b84",
+      "owning_function": "000a1b58",
       "instructions": [
         {
           "pc": "000a1a84",
@@ -1125,7 +4909,10 @@
         },
         {
           "pc": "000a1b0c",
-          "asm": "stp x29,x30,[sp, #-0x20]!"
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1b10",
@@ -1145,7 +4932,10 @@
         },
         {
           "pc": "000a1b20",
-          "asm": "stp x19,x20,[sp, #0x10]"
+          "asm": "stp x19,x20,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1b24",
@@ -1198,11 +4988,17 @@
         },
         {
           "pc": "000a1b4c",
-          "asm": "ldp x19,x20,[sp, #0x10]"
+          "asm": "ldp x19,x20,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1b50",
-          "asm": "ldp x29,x30,[sp], #0x20"
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1b54",
@@ -1255,7 +5051,10 @@
         },
         {
           "pc": "000a1b7c",
-          "asm": "stp x29,x30,[sp, #-0x20]!"
+          "asm": "stp x29,x30,[sp, #-0x20]!",
+          "edges": [
+            "WRITE:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1b80",
@@ -1274,7 +5073,10 @@
         },
         {
           "pc": "000a1b8c",
-          "asm": "str x19,[sp, #0x10]"
+          "asm": "str x19,[sp, #0x10]",
+          "edges": [
+            "WRITE:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1b90",
@@ -1308,11 +5110,17 @@
         },
         {
           "pc": "000a1ba8",
-          "asm": "ldr x19,[sp, #0x10]"
+          "asm": "ldr x19,[sp, #0x10]",
+          "edges": [
+            "READ:Stack[-0x10]"
+          ]
         },
         {
           "pc": "000a1bac",
-          "asm": "ldp x29,x30,[sp], #0x20"
+          "asm": "ldp x29,x30,[sp], #0x20",
+          "edges": [
+            "DATA:Stack[-0x20]"
+          ]
         },
         {
           "pc": "000a1bb0",
@@ -4268,39 +8076,368 @@
   },
   "candidate_functions": [
     {
-      "address": "000110b0",
-      "name": "FUN_000110b0",
-      "bytes": 476,
+      "address": "000a2628",
+      "name": "FUN_000a2628",
+      "bytes": 192,
+      "callers": [],
+      "callees": [
+        "00158cec"
+      ],
+      "decompiled_excerpt": "\nvoid FUN_000a2628(undefined4 param_1)\n\n{\n  long lVar1;\n  \n  lVar1 \u003d FUN_00158cec(0xa8);\n  if (lVar1 !\u003d 0) {\n    *(undefined1 **)(lVar1 + 0x18) \u003d \u0026LAB_000a2590;\n    *(undefined1 **)(lVar1 + 0x28) \u003d \u0026LAB_000a2574;\n    *(code **)(lVar1 + 0x30) \u003d re_candidate_a1b58;\n    *(undefined1 **)(lVar1 + 0x38) \u003d \u0026LAB_000a2148;\n    *(undefined1 **)(lVar1 + 0x40) \u003d \u0026LAB_000a20d4;\n    *(code **)(lVar1 + 0x60) \u003d FUN_000a1fe8;\n    *(code **)(lVar1 + 0x48) \u003d FUN_000a21dc;\n    *(code **)(lVar1 + 0x50) \u003d FUN_000a1e40;\n    *(code **)(lVar1 + 0x58) \u003d FUN_000a1d50;\n    *(code **)(lVar1 + 0x88) \u003d re_candidate_a1ae8;\n    *(long *)lVar1 \u003d lVar1;\n    *(undefined1 **)(lVar1 + 0x68) \u003d \u0026LAB_000a1a74;\n    *(undefined4 *)(lVar1 + 0x90) \u003d param_1;\n    *(code **)(lVar1 + 0x70) \u003d FUN_000a1980;\n  }\n  return;\n}\n\n"
+    },
+    {
+      "address": "000a1d50",
+      "name": "FUN_000a1d50",
+      "bytes": 240,
       "callers": [
-        "0001129c"
+        "000a1f00"
+      ],
+      "callees": [
+        "0009a884",
+        "0009a658",
+        "0015eb58",
+        "0015ebc8",
+        "000a1bb4"
+      ],
+      "decompiled_excerpt": "\nint FUN_000a1d50(undefined8 *param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  int iVar1;\n  long lVar2;\n  long lVar3;\n  undefined8 local_40;\n  long lStack_38;\n  undefined8 local_30;\n  undefined8 local_20;\n  long local_18;\n  undefined8 uStack_10;\n  \n  lVar2 \u003d FUN_0009a884(7);\n  if (lVar2 !\u003d 0) {\n    lVar3 \u003d FUN_0009a884(param_3);\n    if (lVar3 !\u003d 0) {\n      FUN_0015eb58(\u0026local_40,0);\n      FUN_0015eb58(lVar3,0,param_3);\n      FUN_0015ebc8(lVar2,s_kmdata_001b21e2,7);\n      local_40 \u003d 5;\n      local_30 \u003d 7;\n      local_20 \u003d 7;\n      lStack_38 \u003d lVar2;\n      local_18 \u003d lVar3;\n      uStack_10 \u003d param_3;\n      iVar1 \u003d re_candidate_a1bb4(*param_1,4,2,\u0026local_40);\n      if (iVar1 \u003d\u003d 0) {\n        FUN_0015ebc8(param_2,lVar3,param_3);\n      }\n      FUN_0009a658(lVar2);\n      FUN_0009a658(lVar3);\n      return iVar1;\n    }\n    FUN_0009a658(lVar2);\n  }\n  return 7;\n}\n\n"
+    },
+    {
+      "address": "000a1e40",
+      "name": "FUN_000a1e40",
+      "bytes": 272,
+      "callers": [],
+      "callees": [
+        "0009a884",
+        "0009a658",
+        "0015eb58",
+        "0015ebc8",
+        "000a1bb4",
+        "000a1d50",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nint FUN_000a1e40(undefined8 *param_1,undefined8 param_2,undefined8 param_3)\n\n{\n  int iVar1;\n  int iVar2;\n  long lVar3;\n  long lVar4;\n  undefined8 local_40;\n  long lStack_38;\n  undefined8 local_30;\n  undefined8 local_20;\n  long lStack_18;\n  undefined8 local_10;\n  \n  lVar3 \u003d FUN_0009a884(7);\n  if (lVar3 !\u003d 0) {\n    lVar4 \u003d FUN_0009a884(param_3);\n    if (lVar4 !\u003d 0) {\n      FUN_0015eb58(\u0026local_40,0);\n      FUN_0015ebc8(lVar4,param_2,param_3);\n      FUN_0015ebc8(lVar3,s_kmdata_001b21e2,7);\n      local_30 \u003d 7;\n      local_40 \u003d 5;\n      local_20 \u003d 5;\n      lStack_38 \u003d lVar3;\n      lStack_18 \u003d lVar4;\n      local_10 \u003d param_3;\n      iVar1 \u003d re_candidate_a1bb4(*param_1,5,2,\u0026local_40);\n      if ((iVar1 \u003d\u003d 0) \u0026\u0026 (iVar1 \u003d FUN_000a1d50(param_1,lVar4,param_3), iVar1 \u003d\u003d 0)) {\n        iVar2 \u003d re_candidate_15ed20(lVar4,param_2,param_3);\n        iVar1 \u003d 0;\n        if (iVar2 !\u003d 0) {\n          iVar1 \u003d 2;\n        }\n      }\n      FUN_0009a658(lVar3);\n      FUN_0009a658(lVar4);\n      return iVar1;\n    }\n    FUN_0009a658(lVar3);\n  }\n  return 7;\n}\n\n"
+    },
+    {
+      "address": "000a1f50",
+      "name": "FUN_000a1f50",
+      "bytes": 152,
+      "callers": [
+        "000a20b0",
+        "000a2270"
       ],
       "callees": [
         "0015eb58",
-        "0007d258",
-        "001609c0",
-        "0015ebc8",
-        "000812f0",
-        "00066600"
+        "000a1bb4"
       ],
-      "decompiled_excerpt": "\nundefined8 FUN_000110b0(void)\n\n{\n  int iVar1;\n  char *pcVar2;\n  undefined4 local_118 [2];\n  undefined8 local_110;\n  long local_108;\n  undefined1 auStack_100 [256];\n  \n  FUN_0015eb58(auStack_100,0,0x100);\n  local_110 \u003d 0;\n  local_108 \u003d 0;\n  local_118[0] \u003d 0;\n  iVar1 \u003d FUN_0007d258(0,\u0026local_110);\n  if (iVar1 \u003d\u003d -1) {\n    if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019c50c,s_get_public_key_n_0017a4b1,0xa3);\n      FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n    }\n    if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n      return 1;\n    }\n    FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xcf);\n    pcVar2 \u003d s_Fail_to_get_public_N_from_CKB_A__001c0fd6;\n  }\n  else {\n    FUN_0015ebc8(auStack_100,local_108,0x100);\n    FUN_000812f0(auStack_100,0x100);\n    local_110 \u003d 0;\n    local_108 \u003d 0;\n    iVar1 \u003d FUN_0007d258(0,\u0026local_110);\n    if (iVar1 \u003d\u003d -1) {\n      if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n        FUN_001609c0(\u0026DAT_0019c50c,s_get_public_key_e_0017a4c2,0xbd);\n        FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n      }\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 1;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xd6);\n      pcVar2 \u003d s_Fail_to_get_public_E_from_CKB_A__001c0fff;\n    }\n    else {\n      FUN_0015ebc8(local_118,local_108 + 0x100,4);\n      FUN_000812f0(local_118,4);\n      iVar1 \u003d FUN_00066600(auStack_100,local_118,\u0026DAT_001c3e20,\n                           s_is_rel_flag_resv_mem_auto_detect_001b23b9,0xc);\n      if (iVar1 \u003d\u003d 0) {\n        if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n          FUN_001609c0(\u0026DAT_0019f39c,s_is_rel_build_0017a4ea,0xdd);\n          FUN_001609c0(s_DEV_signature_verification_pass__0019f70f);\n          return 0;\n        }\n        return 0;\n      }\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 1;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xe1);\n      pcVar2 \u003d s_DEV_signature_verification_failu_0019f746;\n    }\n  }\n  FUN_001609c0(pcVar2);\n  return 1;\n}\n\n"
+      "decompiled_excerpt": "\nulong FUN_000a1f50(undefined8 *param_1,uint param_2)\n\n{\n  ulong uVar1;\n  uint uVar2;\n  undefined8 local_20;\n  ulong local_18;\n  \n  param_2 \u003d param_2 \u0026 0xffff;\n  FUN_0015eb58(\u0026local_20,0,0x20);\n  local_20 \u003d 1;\n  local_18 \u003d (ulong)param_2;\n  uVar1 \u003d re_candidate_a1bb4(*param_1,3,1,\u0026local_20);\n  if ((int)uVar1 \u003d\u003d 0) {\n    local_18 \u003d (ulong)(int)~param_2;\n    local_20 \u003d 2;\n    uVar1 \u003d re_candidate_a1bb4(*param_1,2,1,\u0026local_20);\n    if ((int)uVar1 \u003d\u003d 0) {\n      uVar2 \u003d 2;\n      if (param_2 \u003d\u003d local_18) {\n        uVar2 \u003d 0;\n      }\n      uVar1 \u003d (ulong)uVar2;\n    }\n  }\n  return uVar1;\n}\n\n"
     },
     {
-      "address": "00050d40",
-      "name": "FUN_00050d40",
-      "bytes": 68,
+      "address": "000a1fe8",
+      "name": "FUN_000a1fe8",
+      "bytes": 236,
       "callers": [
-        "00093024"
+        "000a2220"
       ],
       "callees": [
-        "000a0ccc"
+        "000a1bb4",
+        "000a19d4",
+        "001609c0",
+        "000a1f50"
       ],
-      "decompiled_excerpt": "\nundefined8 FUN_00050d40(void)\n\n{\n  FUN_000a0ccc(s_checkteesuccess_001b785c,0);\n  FUN_000a0ccc(s_avb_init_0_0018db01,0);\n  FUN_000a0ccc(s_ab_slt_0_0018db0c,0);\n  return 0;\n}\n\n"
+      "decompiled_excerpt": "\nint FUN_000a1fe8(undefined8 *param_1,char *param_2)\n\n{\n  int iVar1;\n  char local_21 [9];\n  long local_18;\n  undefined8 uStack_10;\n  undefined8 local_8;\n  \n  local_21[1] \u003d \u0027\\x02\u0027;\n  local_21[2] \u003d \u0027\\0\u0027;\n  local_21[3] \u003d \u0027\\0\u0027;\n  local_21[4] \u003d \u0027\\0\u0027;\n  local_21[5] \u003d \u0027\\0\u0027;\n  local_21[6] \u003d \u0027\\0\u0027;\n  local_21[7] \u003d \u0027\\0\u0027;\n  local_21[8] \u003d \u0027\\0\u0027;\n  local_18 \u003d 0;\n  uStack_10 \u003d 0;\n  local_8 \u003d 0;\n  iVar1 \u003d re_candidate_a1bb4(*param_1,2,1);\n  if (iVar1 \u003d\u003d 8) {\n    iVar1 \u003d FUN_000a19d4(param_2);\n  }\n  else if (iVar1 \u003d\u003d 0) {\n    *param_2 \u003d local_18 \u003d\u003d 0;\n    iVar1 \u003d FUN_000a19d4(local_21);\n    if (iVar1 \u003d\u003d 0) {\n      if ((DAT_001c5878 \u003e\u003e 1 \u0026 1) !\u003d 0) {\n        FUN_001609c0(s_out_is_unlocked_from_env__d__out_001b1f15,local_21[0],*param_2);\n      }\n      iVar1 \u003d 0;\n      if ((local_21[0] \u003d\u003d \u0027\\0\u0027) \u0026\u0026 (*param_2 !\u003d \u0027\\0\u0027)) {\n        *param_2 \u003d \u0027\\0\u0027;\n        iVar1 \u003d FUN_000a1f50(param_1,1);\n        if (iVar1 !\u003d 0) {\n          FUN_001609c0(s_Can_t_write_device_lock_state_001b1f46);\n        }\n      }\n    }\n    else {\n      iVar1 \u003d 2;\n    }\n  }\n  return iVar1;\n}\n\n"
+    },
+    {
+      "address": "000a1ae8",
+      "name": "re_candidate_a1ae8",
+      "bytes": 112,
+      "callers": [],
+      "callees": [
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nundefined8\nre_candidate_a1ae8(undefined8 param_1,undefined8 param_2,long param_3,long param_4,\n                  undefined8 param_5,undefined8 param_6,undefined1 *param_7,undefined4 *param_8)\n\n{\n  int iVar1;\n  \n  if (((param_4 !\u003d 0 \u0026\u0026 param_3 !\u003d 0) \u0026\u0026 (param_7 !\u003d (undefined1 *)0x0)) \u0026\u0026\n     (*param_7 \u003d 0, param_4 \u003d\u003d 0x408)) {\n    iVar1 \u003d re_candidate_15ed20(\u0026DAT_001cd6ac,param_3,0x408);\n    if (iVar1 \u003d\u003d 0) {\n      *param_7 \u003d 1;\n    }\n    *param_8 \u003d 1;\n    return 0;\n  }\n  return 2;\n}\n\n"
+    },
+    {
+      "address": "000a1b58",
+      "name": "re_candidate_a1b58",
+      "bytes": 92,
+      "callers": [],
+      "callees": [
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nundefined8\nre_candidate_a1b58(undefined8 param_1,long param_2,long param_3,undefined8 param_4,\n                  undefined8 param_5,undefined1 *param_6)\n\n{\n  int iVar1;\n  \n  if (((param_3 !\u003d 0 \u0026\u0026 param_2 !\u003d 0) \u0026\u0026 (param_6 !\u003d (undefined1 *)0x0)) \u0026\u0026\n     (*param_6 \u003d 0, param_3 \u003d\u003d 0x408)) {\n    iVar1 \u003d re_candidate_15ed20(\u0026DAT_001cd6ac);\n    if (iVar1 \u003d\u003d 0) {\n      *param_6 \u003d 1;\n    }\n    return 0;\n  }\n  return 2;\n}\n\n"
+    },
+    {
+      "address": "0014cef0",
+      "name": "FUN_0014cef0",
+      "bytes": 212,
+      "callers": [
+        "0014d018",
+        "0014d00c"
+      ],
+      "callees": [
+        "0014ce1c",
+        "0014ce8c",
+        "0014cbc8",
+        "0015e9bc",
+        "0014ce54",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nlong FUN_0014cef0(undefined8 param_1,undefined8 param_2,undefined8 param_3,int param_4,int *param_5)\n\n{\n  uint uVar1;\n  int iVar2;\n  int iVar3;\n  long lVar4;\n  undefined8 uVar5;\n  long lVar6;\n  \n  iVar2 \u003d FUN_0014ce1c();\n  do {\n    if (iVar2 \u003c 0) {\nLAB_0014cf2c:\n      if (param_5 !\u003d (int *)0x0) {\n        *param_5 \u003d iVar2;\n      }\n      return 0;\n    }\n    lVar4 \u003d FUN_0014ce8c(param_1,iVar2,param_5);\n    if (lVar4 \u003d\u003d 0) {\n      iVar2 \u003d -0xd;\n      goto LAB_0014cf2c;\n    }\n    uVar1 \u003d (*(uint *)(lVar4 + 8) \u0026 0xff00ff00) \u003e\u003e 8 | (*(uint *)(lVar4 + 8) \u0026 0xff00ff) \u003c\u003c 8;\n    uVar5 \u003d FUN_0014cbc8(param_1,uVar1 \u003e\u003e 0x10 | uVar1 \u003c\u003c 0x10);\n    lVar6 \u003d FUN_0015e9bc(uVar5,(long)(param_4 + 1));\n    if ((lVar6 \u003d\u003d param_4) \u0026\u0026 (iVar3 \u003d re_candidate_15ed20(uVar5,param_3,(long)param_4), iVar3 \u003d\u003d 0)\n       ) {\n      return lVar4;\n    }\n    iVar2 \u003d FUN_0014ce54(param_1,iVar2);\n  } while( true );\n}\n\n"
+    },
+    {
+      "address": "0014d794",
+      "name": "FUN_0014d794",
+      "bytes": 196,
+      "callers": [
+        "000a8268",
+        "000a680c"
+      ],
+      "callees": [
+        "0014d084",
+        "0015e960",
+        "0015e9bc",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nint FUN_0014d794(void)\n\n{\n  ulong uVar1;\n  int iVar2;\n  int iVar3;\n  int iVar4;\n  ulong uVar5;\n  undefined8 in_x3;\n  int iVar6;\n  int local_4;\n  \n  uVar5 \u003d FUN_0014d084();\n  if (uVar5 !\u003d 0) {\n    iVar2 \u003d FUN_0015e960(in_x3);\n    iVar6 \u003d 0;\n    uVar1 \u003d uVar5 + (long)local_4;\n    for (; uVar5 \u003c uVar1; uVar5 \u003d uVar5 + (long)iVar3) {\n      iVar3 \u003d FUN_0015e9bc(uVar5,uVar1 - uVar5);\n      iVar3 \u003d iVar3 + 1;\n      if (uVar1 \u003c uVar5 + (long)iVar3) {\n        return -0xf;\n      }\n      if ((iVar3 \u003d\u003d iVar2 + 1) \u0026\u0026 (iVar4 \u003d re_candidate_15ed20(uVar5,in_x3), iVar4 \u003d\u003d 0)) {\n        return iVar6;\n      }\n      iVar6 \u003d iVar6 + 1;\n    }\n    local_4 \u003d -1;\n  }\n  return local_4;\n}\n\n"
+    },
+    {
+      "address": "0015ed50",
+      "name": "FUN_0015ed50",
+      "bytes": 104,
+      "callers": [
+        "00002a18",
+        "00054fdc",
+        "00055034",
+        "000550f4",
+        "0005497c",
+        "000549d8",
+        "000051b8",
+        "000051dc",
+        "00005234",
+        "00005270",
+        "00005364",
+        "00055afc",
+        "00076028",
+        "001670a0",
+        "00054bc0",
+        "00054c10",
+        "00054c50",
+        "00054c94",
+        "0005c7b4",
+        "00078ac4",
+        "00074e60",
+        "00074e70",
+        "00074e84",
+        "0009c9b8",
+        "000832c0"
+      ],
+      "callees": [
+        "0015e960",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nlong FUN_0015ed50(long param_1,undefined8 param_2)\n\n{\n  int iVar1;\n  undefined8 extraout_x8;\n  undefined8 uVar2;\n  undefined8 extraout_x8_00;\n  undefined8 extraout_x9;\n  undefined8 uVar3;\n  undefined8 extraout_x9_00;\n  ulong uVar4;\n  ulong extraout_x10;\n  long lVar5;\n  long extraout_x11;\n  \n  iVar1 \u003d FUN_0015e960(param_2);\n  if (iVar1 !\u003d 0) {\n    iVar1 \u003d FUN_0015e960(iVar1,param_1);\n    uVar4 \u003d (ulong)(uint)(iVar1 + (int)param_1);\n    lVar5 \u003d (long)(int)extraout_x8;\n    uVar2 \u003d extraout_x8;\n    uVar3 \u003d extraout_x9;\n    for (; (int)uVar2 \u003c\u003d (int)uVar4 - (int)param_1; param_1 \u003d param_1 + 1) {\n      iVar1 \u003d re_candidate_15ed20(param_1,uVar3,lVar5);\n      if (iVar1 \u003d\u003d 0) {\n        return param_1;\n      }\n      uVar2 \u003d extraout_x8_00;\n      uVar3 \u003d extraout_x9_00;\n      uVar4 \u003d extraout_x10;\n      lVar5 \u003d extraout_x11;\n    }\n    param_1 \u003d 0;\n  }\n  return param_1;\n}\n\n"
+    },
+    {
+      "address": "00066600",
+      "name": "FUN_00066600",
+      "bytes": 1668,
+      "callers": [
+        "00003674",
+        "00011198",
+        "00073c7c",
+        "00073e94",
+        "000694b0",
+        "000730f4"
+      ],
+      "callees": [
+        "001609c0",
+        "0015eb58",
+        "00066f24",
+        "000688ec",
+        "00050aa8",
+        "0009a884",
+        "0009a658",
+        "0015ebc8",
+        "00068888",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nundefined4\nFUN_00066600(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,\n            undefined4 param_5)\n\n{\n  int iVar1;\n  undefined1 uVar2;\n  undefined1 uVar3;\n  int iVar4;\n  char *pcVar5;\n  long lVar6;\n  byte *pbVar7;\n  long lVar8;\n  ulong uVar9;\n  char *pcVar10;\n  ulong uVar11;\n  long lVar12;\n  ulong uVar13;\n  long lVar14;\n  undefined8 *puVar15;\n  undefined1 local_470;\n  undefined1 local_46f;\n  undefined1 local_46e;\n  undefined1 local_46d;\n  undefined8 local_468;\n  undefined1 local_460;\n  undefined1 local_45f;\n  undefined1 auStack_45e [46];\n  undefined8 *local_430;\n  undefined4 local_428;\n  undefined1 *local_420;\n  undefined4 local_418;\n  long local_410;\n  int local_408;\n  undefined1 local_400;\n  undefined1 local_3ff;\n  undefined1 auStack_3fe [205];\n  undefined1 auStack_331 [48];\n  char local_301;\n  \n  if ((DAT_001c5878 \u003e\u003e 2 \u0026 1) !\u003d 0) {\n    FUN_001609c0(\u0026DAT_0019c4f5,s_secure_do_authentication_0017a731);\n    FUN_001609c0(s___s__ckgen_setting_IN_001ac3b6 + 0x13);\n  }\n  uVar3 \u003d DAT_0016e511;\n  uVar2 \u003d DAT_0016e510;\n  local_460 \u003d DAT_0016e510;\n  local_45f \u003d DAT_0016e511;\n  FUN_0015eb58(auStack_45e,0,0x2e);\n  local_400 \u003d uVar2;\n  local_3ff \u003d uVar3;\n  FUN_0015eb58(auStack_3fe,0,0x3fe);\n  iVar4 \u003d FUN_00066f24(param_3,param_1,param_2,\u0026local_400);\n  if (iVar4 \u003d\u003d -1) {\n    return 0xffffffff;\n  }\n  iVar4 \u003d FUN_000688ec(param_4,\u0026local_460,param_5);\n  if (iVar4 \u003d\u003d -1) {\n    return 0xffffffff;\n  }\n  if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n    FUN_001609c0(\u0026DAT_001c105f,s_secure_do_authentication_0017a731,0x176);\n    FUN_00050aa8(\u0026local_400,0x100);\n  }\n  if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n    FUN_001609c0(\u0026DAT_001c105f,s_secure_do_authentication_0017a731,0x177);\n    FUN_00050aa8(\u0026local_460,0x30);\n  }\n  if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n    FUN_001609c0(\u0026DAT_0019f39c,s_secure_do_authentication_0017a731,0x17b);\n    FUN_001609c0(s_Verify_with_PKCS_1_PSS_001b28dd);\n  }\n  local_468 \u003d 0;\n  if (local_301 !\u003d -0x44) {\n    FUN_001609c0(s__s__invalid_pss_padding__0xbc_is_001b28f5,s_padding_pss_verify_0017e6f6);\n    goto LAB_000667a8;\n  }\n  pcVar5 \u003d (char *)FUN_0009a884(0xcf);\n  if (pcVar5 \u003d\u003d (char *)0x0) {\n    puVar15 \u003d (undefined8 *)0x0;\n    FUN_001609c0(s__s__can_t_allocate_masked_db_001b2920,s_padding_pss_verify_0017e6f6);\nLAB_000668e0:\n    iVar4 \u003d -0xc;\n  }\n  else {\n    puVar15 \u003d (undefined8 *)FUN_0009a884(0x30);\n    if (puVar15 \u003d\u003d (undefined8 *)0"
+    },
+    {
+      "address": "00005fdc",
+      "name": "FUN_00005fdc",
+      "bytes": 304,
+      "callers": [
+        "0000621c"
+      ],
+      "callees": [
+        "0015ed20",
+        "001609c0"
+      ],
+      "decompiled_excerpt": "\nundefined8 FUN_00005fdc(long param_1,long param_2,int param_3,int param_4)\n\n{\n  undefined8 uVar1;\n  long lVar2;\n  long lVar3;\n  \n  if (((param_1 \u003d\u003d 0) || (*(long *)(param_1 + 0x38) \u003d\u003d 0)) || (param_2 \u003d\u003d 0 || param_4 \u003c param_3)) {\n    FUN_001609c0(s__s___s_invalid_parameter__001856a6,s_btmtk_compare_evt_0017ed33);\n  }\n  else {\n    uVar1 \u003d re_candidate_15ed20(*(long *)(param_1 + 0x38),param_2,(long)param_3);\n    if ((int)uVar1 \u003d\u003d 0) {\n      return uVar1;\n    }\n    FUN_001609c0(s__s___s_compare_fail_00185668,s_btmtk_compare_evt_0017ed33,\n                 s_btmtk_compare_evt_0017ed33);\n    FUN_001609c0(s__s___s__event_need_compare__0018567d,s_btmtk_compare_evt_0017ed33,\n                 s_btmtk_compare_evt_0017ed33);\n    for (lVar2 \u003d 0; (int)lVar2 \u003c param_3; lVar2 \u003d lVar2 + 1) {\n      FUN_001609c0(\u0026DAT_00186564,*(undefined1 *)(param_2 + lVar2));\n    }\n    FUN_001609c0(s_Booting_kernel_at__s____00199513 + 0x19);\n    lVar3 \u003d *(long *)(param_1 + 0x38);\n    FUN_001609c0(s__s___s__RCV__00185699,s_btmtk_compare_evt_0017ed33);\n    for (lVar2 \u003d 0; (int)lVar2 \u003c param_4; lVar2 \u003d lVar2 + 1) {\n      FUN_001609c0(\u0026DAT_00186564,*(undefined1 *)(lVar3 + lVar2));\n    }\n    FUN_001609c0(s_Booting_kernel_at__s____00199513 + 0x19);\n  }\n  return 0xffffffff;\n}\n\n"
+    },
+    {
+      "address": "00004d88",
+      "name": "FUN_00004d88",
+      "bytes": 536,
+      "callers": [
+        "00007fa8",
+        "00008020",
+        "0000812c",
+        "0000817c",
+        "00005b7c",
+        "00005080",
+        "00008cc4",
+        "00005544",
+        "000055a8",
+        "00005610",
+        "000056e4",
+        "00005788",
+        "000057b8",
+        "00008424",
+        "00008480",
+        "00008560",
+        "00008668",
+        "000088ac",
+        "00008904",
+        "00008b70",
+        "00008c50",
+        "0000a2cc",
+        "0000a368"
+      ],
+      "callees": [
+        "0015ebc8",
+        "001609c0",
+        "0015eb58",
+        "0015ed20",
+        "0015eecc"
+      ],
+      "decompiled_excerpt": "\n/* WARNING: Type propagation algorithm not settling */\n\nuint FUN_00004d88(undefined8 *param_1,long param_2,undefined4 param_3,long param_4,uint param_5)\n\n{\n  uint uVar1;\n  int iVar2;\n  long lVar3;\n  byte bVar4;\n  undefined1 auStack_8 [4];\n  undefined4 local_4;\n  \n  lVar3 \u003d (long)(int)param_5;\n  local_4 \u003d 0;\n  FUN_0015ebc8(auStack_8,\u0026DAT_00168150,4);\n  if ((((param_1 \u003d\u003d (undefined8 *)0x0) || (param_1[3] \u003d\u003d 0)) || (param_1[7] \u003d\u003d 0)) || (param_2 \u003d\u003d 0)\n     ) {\n    FUN_001609c0(s__s___s__incorrect_cmd_pointer_00185649 + 4,s_btmtk_usb_send_hci_cmd_0017e92a);\n  }\n  else {\n    uVar1 \u003d (**(code **)(param_1[3] + 8))(*param_1,0,0,0x20,0,0,param_2,param_3,100);\n    if ((int)uVar1 \u003c 0) {\n      FUN_001609c0(s__s__send_command_failed___d_0018649c,s_btmtk_usb_send_hci_cmd_0017e92a,uVar1);\n      return uVar1;\n    }\n    if (param_5 \u003d\u003d 0xffffffff) {\n      return 0;\n    }\n    if (2 \u003c param_5) {\n      lVar3 \u003d 3;\n    }\n    bVar4 \u003d 0;\n    do {\n      FUN_0015eb58(param_1[7],0,0x104);\n      uVar1 \u003d (**(code **)(param_1[3] + 0x10))(*param_1,2,param_1[7],0x104,\u0026local_4,2000);\n      if ((int)uVar1 \u003c 0) {\n        FUN_001609c0(s__s__event_get_failed___d_001864b9,s_btmtk_usb_send_hci_cmd_0017e92a,uVar1);\n        if (param_4 \u003d\u003d 0 || (int)param_5 \u003c 1) {\n          return 0;\n        }\n        return uVar1;\n      }\n      if (uVar1 \u003d\u003d 0 \u0026\u0026 (param_4 !\u003d 0 \u0026\u0026 0 \u003c (int)param_5)) {\n        iVar2 \u003d re_candidate_15ed20(param_4,auStack_8,lVar3);\n        if ((iVar2 \u003d\u003d 0) \u0026\u0026 (iVar2 \u003d re_candidate_15ed20(auStack_8,param_1[7],4), iVar2 \u003d\u003d 0)) {\n          return param_5;\n        }\n        iVar2 \u003d re_candidate_15ed20(param_4,param_1[7],(long)(int)param_5);\n        if (iVar2 \u003d\u003d 0) {\n          return param_5;\n        }\n        bVar4 \u003d bVar4 + 1;\n        FUN_001609c0(s__s__got_unknown_event_001864d3,s_btmtk_usb_send_hci_cmd_0017e92a);\n        FUN_0015eecc(10000);\n      }\n      FUN_001609c0(s__s__try_get_event_again_001864ea,s_btmtk_usb_send_hci_cmd_0017e92a);\n    } while (bVar4 \u003c 3);\n  }\n  return 0xffffffff;\n}\n\n"
+    },
+    {
+      "address": "00010180",
+      "name": "FUN_00010180",
+      "bytes": 968,
+      "callers": [
+        "000140fc"
+      ],
+      "callees": [
+        "001609c0",
+        "00012514",
+        "0009a884",
+        "0015eb58",
+        "0007d258",
+        "0015ebc8",
+        "000812f0",
+        "00013838",
+        "000135a4",
+        "00013994",
+        "0009a658",
+        "00012560",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nbool FUN_00010180(long param_1,long param_2,long param_3,long param_4)\n\n{\n  bool bVar1;\n  int iVar2;\n  long lVar3;\n  long lVar4;\n  char *pcVar5;\n  undefined8 uVar6;\n  long lVar7;\n  long local_58;\n  undefined1 auStack_50 [16];\n  undefined1 auStack_40 [16];\n  undefined1 auStack_30 [16];\n  undefined1 auStack_20 [16];\n  undefined8 local_10;\n  long local_8;\n  \n  local_58 \u003d 0;\n  if ((param_1 \u003d\u003d 0 || param_2 \u003d\u003d 0) ||\n     (bVar1 \u003d param_4 \u003d\u003d 0 || param_3 \u003d\u003d 0, param_4 \u003d\u003d 0 || param_3 \u003d\u003d 0)) {\n    if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019c50c,s_ce_verify_0017b112,0x1ce);\n      FUN_001609c0(s_Invalid_argumemnt_00186b52);\n    }\n    return false;\n  }\n  FUN_00012514(auStack_50);\n  FUN_00012514(auStack_40);\n  FUN_00012514(auStack_30);\n  FUN_00012514(auStack_20);\n  lVar3 \u003d FUN_0009a884(0x100);\n  if (lVar3 \u003d\u003d 0) {\n    if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019c50c,s__rsa_decrypt_0017b105,0x154);\n      FUN_001609c0(s_malloc_for_rsa_public_key_N__d_b_00186b65,0x100);\n    }\n    lVar7 \u003d 0;\n    iVar2 \u003d -0xc;\n    goto LAB_00010478;\n  }\n  lVar4 \u003d FUN_0009a884(4);\n  if (lVar4 \u003d\u003d 0) {\n    if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019c50c,s__rsa_decrypt_0017b105,0x15c);\n      FUN_001609c0(s_malloc_for_rsa_public_key_E__d_b_00186b93,4);\n    }\n    lVar7 \u003d 0;\n    iVar2 \u003d -0xc;\n  }\n  else {\n    FUN_0015eb58(lVar3,0,0x100);\n    FUN_0015eb58(lVar4,0,4);\n    local_10 \u003d 0;\n    local_8 \u003d 0;\n    iVar2 \u003d FUN_0007d258(4,\u0026local_10);\n    if (iVar2 \u003d\u003d -1) {\n      if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n        pcVar5 \u003d s_get_public_key_n_0017b0d4;\n        uVar6 \u003d 0x11f;\nLAB_00010320:\n        FUN_001609c0(\u0026DAT_0019c50c,pcVar5,uVar6);\n        FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n      }\n    }\n    else {\n      FUN_0015ebc8(lVar3,local_8,0x100);\n      FUN_000812f0(lVar3,0x100);\n      local_10 \u003d 0;\n      local_8 \u003d 0;\n      iVar2 \u003d FUN_0007d258(4,\u0026local_10);\n      if (iVar2 !\u003d -1) {\n        iVar2 \u003d 0;\n        FUN_0015ebc8(lVar4,local_8 + 0x100,4);\n        FUN_000812f0(lVar4,4);\n        FUN_00013838(auStack_40,param_2,1,1,0,0,param_1);\n        FUN_00013838(auStack_20,0x100,1,1,0,0,lVar3);\n        FUN_00013838(auStack_30,4,1,1,0,0,lVar4);\n        FUN_000135a4(auStack_50,auStack_40,auStack_30,auStack_20);\n        lVar7 \u003d FUN_00013994(0,\u0026local_58,1,1,0,0,auStack_50);\n        goto LAB_00010444;\n      }\n      if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n       "
+    },
+    {
+      "address": "0014cc70",
+      "name": "FUN_0014cc70",
+      "bytes": 236,
+      "callers": [
+        "0014d2fc",
+        "0014bb14",
+        "0014c92c",
+        "0014cd9c"
+      ],
+      "callees": [
+        "0014a9e8",
+        "0014ac54",
+        "0014aa5c",
+        "0015ed20",
+        "0015edb8"
+      ],
+      "decompiled_excerpt": "\nint FUN_0014cc70(undefined8 param_1,int param_2,undefined8 param_3,int param_4)\n\n{\n  int iVar1;\n  long lVar2;\n  long lVar3;\n  long lVar4;\n  int local_4;\n  \n  lVar4 \u003d (long)param_4;\n  iVar1 \u003d FUN_0014a9e8();\n  if (iVar1 \u003d\u003d 0) {\n    local_4 \u003d 0;\n    for (; (param_2 \u003e\u003d 0 \u0026\u0026 local_4 \u003c 0) \u003d\u003d param_2 \u003c 0;\n        param_2 \u003d FUN_0014ac54(param_1,param_2,\u0026local_4)) {\n      if (((local_4 \u003d\u003d 1) \u0026\u0026 (lVar2 \u003d FUN_0014aa5c(param_1,param_2 + 4,param_4 + 1), lVar2 !\u003d 0)) \u0026\u0026\n         (iVar1 \u003d re_candidate_15ed20(lVar2,param_3,lVar4), iVar1 \u003d\u003d 0)) {\n        if (*(char *)(lVar2 + lVar4) \u003d\u003d \u0027\\0\u0027) {\n          return param_2;\n        }\n        lVar3 \u003d FUN_0015edb8(param_3,0x40,lVar4);\n        if ((lVar3 \u003d\u003d 0) \u0026\u0026 (*(char *)(lVar2 + lVar4) \u003d\u003d \u0027@\u0027)) {\n          return param_2;\n        }\n      }\n    }\n    iVar1 \u003d param_2;\n    if (local_4 \u003c 0) {\n      iVar1 \u003d -1;\n    }\n  }\n  return iVar1;\n}\n\n"
+    },
+    {
+      "address": "000b69bc",
+      "name": "FUN_000b69bc",
+      "bytes": 1088,
+      "callers": [
+        "000b792c"
+      ],
+      "callees": [
+        "000b68a4",
+        "000b6454",
+        "000b7e3c",
+        "000b64f0",
+        "000b7ecc",
+        "000b5c00",
+        "0015ed20",
+        "001609c0",
+        "000b7ef0",
+        "000b5ddc"
+      ],
+      "decompiled_excerpt": "\nundefined8 FUN_000b69bc(long param_1,uint param_2)\n\n{\n  uint uVar1;\n  int iVar2;\n  uint uVar3;\n  char *pcVar4;\n  byte *pbVar5;\n  undefined4 *puVar6;\n  long lVar7;\n  \n  if (*(uint *)(param_1 + 8) \u003c 0x40040000) {\n    return 0;\n  }\n  if (*(long *)(param_1 + 0x108) !\u003d 0) {\n    uVar1 \u003d *(uint *)(param_1 + 0x34);\n    if (*(int *)(param_1 + 0x118) - 0xbU \u003c 2) {\n      FUN_000b68a4(param_1,2,1);\n    }\n    else {\n      FUN_000b64f0(param_1,*(undefined4 *)(param_1 + 0x7c),0);\n    }\n    uVar1 \u003d uVar1 \u0026 param_2;\n    pbVar5 \u003d (byte *)\u0026DAT_0016cbac;\n    do {\n      if ((1 \u003c\u003c (ulong)(*(uint *)(pbVar5 + -0xc) \u0026 0x1f) \u0026 uVar1) !\u003d 0) {\n        puVar6 \u003d \u0026DAT_0016c960;\n        do {\n          if (((bool)*(char *)(puVar6 + -2) \u003d\u003d\n               (*(int *)(pbVar5 + -0xc) \u003d\u003d 5 || *(int *)(pbVar5 + -0xc) - 0xcU \u003c 2)) \u0026\u0026\n             ((uVar1 \u0026 *(uint *)(pbVar5 + -8) \u0026 puVar6[-3]) !\u003d 0)) {\n            iVar2 \u003d FUN_000b6454(param_1,1,0xffffffb7,puVar6[-1] \u0026 0xfffffffb);\n            if (iVar2 \u003d\u003d 0) {\n              iVar2 \u003d puVar6[-3];\n              if (iVar2 \u003d\u003d 0x40000000) {\n                uVar3 \u003d 8;\n              }\n              else if (iVar2 \u003d\u003d 0x20000000) {\n                uVar3 \u003d 4;\n              }\n              else {\n                uVar3 \u003d (uint)(iVar2 \u003d\u003d 0x10000000);\n              }\n              *(uint *)(param_1 + 0x24) \u003d uVar3;\n              FUN_000b7e3c(param_1);\n              iVar2 \u003d *(int *)(pbVar5 + -0xc);\n              if (iVar2 \u003d\u003d 0xc) {\n                iVar2 \u003d FUN_000b68a4(param_1,0xb,0);\n                if (iVar2 \u003d\u003d 0) {\n                  *(undefined4 *)(param_1 + 0x78) \u003d 200000000;\n                  *(undefined4 *)(param_1 + 0xec) \u003d 0;\n                  *(undefined4 *)(param_1 + 0x118) \u003d 0xb;\n                  FUN_000b64f0(param_1,200000000,0);\n                  iVar2 \u003d FUN_000b7ecc(param_1,0x15);\n                  if (iVar2 \u003d\u003d 0) {\n                    FUN_000b68a4(param_1,2,1);\n                    iVar2 \u003d FUN_000b6454(param_1,1,0xffffffb7,6);\n                    if ((iVar2 \u003d\u003d 0) \u0026\u0026 (iVar2 \u003d FUN_000b68a4(param_1,0xc,0), iVar2 \u003d\u003d 0)) {\n                      *(undefined4 *)(param_1 + 0x78) \u003d 200000000;\n                      *(undefined4 *)(param_1 + 0xec) \u003d 1;\n                      *(undefined4 *)(param_1 + 0x118) \u003d 0xc;\n                      iVar2 \u003d FUN_000b64f0(param_1,200000000,0);\n                      if (iVar2 \u003d\u003d 0) goto LAB_000b6bb4;\n                    }\n        "
+    },
+    {
+      "address": "0014ad94",
+      "name": "FUN_0014ad94",
+      "bytes": 112,
+      "callers": [
+        "0014b5fc"
+      ],
+      "callees": [
+        "0015e960",
+        "0015ed20"
+      ],
+      "decompiled_excerpt": "\nulong FUN_0014ad94(ulong param_1,int param_2,undefined8 param_3)\n\n{\n  ulong uVar1;\n  int iVar2;\n  int iVar3;\n  \n  iVar2 \u003d FUN_0015e960(param_3);\n  uVar1 \u003d param_1 + ((long)param_2 - (long)(iVar2 + 1));\n  while( true ) {\n    if (uVar1 \u003c param_1) {\n      return 0;\n    }\n    iVar3 \u003d re_candidate_15ed20(param_1,param_3,(long)(iVar2 + 1));\n    if (iVar3 \u003d\u003d 0) break;\n    param_1 \u003d param_1 + 1;\n  }\n  return param_1;\n}\n\n"
+    },
+    {
+      "address": "00061f88",
+      "name": "FUN_00061f88",
+      "bytes": 1016,
+      "callers": [
+        "00064ba8",
+        "00064dbc"
+      ],
+      "callees": [
+        "0015ed20",
+        "001609c0",
+        "0015e84c",
+        "0015ea9c",
+        "00061ee8",
+        "001613d0"
+      ],
+      "decompiled_excerpt": "\nundefined8 FUN_00061f88(long param_1,char *param_2)\n\n{\n  int iVar1;\n  undefined4 uVar2;\n  uint uVar3;\n  long lVar4;\n  char *pcVar5;\n  long lVar6;\n  long lVar7;\n  undefined8 uVar8;\n  undefined8 local_10;\n  uint local_8;\n  \n  local_10 \u003d 0;\n  local_8 \u003d 0;\n  if ((*param_2 \u003d\u003d \u0027\\0\u0027) \u0026\u0026 (iVar1 \u003d re_candidate_15ed20(param_2,param_2 + 1,0x1d), iVar1 \u003d\u003d 0)) {\n    if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019f39c,s_parse_version_format_001783f5,0x33b);\n      FUN_001609c0(s_Without_version_info_case__Use_d_001af9a1);\n    }\n    FUN_0015e84c(param_2,s_V_0_0_0_001af9d0,0x1d);\n  }\n  lVar4 \u003d 0;\n  do {\n    iVar1 \u003d (int)lVar4;\n    if ((param_2[lVar4] \u003d\u003d \u0027V\u0027) \u0026\u0026 (param_2[lVar4 + 1] \u003d\u003d \u0027_\u0027)) {\n      if (iVar1 \u003c 0x11) goto LAB_00062040;\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 0xffffffff;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_parse_version_format_001783f5,0x347);\n      pcVar5 \u003d s_Prefix_\u003e_16_characters_001af9d8;\n      goto LAB_000620ec;\n    }\n    lVar4 \u003d lVar4 + 1;\n  } while (lVar4 !\u003d 0x1d);\n  iVar1 \u003d 0;\nLAB_00062040:\n  FUN_0015e84c(param_1 + 0x1e,param_2,(long)iVar1);\n  FUN_0015e84c(\u0026local_10,param_2 + (long)iVar1 + 2,0xb);\n  local_8 \u003d local_8 \u0026 0xffffff;\n  lVar4 \u003d FUN_0015ea9c(\u0026local_10,s__prepare_adl_data_format_u8TabIn_001802d3 + 0x28);\n  if (lVar4 \u003d\u003d 0) {\n    if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n      return 0xffffffff;\n    }\n    FUN_001609c0(\u0026DAT_0019c50c,s_parse_version_format_001783f5,0x353);\n    pcVar5 \u003d s_Major_number_is_NULL__001af9f0;\n  }\n  else {\n    lVar6 \u003d FUN_0015ea9c(0,s__prepare_adl_data_format_u8TabIn_001802d3 + 0x28);\n    if (lVar6 \u003d\u003d 0) {\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 0xffffffff;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_parse_version_format_001783f5,0x359);\n      pcVar5 \u003d s_Minor_number_is_NULL__001afa07;\n    }\n    else {\n      lVar7 \u003d FUN_0015ea9c(0,s__prepare_adl_data_format_u8TabIn_001802d3 + 0x28);\n      if (lVar7 !\u003d 0) {\n        iVar1 \u003d FUN_00061ee8(lVar4);\n        if (((iVar1 \u003d\u003d 0) || (iVar1 \u003d FUN_00061ee8(lVar6), iVar1 \u003d\u003d 0)) ||\n           (iVar1 \u003d FUN_00061ee8(lVar7), iVar1 \u003d\u003d 0)) {\n          if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n            FUN_001609c0(\u0026DAT_0019c50c,s_parse_version_format_001783f5,0x365);\n            FUN_001609c0(s_Versioin_number_is_not_a_number__001afa38);\n          }\n          if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n            FUN_001609c0(\u0026DAT_0019f39c,s_parse_version_format_001783f5,0"
+    },
+    {
+      "address": "000a1bb4",
+      "name": "re_candidate_a1bb4",
+      "bytes": 412,
+      "decompiled_excerpt": "\nundefined4 re_candidate_a1bb4(long param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4)\n\n{\n  int iVar1;\n  undefined4 uVar2;\n  long lVar3;\n  undefined1 auStack_40 [16];\n  undefined4 local_30;\n  undefined4 uStack_2c;\n  uint local_28;\n  undefined4 local_c;\n  \n  if (DAT_001cd6a8 \u003d\u003d 0) {\n    iVar1 \u003d FUN_0005b7a8();\n    DAT_001cd6a8 \u003d (iVar1 \u003d\u003d 0) + 1;\n  }\n  if (DAT_001cd6a8 \u003d\u003d 2) {\n    FUN_001609c0(s__s_AVB_RPMB_RPMBKEYNOTEXIST_0019f362,s_invoke_func_0017e866);\n    uVar2 \u003d 8;\n  }\n  else {\n    lVar3 \u003d 0;\n    while (*(long *)(param_1 + 0x98) \u003d\u003d 0) {\n      FUN_0015ebc8(auStack_40,\u0026DAT_0016b720,0x10);\n      lVar3 \u003d FUN_00128cb4(lVar3,0,0,0);\n      if (lVar3 \u003d\u003d 0) goto LAB_000a1c58;\n      FUN_0015eb58(\u0026local_30,0,0x30);\n      FUN_00128d4c(\u0026local_30,auStack_40);\n      iVar1 \u003d FUN_00128ab4(lVar3,\u0026local_30,0,0);\n      if (iVar1 \u003d\u003d 0) {\n        *(long *)(param_1 + 0x98) \u003d lVar3;\n        *(undefined4 *)(param_1 + 0xa0) \u003d local_c;\n      }\n    }\n    FUN_0015eb58(\u0026local_30,0);\n    uStack_2c \u003d *(undefined4 *)(param_1 + 0xa0);\n    local_30 \u003d param_2;\n    iVar1 \u003d FUN_00128ad4(*(undefined8 *)(param_1 + 0x98),\u0026local_30,param_3,param_4);\n    if (iVar1 \u003d\u003d 0) {\n      if (local_28 !\u003d 0) {\n        FUN_001609c0(s_tee_invoke_result_code_0x_x_0019f37f);\n      }\n      if (local_28 \u003d\u003d 0xffff0008) {\n        return 0xffff0008;\n      }\n      if (local_28 \u003c 0xffff0009) {\n        if (local_28 \u003d\u003d 0) {\n          return 0;\n        }\n      }\n      else {\n        if (local_28 \u003d\u003d 0xffff000c) {\n          return 1;\n        }\n        if (local_28 \u003d\u003d 0xffff3024) {\n          FUN_00128ac4(*(undefined8 *)(param_1 + 0x98),*(undefined4 *)(param_1 + 0xa0));\n          *(undefined8 *)(param_1 + 0x98) \u003d 0;\n        }\n      }\n    }\nLAB_000a1c58:\n    uVar2 \u003d 2;\n  }\n  return uVar2;\n}\n\n"
+    },
+    {
+      "address": "0015ed20",
+      "name": "re_candidate_15ed20",
+      "bytes": 48,
+      "decompiled_excerpt": "\nint re_candidate_15ed20(long param_1,long param_2,long param_3)\n\n{\n  byte *pbVar1;\n  byte *pbVar2;\n  int iVar3;\n  long lVar4;\n  \n  lVar4 \u003d 0;\n  do {\n    if (lVar4 \u003d\u003d param_3) {\n      return 0;\n    }\n    pbVar1 \u003d (byte *)(param_1 + lVar4);\n    pbVar2 \u003d (byte *)(param_2 + lVar4);\n    lVar4 \u003d lVar4 + 1;\n    iVar3 \u003d (uint)*pbVar1 - (uint)*pbVar2;\n  } while (iVar3 \u003d\u003d 0);\n  return iVar3;\n}\n\n"
     },
     {
       "address": "00092e14",
       "name": "FUN_00092e14",
       "bytes": 780,
       "decompiled_excerpt": "\n/* WARNING: Globals starting with \u0027_\u0027 overlap smaller symbols at the same address */\n\nvoid FUN_00092e14(long *param_1)\n\n{\n  bool bVar1;\n  int iVar2;\n  int iVar3;\n  int iVar4;\n  undefined8 uVar5;\n  long lVar6;\n  char *pcVar7;\n  ulong uVar8;\n  long extraout_x18;\n  long local_100 [32];\n  \n  iVar2 \u003d FUN_000506d4();\n  iVar4 \u003d DAT_00278050;\n  if ((DAT_00278050 \u003d\u003d -1) || (param_1 \u003d\u003d (long *)0x0)) {\nLAB_00092f00:\n    iVar4 \u003d FUN_000a7488(0x5d,0,local_100);\n    if (iVar4 \u003d\u003d 0) {\n      if (local_100[0] \u003d\u003d 0) {\n        pcVar7 \u003d s_get_wdt_device_error_____001837b0;\n      }\n      else {\n        FUN_0011fb38();\n        FUN_001609c0(s_jump_to_console_0018378e);\n        if (iVar2 \u003d\u003d 1) {\n          _DAT_1c020028 \u003d _DAT_1c020028 \u0026 0xfefe;\n        }\n        else if (iVar2 \u003d\u003d 3) {\n          _DAT_1c020028 \u003d _DAT_1c020028 \u0026 0x3eff;\n        }\n        pcVar7 \u003d s_disable_DRM_001837a1;\n      }\n    }\n    else {\n      pcVar7 \u003d s_WDT_get_device_Error______0018ec24;\n    }\n    FUN_001609c0(pcVar7);\n  }\n  else {\n    if (-1 \u003c DAT_00278050) {\n      FUN_001609c0(s_Hit_any_key_to_stop_autoboot___2_001836c7,DAT_00278050);\n      iVar3 \u003d FUN_0009a04c();\n      if ((iVar3 \u003d\u003d 0) || (iVar3 \u003d FUN_00099f8c(), iVar3 !\u003d 0xd \u0026\u0026 iVar3 !\u003d 10)) {\n        bVar1 \u003d false;\n        while ((bool)((bVar1 ^ 1U) \u0026 0 \u003c iVar4)) {\n          uVar5 \u003d FUN_0015ede8(0);\n          do {\n            iVar3 \u003d FUN_0009a04c();\n            if (iVar3 !\u003d 0) {\n              bVar1 \u003d true;\n              iVar4 \u003d 0;\n              FUN_00099f8c();\n              goto LAB_00092ea8;\n            }\n            FUN_0015eecc(10000);\n            uVar8 \u003d FUN_0015ede8(uVar5);\n          } while (uVar8 \u003c 1000);\n          iVar4 \u003d iVar4 + -1;\n          bVar1 \u003d false;\nLAB_00092ea8:\n          FUN_001609c0(\u0026DAT_001836f0,iVar4);\n        }\n      }\n      else {\n        bVar1 \u003d true;\n        FUN_0009a0e8(\u0026DAT_001836ea);\n      }\n      FUN_0009a094(10);\n      if (bVar1) {\n        lVar6 \u003d FUN_0009149c(s_uboot_console_off_001ae2e6);\n        if (lVar6 \u003d\u003d 0) {\n          *(ulong *)(extraout_x18 + 8) \u003d *(ulong *)(extraout_x18 + 8) \u0026 0xfffffffffffffffb;\n        }\n        goto LAB_00092f00;\n      }\n    }\n    FUN_00080f84();\n    FUN_00050d08();\n    FUN_00050d24();\n    iVar4 \u003d FUN_000558e4();\n    if (iVar4 \u003d\u003d 1) {\n      FUN_00054d10(s_androidboot_quiescent_0019b77a,s_androidboot_quiescent_1_001afefe,0);\n    }\n    local_100[0] \u003d 0;\n    local_100[1] \u003d 0;\n    local_100[2] \u003d 0;\n    local_100[3] \u003d 0;\n    local_100[4] \u003d 0;\n    local_100[5] \u003d 0;\n    local_100[6] \u003d 0;\n    local_100[7] \u003d 0;\n    FUN_0016088c(local_100,0x40,s_androidboot_bootloader_01_01_261_001836f8);\n    FUN_00054d10(s_androidboot_bootloader_0018371c,local_100,0);\n    uVar5 \u003d FUN_0009149c(s_U_Boot_sets_mmap_filename_to_boo_001b43a4 + 0x1d);\n    lVar6 \u003d FUN_0015ed50(uVar5,s_loglevel_00183733);\n    if (lVar6 \u003d\u003d 0) {\n      FUN_00054d10(s_loglevel_00183733,s_loglevel_3_0018373c,0);\n    }\n    FUN_00050d40();\n    iVar4 \u003d FUN_000562a8();\n    if (iVar4 \u003d\u003d 0) {\n      FUN_0015eb58(local_100,0,0x100);\n      iVar4 \u003d FUN_0015e960(param_1);\n      if (0xff \u003c iVar4) {\n        FUN_001609c0(s__ERROR__The_array_size_is_too_sm_00183747);\n        FUN_000a0d28(param_1,0xffffffff,0);\n      }\n      FUN_0015e84c(local_100,param_1,(long)iVar4);\n      iVar4 \u003d FUN_00056ce0(local_100);\n      if (iVar4 \u003c 0) {\n        FUN_001609c0(s__ERROR__check_boot_img_size_fail_0018376c);\n        FUN_000a0d28(param_1,0xffffffff,0);\n      }\n      param_1 \u003d local_100;\n    }\n    FUN_000a0d28(param_1,0xffffffff,0);\n  }\n  return;\n}\n\n"
+    },
+    {
+      "address": "00050d40",
+      "name": "FUN_00050d40",
+      "bytes": 68,
+      "decompiled_excerpt": "\nundefined8 FUN_00050d40(void)\n\n{\n  FUN_000a0ccc(s_checkteesuccess_001b785c,0);\n  FUN_000a0ccc(s_avb_init_0_0018db01,0);\n  FUN_000a0ccc(s_ab_slt_0_0018db0c,0);\n  return 0;\n}\n\n"
+    },
+    {
+      "address": "000110b0",
+      "name": "FUN_000110b0",
+      "bytes": 476,
+      "decompiled_excerpt": "\nundefined8 FUN_000110b0(void)\n\n{\n  int iVar1;\n  char *pcVar2;\n  undefined4 local_118 [2];\n  undefined8 local_110;\n  long local_108;\n  undefined1 auStack_100 [256];\n  \n  FUN_0015eb58(auStack_100,0,0x100);\n  local_110 \u003d 0;\n  local_108 \u003d 0;\n  local_118[0] \u003d 0;\n  iVar1 \u003d FUN_0007d258(0,\u0026local_110);\n  if (iVar1 \u003d\u003d -1) {\n    if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019c50c,s_get_public_key_n_0017a4b1,0xa3);\n      FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n    }\n    if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n      return 1;\n    }\n    FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xcf);\n    pcVar2 \u003d s_Fail_to_get_public_N_from_CKB_A__001c0fd6;\n  }\n  else {\n    FUN_0015ebc8(auStack_100,local_108,0x100);\n    FUN_000812f0(auStack_100,0x100);\n    local_110 \u003d 0;\n    local_108 \u003d 0;\n    iVar1 \u003d FUN_0007d258(0,\u0026local_110);\n    if (iVar1 \u003d\u003d -1) {\n      if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n        FUN_001609c0(\u0026DAT_0019c50c,s_get_public_key_e_0017a4c2,0xbd);\n        FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n      }\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 1;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xd6);\n      pcVar2 \u003d s_Fail_to_get_public_E_from_CKB_A__001c0fff;\n    }\n    else {\n      FUN_0015ebc8(local_118,local_108 + 0x100,4);\n      FUN_000812f0(local_118,4);\n      iVar1 \u003d FUN_00066600(auStack_100,local_118,\u0026DAT_001c3e20,\n                           s_is_rel_flag_resv_mem_auto_detect_001b23b9,0xc);\n      if (iVar1 \u003d\u003d 0) {\n        if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n          FUN_001609c0(\u0026DAT_0019f39c,s_is_rel_build_0017a4ea,0xdd);\n          FUN_001609c0(s_DEV_signature_verification_pass__0019f70f);\n          return 0;\n        }\n        return 0;\n      }\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 1;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xe1);\n      pcVar2 \u003d s_DEV_signature_verification_failu_0019f746;\n    }\n  }\n  FUN_001609c0(pcVar2);\n  return 1;\n}\n\n"
     }
   ]
 }
