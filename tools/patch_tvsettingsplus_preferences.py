@@ -14,34 +14,34 @@ SCREEN_FILES = (
     "device.xml", "device_two_panel.xml", "device_vendor.xml", "device_x.xml",
 )
 SHORTCUTS = (
-    # Title, summary, package, class. All target Activity components verified exported=true
+    # Key, title, summary, package, class, original action. All target Activity components verified exported=true
     ("cinelux_projector_panel", "Настройки проектора",
      "Фокус, трапеция, изображение и другие аппаратные функции",
-     "com.android.tv.settings", "com.android.tv.settings.uicustom.MainActivity"),
+     "com.android.tv.settings", "com.android.tv.settings.uicustom.MainActivity", "android.settings.RJ_SETTINGS"),
     ("cinelux_temperature", "Температура оборудования",
      "Температура процессора и подтверждённые датчики",
-     "com.android.tv.settings", "com.android.tv.settings.cinelux.TemperatureInfoActivity"),
+     "com.android.tv.settings", "com.android.tv.settings.cinelux.TemperatureInfoActivity", "android.intent.action.MAIN"),
     ("cinelux_brightness", "Яркость",
      "Штатная настройка яркости проектора",
-     "com.coolux.source", "com.coolux.source.activity.BrightActivity"),
+     "com.coolux.source", "com.coolux.source.activity.BrightActivity", "android.settings.BRIGHT_SETTINGS"),
     ("cinelux_sound", "Звук проектора",
      "Оригинальная панель звуковых настроек",
-     "com.coolux.source", "com.coolux.source.activity.VoiceActivity"),
+     "com.coolux.source", "com.coolux.source.activity.VoiceActivity", "android.settings.VOICE_SETTINGS"),
     ("cinelux_boot_source", "Источник при включении",
      "Выбор HDMI или другого источника после запуска",
-     "com.coolux.source", "com.coolux.source.activity.BootSoureActivity"),
+     "com.coolux.source", "com.coolux.source.activity.BootSoureActivity", "android.settings.BOOTSOURE_SETTINGS"),
     ("cinelux_power_mode", "Режим питания",
      "Оригинальные настройки включения и ожидания",
-     "com.coolux.source", "com.coolux.source.activity.PoweronModeActivity"),
+     "com.coolux.source", "com.coolux.source.activity.PoweronModeActivity", "android.settings.POWERMODE_SETTINGS"),
     ("cinelux_orientation", "Установка проектора",
      "Проекция спереди, сзади и ориентация изображения",
-     "com.coolux.source", "com.coolux.source.activity.ProjectModelActivity"),
+     "com.coolux.source", "com.coolux.source.activity.ProjectModelActivity", "android.settings.PROJECTMODEL_SETTINGS"),
     ("cinelux_keystone", "Трапеция",
      "Оригинальное пользовательское меню геометрии",
-     "com.coolux.source", "com.coolux.source.activity.KeystoneActivity"),
+     "com.coolux.source", "com.coolux.source.activity.KeystoneActivity", "android.settings.KEYSTONE_SETTINGS"),
     ("cinelux_ota", "Обновление системы",
      "Штатный клиент OTA-прошивки",
-     "com.rjpj.yunota", "com.rjpj.yunota.OTASystemNetworkUpdateActivity"),
+     "com.rjpj.yunota", "com.rjpj.yunota.OTASystemNetworkUpdateActivity", "android.settings.SYSTEMUPDATE"),
 )
 
 def patch(decoded: Path) -> list[tuple[str, int]]:
@@ -65,12 +65,12 @@ def patch(decoded: Path) -> list[tuple[str, int]]:
         group = etree.Element("PreferenceCategory", {
             ANDROID+"key": "cinelux_projector", ANDROID+"title": "Проектор"
         })
-        for key, title, summary, package, cls in SHORTCUTS:
+        for key, title, summary, package, cls, action in SHORTCUTS:
             pref = etree.SubElement(group, "Preference", {
                 ANDROID+"key": key, ANDROID+"title": title, ANDROID+"summary": summary
             })
             etree.SubElement(pref, "intent", {
-                ANDROID+"action": "android.intent.action.MAIN",
+                ANDROID+"action": action,
                 ANDROID+"targetPackage": package,
                 ANDROID+"targetClass": cls
             })
