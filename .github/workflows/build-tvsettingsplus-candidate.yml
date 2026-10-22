@@ -7,6 +7,7 @@ on:
       - "tools/prepare_tvsettingsplus_candidate.py"
       - "tools/patch_tvsettingsplus_manifest.py"
       - "tools/inspect_tvsettings_preference_tree.py"
+      - "tools/patch_tvsettingsplus_preferences.py"
       - "tvsettingsplus-mod/src/**"
   workflow_dispatch:
 
@@ -58,6 +59,7 @@ jobs:
           set -euo pipefail
           java -jar /tmp/apktool.jar d -f -s -p /tmp/apkframework -o /tmp/tvmod/decoded /tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk >/tmp/decode.log 2>&1 || { tail -n 100 /tmp/decode.log; exit 1; }
           python3 tools/prepare_tvsettingsplus_candidate.py /tmp/tvmod/decoded
+          python3 tools/patch_tvsettingsplus_preferences.py /tmp/tvmod/decoded
           test -f /tmp/tvmod/decoded/AndroidManifest.xml.before-cinelux
           ls -lh /tmp/tvmod/decoded/
           python3 tools/inspect_tvsettings_preference_tree.py > /tmp/tvmod/preference-summary.txt
