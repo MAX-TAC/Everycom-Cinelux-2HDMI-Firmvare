@@ -33,6 +33,38 @@
       }
     }
   ],
+  "trusted_key_material_presence": {
+    "mboot": {
+      "bytes": 2658304,
+      "probe_offsets": {
+        "avb_formatted_public_key": 1890988,
+        "rsa_modulus_big_endian": 1890996,
+        "rsa_modulus_little_endian": -1,
+        "sha256_binary_public_key": -1,
+        "sha256_rsa_modulus": -1
+      }
+    },
+    "optee": {
+      "bytes": 2809856,
+      "probe_offsets": {
+        "avb_formatted_public_key": -1,
+        "rsa_modulus_big_endian": -1,
+        "rsa_modulus_little_endian": -1,
+        "sha256_binary_public_key": -1,
+        "sha256_rsa_modulus": -1
+      }
+    },
+    "armfw": {
+      "bytes": 77824,
+      "probe_offsets": {
+        "avb_formatted_public_key": -1,
+        "rsa_modulus_big_endian": -1,
+        "rsa_modulus_little_endian": -1,
+        "sha256_binary_public_key": -1,
+        "sha256_rsa_modulus": -1
+      }
+    }
+  },
   "mboot": {
     "size": 2658304,
     "sha256": "8819cc068a7a05243eebbc504289442e6cf24992af4562f84a4c51bdf7d691ee",
