@@ -23,6 +23,10 @@ public class MT9660AvbXrefs extends GhidraScript {
         while(fit.hasNext()){fit.next();funcs++;}
         report.put("function_count",funcs);
         LinkedHashMap<String,Long> targets=new LinkedHashMap<String,Long>();
+        targets.put("trusted_key_callback_a",0x0a1ae8L);
+        targets.put("trusted_key_callback_b",0x0a1b58L);
+        targets.put("trusted_key_callback_wrapper",0x0a1bb4L);
+        targets.put("key_compare_routine",0x15ed20L);
         targets.put("root_key_start",0x1cd6acL);
         targets.put("root_key_interior",0x1cd740L);
         targets.put("avb_verification_failure",0x186e3bL);
@@ -105,6 +109,10 @@ public class MT9660AvbXrefs extends GhidraScript {
         }
         // Exact ARM64 assembly neighborhoods for the two trust-key references and AVB init caller.
         LinkedHashMap<String,Long> focuses=new LinkedHashMap<String,Long>();
+        focuses.put("root_validate_candidate_A",0x0a1ae8L);
+        focuses.put("root_validate_candidate_B",0x0a1b58L);
+        focuses.put("root_validate_callback_setup",0x0a1bb4L);
+        focuses.put("key_compare_routine",0x15ed20L);
         focuses.put("avb_root_key_reference_1",0x0a1b24L);
         focuses.put("avb_root_key_reference_2",0x0a1b84L);
         focuses.put("boot_calls_avb_init",0x093024L);
