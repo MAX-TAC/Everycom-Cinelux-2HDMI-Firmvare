@@ -1,0 +1,1059 @@
+{
+  "source": "RUIOS.8052.1.0.4 SHA256-verified manufacturer ZIP, extracted mboot image",
+  "sha256_mboot": "8819cc068a7a05243eebbc504289442e6cf24992af4562f84a4c51bdf7d691ee",
+  "size": 2658304,
+  "start256_hex": "000400000000402740896827408d280000004027000000000103000007b000000000000000000000000000000000000000000000000001000000000004000000000000000000000000000000000000000000000000000000000000000200000000000100ffffffff00000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000030ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "file_utility_result": "/tmp/mbootre/parts/mboot.img:         data\n/tmp/mbootre/parts/vbmeta.img:        data\n/tmp/mbootre/parts/vbmeta_system.img: data\n",
+  "elf_magic_offsets": [
+    1780474
+  ],
+  "uimage_magic_offsets": [],
+  "known_public_avb_key": {
+    "offset": 1890988,
+    "hex_offset": "0x1cdaac",
+    "size": 1032,
+    "sha256": "dcf38badcd7784d2aa892739eba5e239a649362edb03586a455b3f8ded046cfe"
+  },
+  "architecture_probe": {
+    "aarch64": [
+      {
+        "offset": 0,
+        "bytes_decoded": 4,
+        "count": 1,
+        "top_mnemonics": [
+          [
+            "udf",
+            1
+          ]
+        ]
+      },
+      {
+        "offset": 1780474,
+        "bytes_decoded": 0,
+        "count": 0,
+        "top_mnemonics": []
+      }
+    ],
+    "arm32": [
+      {
+        "offset": 0,
+        "bytes_decoded": 100,
+        "count": 25,
+        "top_mnemonics": [
+          [
+            "andeq",
+            21
+          ],
+          [
+            "strbhs",
+            3
+          ],
+          [
+            "eoreq",
+            1
+          ]
+        ]
+      },
+      {
+        "offset": 1780474,
+        "bytes_decoded": 0,
+        "count": 0,
+        "top_mnemonics": []
+      }
+    ]
+  },
+  "strings_count": 14533,
+  "selected_avb_strings": [
+    {
+      "offset": 1538868,
+      "text": "add_dtbo_idx_to_bootargs"
+    },
+    {
+      "offset": 1540549,
+      "text": "verify_dtbo_img"
+    },
+    {
+      "offset": 1542175,
+      "text": "anti_rollback_checker"
+    },
+    {
+      "offset": 1542480,
+      "text": "add_bootargs"
+    },
+    {
+      "offset": 1542504,
+      "text": "del_bootargs"
+    },
+    {
+      "offset": 1550010,
+      "text": "do_chip_id_add_to_bootargs"
+    },
+    {
+      "offset": 1550085,
+      "text": "do_chip_revision_add_to_bootargs"
+    },
+    {
+      "offset": 1550150,
+      "text": "do_dtbo_verify"
+    },
+    {
+      "offset": 1550403,
+      "text": "is_RPMBKey_exist"
+    },
+    {
+      "offset": 1550699,
+      "text": "add_dev_uniqueid_to_bootargs"
+    },
+    {
+      "offset": 1550972,
+      "text": "avb_set_verity"
+    },
+    {
+      "offset": 1551078,
+      "text": "padding_pss_verify"
+    },
+    {
+      "offset": 1551097,
+      "text": "do_add_bootargs"
+    },
+    {
+      "offset": 1551178,
+      "text": "do_add_version2bootargs"
+    },
+    {
+      "offset": 1551467,
+      "text": "load_and_verify_hash_partition"
+    },
+    {
+      "offset": 1551747,
+      "text": "get_data_from_bootargs"
+    },
+    {
+      "offset": 1551814,
+      "text": "get_vbmeta_digest"
+    },
+    {
+      "offset": 1551878,
+      "text": "AVBPanelLogo"
+    },
+    {
+      "offset": 1552762,
+      "text": "rollbackindexes_to_dtb"
+    },
+    {
+      "offset": 1552950,
+      "text": "do_avb_verify_part"
+    },
+    {
+      "offset": 1552969,
+      "text": "do_avb_set_verity"
+    },
+    {
+      "offset": 1553682,
+      "text": "ce_verify"
+    },
+    {
+      "offset": 1553692,
+      "text": "verify_response"
+    },
+    {
+      "offset": 1553861,
+      "text": "pmu_mcs51_verify_firmware"
+    },
+    {
+      "offset": 1554100,
+      "text": "cm4_verify_firmware"
+    },
+    {
+      "offset": 1560031,
+      "text": "emmc_cmd23_rpmb"
+    },
+    {
+      "offset": 1560345,
+      "text": "emmc_cmd18_rpmb_miu"
+    },
+    {
+      "offset": 1560731,
+      "text": "emmc_cmd25_rpmb_miu"
+    },
+    {
+      "offset": 1560961,
+      "text": "emmc_rpmb_chk_result_err"
+    },
+    {
+      "offset": 1561553,
+      "text": "emmc_rpmb_if_key_written"
+    },
+    {
+      "offset": 1561661,
+      "text": "emmc_rpmb_get_counter_for_cmd"
+    },
+    {
+      "offset": 1563692,
+      "text": "emmc_ipverify_performance_init"
+    },
+    {
+      "offset": 1563737,
+      "text": "emmc_ipverify_performance_write_single_blk"
+    },
+    {
+      "offset": 1563811,
+      "text": "emmc_ipverify_performance_read_single_blk"
+    },
+    {
+      "offset": 1563947,
+      "text": "emmc_ipverify_performance"
+    },
+    {
+      "offset": 1564015,
+      "text": "emmc_ipverify_performance_fde_write_single_blk"
+    },
+    {
+      "offset": 1564124,
+      "text": "emmc_ipverify_performance_fde_read_single_blk"
+    },
+    {
+      "offset": 1564227,
+      "text": "emmc_ipverify_performance_fde"
+    },
+    {
+      "offset": 1564486,
+      "text": "emmc_ipverify_main_bypass_verify"
+    },
+    {
+      "offset": 1564580,
+      "text": "emmc_ipverify_main_riu_verify"
+    },
+    {
+      "offset": 1564610,
+      "text": "emmc_ipverify_main_sdr_verify"
+    },
+    {
+      "offset": 1564705,
+      "text": "emmc_ipverify_main_ddr_verify"
+    },
+    {
+      "offset": 1564782,
+      "text": "emmc_ipverify_main_hs200_verify"
+    },
+    {
+      "offset": 1564814,
+      "text": "emmc_ipverify_main_hs400_verify"
+    },
+    {
+      "offset": 1564947,
+      "text": "emmc_ipverify_main_hs400_5_1_verify"
+    },
+    {
+      "offset": 1564994,
+      "text": "emmc_ipverify_main"
+    },
+    {
+      "offset": 1565119,
+      "text": "emmc_ipverify_main_sg_ex"
+    },
+    {
+      "offset": 1565195,
+      "text": "emmc_ipverify_main_big_ex"
+    },
+    {
+      "offset": 1565221,
+      "text": "emmc_ipverify_main_ex"
+    },
+    {
+      "offset": 1565259,
+      "text": "emmc_ipverify_riu_main_ex"
+    },
+    {
+      "offset": 1565330,
+      "text": "emmc_ipverify_read_only"
+    },
+    {
+      "offset": 1565392,
+      "text": "emmc_ipverify_write_only"
+    },
+    {
+      "offset": 1565811,
+      "text": "emmc_ipverify_sdr_ddr_all_clk_temp"
+    },
+    {
+      "offset": 1567478,
+      "text": "padding_pss_verify"
+    },
+    {
+      "offset": 1567643,
+      "text": "gpt_verify_headers"
+    },
+    {
+      "offset": 1582512,
+      "text": "[1;32m Verify [%s]"
+    },
+    {
+      "offset": 1583809,
+      "text": "bootargs doesn't exist, add a new one!!"
+    },
+    {
+      "offset": 1583850,
+      "text": "%s is the only one bootargs"
+    },
+    {
+      "offset": 1584104,
+      "text": "New bootargs( NewArgLen : %d ) has exceeded the env_size( CONFIG_SYS_CBSIZE :%d )"
+    },
+    {
+      "offset": 1584187,
+      "text": "set_bootargs_cfg failed !"
+    },
+    {
+      "offset": 1584541,
+      "text": "Add unique id to bootargs failure"
+    },
+    {
+      "offset": 1588273,
+      "text": "PARTUUID=$(ANDROID_VBMETA_PARTUUID)"
+    },
+    {
+      "offset": 1588342,
+      "text": "$(ANDROID_VERITY_MODE)"
+    },
+    {
+      "offset": 1588382,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_chain_partition_descriptor.c"
+    },
+    {
+      "offset": 1588541,
+      "text": "Invalid rollback index location value."
+    },
+    {
+      "offset": 1588859,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_descriptor.c"
+    },
+    {
+      "offset": 1588997,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_footer.c"
+    },
+    {
+      "offset": 1589154,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_hash_descriptor.c"
+    },
+    {
+      "offset": 1589294,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_hashtree_descriptor.c"
+    },
+    {
+      "offset": 1589442,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_kernel_cmdline_descriptor.c"
+    },
+    {
+      "offset": 1589631,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_rsa.c"
+    },
+    {
+      "offset": 1590034,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_util.c"
+    },
+    {
+      "offset": 1590156,
+      "text": "androidboot.verifiedbootstate=yellow"
+    },
+    {
+      "offset": 1590193,
+      "text": "androidboot.verifiedbootstate=green"
+    },
+    {
+      "offset": 1590229,
+      "text": "androidboot.verifiedbootstate=orange"
+    },
+    {
+      "offset": 1590274,
+      "text": "Error getting whether verification is enabled."
+    },
+    {
+      "offset": 1590322,
+      "text": "verification is already %s"
+    },
+    {
+      "offset": 1590373,
+      "text": "Error setting verification."
+    },
+    {
+      "offset": 1590402,
+      "text": "Successfully %s verification"
+    },
+    {
+      "offset": 1590431,
+      "text": "Error getting whether verity is enabled."
+    },
+    {
+      "offset": 1590473,
+      "text": "verity is already %s"
+    },
+    {
+      "offset": 1590494,
+      "text": "Error setting verity."
+    },
+    {
+      "offset": 1590517,
+      "text": "Successfully %s verity"
+    },
+    {
+      "offset": 1590540,
+      "text": "Persistent values required for AVB_HASHTREE_ERROR_MODE_MANAGED_RESTART_AND_EIO but are not implemented in given AvbOps."
+    },
+    {
+      "offset": 1590666,
+      "text": "AVB_SLOT_VERIFY_FLAGS_NO_VBMETA_PARTITION was passed but the validate_public_key_for_partition() operation isn't implemented."
+    },
+    {
+      "offset": 1590798,
+      "text": "Requested partitions cannot be empty when using AVB_SLOT_VERIFY_FLAGS_NO_VBMETA_PARTITION"
+    },
+    {
+      "offset": 1591041,
+      "text": "avb.managed_verity_mode"
+    },
+    {
+      "offset": 1591065,
+      "text": "Error writing to avb.managed_verity_mode."
+    },
+    {
+      "offset": 1591113,
+      "text": "Error reading from avb.managed_verity_mode."
+    },
+    {
+      "offset": 1591163,
+      "text": "Unexpected number of bytes read from avb.managed_verity_mode."
+    },
+    {
+      "offset": 1591231,
+      "text": "Error clearing avb.managed_verity_mode."
+    },
+    {
+      "offset": 1591481,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_cmdline.c"
+    },
+    {
+      "offset": 1591623,
+      "text": "' does not look like a vbmeta header."
+    },
+    {
+      "offset": 1591703,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_vbmeta_image.c"
+    },
+    {
+      "offset": 1591806,
+      "text": "Mismatch between image version and libavb version."
+    },
+    {
+      "offset": 1592437,
+      "text": "INVALID_VBMETA_HEADER"
+    },
+    {
+      "offset": 1592473,
+      "text": "Unknown AvbVBMetaVerifyResult value."
+    },
+    {
+      "offset": 1601986,
+      "text": "Get vbmeta digest fail on Boot state is: Orange"
+    },
+    {
+      "offset": 1602059,
+      "text": "Get vbmeta digest fail on Boot state is: Green"
+    },
+    {
+      "offset": 1602107,
+      "text": "## Android Verify Boot 2.0 fail, AvbSlotVerifyResult: %d"
+    },
+    {
+      "offset": 1602234,
+      "text": "bootcmd is not complete"
+    },
+    {
+      "offset": 1605231,
+      "text": "cm4_verify_firmware() fail=%d."
+    },
+    {
+      "offset": 1613171,
+      "text": "No env 'bootargs'"
+    },
+    {
+      "offset": 1613215,
+      "text": "delete [%s] in bootargs"
+    },
+    {
+      "offset": 1613240,
+      "text": "delete [%s] in bootargs success"
+    },
+    {
+      "offset": 1613273,
+      "text": "No [%s] in bootargs"
+    },
+    {
+      "offset": 1613500,
+      "text": "This member is the only one in the bootargs"
+    },
+    {
+      "offset": 1613545,
+      "text": "This member is the last one in the bootargs"
+    },
+    {
+      "offset": 1615831,
+      "text": "addbootargs androidboot.bootloader %s"
+    },
+    {
+      "offset": 1615869,
+      "text": "[avb init][start:%llu][end:%llu][total time:%llu]"
+    },
+    {
+      "offset": 1615920,
+      "text": "Failed to initialize avb2"
+    },
+    {
+      "offset": 1615947,
+      "text": "AVB 2.0 is not initialized, run 'avb init' first"
+    },
+    {
+      "offset": 1616024,
+      "text": "AVB not initialized, run 'avb init' first"
+    },
+    {
+      "offset": 1616084,
+      "text": "%s: Error, device state is locked, don't allow to on/off dm-verity."
+    },
+    {
+      "offset": 1616153,
+      "text": "## Android Verified Boot 2.0 version %s"
+    },
+    {
+      "offset": 1616230,
+      "text": "Verification passed successfully"
+    },
+    {
+      "offset": 1616264,
+      "text": "Verification failed"
+    },
+    {
+      "offset": 1616285,
+      "text": "I/O error occurred during verification"
+    },
+    {
+      "offset": 1616325,
+      "text": "OOM error occurred during verification"
+    },
+    {
+      "offset": 1616365,
+      "text": "Corrupted dm-verity metadata detected"
+    },
+    {
+      "offset": 1616404,
+      "text": "Unsupported version avbtool was used"
+    },
+    {
+      "offset": 1616442,
+      "text": "Checking rollback index failed"
+    },
+    {
+      "offset": 1616523,
+      "text": "avb_bootargs"
+    },
+    {
+      "offset": 1616536,
+      "text": "androidboot.vbmeta.device"
+    },
+    {
+      "offset": 1616562,
+      "text": "androidboot.vbmeta.avb_version"
+    },
+    {
+      "offset": 1616593,
+      "text": "androidboot.vbmeta.device_state"
+    },
+    {
+      "offset": 1616625,
+      "text": "androidboot.vbmeta.hash_alg"
+    },
+    {
+      "offset": 1616653,
+      "text": "androidboot.vbmeta.size"
+    },
+    {
+      "offset": 1616677,
+      "text": "androidboot.vbmeta.digest"
+    },
+    {
+      "offset": 1616703,
+      "text": "androidboot.vbmeta.invalidate_on_error"
+    },
+    {
+      "offset": 1616742,
+      "text": "androidboot.veritymode"
+    },
+    {
+      "offset": 1616765,
+      "text": "androidboot.veritymode.managed"
+    },
+    {
+      "offset": 1616796,
+      "text": "androidboot.verifiedbootstate"
+    },
+    {
+      "offset": 1616826,
+      "text": "try remove pre-stored avb_args fail!"
+    },
+    {
+      "offset": 1616864,
+      "text": "avb_version     "
+    },
+    {
+      "offset": 1617064,
+      "text": "%s:%d Failed to allocate verified_parts."
+    },
+    {
+      "offset": 1617125,
+      "text": "[avb verify][start:%llu][end:%llu][total time:%llu]"
+    },
+    {
+      "offset": 1617948,
+      "text": "do command: boot_pmu."
+    },
+    {
+      "offset": 1618091,
+      "text": "do command: boot_vad."
+    },
+    {
+      "offset": 1618507,
+      "text": "   Verifying Checksum ... "
+    },
+    {
+      "offset": 1620722,
+      "text": "Add %s to bootargs failure"
+    },
+    {
+      "offset": 1623395,
+      "text": "DTBO Verify argument number is wrong, please check it"
+    },
+    {
+      "offset": 1623518,
+      "text": "dtbo img verify fail"
+    },
+    {
+      "offset": 1623540,
+      "text": "dtbo img verify success"
+    },
+    {
+      "offset": 1628303,
+      "text": "Verify PKG HASHSET..."
+    },
+    {
+      "offset": 1629180,
+      "text": "Verify GPT: "
+    },
+    {
+      "offset": 1629953,
+      "text": "avb init 0"
+    },
+    {
+      "offset": 1631119,
+      "text": "EMMC RPMB partition Size %d MB"
+    },
+    {
+      "offset": 1632328,
+      "text": "RPMB Capacity: "
+    },
+    {
+      "offset": 1632410,
+      "text": "RPMB not supported before version 4.41"
+    },
+    {
+      "offset": 1632450,
+      "text": "RPMB Write counter= %lx"
+    },
+    {
+      "offset": 1632687,
+      "text": "MMC RPMB read: dev # %d, block # %d, count %d ... "
+    },
+    {
+      "offset": 1632738,
+      "text": "%d RPMB blocks read: %s"
+    },
+    {
+      "offset": 1632764,
+      "text": "MMC RPMB write: dev # %d, block # %d, count %d ... "
+    },
+    {
+      "offset": 1632816,
+      "text": "%d RPMB blocks written: %s"
+    },
+    {
+      "offset": 1634176,
+      "text": "avb verify"
+    },
+    {
+      "offset": 1634187,
+      "text": "Verify partition %s failure"
+    },
+    {
+      "offset": 1634216,
+      "text": "Verify partition %s pass"
+    },
+    {
+      "offset": 1638486,
+      "text": "FAIL to add mmap_filename to bootargs"
+    },
+    {
+      "offset": 1638790,
+      "text": "avb_state %s"
+    },
+    {
+      "offset": 1638804,
+      "text": "m_pboot_avbOrangeState_RAW_File"
+    },
+    {
+      "offset": 1638836,
+      "text": "m_pboot_avbRedState_RAW_File"
+    },
+    {
+      "offset": 1641254,
+      "text": "FAIL to add kernelcore to bootargs"
+    },
+    {
+      "offset": 1641494,
+      "text": "avb state <%s> is not supported. Please check bootlogo.ini"
+    },
+    {
+      "offset": 1644302,
+      "text": "PKG Anti-rollback check failed."
+    },
+    {
+      "offset": 1645670,
+      "text": "eMMC: capacity_rpmb is 0x%llX"
+    },
+    {
+      "offset": 1647271,
+      "text": "Device tree binary header verify failure at dtb_source address %p"
+    },
+    {
+      "offset": 1647473,
+      "text": "%s:%d b_isDTBO_Verified=%d"
+    },
+    {
+      "offset": 1647692,
+      "text": "dtboverify %x"
+    },
+    {
+      "offset": 1647706,
+      "text": "snprintf fail at compose buffer for do dtboverify"
+    },
+    {
+      "offset": 1647757,
+      "text": "ERROR with dtbo.img verify failure"
+    },
+    {
+      "offset": 1651357,
+      "text": "eMMC Rom boot verify pass!!"
+    },
+    {
+      "offset": 1661833,
+      "text": "[7;32meMMC BYPASS mode speed %s bus width %d verify ok"
+    },
+    {
+      "offset": 1661951,
+      "text": "[7;32meMMC RIU BYPASS mode speed HIGH bus width %d verify ok"
+    },
+    {
+      "offset": 1662058,
+      "text": "[7;32meMMC SDR mode, bus width %d verify ok"
+    },
+    {
+      "offset": 1662148,
+      "text": "[7;32meMMC DDR mode, bus width %d verify ok"
+    },
+    {
+      "offset": 1662277,
+      "text": "[7;32meMMC HS200 AFIFO mode, bus width %d verify ok"
+    },
+    {
+      "offset": 1662429,
+      "text": "[7;32meMMC HS400 AFIFO mode, bus width 8 verify ok"
+    },
+    {
+      "offset": 1662535,
+      "text": "[7;32meMMC HS400 enhence mode, bus width 8 verify ok"
+    },
+    {
+      "offset": 1662701,
+      "text": "[eMMC IPVerify Fail: %Xh]"
+    },
+    {
+      "offset": 1680543,
+      "text": "WARNING: could not set bootargs %s."
+    },
+    {
+      "offset": 1683604,
+      "text": "   Verifying Hash Integrity ... "
+    },
+    {
+      "offset": 1684897,
+      "text": "Failed to initialize avb"
+    },
+    {
+      "offset": 1684922,
+      "text": "avb set-devicestate 1"
+    },
+    {
+      "offset": 1684944,
+      "text": "avb set-devicestate 0"
+    },
+    {
+      "offset": 1691126,
+      "text": "add_bootargs %s"
+    },
+    {
+      "offset": 1693069,
+      "text": "androidboot.vbmeta.hash_alg="
+    },
+    {
+      "offset": 1693167,
+      "text": "androidboot.vbmeta.digest="
+    },
+    {
+      "offset": 1699572,
+      "text": "insert_avb_data_into_dtb failure, ret=0x%x."
+    },
+    {
+      "offset": 1701131,
+      "text": "Reload env for bootargs=NULL"
+    },
+    {
+      "offset": 1701576,
+      "text": "insert_avb_data_into_dtb: %s"
+    },
+    {
+      "offset": 1701629,
+      "text": "avb_data"
+    },
+    {
+      "offset": 1701657,
+      "text": "WARNING: could not set avb_data: %s"
+    },
+    {
+      "offset": 1701730,
+      "text": "%s AVB_RPMB_RPMBKEYNOTEXIST"
+    },
+    {
+      "offset": 1702671,
+      "text": "DEV signature verification pass! This is a dev build."
+    },
+    {
+      "offset": 1702726,
+      "text": "DEV signature verification failure! This is a rel build."
+    },
+    {
+      "offset": 1704970,
+      "text": ": Invalid vbmeta size in footer."
+    },
+    {
+      "offset": 1705008,
+      "text": ": Error loading vbmeta data."
+    },
+    {
+      "offset": 1705042,
+      "text": ": Error verifying vbmeta image: "
+    },
+    {
+      "offset": 1705079,
+      "text": ": Error verifying vbmeta image: invalid vbmeta header"
+    },
+    {
+      "offset": 1705138,
+      "text": ": Error verifying vbmeta image: unsupported AVB version"
+    },
+    {
+      "offset": 1705199,
+      "text": ": chained vbmeta image has non-zero flags"
+    },
+    {
+      "offset": 1705436,
+      "text": ": Error getting rollback index for location."
+    },
+    {
+      "offset": 1705486,
+      "text": ": Image rollback index is less than the stored rollback index."
+    },
+    {
+      "offset": 1705554,
+      "text": ": Too many vbmeta images."
+    },
+    {
+      "offset": 1706060,
+      "text": ": Chain partition has invalid rollback_index_location field."
+    },
+    {
+      "offset": 1706323,
+      "text": ": Invalid rollback_index_location."
+    },
+    {
+      "offset": 1706364,
+      "text": "Update rollback index"
+    },
+    {
+      "offset": 1706387,
+      "text": "Update rollback index failed"
+    },
+    {
+      "offset": 1706580,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/lib/libavb/avb_slot_verify.c"
+    },
+    {
+      "offset": 1707363,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/Mediatek-internal/secure/./avb/avb_uboot_verity.c"
+    },
+    {
+      "offset": 1707586,
+      "text": "' does not look like a vbmeta footer."
+    },
+    {
+      "offset": 1707676,
+      "text": "/home/sata2/suhaixiong/tecon9660_dev2/bootloader/mixed/u-boot-2019.04/Mediatek-internal/secure/./avb/avb_uboot_verification.c"
+    },
+    {
+      "offset": 1709941,
+      "text": "In %s, verify lut checksum failed !"
+    },
+    {
+      "offset": 1733512,
+      "text": "Cannot read RPMB write counter"
+    },
+    {
+      "offset": 1768697,
+      "text": "verify dmc header checksum failed !"
+    },
+    {
+      "offset": 1770187,
+      "text": "bootargs is NULL, Active Standby Mode FALSE ====="
+    },
+    {
+      "offset": 1775186,
+      "text": "pmu_mcs51_verify_firmware() fail=%d."
+    },
+    {
+      "offset": 1778579,
+      "text": "avb.persistent_digest."
+    },
+    {
+      "offset": 1780957,
+      "text": "Verify with PKCS#1-PSS"
+    },
+    {
+      "offset": 1781393,
+      "text": "Verify OK!"
+    },
+    {
+      "offset": 1781763,
+      "text": "rollback_enabled = %d"
+    },
+    {
+      "offset": 1783349,
+      "text": "rollback index needs to update"
+    },
+    {
+      "offset": 1783948,
+      "text": "%s:%s:%d Set command boot-recovery fail!!"
+    },
+    {
+      "offset": 1787721,
+      "text": "U-Boot sets kernelcore to bootargs"
+    },
+    {
+      "offset": 1787812,
+      "text": "U-Boot sets mmap_filename to bootargs"
+    },
+    {
+      "offset": 1787990,
+      "text": "command: bootcheck"
+    },
+    {
+      "offset": 1788077,
+      "text": "Add unique id to bootargs."
+    },
+    {
+      "offset": 1788176,
+      "text": "[state] - Display bootlogo/Display avb <state>"
+    },
+    {
+      "offset": 1789580,
+      "text": "dtboverify"
+    },
+    {
+      "offset": 1789591,
+      "text": "dtboverify - verify dtbo.img in dtboaddr before uboot dtboverlay"
+    },
+    {
+      "offset": 1789657,
+      "text": "command: dtboverify [address]"
+    },
+    {
+      "offset": 1789961,
+      "text": "revisionid   - Do add revision id to bootargs"
+    },
+    {
+      "offset": 1790036,
+      "text": "chipid   - Do add chip id to bootargs"
+    },
+    {
+      "offset": 1792117,
+      "text": "this command is used in bootflow only"
+    },
+    {
+      "offset": 1793734,
+      "text": "This command is only allowed when there is only one boot device on chip."
+    },
+    {
+      "offset": 1798703,
+      "text": "set a uboot version to the bootargs"
+    },
+    {
+      "offset": 1798768,
+      "text": "addbootargs"
+    },
+    {
+      "offset": 1798780,
+      "text": "set a new config to the bootargs"
+    },
+    {
+      "offset": 1798832,
+      "text": "For example: addBootargs autotest true"
+    }
+  ],
+  "strings_near_key": [
+    {
+      "offset": 1885688,
+      "text": "default [-f] -a - [forcibly] reset default environment"
+    },
+    {
+      "offset": 1885743,
+      "text": "env default [-f] var [...] - [forcibly] reset variable(s) to their default values"
+    },
+    {
+      "offset": 1885825,
+      "text": "env delete [-f] var [...] - [forcibly] delete variable(s)"
+    },
+    {
+      "offset": 1885883,
+      "text": "env print [-a | name ...] - print environment"
+    },
+    {
+      "offset": 1885929,
+      "text": "env save - save environment"
+    },
+    {
+      "offset": 1885957,
+      "text": "env set [-f] name [arg ...]"
+    }
+  ],
+  "limits": [
+    "A string or compiled function is not proof the function executes during normal boot.",
+    "This pass does not claim to identify call graph or active key policy.",
+    "No images modified; no passwords, device identifiers, or private material collected."
+  ]
+}
