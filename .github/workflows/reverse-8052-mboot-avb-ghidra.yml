@@ -1,5 +1,5 @@
 name: RE stage 2 — Ghidra headless decompilation of MT9660 mboot AVB
-# Revision: inspect AArch64 disassembly near OEM trusted key and AVB boot command.
+# Revision: recover OEM trusted-key validation callback control flow, comparisons and caller graph.
 
 on:
   push:
