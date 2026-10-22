@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "device_profiles": {
+    "8052": {
+      "baseline": "RUIOS.8052.1.0.4",
+      "source_verified": true,
+      "live_target_upgrade_test": false
+    },
+    "8054": {
+      "baseline": "8054.1.0.1 factory",
+      "source_verified": true,
+      "current_running_rom_apk_verified": false,
+      "live_target_upgrade_test": false
+    }
+  },
+  "mod_apk": {
+    "package": "com.android.tv.settings",
+    "baseline_signer_sha256": "c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8",
+    "compiled": false,
+    "signed": false,
+    "installed": false
+  },
+  "requirements": [
+    {
+      "id": "standard_settings",
+      "kind": "manifest",
+      "required": true,
+      "done": false,
+      "reason": "ACTION_SETTINGS -> MainSettings patch ready in tool, not built or installed"
+    },
+    {
+      "id": "source_time_service",
+      "kind": "service",
+      "required": true,
+      "done": false,
+      "reason": "KuSettings IntentUtils starts com.coolux.source.service.TimeService; lifecycle not verified"
+    },
+    {
+      "id": "kusettings_time_tick",
+      "kind": "service",
+      "required": true,
+      "done": false,
+      "reason": "MySetTimeService behavior not proven redundant"
+    },
+    {
+      "id": "kusettings_screen_shot",
+      "kind": "service",
+      "required": true,
+      "done": false,
+      "reason": "ScreenServices SystemUI screenshot and SystemProperties side effects not ported"
+    },
+    {
+      "id": "kusettings_boot_receiver",
+      "kind": "receiver",
+      "required": true,
+      "done": false,
+      "reason": "BOOT_COMPLETED effects not verified"
+    },
+    {
+      "id": "setupwizard_explicit_callers",
+      "kind": "external_call",
+      "required": true,
+      "done": false,
+      "reason": "KuSetupWizard references explicit com.my.settings components; ordinary intents cannot intercept"
+    },
+    {
+      "id": "external_implicit_routes",
+      "kind": "external_call",
+      "required": true,
+      "done": false,
+      "reason": "KuSourceRJ, ZEASN and other ACTION_SETTINGS callers not tested"
+    },
+    {
+      "id": "all_user_settings",
+      "kind": "ui",
+      "required": true,
+      "done": false,
+      "reason": "All KuSettings activities user functions need parity including boot source, screenshot, digital zoom, factory reset semantics"
+    },
+    {
+      "id": "temperature",
+      "kind": "ui",
+      "required": true,
+      "done": false,
+      "reason": "System/CPU read-only temperature screen not integrated into TvSettingsPlus"
+    },
+    {
+      "id": "live_8052_regression",
+      "kind": "test",
+      "required": true,
+      "done": false,
+      "reason": "HDMI, focus, keystone, network, BT remote, OTA, reboot, standby not tested"
+    },
+    {
+      "id": "live_8054_regression",
+      "kind": "test",
+      "required": true,
+      "done": false,
+      "reason": "Current 8054 APK and HDMI2/ToF not tested"
+    },
+    {
+      "id": "rollback",
+      "kind": "safety",
+      "required": true,
+      "done": false,
+      "reason": "Original version restoration and re-enable KuSettings not proven"
+    }
+  ],
+  "disable_kusettings_allowed": false,
+  "declaration": "No proprietary APK has been patched, compiled or installed by this stage."
+}
