@@ -61,3 +61,17 @@
 ## Техническое состояние
 
 Это карта миграции и первый этап правки `AndroidManifest`; **не готовая обновлённая APK**. Требуется получить оригинальный `TvSettingsPlus.apk` в рабочую среду для декомпиляции и фактических изменений меню/байткода, затем собрать, подписать и испытать пакет. Образы не прошивать; `KuSettings` сейчас не отключён.
+
+## Дорасследование после успешного GitHub Actions JADX (2026-10-22)
+
+[Запуск анализа](https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/actions/runs/39836787344) проверил исходные APK прямо из SHA-верифицированной OTA 8052 и нашёл все целевые Java-файлы. Результаты — **статические сигналы**:
+
+- `KuSettings.BootupReceiver.onReceive`: присутствует `BOOT_COMPLETED`, **прямых вызовов `startService`, `startActivity`, `bindService` не обнаружено**. Это **ещё не гарантия отсутствия косвенных побочных эффектов**.
+- `KuSettings.MySetTimeService.registerTimeTick`: регистрируется `android.intent.action.TIME_TICK`; `onStartCommand` не содержал непосредственного системного вызова из проверенного набора.
+- `KuSettings.ScreenServices`: в `onStartCommand` вызывается `startShot`, в `setKeyStore` — `SystemProperties.set`, в `takeScreenShot` — `bindService` и `com.android.systemui.screenshot.TakeScreenshotService`. Требуется функциональная миграция, иначе скриншоты могут перестать работать.
+- `KuSettings.IntentUtils.startMyTimeService`: есть `startService`. `startSourceTimeService`: `setComponent + startService` для `com.coolux.source.service.TimeService`.
+- `KuSetupWizard.IntentUtils.startSourceTimeService`: такой же явный запуск `KuSourceRJ.TimeService`. Это может независимо сохранять время после отказа от KuSettings, но нужно выяснить действительные вызовы.
+- `KuSourceRJ.BootupReceiver.onReceive`: `BOOT_COMPLETED` найден, прямых сервисных вызовов из выбранных маркеров нет. `TimeService.onStartCommand` найден; назначение и требуемость выясняем.
+- Все проверки этой секции относятся к **8052.1.0.4**. Текущую установленную 8054.1.0.4 пока не считали.
+
+**Практическое решение:** не копировать весь `KuSettings` в `TvSettingsPlus`. Переносить только подтверждённые функции и внешние интерфейсы. До признания зависимостей заменёнными держать `com.my.settings` включённым.
