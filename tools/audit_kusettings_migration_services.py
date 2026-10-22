@@ -12,10 +12,20 @@ TARGETS = {
  "KuSettings": {
   "com/my/service/BootupReceiver.java": ["onReceive"],
   "com/my/service/MySetTimeService.java": ["onStartCommand", "registerTimeTick"],
-  "com/my/service/ScreenServices.java": ["onStartCommand", "setKeyStore", "startShot", "takeScreenShot"],
-  "com/my/utils/IntentUtils.java": ["startMyTimeService", "startSourceService", "startSourceTimeService", "startTime"]
+  "com/my/service/ScreenServices.java": ["onStartCommand", "setKeyStore", "startShot", "takeScreenShot", "handleMessage"],
+  "com/my/utils/IntentUtils.java": [
+   "startMyTimeService", "startSourceService", "startSourceTimeService", "startTime",
+   "myWifi", "myBluetooth", "autoBluetooth", "myDateTime", "myLanguage", "languageLocal", "timeZone",
+   "screenshot", "projectAbout", "brightIntent", "voiceIntent", "startOta", "restoreIntent",
+   "bootSoure", "poweron", "projectModel", "mircastIntent", "airplayIntent",
+   "keystoneIntent", "imageDigitalIntent", "startUniversalKJ",
+   "provisionBluetoothIntent", "provisionWifiIntent"
+  ]
  },
- "KuSetupWizard": {"com/my/utils/IntentUtils.java": ["startMyTimeService", "startSourceService", "startSourceTimeService"]},
+ "KuSetupWizard": {"com/my/utils/IntentUtils.java": [
+  "startMyTimeService", "startSourceService", "startSourceTimeService",
+  "myWifi", "myBluetooth", "provisionBluetoothIntent", "provisionWifiIntent", "screenshot"
+ ]},
  "KuSourceRJ": {
   "com/coolux/source/service/BootupReceiver.java": ["onReceive"],
   "com/coolux/source/service/TimeService.java": ["onCreate", "onStartCommand"],
@@ -30,12 +40,13 @@ OPERATIONS = (
  "startService", "startForegroundService", "bindService", "stopService",
  "registerReceiver", "startActivity", "setComponent", "setClassName",
  "SystemProperties.set", "Settings.Global", "Settings.Secure",
- "sendBroadcast", "startShot", "takeScreenShot"
+ "sendBroadcast", "startShot", "takeScreenShot", "getAction", "getStringExtra", "putExtra"
 )
 TARGET_LITERALS = re.compile(
  r"com\.(?:coolux\.source|my\.settings|android\.systemui|android\.tv\.settings|rjpj\.yunota)[A-Za-z0-9_.$/]*"
  r"|android\.settings\.[A-Z_]+|android\.intent\.action\.[A-Z_]+"
  r"|TIME_TICK|BOOT_COMPLETED"
+ r"|(?:persist|ro|sys|service|vendor)\\.[A-Za-z0-9_.-]+"
 )
 
 def method_text(src: str, name: str) -> str | None:
