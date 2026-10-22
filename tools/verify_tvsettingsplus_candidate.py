@@ -32,7 +32,12 @@ ROUTES = {
 
 def elements(m, section):
     app = m.getroot().find("application")
-    return {(el.tag, el.get(ANDROID+"name")):el for el in app if el.tag in section}
+    pkg = m.getroot().get("package")
+    def canonical(name):
+        if name is None: return None
+        if name.startswith("."): return pkg + name
+        return pkg + "." + name if "." not in name else name
+    return {(el.tag, canonical(el.get(ANDROID+"name"))):el for el in app if el.tag in section}
 
 def verify(original: Path,candidate_dir: Path)->None:
     base=etree.parse(str(original))
