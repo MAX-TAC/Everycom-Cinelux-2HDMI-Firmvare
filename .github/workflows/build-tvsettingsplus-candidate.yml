@@ -1,0 +1,118 @@
+name: Build experimental TvSettingsPlus MOD candidate (8052)
+on:
+  push:
+    branches: [tvsettingsplus-migration-v0]
+    paths:
+      - ".github/workflows/build-tvsettingsplus-candidate.yml"
+      - "tools/prepare_tvsettingsplus_candidate.py"
+      - "tools/patch_tvsettingsplus_manifest.py"
+      - "tvsettingsplus-mod/src/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experimental-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Android build and verified apktool
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq erofs-utils unzip zipalign apksigner aapt2 python3-lxml openjdk-17-jdk-headless
+          mkdir -p /tmp/dumper /tmp/images /tmp/erofs /tmp/tvmod /tmp/dex /tmp/classes
+          curl -fL --retry 4 https://github.com/iBotPeaches/Apktool/releases/download/v2.12.1/apktool_2.12.1.jar -o /tmp/apktool.jar
+          echo '66cf4524a4a45a7f56567d08b2c9b6ec237bcdd78cee69fd4a59c8a0243aeafa  /tmp/apktool.jar' | sha256sum -c -
+          curl -fL --retry 4 https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz -o /tmp/dumper.tar.gz
+          tar -xzf /tmp/dumper.tar.gz -C /tmp/dumper
+
+      - name: Extract original and verify TvSettingsPlus APK
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 4 https://github.com/MAX-TAC/Everycom-Cinelux-Firmware/releases/download/OTA_Updates/RJMT9660_firmware_8052.zip -o /tmp/ota.zip
+          echo 'bedea70fbf3f08d3c18e59d5f91e7d12828c77fac314c30fcc98332c32c88e35  /tmp/ota.zip' | sha256sum -c -
+          DUMPER="$(find /tmp/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
+          chmod +x "$DUMPER"
+          "$DUMPER" -c 3 -p system_ext -o /tmp/images /tmp/ota.zip > /tmp/dump.log 2>&1 || { tail -n 60 /tmp/dump.log; exit 1; }
+          mkdir -p /tmp/erofs/system_ext
+          fsck.erofs --extract=/tmp/erofs/system_ext /tmp/images/system_ext.img >/tmp/extract.log 2>&1 || { tail -n 60 /tmp/extract.log; exit 1; }
+          SRC=/tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk
+          test -s "$SRC"
+          echo 'e4184a13fbf56fa069effc6a40ea50c0da7e9190321b389f59ba34700a80d0a1  /tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk' | sha256sum -c -
+          aapt dump badging "$SRC" | head -n 12
+          apksigner verify --print-certs "$SRC" | head -n 12
+
+      - name: Decompile verified original without altering any OEM DEX
+        run: |
+          set -euo pipefail
+          java -jar /tmp/apktool.jar d -f -s -o /tmp/tvmod/decoded /tmp/erofs/system_ext/priv-app/TvSettingsPlus/TvSettingsPlus.apk >/tmp/decode.log 2>&1 || { tail -n 100 /tmp/decode.log; exit 1; }
+          python3 tools/prepare_tvsettingsplus_candidate.py /tmp/tvmod/decoded
+          test -f /tmp/tvmod/decoded/AndroidManifest.xml.before-cinelux
+          ls -lh /tmp/tvmod/decoded/
+
+      - name: Rebuild stock resources, preserving unchanged OEM runtime bytecode
+        run: |
+          set -euo pipefail
+          java -Xmx4G -jar /tmp/apktool.jar b --use-aapt2 /tmp/tvmod/decoded -o /tmp/tvmod/rebuilt.apk >/tmp/rebuild.log 2>&1 || { tail -n 125 /tmp/rebuild.log; exit 1; }
+          test -s /tmp/tvmod/rebuilt.apk
+          aapt dump badging /tmp/tvmod/rebuilt.apk | head -n 12
+          unzip -tq /tmp/tvmod/rebuilt.apk | tail -n 3
+
+      - name: Build new TV Activity classes as additional DEX
+        run: |
+          set -euo pipefail
+          SDK="$ANDROID_HOME/platforms/android-34/android.jar"
+          test -s "$SDK"
+          javac -source 8 -target 8 -classpath "$SDK" -d /tmp/classes tvsettingsplus-mod/src/com/android/tv/settings/cinelux/*.java
+          D8="$(find "$ANDROID_HOME/build-tools" -type f -name d8 | sort -V | tail -n 1)"
+          test -x "$D8"
+          "$D8" --min-api 33 --lib "$SDK" --output /tmp/dex $(find /tmp/classes -name '*.class')
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          app=Path('/tmp/tvmod/rebuilt.apk')
+          with ZipFile(app) as z:
+              entries=set(z.namelist())
+              numbers=[1 if x=='classes.dex' else int(x[len('classes'):-len('.dex')]) for x in entries if x.startswith('classes') and x.endswith('.dex') and (x=='classes.dex' or x[len('classes'):-len('.dex')].isdigit())]
+          assert 1 in numbers, f'No base classes.dex in rebuilt APK: {numbers}'
+          next_index=max(numbers)+1
+          name=f'classes{next_index}.dex'
+          assert name not in entries
+          with ZipFile(app,'a',compression=ZIP_DEFLATED) as z:
+              z.write('/tmp/dex/classes.dex',name)
+          print('Added', name, 'to existing original dex indices', sorted(numbers))
+          PY
+
+      - name: Sign with matching PUBLIC AOSP test platform key (not AVB)
+        run: |
+          set -euo pipefail
+          KEY_URL=https://raw.githubusercontent.com/aosp-mirror/platform_build/android-13.0.0_r56/target/product/security
+          curl -fL --retry 4 "$KEY_URL/platform.pk8" -o /tmp/platform.pk8
+          curl -fL --retry 4 "$KEY_URL/platform.x509.pem" -o /tmp/platform.x509.pem
+          test -s /tmp/platform.pk8 && test -s /tmp/platform.x509.pem
+          CERT_SHA="$(openssl x509 -in /tmp/platform.x509.pem -outform DER | sha256sum | awk '{print $1}')"
+          test "$CERT_SHA" = 'c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8' || { echo 'Platform cert DOES NOT match stock, abort'; exit 1; }
+          zipalign -f 4 /tmp/tvmod/rebuilt.apk /tmp/tvmod/aligned.apk
+          apksigner sign --key /tmp/platform.pk8 --cert /tmp/platform.x509.pem --out /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk /tmp/tvmod/aligned.apk
+          apksigner verify --print-certs /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk > /tmp/tvmod/sig.txt
+          grep -qi 'c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8' /tmp/tvmod/sig.txt
+          aapt dump badging /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk | head -n 12
+          sha256sum /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk
+          # Never publish a blob whose package identity, signer or baseline SDK fail basic checks.
+          aapt dump badging /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk | grep -q "package: name='com.android.tv.settings'"
+          echo 'EXPERIMENTAL ONLY. Signed candidate is not tested on hardware. DO NOT INSTALL until service migration, settings UI parity and rollback checks pass.' > /tmp/tvmod/README_DO_NOT_INSTALL.txt
+          rm -f /tmp/platform.pk8 /tmp/platform.x509.pem
+
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: tvsettingsplus-8052-experimental-unverified
+          path: |
+            /tmp/tvmod/TvSettingsPlus_MOD_8052_EXPERIMENTAL_DO_NOT_INSTALL.apk
+            /tmp/tvmod/README_DO_NOT_INSTALL.txt
+            /tmp/tvmod/sig.txt
+          if-no-files-found: error
+          retention-days: 14
