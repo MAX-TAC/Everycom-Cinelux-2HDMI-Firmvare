@@ -1,0 +1,257 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Everycom CineLux 8052 / FlixTone MT9660. Termux (phone) -> ADB (projector).
+# READ-ONLY on the projector. No setprop, svc wifi, network restart, remount, flashing or reboot.
+# Run from Termux: bash "$HOME/storage/downloads/Everycom_8052_Ethernet_Audio_BT_Diag.txt"
+# Assumes an already authorized ADB connection; does not connect or change the ADB port.
+set -u
+
+OUT_DIR="$HOME/storage/downloads"
+if [ ! -d "$OUT_DIR" ] || [ ! -w "$OUT_DIR" ]; then OUT_DIR="/sdcard/Download"; fi
+if [ ! -d "$OUT_DIR" ] || [ ! -w "$OUT_DIR" ]; then
+  printf 'Нет доступа к Download. Один раз выполните в Termux: termux-setup-storage\n' >&2
+  exit 2
+fi
+if ! command -v adb >/dev/null 2>&1; then
+  printf 'Не найден adb. В Termux: pkg install android-tools\n' >&2
+  exit 3
+fi
+
+DEVICES="$(adb devices 2>&1)"
+SERIAL="$(printf '%s\n' "$DEVICES" | awk 'NR>1 && $2=="device" {print $1}')"
+COUNT="$(printf '%s\n' "$SERIAL" | sed '/^$/d' | wc -l | tr -d ' ')"
+if [ "$COUNT" -ne 1 ]; then
+  printf 'Нужен ровно один авторизованный ADB-проектор, найдено: %s\n' "$COUNT" >&2
+  printf '%s\n' "$DEVICES" >&2
+  echo 'Подключите проектор к ADB ранее использовавшимся способом, проверьте adb devices.' >&2
+  exit 4
+fi
+MACHINE="$(adb -s "$SERIAL" shell getprop ro.rjpj.machine.id 2>/dev/null | tr -d '\r\n')"
+if [ "$MACHINE" != "8052" ]; then
+  printf 'Ожидалась ревизия 8052, но machine.id=%s. Прерывание без изменений.\n' "$MACHINE" >&2
+  exit 5
+fi
+
+OUT="$OUT_DIR/Everycom_8052_LAN_BT_AUDIO_$(date +%Y%m%d_%H%M%S).txt"
+# Redact common identifiers; manual review is still required before public posting.
+sanitize() {
+  sed -E \
+    -e 's/([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}/[MAC_REDACTED]/g' \
+    -e 's/([Ss][Ss][Ii][Dd][[:space:]]*[:=][[:space:]]*)[^,; ]+/\1[REDACTED]/g'
+}
+
+{
+  printf 'EVERYCOM 8052 READ-ONLY ETHERNET + AUDIO + BT DIAGNOSTICS\n'
+  printf 'Collected by Termux: %s\n' "$(date '+%Y-%m-%d %H:%M:%S %z')"
+  printf 'Expected machine.id: %s\n' "$MACHINE"
+  printf 'IMPORTANT: Keep an RJ45 cable plugged into the projector during the entire test.\n'
+  printf 'WARN: local IP addresses, device names, kernel logs may remain; review before posting publicly.\n'
+  printf 'ADB shell device: authorized\n\n'
+} > "$OUT"
+
+echo '1/2: получение Ethernet, Wi-Fi, Bluetooth и аудиоконфигурации...'
+# One remote shell, no created scripts or configuration changes on the projector.
+adb -s "$SERIAL" shell sh <<'PROJECTOR_READONLY' 2>&1 | sanitize >> "$OUT"
+S() { printf '\n========== %s ==========\n' "$1"; }
+run() {
+  label="$1"; shift
+  printf '\n--- %s ---\n' "$label"
+  if command -v timeout >/dev/null 2>&1; then
+    timeout 15 "$@" 2>&1 | head -n 160
+  else
+    "$@" 2>&1 | head -n 160
+  fi
+}
+
+S '1. VERSION AND NETWORK PROPERTIES'
+for k in ro.rjpj.machine.id ro.rjpj.yunota.version ro.hardware ro.product.board ro.build.type ro.build.version.release ro.build.version.sdk ro.boot.slot_suffix ro.boot.verifiedbootstate ro.boot.vbmeta.device_state; do
+  printf '%s=' "$k"; getprop "$k"
+done
+printf 'Current shell: '; id
+printf 'SELinux: '; getenforce 2>&1
+getprop | grep -Ei 'ethernet|(^|[.])eth[0-9]|gmac|network|dhcp|net\.dns|bluetooth.*(a2dp|le_audio|broadcast|offload)|a2dp.*(offload|enable)|wifi.*interface' | head -n 110
+
+S '2. ALL NET INTERFACES AND PHYSICAL STATUS'
+run 'ip -o link show' ip -o link show
+run 'ip -o -4 addr show' ip -o -4 addr show
+run 'ip -o -6 addr show' ip -o -6 addr show
+run 'ip route' ip route show table main
+run 'ip rule' ip rule show
+run 'ip -s link' ip -s link show
+run '/proc/net/dev counters' cat /proc/net/dev
+printf '\n--- sysfs NICs: driver, carrier, counters ---\n'
+for p in /sys/class/net/*; do
+  [ -e "$p" ] || continue
+  n=${p##*/}
+  printf '\nNET_DEVICE: %s\n' "$n"
+  for f in type operstate carrier speed duplex dormant mtu flags dev_id phys_port_name; do
+    if [ -r "$p/$f" ]; then printf '%s=' "$f"; cat "$p/$f" 2>&1; fi
+  done
+  if [ -L "$p/device/driver" ]; then
+    printf 'driver='; readlink "$p/device/driver" 2>&1
+  fi
+  if [ -L "$p/device" ]; then
+    printf 'device='; readlink "$p/device" 2>&1
+  fi
+  for f in rx_packets tx_packets rx_errors tx_errors rx_dropped tx_dropped collisions rx_crc_errors rx_frame_errors; do
+    if [ -r "$p/statistics/$f" ]; then printf '%s=' "$f"; cat "$p/statistics/$f" 2>&1; fi
+  done
+done
+if command -v ethtool >/dev/null 2>&1; then
+  for p in /sys/class/net/eth* /sys/class/net/en*; do
+    [ -d "$p" ] || continue
+    n=${p##*/}
+    run "ethtool $n" ethtool "$n"
+    run "ethtool -i $n" ethtool -i "$n"
+  done
+else
+  echo 'ethtool utility not present; sysfs still collected'
+fi
+
+S '3. ETHERNET GMAC, PHY, MDIO AND DEVICE TREE'
+printf '\n--- loaded kernel modules ---\n'
+grep -Ei 'mtk_gmac|eth|phy|mdio|stmmac|dwmac|aic8800|aic_btusb|btmtk|cfg80211|wlan' /proc/modules | head -n 100
+printf '\n--- candidate vendor modules (names) ---\n'
+for p in /vendor/lib/modules /vendor_dlkm/lib/modules /odm/lib/modules; do
+  [ -d "$p" ] || continue
+  ls "$p" 2>/dev/null | grep -Ei 'gmac|eth|phy|mdio|stmmac|aic8800|aic_btusb|btmtk|wlan' | head -n 85
+done
+printf '\n--- MDIO bus devices ---\n'
+for p in /sys/bus/mdio_bus/devices/*; do
+  [ -e "$p" ] || continue
+  echo "MDIO_DEVICE=${p##*/}"
+  [ -r "$p/phy_id" ] && { printf 'phy_id='; cat "$p/phy_id"; }
+  [ -L "$p/driver" ] && { printf 'driver='; readlink "$p/driver"; }
+done
+printf '\n--- platform device names for GMAC / Ethernet / MDIO ---\n'
+ls /sys/bus/platform/devices 2>/dev/null | grep -Ei 'gmac|ether|mdio|dwmac|stmmac|net' | head -n 55
+printf '\n--- device tree candidate nodes ---\n'
+if [ -d /proc/device-tree ]; then
+  find /proc/device-tree -maxdepth 7 \( -iname '*ether*' -o -iname '*gmac*' -o -iname '*mdio*' -o -iname '*rgmii*' \) 2>/dev/null | head -n 85
+fi
+printf '\n--- interrupts Ethernet ---\n'
+grep -Ei 'gmac|eth|mdio|phy' /proc/interrupts 2>/dev/null | head -n 40
+
+S '4. ANDROID ETHERNET AND CONNECTIVITY SERVICES'
+run 'dumpsys ethernet' dumpsys ethernet
+printf '\n--- connectivity Ethernet and active networks (filtered) ---\n'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 18 dumpsys connectivity 2>&1 | grep -Ei 'ethernet|eth[0-9]|en[0-9]|TRANSPORT_ETHERNET|NetworkAgent|NetworkCapabilities|LinkProperties|DefaultNetwork|validated|linkDown|linkUp' | head -n 115
+else
+  dumpsys connectivity 2>&1 | grep -Ei 'ethernet|eth[0-9]|en[0-9]|TRANSPORT_ETHERNET|NetworkAgent|NetworkCapabilities|LinkProperties|DefaultNetwork|validated|linkDown|linkUp' | head -n 115
+fi
+printf '\n--- services list (ethernet/network) ---\n'
+service list 2>&1 | grep -Ei 'ethernet|connectivity|network|netd' | head -n 45
+printf '\n--- packages list (ethernet) ---\n'
+pm list packages 2>&1 | grep -Ei 'ethernet|mediatek.network|networkstack|tethering' | head -n 35
+
+S '5. LAN / WIFI LINK AND WIFI FIRMWARE'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 15 dumpsys wifi 2>&1 | grep -Ei 'RSSI[:=]|frequency[:=]|frequencyMHz|[lL]ink.?speed|txLinkSpeed|rxLinkSpeed|channelWidth|wifi[ _]?state|wifiInfo' | head -n 75
+else
+  dumpsys wifi 2>&1 | grep -Ei 'RSSI[:=]|frequency[:=]|frequencyMHz|[lL]ink.?speed|txLinkSpeed|rxLinkSpeed|channelWidth|wifi[ _]?state|wifiInfo' | head -n 75
+fi
+printf '\n--- IP and route show (per-interface) ---\n'
+for p in /sys/class/net/eth* /sys/class/net/en*; do
+  [ -d "$p" ] || continue
+  n=${p##*/}
+  ip -4 addr show dev "$n" 2>&1 | head -n 20
+  ip -4 route show dev "$n" 2>&1 | head -n 20
+done
+
+S '6. BLUETOOTH CONTROLLER, PROFILES, DUAL A2DP, LE AUDIO'
+for k in bluetooth.profile.a2dp.source.enabled bluetooth.profile.a2dp.sink.enabled bluetooth.profile.le_audio.enabled bluetooth.profile.le_audio.broadcast.source.enabled persist.bluetooth.a2dp_offload.disabled ro.bluetooth.a2dp_offload.supported persist.bluetooth.max_connected_audio_devices persist.bluetooth.leaudio_offload.disabled; do
+  printf '%s=' "$k"; getprop "$k"
+done
+printf '\n--- Bluetooth kernel/USB identities ---\n'
+ls -l /sys/class/bluetooth 2>&1 | head -n 35
+if command -v lsusb >/dev/null 2>&1; then lsusb 2>&1 | head -n 50; fi
+printf '\n--- Bluetooth manager (filtered; personal device names may be present) ---\n'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 18 dumpsys bluetooth_manager 2>&1 | grep -Ei 'a2dp|le.?audio|broadcast|isochron|isoc|codec|offload|[cC]onnected[Aa]udio|[mM]ax.?connected|active.?device|profile|adapter.?state|hearing.?aid|hci|firmware' | head -n 155
+else
+  dumpsys bluetooth_manager 2>&1 | grep -Ei 'a2dp|le.?audio|broadcast|isochron|isoc|codec|offload|[cC]onnected[Aa]udio|[mM]ax.?connected|active.?device|profile|adapter.?state|hearing.?aid|hci|firmware' | head -n 155
+fi
+printf '\n--- bluetooth package and service state ---\n'
+service list 2>&1 | grep -Ei 'bluetooth|audio' | head -n 48
+
+S '7. AUDIO POLICY / MULTI-DEVICE / BLUETOOTH + SPEAKER'
+printf '\n--- audio policy config (interesting routes) ---\n'
+for p in /vendor/etc/audio_policy_configuration.xml /vendor/etc/bluetooth_audio_policy_configuration.xml /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_volumes.xml; do
+  [ -r "$p" ] || continue
+  echo "CONFIG: $p"
+  grep -Ei 'mixPort|devicePort|<route |Bluetooth|A2DP|BLE_|speaker|HDMI|ARC|remote_submix|loopback|duplicat' "$p" 2>/dev/null | head -n 80
+done
+printf '\n--- dumpsys media.audio_policy (filtered) ---\n'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 18 dumpsys media.audio_policy 2>&1 | grep -Ei 'A2DP|BLE|Speaker|Duplicat|Output|Device|mixport|route|preferred|strategy|active|offload|headset|HDMI|ARC|SCO' | head -n 150
+else
+  dumpsys media.audio_policy 2>&1 | grep -Ei 'A2DP|BLE|Speaker|Duplicat|Output|Device|mixport|route|preferred|strategy|active|offload|headset|HDMI|ARC|SCO' | head -n 150
+fi
+printf '\n--- dumpsys audio (filtered) ---\n'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 18 dumpsys audio 2>&1 | grep -Ei 'A2DP|LE Audio|BLE|Speaker|Bluetooth|AudioDevice|audio.*route|preferred.*device|device.*connected|strategy|surround|HDMI|ARC' | head -n 135
+else
+  dumpsys audio 2>&1 | grep -Ei 'A2DP|LE Audio|BLE|Speaker|Bluetooth|AudioDevice|audio.*route|preferred.*device|device.*connected|strategy|surround|HDMI|ARC' | head -n 135
+fi
+printf '\n--- audio flinger (filtered) ---\n'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 18 dumpsys media.audio_flinger 2>&1 | grep -Ei 'Duplicat|AudioFlinger|a2dp|bluetooth|speaker|offload|output thread|mOutDevice|device.*0x' | head -n 90
+else
+  dumpsys media.audio_flinger 2>&1 | grep -Ei 'Duplicat|AudioFlinger|a2dp|bluetooth|speaker|offload|output thread|mOutDevice|device.*0x' | head -n 90
+fi
+
+S '8. KERNEL LOGS (SHELL ACCESS)'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 12 dmesg 2>&1 | grep -Ei 'gmac|ethernet|mdio|rgmii|rmii|stmmac|phy|link up|link down|dhcp|aic8800|aic_btusb|bluetooth|a2dp|eth[0-9]' | tail -n 140
+else
+  dmesg 2>&1 | grep -Ei 'gmac|ethernet|mdio|rgmii|rmii|stmmac|phy|link up|link down|dhcp|aic8800|aic_btusb|bluetooth|a2dp|eth[0-9]' | tail -n 140
+fi
+printf '\n--- recent logcat LAN/audio/BT (filtered) ---\n'
+if command -v timeout >/dev/null 2>&1; then
+  timeout 18 logcat -d -t 2000 -v brief 2>&1 | grep -Ei 'Ethernet|Gmac|MDIO|no.?phy|eth[0-9]|DhcpClient|NetworkStack|BluetoothA2dp|A2dpService|AudioPolicy|LeAudio|BluetoothManager' | tail -n 125
+else
+  logcat -d -t 2000 -v brief 2>&1 | grep -Ei 'Ethernet|Gmac|MDIO|no.?phy|eth[0-9]|DhcpClient|NetworkStack|BluetoothA2dp|A2dpService|AudioPolicy|LeAudio|BluetoothManager' | tail -n 125
+fi
+
+S '9. END OF SHELL REPORT'
+PROJECTOR_READONLY
+
+# AOSP userdebug su generally requires "su 0 <command>", not "su -c".
+echo '2/2: проверка только чтения через AOSP su (если доступен)...'
+ROOT_ID="$(adb -s "$SERIAL" shell su 0 id 2>/dev/null | tr -d '\r' | head -n 1)"
+if printf '%s' "$ROOT_ID" | grep -q 'uid=0'; then
+  {
+    printf '\n========== 10. ROOT: ETHERNET PHY AND KERNEL LOGS (READ ONLY) ==========\n'
+    adb -s "$SERIAL" shell su 0 sh <<'ROOT_READONLY'
+echo '--- root identity ---'
+id
+printf '\n--- root dmesg Ethernet/PHY (bounded) ---\n'
+dmesg 2>&1 | grep -Ei 'gmac|ethernet|mdio|rgmii|rmii|stmmac|phy |phy:|phy-id|no.?phy|link (up|down)|eth[0-9]|mt5896|reset.?gpio|no.?carrier' | tail -n 180
+printf '\n--- root dmesg Bluetooth/A2DP/firmware (bounded) ---\n'
+dmesg 2>&1 | grep -Ei 'aic8800|aic_btusb|bluetooth|btusb|btmtk|LE Audio|BIS|ISO|firmware.*(bt|aic)' | tail -n 105
+printf '\n--- root device-tree GMAC/PHY candidate status ---\n'
+if [ -d /proc/device-tree ]; then
+  find /proc/device-tree -maxdepth 7 \( -iname '*ether*' -o -iname '*gmac*' -o -iname '*mdio*' \) 2>/dev/null | head -n 80 | while IFS= read -r node; do
+    if [ -d "$node" ]; then
+      echo "DT_NODE=$node"
+      for p in status phy-mode compatible; do
+        if [ -r "$node/$p" ]; then
+          printf '%s=' "$p"
+          tr '\000' ' ' < "$node/$p" 2>/dev/null | head -c 240
+          echo
+        fi
+      done
+    fi
+  done
+fi
+ROOT_READONLY
+  } 2>&1 | sanitize >> "$OUT"
+else
+  printf '\n========== 10. ROOT DATA UNAVAILABLE ==========\n%s\n' "su 0 id: not confirmed; shell-only details collected." >> "$OUT"
+fi
+
+printf '\n========== END: REPORT COMPLETE ==========\n' >> "$OUT"
+
+echo "ГОТОВО. Отчёт записан в: $OUT"
+echo 'Отправьте этот TXT для анализа. Перед публикацией на форуме просмотрите локальные IP/имена устройств.'
+echo 'Важно: RJ45 должен был быть подключён к проектору во время сбора.'
