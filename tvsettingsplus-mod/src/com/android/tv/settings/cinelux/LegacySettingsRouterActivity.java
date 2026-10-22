@@ -68,6 +68,12 @@ public final class LegacySettingsRouterActivity extends Activity {
                 return new ComponentName(TV, TV + ".device.apps.AllAppsActivity");
             case "android.settings.PROJECTABOUT_SETTINGS":
                 return new ComponentName(TV, TV + ".about.AboutActivity");
+            case "android.settings.BRIGHT_SETTINGS":
+                return new ComponentName(SOURCE, SOURCE + ".activity.BrightActivity");
+            case "android.settings.VOICE_SETTINGS":
+                return new ComponentName(SOURCE, SOURCE + ".activity.VoiceActivity");
+            case "android.settings.PROJECTMODEL_SETTINGS":
+                return new ComponentName(SOURCE, SOURCE + ".activity.ProjectModelActivity");
             case "android.settings.BOOTSOURE_SETTINGS":
                 // Preserve the vendor's unusual original spelling BOOTSOURE.
                 return new ComponentName(SOURCE, SOURCE + ".activity.BootSoureActivity");
