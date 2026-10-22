@@ -1,0 +1,138 @@
+{
+  "image": "mboot.img",
+  "language": "AARCH64:LE:64:v8A",
+  "image_base": "00000000",
+  "boot_entry": "0x0",
+  "image_header_skipped_bytes": 1024,
+  "function_count": 3925,
+  "targets": {
+    "root_key_start": {
+      "offset": "0x1cd6ac",
+      "reference_count": 2,
+      "references": [
+        {
+          "from": "000a1b24",
+          "type": "PARAM"
+        },
+        {
+          "from": "000a1b84",
+          "type": "PARAM"
+        }
+      ]
+    },
+    "root_key_interior": {
+      "offset": "0x1cd740",
+      "reference_count": 0,
+      "references": []
+    },
+    "avb_verification_failure": {
+      "offset": "0x186e3b",
+      "reference_count": 0,
+      "references": []
+    },
+    "avb_locked_dmverity": {
+      "offset": "0x18a4d4",
+      "reference_count": 0,
+      "references": []
+    },
+    "avb_initialize_failed": {
+      "offset": "0x18a430",
+      "reference_count": 0,
+      "references": []
+    },
+    "vbmeta_invalid_header": {
+      "offset": "0x1a0077",
+      "reference_count": 0,
+      "references": []
+    },
+    "vbmeta_signature_error": {
+      "offset": "0x1a0052",
+      "reference_count": 0,
+      "references": []
+    },
+    "developer_signature_accepted": {
+      "offset": "0x19f70f",
+      "reference_count": 1,
+      "references": [
+        {
+          "from": "00011274",
+          "type": "PARAM",
+          "function": "000110b0"
+        }
+      ]
+    },
+    "developer_signature_rejected": {
+      "offset": "0x19f746",
+      "reference_count": 1,
+      "references": [
+        {
+          "from": "000111c8",
+          "type": "PARAM",
+          "function": "000110b0"
+        }
+      ]
+    },
+    "avb_init_command": {
+      "offset": "0x18db01",
+      "reference_count": 1,
+      "references": [
+        {
+          "from": "00050d60",
+          "type": "PARAM",
+          "function": "00050d40"
+        }
+      ]
+    },
+    "avb_verify_command": {
+      "offset": "0x18eb80",
+      "reference_count": 0,
+      "references": []
+    },
+    "verified_green_state": {
+      "offset": "0x183fb1",
+      "reference_count": 0,
+      "references": []
+    },
+    "verified_orange_state": {
+      "offset": "0x183fd5",
+      "reference_count": 0,
+      "references": []
+    },
+    "rollback_failed": {
+      "offset": "0x18a63a",
+      "reference_count": 0,
+      "references": []
+    }
+  },
+  "candidate_functions": [
+    {
+      "address": "000110b0",
+      "name": "FUN_000110b0",
+      "bytes": 476,
+      "callers": [
+        "0001129c"
+      ],
+      "callees": [
+        "0015eb58",
+        "0007d258",
+        "001609c0",
+        "0015ebc8",
+        "000812f0",
+        "00066600"
+      ],
+      "decompiled_excerpt": "\nundefined8 FUN_000110b0(void)\n\n{\n  int iVar1;\n  char *pcVar2;\n  undefined4 local_118 [2];\n  undefined8 local_110;\n  long local_108;\n  undefined1 auStack_100 [256];\n  \n  FUN_0015eb58(auStack_100,0,0x100);\n  local_110 \u003d 0;\n  local_108 \u003d 0;\n  local_118[0] \u003d 0;\n  iVar1 \u003d FUN_0007d258(0,\u0026local_110);\n  if (iVar1 \u003d\u003d -1) {\n    if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n      FUN_001609c0(\u0026DAT_0019c50c,s_get_public_key_n_0017a4b1,0xa3);\n      FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n    }\n    if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n      return 1;\n    }\n    FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xcf);\n    pcVar2 \u003d s_Fail_to_get_public_N_from_CKB_A__001c0fd6;\n  }\n  else {\n    FUN_0015ebc8(auStack_100,local_108,0x100);\n    FUN_000812f0(auStack_100,0x100);\n    local_110 \u003d 0;\n    local_108 \u003d 0;\n    iVar1 \u003d FUN_0007d258(0,\u0026local_110);\n    if (iVar1 \u003d\u003d -1) {\n      if ((DAT_001c5878 \u0026 1) !\u003d 0) {\n        FUN_001609c0(\u0026DAT_0019c50c,s_get_public_key_e_0017a4c2,0xbd);\n        FUN_001609c0(s_Wrong_EN_SECURE_KEY_TYPE_Index___001c0fb3);\n      }\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 1;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xd6);\n      pcVar2 \u003d s_Fail_to_get_public_E_from_CKB_A__001c0fff;\n    }\n    else {\n      FUN_0015ebc8(local_118,local_108 + 0x100,4);\n      FUN_000812f0(local_118,4);\n      iVar1 \u003d FUN_00066600(auStack_100,local_118,\u0026DAT_001c3e20,\n                           s_is_rel_flag_resv_mem_auto_detect_001b23b9,0xc);\n      if (iVar1 \u003d\u003d 0) {\n        if ((DAT_001c5878 \u003e\u003e 3 \u0026 1) !\u003d 0) {\n          FUN_001609c0(\u0026DAT_0019f39c,s_is_rel_build_0017a4ea,0xdd);\n          FUN_001609c0(s_DEV_signature_verification_pass__0019f70f);\n          return 0;\n        }\n        return 0;\n      }\n      if ((DAT_001c5878 \u0026 1) \u003d\u003d 0) {\n        return 1;\n      }\n      FUN_001609c0(\u0026DAT_0019c50c,s_is_rel_build_0017a4ea,0xe1);\n      pcVar2 \u003d s_DEV_signature_verification_failu_0019f746;\n    }\n  }\n  FUN_001609c0(pcVar2);\n  return 1;\n}\n\n"
+    },
+    {
+      "address": "00050d40",
+      "name": "FUN_00050d40",
+      "bytes": 68,
+      "callers": [
+        "00093024"
+      ],
+      "callees": [
+        "000a0ccc"
+      ],
+      "decompiled_excerpt": "\nundefined8 FUN_00050d40(void)\n\n{\n  FUN_000a0ccc(s_checkteesuccess_001b785c,0);\n  FUN_000a0ccc(s_avb_init_0_0018db01,0);\n  FUN_000a0ccc(s_ab_slt_0_0018db0c,0);\n  return 0;\n}\n\n"
+    }
+  ]
+}
