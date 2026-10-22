@@ -25,7 +25,7 @@ jobs:
           tar -xzf /tmp/avbaudit/dumper.tgz -C /tmp/avbaudit/dumper
           EXE="$(find /tmp/avbaudit/dumper -type f -name 'payload-dumper-go*' | head -n 1)"
           chmod +x "$EXE"
-          "$EXE" -c 3 -p vbmeta,vbmeta_system,mboot -o /tmp/avbaudit/images /tmp/avbaudit/ota.zip
+          "$EXE" -c 3 -p vbmeta,vbmeta_system,mboot,optee,armfw -o /tmp/avbaudit/images /tmp/avbaudit/ota.zip
           ls -lh /tmp/avbaudit/images
 
       - name: Independently validate both embedded PKCS1v15 SHA256 signatures and describe AVB
@@ -85,6 +85,26 @@ jobs:
           ascii_runs=re.findall(rb'[\x20-\x7e]{9,}',mboot)
           keyphrases=[b'avb_',b'vbmeta',b'androidboot.verifiedbootstate',b'androidboot.vbmeta',b'veritymode',b'devicestate',b'Vbmeta',b'avb_slot_verify']
           strings=[x.decode('ascii','replace')[:160] for x in ascii_runs if any(t.lower() in x.lower() for t in keyphrases)]
+          # Search trusted-key candidates in bootloader and secure firmware without modifying them.
+          kblob=(root/'vbmeta.img').read_bytes()
+          k_auth=int.from_bytes(kblob[12:20],'big')
+          k_pub_off=int.from_bytes(kblob[64:72],'big')
+          k_pub_len=int.from_bytes(kblob[72:80],'big')
+          pubblob=kblob[256+k_auth+k_pub_off:256+k_auth+k_pub_off+k_pub_len]
+          probes={
+              'avb_formatted_public_key':pubblob,
+              'rsa_modulus_big_endian':pubblob[8:520],
+              'rsa_modulus_little_endian':pubblob[8:520][::-1],
+              'sha256_binary_public_key':hashlib.sha256(pubblob).digest(),
+              'sha256_rsa_modulus':hashlib.sha256(pubblob[8:520]).digest()
+          }
+          report['trusted_key_material_presence']={}
+          for name in ('mboot','optee','armfw'):
+              content=(root/(name+'.img')).read_bytes()
+              report['trusted_key_material_presence'][name]={
+                  'bytes':len(content),
+                  'probe_offsets':{k:content.find(v) for k,v in probes.items()}
+              }
           report['mboot']={'size':len(mboot),'sha256':hashlib.sha256(mboot).hexdigest(),
             'avb_relevant_printable_string_count':len(strings),'avb_relevant_printable_strings_sample':strings[:60],
             'note':'Presence/absence of strings does not prove which checks are executed at startup'}
