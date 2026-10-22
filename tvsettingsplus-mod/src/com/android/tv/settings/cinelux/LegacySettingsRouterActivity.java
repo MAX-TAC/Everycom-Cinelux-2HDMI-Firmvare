@@ -32,7 +32,7 @@ public final class LegacySettingsRouterActivity extends Activity {
             return;
         }
         try {
-            Intent target = new Intent(Intent.ACTION_MAIN);
+            Intent target = new Intent(action);
             target.setComponent(component);
             target.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(target);
