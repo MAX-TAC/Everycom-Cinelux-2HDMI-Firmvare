@@ -19,15 +19,15 @@ NEW = {"com.android.tv.settings.cinelux.TemperatureInfoActivity",
        "com.android.tv.settings.cinelux.LegacySettingsRouterActivity"}
 SCREENS = ("device.xml","device_two_panel.xml","device_vendor.xml","device_x.xml")
 ROUTES = {
- "cinelux_projector_panel":("com.android.tv.settings","com.android.tv.settings.uicustom.MainActivity"),
- "cinelux_temperature":("com.android.tv.settings","com.android.tv.settings.cinelux.TemperatureInfoActivity"),
- "cinelux_brightness":("com.coolux.source","com.coolux.source.activity.BrightActivity"),
- "cinelux_sound":("com.coolux.source","com.coolux.source.activity.VoiceActivity"),
- "cinelux_boot_source":("com.coolux.source","com.coolux.source.activity.BootSoureActivity"),
- "cinelux_power_mode":("com.coolux.source","com.coolux.source.activity.PoweronModeActivity"),
- "cinelux_orientation":("com.coolux.source","com.coolux.source.activity.ProjectModelActivity"),
- "cinelux_keystone":("com.coolux.source","com.coolux.source.activity.KeystoneActivity"),
- "cinelux_ota":("com.rjpj.yunota","com.rjpj.yunota.OTASystemNetworkUpdateActivity"),
+ "cinelux_projector_panel":("com.android.tv.settings","com.android.tv.settings.uicustom.MainActivity","android.settings.RJ_SETTINGS"),
+ "cinelux_temperature":("com.android.tv.settings","com.android.tv.settings.cinelux.TemperatureInfoActivity","android.intent.action.MAIN"),
+ "cinelux_brightness":("com.coolux.source","com.coolux.source.activity.BrightActivity","android.settings.BRIGHT_SETTINGS"),
+ "cinelux_sound":("com.coolux.source","com.coolux.source.activity.VoiceActivity","android.settings.VOICE_SETTINGS"),
+ "cinelux_boot_source":("com.coolux.source","com.coolux.source.activity.BootSoureActivity","android.settings.BOOTSOURE_SETTINGS"),
+ "cinelux_power_mode":("com.coolux.source","com.coolux.source.activity.PoweronModeActivity","android.settings.POWERMODE_SETTINGS"),
+ "cinelux_orientation":("com.coolux.source","com.coolux.source.activity.ProjectModelActivity","android.settings.PROJECTMODEL_SETTINGS"),
+ "cinelux_keystone":("com.coolux.source","com.coolux.source.activity.KeystoneActivity","android.settings.KEYSTONE_SETTINGS"),
+ "cinelux_ota":("com.rjpj.yunota","com.rjpj.yunota.OTASystemNetworkUpdateActivity","android.settings.SYSTEMUPDATE"),
 }
 
 def elements(m, section):
@@ -73,7 +73,7 @@ def verify(original: Path,candidate_dir: Path)->None:
             intents=prefs[key].findall("intent")
             assert len(intents)==1,(file,key,"expected one intent")
             i=intents[0]
-            assert (i.get(ANDROID+"targetPackage"),i.get(ANDROID+"targetClass"))==target,(file,key,"bad intent target")
+            assert (i.get(ANDROID+"targetPackage"),i.get(ANDROID+"targetClass"),i.get(ANDROID+"action"))==target,(file,key,"bad intent target")
     print(f"PASSED: {len(existing)} stock AndroidManifest components retained, {len(base_permissions)} permissions retained,")
     print("        original sharedUserId intact, 2 new CineLux Activities and 9 routes x 4 TV screen flavors visible after rebuild.")
     print("LIMIT: Static resource validation; live package update, privilege grants and interaction NOT tested.")
