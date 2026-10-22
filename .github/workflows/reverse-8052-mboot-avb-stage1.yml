@@ -94,6 +94,57 @@ jobs:
               mboot_arch_tests[tag]=scores
           nearby=[x for x in strings if key_at-6144<=x['offset']<=key_at+6144]
           # Extract reliable identified command names and AVB diagnostic strings only
+          # AArch64 program-counter-relative data reference analysis, static only.
+          import bisect
+          cs=Cs(CS_ARCH_ARM64,CS_MODE_LITTLE_ENDIAN)
+          code_end=0x177000
+          asm=[]
+          for start in range(0x400,code_end,0x10000):
+              asm.extend(cs.disasm(data[start:min(start+0x10000,code_end)],start))
+          xrefs=[]
+          string_starts=[item['offset'] for item in strings]
+          for idx,i in enumerate(asm):
+              if i.mnemonic not in ('adrp','adr'):continue
+              m=re.fullmatch(r'([wx][0-9]+), #(0x[0-9a-f]+|[0-9]+)',i.op_str)
+              if not m:continue
+              base_reg=m.group(1)
+              base=int(m.group(2),0)
+              for nxt in asm[idx+1:idx+13]:
+                  if nxt.address>i.address+48:break
+                  if nxt.mnemonic not in ('add','ldr','ldrsw'):continue
+                  a=re.fullmatch(r'([wx][0-9]+), ([wx][0-9]+), #(0x[0-9a-f]+|[0-9]+)',nxt.op_str)
+                  ld=re.fullmatch(r'([wx][0-9]+), \\[([wx][0-9]+)(?:, #(0x[0-9a-f]+|[0-9]+))?\\]',nxt.op_str)
+                  if a and a.group(2)==base_reg:
+                      target=base+int(a.group(3),0)
+                  elif ld and ld.group(2)==base_reg:
+                      target=base+int(ld.group(3),0) if ld.group(3) else base
+                  else:continue
+                  if not 0<=target<len(data):continue
+                  si=bisect.bisect_right(string_starts,target)-1
+                  str_match=None
+                  if si>=0 and target>=string_starts[si]:
+                      term=strings[si]['text']
+                      if target<=string_starts[si]+len(term):
+                          str_match=term[max(0,target-string_starts[si]):][:170]
+                  keymatch=key_at<=target<key_at+len(pub)
+                  interesting=(keymatch or (str_match is not None and
+                      re.search(r'avb|vbmeta|trusted|unlocked|rollback|verity|verify.*signature|invalid.*key|root.*key|DEV signature',str_match,re.I)))
+                  if interesting:
+                      xrefs.append({'pc':i.address,'base_page':base,'consumer_pc':nxt.address,
+                          'target_offset':target,'target_hex':hex(target),'kind':nxt.mnemonic,
+                          'register':base_reg,'key_reference':keymatch,'string':str_match})
+          # Keep contexts for key references and a small list of diagnostic-message sites.
+          by_pc={i.address:n for n,i in enumerate(asm)}
+          def disasm_context(pc,before=16,after=38):
+              if pc not in by_pc:return []
+              n=by_pc[pc]
+              return [{'pc':hex(x.address),'mnemonic':x.mnemonic,'operands':x.op_str}
+                  for x in asm[max(0,n-before):min(len(asm),n+after)]]
+          key_refs=[x for x in xrefs if x['key_reference']]
+          key_context=[{'ref':x,'disasm':disasm_context(x['pc'],18,55)} for x in key_refs[:15]]
+          diagrefs=sorted([x for x in xrefs if x['string'] and
+                           re.search(r'vbmeta|locked|unlocked|verification|trusted|DEV signature|rollback',x['string'],re.I)],
+                          key=lambda x:x['pc'])
           mboot_report={
             'source':'RUIOS.8052.1.0.4 SHA256-verified manufacturer ZIP, extracted mboot image',
             'sha256_mboot':hashlib.sha256(data).hexdigest(),'size':len(data),
@@ -105,6 +156,9 @@ jobs:
             'architecture_extended_sample':sample,
             'strings_count':len(strings),'selected_avb_strings':rel[:240],
             'strings_near_key':nearby[:100],
+            'arm64_instructions_decoded':len(asm),'arm64_references_count':len(xrefs),
+            'key_references':key_refs[:100], 'key_reference_disassembly':key_context,
+            'avb_diagnostic_references':diagrefs[:150],
             'limits':[
               'A string or compiled function is not proof the function executes during normal boot.',
               'This pass does not claim to identify call graph or active key policy.',
