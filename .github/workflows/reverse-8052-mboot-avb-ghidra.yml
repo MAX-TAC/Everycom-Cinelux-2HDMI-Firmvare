@@ -49,8 +49,8 @@ jobs:
             -processor AARCH64:LE:64:v8A \
             -loader BinaryLoader -loader-baseAddr 0 \
             -scriptPath "$PWD/tools/ghidra" \
-            -preScript MT9660Entry.py \
-            -postScript MT9660AvbXrefs.py \
+            -preScript MT9660Entry.java \
+            -postScript MT9660AvbXrefs.java \
             -analysisTimeoutPerFile 450 -max-cpu 4 \
             > /tmp/ghidra8052/headless.log 2>&1 || { tail -n 90 /tmp/ghidra8052/headless.log; exit 1; }
           tail -n 90 /tmp/ghidra8052/headless.log
